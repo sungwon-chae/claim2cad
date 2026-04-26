@@ -1,0 +1,3 @@
+1. An articulated robotic manipulator, comprising: a base; a first link rotatably mounted on the base via a first revolute joint; a second link rotatably coupled to the first link via a second revolute joint; an end effector attached to a distal end of the second link; and a fastener securing the base to a mounting surface; wherein each of the first and second revolute joints has a single degree of rotational freedom; and wherein the end effector includes a gripper.
+
+2. The articulated robotic manipulator of claim 1, further comprising a position sensor coupled to the second link.

@@ -1,0 +1,189 @@
+{
+  "summary": {
+    "n_evaluated": 5,
+    "cad_success_rate": 1.0,
+    "component_kind_micro_f1": 0.667,
+    "component_kind_macro_f1": 0.745,
+    "component_id_micro_f1": 0.86,
+    "relation_micro_f1": 0.444,
+    "figure_coverage_avg": 0.0,
+    "span_coverage_avg": 1.0
+  },
+  "examples": [
+    {
+      "example_id": "golden_robot_arm",
+      "expected_components": 9,
+      "actual_components": 9,
+      "component_ids": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "component_kinds": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relation_triples": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "figure_coverage": 0.0,
+      "cad_step_ok": true,
+      "cad_glb_ok": true,
+      "span_coverage": 1.0,
+      "claim_count": 2,
+      "error": null
+    },
+    {
+      "example_id": "hinge_assembly",
+      "expected_components": 8,
+      "actual_components": 8,
+      "component_ids": {
+        "tp": 8,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "component_kinds": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relation_triples": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "figure_coverage": 0.0,
+      "cad_step_ok": true,
+      "cad_glb_ok": true,
+      "span_coverage": 1.0,
+      "claim_count": 1,
+      "error": null
+    },
+    {
+      "example_id": "planetary_gear",
+      "expected_components": 6,
+      "actual_components": 6,
+      "component_ids": {
+        "tp": 6,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "component_kinds": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "relation_triples": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "figure_coverage": 0.0,
+      "cad_step_ok": true,
+      "cad_glb_ok": true,
+      "span_coverage": 1.0,
+      "claim_count": 2,
+      "error": null
+    },
+    {
+      "example_id": "korean_robot_arm",
+      "expected_components": 6,
+      "actual_components": 8,
+      "component_ids": {
+        "tp": 5,
+        "fp": 3,
+        "fn": 1,
+        "precision": 0.625,
+        "recall": 0.833,
+        "f1": 0.714
+      },
+      "component_kinds": {
+        "tp": 3,
+        "fp": 3,
+        "fn": 2,
+        "precision": 0.5,
+        "recall": 0.6,
+        "f1": 0.545
+      },
+      "relation_triples": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "figure_coverage": 0.0,
+      "cad_step_ok": true,
+      "cad_glb_ok": true,
+      "span_coverage": 1.0,
+      "claim_count": 2,
+      "error": null
+    },
+    {
+      "example_id": "multi_claim_drone",
+      "expected_components": 17,
+      "actual_components": 9,
+      "component_ids": {
+        "tp": 9,
+        "fp": 0,
+        "fn": 8,
+        "precision": 1.0,
+        "recall": 0.529,
+        "f1": 0.692
+      },
+      "component_kinds": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 7,
+        "precision": 0.333,
+        "recall": 0.125,
+        "f1": 0.182
+      },
+      "relation_triples": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 15,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "figure_coverage": 0.0,
+      "cad_step_ok": true,
+      "cad_glb_ok": true,
+      "span_coverage": 1.0,
+      "claim_count": 5,
+      "error": null
+    }
+  ]
+}

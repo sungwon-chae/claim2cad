@@ -4,6 +4,22 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-11)
+- Evaluation harness (`claim2cad/eval_harness.py`):
+  - `PRMetric`, `evaluate_example`, `evaluate_all`, `EvalReport`,
+    JSON + Markdown formatters.
+  - 6 metric families: component IDs, component kinds, relation
+    triples, figure mapping coverage, CAD generation success, claim →
+    component span coverage.
+  - `--mode {dryrun,stub,llm}` to evaluate the roundtrip /
+    deterministic / LLM paths against the same benchmark.
+- Default benchmark dataset: `golden_robot_arm`, `hinge_assembly`,
+  `planetary_gear`, `korean_robot_arm`, `multi_claim_drone` (covers
+  the brief: golden + Korean + multi-claim).
+- `make eval` / `make eval-stub` targets.
+- Baseline reports landed in `logs/eval_report{,_stub}.{json,md}`.
+- 14 new tests in `tests/test_eval_harness.py`. Total: 101 passed.
+
 ### Added (V1-10)
 - Hosted-demo path that doesn't need a paid API key.
 - `make demo-clean-checkout` — single-command flow on a fresh clone

@@ -10,7 +10,7 @@ PY ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 EXAMPLE ?= golden_robot_arm
 
-.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout test clean viewer viewer-install viewer-build viewer-dev help
+.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout eval eval-stub test clean viewer viewer-install viewer-build viewer-dev help
 
 help:
 	@echo "Available targets:"
@@ -21,6 +21,8 @@ help:
 	@echo "  demo-all-offline     — run demo-all without LLM (CI / hosted-demo path)"
 	@echo "  demo-clean-checkout  — full reproducible flow: install → demo-all-offline → manifest → viewer-build"
 	@echo "  test                 — pytest with the local venv"
+	@echo "  eval                 — run V1-11 evaluation harness (dry-run mode)"
+	@echo "  eval-stub            — V1-11 harness against the deterministic stub parser"
 	@echo "  viewer-install       — npm install in viewer/"
 	@echo "  viewer-build         — vite build of the viewer"
 	@echo "  viewer-dev           — stage data into viewer/public/data and run the dev server"
@@ -73,6 +75,14 @@ demo-clean-checkout: install demo-all-offline
 
 test:
 	$(PY) -m pytest -q
+
+# V1-11: evaluation harness on the benchmark dataset (golden + hinge
+# + planetary + korean + multi-claim drone).
+eval:
+	$(PY) -m claim2cad.eval_harness --mode dryrun --out logs/eval_report
+
+eval-stub:
+	$(PY) -m claim2cad.eval_harness --mode stub --out logs/eval_report_stub
 
 viewer-install:
 	cd viewer && npm install --no-audit --no-fund

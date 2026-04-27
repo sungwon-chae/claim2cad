@@ -915,3 +915,51 @@ $60 not breached). Breakdown:
   single file is a 384 KB STEP for `US4807331A_spring_loaded_hinge`.
 - The hosted-demo path deliberately avoids any paid API. To re-parse a
   custom claim, the LLM path is opt-in via `.env`.
+
+---
+
+## Phase V1-11 — Evaluation harness — COMPLETED 2026-04-28
+
+### What shipped
+- `claim2cad/eval_harness.py`:
+  - `evaluate_example(example_dir, mode={dryrun,stub,llm})` — runs the
+    pipeline and grades the output IR against `expected_ir.json`.
+  - `PRMetric` (precision / recall / F1 / TP-FP-FN) with arithmetic.
+  - Five metric families:
+    1. Component IDs (precision/recall on `{c.id}`)
+    2. Component kinds (precision/recall on `{(category, kind)}`)
+    3. Relation triples (precision/recall on `{(source, kind, target)}`)
+    4. Figure-mapping coverage (fraction with `figure_number`)
+    5. CAD generation success (STEP+GLB exist & ≥ 1 KB)
+    6. Claim→component span coverage (fraction with non-empty span text)
+  - `evaluate_all`, `EvalReport` aggregator, JSON + Markdown formatters.
+  - `python -m claim2cad.eval_harness --mode {dryrun,stub,llm}` CLI;
+    writes `<out>.json` and `<out>.md`.
+- Default benchmark dataset (matches the V1-11 brief):
+  `golden_robot_arm`, `hinge_assembly`, `planetary_gear`,
+  `korean_robot_arm`, `multi_claim_drone`. Includes one English
+  golden, one Korean, one multi-claim (5 claims, depth 4).
+- `Makefile` targets: `make eval` (dry-run mode) and `make eval-stub`
+  (deterministic parser).
+- 14 new tests in `tests/test_eval_harness.py`.
+
+### Verification
+- `make eval` — 5/5 examples, 100% CAD success, 1.0 micro/macro F1
+  on every IR metric (dry-run is a roundtrip baseline).
+- `make eval-stub` — realistic numbers: kind micro-F1 0.667,
+  relation micro-F1 0.444. Multi-claim drone scores 0.182 / 0.000
+  (the deterministic stub correctly under-extracts the deep hierarchy
+  the LLM produces). This is the V1-11 baseline future work can
+  improve against.
+- `pytest tests/` — 101 passed (87 + 14 new), 2.4 s.
+- Two report pairs landed in `logs/eval_report{,_stub}.{json,md}`.
+
+### Notes
+- Component-kind F1 is a stricter signal than component-ID F1: kind
+  matters semantically, IDs are nominally noisy. The harness reports
+  both.
+- Relation-triple F1 uses exact `(source, kind, target)` equality —
+  no fuzzy matching. Good baseline; may want a graph-edit-distance
+  variant in v1.1.
+- The harness intentionally writes outputs to a temp dir per example,
+  so concurrent runs don't trample each other.

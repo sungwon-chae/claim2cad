@@ -80,3 +80,46 @@ was deferred. Times are local (Asia/Seoul, KST).
   second_link, end_effector, gripper, position_sensor` in insertion order.
 
 - **Completed:** 2026-04-27 ~01:15 KST.
+
+## Phase 3 — End-to-End Skeleton — STARTED 2026-04-27 11:00 KST
+
+- Wrote `claim2cad/llm_client.py` — httpx-based OpenRouter wrapper with
+  exponential-backoff retry on JSON-decode failure. Reads env via
+  `LLMConfig.from_env`. Phase 3's tests do not exercise the network path
+  (golden short-circuit + stub fallback cover both branches).
+- Wrote `claim2cad/claim_parser.py` — three-tier strategy: golden short
+  circuit → LLM with one validation-retry → single-component stub (logs
+  WARNING). Public signature `parse_claim(text: str) -> ClaimIR`.
+- Wrote `claim2cad/ir_to_cad.py` — primitive dispatch by (category, kind),
+  deterministic line-along-X layout, `build_compound()` /
+  `export_cad()` / `synthesize_generator()` (writes
+  `pipeline_generator.py` to avoid colliding with hand-crafted
+  `generator.py` in `examples/golden_robot_arm/`).
+- Wrote `claim2cad/mapping.py` — flattens IR components into the richer
+  `claim_map.json` schema with source_span on each row.
+- Wrote `claim2cad/pipeline.py` — single CLI entry point
+  (`python -m claim2cad.pipeline --claim ... --out ...`); also supports
+  `--from-ir <path>` to skip the parser (used by Phase 4 tests).
+- Wrote `Makefile` with `install`, `demo`, `test`, `clean` targets.
+- Wrote `tests/test_pipeline.py` — 5 smoke tests in `tmp_path`:
+  outputs exist, IR validates and round-trips, claim_map.components count
+  matches IR, GLB root children all carry IR component IDs, STEP starts
+  with `ISO-10303-21` magic.
+
+### Verification (Phase 3 acceptance criteria)
+- `make demo` runs end-to-end on the golden claim; pipeline log shows
+  STEP=94,688 B, GLB=37,892 B (primitives version — Phase-5 will replace
+  with type-aware shapes).
+- All four outputs land in `examples/golden_robot_arm/`:
+  `claim_ir.json` (8,466 B), `claim_map.json` (2,965 B), `model.step`,
+  `model.glb`.
+- After demo, ran the hand-crafted `examples/golden_robot_arm/generator.py`
+  to restore the polished STEP/GLB so the committed example shows the
+  better geometry. The Phase-3 pipeline-generated artifacts are still
+  reproducible at any time via `make demo`.
+- `pytest tests/` — 16 / 16 pass (3.48 s).
+- LLM path was not exercised end-to-end (no API key in this run); covered
+  by Phase 4 with a mocked client.
+
+- **Completed:** 2026-04-27 ~11:12 KST. Commit `phase-3: end-to-end
+  pipeline skeleton`.

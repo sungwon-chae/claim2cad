@@ -3,14 +3,122 @@
   "example": "golden_robot_arm",
   "glb_path": "model.glb",
   "components": [
-    { "component_id": "base",            "glb_node_name": "base",            "label": "base",                  "category": "structural", "kind": "frame",          "is_dependent": false },
-    { "component_id": "fastener",        "glb_node_name": "fastener",        "label": "fastener",              "category": "connection", "kind": "fastener",       "is_dependent": false },
-    { "component_id": "first_joint",     "glb_node_name": "first_joint",     "label": "first revolute joint",  "category": "connection", "kind": "revolute_joint", "is_dependent": false },
-    { "component_id": "first_link",      "glb_node_name": "first_link",      "label": "first link",            "category": "structural", "kind": "rod",            "is_dependent": false },
-    { "component_id": "second_joint",    "glb_node_name": "second_joint",    "label": "second revolute joint", "category": "connection", "kind": "revolute_joint", "is_dependent": false },
-    { "component_id": "second_link",     "glb_node_name": "second_link",     "label": "second link",           "category": "structural", "kind": "rod",            "is_dependent": false },
-    { "component_id": "end_effector",    "glb_node_name": "end_effector",    "label": "end effector",          "category": "functional", "kind": "end_effector",   "is_dependent": false },
-    { "component_id": "gripper",         "glb_node_name": "gripper",         "label": "gripper",               "category": "functional", "kind": "end_effector",   "is_dependent": false },
-    { "component_id": "position_sensor", "glb_node_name": "position_sensor", "label": "position sensor",       "category": "functional", "kind": "sensor",         "is_dependent": true  }
+    {
+      "component_id": "base",
+      "glb_node_name": "base",
+      "label": "base",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 48,
+        "char_end": 54
+      }
+    },
+    {
+      "component_id": "first_link",
+      "glb_node_name": "first_link",
+      "label": "first link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 56,
+        "char_end": 68
+      }
+    },
+    {
+      "component_id": "first_joint",
+      "glb_node_name": "first_joint",
+      "label": "first revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 125
+      }
+    },
+    {
+      "component_id": "second_link",
+      "glb_node_name": "second_link",
+      "label": "second link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 140
+      }
+    },
+    {
+      "component_id": "second_joint",
+      "glb_node_name": "second_joint",
+      "label": "second revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 181,
+        "char_end": 204
+      }
+    },
+    {
+      "component_id": "end_effector",
+      "glb_node_name": "end_effector",
+      "label": "end effector",
+      "category": "functional",
+      "kind": "end_effector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 206,
+        "char_end": 221
+      }
+    },
+    {
+      "component_id": "gripper",
+      "glb_node_name": "gripper",
+      "label": "gripper",
+      "category": "functional",
+      "kind": "end_effector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 457,
+        "char_end": 466
+      }
+    },
+    {
+      "component_id": "fastener",
+      "glb_node_name": "fastener",
+      "label": "fastener",
+      "category": "connection",
+      "kind": "fastener",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 271,
+        "char_end": 281
+      }
+    },
+    {
+      "component_id": "position_sensor",
+      "glb_node_name": "position_sensor",
+      "label": "position sensor",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 67,
+        "char_end": 84
+      }
+    }
   ]
 }

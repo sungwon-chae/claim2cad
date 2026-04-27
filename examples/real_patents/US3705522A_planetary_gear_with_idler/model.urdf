@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="speed_change_mechanism">
+  <link name="first_mounting_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_planet_pinion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_ring_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="input_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="planet_carrier_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_mounting_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_planet_pinion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_ring_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_planet_pinion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_planet_pinion_to_first_mounting_means" type="fixed">
+    <parent link="first_planet_pinion"/>
+    <child link="first_mounting_means"/>
+    <origin xyz="-0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_planet_pinion_to_first_ring_gear" type="fixed">
+    <parent link="first_planet_pinion"/>
+    <child link="first_ring_gear"/>
+    <origin xyz="-0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_input_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="input_shaft"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_output_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="output_shaft"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_second_ring_gear" type="fixed">
+    <parent link="housing"/>
+    <child link="second_ring_gear"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_planet_pinion_to_second_mounting_means" type="fixed">
+    <parent link="second_planet_pinion"/>
+    <child link="second_mounting_means"/>
+    <origin xyz="0.0000 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_planet_pinion_to_third_planet_pinion" type="fixed">
+    <parent link="second_planet_pinion"/>
+    <child link="third_planet_pinion"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_ring_gear_to_second_planet_pinion" type="fixed">
+    <parent link="second_ring_gear"/>
+    <child link="second_planet_pinion"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_third_planet_pinion_to_first_planet_pinion" type="fixed">
+    <parent link="third_planet_pinion"/>
+    <child link="first_planet_pinion"/>
+    <origin xyz="0.1200 -0.1500 -0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_third_planet_pinion_to_planet_carrier_means" type="fixed">
+    <parent link="third_planet_pinion"/>
+    <child link="planet_carrier_means"/>
+    <origin xyz="-0.1200 -0.1500 -0.0600" rpy="0 0 0"/>
+  </joint>
+</robot>

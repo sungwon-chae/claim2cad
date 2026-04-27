@@ -62,6 +62,9 @@ class ManifestExample:
     tags: list[str] = field(default_factory=list)
     # V1-5 additions:
     diffs_available: list[DiffSummary] = field(default_factory=list)
+    # V1-6 additions:
+    urdf_path: Optional[str] = None
+    movable_joints: list[str] = field(default_factory=list)
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -123,6 +126,20 @@ def _diffs_in(example_dir: Path) -> list[tuple[str, str]]:
     return out
 
 
+def _urdf_info(example_dir: Path) -> tuple[Optional[str], list[str]]:
+    """Return (urdf_path, movable_joint_names)."""
+    urdf = example_dir / "model.urdf"
+    if not urdf.exists():
+        return None, []
+    import re as _re
+    text = urdf.read_text(encoding="utf-8")
+    movable = _re.findall(
+        r'<joint\s+name="([^"]+)"\s+type="(?:revolute|prismatic|continuous)"',
+        text,
+    )
+    return "model.urdf", movable
+
+
 def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> Optional[ManifestExample]:
     missing = _missing(example_dir)
     if missing:
@@ -130,6 +147,7 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         return None
 
     figure_map_path, figure_image_path, coverage = _figure_info(example_dir)
+    urdf_path, movable_joints = _urdf_info(example_dir)
     base = (base_prefix + example_dir.name) if base_prefix else example_dir.name
 
     tags: list[str] = []
@@ -137,6 +155,8 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         tags.append("full_figure_mapping")
     if source == "real_patent":
         tags.append("real_patent")
+    if movable_joints:
+        tags.append("kinematic")
 
     return ManifestExample(
         id=example_dir.name,
@@ -152,6 +172,8 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         source=source,
         tags=tags,
         diffs_available=[],  # populated by _populate_diffs() below
+        urdf_path=urdf_path,
+        movable_joints=movable_joints,
     )
 
 
@@ -234,8 +256,11 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             shutil.copy2(src_img, dst_img)
         for ds in ex.diffs_available:
             shutil.copy2(src_dir / ds.diff_path, target / ds.diff_path)
-        logger.info("Staged %s (source=%s, fig_coverage=%.0f%%, diffs=%d)",
-                    ex.id, ex.source, ex.figure_coverage * 100, len(ex.diffs_available))
+        if ex.urdf_path:
+            shutil.copy2(src_dir / ex.urdf_path, target / ex.urdf_path)
+        logger.info("Staged %s (source=%s, fig_coverage=%.0f%%, diffs=%d, movable=%d)",
+                    ex.id, ex.source, ex.figure_coverage * 100,
+                    len(ex.diffs_available), len(ex.movable_joints))
 
     manifest = {
         "schema_version": "0.2.0",

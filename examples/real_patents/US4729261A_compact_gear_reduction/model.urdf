@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="fixed_displacement_rotary_pump_with_flow_control_valve_and_epicyclic_gear_train">
+  <link name="epicyclic_gear_train">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="flow_control_valve">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="housing">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inlet_port">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="outlet_port">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pumping_unit">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_housing_to_epicyclic_gear_train" type="fixed">
+    <parent link="housing"/>
+    <child link="epicyclic_gear_train"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_first_gear" type="fixed">
+    <parent link="housing"/>
+    <child link="first_gear"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_first_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="first_shaft"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_flow_control_valve" type="fixed">
+    <parent link="housing"/>
+    <child link="flow_control_valve"/>
+    <origin xyz="0.0600 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_inlet_port" type="fixed">
+    <parent link="housing"/>
+    <child link="inlet_port"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_outlet_port" type="fixed">
+    <parent link="housing"/>
+    <child link="outlet_port"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_pumping_unit" type="fixed">
+    <parent link="housing"/>
+    <child link="pumping_unit"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_second_gear" type="fixed">
+    <parent link="housing"/>
+    <child link="second_gear"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_second_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="second_shaft"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_third_gear" type="fixed">
+    <parent link="housing"/>
+    <child link="third_gear"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

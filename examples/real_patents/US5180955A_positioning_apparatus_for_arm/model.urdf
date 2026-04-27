@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<robot name="high_speed_mini_positioner">
+  <link name="base_structure">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="center_shaft">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="electromagnetic_coil">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="end_effector">
+    <visual>
+      <geometry>
+        <box size="0.022 0.032 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm_first_end">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm_first_section">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm_second_end">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm_second_section">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="magnets">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="means_for_moving">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="parallelogram_structure">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="positioning_linkage">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_arm_first_section">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_arm_second_end">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="stationary_iron_structures">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_positioning_linkage_to_base_structure" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="base_structure"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_center_shaft" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="center_shaft"/>
+    <origin xyz="0.1200 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_electromagnetic_coil" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="electromagnetic_coil"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_end_effector" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="end_effector"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_first_arm" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="first_arm"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_first_arm_first_end" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="first_arm_first_end"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_first_arm_first_section" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="first_arm_first_section"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_first_arm_second_end" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="first_arm_second_end"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_first_arm_second_section" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="first_arm_second_section"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_fourth_arm" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="fourth_arm"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_magnets" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="magnets"/>
+    <origin xyz="0.1200 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_means_for_moving" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="means_for_moving"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_parallelogram_structure" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="parallelogram_structure"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_second_arm" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="second_arm"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_second_arm_first_section" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="second_arm_first_section"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_second_arm_second_end" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="second_arm_second_end"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_stationary_iron_structures" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="stationary_iron_structures"/>
+    <origin xyz="0.8400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_positioning_linkage_to_third_arm" type="fixed">
+    <parent link="positioning_linkage"/>
+    <child link="third_arm"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

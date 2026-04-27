@@ -1,0 +1,214 @@
+<?xml version="1.0" ?>
+<robot name="articulated_robot">
+  <link name="central_axis">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_common_point">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_driving_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_pivot_axis">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_reduction_gear">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_wrist">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fixed_stand">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="forearm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="operating_part">
+    <visual>
+      <geometry>
+        <box size="0.022 0.032 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="robot_body">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_common_point">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_driving_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_pivot_axis">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_reduction_gear">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_wrist">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="swivel_stand">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_wrist">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_forearm_to_central_axis" type="fixed">
+    <parent link="forearm"/>
+    <child link="central_axis"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_first_common_point" type="fixed">
+    <parent link="forearm"/>
+    <child link="first_common_point"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_first_driving_motor" type="fixed">
+    <parent link="forearm"/>
+    <child link="first_driving_motor"/>
+    <origin xyz="0.0600 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_first_pivot_axis" type="fixed">
+    <parent link="forearm"/>
+    <child link="first_pivot_axis"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_first_reduction_gear" type="fixed">
+    <parent link="forearm"/>
+    <child link="first_reduction_gear"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_first_wrist" type="fixed">
+    <parent link="forearm"/>
+    <child link="first_wrist"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_operating_part" type="fixed">
+    <parent link="forearm"/>
+    <child link="operating_part"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_robot_body" type="fixed">
+    <parent link="forearm"/>
+    <child link="robot_body"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_second_common_point" type="fixed">
+    <parent link="forearm"/>
+    <child link="second_common_point"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_second_driving_motor" type="fixed">
+    <parent link="forearm"/>
+    <child link="second_driving_motor"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_second_pivot_axis" type="fixed">
+    <parent link="forearm"/>
+    <child link="second_pivot_axis"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_second_reduction_gear" type="fixed">
+    <parent link="forearm"/>
+    <child link="second_reduction_gear"/>
+    <origin xyz="0.8400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_second_wrist" type="fixed">
+    <parent link="forearm"/>
+    <child link="second_wrist"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_third_wrist" type="fixed">
+    <parent link="forearm"/>
+    <child link="third_wrist"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_forearm_to_upper_arm" type="fixed">
+    <parent link="forearm"/>
+    <child link="upper_arm"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_swivel_stand_to_fixed_stand" type="fixed">
+    <parent link="swivel_stand"/>
+    <child link="fixed_stand"/>
+    <origin xyz="-0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_to_swivel_stand" type="fixed">
+    <parent link="upper_arm"/>
+    <child link="swivel_stand"/>
+    <origin xyz="-0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { ClaimPanel } from "./components/ClaimPanel";
 import { FigurePanel } from "./components/FigurePanel";
+import { KinematicSliders } from "./components/KinematicSliders";
 import { PriorArtOverlay } from "./components/PriorArtOverlay";
 import { Scene } from "./components/Scene";
 import { loadDiff, loadExample, loadManifest, type LoadedExample } from "./data";
-import type { ManifestExample, PriorArtDiff } from "./types";
+import type { ManifestExample, PriorArtDiff, URDFJoint } from "./types";
+import { loadUrdf } from "./urdf";
 
 type LoadedExamplePlus = LoadedExample & { example: ManifestExample };
 
@@ -22,6 +24,11 @@ export function App() {
   // V1-5 prior-art state.
   const [activeDiffId, setActiveDiffId] = useState<string | null>(null);
   const [activeDiff, setActiveDiff] = useState<PriorArtDiff | null>(null);
+
+  // V1-6 kinematic state.
+  const [joints, setJoints] = useState<URDFJoint[]>([]);
+  const [jointValues, setJointValues] = useState<Record<string, number>>({});
+  const [showKinematics, setShowKinematics] = useState<boolean>(false);
 
   // Initial manifest load.
   useEffect(() => {
@@ -48,11 +55,38 @@ export function App() {
     setError(null);
     setActiveDiffId(null);
     setActiveDiff(null);
+    setJoints([]);
+    setJointValues({});
+    setShowKinematics(false);
     window.location.hash = ex.id;
     loadExample(ex)
       .then((bundle) => setLoaded({ example: ex, ...bundle }))
       .catch((e) => setError(String(e)));
   }, [currentId, examples]);
+
+  // V1-6 — load URDF whenever a new example is loaded that has one.
+  useEffect(() => {
+    if (!loaded?.example.urdf_path) {
+      setJoints([]);
+      return;
+    }
+    const url = `/data/${loaded.example.base}/${loaded.example.urdf_path}`;
+    loadUrdf(url)
+      .then((js) => {
+        setJoints(js);
+        const initial: Record<string, number> = {};
+        for (const j of js) {
+          if (j.type === "revolute" || j.type === "continuous" || j.type === "prismatic") {
+            initial[j.name] = 0;
+          }
+        }
+        setJointValues(initial);
+      })
+      .catch((err) => {
+        console.warn("URDF load failed:", err);
+        setJoints([]);
+      });
+  }, [loaded]);
 
   // Load the chosen diff JSON whenever activeDiffId changes.
   useEffect(() => {
@@ -86,10 +120,15 @@ export function App() {
 
   const hasFigure = !!(loaded?.figureImageUrl && loaded?.figureMap);
   const hasDiff = !!activeDiff;
-  // When a diff is active, the right pane shows the PriorArtOverlay
-  // *instead of* the figure panel (we still want the 3-pane layout to
-  // stay visible).
-  const showRightPane = hasFigure || hasDiff;
+  const movableJoints = useMemo(
+    () => joints.filter((j) => j.type === "revolute" || j.type === "continuous" || j.type === "prismatic"),
+    [joints]
+  );
+  const hasKinematics = movableJoints.length > 0;
+  const kinematicsActive = showKinematics && hasKinematics;
+  // When a diff is active OR kinematic sliders requested, the right
+  // pane shows that instead of the figure panel.
+  const showRightPane = hasFigure || hasDiff || kinematicsActive;
 
   return (
     <div className="app">
@@ -139,6 +178,15 @@ export function App() {
           </select>
         )}
         <span className="grow" />
+        {hasKinematics && (
+          <button
+            className={kinematicsActive ? "active" : ""}
+            onClick={() => setShowKinematics((v) => !v)}
+            title={`This example has ${movableJoints.length} movable joints`}
+          >
+            {kinematicsActive ? "Joints: ON" : `Joints (${movableJoints.length})`}
+          </button>
+        )}
         <button
           className={limitationFocus ? "active" : ""}
           onClick={() => setLimitationFocus((v) => !v)}
@@ -192,6 +240,8 @@ export function App() {
               onHover={setHoveredId}
               limitationFocus={limitationFocus}
               diff={activeDiff}
+              joints={kinematicsActive ? joints : undefined}
+              jointValues={kinematicsActive ? jointValues : undefined}
             />
           )}
           {loaded && (
@@ -210,10 +260,24 @@ export function App() {
           )}
         </div>
 
-        {/* Right pane: prior-art overlay if active, else figure panel. */}
+        {/* Right pane: kinematic sliders if requested, else prior-art
+            overlay if active, else figure panel. */}
         {showRightPane && loaded && (
           <div className="pane figure">
-            {hasDiff ? (
+            {kinematicsActive ? (
+              <KinematicSliders
+                joints={joints}
+                values={jointValues}
+                onChange={(name, v) =>
+                  setJointValues((prev) => ({ ...prev, [name]: v }))
+                }
+                onReset={() =>
+                  setJointValues(
+                    Object.fromEntries(movableJoints.map((j) => [j.name, 0]))
+                  )
+                }
+              />
+            ) : hasDiff ? (
               <PriorArtOverlay
                 diff={activeDiff}
                 comparisonTitle={

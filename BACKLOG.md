@@ -3,6 +3,12 @@
 A living list of follow-ups. The maintenance loop pulls from here.
 
 ## High value
+- LLM parser should emit explicit revolute_joint / prismatic_joint
+  *components* (not just `rotates_about` relations) so V1-6 URDFs
+  pick up movable joints from real patents. Currently only 2/28
+  examples (golden + PUMA) have movable joints in their URDF; the
+  other 23 patents that mention rotation have it encoded as a
+  relation kind only.
 - Multi-figure understanding (combine info from figure 1 + figure 2 to refine geometry)
 - Figure-to-3D directly: extract geometry primitives from figures, not just labels
 - WIPO/EPO patent support (currently US-biased)

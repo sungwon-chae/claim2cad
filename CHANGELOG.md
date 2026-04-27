@@ -44,6 +44,26 @@ All notable changes documented here. This project follows semantic versioning.
 - V1-2 baseline: **25/25 patents graded "good"** at iteration 0
   on the structural eval. No iterative improvement needed.
 
+### Added (V1-6)
+- `claim2cad.urdf_export` — IR → URDF XML emitter. Builds a
+  kinematic tree from the IR relation graph, emits `<link>` /
+  `<joint>` with sensible primitives + default limits, and writes
+  `model.urdf` next to the IR.
+- 28 URDFs generated (every example). Two have movable joints:
+  `golden_robot_arm` (2 revolute) and `US4575297A_puma_industrial_robot`
+  (6 revolute).
+- Manifest gains `urdf_path` + `movable_joints[]` + a `kinematic`
+  tag. URDFs staged into the viewer.
+- Viewer:
+  - `viewer/src/urdf.ts` — DOMParser-based URDF reader.
+  - `KinematicSliders.tsx` — slider panel with degrees/mm display
+    and a reset button.
+  - `Scene.tsx` applies joint values to GLB nodes — rotation about
+    the joint origin for revolute/continuous, translation along the
+    joint axis for prismatic.
+  - `App.tsx` adds a "Joints (N)" button that toggles the slider
+    panel (only when the loaded example has movable joints).
+
 ### Added (V1-5)
 - `claim2cad.prior_art` — bipartite-greedy fuzzy matcher + Sonnet 4.6
   disambiguation. CLI:

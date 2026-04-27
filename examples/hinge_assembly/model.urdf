@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<robot name="four_bar_linkage_mechanism">
+  <link name="coupler_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_rotating_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fixed_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_rotating_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_fixed_link_to_coupler_link" type="fixed">
+    <parent link="fixed_link"/>
+    <child link="coupler_link"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_fixed_link_to_first_rotating_link" type="fixed">
+    <parent link="fixed_link"/>
+    <child link="first_rotating_link"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_fixed_link_to_second_rotating_link" type="fixed">
+    <parent link="fixed_link"/>
+    <child link="second_rotating_link"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

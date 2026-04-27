@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<robot name="force_reflecting_teleoperation_with_shared_compliance_control">
+  <link name="actual_position_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="actual_servo_control_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="commanded_position_signal_hc">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="compliance_control_feedback_gain">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="contact_force_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="following_commanded_position_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="force_reflection_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gain_gps">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hand_controller">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="low_pass_filter">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="low_pass_filtered_contact_force_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="means_producing_force_reflection">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="means_sensing_contact_force">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="means_transmitting_force_reflection">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="means_transmitting_hc">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="robot_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="robot_servo_system">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="servo_control_input_signal">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="signal_mixer">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_low_pass_filter_to_means_sensing_contact_force" type="fixed">
+    <parent link="low_pass_filter"/>
+    <child link="means_sensing_contact_force"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_actual_position_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="actual_position_signal"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_actual_servo_control_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="actual_servo_control_signal"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_commanded_position_signal_hc" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="commanded_position_signal_hc"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_compliance_control_feedback_gain" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="compliance_control_feedback_gain"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_contact_force_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="contact_force_signal"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_following_commanded_position_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="following_commanded_position_signal"/>
+    <origin xyz="0.8400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_force_reflection_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="force_reflection_signal"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_gain_gps" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="gain_gps"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_hand_controller" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="hand_controller"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_low_pass_filtered_contact_force_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="low_pass_filtered_contact_force_signal"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_means_producing_force_reflection" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="means_producing_force_reflection"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_means_transmitting_force_reflection" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="means_transmitting_force_reflection"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_means_transmitting_hc" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="means_transmitting_hc"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_robot_servo_system" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="robot_servo_system"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_arm_to_servo_control_input_signal" type="fixed">
+    <parent link="robot_arm"/>
+    <child link="servo_control_input_signal"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robot_servo_system_to_signal_mixer" type="fixed">
+    <parent link="robot_servo_system"/>
+    <child link="signal_mixer"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_signal_mixer_to_low_pass_filter" type="fixed">
+    <parent link="signal_mixer"/>
+    <child link="low_pass_filter"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+  </joint>
+</robot>

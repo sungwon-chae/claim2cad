@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="card_screen_with_side_ribs__center_rib__and_bar_connection_system">
+  <link name="card_screen">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="center_rib">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="center_rib_openings">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="end_bars">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_group_bars">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="grid_bars">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pins">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_group_bars">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="side_rib_openings">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="side_ribs">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sockets">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_card_screen_to_center_rib" type="fixed">
+    <parent link="card_screen"/>
+    <child link="center_rib"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_center_rib_openings" type="fixed">
+    <parent link="card_screen"/>
+    <child link="center_rib_openings"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_end_bars" type="fixed">
+    <parent link="card_screen"/>
+    <child link="end_bars"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_first_group_bars" type="fixed">
+    <parent link="card_screen"/>
+    <child link="first_group_bars"/>
+    <origin xyz="0.0600 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_grid_bars" type="fixed">
+    <parent link="card_screen"/>
+    <child link="grid_bars"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_pins" type="fixed">
+    <parent link="card_screen"/>
+    <child link="pins"/>
+    <origin xyz="0.0600 0.0600 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_second_group_bars" type="fixed">
+    <parent link="card_screen"/>
+    <child link="second_group_bars"/>
+    <origin xyz="0.1200 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_side_rib_openings" type="fixed">
+    <parent link="card_screen"/>
+    <child link="side_rib_openings"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_side_ribs" type="fixed">
+    <parent link="card_screen"/>
+    <child link="side_ribs"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_card_screen_to_sockets" type="fixed">
+    <parent link="card_screen"/>
+    <child link="sockets"/>
+    <origin xyz="0.1200 0.1200 0.0600" rpy="0 0 0"/>
+  </joint>
+</robot>

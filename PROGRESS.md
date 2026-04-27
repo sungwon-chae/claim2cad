@@ -470,6 +470,62 @@ bug, $2.02 on the actual baseline).
 
 ---
 
+## Phase V1-6 — URDF + kinematic sliders — STARTED 2026-04-27 21:15,
+COMPLETED ~21:35
+
+- New `claim2cad/urdf_export.py`:
+  - IR structural / connection / functional components → URDF
+    `<link>`s with primitive `<visual><geometry>` (box / cylinder /
+    sphere) sized to match `claim2cad/ir_to_cad._primitive_for`.
+  - Kinematic tree built from the IR's `connects(target, source,
+    via=joint)`, `attached_to(source, target)`, and
+    `rotates_about(source, target)` relations. The same root-picker
+    as `claim2cad/layout.py` keeps URDF and GLB consistent.
+  - Joint type mapping: `revolute_joint → revolute`,
+    `prismatic_joint → prismatic`, `spherical_joint → continuous`,
+    `fixed_joint`/`fastener → fixed`. Movable joints get default
+    limits (`±π` for revolute, `[0, 100 mm]` for prismatic).
+  - Synthetic fixed joints attach orphan components to the root so
+    `check_urdf` is happy on imperfect IRs.
+  - CLI: `python -m claim2cad.urdf_export --ir <path>` writes
+    `model.urdf` next to the IR.
+- Generated URDFs for **all 28 examples** (3 synthetic + 25 real).
+  Movable-joint counts:
+  - `golden_robot_arm`: 2 movable
+  - `US4575297A_puma_industrial_robot`: 6 movable
+  - all others: 0 movable (the LLM parser tends to encode joints in
+    `relations.kind=rotates_about` rather than as standalone
+    `revolute_joint` *components* — improving this is a v1.1
+    candidate; logged in BACKLOG).
+- `claim2cad.manifest` extended with `urdf_path` and
+  `movable_joints[]`. URDF files are staged into the viewer when
+  present; tag `kinematic` is added to the manifest entry.
+- Viewer additions:
+  - `viewer/src/urdf.ts` — small DOMParser-based URDF reader
+    yielding `URDFJoint[]`.
+  - `viewer/src/components/KinematicSliders.tsx` — one slider per
+    movable joint, range from URDF limit, °/mm value display, reset
+    button.
+  - `Scene.tsx` accepts `joints` + `jointValues` props. On change:
+    cache rest poses, then for each movable joint pivot the GLB
+    child node about the joint origin (translated into parent-local
+    space) along the joint axis, or translate it for prismatic.
+  - `App.tsx` gains a "Joints (N)" header button (visible only when
+    a movable URDF exists). Activating it swaps the right pane to
+    `KinematicSliders`.
+
+### Verification
+- `npm run typecheck` clean. `npm run build` succeeds (1.07 MB JS /
+  298 KB gzipped; CSS 9.14 KB).
+- Dev server smoke: golden_robot_arm and PUMA URDFs both return HTTP
+  200 from the staged data path.
+- 29/29 Python tests still pass.
+- Two demo examples available for the slider UX:
+  `golden_robot_arm` (2 revolute joints) and PUMA (6 revolute joints).
+
+**Time spent:** ~20 min vs. 180 min target.
+**Cost so far:** $6.93 cumulative — V1-6 added $0 (no LLM calls).
+
 ## Phase V1-5 — Prior-art comparison — STARTED 2026-04-27 20:55,
 COMPLETED ~21:15
 

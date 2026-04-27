@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<robot name="apparatus_for_testing_a_sample_by_simultaneously_loading_with_longitudinal_forces_and_torque">
+  <link name="first_housing_means">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_piston_rod">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fork_ends">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fork_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame_means">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="load_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="piston_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="rotary_piston_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sample">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_housing_means">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_piston_rod">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="torque_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="torque_transmitting_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_load_means_to_first_housing_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="first_housing_means"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_first_piston_rod" type="fixed">
+    <parent link="load_means"/>
+    <child link="first_piston_rod"/>
+    <origin xyz="0.1800 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_fork_ends" type="fixed">
+    <parent link="load_means"/>
+    <child link="fork_ends"/>
+    <origin xyz="0.2400 0.1200 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_fork_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="fork_means"/>
+    <origin xyz="0.1800 0.1200 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_frame_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="frame_means"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_piston_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="piston_means"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_rotary_piston_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="rotary_piston_means"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_sample" type="fixed">
+    <parent link="load_means"/>
+    <child link="sample"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_second_housing_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="second_housing_means"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_second_piston_rod" type="fixed">
+    <parent link="load_means"/>
+    <child link="second_piston_rod"/>
+    <origin xyz="0.1800 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_torque_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="torque_means"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_load_means_to_torque_transmitting_means" type="fixed">
+    <parent link="load_means"/>
+    <child link="torque_transmitting_means"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

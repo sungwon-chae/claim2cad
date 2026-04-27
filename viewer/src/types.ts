@@ -123,6 +123,19 @@ export type ManifestExample = {
   source?: "synthetic" | "real_patent" | "korean";
   tags?: string[];
   diffs_available?: DiffSummary[];
+  urdf_path?: string | null;
+  movable_joints?: string[];
+};
+
+// V1-6 — URDF parsed payload (subset).
+export type URDFJoint = {
+  name: string;
+  type: "revolute" | "prismatic" | "continuous" | "fixed";
+  parent: string;
+  child: string;
+  origin: [number, number, number];
+  axis: [number, number, number];
+  limit?: { lower: number; upper: number };
 };
 
 // V1-5 prior-art diff payload (mirrors claim2cad/prior_art.py PriorArtDiff).

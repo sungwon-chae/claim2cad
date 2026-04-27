@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<robot name="self_adjustable_gear_train_transmission">
+  <link name="drive_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="driven_machine">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame_1">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame_2">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gear_train_1">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gear_train_2">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="intermediate_shaft_1">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="intermediate_shaft_2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pair_of_frames">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pinion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transmission">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transmission_stage">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_frame_1_to_frame_2" type="fixed">
+    <parent link="frame_1"/>
+    <child link="frame_2"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_2_to_intermediate_shaft_2" type="fixed">
+    <parent link="frame_2"/>
+    <child link="intermediate_shaft_2"/>
+    <origin xyz="-0.4200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_drive_shaft" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="drive_shaft"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_driven_machine" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="driven_machine"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_frame_1" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="frame_1"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_gear" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="gear"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_gear_train_1" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="gear_train_1"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_gear_train_2" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="gear_train_2"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_pair_of_frames" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="pair_of_frames"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_pinion" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="pinion"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_transmission" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="transmission"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_intermediate_shaft_1_to_transmission_stage" type="fixed">
+    <parent link="intermediate_shaft_1"/>
+    <child link="transmission_stage"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

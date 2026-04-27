@@ -426,3 +426,87 @@ body {
   border-color: var(--accent-novel);
   color: var(--accent-novel);
 }
+
+/* ----------------------------------------------------------------- */
+/* V1-6 — Kinematic sliders                                            */
+/* ----------------------------------------------------------------- */
+
+.kinematic-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg-1);
+  padding: 12px 14px;
+}
+.kinematic-empty {
+  padding: 24px;
+  color: var(--fg-1);
+  font-size: 12px;
+  text-align: center;
+}
+.kinematic-empty code {
+  background: var(--bg-2);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+.kinematic-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-1);
+}
+.kinematic-title {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--fg-1);
+  font-weight: 600;
+}
+.kinematic-reset {
+  background: var(--bg-2);
+  color: var(--fg-0);
+  border: 1px solid var(--border-2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.kinematic-row {
+  margin: 6px 0 14px;
+  padding: 8px;
+  border: 1px solid var(--border-1);
+  border-radius: 6px;
+  background: var(--bg-2);
+}
+.kinematic-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+.kinematic-joint-name {
+  font-size: 12px;
+  color: var(--fg-0);
+  font-weight: 500;
+}
+.kinematic-joint-value {
+  font-size: 11px;
+  color: var(--accent-independent);
+  font-variant-numeric: tabular-nums;
+}
+.kinematic-row input[type="range"] {
+  width: 100%;
+  margin: 4px 0;
+  accent-color: var(--accent-independent);
+}
+.kinematic-row-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--fg-1);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

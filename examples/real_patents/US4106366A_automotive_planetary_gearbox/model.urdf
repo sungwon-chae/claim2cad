@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot name="planetary_drive">
+  <link name="axial_urging_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="internal_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="planet_gears">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="planet_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sun_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_planet_gears_to_internal_gear" type="fixed">
+    <parent link="planet_gears"/>
+    <child link="internal_gear"/>
+    <origin xyz="0.0000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_planet_gears_to_planet_link" type="fixed">
+    <parent link="planet_gears"/>
+    <child link="planet_link"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_axial_urging_means" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="axial_urging_means"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_planet_gears" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="planet_gears"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

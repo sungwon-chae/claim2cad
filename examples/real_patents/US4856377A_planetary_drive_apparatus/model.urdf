@@ -1,0 +1,202 @@
+<?xml version="1.0" ?>
+<robot name="planetary_gear_transmission_for_gas_turbine_engines">
+  <link name="engine_housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="engine_output_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_planetary_carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_planetary_pinion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_ring_gear_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_stage_assembly">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_sun_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gear_case_housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="propeller_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="ring_gear_means">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_planetary_carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_planetary_pinion_gears">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_ring_gear_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_stage_assembly">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_sun_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="similar_carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="supplementary_pinion_gears">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_planetary_carrier_to_first_planetary_pinion" type="fixed">
+    <parent link="first_planetary_carrier"/>
+    <child link="first_planetary_pinion"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_planetary_carrier_to_second_sun_gear" type="fixed">
+    <parent link="first_planetary_carrier"/>
+    <child link="second_sun_gear"/>
+    <origin xyz="0.0000 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_planetary_pinion_to_first_ring_gear_member" type="fixed">
+    <parent link="first_planetary_pinion"/>
+    <child link="first_ring_gear_member"/>
+    <origin xyz="0.0000 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_planetary_pinion_to_first_sun_gear" type="fixed">
+    <parent link="first_planetary_pinion"/>
+    <child link="first_sun_gear"/>
+    <origin xyz="0.1800 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_sun_gear_to_engine_output_shaft" type="fixed">
+    <parent link="first_sun_gear"/>
+    <child link="engine_output_shaft"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_engine_housing" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="engine_housing"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_first_planetary_carrier" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="first_planetary_carrier"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_first_stage_assembly" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="first_stage_assembly"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_ring_gear_means" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="ring_gear_means"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_second_stage_assembly" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="second_stage_assembly"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gear_case_housing_to_supplementary_pinion_gears" type="fixed">
+    <parent link="gear_case_housing"/>
+    <child link="supplementary_pinion_gears"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_propeller_shaft_to_similar_carrier" type="fixed">
+    <parent link="propeller_shaft"/>
+    <child link="similar_carrier"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_planetary_carrier_to_propeller_shaft" type="fixed">
+    <parent link="second_planetary_carrier"/>
+    <child link="propeller_shaft"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_planetary_pinion_gears_to_second_planetary_carrier" type="fixed">
+    <parent link="second_planetary_pinion_gears"/>
+    <child link="second_planetary_carrier"/>
+    <origin xyz="0.3600 -0.2100 -0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_planetary_pinion_gears_to_second_ring_gear_member" type="fixed">
+    <parent link="second_planetary_pinion_gears"/>
+    <child link="second_ring_gear_member"/>
+    <origin xyz="0.0600 -0.2100 -0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_sun_gear_to_second_planetary_pinion_gears" type="fixed">
+    <parent link="second_sun_gear"/>
+    <child link="second_planetary_pinion_gears"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+  </joint>
+</robot>

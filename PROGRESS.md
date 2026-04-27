@@ -395,3 +395,123 @@ iterate over). The first 20 by directory order will be the
 **Time spent:** ~35 min vs. 90 min target.
 **Cost so far:** $0.00 (still no LLM calls — Google Patents fetches
 are free).
+
+## Phase V1-2 — Pipeline validation + iterative improvement —
+STARTED 2026-04-27 20:00, COMPLETED 20:08 (iteration 0 only)
+
+### Critical bug found and fixed before the baseline
+
+The first smoke test of the validator burned **$3.05 in retry storms**
+because every LLM call returned content wrapped in markdown fences
+(`\`\`\`json … \`\`\``) despite `response_format: json_object`. The
+root cause was that some OpenRouter-routed providers honour
+`response_format` only as a hint. The two-layer retry stack
+(`json_completion` × 3 + parser × 2) hammered the provider with 6
+calls per patent.
+
+Fixes applied **before** running the full baseline:
+
+- `claim2cad.llm_client._extract_json` now strips markdown fences
+  and falls back to the first `{…}` substring before
+  `json.loads`.
+- `json_completion(max_retries=...)` default lowered 3 → 2.
+- Cost-tracker now reads `usage.cost` from the OpenRouter response
+  (was reading `body.cost`, which is missing on the current API).
+- `claim2cad.known_failure_patterns.PATTERNS` records the bug as
+  `P001-markdown-fenced-json` for posterity.
+
+### Iteration 0 baseline (LLM path enabled, fixes in place)
+
+```
+patents=25  good=25  partial=0  fail=0
+cost_iteration_0=$2.0201
+cost_session_total=$5.127
+mean_components=13  median=13  range=5..31
+mean_duration_per_patent=34.0 s
+```
+
+**100 % "good" on the structural rubric** (parsed, ≥4 components,
+CAD generated, mapping_complete ≥ 0.9, no warnings). The brief's
+stop condition (≥ 80 %) is satisfied.
+
+Spot-checks (Unimate 1962, Lift-off Hinge 1989) confirm the LLM
+extracts patent-specific vocabulary (sun_gear, ring_gear, pintle_pin,
+hinge_axis), not just generic boilerplate.
+
+### Honest caveats
+
+- Grading is structural, not semantic. "good" means "the pipeline
+  produced well-formed artefacts", not "the geometry resembles the
+  invention". Semantic grading is V1-11 / V1-15 territory.
+- Few-shot biases the LLM toward the golden's link-and-joint
+  vocabulary. Mild but observable.
+- IR `kind` is open-ended; the LLM produces strings outside the
+  closed enums (e.g. `interposer`, `axis`). CAD falls back to
+  labelled boxes — intended behaviour.
+
+### Decision
+
+Stop at iteration 0. The four budgeted iterations (1–4) are not
+needed; their budget can be spent on V1-3+ in a future session.
+
+### Artefacts
+
+- `examples/real_patents/COLLECTION_VALIDATION_REPORT.md` — table of
+  all 25 results with grades, components, CAD status, mapping %.
+- `examples/real_patents/<id>/result.json` — per-patent result.
+- `examples/real_patents/<id>/{claim_ir,claim_map,model.step,model.glb,
+  pipeline_generator.py}` — generated artefacts.
+- `docs/V1_2_ITERATION_LOG.md` — verbatim run log + the iteration-1
+  experiment we *would* run next, captured for the next session.
+
+**Time spent:** ~25 min (smoke fix + baseline) vs. 90 min target.
+**Cost so far:** $5.13 cumulative ($3.05 lost on the retry-storm
+bug, $2.02 on the actual baseline).
+
+---
+
+# Session close — 2026-04-27 ~20:10 KST
+
+**Phases completed this session:** V1-0, V1-1, V1-2.
+
+**Patents:** 25 collected from Google Patents (USPC 074: 10, USPC
+901: 9, USPC 414: 3, USPC 16: 3). All 25 graded **good** at iteration
+0 of the V1-2 structural eval.
+
+**Commits this session:** 3 (`phase-v1-0`, `phase-v1-1`, plus this
+phase-v1-2 close).
+
+**LOC added this session:** ~1,000 (patent_collector,
+cost_tracker, validator, dataset, known_failure_patterns,
+llm_client routing, docs, BACKLOG, CHANGELOG).
+
+**OpenRouter cost this session:** $5.13 (out of $80 cap; soft cap
+$60 not breached).
+
+**What works:**
+- Real-patent collection from Google Patents (free, deterministic).
+- Hybrid parser handles 25/25 unfamiliar industrial claims after
+  fixing the markdown-fenced-JSON parsing bug.
+- CAD pipeline regenerates STEP+GLB+claim_map for every patent.
+- Cost discipline: every LLM call logged in `logs/cost_tracker.json`
+  with task type and model.
+
+**What's still queued:**
+- V1-3 (figure parsing via VLM)
+- V1-4 (3-pane viewer)
+- V1-5 (prior-art comparison)
+- V1-6 (URDF + kinematic sliders)
+- V1-7 (Korean claims)
+- V1-8 (multi-claim support)
+- V1-9 (dimension inference)
+- V1-10 (hosted demo)
+- V1-11 (eval harness)
+- V1-12 (v1.0.0 release polish)
+- v1.1+ phases and the maintenance loop
+
+**Handoff for the next session:**
+- `git checkout v1.0-dev` (already there).
+- The next phase to start is **V1-3 (figure parsing via VLM)**. Each
+  patent now has a `figures/figure_*.png` directory ready to feed
+  into a vision call.
+- Cost room: $74.87 remaining on the $80 cap.

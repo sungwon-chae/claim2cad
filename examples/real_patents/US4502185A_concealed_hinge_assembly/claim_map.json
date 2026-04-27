@@ -1,0 +1,163 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4502185A_concealed_hinge_assembly",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "card_screen",
+      "glb_node_name": "card_screen",
+      "label": "card screen",
+      "category": "structural",
+      "kind": "screen frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 19
+      }
+    },
+    {
+      "component_id": "side_ribs",
+      "glb_node_name": "side_ribs",
+      "label": "side ribs",
+      "category": "structural",
+      "kind": "rib",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 61
+      }
+    },
+    {
+      "component_id": "center_rib",
+      "glb_node_name": "center_rib",
+      "label": "center rib",
+      "category": "structural",
+      "kind": "rib",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 68,
+        "char_end": 78
+      }
+    },
+    {
+      "component_id": "end_bars",
+      "glb_node_name": "end_bars",
+      "label": "end bars",
+      "category": "structural",
+      "kind": "bar",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 111,
+        "char_end": 119
+      }
+    },
+    {
+      "component_id": "grid_bars",
+      "glb_node_name": "grid_bars",
+      "label": "grid bars",
+      "category": "structural",
+      "kind": "bar",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 124,
+        "char_end": 133
+      }
+    },
+    {
+      "component_id": "side_rib_openings",
+      "glb_node_name": "side_rib_openings",
+      "label": "openings in side ribs",
+      "category": "structural",
+      "kind": "opening",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 168,
+        "char_end": 176
+      }
+    },
+    {
+      "component_id": "center_rib_openings",
+      "glb_node_name": "center_rib_openings",
+      "label": "groups of openings in center rib",
+      "category": "structural",
+      "kind": "opening",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 316,
+        "char_end": 348
+      }
+    },
+    {
+      "component_id": "first_group_bars",
+      "glb_node_name": "first_group_bars",
+      "label": "first group of bars",
+      "category": "structural",
+      "kind": "bar",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 463,
+        "char_end": 482
+      }
+    },
+    {
+      "component_id": "pins",
+      "glb_node_name": "pins",
+      "label": "group of pins",
+      "category": "functional",
+      "kind": "pin",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 558,
+        "char_end": 571
+      }
+    },
+    {
+      "component_id": "second_group_bars",
+      "glb_node_name": "second_group_bars",
+      "label": "second group of bars",
+      "category": "structural",
+      "kind": "bar",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 638,
+        "char_end": 658
+      }
+    },
+    {
+      "component_id": "sockets",
+      "glb_node_name": "sockets",
+      "label": "group of sockets",
+      "category": "connection",
+      "kind": "socket",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 742,
+        "char_end": 758
+      }
+    },
+    {
+      "component_id": "fastening_means",
+      "glb_node_name": "fastening_means",
+      "label": "fastening means",
+      "category": "connection",
+      "kind": "fastener",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1043,
+        "char_end": 1058
+      }
+    }
+  ]
+}

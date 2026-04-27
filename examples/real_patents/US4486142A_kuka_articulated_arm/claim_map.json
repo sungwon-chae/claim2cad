@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4486142A_kuka_articulated_arm",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "controlled_variable",
+      "glb_node_name": "controlled_variable",
+      "label": "controlled variable",
+      "category": "functional",
+      "kind": "process_variable",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 46,
+        "char_end": 65
+      }
+    },
+    {
+      "component_id": "multivariable_controlled_object",
+      "glb_node_name": "multivariable_controlled_object",
+      "label": "multivariable controlled object",
+      "category": "structural",
+      "kind": "plant",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 71,
+        "char_end": 102
+      }
+    },
+    {
+      "component_id": "control_means",
+      "glb_node_name": "control_means",
+      "label": "control means",
+      "category": "functional",
+      "kind": "controller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 111,
+        "char_end": 124
+      }
+    },
+    {
+      "component_id": "set_point",
+      "glb_node_name": "set_point",
+      "label": "set point",
+      "category": "functional",
+      "kind": "reference_signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 132,
+        "char_end": 141
+      }
+    },
+    {
+      "component_id": "closed_loop",
+      "glb_node_name": "closed_loop",
+      "label": "closed loop",
+      "category": "connection",
+      "kind": "feedback_loop",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 148,
+        "char_end": 159
+      }
+    },
+    {
+      "component_id": "limited_level",
+      "glb_node_name": "limited_level",
+      "label": "limited level",
+      "category": "functional",
+      "kind": "threshold",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 449,
+        "char_end": 462
+      }
+    },
+    {
+      "component_id": "preestablished_deviation",
+      "glb_node_name": "preestablished_deviation",
+      "label": "preestablished deviation",
+      "category": "functional",
+      "kind": "error_signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 423
+      }
+    }
+  ]
+}

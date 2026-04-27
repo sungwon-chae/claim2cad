@@ -1,0 +1,470 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Planetary gear assembly",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A planetary gear assembly comprising a housing (9), an input shaft (1) rotatably mounted in said housing, an output shaft (23) mounted for rotation adjacent said input shaft, a pair of outer central internal gears (6a,6b) fixed to said housing, an inner central gear (10) having two axially spaced opposite helical gear portions (10a,10b), first and second substantially parallel rotatable planetary gears (5a,5b) having oppositely helically geared portions disposed between said outer central internal gears and said inner central gear and in meshing engagement with said outer central internal gears and said axially spaced opposite helical gear portions of said inner central gear, first and second carriers (3a,3b) for supporting said first and second planetary gears for rotation respectively, and for revolving movement around said inner central gear, a first gear coupling (2) connecting said first carrier (3a) to said input shaft for co-rotation and relative axial motion for transmitting all rotational power from said input shaft to said first carrier, a second gear coupling (4) connecting said first and second carriers (3a,3b) for co-rotation and relative axial motion so that a portion of the rotational power from said first carrier is transmitted to said second carrier over said second gear coupling and a remainder of the power is transmitted directly to said central gear over one of said opposite helical gear portions, and bearing means (11,12) mounting said inner central gear for rotation and for axial displacement in a fixed radial position in said housing.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "housing",
+      "label": "housing (9)",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 40,
+        "char_end": 52
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "input_shaft",
+      "label": "input shaft (1)",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably mounted in said housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 57,
+        "char_end": 72
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "output_shaft",
+      "label": "output shaft (23)",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted for rotation adjacent said input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 126
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "outer_central_internal_gears",
+      "label": "outer central internal gears (6a,6b)",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to said housing",
+        "a pair"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 215
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "inner_central_gear",
+      "label": "inner central gear (10)",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 249,
+        "char_end": 272
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "helical_gear_portions",
+      "label": "helical gear portions (10a,10b)",
+      "category": "structural",
+      "kind": "gear_portion",
+      "parent_id": "inner_central_gear",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "two axially spaced opposite helical gear portions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 284,
+        "char_end": 340
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "planetary_gears",
+      "label": "planetary gears (5a,5b)",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "first and second substantially parallel rotatable",
+        "having oppositely helically geared portions",
+        "disposed between said outer central internal gears and said inner central gear",
+        "in meshing engagement with said outer central internal gears and said axially spaced opposite helical gear portions of said inner central gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 343,
+        "char_end": 407
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_carrier",
+      "label": "first carrier (3a)",
+      "category": "structural",
+      "kind": "carrier",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for supporting said first and second planetary gears for rotation",
+        "for revolving movement around said inner central gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 693,
+        "char_end": 711
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_carrier",
+      "label": "second carrier (3b)",
+      "category": "structural",
+      "kind": "carrier",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for supporting said first and second planetary gears for rotation",
+        "for revolving movement around said inner central gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 693,
+        "char_end": 711
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_gear_coupling",
+      "label": "first gear coupling (2)",
+      "category": "connection",
+      "kind": "gear_coupling",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connecting said first carrier to said input shaft for co-rotation and relative axial motion",
+        "transmitting all rotational power from said input shaft to said first carrier"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 799,
+        "char_end": 822
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_gear_coupling",
+      "label": "second gear coupling (4)",
+      "category": "connection",
+      "kind": "gear_coupling",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connecting said first and second carriers for co-rotation and relative axial motion",
+        "a portion of the rotational power from said first carrier is transmitted to said second carrier over said second gear coupling",
+        "a remainder of the power is transmitted directly to said central gear over one of said opposite helical gear portions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 956,
+        "char_end": 980
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "bearing_means",
+      "label": "bearing means (11,12)",
+      "category": "connection",
+      "kind": "bearing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounting said inner central gear for rotation and for axial displacement in a fixed radial position in said housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1256,
+        "char_end": 1277
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_input_shaft_in_housing",
+      "kind": "attached_to",
+      "source": "input_shaft",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "rotatably mounted"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 57,
+        "char_end": 107
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_output_shaft_adjacent_input",
+      "kind": "attached_to",
+      "source": "output_shaft",
+      "target": "input_shaft",
+      "via": null,
+      "constraints": [
+        "mounted for rotation adjacent"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 176
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_outer_gears_to_housing",
+      "kind": "attached_to",
+      "source": "outer_central_internal_gears",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "fixed"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 247
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_helical_portions_to_inner_gear",
+      "kind": "contains",
+      "source": "inner_central_gear",
+      "target": "helical_gear_portions",
+      "via": null,
+      "constraints": [
+        "two axially spaced opposite"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 273,
+        "char_end": 340
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_planetary_meshes_outer",
+      "kind": "connects",
+      "source": "planetary_gears",
+      "target": "outer_central_internal_gears",
+      "via": null,
+      "constraints": [
+        "in meshing engagement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 408,
+        "char_end": 629
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_planetary_meshes_inner",
+      "kind": "connects",
+      "source": "planetary_gears",
+      "target": "inner_central_gear",
+      "via": null,
+      "constraints": [
+        "in meshing engagement with said axially spaced opposite helical gear portions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 408,
+        "char_end": 683
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_carriers_support_planetary",
+      "kind": "contains",
+      "source": "first_carrier",
+      "target": "planetary_gears",
+      "via": null,
+      "constraints": [
+        "for rotation",
+        "for revolving movement around said inner central gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 685,
+        "char_end": 796
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_carrier_support_planetary",
+      "kind": "contains",
+      "source": "second_carrier",
+      "target": "planetary_gears",
+      "via": null,
+      "constraints": [
+        "for rotation",
+        "for revolving movement around said inner central gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 685,
+        "char_end": 796
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_coupling_carrier_to_shaft",
+      "kind": "connects",
+      "source": "first_carrier",
+      "target": "input_shaft",
+      "via": "first_gear_coupling",
+      "constraints": [
+        "co-rotation and relative axial motion",
+        "transmitting all rotational power"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 799,
+        "char_end": 954
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_coupling_carriers",
+      "kind": "connects",
+      "source": "first_carrier",
+      "target": "second_carrier",
+      "via": "second_gear_coupling",
+      "constraints": [
+        "co-rotation and relative axial motion",
+        "portion of rotational power transmitted to second carrier"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 956,
+        "char_end": 1253
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_power_to_central_gear",
+      "kind": "transmits_force_to",
+      "source": "first_carrier",
+      "target": "inner_central_gear",
+      "via": "helical_gear_portions",
+      "constraints": [
+        "remainder of the power transmitted directly over one of said opposite helical gear portions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1153,
+        "char_end": 1253
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_bearing_mounts_inner_gear",
+      "kind": "attached_to",
+      "source": "bearing_means",
+      "target": "inner_central_gear",
+      "via": null,
+      "constraints": [
+        "mounting for rotation and axial displacement in fixed radial position in housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1256,
+        "char_end": 1371
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": []
+}

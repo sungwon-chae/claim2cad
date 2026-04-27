@@ -1,0 +1,489 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Speed change mechanism",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A speed change mechanism comprising; a stationary housing; an input shaft rotatably mounted in said housing; planet carrier means drivingly connected with said input shaft and including first and second mounting means eccentric to each other; an output shaft rotatably journaled in said housing; a first ring gear drivingly connected with said output shaft; a second ring gear secured to said housing; a first planet pinion rotatably on said first mounting means and meshing with said first ring gear; a second planet pinion rotatably mounted on said second mounting means with the center line thereof in a position eccentric with said first planet pinion and meshing with said second ring gear; and a third planet pinion rotatably mounted on said carrier means and meshing with said first and second planet pinions at points tangent to the pitch diameters of said first and second planet pinions to transmit rotary motion from one of said planet pinions to said other of said planet pinions.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "housing",
+      "label": "stationary housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "stationary"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 40,
+        "char_end": 59
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "input_shaft",
+      "label": "input shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably mounted in housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 75
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "planet_carrier_means",
+      "label": "planet carrier means",
+      "category": "structural",
+      "kind": "carrier",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "drivingly connected with input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 132
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_mounting_means",
+      "label": "first mounting means",
+      "category": "structural",
+      "kind": "mounting",
+      "parent_id": "planet_carrier_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "eccentric to second mounting means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 190,
+        "char_end": 210
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_mounting_means",
+      "label": "second mounting means",
+      "category": "structural",
+      "kind": "mounting",
+      "parent_id": "planet_carrier_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "eccentric to first mounting means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 236
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "output_shaft",
+      "label": "output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably journaled in housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 249,
+        "char_end": 261
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_ring_gear",
+      "label": "first ring gear",
+      "category": "structural",
+      "kind": "ring_gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "drivingly connected with output shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 301,
+        "char_end": 316
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_ring_gear",
+      "label": "second ring gear",
+      "category": "structural",
+      "kind": "ring_gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "secured to housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 378
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_planet_pinion",
+      "label": "first planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably on first mounting means",
+        "meshing with first ring gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 425
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_planet_pinion",
+      "label": "second planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably mounted on second mounting means",
+        "center line eccentric with first planet pinion",
+        "meshing with second ring gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 523
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_planet_pinion",
+      "label": "third planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably mounted on carrier means",
+        "meshing with first and second planet pinions at points tangent to pitch diameters",
+        "transmits rotary motion from one planet pinion to the other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 700,
+        "char_end": 719
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_input_shaft_in_housing",
+      "kind": "attached_to",
+      "source": "input_shaft",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "rotatably mounted"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 110
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_carrier_to_input_shaft",
+      "kind": "transmits_force_to",
+      "source": "input_shaft",
+      "target": "planet_carrier_means",
+      "via": null,
+      "constraints": [
+        "drivingly connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 165
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_mounting_in_carrier",
+      "kind": "contains",
+      "source": "planet_carrier_means",
+      "target": "first_mounting_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 210
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_mounting_in_carrier",
+      "kind": "contains",
+      "source": "planet_carrier_means",
+      "target": "second_mounting_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 236
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_output_shaft_in_housing",
+      "kind": "attached_to",
+      "source": "output_shaft",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "rotatably journaled"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 249,
+        "char_end": 295
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_ring_gear_to_output_shaft",
+      "kind": "transmits_force_to",
+      "source": "first_ring_gear",
+      "target": "output_shaft",
+      "via": null,
+      "constraints": [
+        "drivingly connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 301,
+        "char_end": 357
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_ring_gear_to_housing",
+      "kind": "attached_to",
+      "source": "second_ring_gear",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "secured"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 400
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_pinion_on_first_mounting",
+      "kind": "rotates_about",
+      "source": "first_planet_pinion",
+      "target": "first_mounting_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 462
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_pinion_meshes_first_ring",
+      "kind": "connects",
+      "source": "first_planet_pinion",
+      "target": "first_ring_gear",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 463,
+        "char_end": 499
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_pinion_on_second_mounting",
+      "kind": "rotates_about",
+      "source": "second_planet_pinion",
+      "target": "second_mounting_means",
+      "via": null,
+      "constraints": [
+        "center line eccentric with first planet pinion"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 614
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_pinion_meshes_second_ring",
+      "kind": "connects",
+      "source": "second_planet_pinion",
+      "target": "second_ring_gear",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 615,
+        "char_end": 647
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_pinion_on_carrier",
+      "kind": "rotates_about",
+      "source": "third_planet_pinion",
+      "target": "planet_carrier_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 700,
+        "char_end": 745
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_pinion_meshes_first_pinion",
+      "kind": "connects",
+      "source": "third_planet_pinion",
+      "target": "first_planet_pinion",
+      "via": null,
+      "constraints": [
+        "meshing at points tangent to pitch diameters"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 746,
+        "char_end": 827
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_pinion_meshes_second_pinion",
+      "kind": "connects",
+      "source": "third_planet_pinion",
+      "target": "second_planet_pinion",
+      "via": null,
+      "constraints": [
+        "meshing at points tangent to pitch diameters"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 746,
+        "char_end": 827
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_pinion_transmits_motion",
+      "kind": "transmits_force_to",
+      "source": "third_planet_pinion",
+      "target": "second_planet_pinion",
+      "via": null,
+      "constraints": [
+        "transmit rotary motion from one planet pinion to the other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 828,
+        "char_end": 953
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": []
+}

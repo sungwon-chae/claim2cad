@@ -1,0 +1,254 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US5180955A_positioning_apparatus_for_arm",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "positioning_linkage",
+      "glb_node_name": "positioning_linkage",
+      "label": "positioning linkage",
+      "category": "structural",
+      "kind": "linkage",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 45,
+        "char_end": 64
+      }
+    },
+    {
+      "component_id": "parallelogram_structure",
+      "glb_node_name": "parallelogram_structure",
+      "label": "parallelogram structure",
+      "category": "structural",
+      "kind": "parallelogram_structure",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 73,
+        "char_end": 97
+      }
+    },
+    {
+      "component_id": "base_structure",
+      "glb_node_name": "base_structure",
+      "label": "base structure",
+      "category": "structural",
+      "kind": "base",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 104,
+        "char_end": 118
+      }
+    },
+    {
+      "component_id": "first_arm",
+      "glb_node_name": "first_arm",
+      "label": "first arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 220,
+        "char_end": 225
+      }
+    },
+    {
+      "component_id": "second_arm",
+      "glb_node_name": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 230,
+        "char_end": 240
+      }
+    },
+    {
+      "component_id": "center_shaft",
+      "glb_node_name": "center_shaft",
+      "label": "center shaft",
+      "category": "connection",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 285,
+        "char_end": 297
+      }
+    },
+    {
+      "component_id": "first_arm_first_section",
+      "glb_node_name": "first_arm_first_section",
+      "label": "first arm first section",
+      "category": "structural",
+      "kind": "arm_section",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 318,
+        "char_end": 333
+      }
+    },
+    {
+      "component_id": "first_arm_first_end",
+      "glb_node_name": "first_arm_first_end",
+      "label": "first arm first end",
+      "category": "structural",
+      "kind": "end",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 339,
+        "char_end": 350
+      }
+    },
+    {
+      "component_id": "first_arm_second_section",
+      "glb_node_name": "first_arm_second_section",
+      "label": "first arm second section",
+      "category": "structural",
+      "kind": "arm_section",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 357,
+        "char_end": 373
+      }
+    },
+    {
+      "component_id": "first_arm_second_end",
+      "glb_node_name": "first_arm_second_end",
+      "label": "first arm second end",
+      "category": "structural",
+      "kind": "end",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 379,
+        "char_end": 391
+      }
+    },
+    {
+      "component_id": "second_arm_first_section",
+      "glb_node_name": "second_arm_first_section",
+      "label": "second arm first section",
+      "category": "structural",
+      "kind": "arm_section",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 318,
+        "char_end": 333
+      }
+    },
+    {
+      "component_id": "second_arm_second_end",
+      "glb_node_name": "second_arm_second_end",
+      "label": "second arm second end",
+      "category": "structural",
+      "kind": "end",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 379,
+        "char_end": 391
+      }
+    },
+    {
+      "component_id": "third_arm",
+      "glb_node_name": "third_arm",
+      "label": "third arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 457,
+        "char_end": 466
+      }
+    },
+    {
+      "component_id": "fourth_arm",
+      "glb_node_name": "fourth_arm",
+      "label": "fourth arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 471,
+        "char_end": 481
+      }
+    },
+    {
+      "component_id": "end_effector",
+      "glb_node_name": "end_effector",
+      "label": "end-effector",
+      "category": "functional",
+      "kind": "end_effector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 679,
+        "char_end": 691
+      }
+    },
+    {
+      "component_id": "means_for_moving",
+      "glb_node_name": "means_for_moving",
+      "label": "means for moving said linkage",
+      "category": "functional",
+      "kind": "actuator_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 718,
+        "char_end": 746
+      }
+    },
+    {
+      "component_id": "electromagnetic_coil",
+      "glb_node_name": "electromagnetic_coil",
+      "label": "electromagnetic coil",
+      "category": "functional",
+      "kind": "coil",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 802,
+        "char_end": 822
+      }
+    },
+    {
+      "component_id": "magnets",
+      "glb_node_name": "magnets",
+      "label": "magnets",
+      "category": "structural",
+      "kind": "magnet",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 848,
+        "char_end": 855
+      }
+    },
+    {
+      "component_id": "stationary_iron_structures",
+      "glb_node_name": "stationary_iron_structures",
+      "label": "stationary iron structures",
+      "category": "structural",
+      "kind": "iron_core",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 892,
+        "char_end": 918
+      }
+    }
+  ]
+}

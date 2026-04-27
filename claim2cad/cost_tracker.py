@@ -67,7 +67,11 @@ def record_call(
     usage = (response_body or {}).get("usage") or {}
     prompt_tokens = int(usage.get("prompt_tokens", 0) or 0)
     completion_tokens = int(usage.get("completion_tokens", 0) or 0)
-    upstream_cost = (response_body or {}).get("cost")
+    # OpenRouter reports cost as either ``response.cost`` (older) or
+    # ``response.usage.cost`` (current). Prefer the latter.
+    upstream_cost = usage.get("cost")
+    if upstream_cost is None:
+        upstream_cost = (response_body or {}).get("cost")
     if upstream_cost is not None:
         cost_usd = float(upstream_cost)
     else:

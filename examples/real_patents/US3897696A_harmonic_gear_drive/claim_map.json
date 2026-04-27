@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US3897696A_harmonic_gear_drive",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "transmission",
+      "glb_node_name": "transmission",
+      "label": "transmission",
+      "category": "structural",
+      "kind": "gearbox",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 7,
+        "char_end": 21
+      }
+    },
+    {
+      "component_id": "gear_train_1",
+      "glb_node_name": "gear_train_1",
+      "label": "first gear train",
+      "category": "structural",
+      "kind": "gear_train",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 32,
+        "char_end": 43
+      }
+    },
+    {
+      "component_id": "gear_train_2",
+      "glb_node_name": "gear_train_2",
+      "label": "second gear train",
+      "category": "structural",
+      "kind": "gear_train",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 32,
+        "char_end": 43
+      }
+    },
+    {
+      "component_id": "intermediate_shaft_1",
+      "glb_node_name": "intermediate_shaft_1",
+      "label": "first intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 71
+      }
+    },
+    {
+      "component_id": "intermediate_shaft_2",
+      "glb_node_name": "intermediate_shaft_2",
+      "label": "second intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 71
+      }
+    },
+    {
+      "component_id": "drive_shaft",
+      "glb_node_name": "drive_shaft",
+      "label": "drive shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 88,
+        "char_end": 99
+      }
+    },
+    {
+      "component_id": "transmission_stage",
+      "glb_node_name": "transmission_stage",
+      "label": "transmission stage",
+      "category": "structural",
+      "kind": "gear_stage",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 115,
+        "char_end": 134
+      }
+    },
+    {
+      "component_id": "pinion",
+      "glb_node_name": "pinion",
+      "label": "pinion",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 181,
+        "char_end": 187
+      }
+    },
+    {
+      "component_id": "gear",
+      "glb_node_name": "gear",
+      "label": "gear",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 213,
+        "char_end": 217
+      }
+    },
+    {
+      "component_id": "driven_machine",
+      "glb_node_name": "driven_machine",
+      "label": "machine driven by the transmission",
+      "category": "functional",
+      "kind": "driven_machine",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 296,
+        "char_end": 330
+      }
+    },
+    {
+      "component_id": "pair_of_frames",
+      "glb_node_name": "pair_of_frames",
+      "label": "pair of frames",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 444,
+        "char_end": 458
+      }
+    },
+    {
+      "component_id": "frame_1",
+      "glb_node_name": "frame_1",
+      "label": "frame on first intermediate shaft",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 502,
+        "char_end": 508
+      }
+    },
+    {
+      "component_id": "frame_2",
+      "glb_node_name": "frame_2",
+      "label": "frame on second intermediate shaft",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 502,
+        "char_end": 508
+      }
+    }
+  ]
+}

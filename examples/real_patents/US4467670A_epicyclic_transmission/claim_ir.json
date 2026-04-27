@@ -1,0 +1,638 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Belt drive continuously-variable speed automatic transmission",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A belt drive continuously-variable speed automatic transmission comprising: a housing; an input shaft; an intermediate shaft supported coaxially with and rotatably relative to said input shaft; first means to rotatably support one end of said intermediate shaft, second means carried by said input shaft to rotatably support the other end of said intermediate shaft; an output shaft supported in said housing in parallel with said input shaft and said intermediate shaft; a belt drive continuously-variable speed transmission means including a primary variable-pitch pulley having a fixed pulley flange fixed to said intermediate shaft concentrically thereto and a movable pulley flange mounted axially slidably on said intermediate shaft relative to said fixed pulley flange, a secondary variable-pitch pulley having a fixed pulley flange fixed to said output shaft concentrically thereto and a movable pulley flange mounted axially slidably on said output shaft relative to said corresponding pulley flange, and an endless belt extended between said primary and secondary variable-pitch pulleys for varying the transmission ratio between said intermediate shaft and said output shaft by varying the respective working radial positions on said primary variable-pitch pulley and said secondary variable-pitch pulley; a clutch interposed between said input shaft and said intermediate shaft and adapted to couple said intermediate shaft with said input shaft; and a change-direction gear train with the input end thereof being connected to said input shaft, with the output end thereof being connected to said intermediate shaft, and capable of attaining forward drive and reverse drive; and said primary variable-pitch pulley and said change-direction gear train being placed between said two supporting means for supporting both ends of said intermediate shaft in said housing.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "housing",
+      "label": "housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 87
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "input_shaft",
+      "label": "input shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 92,
+        "char_end": 103
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "intermediate_shaft",
+      "label": "intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "supported coaxially with and rotatably relative to input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 108,
+        "char_end": 126
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_means",
+      "label": "first means to rotatably support one end of intermediate shaft",
+      "category": "connection",
+      "kind": "bearing support",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "supports one end of intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 197,
+        "char_end": 263
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_means",
+      "label": "second means to rotatably support other end of intermediate shaft",
+      "category": "connection",
+      "kind": "bearing support",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "carried by input shaft",
+        "supports other end of intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 265,
+        "char_end": 363
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "output_shaft",
+      "label": "output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "supported in housing in parallel with input shaft and intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 368,
+        "char_end": 380
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "cvt_means",
+      "label": "belt drive continuously-variable speed transmission means",
+      "category": "functional",
+      "kind": "CVT mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 470,
+        "char_end": 526
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "primary_pulley",
+      "label": "primary variable-pitch pulley",
+      "category": "structural",
+      "kind": "variable-pitch pulley",
+      "parent_id": "cvt_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 537,
+        "char_end": 566
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "primary_fixed_flange",
+      "label": "fixed pulley flange of primary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "parent_id": "primary_pulley",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to intermediate shaft concentrically thereto"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 574,
+        "char_end": 592
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "primary_movable_flange",
+      "label": "movable pulley flange of primary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "parent_id": "primary_pulley",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted axially slidably on intermediate shaft relative to fixed pulley flange"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 636,
+        "char_end": 657
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "secondary_pulley",
+      "label": "secondary variable-pitch pulley",
+      "category": "structural",
+      "kind": "variable-pitch pulley",
+      "parent_id": "cvt_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 731,
+        "char_end": 762
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "secondary_fixed_flange",
+      "label": "fixed pulley flange of secondary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "parent_id": "secondary_pulley",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to output shaft concentrically thereto"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 770,
+        "char_end": 788
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "secondary_movable_flange",
+      "label": "movable pulley flange of secondary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "parent_id": "secondary_pulley",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted axially slidably on output shaft relative to corresponding pulley flange"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 833,
+        "char_end": 854
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "endless_belt",
+      "label": "endless belt",
+      "category": "connection",
+      "kind": "belt",
+      "parent_id": "cvt_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extended between primary and secondary variable-pitch pulleys"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 927,
+        "char_end": 939
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "clutch",
+      "label": "clutch",
+      "category": "connection",
+      "kind": "clutch",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "interposed between input shaft and intermediate shaft",
+        "adapted to couple intermediate shaft with input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1097,
+        "char_end": 1103
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "change_direction_gear_train",
+      "label": "change-direction gear train",
+      "category": "functional",
+      "kind": "gear train",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "input end connected to input shaft",
+        "output end connected to intermediate shaft",
+        "capable of attaining forward drive and reverse drive"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1174,
+        "char_end": 1201
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_intermediate_shaft_to_input_shaft",
+      "kind": "rotates_about",
+      "source": "intermediate_shaft",
+      "target": "input_shaft",
+      "via": null,
+      "constraints": [
+        "coaxially supported",
+        "rotatably relative to input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 195
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_means_supports_intermediate",
+      "kind": "connects",
+      "source": "first_means",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "supports one end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 197,
+        "char_end": 263
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_means_carried_by_input",
+      "kind": "attached_to",
+      "source": "second_means",
+      "target": "input_shaft",
+      "via": null,
+      "constraints": [
+        "carried by input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 265,
+        "char_end": 308
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_means_supports_intermediate",
+      "kind": "connects",
+      "source": "second_means",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "supports other end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 308,
+        "char_end": 363
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_output_shaft_in_housing",
+      "kind": "attached_to",
+      "source": "output_shaft",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "in parallel with input shaft and intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 381,
+        "char_end": 466
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_primary_fixed_flange_to_intermediate",
+      "kind": "attached_to",
+      "source": "primary_fixed_flange",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "fixed concentrically thereto"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 634
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_primary_movable_flange_to_intermediate",
+      "kind": "translates_along",
+      "source": "primary_movable_flange",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "mounted axially slidably",
+        "relative to fixed pulley flange"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 658,
+        "char_end": 729
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_secondary_fixed_flange_to_output",
+      "kind": "attached_to",
+      "source": "secondary_fixed_flange",
+      "target": "output_shaft",
+      "via": null,
+      "constraints": [
+        "fixed concentrically thereto"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 789,
+        "char_end": 831
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_secondary_movable_flange_to_output",
+      "kind": "translates_along",
+      "source": "secondary_movable_flange",
+      "target": "output_shaft",
+      "via": null,
+      "constraints": [
+        "mounted axially slidably",
+        "relative to corresponding pulley flange"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 855,
+        "char_end": 925
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_belt_connects_pulleys",
+      "kind": "connects",
+      "source": "endless_belt",
+      "target": "secondary_pulley",
+      "via": "primary_pulley",
+      "constraints": [
+        "extended between primary and secondary variable-pitch pulleys"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 927,
+        "char_end": 1095
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_clutch_between_shafts",
+      "kind": "connects",
+      "source": "clutch",
+      "target": "intermediate_shaft",
+      "via": "input_shaft",
+      "constraints": [
+        "interposed between input shaft and intermediate shaft",
+        "couples intermediate shaft with input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1097,
+        "char_end": 1172
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_input_to_input_shaft",
+      "kind": "connects",
+      "source": "change_direction_gear_train",
+      "target": "input_shaft",
+      "via": null,
+      "constraints": [
+        "input end connected to input shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1202,
+        "char_end": 1255
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_output_to_intermediate",
+      "kind": "connects",
+      "source": "change_direction_gear_train",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "output end connected to intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1257,
+        "char_end": 1313
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_primary_pulley_between_supports",
+      "kind": "attached_to",
+      "source": "primary_pulley",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "placed between two supporting means for supporting both ends of intermediate shaft in housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1350,
+        "char_end": 1460
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_between_supports",
+      "kind": "attached_to",
+      "source": "change_direction_gear_train",
+      "target": "intermediate_shaft",
+      "via": null,
+      "constraints": [
+        "placed between two supporting means for supporting both ends of intermediate shaft in housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1350,
+        "char_end": 1460
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_cvt_ratio",
+      "text": "for varying the transmission ratio between said intermediate shaft and said output shaft by varying the respective working radial positions on said primary variable-pitch pulley and said secondary variable-pitch pulley",
+      "targets": [
+        "endless_belt",
+        "primary_pulley",
+        "secondary_pulley"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 940,
+        "char_end": 1093
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_gear_train_capability",
+      "text": "capable of attaining forward drive and reverse drive",
+      "targets": [
+        "change_direction_gear_train"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1319,
+        "char_end": 1371
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_placement_between_supports",
+      "text": "said primary variable-pitch pulley and said change-direction gear train being placed between said two supporting means for supporting both ends of said intermediate shaft in said housing",
+      "targets": [
+        "primary_pulley",
+        "change_direction_gear_train",
+        "first_means",
+        "second_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1377,
+        "char_end": 1460
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

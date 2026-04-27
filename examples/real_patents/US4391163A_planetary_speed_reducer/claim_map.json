@@ -1,0 +1,163 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4391163A_planetary_speed_reducer",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "housing",
+      "glb_node_name": "housing",
+      "label": "housing (9)",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 40,
+        "char_end": 52
+      }
+    },
+    {
+      "component_id": "input_shaft",
+      "glb_node_name": "input_shaft",
+      "label": "input shaft (1)",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 57,
+        "char_end": 72
+      }
+    },
+    {
+      "component_id": "output_shaft",
+      "glb_node_name": "output_shaft",
+      "label": "output shaft (23)",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 126
+      }
+    },
+    {
+      "component_id": "outer_central_internal_gears",
+      "glb_node_name": "outer_central_internal_gears",
+      "label": "outer central internal gears (6a,6b)",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 215
+      }
+    },
+    {
+      "component_id": "inner_central_gear",
+      "glb_node_name": "inner_central_gear",
+      "label": "inner central gear (10)",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 249,
+        "char_end": 272
+      }
+    },
+    {
+      "component_id": "helical_gear_portions",
+      "glb_node_name": "helical_gear_portions",
+      "label": "helical gear portions (10a,10b)",
+      "category": "structural",
+      "kind": "gear_portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 284,
+        "char_end": 340
+      }
+    },
+    {
+      "component_id": "planetary_gears",
+      "glb_node_name": "planetary_gears",
+      "label": "planetary gears (5a,5b)",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 343,
+        "char_end": 407
+      }
+    },
+    {
+      "component_id": "first_carrier",
+      "glb_node_name": "first_carrier",
+      "label": "first carrier (3a)",
+      "category": "structural",
+      "kind": "carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 693,
+        "char_end": 711
+      }
+    },
+    {
+      "component_id": "second_carrier",
+      "glb_node_name": "second_carrier",
+      "label": "second carrier (3b)",
+      "category": "structural",
+      "kind": "carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 693,
+        "char_end": 711
+      }
+    },
+    {
+      "component_id": "first_gear_coupling",
+      "glb_node_name": "first_gear_coupling",
+      "label": "first gear coupling (2)",
+      "category": "connection",
+      "kind": "gear_coupling",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 799,
+        "char_end": 822
+      }
+    },
+    {
+      "component_id": "second_gear_coupling",
+      "glb_node_name": "second_gear_coupling",
+      "label": "second gear coupling (4)",
+      "category": "connection",
+      "kind": "gear_coupling",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 956,
+        "char_end": 980
+      }
+    },
+    {
+      "component_id": "bearing_means",
+      "glb_node_name": "bearing_means",
+      "label": "bearing means (11,12)",
+      "category": "connection",
+      "kind": "bearing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1256,
+        "char_end": 1277
+      }
+    }
+  ]
+}

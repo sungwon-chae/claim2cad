@@ -10,6 +10,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import time
 from dataclasses import dataclass
 from typing import Any
@@ -23,6 +24,11 @@ logger = logging.getLogger(__name__)
 DEFAULT_BASE_URL = "https://openrouter.ai/api/v1"
 DEFAULT_MODEL = "anthropic/claude-sonnet-4.6"
 DEFAULT_OPUS_MODEL = "anthropic/claude-opus-4.7"
+
+# Some providers ignore response_format and wrap JSON in markdown fences.
+# These regexes strip the wrapper so we can json.loads the inside.
+_FENCE_RE = re.compile(r"```(?:json|JSON)?\s*\n?(.*?)\n?```", re.DOTALL)
+_BRACES_RE = re.compile(r"\{.*\}", re.DOTALL)
 
 # Soft cap that triggers an Opus → Sonnet downgrade for the rest of the
 # session. Override with ``CLAIM2CAD_COST_SOFT_CAP``.
@@ -43,6 +49,33 @@ ROUTINE_TASKS = {
     "stub_classify",
     "small_extraction",
 }
+
+
+def _extract_json(content: str) -> Any:
+    """Parse a JSON object from a model response that may be wrapped in
+    markdown fences or surrounded by prose. Raises json.JSONDecodeError
+    if no parseable object can be found."""
+    if content is None:
+        raise json.JSONDecodeError("response content was None", "", 0)
+    s = content.strip()
+    # Try direct parse first — when the model honors response_format properly.
+    try:
+        return json.loads(s)
+    except json.JSONDecodeError:
+        pass
+    # Strip a markdown code fence (```json ... ``` or ``` ... ```).
+    fence_match = _FENCE_RE.search(s)
+    if fence_match:
+        inner = fence_match.group(1).strip()
+        try:
+            return json.loads(inner)
+        except json.JSONDecodeError:
+            pass
+    # Last resort: take the substring from the first '{' to the last '}'.
+    braces_match = _BRACES_RE.search(s)
+    if braces_match:
+        return json.loads(braces_match.group(0))
+    raise json.JSONDecodeError("no JSON object found in content", s[:200], 0)
 
 
 def route(task_type: str) -> str:
@@ -92,7 +125,7 @@ def json_completion(
     system_prompt: str,
     user_prompt: str,
     config: LLMConfig | None = None,
-    max_retries: int = 3,
+    max_retries: int = 2,
     timeout_s: float = 60.0,
     task_type: str = "claim_parse",
     model_override: str | None = None,
@@ -151,15 +184,16 @@ def json_completion(
             raise LLMResponseError(f"Unexpected OpenRouter response shape: {body!r}") from exc
 
         try:
-            return json.loads(content)
+            return _extract_json(content)
         except json.JSONDecodeError as exc:
             last_error = exc
             backoff = 2 ** (attempt - 1)
             logger.warning(
-                "LLM response was not valid JSON on attempt %d (%s); "
-                "sleeping %ds before retry",
+                "LLM response was not parseable JSON on attempt %d (%s); "
+                "head=%r; sleeping %ds before retry",
                 attempt,
                 exc,
+                (content or "")[:80],
                 backoff,
             )
             time.sleep(backoff)

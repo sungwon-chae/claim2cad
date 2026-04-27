@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4196635A_spur_gear_differential",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "frame_means",
+      "glb_node_name": "frame_means",
+      "label": "frame means",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 138
+      }
+    },
+    {
+      "component_id": "load_means",
+      "glb_node_name": "load_means",
+      "label": "load means",
+      "category": "functional",
+      "kind": "load_actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 140,
+        "char_end": 150
+      }
+    },
+    {
+      "component_id": "torque_means",
+      "glb_node_name": "torque_means",
+      "label": "torque means",
+      "category": "functional",
+      "kind": "torque_actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 264
+      }
+    },
+    {
+      "component_id": "first_housing_means",
+      "glb_node_name": "first_housing_means",
+      "label": "first housing means",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 386,
+        "char_end": 405
+      }
+    },
+    {
+      "component_id": "piston_means",
+      "glb_node_name": "piston_means",
+      "label": "piston means",
+      "category": "structural",
+      "kind": "piston_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 410,
+        "char_end": 422
+      }
+    },
+    {
+      "component_id": "first_piston_rod",
+      "glb_node_name": "first_piston_rod",
+      "label": "first piston rod",
+      "category": "structural",
+      "kind": "piston_rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 435,
+        "char_end": 451
+      }
+    },
+    {
+      "component_id": "second_piston_rod",
+      "glb_node_name": "second_piston_rod",
+      "label": "second piston rod",
+      "category": "structural",
+      "kind": "piston_rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 458,
+        "char_end": 475
+      }
+    },
+    {
+      "component_id": "sample",
+      "glb_node_name": "sample",
+      "label": "test sample",
+      "category": "structural",
+      "kind": "specimen",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 583,
+        "char_end": 594
+      }
+    },
+    {
+      "component_id": "fork_means",
+      "glb_node_name": "fork_means",
+      "label": "fork means",
+      "category": "structural",
+      "kind": "fork",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 617,
+        "char_end": 627
+      }
+    },
+    {
+      "component_id": "fork_ends",
+      "glb_node_name": "fork_ends",
+      "label": "fork ends",
+      "category": "structural",
+      "kind": "fork_end",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 647,
+        "char_end": 656
+      }
+    },
+    {
+      "component_id": "second_housing_means",
+      "glb_node_name": "second_housing_means",
+      "label": "second housing means",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 710,
+        "char_end": 730
+      }
+    },
+    {
+      "component_id": "rotary_piston_means",
+      "glb_node_name": "rotary_piston_means",
+      "label": "rotary piston means",
+      "category": "structural",
+      "kind": "rotary_piston",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 732,
+        "char_end": 751
+      }
+    },
+    {
+      "component_id": "torque_transmitting_means",
+      "glb_node_name": "torque_transmitting_means",
+      "label": "means for transmitting torque",
+      "category": "functional",
+      "kind": "torque_transmitter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 794,
+        "char_end": 823
+      }
+    }
+  ]
+}

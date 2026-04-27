@@ -1,0 +1,150 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US5042321A_two_stage_planetary_gear",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "engine",
+      "glb_node_name": "engine",
+      "label": "engine",
+      "category": "structural",
+      "kind": "engine",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 77,
+        "char_end": 83
+      }
+    },
+    {
+      "component_id": "first_housing",
+      "glb_node_name": "first_housing",
+      "label": "first housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 125,
+        "char_end": 138
+      }
+    },
+    {
+      "component_id": "power_transmitting_device",
+      "glb_node_name": "power_transmitting_device",
+      "label": "power transmitting device",
+      "category": "functional",
+      "kind": "power_transmitting_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 199,
+        "char_end": 223
+      }
+    },
+    {
+      "component_id": "transmission_device",
+      "glb_node_name": "transmission_device",
+      "label": "transmission device",
+      "category": "functional",
+      "kind": "transmission_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 272,
+        "char_end": 291
+      }
+    },
+    {
+      "component_id": "second_housing",
+      "glb_node_name": "second_housing",
+      "label": "second housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 293,
+        "char_end": 307
+      }
+    },
+    {
+      "component_id": "differential_housing",
+      "glb_node_name": "differential_housing",
+      "label": "differential housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 426
+      }
+    },
+    {
+      "component_id": "output_shaft",
+      "glb_node_name": "output_shaft",
+      "label": "output shaft of the engine",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 510,
+        "char_end": 536
+      }
+    },
+    {
+      "component_id": "reinforcement_element",
+      "glb_node_name": "reinforcement_element",
+      "label": "reinforcement element",
+      "category": "structural",
+      "kind": "reinforcement_element",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 542,
+        "char_end": 563
+      }
+    },
+    {
+      "component_id": "end_portions",
+      "glb_node_name": "end_portions",
+      "label": "pair of end portions",
+      "category": "structural",
+      "kind": "end_portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 591
+      }
+    },
+    {
+      "component_id": "one_end_portion",
+      "glb_node_name": "one_end_portion",
+      "label": "one end portion",
+      "category": "structural",
+      "kind": "end_portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 608
+      }
+    },
+    {
+      "component_id": "another_end_portion",
+      "glb_node_name": "another_end_portion",
+      "label": "another end portion",
+      "category": "structural",
+      "kind": "end_portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 643,
+        "char_end": 662
+      }
+    }
+  ]
+}

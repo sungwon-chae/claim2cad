@@ -1,0 +1,582 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Wire-activated inserting and transporting apparatus",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. Apparatus having a wire-activated, inserting mechanism, means for aligning said inserting mechanism in turn with respective terminals of a row of electrical terminals in an electrical connector half, a frame, a transporting mechanism for grasping single wires individually, in turn, from a random, serial array of color-coded wires, a drive mechanism for pivoting said transporting mechanism, a sensor for receiving an electrical identity signal carried by an individual wire, control means responsive to the sensor output, an escapement mechanism in said frame into which an individual wire is transferred by pivoting of said transporting mechanism, and a transferring mechanism for transferring an individual wire from said escapement mechanism to one of a plurality of color-coded positions, in which said color-coded positions are defined by rows of contacts in an electrical connector half, connector locating means being provided to locate the connector half extending from the same side of the transporting mechanism as said array of wires, said transporting mechanism being pivotable by the control means in a first direction for diverting an individual wire toward one row of terminals, and in a second direction for diverting an individual wire toward another row of terminals, and said transferring mechanism conveying an individual wire outwardly of said escapement means and into said inserting mechanism positioned at a selected terminal of a selected row of terminals by the control means to insert the individual wire into the selected terminal.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "inserting_mechanism",
+      "label": "wire-activated inserting mechanism",
+      "category": "functional",
+      "kind": "inserting_mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "wire-activated"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 21,
+        "char_end": 57
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "aligning_means",
+      "label": "means for aligning inserting mechanism",
+      "category": "functional",
+      "kind": "alignment_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "aligns inserting mechanism in turn with respective terminals of a row of electrical terminals in an electrical connector half"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 59,
+        "char_end": 201
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "electrical_connector_half",
+      "label": "electrical connector half",
+      "category": "structural",
+      "kind": "connector",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 175,
+        "char_end": 200
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 203,
+        "char_end": 210
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "transporting_mechanism",
+      "label": "transporting mechanism",
+      "category": "functional",
+      "kind": "transport_mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "grasps single wires individually in turn from a random serial array of color-coded wires",
+        "pivotable by control means in a first direction for diverting an individual wire toward one row of terminals",
+        "pivotable by control means in a second direction for diverting an individual wire toward another row of terminals"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 212,
+        "char_end": 334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wire_array",
+      "label": "random serial array of color-coded wires",
+      "category": "structural",
+      "kind": "wire_array",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "random",
+        "serial",
+        "color-coded"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 290,
+        "char_end": 334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "drive_mechanism",
+      "label": "drive mechanism",
+      "category": "functional",
+      "kind": "drive_mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for pivoting transporting mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 336,
+        "char_end": 393
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "sensor",
+      "label": "sensor",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "receives an electrical identity signal carried by an individual wire"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 395,
+        "char_end": 478
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "control_means",
+      "label": "control means",
+      "category": "functional",
+      "kind": "control_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "responsive to sensor output"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 524
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "escapement_mechanism",
+      "label": "escapement mechanism",
+      "category": "functional",
+      "kind": "escapement_mechanism",
+      "parent_id": "frame",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "individual wire is transferred into it by pivoting of transporting mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 526,
+        "char_end": 548
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "transferring_mechanism",
+      "label": "transferring mechanism",
+      "category": "functional",
+      "kind": "transfer_mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "transfers individual wire from escapement mechanism to one of a plurality of color-coded positions",
+        "conveys individual wire outwardly of escapement means and into inserting mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 649,
+        "char_end": 779
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "color_coded_positions",
+      "label": "color-coded positions",
+      "category": "structural",
+      "kind": "position_set",
+      "parent_id": null,
+      "dimension": {
+        "kind": "relative",
+        "description": "plurality of color-coded positions"
+      },
+      "constraints": [
+        "defined by rows of contacts in an electrical connector half"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 756,
+        "char_end": 779
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rows_of_contacts",
+      "label": "rows of contacts",
+      "category": "structural",
+      "kind": "contact_row",
+      "parent_id": "electrical_connector_half",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "define color-coded positions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 808,
+        "char_end": 824
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "connector_locating_means",
+      "label": "connector locating means",
+      "category": "functional",
+      "kind": "locating_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "locates connector half extending from the same side of the transporting mechanism as the array of wires"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 861,
+        "char_end": 885
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_inserting_mech_to_connector",
+      "kind": "connects",
+      "source": "inserting_mechanism",
+      "target": "electrical_connector_half",
+      "via": "aligning_means",
+      "constraints": [
+        "aligned in turn with respective terminals of a row of electrical terminals"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 59,
+        "char_end": 201
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_transporting_grasps_wires",
+      "kind": "transmits_force_to",
+      "source": "transporting_mechanism",
+      "target": "wire_array",
+      "via": null,
+      "constraints": [
+        "grasps single wires individually in turn"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 212,
+        "char_end": 334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_drive_pivots_transporting",
+      "kind": "transmits_force_to",
+      "source": "drive_mechanism",
+      "target": "transporting_mechanism",
+      "via": null,
+      "constraints": [
+        "pivoting"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 336,
+        "char_end": 393
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_escapement_in_frame",
+      "kind": "contains",
+      "source": "frame",
+      "target": "escapement_mechanism",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 526,
+        "char_end": 575
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_transporting_transfers_to_escapement",
+      "kind": "transmits_force_to",
+      "source": "transporting_mechanism",
+      "target": "escapement_mechanism",
+      "via": null,
+      "constraints": [
+        "by pivoting"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 596,
+        "char_end": 648
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_transferring_from_escapement",
+      "kind": "transmits_force_to",
+      "source": "transferring_mechanism",
+      "target": "escapement_mechanism",
+      "via": null,
+      "constraints": [
+        "transfers individual wire from escapement mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 649,
+        "char_end": 779
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_transferring_to_positions",
+      "kind": "transmits_force_to",
+      "source": "transferring_mechanism",
+      "target": "color_coded_positions",
+      "via": null,
+      "constraints": [
+        "to one of a plurality of color-coded positions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 737,
+        "char_end": 779
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_positions_in_connector",
+      "kind": "contains",
+      "source": "electrical_connector_half",
+      "target": "rows_of_contacts",
+      "via": null,
+      "constraints": [
+        "define color-coded positions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 793,
+        "char_end": 848
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_locating_means_to_connector",
+      "kind": "attached_to",
+      "source": "connector_locating_means",
+      "target": "electrical_connector_half",
+      "via": null,
+      "constraints": [
+        "connector half extends from same side of transporting mechanism as array of wires"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 861,
+        "char_end": 975
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_control_pivots_transporting",
+      "kind": "transmits_force_to",
+      "source": "control_means",
+      "target": "transporting_mechanism",
+      "via": null,
+      "constraints": [
+        "pivots in first direction toward one row of terminals",
+        "pivots in second direction toward another row of terminals"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 977,
+        "char_end": 1148
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_transferring_conveys_to_inserting",
+      "kind": "transmits_force_to",
+      "source": "transferring_mechanism",
+      "target": "inserting_mechanism",
+      "via": null,
+      "constraints": [
+        "conveys individual wire outwardly of escapement means into inserting mechanism positioned at selected terminal"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1155,
+        "char_end": 1341
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_sensor_to_control",
+      "kind": "transmits_force_to",
+      "source": "sensor",
+      "target": "control_means",
+      "via": null,
+      "constraints": [
+        "control means responsive to sensor output"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 524
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_color_coded_positions_defined",
+      "text": "in which said color-coded positions are defined by rows of contacts in an electrical connector half",
+      "targets": [
+        "color_coded_positions",
+        "rows_of_contacts",
+        "electrical_connector_half"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 781,
+        "char_end": 858
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_connector_locating",
+      "text": "connector locating means being provided to locate the connector half extending from the same side of the transporting mechanism as said array of wires",
+      "targets": [
+        "connector_locating_means",
+        "electrical_connector_half",
+        "transporting_mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 861,
+        "char_end": 1009
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_transporting_pivotable_first",
+      "text": "said transporting mechanism being pivotable by the control means in a first direction for diverting an individual wire toward one row of terminals",
+      "targets": [
+        "transporting_mechanism",
+        "control_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1011,
+        "char_end": 1080
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_transporting_pivotable_second",
+      "text": "and in a second direction for diverting an individual wire toward another row of terminals",
+      "targets": [
+        "transporting_mechanism",
+        "control_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1086,
+        "char_end": 1148
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_transferring_conveys",
+      "text": "and said transferring mechanism conveying an individual wire outwardly of said escapement means and into said inserting mechanism positioned at a selected terminal of a selected row of terminals by the control means to insert the individual wire into the selected terminal",
+      "targets": [
+        "transferring_mechanism",
+        "escapement_mechanism",
+        "inserting_mechanism",
+        "control_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1150,
+        "char_end": 1419
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

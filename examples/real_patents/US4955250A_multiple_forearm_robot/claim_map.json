@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4955250A_multiple_forearm_robot",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "main_arm",
+      "glb_node_name": "main_arm",
+      "label": "main arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 56,
+        "char_end": 107
+      }
+    },
+    {
+      "component_id": "upper_forearm",
+      "glb_node_name": "upper_forearm",
+      "label": "upper forearm",
+      "category": "structural",
+      "kind": "forearm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 122
+      }
+    },
+    {
+      "component_id": "lower_forearm",
+      "glb_node_name": "lower_forearm",
+      "label": "lower forearm",
+      "category": "structural",
+      "kind": "forearm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 243,
+        "char_end": 256
+      }
+    },
+    {
+      "component_id": "first_modular_actuator_assembly",
+      "glb_node_name": "first_modular_actuator_assembly",
+      "label": "first modular actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 511
+      }
+    },
+    {
+      "component_id": "second_modular_actuator_assembly",
+      "glb_node_name": "second_modular_actuator_assembly",
+      "label": "second modular actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 603
+      }
+    },
+    {
+      "component_id": "actuator_canister",
+      "glb_node_name": "actuator_canister",
+      "label": "actuator canister",
+      "category": "structural",
+      "kind": "canister",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 787,
+        "char_end": 804
+      }
+    },
+    {
+      "component_id": "motor_means",
+      "glb_node_name": "motor_means",
+      "label": "motor means",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 830,
+        "char_end": 841
+      }
+    },
+    {
+      "component_id": "shaft_means",
+      "glb_node_name": "shaft_means",
+      "label": "shaft means",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 843,
+        "char_end": 854
+      }
+    },
+    {
+      "component_id": "gearing_means",
+      "glb_node_name": "gearing_means",
+      "label": "gearing means",
+      "category": "functional",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 877,
+        "char_end": 890
+      }
+    },
+    {
+      "component_id": "position_referencing_means",
+      "glb_node_name": "position_referencing_means",
+      "label": "position referencing means",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 931,
+        "char_end": 957
+      }
+    },
+    {
+      "component_id": "spindle",
+      "glb_node_name": "spindle",
+      "label": "spindle",
+      "category": "structural",
+      "kind": "spindle",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1008,
+        "char_end": 1015
+      }
+    },
+    {
+      "component_id": "bearing_means",
+      "glb_node_name": "bearing_means",
+      "label": "bearing means",
+      "category": "connection",
+      "kind": "bearing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1068,
+        "char_end": 1081
+      }
+    },
+    {
+      "component_id": "output_hub_means",
+      "glb_node_name": "output_hub_means",
+      "label": "output hub means",
+      "category": "functional",
+      "kind": "hub",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1113,
+        "char_end": 1129
+      }
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4470181A_self_closing_hinge",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "inserting_mechanism",
+      "glb_node_name": "inserting_mechanism",
+      "label": "wire-activated inserting mechanism",
+      "category": "functional",
+      "kind": "inserting_mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 21,
+        "char_end": 57
+      }
+    },
+    {
+      "component_id": "aligning_means",
+      "glb_node_name": "aligning_means",
+      "label": "means for aligning inserting mechanism",
+      "category": "functional",
+      "kind": "alignment_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 59,
+        "char_end": 201
+      }
+    },
+    {
+      "component_id": "electrical_connector_half",
+      "glb_node_name": "electrical_connector_half",
+      "label": "electrical connector half",
+      "category": "structural",
+      "kind": "connector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 175,
+        "char_end": 200
+      }
+    },
+    {
+      "component_id": "frame",
+      "glb_node_name": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 203,
+        "char_end": 210
+      }
+    },
+    {
+      "component_id": "transporting_mechanism",
+      "glb_node_name": "transporting_mechanism",
+      "label": "transporting mechanism",
+      "category": "functional",
+      "kind": "transport_mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 212,
+        "char_end": 334
+      }
+    },
+    {
+      "component_id": "wire_array",
+      "glb_node_name": "wire_array",
+      "label": "random serial array of color-coded wires",
+      "category": "structural",
+      "kind": "wire_array",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 290,
+        "char_end": 334
+      }
+    },
+    {
+      "component_id": "drive_mechanism",
+      "glb_node_name": "drive_mechanism",
+      "label": "drive mechanism",
+      "category": "functional",
+      "kind": "drive_mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 336,
+        "char_end": 393
+      }
+    },
+    {
+      "component_id": "sensor",
+      "glb_node_name": "sensor",
+      "label": "sensor",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 395,
+        "char_end": 478
+      }
+    },
+    {
+      "component_id": "control_means",
+      "glb_node_name": "control_means",
+      "label": "control means",
+      "category": "functional",
+      "kind": "control_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 524
+      }
+    },
+    {
+      "component_id": "escapement_mechanism",
+      "glb_node_name": "escapement_mechanism",
+      "label": "escapement mechanism",
+      "category": "functional",
+      "kind": "escapement_mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 526,
+        "char_end": 548
+      }
+    },
+    {
+      "component_id": "transferring_mechanism",
+      "glb_node_name": "transferring_mechanism",
+      "label": "transferring mechanism",
+      "category": "functional",
+      "kind": "transfer_mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 649,
+        "char_end": 779
+      }
+    },
+    {
+      "component_id": "color_coded_positions",
+      "glb_node_name": "color_coded_positions",
+      "label": "color-coded positions",
+      "category": "structural",
+      "kind": "position_set",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 756,
+        "char_end": 779
+      }
+    },
+    {
+      "component_id": "rows_of_contacts",
+      "glb_node_name": "rows_of_contacts",
+      "label": "rows of contacts",
+      "category": "structural",
+      "kind": "contact_row",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 808,
+        "char_end": 824
+      }
+    },
+    {
+      "component_id": "connector_locating_means",
+      "glb_node_name": "connector_locating_means",
+      "label": "connector locating means",
+      "category": "functional",
+      "kind": "locating_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 861,
+        "char_end": 885
+      }
+    }
+  ]
+}

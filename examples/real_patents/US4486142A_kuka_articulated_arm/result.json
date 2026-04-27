@@ -1,0 +1,13 @@
+{
+  "patent_id": "US4486142A",
+  "parsed": true,
+  "components_count": 7,
+  "cad_generated": true,
+  "mapping_complete": 1.0,
+  "errors": [],
+  "warnings": [],
+  "quality_grade": "good",
+  "duration_s": 18.69,
+  "title": "Method of automatic limitation for a controlled variable in a multivariable system",
+  "primary_class": "901"
+}

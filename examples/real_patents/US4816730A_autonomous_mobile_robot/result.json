@@ -1,0 +1,13 @@
+{
+  "patent_id": "US4816730A",
+  "parsed": true,
+  "components_count": 12,
+  "cad_generated": true,
+  "mapping_complete": 1.0,
+  "errors": [],
+  "warnings": [],
+  "quality_grade": "good",
+  "duration_s": 36.7,
+  "title": "Autosampler",
+  "primary_class": "901"
+}

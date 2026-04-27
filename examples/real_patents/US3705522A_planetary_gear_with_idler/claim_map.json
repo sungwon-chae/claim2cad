@@ -1,0 +1,150 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US3705522A_planetary_gear_with_idler",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "housing",
+      "glb_node_name": "housing",
+      "label": "stationary housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 40,
+        "char_end": 59
+      }
+    },
+    {
+      "component_id": "input_shaft",
+      "glb_node_name": "input_shaft",
+      "label": "input shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 75
+      }
+    },
+    {
+      "component_id": "planet_carrier_means",
+      "glb_node_name": "planet_carrier_means",
+      "label": "planet carrier means",
+      "category": "structural",
+      "kind": "carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 132
+      }
+    },
+    {
+      "component_id": "first_mounting_means",
+      "glb_node_name": "first_mounting_means",
+      "label": "first mounting means",
+      "category": "structural",
+      "kind": "mounting",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 190,
+        "char_end": 210
+      }
+    },
+    {
+      "component_id": "second_mounting_means",
+      "glb_node_name": "second_mounting_means",
+      "label": "second mounting means",
+      "category": "structural",
+      "kind": "mounting",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 236
+      }
+    },
+    {
+      "component_id": "output_shaft",
+      "glb_node_name": "output_shaft",
+      "label": "output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 249,
+        "char_end": 261
+      }
+    },
+    {
+      "component_id": "first_ring_gear",
+      "glb_node_name": "first_ring_gear",
+      "label": "first ring gear",
+      "category": "structural",
+      "kind": "ring_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 301,
+        "char_end": 316
+      }
+    },
+    {
+      "component_id": "second_ring_gear",
+      "glb_node_name": "second_ring_gear",
+      "label": "second ring gear",
+      "category": "structural",
+      "kind": "ring_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 378
+      }
+    },
+    {
+      "component_id": "first_planet_pinion",
+      "glb_node_name": "first_planet_pinion",
+      "label": "first planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 425
+      }
+    },
+    {
+      "component_id": "second_planet_pinion",
+      "glb_node_name": "second_planet_pinion",
+      "label": "second planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 523
+      }
+    },
+    {
+      "component_id": "third_planet_pinion",
+      "glb_node_name": "third_planet_pinion",
+      "label": "third planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 700,
+        "char_end": 719
+      }
+    }
+  ]
+}

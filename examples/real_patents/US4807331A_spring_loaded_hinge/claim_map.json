@@ -1,0 +1,332 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4807331A_spring_loaded_hinge",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "body_half_sub_assembly",
+      "glb_node_name": "body_half_sub_assembly",
+      "label": "body-half sub-assembly",
+      "category": "structural",
+      "kind": "sub-assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 74
+      }
+    },
+    {
+      "component_id": "vehicle_body",
+      "glb_node_name": "vehicle_body",
+      "label": "vehicle body",
+      "category": "structural",
+      "kind": "body",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 101,
+        "char_end": 113
+      }
+    },
+    {
+      "component_id": "door_half_member",
+      "glb_node_name": "door_half_member",
+      "label": "door-half member",
+      "category": "structural",
+      "kind": "door-half member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 118,
+        "char_end": 134
+      }
+    },
+    {
+      "component_id": "pintle_pin",
+      "glb_node_name": "pintle_pin",
+      "label": "pintle pin",
+      "category": "connection",
+      "kind": "pin",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 163,
+        "char_end": 173
+      }
+    },
+    {
+      "component_id": "hinge_axis",
+      "glb_node_name": "hinge_axis",
+      "label": "vertical hinge axis",
+      "category": "functional",
+      "kind": "axis",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 181,
+        "char_end": 200
+      }
+    },
+    {
+      "component_id": "hinge_body_half_assembly",
+      "glb_node_name": "hinge_body_half_assembly",
+      "label": "hinge body-half assembly",
+      "category": "structural",
+      "kind": "assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 430
+      }
+    },
+    {
+      "component_id": "main_member",
+      "glb_node_name": "main_member",
+      "label": "main member",
+      "category": "structural",
+      "kind": "member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 443,
+        "char_end": 454
+      }
+    },
+    {
+      "component_id": "u_shaped_link_member",
+      "glb_node_name": "u_shaped_link_member",
+      "label": "U-shaped link member",
+      "category": "structural",
+      "kind": "link member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 497,
+        "char_end": 517
+      }
+    },
+    {
+      "component_id": "upper_extension",
+      "glb_node_name": "upper_extension",
+      "label": "upper parallel extension",
+      "category": "structural",
+      "kind": "extension",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 614,
+        "char_end": 620
+      }
+    },
+    {
+      "component_id": "lower_extension",
+      "glb_node_name": "lower_extension",
+      "label": "lower parallel extension",
+      "category": "structural",
+      "kind": "extension",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 625,
+        "char_end": 631
+      }
+    },
+    {
+      "component_id": "mounting_wall",
+      "glb_node_name": "mounting_wall",
+      "label": "mounting wall",
+      "category": "structural",
+      "kind": "wall",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 651,
+        "char_end": 664
+      }
+    },
+    {
+      "component_id": "main_member_pintle_pin_hole",
+      "glb_node_name": "main_member_pintle_pin_hole",
+      "label": "pintle pin hole (main member)",
+      "category": "structural",
+      "kind": "hole",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 718,
+        "char_end": 732
+      }
+    },
+    {
+      "component_id": "base_wall",
+      "glb_node_name": "base_wall",
+      "label": "base wall",
+      "category": "structural",
+      "kind": "wall",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 782,
+        "char_end": 791
+      }
+    },
+    {
+      "component_id": "base_wall_exterior_guide_surface",
+      "glb_node_name": "base_wall_exterior_guide_surface",
+      "label": "base wall exterior guide surface",
+      "category": "structural",
+      "kind": "surface",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 800,
+        "char_end": 829
+      }
+    },
+    {
+      "component_id": "upper_leg",
+      "glb_node_name": "upper_leg",
+      "label": "upper parallel leg",
+      "category": "structural",
+      "kind": "leg",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 834,
+        "char_end": 845
+      }
+    },
+    {
+      "component_id": "lower_leg",
+      "glb_node_name": "lower_leg",
+      "label": "lower parallel leg",
+      "category": "structural",
+      "kind": "leg",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 850,
+        "char_end": 861
+      }
+    },
+    {
+      "component_id": "link_member_pintle_pin_holes",
+      "glb_node_name": "link_member_pintle_pin_holes",
+      "label": "aligned pintle pin holes (link member)",
+      "category": "structural",
+      "kind": "hole",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 878,
+        "char_end": 900
+      }
+    },
+    {
+      "component_id": "leg_guide_edge_surface",
+      "glb_node_name": "leg_guide_edge_surface",
+      "label": "leg guide edge surface",
+      "category": "structural",
+      "kind": "surface",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 968,
+        "char_end": 990
+      }
+    },
+    {
+      "component_id": "stop_means",
+      "glb_node_name": "stop_means",
+      "label": "stop means",
+      "category": "functional",
+      "kind": "stop",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1087,
+        "char_end": 1097
+      }
+    },
+    {
+      "component_id": "bight_wall",
+      "glb_node_name": "bight_wall",
+      "label": "bight wall",
+      "category": "structural",
+      "kind": "wall",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1254,
+        "char_end": 1264
+      }
+    },
+    {
+      "component_id": "first_sidewall",
+      "glb_node_name": "first_sidewall",
+      "label": "first sidewall",
+      "category": "structural",
+      "kind": "wall",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1277,
+        "char_end": 1291
+      }
+    },
+    {
+      "component_id": "second_sidewall",
+      "glb_node_name": "second_sidewall",
+      "label": "second sidewall",
+      "category": "structural",
+      "kind": "wall",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1296,
+        "char_end": 1311
+      }
+    },
+    {
+      "component_id": "leaf_flange",
+      "glb_node_name": "leaf_flange",
+      "label": "leaf flange",
+      "category": "structural",
+      "kind": "flange",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1389,
+        "char_end": 1400
+      }
+    },
+    {
+      "component_id": "leaf_flange_pintle_pin_hole",
+      "glb_node_name": "leaf_flange_pintle_pin_hole",
+      "label": "pintle pin hole (leaf flange)",
+      "category": "structural",
+      "kind": "hole",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1401,
+        "char_end": 1415
+      }
+    },
+    {
+      "component_id": "pintle_pin_stop_means",
+      "glb_node_name": "pintle_pin_stop_means",
+      "label": "stop means on pintle pin",
+      "category": "functional",
+      "kind": "stop",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1869,
+        "char_end": 1879
+      }
+    }
+  ]
+}

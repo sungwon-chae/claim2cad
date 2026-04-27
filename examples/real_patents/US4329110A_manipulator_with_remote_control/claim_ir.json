@@ -1,0 +1,573 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Manipulating device for industrial robots",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A manipulating device, particularly for industrial robots, comprising an articulated gripping arm located on and extending from a support, said articulated gripping arm comprising a lever system having at least first, second and third members pivotally connected and mounted with the pivot axes parallel to each other, said first member being pivotally connected to the support, said manipulating device further comprising at least one first and one second drive unit to move said members to predetermined angular relationships with respect to the support, and at least one gripper or tool mounted on the third member, and having the improvement which consists in that the first member (11) forms part of a first lever parallelogram (31); in that the second (13) and third (15) members form part of a second lever parallelogram (33) having a member (35) in common with the first lever parallelogram (31), and in that two members (11,37) of said first lever parallelogram (31) have the same pivot axis (51) on the support (17) and in that said two members (11,37) are in operative connection, respectively with said first and second drive units (63,65), each of which drive units is mounted on said support (17).",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "support",
+      "label": "support",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 131,
+        "char_end": 138
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "articulated_gripping_arm",
+      "label": "articulated gripping arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 74,
+        "char_end": 97
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "lever_system",
+      "label": "lever system",
+      "category": "structural",
+      "kind": "lever_system",
+      "parent_id": "articulated_gripping_arm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 183,
+        "char_end": 195
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_member",
+      "label": "first member (11)",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected to the support",
+        "pivot axes parallel to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 227
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_member",
+      "label": "second member (13)",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivot axes parallel to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 218,
+        "char_end": 224
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_member",
+      "label": "third member (15)",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivot axes parallel to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 229,
+        "char_end": 241
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_drive_unit",
+      "label": "first drive unit (63)",
+      "category": "functional",
+      "kind": "drive_unit",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted on said support"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 436,
+        "char_end": 451
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_drive_unit",
+      "label": "second drive unit (65)",
+      "category": "functional",
+      "kind": "drive_unit",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted on said support"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 456,
+        "char_end": 472
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "gripper_or_tool",
+      "label": "gripper or tool",
+      "category": "functional",
+      "kind": "end_effector",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted on the third member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 585
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_lever_parallelogram",
+      "label": "first lever parallelogram (31)",
+      "category": "structural",
+      "kind": "parallelogram_linkage",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 714,
+        "char_end": 742
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_lever_parallelogram",
+      "label": "second lever parallelogram (33)",
+      "category": "structural",
+      "kind": "parallelogram_linkage",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 807,
+        "char_end": 836
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "common_member",
+      "label": "common member (35)",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": "lever_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in common with the first lever parallelogram (31)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 847,
+        "char_end": 858
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_parallel_member",
+      "label": "second parallel member (37) of first lever parallelogram",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": "first_lever_parallelogram",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "same pivot axis (51) on the support (17) as first member (11)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 913,
+        "char_end": 919
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "pivot_axis",
+      "label": "pivot axis (51)",
+      "category": "connection",
+      "kind": "pivot_axis",
+      "parent_id": "support",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "same pivot axis for two members (11,37) on support (17)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 953,
+        "char_end": 964
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_arm_on_support",
+      "kind": "attached_to",
+      "source": "articulated_gripping_arm",
+      "target": "support",
+      "via": null,
+      "constraints": [
+        "located on and extending from support"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 74,
+        "char_end": 138
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_member_to_support",
+      "kind": "connects",
+      "source": "first_member",
+      "target": "support",
+      "via": null,
+      "constraints": [
+        "pivotally connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 324,
+        "char_end": 377
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gripper_on_third_member",
+      "kind": "attached_to",
+      "source": "gripper_or_tool",
+      "target": "third_member",
+      "via": null,
+      "constraints": [
+        "mounted on the third member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 557,
+        "char_end": 610
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_member_in_first_para",
+      "kind": "contains",
+      "source": "first_lever_parallelogram",
+      "target": "first_member",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 668,
+        "char_end": 744
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_member_in_second_para",
+      "kind": "contains",
+      "source": "second_lever_parallelogram",
+      "target": "second_member",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 749,
+        "char_end": 838
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_member_in_second_para",
+      "kind": "contains",
+      "source": "second_lever_parallelogram",
+      "target": "third_member",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 749,
+        "char_end": 838
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_common_member_shared",
+      "kind": "connects",
+      "source": "second_lever_parallelogram",
+      "target": "first_lever_parallelogram",
+      "via": "common_member",
+      "constraints": [
+        "member (35) in common"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 838,
+        "char_end": 893
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_two_members_same_pivot",
+      "kind": "rotates_about",
+      "source": "first_member",
+      "target": "pivot_axis",
+      "via": null,
+      "constraints": [
+        "same pivot axis (51) on the support (17)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 896,
+        "char_end": 968
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_parallel_member_same_pivot",
+      "kind": "rotates_about",
+      "source": "second_parallel_member",
+      "target": "pivot_axis",
+      "via": null,
+      "constraints": [
+        "same pivot axis (51) on the support (17)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 896,
+        "char_end": 968
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_member_to_first_drive",
+      "kind": "transmits_force_to",
+      "source": "first_drive_unit",
+      "target": "first_member",
+      "via": null,
+      "constraints": [
+        "operative connection"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 979,
+        "char_end": 1063
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_member_to_second_drive",
+      "kind": "transmits_force_to",
+      "source": "second_drive_unit",
+      "target": "second_parallel_member",
+      "via": null,
+      "constraints": [
+        "operative connection"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 979,
+        "char_end": 1063
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_drive_on_support",
+      "kind": "attached_to",
+      "source": "first_drive_unit",
+      "target": "support",
+      "via": null,
+      "constraints": [
+        "mounted on said support (17)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1065,
+        "char_end": 1112
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_drive_on_support",
+      "kind": "attached_to",
+      "source": "second_drive_unit",
+      "target": "support",
+      "via": null,
+      "constraints": [
+        "mounted on said support (17)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1065,
+        "char_end": 1112
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_first_member_first_para",
+      "text": "the first member (11) forms part of a first lever parallelogram (31)",
+      "targets": [
+        "first_member",
+        "first_lever_parallelogram"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 649,
+        "char_end": 716
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_second_third_second_para",
+      "text": "the second (13) and third (15) members form part of a second lever parallelogram (33) having a member (35) in common with the first lever parallelogram (31)",
+      "targets": [
+        "second_member",
+        "third_member",
+        "second_lever_parallelogram",
+        "common_member",
+        "first_lever_parallelogram"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 749,
+        "char_end": 893
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_same_pivot_axis",
+      "text": "two members (11,37) of said first lever parallelogram (31) have the same pivot axis (51) on the support (17)",
+      "targets": [
+        "first_member",
+        "second_parallel_member",
+        "first_lever_parallelogram",
+        "pivot_axis",
+        "support"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 896,
+        "char_end": 968
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_operative_connection_drives",
+      "text": "said two members (11,37) are in operative connection, respectively with said first and second drive units (63,65), each of which drive units is mounted on said support (17)",
+      "targets": [
+        "first_member",
+        "second_parallel_member",
+        "first_drive_unit",
+        "second_drive_unit",
+        "support"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 973,
+        "char_end": 1112
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

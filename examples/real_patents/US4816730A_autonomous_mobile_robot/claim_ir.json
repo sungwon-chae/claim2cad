@@ -1,0 +1,519 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Apparatus for handling and moving a plurality of objects",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. An apparatus for handling and moving a plurality of objects; wherein the apparatus comprising: a. a robotic arm assembly capable of vertical, horizontal and rotational movement; b. gripper mechanism for holding objects attach to the arm of the assembly; said gripper mechanism having gripper fingers attached thereto actuated by a cone; p1 c. stepper motors for driving the robotic arm assembly, wherein one stepper motor drives the cone thereby simultaneously opening and closing the gripper fingers of the gripper mechanism; d. a power source that drives the stepper motors electrically coupled to the stepper motors; e. a first sensing system with a feedback loop that monitors the movement of the arm assembly; f. a second sensing system for the gripper that controls the amount of force applied to the object being moved, senses the presence of the object in the gripper and sense the presence of surrounding objects and prevents contact with such objects and thereby prevents damage to the gripper and surrounding objects; g. a computer electrically interfaced with the stepper motors, the power means and the first and second sensing systems with the feedback loop and receives operating data for the operation of the apparatus and movement of objects and feed back information from the first and second sensing systems and controls and corrects movements of the arm assembly and the force applied by the gripper mechanism by controlling the stepper motors that operates the gripper mechanism; h. means for providing operating data input to the computer.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "robotic_arm_assembly",
+      "label": "robotic arm assembly",
+      "category": "structural",
+      "kind": "arm_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "capable of vertical, horizontal and rotational movement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 101,
+        "char_end": 121
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "gripper_mechanism",
+      "label": "gripper mechanism",
+      "category": "functional",
+      "kind": "gripper",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for holding objects",
+        "attached to the arm of the assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 196
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "gripper_fingers",
+      "label": "gripper fingers",
+      "category": "structural",
+      "kind": "finger",
+      "parent_id": "gripper_mechanism",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "actuated by a cone"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 268,
+        "char_end": 283
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "cone",
+      "label": "cone",
+      "category": "structural",
+      "kind": "cone",
+      "parent_id": "gripper_mechanism",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 330,
+        "char_end": 334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "stepper_motors",
+      "label": "stepper motors",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for driving the robotic arm assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 342,
+        "char_end": 356
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "stepper_motor_cone",
+      "label": "one stepper motor (drives cone)",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": "stepper_motors",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "drives the cone thereby simultaneously opening and closing the gripper fingers"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 417
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "power_source",
+      "label": "power source",
+      "category": "structural",
+      "kind": "power_supply",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "drives the stepper motors electrically coupled to the stepper motors"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 524,
+        "char_end": 536
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_sensing_system",
+      "label": "first sensing system",
+      "category": "functional",
+      "kind": "sensor_system",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "with a feedback loop",
+        "monitors the movement of the arm assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 619,
+        "char_end": 639
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "feedback_loop",
+      "label": "feedback loop",
+      "category": "functional",
+      "kind": "feedback_loop",
+      "parent_id": "first_sensing_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 647,
+        "char_end": 660
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_sensing_system",
+      "label": "second sensing system",
+      "category": "functional",
+      "kind": "sensor_system",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for the gripper",
+        "controls the amount of force applied to the object being moved",
+        "senses the presence of the object in the gripper",
+        "senses the presence of surrounding objects",
+        "prevents contact with such objects",
+        "prevents damage to the gripper and surrounding objects"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 706,
+        "char_end": 727
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "computer",
+      "label": "computer",
+      "category": "functional",
+      "kind": "computer",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "electrically interfaced with the stepper motors, the power means and the first and second sensing systems with the feedback loop",
+        "receives operating data for the operation of the apparatus and movement of objects",
+        "receives feed back information from the first and second sensing systems",
+        "controls and corrects movements of the arm assembly",
+        "controls the force applied by the gripper mechanism by controlling the stepper motors"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1020,
+        "char_end": 1028
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "data_input_means",
+      "label": "means for providing operating data input",
+      "category": "functional",
+      "kind": "input_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "provides operating data input to the computer"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1307,
+        "char_end": 1347
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_gripper_to_arm",
+      "kind": "attached_to",
+      "source": "gripper_mechanism",
+      "target": "robotic_arm_assembly",
+      "via": null,
+      "constraints": [
+        "attached to the arm of the assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 197,
+        "char_end": 254
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fingers_to_gripper",
+      "kind": "attached_to",
+      "source": "gripper_fingers",
+      "target": "gripper_mechanism",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 257,
+        "char_end": 295
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_cone_actuates_fingers",
+      "kind": "transmits_force_to",
+      "source": "cone",
+      "target": "gripper_fingers",
+      "via": null,
+      "constraints": [
+        "actuated by a cone"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 296,
+        "char_end": 334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_motors_drive_arm",
+      "kind": "transmits_force_to",
+      "source": "stepper_motors",
+      "target": "robotic_arm_assembly",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 339,
+        "char_end": 392
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_motor_drives_cone",
+      "kind": "transmits_force_to",
+      "source": "stepper_motor_cone",
+      "target": "cone",
+      "via": null,
+      "constraints": [
+        "simultaneously opening and closing the gripper fingers"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 395,
+        "char_end": 519
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_power_to_motors",
+      "kind": "transmits_force_to",
+      "source": "power_source",
+      "target": "stepper_motors",
+      "via": null,
+      "constraints": [
+        "electrically coupled"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 521,
+        "char_end": 614
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_sensing_monitors_arm",
+      "kind": "connects",
+      "source": "first_sensing_system",
+      "target": "robotic_arm_assembly",
+      "via": "feedback_loop",
+      "constraints": [
+        "monitors the movement of the arm assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 700
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_sensing_gripper",
+      "kind": "connects",
+      "source": "second_sensing_system",
+      "target": "gripper_mechanism",
+      "via": null,
+      "constraints": [
+        "controls the amount of force applied to the object being moved",
+        "senses the presence of the object in the gripper",
+        "prevents damage to the gripper and surrounding objects"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 703,
+        "char_end": 1015
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_computer_to_motors",
+      "kind": "connects",
+      "source": "computer",
+      "target": "stepper_motors",
+      "via": null,
+      "constraints": [
+        "electrically interfaced"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1020,
+        "char_end": 1068
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_computer_to_first_sensing",
+      "kind": "connects",
+      "source": "computer",
+      "target": "first_sensing_system",
+      "via": null,
+      "constraints": [
+        "electrically interfaced",
+        "receives feed back information"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1086,
+        "char_end": 1120
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_computer_to_second_sensing",
+      "kind": "connects",
+      "source": "computer",
+      "target": "second_sensing_system",
+      "via": null,
+      "constraints": [
+        "electrically interfaced",
+        "receives feed back information"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1125,
+        "char_end": 1160
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_computer_controls_arm",
+      "kind": "transmits_force_to",
+      "source": "computer",
+      "target": "robotic_arm_assembly",
+      "via": null,
+      "constraints": [
+        "controls and corrects movements of the arm assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1218,
+        "char_end": 1270
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_data_input_to_computer",
+      "kind": "transmits_force_to",
+      "source": "data_input_means",
+      "target": "computer",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1304,
+        "char_end": 1355
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_apparatus_components",
+      "text": "wherein the apparatus comprising: a. a robotic arm assembly capable of vertical, horizontal and rotational movement; b. gripper mechanism for holding objects attach to the arm of the assembly; said gripper mechanism having gripper fingers attached thereto actuated by a cone; p1 c. stepper motors for driving the robotic arm assembly",
+      "targets": [
+        "robotic_arm_assembly",
+        "gripper_mechanism",
+        "gripper_fingers",
+        "cone",
+        "stepper_motors"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 392
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_motor_drives_cone",
+      "text": "wherein one stepper motor drives the cone thereby simultaneously opening and closing the gripper fingers of the gripper mechanism",
+      "targets": [
+        "stepper_motor_cone",
+        "cone",
+        "gripper_fingers",
+        "gripper_mechanism"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 394,
+        "char_end": 519
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

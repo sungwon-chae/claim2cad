@@ -1,0 +1,540 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Transmission automatic control with inhibitor means",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In a transmission; an input element; an output element; a multi ratio drive gear unit connecting said input element to said output element having a low and a high fluid actuated friction device respectively providing a low and a high ratio drive selectively operable for establishing said low and high ratio drives; a source of fluid at a regulated pressure; a governor providing a governor pressure proportional to the operating speed of one of said elements; a manual valve connected to said source, having a manual low signal line and a low-high signal line and operative in a low position connecting the source of fluid pressure to said manual low signal line and in a low-high position connecting the source of fluid pressure to said low-high signal line and in each position exhausting the other of said connected lines; automatic control valve means operatively connected to said governor and said manual valve and operative in response to governor pressure to shift between a downshifted and an upshifted position and operative in either position in response to said manual low signal line pressure to supply fluid pressure to said low device to establish low drive and operative in response to said low-high signal line pressure in a downshifted position to supply fluid pressure to said low device to establish low drive and in an upshifted position to exhaust said low drive device and supply fluid pressure to said high drive device and inhibitor means operatively connected to said manual valve, automatic control valve means and said governor for controlling said manual valve, to permit at any of said operating speeds, when said automatic control valve means is downshifted, a low-high position to low position manual shift and to inhibit above a predetermined operating speed, when said automatic control valve is upshifted, a low-high position to low position manual shift.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "transmission",
+      "label": "transmission",
+      "category": "structural",
+      "kind": "transmission",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 20
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "input_element",
+      "label": "input element",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 25,
+        "char_end": 38
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "output_element",
+      "label": "output element",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 43,
+        "char_end": 57
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "multi_ratio_drive_gear_unit",
+      "label": "multi ratio drive gear unit",
+      "category": "structural",
+      "kind": "gear_unit",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 61,
+        "char_end": 88
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "low_friction_device",
+      "label": "low fluid actuated friction device",
+      "category": "functional",
+      "kind": "friction_device",
+      "parent_id": "multi_ratio_drive_gear_unit",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "provides low ratio drive"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 148,
+        "char_end": 196
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "high_friction_device",
+      "label": "high fluid actuated friction device",
+      "category": "functional",
+      "kind": "friction_device",
+      "parent_id": "multi_ratio_drive_gear_unit",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "provides high ratio drive"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 148,
+        "char_end": 196
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "fluid_source",
+      "label": "source of fluid at a regulated pressure",
+      "category": "structural",
+      "kind": "fluid_source",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "regulated pressure"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 317,
+        "char_end": 356
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "governor",
+      "label": "governor",
+      "category": "functional",
+      "kind": "governor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "provides governor pressure proportional to operating speed of one of said elements"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 360,
+        "char_end": 368
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "governor_pressure",
+      "label": "governor pressure",
+      "category": "functional",
+      "kind": "pressure_signal",
+      "parent_id": "governor",
+      "dimension": {
+        "kind": "relative",
+        "description": "proportional to the operating speed of one of said elements"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 379,
+        "char_end": 396
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "manual_valve",
+      "label": "manual valve",
+      "category": "structural",
+      "kind": "valve",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to said source",
+        "operative in low position connecting source of fluid pressure to manual low signal line",
+        "operative in low-high position connecting source of fluid pressure to low-high signal line",
+        "in each position exhausting the other of said connected lines"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 462,
+        "char_end": 474
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "manual_low_signal_line",
+      "label": "manual low signal line",
+      "category": "connection",
+      "kind": "fluid_line",
+      "parent_id": "manual_valve",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 499,
+        "char_end": 521
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "low_high_signal_line",
+      "label": "low-high signal line",
+      "category": "connection",
+      "kind": "fluid_line",
+      "parent_id": "manual_valve",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 528,
+        "char_end": 548
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "automatic_control_valve_means",
+      "label": "automatic control valve means",
+      "category": "functional",
+      "kind": "control_valve",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operative in response to governor pressure to shift between downshifted and upshifted position",
+        "operative in either position in response to manual low signal line pressure to supply fluid pressure to low device",
+        "operative in response to low-high signal line pressure in downshifted position to supply fluid to low device",
+        "in upshifted position to exhaust low drive device and supply fluid pressure to high drive device"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 822,
+        "char_end": 851
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "inhibitor_means",
+      "label": "inhibitor means",
+      "category": "functional",
+      "kind": "inhibitor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operatively connected to manual valve, automatic control valve means and governor",
+        "to permit at any operating speed when automatic control valve means is downshifted a low-high to low position manual shift",
+        "to inhibit above a predetermined operating speed when automatic control valve is upshifted a low-high to low position manual shift"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1276,
+        "char_end": 1291
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_gear_unit_connects_input_output",
+      "kind": "connects",
+      "source": "multi_ratio_drive_gear_unit",
+      "target": "output_element",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 61,
+        "char_end": 143
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_unit_to_input",
+      "kind": "connects",
+      "source": "multi_ratio_drive_gear_unit",
+      "target": "input_element",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 89,
+        "char_end": 130
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_manual_valve_to_source",
+      "kind": "connects",
+      "source": "manual_valve",
+      "target": "fluid_source",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 475,
+        "char_end": 497
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_acvm_to_governor",
+      "kind": "connects",
+      "source": "automatic_control_valve_means",
+      "target": "governor",
+      "via": null,
+      "constraints": [
+        "operatively connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 852,
+        "char_end": 896
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_acvm_to_manual_valve",
+      "kind": "connects",
+      "source": "automatic_control_valve_means",
+      "target": "manual_valve",
+      "via": null,
+      "constraints": [
+        "operatively connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 852,
+        "char_end": 910
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_acvm_transmits_to_low_device",
+      "kind": "transmits_force_to",
+      "source": "automatic_control_valve_means",
+      "target": "low_friction_device",
+      "via": null,
+      "constraints": [
+        "supplies fluid pressure to establish low drive"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1010,
+        "char_end": 1082
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_acvm_transmits_to_high_device",
+      "kind": "transmits_force_to",
+      "source": "automatic_control_valve_means",
+      "target": "high_friction_device",
+      "via": null,
+      "constraints": [
+        "supplies fluid pressure in upshifted position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1220,
+        "char_end": 1275
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_inhibitor_to_manual_valve",
+      "kind": "connects",
+      "source": "inhibitor_means",
+      "target": "manual_valve",
+      "via": null,
+      "constraints": [
+        "operatively connected for controlling manual valve"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1292,
+        "char_end": 1360
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_inhibitor_to_acvm",
+      "kind": "connects",
+      "source": "inhibitor_means",
+      "target": "automatic_control_valve_means",
+      "via": null,
+      "constraints": [
+        "operatively connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1292,
+        "char_end": 1360
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_inhibitor_to_governor",
+      "kind": "connects",
+      "source": "inhibitor_means",
+      "target": "governor",
+      "via": null,
+      "constraints": [
+        "operatively connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1292,
+        "char_end": 1360
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_governor_pressure_to_acvm",
+      "kind": "transmits_force_to",
+      "source": "governor",
+      "target": "automatic_control_valve_means",
+      "via": "governor_pressure",
+      "constraints": [
+        "causes shift between downshifted and upshifted position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 912,
+        "char_end": 966
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_manual_low_to_acvm",
+      "kind": "transmits_force_to",
+      "source": "manual_low_signal_line",
+      "target": "automatic_control_valve_means",
+      "via": null,
+      "constraints": [
+        "manual low signal line pressure causes low drive establishment"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 993,
+        "char_end": 1082
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_low_high_line_to_acvm",
+      "kind": "transmits_force_to",
+      "source": "low_high_signal_line",
+      "target": "automatic_control_valve_means",
+      "via": null,
+      "constraints": [
+        "low-high signal line pressure governs low or high drive based on position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1088,
+        "char_end": 1275
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_permit_downshifted",
+      "text": "to permit at any of said operating speeds, when said automatic control valve means is downshifted, a low-high position to low position manual shift",
+      "targets": [
+        "inhibitor_means",
+        "automatic_control_valve_means",
+        "manual_valve"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1362,
+        "char_end": 1508
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_inhibit_upshifted",
+      "text": "to inhibit above a predetermined operating speed, when said automatic control valve is upshifted, a low-high position to low position manual shift",
+      "targets": [
+        "inhibitor_means",
+        "automatic_control_valve_means",
+        "manual_valve"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1513,
+        "char_end": 1659
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

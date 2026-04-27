@@ -1,0 +1,827 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Lift-off hinge assembly",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In a lift-off hinge assembly of the type having a body-half sub-assembly adapted to be secured to a vehicle body and a door-half member pivotally connected by a pintle pin about a vertical hinge axis to said body-half sub-assembly, said lift-off hinge assembly particularly adapted to enable removal and mounting of a vehicle door during manufacture of the vehicle, said lift-off hinge assembly comprising: a hinge body-half assembly including a main member adapted to be secured to the vehicle body and a U-shaped link member pivotally connected by a pintle pin aligned on said hinge axis to said hinge main member; said main member having upper and lower parallel extensions interconnected by a mounting wall, said mounting wall adapted to abut the vehicle body with said upper and lower extensions each having a pintle pin hole aligned on said hinge axis; said U-shaped link member formed with a base wall having a planar exterior guide surface and upper and lower parallel legs projecting therefrom, said upper and lower legs having aligned pintle pin holes for the reception of said pintle pin; each said upper and lower leg having a guide edge surface thereon, each said leg guide edge surface located in a vertically disposed plane oriented at right angles to a plane that includes said base wall exterior guide surface; said link member having stop means thereon adapted to contact said main member so as to pivotally position said link member relative to said main member at a predetermined door lift-off position providing a maximum door opening angle; said door-half member having a channel-shape including a bight wall and a pair of first and second parallel sidewalls extending normally from said bight wall, said first sidewall upper end being formed with an inwardly extending leaf flange having a pintle pin hole therein; said door-half member of a size such that upon its initial lateral movement relative to said body-half sub-assembly said door-half member is in predetermined nested contact with said link member, wherein said door-half member second sidewall having its interior surface positioned in flush abutment with said link member base wall exterior surface and the interior surface of said door-half member bright wall contacting both said link member upper and lower guide edge surfaces, whereby said leaf flange is spaced a predetermined distance above said pintle pin upper end with said leaf flange pin hole center self aligned on said hinge pintle pin axis; whereby upon said door-half member being lowered a predetermined vertical distance said pintle pin having its upper free end portion received in said leaf flange pin hole and said leaf flange having its inner face contacting stop means on said pintle pin; and whereby said door-half member first sidewall having its interior surface in flush abutment with an opposed side edge surface of said link member lower leg such that said door-half member and said link member are in predetermined interlocked engagement for conjoint swinging movement about said hinge axis relative to said main member.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "body_half_sub_assembly",
+      "label": "body-half sub-assembly",
+      "category": "structural",
+      "kind": "sub-assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adapted to be secured to a vehicle body"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 74
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "vehicle_body",
+      "label": "vehicle body",
+      "category": "structural",
+      "kind": "body",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 101,
+        "char_end": 113
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "door_half_member",
+      "label": "door-half member",
+      "category": "structural",
+      "kind": "door-half member",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected by a pintle pin about a vertical hinge axis to said body-half sub-assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 118,
+        "char_end": 134
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "pintle_pin",
+      "label": "pintle pin",
+      "category": "connection",
+      "kind": "pin",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 163,
+        "char_end": 173
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "hinge_axis",
+      "label": "vertical hinge axis",
+      "category": "functional",
+      "kind": "axis",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "vertical"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 181,
+        "char_end": 200
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "hinge_body_half_assembly",
+      "label": "hinge body-half assembly",
+      "category": "structural",
+      "kind": "assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 430
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "main_member",
+      "label": "main member",
+      "category": "structural",
+      "kind": "member",
+      "parent_id": "hinge_body_half_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adapted to be secured to the vehicle body"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 443,
+        "char_end": 454
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "u_shaped_link_member",
+      "label": "U-shaped link member",
+      "category": "structural",
+      "kind": "link member",
+      "parent_id": "hinge_body_half_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected by a pintle pin aligned on said hinge axis to said hinge main member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 497,
+        "char_end": 517
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "upper_extension",
+      "label": "upper parallel extension",
+      "category": "structural",
+      "kind": "extension",
+      "parent_id": "main_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having a pintle pin hole aligned on said hinge axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 614,
+        "char_end": 620
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "lower_extension",
+      "label": "lower parallel extension",
+      "category": "structural",
+      "kind": "extension",
+      "parent_id": "main_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having a pintle pin hole aligned on said hinge axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 625,
+        "char_end": 631
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "mounting_wall",
+      "label": "mounting wall",
+      "category": "structural",
+      "kind": "wall",
+      "parent_id": "main_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "interconnects upper and lower parallel extensions",
+        "adapted to abut the vehicle body"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 651,
+        "char_end": 664
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "main_member_pintle_pin_hole",
+      "label": "pintle pin hole (main member)",
+      "category": "structural",
+      "kind": "hole",
+      "parent_id": "main_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "aligned on said hinge axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 718,
+        "char_end": 732
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "base_wall",
+      "label": "base wall",
+      "category": "structural",
+      "kind": "wall",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having a planar exterior guide surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 782,
+        "char_end": 791
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "base_wall_exterior_guide_surface",
+      "label": "base wall exterior guide surface",
+      "category": "structural",
+      "kind": "surface",
+      "parent_id": "base_wall",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "planar"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 800,
+        "char_end": 829
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "upper_leg",
+      "label": "upper parallel leg",
+      "category": "structural",
+      "kind": "leg",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "projects from base wall",
+        "having aligned pintle pin holes"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 834,
+        "char_end": 845
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "lower_leg",
+      "label": "lower parallel leg",
+      "category": "structural",
+      "kind": "leg",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "projects from base wall",
+        "having aligned pintle pin holes"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 850,
+        "char_end": 861
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "link_member_pintle_pin_holes",
+      "label": "aligned pintle pin holes (link member)",
+      "category": "structural",
+      "kind": "hole",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for the reception of said pintle pin"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 878,
+        "char_end": 900
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "leg_guide_edge_surface",
+      "label": "leg guide edge surface",
+      "category": "structural",
+      "kind": "surface",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "located in a vertically disposed plane oriented at right angles to a plane that includes said base wall exterior guide surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 968,
+        "char_end": 990
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "stop_means",
+      "label": "stop means",
+      "category": "functional",
+      "kind": "stop",
+      "parent_id": "u_shaped_link_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adapted to contact said main member so as to pivotally position said link member relative to said main member at a predetermined door lift-off position providing a maximum door opening angle"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1087,
+        "char_end": 1097
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "bight_wall",
+      "label": "bight wall",
+      "category": "structural",
+      "kind": "wall",
+      "parent_id": "door_half_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1254,
+        "char_end": 1264
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_sidewall",
+      "label": "first sidewall",
+      "category": "structural",
+      "kind": "wall",
+      "parent_id": "door_half_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending normally from said bight wall"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1277,
+        "char_end": 1291
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_sidewall",
+      "label": "second sidewall",
+      "category": "structural",
+      "kind": "wall",
+      "parent_id": "door_half_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending normally from said bight wall"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1296,
+        "char_end": 1311
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "leaf_flange",
+      "label": "leaf flange",
+      "category": "structural",
+      "kind": "flange",
+      "parent_id": "first_sidewall",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "inwardly extending",
+        "formed at upper end of first sidewall",
+        "having a pintle pin hole therein"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1389,
+        "char_end": 1400
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "leaf_flange_pintle_pin_hole",
+      "label": "pintle pin hole (leaf flange)",
+      "category": "structural",
+      "kind": "hole",
+      "parent_id": "leaf_flange",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1401,
+        "char_end": 1415
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "pintle_pin_stop_means",
+      "label": "stop means on pintle pin",
+      "category": "functional",
+      "kind": "stop",
+      "parent_id": "pintle_pin",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1869,
+        "char_end": 1879
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_door_half_pivots_body_half",
+      "kind": "rotates_about",
+      "source": "door_half_member",
+      "target": "body_half_sub_assembly",
+      "via": "pintle_pin",
+      "constraints": [
+        "about a vertical hinge axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 118,
+        "char_end": 232
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_link_member_pivots_main_member",
+      "kind": "rotates_about",
+      "source": "u_shaped_link_member",
+      "target": "main_member",
+      "via": "pintle_pin",
+      "constraints": [
+        "aligned on said hinge axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 497,
+        "char_end": 616
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_extensions_interconnected_by_mounting_wall",
+      "kind": "connects",
+      "source": "mounting_wall",
+      "target": "upper_extension",
+      "via": null,
+      "constraints": [
+        "interconnects upper and lower parallel extensions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 614,
+        "char_end": 668
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_mounting_wall_to_vehicle_body",
+      "kind": "attached_to",
+      "source": "mounting_wall",
+      "target": "vehicle_body",
+      "via": null,
+      "constraints": [
+        "adapted to abut the vehicle body"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 666,
+        "char_end": 700
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_upper_lower_legs_from_base_wall",
+      "kind": "attached_to",
+      "source": "upper_leg",
+      "target": "base_wall",
+      "via": null,
+      "constraints": [
+        "projecting therefrom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 834,
+        "char_end": 875
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_lower_leg_from_base_wall",
+      "kind": "attached_to",
+      "source": "lower_leg",
+      "target": "base_wall",
+      "via": null,
+      "constraints": [
+        "projecting therefrom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 834,
+        "char_end": 875
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_stop_means_contacts_main_member",
+      "kind": "transmits_force_to",
+      "source": "stop_means",
+      "target": "main_member",
+      "via": null,
+      "constraints": [
+        "adapted to contact said main member so as to pivotally position said link member at a predetermined door lift-off position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1087,
+        "char_end": 1196
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_sidewalls_from_bight_wall",
+      "kind": "attached_to",
+      "source": "first_sidewall",
+      "target": "bight_wall",
+      "via": null,
+      "constraints": [
+        "extending normally from said bight wall"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1265,
+        "char_end": 1326
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_sidewall_from_bight_wall",
+      "kind": "attached_to",
+      "source": "second_sidewall",
+      "target": "bight_wall",
+      "via": null,
+      "constraints": [
+        "extending normally from said bight wall"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1265,
+        "char_end": 1326
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_leaf_flange_on_first_sidewall",
+      "kind": "attached_to",
+      "source": "leaf_flange",
+      "target": "first_sidewall",
+      "via": null,
+      "constraints": [
+        "inwardly extending",
+        "at upper end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1365,
+        "char_end": 1415
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_door_half_nested_with_link_member",
+      "kind": "connects",
+      "source": "door_half_member",
+      "target": "u_shaped_link_member",
+      "via": null,
+      "constraints": [
+        "predetermined nested contact upon initial lateral movement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1417,
+        "char_end": 1534
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_sidewall_flush_with_base_wall",
+      "kind": "connects",
+      "source": "second_sidewall",
+      "target": "base_wall_exterior_guide_surface",
+      "via": null,
+      "constraints": [
+        "interior surface in flush abutment with link member base wall exterior surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1543,
+        "char_end": 1650
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_bight_wall_contacts_guide_edges",
+      "kind": "connects",
+      "source": "bight_wall",
+      "target": "leg_guide_edge_surface",
+      "via": null,
+      "constraints": [
+        "interior surface contacting both link member upper and lower guide edge surfaces"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1651,
+        "char_end": 1742
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_pintle_pin_received_in_leaf_flange",
+      "kind": "connects",
+      "source": "pintle_pin",
+      "target": "leaf_flange_pintle_pin_hole",
+      "via": null,
+      "constraints": [
+        "upper free end portion received in said leaf flange pin hole upon door-half member being lowered a predetermined vertical distance"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1800,
+        "char_end": 1870
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_leaf_flange_contacts_pintle_pin_stop",
+      "kind": "transmits_force_to",
+      "source": "leaf_flange",
+      "target": "pintle_pin_stop_means",
+      "via": null,
+      "constraints": [
+        "inner face contacting stop means on said pintle pin"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1843,
+        "char_end": 1893
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_sidewall_flush_with_lower_leg",
+      "kind": "connects",
+      "source": "first_sidewall",
+      "target": "lower_leg",
+      "via": null,
+      "constraints": [
+        "interior surface in flush abutment with opposed side edge surface of said link member lower leg"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1897,
+        "char_end": 1993
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_door_half_interlocked_with_link_member",
+      "kind": "connects",
+      "source": "door_half_member",
+      "target": "u_shaped_link_member",
+      "via": null,
+      "constraints": [
+        "predetermined interlocked engagement for conjoint swinging movement about said hinge axis relative to said main member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1993,
+        "char_end": 2096
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_nested_contact",
+      "text": "wherein said door-half member second sidewall having its interior surface positioned in flush abutment with said link member base wall exterior surface and the interior surface of said door-half member bright wall contacting both said link member upper and lower guide edge surfaces, whereby said leaf flange is spaced a predetermined distance above said pintle pin upper end with said leaf flange pin hole center self aligned on said hinge pintle pin axis; whereby upon said door-half member being lowered a predetermined vertical distance said pintle pin having its upper free end portion received in said leaf flange pin hole and said leaf flange having its inner face contacting stop means on said pintle pin; and whereby said door-half member first sidewall having its interior surface in flush abutment with an opposed side edge surface of said link member lower leg such that said door-half member and said link member are in predetermined interlocked engagement for conjoint swinging movement about said hinge axis relative to said main member",
+      "targets": [
+        "door_half_member",
+        "second_sidewall",
+        "base_wall_exterior_guide_surface",
+        "bight_wall",
+        "leg_guide_edge_surface",
+        "leaf_flange",
+        "leaf_flange_pintle_pin_hole",
+        "pintle_pin",
+        "pintle_pin_stop_means",
+        "first_sidewall",
+        "lower_leg",
+        "u_shaped_link_member",
+        "main_member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1534,
+        "char_end": 2096
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

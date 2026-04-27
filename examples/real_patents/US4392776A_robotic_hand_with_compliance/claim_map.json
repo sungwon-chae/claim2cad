@@ -1,0 +1,176 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4392776A_robotic_hand_with_compliance",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "base",
+      "glb_node_name": "base",
+      "label": "base",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 48,
+        "char_end": 52
+      }
+    },
+    {
+      "component_id": "first_drive_means",
+      "glb_node_name": "first_drive_means",
+      "label": "first motorized drive means",
+      "category": "functional",
+      "kind": "motorized_drive",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 124
+      }
+    },
+    {
+      "component_id": "second_drive_means",
+      "glb_node_name": "second_drive_means",
+      "label": "second motorized drive means",
+      "category": "functional",
+      "kind": "motorized_drive",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 124
+      }
+    },
+    {
+      "component_id": "first_arm",
+      "glb_node_name": "first_arm",
+      "label": "first generally hollow arm",
+      "category": "structural",
+      "kind": "hollow_arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 126,
+        "char_end": 164
+      }
+    },
+    {
+      "component_id": "first_arm_driving_means",
+      "glb_node_name": "first_arm_driving_means",
+      "label": "means for driving first arm from first drive means",
+      "category": "functional",
+      "kind": "drive_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 196,
+        "char_end": 290
+      }
+    },
+    {
+      "component_id": "second_arm",
+      "glb_node_name": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 292,
+        "char_end": 302
+      }
+    },
+    {
+      "component_id": "coupling_means",
+      "glb_node_name": "coupling_means",
+      "label": "coupling means for second arm",
+      "category": "functional",
+      "kind": "coupling_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 700
+      }
+    },
+    {
+      "component_id": "hollow_shaft",
+      "glb_node_name": "hollow_shaft",
+      "label": "hollow shaft (first arm driving shaft)",
+      "category": "structural",
+      "kind": "hollow_shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 756,
+        "char_end": 769
+      }
+    },
+    {
+      "component_id": "first_driven_means",
+      "glb_node_name": "first_driven_means",
+      "label": "driven means coupled to first drive means",
+      "category": "functional",
+      "kind": "driven_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 836,
+        "char_end": 876
+      }
+    },
+    {
+      "component_id": "second_shaft",
+      "glb_node_name": "second_shaft",
+      "label": "second shaft (concentrically disposed within first hollow shaft)",
+      "category": "structural",
+      "kind": "hollow_shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 924,
+        "char_end": 977
+      }
+    },
+    {
+      "component_id": "toothed_gearing",
+      "glb_node_name": "toothed_gearing",
+      "label": "toothed gearing",
+      "category": "connection",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1061,
+        "char_end": 1076
+      }
+    },
+    {
+      "component_id": "toothed_linking_means",
+      "glb_node_name": "toothed_linking_means",
+      "label": "toothed linking means",
+      "category": "connection",
+      "kind": "toothed_linking_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1089,
+        "char_end": 1110
+      }
+    },
+    {
+      "component_id": "second_driven_means",
+      "glb_node_name": "second_driven_means",
+      "label": "driven means coupled to second drive means",
+      "category": "functional",
+      "kind": "driven_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1137,
+        "char_end": 1179
+      }
+    }
+  ]
+}

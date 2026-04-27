@@ -1,0 +1,248 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Automatic control means for operating a machine to a succession of precisely determined positions",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. AUTOMATIC CONTROL MEANS FOR OPERATING A MACHINE TO A SUCCESSION OF PRECISELY DETERMINED POSITIONS IN ACCORDANCE WITH A SUCCESSIVE OF POSITIONAL INSTRUCTIONS, INCLUDING A MECHANICAL OUTPUT DEVICE, A SERVO SYSTEM HAVING AN OUTPUT PORTION FOR OPERATING THE MECHANICAL OUTPUT DEVICE THROUGH A RANGE OF POSITIONS, A SENSING INTERPOSER, SAID SERVO SYSTEM HAVING A SERVO INPUT CONTROL MEMBER COOPERABLE WITH SAID SENSING INTERPOSER, MEANS TO PRESENT MECHANICALLY TO THE SENSING INTERPOSER A SUCCESSION OF POSITIONAL INSTRUCTIONS, MEANS TO CAUSE THE INTERPOSER TO ASSUME A POSITION CORRESPONDING TO THE PREVAILING MECHANICALLY PRESENTED INSTRUCTION OF THE INSTRUCTION-PRESENTING MEANS, AND MEANS FOR EFFECTING MUTUAL COACTION OF SAID SERVO INPUT CONTROL MEMBER AND THE INTERPOSER.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "mechanical_output_device",
+      "label": "mechanical output device",
+      "category": "structural",
+      "kind": "output_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 172,
+        "char_end": 197
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "servo_system",
+      "label": "servo system",
+      "category": "functional",
+      "kind": "servo_system",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 199,
+        "char_end": 211
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "output_portion",
+      "label": "output portion",
+      "category": "structural",
+      "kind": "output_portion",
+      "parent_id": "servo_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 221,
+        "char_end": 235
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "sensing_interposer",
+      "label": "sensing interposer",
+      "category": "functional",
+      "kind": "interposer",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 312,
+        "char_end": 330
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "servo_input_control_member",
+      "label": "servo input control member",
+      "category": "functional",
+      "kind": "control_member",
+      "parent_id": "servo_system",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "cooperable with said sensing interposer"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 364,
+        "char_end": 390
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "instruction_presenting_means",
+      "label": "means to present mechanically to the sensing interposer a succession of positional instructions",
+      "category": "functional",
+      "kind": "instruction_presenting_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 432,
+        "char_end": 527
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "interposer_positioning_means",
+      "label": "means to cause the interposer to assume a position corresponding to the prevailing mechanically presented instruction",
+      "category": "functional",
+      "kind": "positioning_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 529,
+        "char_end": 681
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "coaction_means",
+      "label": "means for effecting mutual coaction of said servo input control member and the interposer",
+      "category": "functional",
+      "kind": "coaction_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 687,
+        "char_end": 775
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_output_portion_operates_mechanical_output",
+      "kind": "transmits_force_to",
+      "source": "output_portion",
+      "target": "mechanical_output_device",
+      "via": null,
+      "constraints": [
+        "through a range of positions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 221,
+        "char_end": 311
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_servo_input_cooperates_with_interposer",
+      "kind": "connects",
+      "source": "servo_input_control_member",
+      "target": "sensing_interposer",
+      "via": null,
+      "constraints": [
+        "cooperable"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 364,
+        "char_end": 430
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_instruction_presenting_to_interposer",
+      "kind": "transmits_force_to",
+      "source": "instruction_presenting_means",
+      "target": "sensing_interposer",
+      "via": null,
+      "constraints": [
+        "presents mechanically a succession of positional instructions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 432,
+        "char_end": 527
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_positioning_means_to_interposer",
+      "kind": "transmits_force_to",
+      "source": "interposer_positioning_means",
+      "target": "sensing_interposer",
+      "via": null,
+      "constraints": [
+        "causes interposer to assume position corresponding to prevailing instruction"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 529,
+        "char_end": 681
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coaction_means_connects_control_and_interposer",
+      "kind": "connects",
+      "source": "coaction_means",
+      "target": "servo_input_control_member",
+      "via": "sensing_interposer",
+      "constraints": [
+        "mutual coaction"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 687,
+        "char_end": 775
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": []
+}

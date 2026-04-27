@@ -1,0 +1,976 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Assembly robot adapted to be manipulated by a human operator",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. An assembly robot adapted to be manipulated by a human operator to perform a task during a programming mode of operation wherein different portions of said robot are moved during said programming mode of operation and signals representative of the movements are recorded for purposes of later driving said different portions of said robot to effect like movements during an operating mode of operation thereby to repeat the performance of said task without intervention by the human operator, said assembly robot comprising a breastplate which is connectable to the upper part of the body of a human operator during said programming mode, an upper arm member connectable to an upper arm of the human operator during said programming mode, said upper arm member being connected at one end thereof to said breastplate by a joint having both a horizontal axis and a vertical axis whereby said upper arm member may be moved relative to said breastplate by the human operator about said horizontal and vertical axes through ranges of movement which fully correspond to those of the human operator's shoulder joint, first sensor means for sensing movements of said upper arm member relative to said breastplate about said horizontal axis, means for recording the output of said first sensor means during said programming mode, first driving means between said breastplate and said upper arm member responsive to the recorded output of said first sensor means for moving said upper arm member about said horizontal axis during said operating mode, second sensor means for sensing movements of said upper arm member relative to said breastplate about said vertical axis, means for recording the output of said second sensor means during said programming mode, second driving means between said breastplate and said upper arm member responsive to the recorded output of said second sensor means for moving said upper arm member about said vertical axis during said operating mode, a lower arm member connectable to the lower arm of the human operator during said programming mode, means connecting one end of said lower arm member to the other end of said upper arm member for pivotal motion about a third joint through a range of movement fully corresponding to that of the human operator's elbow joint, third sensor means for sensing movements of said upper and lower arm members relative to one another about said third joint, means for recording the output of said third sensor means during said programming mode, third driving means between said upper and lower arm members responsive to the recorded output of said third sensor means for moving said upper and lower arm members relative to one another about said third joint during said operating mode, a hollow hand member adapted to receive the hand of the human operator during said programming mode, said hollow hand member being connected to the other end of said lower arm member by a knuckle joint having fourth and fifth pivotal axes that are prependicular to one another, fourth and fifth sensor means for sensing movements of said hollow hand member relative to said lower arm member about said fourth and fifth axes respectively, means for recording the outputs of said fourth and fifth sensor means during said programming mode, fourth and fifth driving means responsive respectively to the recorded outputs of said fourth and fifth sensor means for moving said hollow hand member relative to said lower arm member about said fourth and fifth axes respectively during said operating mode, said hollow hand member including a hollow central hand member which is connected to said lower arm member by said knuckle joint, a plurality of hollow thumb members interconnected sequentially to one another and to said central hand member by a plurality of pivotal thumb joints, said plural hollow thumb members forming a hollow articulated thumb unit which receives the thumb of the human operator and which is capable of movements about said thumb joints through ranges of movement fully corresponding to those of the human operator's thumb during said programming mode, a plurality of thumb member sensor elements for sensing movements of said thumb members about said plurality of thumb joints respectively, means for recording the outputs of said thumb member sensor elements during said programming mode, a plurality of thumb member driving means responsive respectively to the recorded outputs of said thumb member sensor elements for moving said hollow thumb members relative to one another and relative to said central hand member about said plurality of thumb joints respectively during said operating mode, a plurality of hollow finger members interconnected sequentially to one another and to said central hand member by a plurality of pivoted finger joints, said plural hollow finger members forming a hollow articulated finger unit which receives a finger of the human operator during the said programming mode and which is capable of movements about said finger joints through ranges of movement fully corresponding to those of the human operator's finger, a plurality of finger member sensor elements for sensing movements of said finger members about said plurality of finger joints respectively, means for recording the outputs of said finger member sensor elements during said programming mode, and a plurality of finger member driving means responsive respectively to the recorded outputs of said finger member sensor elements for moving said hollow finger members relative to one another and relative to said central hand member about said plurality of finger joints respectively during said operating mode.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "breastplate",
+      "label": "breastplate",
+      "category": "structural",
+      "kind": "body_plate",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connectable to the upper part of the body of a human operator during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 521,
+        "char_end": 532
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "upper_arm_member",
+      "label": "upper arm member",
+      "category": "structural",
+      "kind": "arm_member",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connectable to an upper arm of the human operator during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 639,
+        "char_end": 655
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "shoulder_joint",
+      "label": "joint (shoulder)",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having both a horizontal axis and a vertical axis",
+        "ranges of movement fully correspond to those of the human operator's shoulder joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 745,
+        "char_end": 750
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_sensor_means",
+      "label": "first sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of upper arm member relative to breastplate about horizontal axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1005,
+        "char_end": 1023
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_recording_means",
+      "label": "means for recording output of first sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1089,
+        "char_end": 1112
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_driving_means",
+      "label": "first driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "between breastplate and upper arm member",
+        "responsive to recorded output of first sensor means",
+        "for moving upper arm member about horizontal axis during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1160,
+        "char_end": 1179
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_sensor_means",
+      "label": "second sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of upper arm member relative to breastplate about vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1315,
+        "char_end": 1334
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_recording_means",
+      "label": "means for recording output of second sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1401,
+        "char_end": 1424
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_driving_means",
+      "label": "second driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "between breastplate and upper arm member",
+        "responsive to recorded output of second sensor means",
+        "for moving upper arm member about vertical axis during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1471,
+        "char_end": 1491
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "lower_arm_member",
+      "label": "lower arm member",
+      "category": "structural",
+      "kind": "arm_member",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connectable to the lower arm of the human operator during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1629,
+        "char_end": 1645
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "elbow_connecting_means",
+      "label": "means connecting lower arm member to upper arm member",
+      "category": "connection",
+      "kind": "pivot_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for pivotal motion about a third joint",
+        "range of movement fully corresponding to that of the human operator's elbow joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1697,
+        "char_end": 1712
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_joint",
+      "label": "third joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "range of movement fully corresponding to that of the human operator's elbow joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1757,
+        "char_end": 1768
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_sensor_means",
+      "label": "third sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of upper and lower arm members relative to one another about third joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1844,
+        "char_end": 1862
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_recording_means",
+      "label": "means for recording output of third sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1940,
+        "char_end": 1963
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_driving_means",
+      "label": "third driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "between upper and lower arm members",
+        "responsive to recorded output of third sensor means",
+        "for moving upper and lower arm members relative to one another about third joint during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2010,
+        "char_end": 2029
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "hollow_hand_member",
+      "label": "hollow hand member",
+      "category": "structural",
+      "kind": "hand_member",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adapted to receive the hand of the human operator during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2168,
+        "char_end": 2186
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "knuckle_joint",
+      "label": "knuckle joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having fourth and fifth pivotal axes that are perpendicular to one another"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2267,
+        "char_end": 2280
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "fourth_fifth_sensor_means",
+      "label": "fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of hollow hand member relative to lower arm member about fourth and fifth axes respectively"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2332,
+        "char_end": 2361
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "fourth_fifth_recording_means",
+      "label": "means for recording outputs of fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2448,
+        "char_end": 2471
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "fourth_fifth_driving_means",
+      "label": "fourth and fifth driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "responsive respectively to recorded outputs of fourth and fifth sensor means",
+        "for moving hollow hand member relative to lower arm member about fourth and fifth axes respectively during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2521,
+        "char_end": 2550
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "central_hand_member",
+      "label": "hollow central hand member",
+      "category": "structural",
+      "kind": "hand_member",
+      "parent_id": "hollow_hand_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to lower arm member by knuckle joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2686,
+        "char_end": 2712
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "hollow_thumb_members",
+      "label": "plurality of hollow thumb members",
+      "category": "structural",
+      "kind": "finger_member",
+      "parent_id": "hollow_hand_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "interconnected sequentially to one another and to central hand member by pivotal thumb joints",
+        "forming hollow articulated thumb unit which receives the thumb of the human operator",
+        "capable of movements through ranges of movement fully corresponding to those of the human operator's thumb during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2774,
+        "char_end": 2807
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "pivotal_thumb_joints",
+      "label": "plurality of pivotal thumb joints",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2841,
+        "char_end": 2874
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "thumb_sensor_elements",
+      "label": "plurality of thumb member sensor elements",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of thumb members about plurality of thumb joints respectively"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3062,
+        "char_end": 3103
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "thumb_recording_means",
+      "label": "means for recording outputs of thumb member sensor elements",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3157,
+        "char_end": 3180
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "thumb_driving_means",
+      "label": "plurality of thumb member driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "responsive respectively to recorded outputs of thumb member sensor elements",
+        "for moving hollow thumb members relative to one another and relative to central hand member about thumb joints during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3230,
+        "char_end": 3269
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "hollow_finger_members",
+      "label": "plurality of hollow finger members",
+      "category": "structural",
+      "kind": "finger_member",
+      "parent_id": "hollow_hand_member",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "interconnected sequentially to one another and to central hand member by pivoted finger joints",
+        "forming hollow articulated finger unit which receives a finger of the human operator during programming mode",
+        "capable of movements through ranges of movement fully corresponding to those of the human operator's finger"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3418,
+        "char_end": 3452
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "pivoted_finger_joints",
+      "label": "plurality of pivoted finger joints",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3487,
+        "char_end": 3521
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "finger_sensor_elements",
+      "label": "plurality of finger member sensor elements",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for sensing movements of finger members about plurality of finger joints respectively"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3680,
+        "char_end": 3722
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "finger_recording_means",
+      "label": "means for recording outputs of finger member sensor elements",
+      "category": "functional",
+      "kind": "recording_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "during programming mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3778,
+        "char_end": 3801
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "finger_driving_means",
+      "label": "plurality of finger member driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "responsive respectively to recorded outputs of finger member sensor elements",
+        "for moving hollow finger members relative to one another and relative to central hand member about finger joints during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3851,
+        "char_end": 3891
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_upper_arm_to_breastplate",
+      "kind": "connects",
+      "source": "upper_arm_member",
+      "target": "breastplate",
+      "via": "shoulder_joint",
+      "constraints": [
+        "at one end of upper arm member",
+        "joint having both horizontal axis and vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 720,
+        "char_end": 813
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_sensor_upper_arm",
+      "kind": "attached_to",
+      "source": "first_sensor_means",
+      "target": "upper_arm_member",
+      "via": null,
+      "constraints": [
+        "senses movements about horizontal axis relative to breastplate"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1005,
+        "char_end": 1088
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_driving_between",
+      "kind": "connects",
+      "source": "first_driving_means",
+      "target": "upper_arm_member",
+      "via": null,
+      "constraints": [
+        "between breastplate and upper arm member",
+        "moves upper arm member about horizontal axis during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1160,
+        "char_end": 1313
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_sensor_upper_arm",
+      "kind": "attached_to",
+      "source": "second_sensor_means",
+      "target": "upper_arm_member",
+      "via": null,
+      "constraints": [
+        "senses movements about vertical axis relative to breastplate"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1315,
+        "char_end": 1399
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_driving_between",
+      "kind": "connects",
+      "source": "second_driving_means",
+      "target": "upper_arm_member",
+      "via": null,
+      "constraints": [
+        "between breastplate and upper arm member",
+        "moves upper arm member about vertical axis during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1471,
+        "char_end": 1627
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_lower_arm_to_upper_arm",
+      "kind": "connects",
+      "source": "lower_arm_member",
+      "target": "upper_arm_member",
+      "via": "third_joint",
+      "constraints": [
+        "pivotal motion about third joint",
+        "range of movement fully corresponding to human operator's elbow joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1697,
+        "char_end": 1841
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_sensor_arm_members",
+      "kind": "attached_to",
+      "source": "third_sensor_means",
+      "target": "third_joint",
+      "via": null,
+      "constraints": [
+        "senses movements of upper and lower arm members relative to one another about third joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1844,
+        "char_end": 1938
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_driving_between",
+      "kind": "connects",
+      "source": "third_driving_means",
+      "target": "lower_arm_member",
+      "via": null,
+      "constraints": [
+        "between upper and lower arm members",
+        "moves upper and lower arm members about third joint during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2010,
+        "char_end": 2166
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_hand_to_lower_arm",
+      "kind": "connects",
+      "source": "hollow_hand_member",
+      "target": "lower_arm_member",
+      "via": "knuckle_joint",
+      "constraints": [
+        "connected to other end of lower arm member",
+        "knuckle joint having fourth and fifth pivotal axes perpendicular to one another"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2218,
+        "char_end": 2331
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fourth_fifth_sensor_hand",
+      "kind": "attached_to",
+      "source": "fourth_fifth_sensor_means",
+      "target": "hollow_hand_member",
+      "via": null,
+      "constraints": [
+        "senses movements of hollow hand member relative to lower arm member about fourth and fifth axes"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2332,
+        "char_end": 2446
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fourth_fifth_driving",
+      "kind": "connects",
+      "source": "fourth_fifth_driving_means",
+      "target": "hollow_hand_member",
+      "via": null,
+      "constraints": [
+        "moves hollow hand member relative to lower arm member about fourth and fifth axes during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2521,
+        "char_end": 2671
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_central_hand_to_lower_arm",
+      "kind": "connects",
+      "source": "central_hand_member",
+      "target": "lower_arm_member",
+      "via": "knuckle_joint",
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2727,
+        "char_end": 2773
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_thumb_members_to_central",
+      "kind": "connects",
+      "source": "hollow_thumb_members",
+      "target": "central_hand_member",
+      "via": "pivotal_thumb_joints",
+      "constraints": [
+        "interconnected sequentially to one another and to central hand member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2808,
+        "char_end": 2875
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_thumb_sensor_to_joints",
+      "kind": "attached_to",
+      "source": "thumb_sensor_elements",
+      "target": "pivotal_thumb_joints",
+      "via": null,
+      "constraints": [
+        "senses movements of thumb members about thumb joints respectively"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3062,
+        "char_end": 3155
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_thumb_driving",
+      "kind": "transmits_force_to",
+      "source": "thumb_driving_means",
+      "target": "hollow_thumb_members",
+      "via": null,
+      "constraints": [
+        "moves hollow thumb members relative to one another and relative to central hand member about thumb joints during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3230,
+        "char_end": 3415
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_finger_members_to_central",
+      "kind": "connects",
+      "source": "hollow_finger_members",
+      "target": "central_hand_member",
+      "via": "pivoted_finger_joints",
+      "constraints": [
+        "interconnected sequentially to one another and to central hand member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3487,
+        "char_end": 3523
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_finger_sensor_to_joints",
+      "kind": "attached_to",
+      "source": "finger_sensor_elements",
+      "target": "pivoted_finger_joints",
+      "via": null,
+      "constraints": [
+        "senses movements of finger members about finger joints respectively"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3680,
+        "char_end": 3776
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_finger_driving",
+      "kind": "transmits_force_to",
+      "source": "finger_driving_means",
+      "target": "hollow_finger_members",
+      "via": null,
+      "constraints": [
+        "moves hollow finger members relative to one another and relative to central hand member about finger joints during operating mode"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3851,
+        "char_end": 4072
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_programming_mode",
+      "text": "wherein different portions of said robot are moved during said programming mode of operation and signals representative of the movements are recorded for purposes of later driving said different portions of said robot to effect like movements during an operating mode of operation thereby to repeat the performance of said task without intervention by the human operator",
+      "targets": [
+        "breastplate",
+        "upper_arm_member",
+        "lower_arm_member",
+        "hollow_hand_member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 125,
+        "char_end": 491
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

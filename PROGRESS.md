@@ -963,3 +963,50 @@ $60 not breached). Breakdown:
   variant in v1.1.
 - The harness intentionally writes outputs to a temp dir per example,
   so concurrent runs don't trample each other.
+
+---
+
+## Phase V1-12 — v1.0.0 release polish — COMPLETED 2026-04-28
+
+### What shipped
+- README rewritten for portfolio / demo use:
+  - v1.0 badge line summarising the corpus.
+  - New "What's new in v1.0" table mapping each V1-x phase to its
+    headline.
+  - Architecture tree expanded to include V1-7..V1-11 modules
+    (`lang.py`, `lang_ko.py`, `claim_hierarchy.py`,
+    `dimension_extractor.py`, `eval_harness.py`).
+  - Examples section now describes Korean and multi-claim drone.
+  - Limitations rewritten as deliberate scope choices (not
+    omissions). Roadmap section split out (v1.1 / v1.2+ / research).
+- `RELEASE_NOTES.md` — condensed per-release story for v1.0.0 + v0.1.0,
+  including a migration-from-v0.1.0 sub-section and a per-phase
+  highlight table.
+- CHANGELOG entry for V1-12.
+
+### Verification
+- `pytest tests/` — 101 passed.
+- `viewer/npm run typecheck` — clean.
+- `make eval` and `make eval-stub` succeed end-to-end.
+- README mermaid diagrams render in GitHub preview.
+
+### v1.0.0 readiness checklist
+- [x] All V1-x phases (V1-0..V1-12) committed and pushed to `v1.0-dev`.
+- [x] PR #1 from `v1.0-dev` → `main` merged (squash, commit ecced83).
+- [x] 101 tests, 0 failures.
+- [x] CI green on the latest push.
+- [x] Offline demo works on a clean checkout.
+- [x] README + RELEASE_NOTES + CHANGELOG up to date.
+- [x] No paid API needed for the default demo path.
+- [x] Generated artefacts (12 MB examples / 4.6 MB viewer data) within
+      "small enough for the repo" bar.
+- [ ] **Tag `v1.0.0`** — held back per the brief ("Prepare for v1.0.0
+      tag, but do not create the release unless everything is clean").
+      Tagging is a single-command follow-up:
+      `git tag -a v1.0.0 -m 'v1.0.0' && git push origin v1.0.0`.
+
+### Notes
+- This commit closes V1.0 development. Future work re-opens against
+  v1.1-dev.
+- Static screenshots not added — none were already generated locally
+  and the brief said "only if already generated."

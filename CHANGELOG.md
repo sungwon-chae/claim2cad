@@ -4,6 +4,14 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-12)
+- README rewritten for v1.0: badge line gains a v1.0 summary, "What's
+  new in v1.0" table, expanded architecture tree, expanded examples
+  section (golden + Korean + multi-claim + real patents), separated
+  Limitations and Roadmap sections.
+- `RELEASE_NOTES.md` — condensed per-release story, v1.0.0 + v0.1.0.
+- 101 tests across 6 test files; 30 examples.
+
 ### Added (V1-11)
 - Evaluation harness (`claim2cad/eval_harness.py`):
   - `PRMetric`, `evaluate_example`, `evaluate_all`, `EvalReport`,

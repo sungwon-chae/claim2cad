@@ -32,7 +32,9 @@
         "char_end": 54
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_link",
@@ -50,7 +52,9 @@
         "char_end": 68
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_joint",
@@ -70,7 +74,9 @@
         "char_end": 125
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_link",
@@ -89,7 +95,9 @@
         "char_end": 140
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_joint",
@@ -109,7 +117,9 @@
         "char_end": 204
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "end_effector",
@@ -127,7 +137,9 @@
         "char_end": 221
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "gripper",
@@ -145,7 +157,9 @@
         "char_end": 466
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fastener",
@@ -163,7 +177,9 @@
         "char_end": 281
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "position_sensor",
@@ -181,7 +197,9 @@
         "char_end": 84
       },
       "is_dependent": true,
-      "dependent_on": "claim_1"
+      "dependent_on": "claim_1",
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

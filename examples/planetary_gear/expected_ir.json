@@ -32,9 +32,7 @@
         "char_end": 86
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "ring_gear",
@@ -52,9 +50,7 @@
         "char_end": 186
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "carrier",
@@ -72,9 +68,7 @@
         "char_end": 255
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "first_planet_gear",
@@ -92,9 +86,7 @@
         "char_end": 361
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "second_planet_gear",
@@ -112,9 +104,7 @@
         "char_end": 468
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "third_planet_gear",
@@ -132,9 +122,7 @@
         "char_end": 574
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     }
   ],
   "relations": [],

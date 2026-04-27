@@ -879,3 +879,39 @@ $60 not breached). Breakdown:
   (placeholder shapes); V1-10/V1-11 may surface them.
 - Bare numbers without units (``"comprising 30 components"``) stay
   unspecified — count nouns aren't dimensions.
+
+---
+
+## Phase V1-10 — Hosted demo readiness — COMPLETED 2026-04-27
+
+### What shipped
+- `Makefile`:
+  - `demo-offline` — runs the pipeline with `--dry-run` (no LLM).
+  - `demo-all-offline` — replays every example's `expected_ir.json`.
+  - `demo-clean-checkout` — full reproducible flow: install → demo all
+    offline → manifest → viewer build. Anyone with Python 3.11 + Node 20
+    can produce the demo from a clean clone in a few minutes.
+- All 30 example folders ship `expected_ir.json` (3 synthetics that were
+  missing it — hinge_assembly, planetary_gear — backfilled from their
+  existing claim_ir.json).
+- `README.md` rewritten Quickstart: offline path is the headline; the
+  LLM path is documented separately. New "Troubleshooting" section
+  covering macOS Python pin, build123d/OCP issues, viewer peer-dep
+  pitfalls, and the manifest-staging step.
+- `.env.example` clarifies the file is optional; pins the V1-0 model
+  routing defaults (Sonnet 4.6 / Opus 4.7) and documents the cost cap.
+
+### Verification
+- `make demo-clean-checkout` (against an existing venv) succeeds;
+  manifest enumerates 30 examples; viewer builds 295 KB gzipped.
+- `make demo-all-offline` regenerates STEP/GLB/URDF for all 30 examples
+  in ~15 s with no network calls.
+- `pytest tests/` — 87 passed.
+- `viewer/npm run typecheck` — clean.
+
+### Notes
+- Repository size: examples/ is 12 MB, viewer/public/data 4.6 MB after
+  staging. Within the brief's "small enough for the repo" bar — biggest
+  single file is a 384 KB STEP for `US4807331A_spring_loaded_hinge`.
+- The hosted-demo path deliberately avoids any paid API. To re-parse a
+  custom claim, the LLM path is opt-in via `.env`.

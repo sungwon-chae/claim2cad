@@ -1,0 +1,808 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Planetary gear transmission for gas turbine engines",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A planetary gear transmission for use in gas turbine engines, including a gear case housing fixed to the engine housing, ring gear means including first and second ring gear members fixed to the housing, a first stage planetary gear assembly including a first sun gear coupled to the engine output shaft, a first planetary carrier rotatably mounted in said housing and first planetary pinion supported by the first carrier meshing with the first sun gear and with the first ring gear member, a second stage planetary gear assembly comprising a second sun gear coupled to the first planetary carrier, a second planetary carrier coupled to a propeller shaft, second planetary pinion gears supported on the second carrier meshing with the second ring gear member and the second sun gear characterized in that one of the first and second planetary carriers is exchangeable for a similar carrier with planetary pinion gears and supplementary pinion gear arrangement effective to provide reverse rotation of the propeller shaft, said similar planetary carrier with planetary pinion gears and supplementary pinion gears being of the same radial dimension and mass as the planetary carrier and planetary pinion gears it is replacing such that the overall mass of the planetary gear transmission is the same as the planetary gear transmission arrangement for standard rotation, and the effective gear ration of the resulting planetary gear transmission for reverse rotation is the same as the planetary gear transmission arrangement for standard rotation.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "gear_case_housing",
+      "label": "gear case housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to the engine housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 92
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine_housing",
+      "label": "engine housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 105,
+        "char_end": 119
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ring_gear_means",
+      "label": "ring gear means",
+      "category": "structural",
+      "kind": "ring_gear_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 121,
+        "char_end": 136
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_ring_gear_member",
+      "label": "first ring gear member",
+      "category": "structural",
+      "kind": "ring_gear",
+      "parent_id": "ring_gear_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to the housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 147,
+        "char_end": 171
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_ring_gear_member",
+      "label": "second ring gear member",
+      "category": "structural",
+      "kind": "ring_gear",
+      "parent_id": "ring_gear_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "fixed to the housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 173,
+        "char_end": 198
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38999999999999996,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_stage_assembly",
+      "label": "first stage planetary gear assembly",
+      "category": "structural",
+      "kind": "planetary_gear_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 209,
+        "char_end": 244
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.18000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_sun_gear",
+      "label": "first sun gear",
+      "category": "structural",
+      "kind": "sun_gear",
+      "parent_id": "first_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 256,
+        "char_end": 270
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.39999999999999997,
+            0.18000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engine_output_shaft",
+      "label": "engine output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 282,
+        "char_end": 301
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.24000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_planetary_carrier",
+      "label": "first planetary carrier",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "parent_id": "first_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably mounted in said housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 328
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.43,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_planetary_pinion",
+      "label": "first planetary pinion",
+      "category": "structural",
+      "kind": "planetary_pinion_gear",
+      "parent_id": "first_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "meshing with the first sun gear and with the first ring gear member"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 384
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_stage_assembly",
+      "label": "second stage planetary gear assembly",
+      "category": "structural",
+      "kind": "planetary_gear_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 489,
+        "char_end": 525
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_sun_gear",
+      "label": "second sun gear",
+      "category": "structural",
+      "kind": "sun_gear",
+      "parent_id": "second_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 537,
+        "char_end": 552
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.83,
+            0.32,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_planetary_carrier",
+      "label": "second planetary carrier",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "parent_id": "second_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 575,
+        "char_end": 599
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "propeller_shaft",
+      "label": "propeller shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 611,
+        "char_end": 626
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "36",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_planetary_pinion_gears",
+      "label": "second planetary pinion gears",
+      "category": "structural",
+      "kind": "planetary_pinion_gear",
+      "parent_id": "second_stage_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "meshing with the second ring gear member and the second sun gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 628,
+        "char_end": 657
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "38",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.48,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "similar_carrier",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "parent_id": null,
+      "dimension": {
+        "kind": "relative",
+        "description": "same radial dimension and mass as the planetary carrier and planetary pinion gears it is replacing"
+      },
+      "constraints": [
+        "effective to provide reverse rotation of the propeller shaft",
+        "same radial dimension and mass as the planetary carrier being replaced",
+        "overall mass of the planetary gear transmission is the same as for standard rotation",
+        "effective gear ratio for reverse rotation is the same as for standard rotation"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 789,
+        "char_end": 872
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "supplementary_pinion_gears",
+      "label": "supplementary pinion gears",
+      "category": "structural",
+      "kind": "pinion_gear",
+      "parent_id": "similar_carrier",
+      "dimension": {
+        "kind": "relative",
+        "description": "same radial dimension and mass as the pinion gears being replaced"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 836,
+        "char_end": 862
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "42",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7999999999999999,
+            0.5,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_gear_case_to_engine_housing",
+      "kind": "attached_to",
+      "source": "gear_case_housing",
+      "target": "engine_housing",
+      "via": null,
+      "constraints": [
+        "fixed"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 119
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_ring_gear_members_to_housing",
+      "kind": "attached_to",
+      "source": "ring_gear_means",
+      "target": "gear_case_housing",
+      "via": null,
+      "constraints": [
+        "fixed to the housing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 121,
+        "char_end": 203
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_sun_to_output_shaft",
+      "kind": "connects",
+      "source": "first_sun_gear",
+      "target": "engine_output_shaft",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 256,
+        "char_end": 301
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_carrier_in_housing",
+      "kind": "attached_to",
+      "source": "first_planetary_carrier",
+      "target": "gear_case_housing",
+      "via": null,
+      "constraints": [
+        "rotatably mounted"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 360
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_pinion_on_first_carrier",
+      "kind": "attached_to",
+      "source": "first_planetary_pinion",
+      "target": "first_planetary_carrier",
+      "via": null,
+      "constraints": [
+        "supported by"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 412
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_pinion_meshes_first_sun",
+      "kind": "connects",
+      "source": "first_planetary_pinion",
+      "target": "first_sun_gear",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 413,
+        "char_end": 453
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_pinion_meshes_first_ring",
+      "kind": "connects",
+      "source": "first_planetary_pinion",
+      "target": "first_ring_gear_member",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 458,
+        "char_end": 487
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_sun_to_first_carrier",
+      "kind": "connects",
+      "source": "second_sun_gear",
+      "target": "first_planetary_carrier",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 537,
+        "char_end": 573
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_carrier_to_propeller_shaft",
+      "kind": "connects",
+      "source": "second_planetary_carrier",
+      "target": "propeller_shaft",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 575,
+        "char_end": 626
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_pinion_on_second_carrier",
+      "kind": "attached_to",
+      "source": "second_planetary_pinion_gears",
+      "target": "second_planetary_carrier",
+      "via": null,
+      "constraints": [
+        "supported on"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 628,
+        "char_end": 683
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_pinion_meshes_second_ring",
+      "kind": "connects",
+      "source": "second_planetary_pinion_gears",
+      "target": "second_ring_gear_member",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 684,
+        "char_end": 721
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_pinion_meshes_second_sun",
+      "kind": "connects",
+      "source": "second_planetary_pinion_gears",
+      "target": "second_sun_gear",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 726,
+        "char_end": 741
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_similar_carrier_replaces_carrier",
+      "kind": "connects",
+      "source": "similar_carrier",
+      "target": "propeller_shaft",
+      "via": null,
+      "constraints": [
+        "effective to provide reverse rotation of the propeller shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 789,
+        "char_end": 973
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_exchangeable",
+      "text": "characterized in that one of the first and second planetary carriers is exchangeable for a similar carrier with planetary pinion gears and supplementary pinion gear arrangement effective to provide reverse rotation of the propeller shaft",
+      "targets": [
+        "first_planetary_carrier",
+        "second_planetary_carrier",
+        "similar_carrier",
+        "supplementary_pinion_gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 742,
+        "char_end": 977
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_same_dimension",
+      "text": "said similar planetary carrier with planetary pinion gears and supplementary pinion gears being of the same radial dimension and mass as the planetary carrier and planetary pinion gears it is replacing such that the overall mass of the planetary gear transmission is the same as the planetary gear transmission arrangement for standard rotation",
+      "targets": [
+        "similar_carrier",
+        "supplementary_pinion_gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 979,
+        "char_end": 1320
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_same_gear_ratio",
+      "text": "the effective gear ration of the resulting planetary gear transmission for reverse rotation is the same as the planetary gear transmission arrangement for standard rotation",
+      "targets": [
+        "similar_carrier"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1326,
+        "char_end": 1496
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

@@ -1,0 +1,429 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Transmission structure for an automotive vehicle and an engine",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In combination, a transmission structure for an automotive vehicle and an engine, said transmission structure comprising: a first housing connected to the engine, the first housing accommodating a power transmitting device for transferring an output from the engine to a transmission device, a second housing for accommodating the transmission device, the second housing being connected to the first housing, a differential housing integrally formed with said first housing and positioned so as to be offset from an output shaft of the engine, and a reinforcement element having a pair of end portions, one end portion connected to the first housing, another end portion connected to the second housing and being located on the same side as the differential housing with respect to the output shaft of the engine.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "engine",
+      "label": "engine",
+      "category": "structural",
+      "kind": "engine",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 77,
+        "char_end": 83
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_housing",
+      "label": "first housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 125,
+        "char_end": 138
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "2",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "power_transmitting_device",
+      "label": "power transmitting device",
+      "category": "functional",
+      "kind": "power_transmitting_device",
+      "parent_id": "first_housing",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "transfers an output from the engine to a transmission device"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 199,
+        "char_end": 223
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "transmission_device",
+      "label": "transmission device",
+      "category": "functional",
+      "kind": "transmission_device",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 272,
+        "char_end": 291
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_housing",
+      "label": "second housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 293,
+        "char_end": 307
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "differential_housing",
+      "label": "differential housing",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": "first_housing",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "integrally formed with first housing",
+        "offset from output shaft of the engine"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 426
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "output_shaft",
+      "label": "output shaft of the engine",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "engine",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 510,
+        "char_end": 536
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "reinforcement_element",
+      "label": "reinforcement element",
+      "category": "structural",
+      "kind": "reinforcement_element",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 542,
+        "char_end": 563
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "end_portions",
+      "label": "pair of end portions",
+      "category": "structural",
+      "kind": "end_portion",
+      "parent_id": "reinforcement_element",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 591
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "one_end_portion",
+      "label": "one end portion",
+      "category": "structural",
+      "kind": "end_portion",
+      "parent_id": "reinforcement_element",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 608
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "another_end_portion",
+      "label": "another end portion",
+      "category": "structural",
+      "kind": "end_portion",
+      "parent_id": "reinforcement_element",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "located on the same side as the differential housing with respect to the output shaft of the engine"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 643,
+        "char_end": 662
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_first_housing_to_engine",
+      "kind": "attached_to",
+      "source": "first_housing",
+      "target": "engine",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 125,
+        "char_end": 157
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_housing_contains_power_device",
+      "kind": "contains",
+      "source": "first_housing",
+      "target": "power_transmitting_device",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 159,
+        "char_end": 291
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_power_device_transmits_to_transmission",
+      "kind": "transmits_force_to",
+      "source": "power_transmitting_device",
+      "target": "transmission_device",
+      "via": null,
+      "constraints": [
+        "transfers output from engine"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 224,
+        "char_end": 291
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_housing_contains_transmission",
+      "kind": "contains",
+      "source": "second_housing",
+      "target": "transmission_device",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 293,
+        "char_end": 351
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_housing_to_first_housing",
+      "kind": "attached_to",
+      "source": "second_housing",
+      "target": "first_housing",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 353,
+        "char_end": 404
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_differential_housing_formed_with_first_housing",
+      "kind": "attached_to",
+      "source": "differential_housing",
+      "target": "first_housing",
+      "via": null,
+      "constraints": [
+        "integrally formed"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 480
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_one_end_to_first_housing",
+      "kind": "attached_to",
+      "source": "one_end_portion",
+      "target": "first_housing",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 641
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_another_end_to_second_housing",
+      "kind": "attached_to",
+      "source": "another_end_portion",
+      "target": "second_housing",
+      "via": null,
+      "constraints": [
+        "located on the same side as the differential housing with respect to the output shaft of the engine"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 643,
+        "char_end": 800
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_reinforcement_contains_end_portions",
+      "kind": "contains",
+      "source": "reinforcement_element",
+      "target": "end_portions",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 542,
+        "char_end": 591
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_differential_offset",
+      "text": "differential housing integrally formed with said first housing and positioned so as to be offset from an output shaft of the engine",
+      "targets": [
+        "differential_housing",
+        "first_housing",
+        "output_shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 406,
+        "char_end": 536
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_another_end_same_side",
+      "text": "another end portion connected to the second housing and being located on the same side as the differential housing with respect to the output shaft of the engine",
+      "targets": [
+        "another_end_portion",
+        "second_housing",
+        "differential_housing",
+        "output_shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 643,
+        "char_end": 803
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

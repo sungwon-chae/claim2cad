@@ -1,0 +1,504 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Self-adjustable gear train transmission",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In a transmission including two gear trains having intermediate shafts driven by a single drive shaft through at least one respective transmission stage and carrying at least one pinion, respectively, meshing with a gear located between the two intermediate drive shafts each gear train being connectible to a machine driven by the transmission, means to make the meshing of the gear trAins to the driven machine self adjustable, comprising a pair of frames wherein the transmission stages are disposed, each of said frames being mounted on one of the intermediate shafts, and each being articulatingly connected on the other hand to the frame mounted on the other intermediate shaft, each of the frames being pivotally mounted and articulatingly connected about the drive shaft.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "transmission",
+      "label": "transmission",
+      "category": "structural",
+      "kind": "gearbox",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 7,
+        "char_end": 21
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "gear_train_1",
+      "label": "first gear train",
+      "category": "structural",
+      "kind": "gear_train",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connectible to a machine driven by the transmission"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 32,
+        "char_end": 43
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "21",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gear_train_2",
+      "label": "second gear train",
+      "category": "structural",
+      "kind": "gear_train",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connectible to a machine driven by the transmission"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 32,
+        "char_end": 43
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.72,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intermediate_shaft_1",
+      "label": "first intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "gear_train_1",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 71
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "intermediate_shaft_2",
+      "label": "second intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "gear_train_2",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 71
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "drive_shaft",
+      "label": "drive shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "single"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 88,
+        "char_end": 99
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "transmission_stage",
+      "label": "transmission stage",
+      "category": "structural",
+      "kind": "gear_stage",
+      "parent_id": "transmission",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at least one respective"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 115,
+        "char_end": 134
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "pinion",
+      "label": "pinion",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at least one",
+        "carried by intermediate shafts"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 181,
+        "char_end": 187
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "8",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gear",
+      "label": "gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "located between the two intermediate drive shafts"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 213,
+        "char_end": 217
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "driven_machine",
+      "label": "machine driven by the transmission",
+      "category": "functional",
+      "kind": "driven_machine",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 296,
+        "char_end": 330
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "pair_of_frames",
+      "label": "pair of frames",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "each frame mounted on one of the intermediate shafts",
+        "each articulatingly connected to the frame mounted on the other intermediate shaft",
+        "each pivotally mounted and articulatingly connected about the drive shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 444,
+        "char_end": 458
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "19",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26999999999999996,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frame_1",
+      "label": "frame on first intermediate shaft",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": "pair_of_frames",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted on one of the intermediate shafts",
+        "pivotally mounted and articulatingly connected about the drive shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 502,
+        "char_end": 508
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.21000000000000002,
+            0.77,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frame_2",
+      "label": "frame on second intermediate shaft",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": "pair_of_frames",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted on the other intermediate shaft",
+        "pivotally mounted and articulatingly connected about the drive shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 502,
+        "char_end": 508
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_intermediate_shafts_driven_by_drive_shaft",
+      "kind": "transmits_force_to",
+      "source": "drive_shaft",
+      "target": "intermediate_shaft_1",
+      "via": "transmission_stage",
+      "constraints": [
+        "through at least one respective transmission stage"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 72,
+        "char_end": 134
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_drive_shaft_to_intermediate_shaft_2",
+      "kind": "transmits_force_to",
+      "source": "drive_shaft",
+      "target": "intermediate_shaft_2",
+      "via": "transmission_stage",
+      "constraints": [
+        "through at least one respective transmission stage"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 72,
+        "char_end": 134
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_pinion_meshes_gear",
+      "kind": "connects",
+      "source": "pinion",
+      "target": "gear",
+      "via": null,
+      "constraints": [
+        "meshing"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 202,
+        "char_end": 267
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_frame1_on_intermediate_shaft1",
+      "kind": "attached_to",
+      "source": "frame_1",
+      "target": "intermediate_shaft_1",
+      "via": null,
+      "constraints": [
+        "mounted on one of the intermediate shafts"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 509,
+        "char_end": 562
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_frame2_on_intermediate_shaft2",
+      "kind": "attached_to",
+      "source": "frame_2",
+      "target": "intermediate_shaft_2",
+      "via": null,
+      "constraints": [
+        "mounted on the other intermediate shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 623,
+        "char_end": 678
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_frame1_articulated_to_frame2",
+      "kind": "connects",
+      "source": "frame_1",
+      "target": "frame_2",
+      "via": null,
+      "constraints": [
+        "articulatingly connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 568,
+        "char_end": 678
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_frames_pivot_about_drive_shaft",
+      "kind": "rotates_about",
+      "source": "pair_of_frames",
+      "target": "drive_shaft",
+      "via": null,
+      "constraints": [
+        "pivotally mounted and articulatingly connected about the drive shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 684,
+        "char_end": 771
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_trains_to_driven_machine",
+      "kind": "transmits_force_to",
+      "source": "gear_train_1",
+      "target": "driven_machine",
+      "via": null,
+      "constraints": [
+        "connectible to a machine driven by the transmission"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 270,
+        "char_end": 330
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_frames_disposed",
+      "text": "wherein the transmission stages are disposed, each of said frames being mounted on one of the intermediate shafts, and each being articulatingly connected on the other hand to the frame mounted on the other intermediate shaft, each of the frames being pivotally mounted and articulatingly connected about the drive shaft",
+      "targets": [
+        "pair_of_frames",
+        "frame_1",
+        "frame_2",
+        "transmission_stage"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 459,
+        "char_end": 771
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

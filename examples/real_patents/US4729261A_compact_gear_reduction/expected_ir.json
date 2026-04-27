@@ -1,0 +1,523 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Fixed displacement rotary pump with flow control valve and epicyclic gear train",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In combination, a fixed displacement rotary pump comprising a housing having inlet and outlet ports, and a pumping unit in said housing operative upon relative rotation of said housing and unit to pump fluid from said inlet port to said outlet port; an adjustable pressure compensated flow control valve operatively interposed between said ports to adjustably limit the rate of flow of fluid therethrough and consequently the rate of relative rotation of said housing and unit from a predetermined maximum to a predetermined minimum whereat said housing and unit are locked against relative rotation; and an epicyclic gear train including a first shaft in driving engagement with a first gear of said train and with one of said housing and pumping unit, and a second shaft in driving engagement with a second gear of said train; the other of said housing and pumping unit being in driving engagement with a third gear of said train.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "housing",
+      "label": "housing",
+      "category": "structural",
+      "kind": "pump_housing",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 70
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inlet_port",
+      "label": "inlet port",
+      "category": "structural",
+      "kind": "port",
+      "parent_id": "housing",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 78,
+        "char_end": 89
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.88,
+            0.69,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outlet_port",
+      "label": "outlet port",
+      "category": "structural",
+      "kind": "port",
+      "parent_id": "housing",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 94,
+        "char_end": 106
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "5",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pumping_unit",
+      "label": "pumping unit",
+      "category": "functional",
+      "kind": "pumping_unit",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operative upon relative rotation of said housing and unit to pump fluid from said inlet port to said outlet port"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "flow_control_valve",
+      "label": "adjustable pressure compensated flow control valve",
+      "category": "functional",
+      "kind": "flow_control_valve",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adjustably limits rate of flow of fluid therethrough",
+        "limits rate of relative rotation of housing and unit from a predetermined maximum to a predetermined minimum",
+        "at predetermined minimum, housing and unit are locked against relative rotation"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 302
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "6",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epicyclic_gear_train",
+      "label": "epicyclic gear train",
+      "category": "functional",
+      "kind": "gear_train",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 607,
+        "char_end": 627
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_shaft",
+      "label": "first shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in driving engagement with a first gear of said train",
+        "in driving engagement with one of said housing and pumping unit"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 639,
+        "char_end": 650
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.66,
+            0.75,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_gear",
+      "label": "first gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": "epicyclic_gear_train",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 672,
+        "char_end": 683
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_shaft",
+      "label": "second shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in driving engagement with a second gear of said train"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 735,
+        "char_end": 747
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_gear",
+      "label": "second gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": "epicyclic_gear_train",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 769,
+        "char_end": 780
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "third_gear",
+      "label": "third gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": "epicyclic_gear_train",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 865,
+        "char_end": 875
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_housing_has_inlet",
+      "kind": "contains",
+      "source": "housing",
+      "target": "inlet_port",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 89
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_housing_has_outlet",
+      "kind": "contains",
+      "source": "housing",
+      "target": "outlet_port",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 106
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_pumping_unit_in_housing",
+      "kind": "contains",
+      "source": "housing",
+      "target": "pumping_unit",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 128
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_valve_between_ports",
+      "kind": "connects",
+      "source": "flow_control_valve",
+      "target": "inlet_port",
+      "via": null,
+      "constraints": [
+        "operatively interposed between said ports"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 349
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_valve_to_outlet",
+      "kind": "connects",
+      "source": "flow_control_valve",
+      "target": "outlet_port",
+      "via": null,
+      "constraints": [
+        "operatively interposed between said ports"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 303,
+        "char_end": 349
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_shaft_drives_first_gear",
+      "kind": "transmits_force_to",
+      "source": "first_shaft",
+      "target": "first_gear",
+      "via": null,
+      "constraints": [
+        "driving engagement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 639,
+        "char_end": 693
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_shaft_drives_second_gear",
+      "kind": "transmits_force_to",
+      "source": "second_shaft",
+      "target": "second_gear",
+      "via": null,
+      "constraints": [
+        "driving engagement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 735,
+        "char_end": 791
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_shaft_drives_housing_or_unit",
+      "kind": "transmits_force_to",
+      "source": "first_shaft",
+      "target": "pumping_unit",
+      "via": null,
+      "constraints": [
+        "driving engagement with one of said housing and pumping unit"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 696,
+        "char_end": 733
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_gear_drives_other",
+      "kind": "transmits_force_to",
+      "source": "third_gear",
+      "target": "housing",
+      "via": null,
+      "constraints": [
+        "the other of said housing and pumping unit being in driving engagement with a third gear of said train"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 793,
+        "char_end": 883
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_contains_first_gear",
+      "kind": "contains",
+      "source": "epicyclic_gear_train",
+      "target": "first_gear",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 607,
+        "char_end": 693
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_contains_second_gear",
+      "kind": "contains",
+      "source": "epicyclic_gear_train",
+      "target": "second_gear",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 607,
+        "char_end": 791
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gear_train_contains_third_gear",
+      "kind": "contains",
+      "source": "epicyclic_gear_train",
+      "target": "third_gear",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 793,
+        "char_end": 883
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_locked_at_minimum",
+      "text": "whereat said housing and unit are locked against relative rotation",
+      "targets": [
+        "flow_control_valve",
+        "housing",
+        "pumping_unit"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 530,
+        "char_end": 595
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_other_drives_third_gear",
+      "text": "the other of said housing and pumping unit being in driving engagement with a third gear of said train",
+      "targets": [
+        "housing",
+        "pumping_unit",
+        "third_gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 793,
+        "char_end": 894
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

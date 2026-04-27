@@ -57,23 +57,36 @@ Three concrete problems Claim2CAD solves:
 
 ## Quickstart
 
-Five commands to a clickable demo:
+### Offline demo (no API key required)
 
 ```bash
 git clone https://github.com/sungwon-chae/claim2cad
 cd claim2cad
-make install                  # creates .venv, installs build123d + deps (~3 min)
-make demo-all                 # generates STEP + GLB for all 3 examples
-make viewer-install           # one-time npm install
-make viewer-dev               # opens http://localhost:4179
+make demo-clean-checkout    # provisions venv, regenerates 30 examples,
+                            # builds the viewer — all from cached IR
+make viewer-dev             # opens http://localhost:4179
 ```
 
-Switch examples in the header dropdown; click any underlined claim element
-to highlight the matching 3D part (and vice-versa).
+`make demo-clean-checkout` is the hosted-demo path: it replays cached
+`expected_ir.json` files instead of calling an LLM, so anyone with Python
+3.11 + Node 20 can produce the full 3-pane viewer in a few minutes.
 
-For non-golden claims, copy `.env.example` to `.env`, set
-`OPENROUTER_API_KEY`, and pass any `claim.txt` to
-`python -m claim2cad.pipeline --claim path/to/claim.txt --out path/to/out`.
+Switch examples in the header dropdown; click any underlined claim
+element to highlight the matching 3D part (and vice-versa). Examples with
+movable joints expose a "Joints (N)" slider panel; the multi-claim drone
+example shows the 5-claim hierarchy in `claim_hierarchy.json`.
+
+### Live LLM mode (your own claims)
+
+```bash
+cp .env.example .env          # then paste your OpenRouter key
+make install                  # one-time (skip if make demo-clean-checkout already ran)
+python -m claim2cad.pipeline --claim path/to/claim.txt --out path/to/out
+```
+
+Korean claims work transparently — the language is auto-detected. Pass
+`--filter-claim N` to restrict the output to a single claim plus its
+ancestors.
 
 ---
 
@@ -179,6 +192,48 @@ dependent claim adding an input shaft.
   a Zustand or URL-param store could keep selection sticky.
 
 See `BLOCKERS.md` for the full open-items list.
+
+---
+
+## Troubleshooting
+
+### macOS: `build123d` install fails with `OCP` errors
+`build123d` depends on `cadquery-ocp`, which ships pre-built wheels for
+Python 3.10–3.12 only. If `pip install build123d` errors with a build
+failure on newer Pythons, install Python 3.11 via Homebrew
+(`brew install python@3.11`) and re-run `python3.11 -m venv .venv`
+before `make install`. The Makefile pins `python3.11`.
+
+### macOS: GLB export warns "Unknown Compound type, color not set"
+This warning comes from `build123d`'s STEP/glTF exporter and is harmless
+— it happens when a Compound has no explicit colour. Output files are
+generated correctly. The CI suite ignores it.
+
+### Viewer: `npm install` fails with peer-dep errors
+The viewer pins `react@18` + `three@0.160` + `@react-three/fiber@8`.
+Newer combinations (R19 / three 0.161) may resolve but break our shader
+includes. If `npm install` complains, run with `--legacy-peer-deps` or
+delete `viewer/node_modules` + `viewer/package-lock.json` and retry.
+
+### Viewer: page is blank after `npm run dev`
+The viewer reads `viewer/public/data/manifest.json`, which is generated
+by `python -m claim2cad.manifest`. Run `make viewer-dev` (which stages
+the manifest first) instead of `cd viewer && npm run dev`.
+
+### Pipeline: "OPENROUTER_API_KEY is not set"
+You hit this when running `make demo` without an API key. Either:
+1. Use `make demo-offline` (deterministic, replays `expected_ir.json`).
+2. Copy `.env.example` to `.env` and paste your key.
+The offline path requires every example to ship an `expected_ir.json`;
+all 30 in this repo already do.
+
+### Pipeline: claim parsed but components are sparse / mis-classified
+The deterministic stub parser is a fallback. With an API key configured,
+the LLM path produces richer IRs (relations, wherein clauses, accurate
+classifications). For Korean claims specifically, the head-noun
+extractor relies on the small `lang_ko.HEAD_TRANSLATIONS` dictionary —
+out-of-vocabulary terms slug to `comp_<n>`. Add common terms to that
+dict if your domain needs them.
 
 ---
 

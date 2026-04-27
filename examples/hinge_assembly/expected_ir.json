@@ -26,9 +26,7 @@
         "char_end": 54
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "first_rotating_link",
@@ -46,9 +44,7 @@
         "char_end": 141
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "coupler_link",
@@ -66,9 +62,7 @@
         "char_end": 231
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "second_rotating_link",
@@ -86,9 +80,7 @@
         "char_end": 370
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "first_revolute_joint",
@@ -106,9 +98,7 @@
         "char_end": 141
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "second_revolute_joint",
@@ -126,9 +116,7 @@
         "char_end": 231
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "third_revolute_joint",
@@ -146,9 +134,7 @@
         "char_end": 321
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     },
     {
       "id": "fourth_revolute_joint",
@@ -166,9 +152,7 @@
         "char_end": 370
       },
       "is_dependent": false,
-      "dependent_on": null,
-      "figure_number": null,
-      "figure_references": []
+      "dependent_on": null
     }
   ],
   "relations": [],

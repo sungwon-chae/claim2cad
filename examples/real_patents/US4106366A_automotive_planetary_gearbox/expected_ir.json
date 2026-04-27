@@ -1,0 +1,265 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Planetary drive",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A planetary drive comprising: a sun gear; an internal gear; at least two planet gears having teeth and being in engagement with said sun gear and said internal gear, said sun gear and said internal gears are axially movable with respect to the planet gears; a planet link connecting said planet gears; at least one of said sun gear, said planet link, and said internal gear being radially movable for equalizing the load; said sun gear, said internal gear and said planet gears having beveled spur gear teeth, with the bevel of said sun gear and of said internal gears matching the bevel of said planet gears; and means for axially urging said sun gear and internal gear into engagement with said planet gears.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "sun_gear",
+      "label": "sun gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "axially movable with respect to the planet gears",
+        "radially movable for equalizing the load (at least one of)",
+        "having beveled spur gear teeth"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 33,
+        "char_end": 41
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "internal_gear",
+      "label": "internal gear",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "axially movable with respect to the planet gears",
+        "radially movable for equalizing the load (at least one of)",
+        "having beveled spur gear teeth"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 46,
+        "char_end": 59
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "planet_gears",
+      "label": "planet gears",
+      "category": "structural",
+      "kind": "gear",
+      "parent_id": null,
+      "dimension": {
+        "kind": "relative",
+        "description": "at least two planet gears"
+      },
+      "constraints": [
+        "having teeth",
+        "in engagement with sun gear and internal gear",
+        "having beveled spur gear teeth"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 87
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "planet_link",
+      "label": "planet link",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "radially movable for equalizing the load (at least one of)"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 263,
+        "char_end": 274
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "axial_urging_means",
+      "label": "means for axially urging",
+      "category": "functional",
+      "kind": "urging_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "urges sun gear and internal gear into engagement with planet gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 640
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_planet_gears_engages_sun",
+      "kind": "connects",
+      "source": "planet_gears",
+      "target": "sun_gear",
+      "via": null,
+      "constraints": [
+        "in engagement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 100,
+        "char_end": 155
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_planet_gears_engages_internal",
+      "kind": "connects",
+      "source": "planet_gears",
+      "target": "internal_gear",
+      "via": null,
+      "constraints": [
+        "in engagement"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 100,
+        "char_end": 165
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_planet_link_connects_planet_gears",
+      "kind": "connects",
+      "source": "planet_link",
+      "target": "planet_gears",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 263,
+        "char_end": 301
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_urging_means_to_sun",
+      "kind": "transmits_force_to",
+      "source": "axial_urging_means",
+      "target": "sun_gear",
+      "via": null,
+      "constraints": [
+        "axially urging into engagement with planet gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 706
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_urging_means_to_internal",
+      "kind": "transmits_force_to",
+      "source": "axial_urging_means",
+      "target": "internal_gear",
+      "via": null,
+      "constraints": [
+        "axially urging into engagement with planet gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 706
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_axially_movable",
+      "text": "said sun gear and said internal gears are axially movable with respect to the planet gears",
+      "targets": [
+        "sun_gear",
+        "internal_gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 167,
+        "char_end": 257
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_radially_movable",
+      "text": "at least one of said sun gear, said planet link, and said internal gear being radially movable for equalizing the load",
+      "targets": [
+        "sun_gear",
+        "planet_link",
+        "internal_gear"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 304,
+        "char_end": 421
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_beveled_teeth",
+      "text": "said sun gear, said internal gear and said planet gears having beveled spur gear teeth, with the bevel of said sun gear and of said internal gears matching the bevel of said planet gears",
+      "targets": [
+        "sun_gear",
+        "internal_gear",
+        "planet_gears"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 423,
+        "char_end": 609
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

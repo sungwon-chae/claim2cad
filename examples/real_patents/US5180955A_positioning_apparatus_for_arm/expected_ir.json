@@ -1,0 +1,876 @@
+{
+  "schema_version": "0.1.0",
+  "title": "High speed mini-positioner",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A high speed mini-positioner comprising: a positioning linkage having a changeable parallelogram structure and a base structure, said parallelogram structure having four arms forming a general parallelogram profile with first and second arms pivotally connected to each other by a center shaft at intermediate locations and each having a first section with a first end and a second section with a second end on opposite sides of said center shaft and, third and fourth arms pivotally connected to each other proximate first ends thereof an having second ends pivotally connected to said first and second arm second ends, said center shaft being connected to said base structure such that movement of said first and second arm first ends change said general parallelogram profile and move an end-effector proximate said third and fourth arm first ends to a new position; and means for moving said linkage comprising said first and second arm first sections each having an electromagnetic coil and said base structure having magnets located on opposite sides of said coils and stationary iron structures passing through each coil such that a stationary magnetic field passes through said coils and, upon energizing said coils a lateral magnetic force on the first and second arm first sections move said first and second arms to change the shape of said general parallelogram profile and move said end-effector to a new location.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "positioning_linkage",
+      "label": "positioning linkage",
+      "category": "structural",
+      "kind": "linkage",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "changeable parallelogram structure"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 45,
+        "char_end": 64
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.15000000000000002,
+            0.85,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "parallelogram_structure",
+      "label": "parallelogram structure",
+      "category": "structural",
+      "kind": "parallelogram_structure",
+      "parent_id": "positioning_linkage",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "changeable",
+        "general parallelogram profile"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 73,
+        "char_end": 97
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.77,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "base_structure",
+      "label": "base structure",
+      "category": "structural",
+      "kind": "base",
+      "parent_id": "positioning_linkage",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 104,
+        "char_end": 118
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.94,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_arm",
+      "label": "first arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "parallelogram_structure",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected to second arm by center shaft at intermediate locations"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 220,
+        "char_end": 225
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "parallelogram_structure",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected to first arm by center shaft at intermediate locations"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 230,
+        "char_end": 240
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.41,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "center_shaft",
+      "label": "center shaft",
+      "category": "connection",
+      "kind": "shaft",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to base structure",
+        "at intermediate locations of first and second arms"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 285,
+        "char_end": 297
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.43,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_arm_first_section",
+      "label": "first arm first section",
+      "category": "structural",
+      "kind": "arm_section",
+      "parent_id": "first_arm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "has a first end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 318,
+        "char_end": 333
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "38",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.59,
+            0.77,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_arm_first_end",
+      "label": "first arm first end",
+      "category": "structural",
+      "kind": "end",
+      "parent_id": "first_arm_first_section",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 339,
+        "char_end": 350
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "39",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.63,
+            0.8099999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_arm_second_section",
+      "label": "first arm second section",
+      "category": "structural",
+      "kind": "arm_section",
+      "parent_id": "first_arm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "has a second end",
+        "on opposite side of center shaft from first section"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 357,
+        "char_end": 373
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32,
+            0.26,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_arm_second_end",
+      "label": "first arm second end",
+      "category": "structural",
+      "kind": "end",
+      "parent_id": "first_arm_second_section",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 379,
+        "char_end": 391
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "41",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_arm_first_section",
+      "label": "second arm first section",
+      "category": "structural",
+      "kind": "arm_section",
+      "parent_id": "second_arm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "has a first end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 318,
+        "char_end": 333
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "44",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38999999999999996,
+            0.24000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_arm_second_end",
+      "label": "second arm second end",
+      "category": "structural",
+      "kind": "end",
+      "parent_id": "second_arm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 379,
+        "char_end": 391
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "46",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.37,
+            0.36,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third_arm",
+      "label": "third arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "parallelogram_structure",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected to fourth arm proximate first ends",
+        "second end pivotally connected to first arm second end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 457,
+        "char_end": 466
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26999999999999996,
+            0.74,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fourth_arm",
+      "label": "fourth arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "parallelogram_structure",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "pivotally connected to third arm proximate first ends",
+        "second end pivotally connected to second arm second end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 471,
+        "char_end": 481
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.9,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "end_effector",
+      "label": "end-effector",
+      "category": "functional",
+      "kind": "end_effector",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "proximate third and fourth arm first ends"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 679,
+        "char_end": 691
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.89,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "means_for_moving",
+      "label": "means for moving said linkage",
+      "category": "functional",
+      "kind": "actuator_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 718,
+        "char_end": 746
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "50",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.45999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electromagnetic_coil",
+      "label": "electromagnetic coil",
+      "category": "functional",
+      "kind": "coil",
+      "parent_id": "means_for_moving",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "one on each of first and second arm first sections"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 802,
+        "char_end": 822
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "60",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.74,
+            0.73,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "magnets",
+      "label": "magnets",
+      "category": "structural",
+      "kind": "magnet",
+      "parent_id": "base_structure",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "located on opposite sides of said coils"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 848,
+        "char_end": 855
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "62",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.44999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stationary_iron_structures",
+      "label": "stationary iron structures",
+      "category": "structural",
+      "kind": "iron_core",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "passing through each coil",
+        "stationary"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 892,
+        "char_end": 918
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "64",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6799999999999999,
+            0.58,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_linkage_has_parallelogram",
+      "kind": "contains",
+      "source": "positioning_linkage",
+      "target": "parallelogram_structure",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 45,
+        "char_end": 118
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_linkage_has_base",
+      "kind": "contains",
+      "source": "positioning_linkage",
+      "target": "base_structure",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 102,
+        "char_end": 118
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_arm_to_second_arm",
+      "kind": "connects",
+      "source": "first_arm",
+      "target": "second_arm",
+      "via": "center_shaft",
+      "constraints": [
+        "at intermediate locations",
+        "pivotally"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 241,
+        "char_end": 299
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_center_shaft_to_base",
+      "kind": "attached_to",
+      "source": "center_shaft",
+      "target": "base_structure",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 649
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_arm_to_fourth_arm",
+      "kind": "connects",
+      "source": "third_arm",
+      "target": "fourth_arm",
+      "via": null,
+      "constraints": [
+        "pivotally connected proximate first ends"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 457,
+        "char_end": 526
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_arm_second_end_to_first_arm",
+      "kind": "connects",
+      "source": "third_arm",
+      "target": "first_arm_second_end",
+      "via": null,
+      "constraints": [
+        "pivotally",
+        "second end of third arm to second end of first arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 531,
+        "char_end": 608
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fourth_arm_second_end_to_second_arm",
+      "kind": "connects",
+      "source": "fourth_arm",
+      "target": "second_arm_second_end",
+      "via": null,
+      "constraints": [
+        "pivotally",
+        "second end of fourth arm to second end of second arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 531,
+        "char_end": 608
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_end_effector_to_third_fourth_arms",
+      "kind": "attached_to",
+      "source": "end_effector",
+      "target": "third_arm",
+      "via": null,
+      "constraints": [
+        "proximate first ends of third and fourth arms"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 669,
+        "char_end": 712
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coil_on_first_arm_section",
+      "kind": "attached_to",
+      "source": "electromagnetic_coil",
+      "target": "first_arm_first_section",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 758,
+        "char_end": 822
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coil_on_second_arm_section",
+      "kind": "attached_to",
+      "source": "electromagnetic_coil",
+      "target": "second_arm_first_section",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 758,
+        "char_end": 822
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_magnets_on_base",
+      "kind": "attached_to",
+      "source": "magnets",
+      "target": "base_structure",
+      "via": null,
+      "constraints": [
+        "on opposite sides of said coils"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 827,
+        "char_end": 889
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_iron_through_coil",
+      "kind": "connects",
+      "source": "stationary_iron_structures",
+      "target": "electromagnetic_coil",
+      "via": null,
+      "constraints": [
+        "passing through each coil"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 892,
+        "char_end": 956
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coil_force_moves_arms",
+      "kind": "transmits_force_to",
+      "source": "electromagnetic_coil",
+      "target": "first_arm_first_section",
+      "via": null,
+      "constraints": [
+        "lateral magnetic force upon energizing coils"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 994,
+        "char_end": 1097
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_center_shaft_movement",
+      "text": "said center shaft being connected to said base structure such that movement of said first and second arm first ends change said general parallelogram profile and move an end-effector proximate said third and fourth arm first ends to a new position",
+      "targets": [
+        "center_shaft",
+        "base_structure",
+        "first_arm_first_end",
+        "parallelogram_structure",
+        "end_effector"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 614,
+        "char_end": 760
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_magnetic_force",
+      "text": "such that a stationary magnetic field passes through said coils and, upon energizing said coils a lateral magnetic force on the first and second arm first sections move said first and second arms to change the shape of said general parallelogram profile and move said end-effector to a new location",
+      "targets": [
+        "electromagnetic_coil",
+        "magnets",
+        "stationary_iron_structures",
+        "first_arm_first_section",
+        "second_arm_first_section",
+        "first_arm",
+        "second_arm",
+        "parallelogram_structure",
+        "end_effector"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 957,
+        "char_end": 1253
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

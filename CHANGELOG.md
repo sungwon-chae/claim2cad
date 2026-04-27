@@ -4,6 +4,18 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-10)
+- Hosted-demo path that doesn't need a paid API key.
+- `make demo-clean-checkout` — single-command flow on a fresh clone
+  (install → demo all offline → manifest → viewer build).
+- `make demo-offline` and `make demo-all-offline` — replay cached
+  `expected_ir.json` instead of calling the LLM.
+- All 30 example folders now ship `expected_ir.json`.
+- README rewritten: offline quickstart is the default; LLM mode is
+  documented separately. New Troubleshooting section.
+- `.env.example` is now explicitly optional, pins V1-0 model routing
+  defaults, and documents the cost cap.
+
 ### Added (V1-9)
 - Deterministic dimension extractor (`claim2cad/dimension_extractor.py`)
   for English and Korean.

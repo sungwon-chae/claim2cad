@@ -1,0 +1,583 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Apparatus for testing a sample by simultaneously loading with longitudinal forces and torque",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. An apparatus for testing a sample by simultaneously loading said sample with longitudinal forces and with torque, comprising frame means, load means operatively secured to said frame means and connected for applying longitudinal forces to said sample, torque means operatively arranged in axial alignment with said load means for applying torque to the sample, said load means comprising first housing means and piston means including a first piston rod and a second piston rod extending out of said first housing means in opposite directions, said first piston rod being connected to the test sample, said apparatus further comprising fork means connected to said second piston rod and including fork ends for applying torque to said sample, said torque means comprising second housing means, rotary piston means operatively arranged in said second housing means, and means for transmitting torque to said fork means, said torque transmitting means being operatively connected to said rotary piston means and cooperating with said fork means for allowing longitudinal movement of said fork means relative to said torque means while simultaneously preventing rotation of said fork ends relative to said torque transmitting means.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "frame_means",
+      "label": "frame means",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 138
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "load_means",
+      "label": "load means",
+      "category": "functional",
+      "kind": "load_actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operatively secured to frame means",
+        "connected for applying longitudinal forces to said sample"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 140,
+        "char_end": 150
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "torque_means",
+      "label": "torque means",
+      "category": "functional",
+      "kind": "torque_actuator",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operatively arranged in axial alignment with said load means",
+        "for applying torque to the sample"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 264
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "5",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_housing_means",
+      "label": "first housing means",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": "load_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 386,
+        "char_end": 405
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.64,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piston_means",
+      "label": "piston means",
+      "category": "structural",
+      "kind": "piston_assembly",
+      "parent_id": "load_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 410,
+        "char_end": 422
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.85,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_piston_rod",
+      "label": "first piston rod",
+      "category": "structural",
+      "kind": "piston_rod",
+      "parent_id": "piston_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to the test sample"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 435,
+        "char_end": 451
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "25",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.86,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_piston_rod",
+      "label": "second piston rod",
+      "category": "structural",
+      "kind": "piston_rod",
+      "parent_id": "piston_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending out of said first housing means in opposite directions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 458,
+        "char_end": 475
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "4",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sample",
+      "label": "test sample",
+      "category": "structural",
+      "kind": "specimen",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 583,
+        "char_end": 594
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "fork_means",
+      "label": "fork means",
+      "category": "structural",
+      "kind": "fork",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to said second piston rod"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 617,
+        "char_end": 627
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "fork_ends",
+      "label": "fork ends",
+      "category": "structural",
+      "kind": "fork_end",
+      "parent_id": "fork_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "for applying torque to said sample"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 647,
+        "char_end": 656
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_housing_means",
+      "label": "second housing means",
+      "category": "structural",
+      "kind": "housing",
+      "parent_id": "torque_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 710,
+        "char_end": 730
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "rotary_piston_means",
+      "label": "rotary piston means",
+      "category": "structural",
+      "kind": "rotary_piston",
+      "parent_id": "torque_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operatively arranged in said second housing means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 732,
+        "char_end": 751
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "torque_transmitting_means",
+      "label": "means for transmitting torque",
+      "category": "functional",
+      "kind": "torque_transmitter",
+      "parent_id": "torque_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "operatively connected to said rotary piston means",
+        "cooperating with said fork means for allowing longitudinal movement of said fork means relative to said torque means while simultaneously preventing rotation of said fork ends relative to said torque transmitting means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 794,
+        "char_end": 823
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.53,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_load_means_to_frame",
+      "kind": "attached_to",
+      "source": "load_means",
+      "target": "frame_means",
+      "via": null,
+      "constraints": [
+        "operatively secured"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 140,
+        "char_end": 193
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_torque_means_aligned_load",
+      "kind": "connects",
+      "source": "torque_means",
+      "target": "load_means",
+      "via": null,
+      "constraints": [
+        "operatively arranged in axial alignment"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 361
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_housing_in_load",
+      "kind": "contains",
+      "source": "load_means",
+      "target": "first_housing_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 363,
+        "char_end": 405
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_piston_in_load",
+      "kind": "contains",
+      "source": "load_means",
+      "target": "piston_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 410,
+        "char_end": 422
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_rod_in_piston",
+      "kind": "contains",
+      "source": "piston_means",
+      "target": "first_piston_rod",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 433,
+        "char_end": 451
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_rod_in_piston",
+      "kind": "contains",
+      "source": "piston_means",
+      "target": "second_piston_rod",
+      "via": null,
+      "constraints": [
+        "extending out of first housing means in opposite directions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 456,
+        "char_end": 538
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_rod_to_sample",
+      "kind": "attached_to",
+      "source": "first_piston_rod",
+      "target": "sample",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 540,
+        "char_end": 594
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fork_to_second_rod",
+      "kind": "attached_to",
+      "source": "fork_means",
+      "target": "second_piston_rod",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 617,
+        "char_end": 651
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fork_ends_in_fork",
+      "kind": "contains",
+      "source": "fork_means",
+      "target": "fork_ends",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 647,
+        "char_end": 691
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_rotary_piston_in_second_housing",
+      "kind": "contains",
+      "source": "second_housing_means",
+      "target": "rotary_piston_means",
+      "via": null,
+      "constraints": [
+        "operatively arranged"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 732,
+        "char_end": 792
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_torque_transmit_to_rotary",
+      "kind": "transmits_force_to",
+      "source": "rotary_piston_means",
+      "target": "torque_transmitting_means",
+      "via": null,
+      "constraints": [
+        "operatively connected"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 856,
+        "char_end": 916
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_torque_transmit_to_fork",
+      "kind": "transmits_force_to",
+      "source": "torque_transmitting_means",
+      "target": "fork_means",
+      "via": null,
+      "constraints": [
+        "allows longitudinal movement of fork means relative to torque means",
+        "simultaneously prevents rotation of fork ends relative to torque transmitting means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 921,
+        "char_end": 1097
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_load_to_sample",
+      "kind": "transmits_force_to",
+      "source": "load_means",
+      "target": "sample",
+      "via": null,
+      "constraints": [
+        "applying longitudinal forces"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 193,
+        "char_end": 251
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_torque_to_sample",
+      "kind": "transmits_force_to",
+      "source": "torque_means",
+      "target": "sample",
+      "via": null,
+      "constraints": [
+        "applying torque"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 336,
+        "char_end": 361
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": []
+}

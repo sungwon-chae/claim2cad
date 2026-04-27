@@ -23,6 +23,7 @@ import build123d as bd
 
 from claim2cad.glb_naming import rename_glb_root_children
 from claim2cad.ir_schema import ClaimIR, Component
+from claim2cad.layout import DEFAULT_SPACING, Placement, layout_components
 
 logger = logging.getLogger(__name__)
 
@@ -32,52 +33,66 @@ logger = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 
 
-def _primitive_for(component: Component) -> bd.Shape:
-    """Return a single build123d Shape representing the component.
+_AXIS_ROTATIONS = {
+    0: (0.0, 90.0, 0.0),  # cylinder along X
+    1: (90.0, 0.0, 0.0),  # cylinder along Y
+    2: (0.0, 0.0, 0.0),  # cylinder along Z (default)
+}
 
-    Phase-3 uses a coarse classifier:
 
-    * connection-category components → small sphere or short cylinder
-    * structural rod/link → cylinder along X
-    * structural plate/block/frame/housing → box with sensible proportions
-    * functional sensor/actuator/end_effector → sphere/capsule-ish
+def _rotated_cylinder(radius: float, height: float, axis_index: int) -> bd.Shape:
+    rx, ry, rz = _AXIS_ROTATIONS[axis_index % 3]
+    return bd.Cylinder(radius, height, rotation=(rx, ry, rz))
 
-    Unknown kinds fall back to a labelled cube.
-    """
+
+def _primitive_for(component: Component, axis_index: int = 2) -> bd.Shape:
+    """Return a build123d Shape representing the component, oriented to
+    match its primary axis."""
     kind = (component.kind or "").lower()
     category = component.category
 
     if category == "connection":
-        if kind in {"revolute_joint", "spherical_joint"}:
-            return bd.Cylinder(8, 14)
+        if kind == "revolute_joint":
+            # Joint axis is *perpendicular* to the link axis it serves.
+            joint_axis = (axis_index + 1) % 3
+            return _rotated_cylinder(8, 18, joint_axis)
+        if kind == "spherical_joint":
+            return bd.Sphere(9)
         if kind == "prismatic_joint":
-            return bd.Box(20, 12, 12)
+            return bd.Box(28, 14, 14)
         if kind == "fastener":
-            return bd.Cylinder(3, 12)
+            return _rotated_cylinder(3, 14, axis_index)
         if kind == "fixed_joint":
-            return bd.Sphere(6)
-        return bd.Sphere(6)
+            return bd.Box(14, 14, 14)
+        return bd.Sphere(7)
 
     if category == "structural":
         if kind in {"rod", "shaft", "link"}:
-            return bd.Cylinder(6, 50)
-        if kind in {"plate"}:
+            return _rotated_cylinder(6, 50, axis_index)
+        if kind == "plate":
             return bd.Box(60, 60, 4)
-        # block / frame / housing / shell / unknown
-        return bd.Box(40, 40, 20)
+        if kind == "shell":
+            return bd.Box(50, 50, 8)
+        if kind == "frame":
+            return bd.Box(80, 80, 16)
+        if kind == "housing":
+            return bd.Box(60, 50, 30)
+        return bd.Box(40, 40, 20)  # block / unknown
 
     if category == "functional":
         if kind == "sensor":
-            return bd.Sphere(5)
+            return bd.Sphere(6)
         if kind == "actuator":
-            return bd.Cylinder(8, 24)
+            return _rotated_cylinder(10, 30, axis_index)
         if kind == "end_effector":
-            return bd.Box(20, 30, 14)
+            # A wedge-ish gripper silhouette.
+            outer = bd.Box(22, 32, 14)
+            slot = bd.Box(18, 6, 14).translate((4, 0, 0))
+            return outer - slot
         if kind == "controller":
             return bd.Box(30, 24, 10)
         return bd.Sphere(8)
 
-    # Unknown category — labelled cube.
     return bd.Box(20, 20, 20)
 
 
@@ -99,11 +114,6 @@ def _ordered_components(ir: ClaimIR) -> list[Component]:
     )
 
 
-def _layout_along_x(components: list[Component], spacing: float = 60.0) -> dict[str, tuple[float, float, float]]:
-    """Place each component at (i * spacing, 0, 0)."""
-    return {comp.id: (i * spacing, 0.0, 0.0) for i, comp in enumerate(components)}
-
-
 # ---------------------------------------------------------------------------
 # In-process build
 # ---------------------------------------------------------------------------
@@ -114,16 +124,29 @@ def build_compound(ir: ClaimIR) -> tuple[bd.Compound, list[str]]:
 
     ``ordered_ids`` is the list of component IDs in the order their primitives
     were added to the Compound — needed for GLB node renaming.
+
+    Layout is graph-driven (see :mod:`claim2cad.layout`); components without
+    incoming edges are placed in a tail row.
     """
-    components = _ordered_components(ir)
-    positions = _layout_along_x(components)
+    ordered = _ordered_components(ir)
+    if not ir.relations:
+        # No relations → fall back to deterministic line-along-X.
+        placements = {
+            c.id: Placement(component_id=c.id, position=(i * DEFAULT_SPACING, 0.0, 0.0), axis_index=0)
+            for i, c in enumerate(ordered)
+        }
+    else:
+        placements = layout_components(ir)
 
     children: list[bd.Shape] = []
     ordered_ids: list[str] = []
-    for comp in components:
-        primitive = _primitive_for(comp)
-        x, y, z = positions[comp.id]
-        placed = primitive.translate((x, y, z))
+    for comp in ordered:
+        placement = placements.get(
+            comp.id,
+            Placement(component_id=comp.id, position=(0.0, 0.0, 0.0), axis_index=0),
+        )
+        primitive = _primitive_for(comp, axis_index=placement.axis_index)
+        placed = primitive.translate(placement.position)
         placed.label = comp.id
         children.append(placed)
         ordered_ids.append(comp.id)

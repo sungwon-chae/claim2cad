@@ -167,3 +167,61 @@ was deferred. Times are local (Asia/Seoul, KST).
   `BLOCKERS.md` as B-005).
 
 - **Completed:** 2026-04-27 ~11:16 KST.
+
+## Phase 5 — Custom Patent-Aware Viewer + Real CAD — STARTED 2026-04-27 11:17 KST
+
+### 5A — CAD upgrade
+- Added `claim2cad/layout.py` — graph-based BFS layout. Roots prefer
+  `base/frame/housing/ground/fixed_link` by name; otherwise highest
+  out-degree. Each BFS depth alternates the offset axis (x → y → z →
+  x …). Orphans go in a tail row.
+- Rewrote `claim2cad/ir_to_cad._primitive_for` — type-aware shapes:
+  revolute joints are short cylinders perpendicular to their link's
+  primary axis; rods/links/shafts are long cylinders along the link
+  axis; end_effector is a wedge (box minus a notch); housings/frames
+  use proportionally-larger boxes; etc.
+- All three examples (golden, hinge, planetary_gear) regenerate cleanly
+  via `make demo-all`.
+
+### 5B/C — Custom viewer
+- Hand-scaffolded `viewer/` (Vite 5 + React 18 + TypeScript + react-three-fiber 8 + drei 9). Pinned versions in `package.json`.
+- `viewer/src/components/ClaimPanel.tsx` (F2) — renders each claim's
+  text with a `<span data-component-id="…">` per IR component.
+  Wherein clauses get italic side-margin styling. Unmapped components
+  get a dashed underline + `?` badge (F6).
+- `viewer/src/components/Scene.tsx` (F3) — `useGLTF` loads the GLB,
+  walks the tree to index meshes by ancestor `name == claim_map row`.
+  Hover/click → `onSelect`/`onHover`; meshes get a per-frame tinted
+  material based on selection state, hover state, and limitation
+  focus. Click-empty deselects.
+- `viewer/src/App.tsx` — split layout (F1), example dropdown,
+  limitation-focus toggle (F5: dependent components fade to 15 %
+  opacity in 3D and 40 % in the panel). Selection scrolls the panel
+  span into view, mirroring the click direction.
+- `viewer/src/styles.css` — colour vocab: independent = blue,
+  dependent = amber, selected = gold, dashed underline =
+  unmapped. Header / split / status overlay / legend.
+- `claim2cad/manifest.py` — discovers `examples/*/`, copies the four
+  artifacts into `viewer/public/data/<id>/`, and writes a top-level
+  `manifest.json`. Run via `python -m claim2cad.manifest` or `make
+  viewer-build`.
+- Makefile gained `viewer-install`, `viewer-build`, `viewer-dev`,
+  `demo-all`.
+- `docs/CAD_VIEWER_CONTRACT.md` — single-source-of-truth document
+  describing the GLB-node-name ↔ component-id contract.
+
+### Verification (Phase 5 acceptance criteria)
+- `npm run typecheck` — no errors.
+- `npm run build` — succeeds; one large-chunk warning (three.js bundle
+  ~1 MB / 294 KB gzipped). No errors. Total dist ≪ 5 MB cap.
+- Dev-server smoke: `npm run dev` starts in <200 ms; HTTP 200 on `/`,
+  `/data/manifest.json` serves 3 examples. (Headless agent cannot click
+  in a browser; visual verification deferred to a human run — see
+  `BLOCKERS.md` B-003.)
+- Viewer code does not import any text-to-cad source: `grep -r
+  text-to-cad viewer/src` is empty (verified by hand).
+- F1, F2, F3, F4, F5, F6 implemented. F7 (axis gizmo / minimap)
+  deferred to next sprint.
+
+- **Completed:** 2026-04-27 ~11:25 KST. Commit `phase-5: custom
+  patent-aware viewer with bidirectional highlighting`.

@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 11,
+      "n_relations_introduced": 12,
+      "n_wherein_introduced": 2,
+      "introduces": [
+        "housing",
+        "inlet_port",
+        "outlet_port",
+        "pumping_unit",
+        "flow_control_valve",
+        "epicyclic_gear_train",
+        "first_shaft",
+        "first_gear",
+        "second_shaft",
+        "second_gear",
+        "third_gear"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

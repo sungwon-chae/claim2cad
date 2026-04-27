@@ -4,6 +4,24 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-8)
+- Multi-claim hierarchy operations.
+  - `claim2cad/claim_hierarchy.py`: `claim_chain`, `components_for_claim`,
+    `filter_ir_to_claim`, `hierarchy_summary`.
+  - Pipeline `--filter-claim N` flag — emit a single-claim CAD view
+    (claim N + ancestors). The filtered IR re-validates via the existing
+    referential-integrity check; relations with orphan endpoints and
+    wherein-clause targets that fell out of the kept set are pruned.
+  - Pipeline always writes `claim_hierarchy.json` next to the IR
+    (`--no-hierarchy` to skip).
+- Manifest fields: `n_claims`, `n_dependent_claims`, `max_claim_depth`,
+  `claim_hierarchy_path`. Examples with depth ≥ 2 get a `multi_claim` tag.
+- New `examples/multi_claim_drone/` — quadrotor with 5 claims and
+  hierarchy depth 4 (claim_5 → claim_4 → claim_3 → claim_1, sibling
+  claim_2). Exercises sibling-branch isolation in the filter.
+- All 30 examples ship `claim_hierarchy.json`.
+- 17 new tests in `tests/test_multi_claim.py`. Total: 61 passed.
+
 ### Added (V1-7)
 - Korean (KIPO/KIPRIS) patent-claim support.
   - `claim2cad/lang.py`: Hangul-block language detector.

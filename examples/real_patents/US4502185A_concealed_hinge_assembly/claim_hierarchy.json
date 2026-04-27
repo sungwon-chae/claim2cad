@@ -1,0 +1,32 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 12,
+      "n_relations_introduced": 9,
+      "n_wherein_introduced": 4,
+      "introduces": [
+        "card_screen",
+        "side_ribs",
+        "center_rib",
+        "end_bars",
+        "grid_bars",
+        "side_rib_openings",
+        "center_rib_openings",
+        "first_group_bars",
+        "pins",
+        "second_group_bars",
+        "sockets",
+        "fastening_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

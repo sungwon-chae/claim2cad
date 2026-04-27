@@ -1,0 +1,34 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 14,
+      "n_relations_introduced": 13,
+      "n_wherein_introduced": 4,
+      "introduces": [
+        "support",
+        "articulated_gripping_arm",
+        "lever_system",
+        "first_member",
+        "second_member",
+        "third_member",
+        "first_drive_unit",
+        "second_drive_unit",
+        "gripper_or_tool",
+        "first_lever_parallelogram",
+        "second_lever_parallelogram",
+        "common_member",
+        "second_parallel_member",
+        "pivot_axis"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

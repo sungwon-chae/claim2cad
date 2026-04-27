@@ -1,0 +1,51 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 31,
+      "n_relations_introduced": 18,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "breastplate",
+        "upper_arm_member",
+        "shoulder_joint",
+        "first_sensor_means",
+        "first_recording_means",
+        "first_driving_means",
+        "second_sensor_means",
+        "second_recording_means",
+        "second_driving_means",
+        "lower_arm_member",
+        "elbow_connecting_means",
+        "third_joint",
+        "third_sensor_means",
+        "third_recording_means",
+        "third_driving_means",
+        "hollow_hand_member",
+        "knuckle_joint",
+        "fourth_fifth_sensor_means",
+        "fourth_fifth_recording_means",
+        "fourth_fifth_driving_means",
+        "central_hand_member",
+        "hollow_thumb_members",
+        "pivotal_thumb_joints",
+        "thumb_sensor_elements",
+        "thumb_recording_means",
+        "thumb_driving_means",
+        "hollow_finger_members",
+        "pivoted_finger_joints",
+        "finger_sensor_elements",
+        "finger_recording_means",
+        "finger_driving_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

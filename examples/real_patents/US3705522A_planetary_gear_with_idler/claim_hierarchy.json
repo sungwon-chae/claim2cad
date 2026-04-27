@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 11,
+      "n_relations_introduced": 15,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "housing",
+        "input_shaft",
+        "planet_carrier_means",
+        "first_mounting_means",
+        "second_mounting_means",
+        "output_shaft",
+        "first_ring_gear",
+        "second_ring_gear",
+        "first_planet_pinion",
+        "second_planet_pinion",
+        "third_planet_pinion"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

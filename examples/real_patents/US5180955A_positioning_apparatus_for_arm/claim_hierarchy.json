@@ -1,0 +1,39 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 19,
+      "n_relations_introduced": 13,
+      "n_wherein_introduced": 2,
+      "introduces": [
+        "positioning_linkage",
+        "parallelogram_structure",
+        "base_structure",
+        "first_arm",
+        "second_arm",
+        "center_shaft",
+        "first_arm_first_section",
+        "first_arm_first_end",
+        "first_arm_second_section",
+        "first_arm_second_end",
+        "second_arm_first_section",
+        "second_arm_second_end",
+        "third_arm",
+        "fourth_arm",
+        "end_effector",
+        "means_for_moving",
+        "electromagnetic_coil",
+        "magnets",
+        "stationary_iron_structures"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

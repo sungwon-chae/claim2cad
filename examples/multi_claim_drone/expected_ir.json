@@ -1,0 +1,668 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Quadrotor aerial vehicle",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "A quadrotor aerial vehicle, comprising: a frame; a first motor mounted on a first arm of the frame; a second motor mounted on a second arm of the frame; a third motor mounted on a third arm of the frame; a fourth motor mounted on a fourth arm of the frame; a first propeller coupled to the first motor; a second propeller coupled to the second motor; a third propeller coupled to the third motor; and a fourth propeller coupled to the fourth motor; wherein each motor rotates its corresponding propeller about a substantially vertical axis.",
+      "is_independent": true,
+      "depends_on": null
+    },
+    {
+      "id": "claim_2",
+      "text": "The quadrotor aerial vehicle of claim 1, further comprising a battery housed within the frame.",
+      "is_independent": false,
+      "depends_on": "claim_1"
+    },
+    {
+      "id": "claim_3",
+      "text": "The quadrotor aerial vehicle of claim 1, further comprising a flight controller mounted on the frame and operably connected to each motor.",
+      "is_independent": false,
+      "depends_on": "claim_1"
+    },
+    {
+      "id": "claim_4",
+      "text": "The quadrotor aerial vehicle of claim 3, further comprising a position sensor coupled to the flight controller.",
+      "is_independent": false,
+      "depends_on": "claim_3"
+    },
+    {
+      "id": "claim_5",
+      "text": "The quadrotor aerial vehicle of claim 4, further comprising a camera attached to the frame and operably connected to the flight controller.",
+      "is_independent": false,
+      "depends_on": "claim_4"
+    }
+  ],
+  "components": [
+    {
+      "id": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 41,
+        "char_end": 48
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_arm",
+      "label": "first arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "frame",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 88
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "frame",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "third_arm",
+      "label": "third arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "frame",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 178,
+        "char_end": 191
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "fourth_arm",
+      "label": "fourth arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": "frame",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 230,
+        "char_end": 244
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_motor",
+      "label": "first motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 51,
+        "char_end": 64
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_motor",
+      "label": "second motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 117
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "third_motor",
+      "label": "third motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 155,
+        "char_end": 167
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "fourth_motor",
+      "label": "fourth motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 207,
+        "char_end": 220
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_propeller",
+      "label": "first propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotates about a substantially vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 258,
+        "char_end": 275
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_propeller",
+      "label": "second propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotates about a substantially vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 323
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "third_propeller",
+      "label": "third propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotates about a substantially vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 352,
+        "char_end": 369
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "fourth_propeller",
+      "label": "fourth propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotates about a substantially vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 417
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "battery",
+      "label": "battery",
+      "category": "structural",
+      "kind": "battery",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "housed within the frame"
+      ],
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 61,
+        "char_end": 68
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1",
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "flight_controller",
+      "label": "flight controller",
+      "category": "functional",
+      "kind": "controller",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_3",
+        "char_start": 61,
+        "char_end": 78
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1",
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "position_sensor",
+      "label": "position sensor",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_4",
+        "char_start": 61,
+        "char_end": 76
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_3",
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "camera",
+      "label": "camera",
+      "category": "functional",
+      "kind": "camera",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_5",
+        "char_start": 61,
+        "char_end": 67
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_4",
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_first_motor_on_first_arm",
+      "kind": "attached_to",
+      "source": "first_motor",
+      "target": "first_arm",
+      "via": null,
+      "constraints": [
+        "mounted on"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 51,
+        "char_end": 100
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_motor_on_second_arm",
+      "kind": "attached_to",
+      "source": "second_motor",
+      "target": "second_arm",
+      "via": null,
+      "constraints": [
+        "mounted on"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 153
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_motor_on_third_arm",
+      "kind": "attached_to",
+      "source": "third_motor",
+      "target": "third_arm",
+      "via": null,
+      "constraints": [
+        "mounted on"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 155,
+        "char_end": 205
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fourth_motor_on_fourth_arm",
+      "kind": "attached_to",
+      "source": "fourth_motor",
+      "target": "fourth_arm",
+      "via": null,
+      "constraints": [
+        "mounted on"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 207,
+        "char_end": 256
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_propeller_to_first_motor",
+      "kind": "connects",
+      "source": "first_propeller",
+      "target": "first_motor",
+      "via": null,
+      "constraints": [
+        "coupled to"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 258,
+        "char_end": 303
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_propeller_to_second_motor",
+      "kind": "connects",
+      "source": "second_propeller",
+      "target": "second_motor",
+      "via": null,
+      "constraints": [
+        "coupled to"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 350
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_third_propeller_to_third_motor",
+      "kind": "connects",
+      "source": "third_propeller",
+      "target": "third_motor",
+      "via": null,
+      "constraints": [
+        "coupled to"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 352,
+        "char_end": 395
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fourth_propeller_to_fourth_motor",
+      "kind": "connects",
+      "source": "fourth_propeller",
+      "target": "fourth_motor",
+      "via": null,
+      "constraints": [
+        "coupled to"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 446
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_motor_rotates_first_propeller",
+      "kind": "rotates_about",
+      "source": "first_motor",
+      "target": "first_propeller",
+      "via": null,
+      "constraints": [
+        "substantially vertical axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 448,
+        "char_end": 538
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_battery_in_frame",
+      "kind": "contains",
+      "source": "frame",
+      "target": "battery",
+      "via": null,
+      "constraints": [
+        "housed within"
+      ],
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 61,
+        "char_end": 93
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1"
+    },
+    {
+      "id": "rel_flight_controller_on_frame",
+      "kind": "attached_to",
+      "source": "flight_controller",
+      "target": "frame",
+      "via": null,
+      "constraints": [
+        "mounted on"
+      ],
+      "source_span": {
+        "claim_id": "claim_3",
+        "char_start": 61,
+        "char_end": 96
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1"
+    },
+    {
+      "id": "rel_flight_controller_to_motors",
+      "kind": "transmits_force_to",
+      "source": "flight_controller",
+      "target": "first_motor",
+      "via": null,
+      "constraints": [
+        "operably connected to each motor"
+      ],
+      "source_span": {
+        "claim_id": "claim_3",
+        "char_start": 101,
+        "char_end": 136
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1"
+    },
+    {
+      "id": "rel_position_sensor_to_flight_controller",
+      "kind": "connects",
+      "source": "position_sensor",
+      "target": "flight_controller",
+      "via": null,
+      "constraints": [
+        "coupled to"
+      ],
+      "source_span": {
+        "claim_id": "claim_4",
+        "char_start": 61,
+        "char_end": 109
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_3"
+    },
+    {
+      "id": "rel_camera_to_frame",
+      "kind": "attached_to",
+      "source": "camera",
+      "target": "frame",
+      "via": null,
+      "constraints": [
+        "attached to"
+      ],
+      "source_span": {
+        "claim_id": "claim_5",
+        "char_start": 61,
+        "char_end": 81
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_4"
+    },
+    {
+      "id": "rel_camera_to_flight_controller",
+      "kind": "connects",
+      "source": "camera",
+      "target": "flight_controller",
+      "via": null,
+      "constraints": [
+        "operably connected to"
+      ],
+      "source_span": {
+        "claim_id": "claim_5",
+        "char_start": 86,
+        "char_end": 138
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_4"
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_motor_rotates_propeller",
+      "text": "wherein each motor rotates its corresponding propeller about a substantially vertical axis",
+      "targets": [
+        "first_motor",
+        "second_motor",
+        "third_motor",
+        "fourth_motor",
+        "first_propeller",
+        "second_propeller",
+        "third_propeller",
+        "fourth_propeller"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 448,
+        "char_end": 538
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

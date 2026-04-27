@@ -1,0 +1,228 @@
+{
+  "schema_version": "0.1.0",
+  "example": "multi_claim_drone",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "frame",
+      "glb_node_name": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 41,
+        "char_end": 48
+      }
+    },
+    {
+      "component_id": "first_arm",
+      "glb_node_name": "first_arm",
+      "label": "first arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 88
+      }
+    },
+    {
+      "component_id": "second_arm",
+      "glb_node_name": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 127,
+        "char_end": 141
+      }
+    },
+    {
+      "component_id": "third_arm",
+      "glb_node_name": "third_arm",
+      "label": "third arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 178,
+        "char_end": 191
+      }
+    },
+    {
+      "component_id": "fourth_arm",
+      "glb_node_name": "fourth_arm",
+      "label": "fourth arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 230,
+        "char_end": 244
+      }
+    },
+    {
+      "component_id": "first_motor",
+      "glb_node_name": "first_motor",
+      "label": "first motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 51,
+        "char_end": 64
+      }
+    },
+    {
+      "component_id": "second_motor",
+      "glb_node_name": "second_motor",
+      "label": "second motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 117
+      }
+    },
+    {
+      "component_id": "third_motor",
+      "glb_node_name": "third_motor",
+      "label": "third motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 155,
+        "char_end": 167
+      }
+    },
+    {
+      "component_id": "fourth_motor",
+      "glb_node_name": "fourth_motor",
+      "label": "fourth motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 207,
+        "char_end": 220
+      }
+    },
+    {
+      "component_id": "first_propeller",
+      "glb_node_name": "first_propeller",
+      "label": "first propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 258,
+        "char_end": 275
+      }
+    },
+    {
+      "component_id": "second_propeller",
+      "glb_node_name": "second_propeller",
+      "label": "second propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 323
+      }
+    },
+    {
+      "component_id": "third_propeller",
+      "glb_node_name": "third_propeller",
+      "label": "third propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 352,
+        "char_end": 369
+      }
+    },
+    {
+      "component_id": "fourth_propeller",
+      "glb_node_name": "fourth_propeller",
+      "label": "fourth propeller",
+      "category": "functional",
+      "kind": "propeller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 417
+      }
+    },
+    {
+      "component_id": "battery",
+      "glb_node_name": "battery",
+      "label": "battery",
+      "category": "structural",
+      "kind": "battery",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 61,
+        "char_end": 68
+      }
+    },
+    {
+      "component_id": "flight_controller",
+      "glb_node_name": "flight_controller",
+      "label": "flight controller",
+      "category": "functional",
+      "kind": "controller",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_3",
+        "char_start": 61,
+        "char_end": 78
+      }
+    },
+    {
+      "component_id": "position_sensor",
+      "glb_node_name": "position_sensor",
+      "label": "position sensor",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_4",
+        "char_start": 61,
+        "char_end": 76
+      }
+    },
+    {
+      "component_id": "camera",
+      "glb_node_name": "camera",
+      "label": "camera",
+      "category": "functional",
+      "kind": "camera",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_5",
+        "char_start": 61,
+        "char_end": 67
+      }
+    }
+  ]
+}

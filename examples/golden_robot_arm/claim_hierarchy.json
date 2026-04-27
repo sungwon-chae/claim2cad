@@ -1,0 +1,43 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 8,
+      "n_relations_introduced": 7,
+      "n_wherein_introduced": 2,
+      "introduces": [
+        "base",
+        "first_link",
+        "first_joint",
+        "second_link",
+        "second_joint",
+        "end_effector",
+        "gripper",
+        "fastener"
+      ]
+    },
+    {
+      "id": "claim_2",
+      "is_independent": false,
+      "depends_on": "claim_1",
+      "chain": [
+        "claim_2",
+        "claim_1"
+      ],
+      "n_components_introduced": 1,
+      "n_relations_introduced": 1,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "position_sensor"
+      ]
+    }
+  ],
+  "max_depth": 2,
+  "n_independent": 1,
+  "n_dependent": 1
+}

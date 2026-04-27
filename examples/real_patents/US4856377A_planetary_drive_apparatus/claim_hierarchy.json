@@ -1,0 +1,37 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 17,
+      "n_relations_introduced": 13,
+      "n_wherein_introduced": 3,
+      "introduces": [
+        "gear_case_housing",
+        "engine_housing",
+        "ring_gear_means",
+        "first_ring_gear_member",
+        "second_ring_gear_member",
+        "first_stage_assembly",
+        "first_sun_gear",
+        "engine_output_shaft",
+        "first_planetary_carrier",
+        "first_planetary_pinion",
+        "second_stage_assembly",
+        "second_sun_gear",
+        "second_planetary_carrier",
+        "propeller_shaft",
+        "second_planetary_pinion_gears",
+        "similar_carrier",
+        "supplementary_pinion_gears"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

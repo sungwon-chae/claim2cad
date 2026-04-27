@@ -788,3 +788,50 @@ $60 not breached). Breakdown:
 - `lang_ko.HEAD_TRANSLATIONS` is intentionally small (~40 entries) — enough
   to romanise the V1-7 example and the most common KIPO mechanical
   vocabulary. Out-of-vocabulary head nouns slug to `comp_<n>`.
+
+---
+
+## Phase V1-8 — Multi-claim hierarchy support — COMPLETED 2026-04-27
+
+### What shipped
+- `claim2cad/claim_hierarchy.py`:
+  - `claim_chain(ir, claim_id)` — walks `depends_on` pointers.
+  - `components_for_claim(ir, claim_id, include_ancestors=True)` —
+    returns components contributed by that claim (and ancestors).
+  - `filter_ir_to_claim(ir, claim_id, include_ancestors=True)` —
+    produces a filtered :class:`ClaimIR` with only the chain's claims,
+    components, valid relations, and matching wherein clauses. Result
+    re-validates via the existing referential-integrity check.
+  - `hierarchy_summary(ir)` — JSON-serialisable tree summary.
+- Pipeline:
+  - `--filter-claim N` (or `claim_N`) flag — emit a single-claim view.
+  - `--no-hierarchy` flag — skip writing claim_hierarchy.json.
+  - Always writes `claim_hierarchy.json` next to the IR.
+- Manifest: new fields `n_claims`, `n_dependent_claims`,
+  `max_claim_depth`, `claim_hierarchy_path`. Examples with at least one
+  dependent claim get the `multi_claim` tag.
+- New `examples/multi_claim_drone/` — quadrotor with 5 claims, depth 4
+  (claim_5 → claim_4 → claim_3 → claim_1, sibling claim_2). 17
+  components, 15 relations, full STEP/GLB/URDF generated.
+- All 30 example folders now ship a `claim_hierarchy.json`.
+
+### Verification
+- `pytest tests/` — 61 passed (44 pre-V1-8 + 17 new), 1.85 s.
+- `python -m claim2cad.pipeline --filter-claim 5
+  --claim examples/multi_claim_drone/claim.txt --out /tmp/c5 --dry-run`
+  → 16 components in chain `[claim_1, claim_3, claim_4, claim_5]`
+  (sibling battery from claim_2 correctly excluded).
+- `viewer/npm run typecheck` — clean.
+- Manifest: `multi_claim` tagged on 4 examples, `kinematic` and
+  `korean` tags preserved.
+
+### Notes
+- The schema already had `is_dependent` / `dependent_on` since Phase 2;
+  V1-8's contribution is the *hierarchy operations* (chain walk, filter,
+  summary) plus a deeper example to exercise depth > 2.
+- Filtering drops relations whose endpoints fall outside the kept set,
+  so a single-claim view never exposes dangling references. Wherein
+  clauses keep matching targets and drop the rest.
+- Viewer integration was tagged optional in the brief and is deferred to
+  a v1.1 follow-up. The CLI + JSON output are sufficient for the
+  evaluation harness in V1-11.

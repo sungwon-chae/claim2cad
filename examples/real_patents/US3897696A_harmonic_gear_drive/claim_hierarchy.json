@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 13,
+      "n_relations_introduced": 8,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "transmission",
+        "gear_train_1",
+        "gear_train_2",
+        "intermediate_shaft_1",
+        "intermediate_shaft_2",
+        "drive_shaft",
+        "transmission_stage",
+        "pinion",
+        "gear",
+        "driven_machine",
+        "pair_of_frames",
+        "frame_1",
+        "frame_2"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

@@ -1,0 +1,34 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 14,
+      "n_relations_introduced": 13,
+      "n_wherein_introduced": 2,
+      "introduces": [
+        "transmission",
+        "input_element",
+        "output_element",
+        "multi_ratio_drive_gear_unit",
+        "low_friction_device",
+        "high_friction_device",
+        "fluid_source",
+        "governor",
+        "governor_pressure",
+        "manual_valve",
+        "manual_low_signal_line",
+        "low_high_signal_line",
+        "automatic_control_valve_means",
+        "inhibitor_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

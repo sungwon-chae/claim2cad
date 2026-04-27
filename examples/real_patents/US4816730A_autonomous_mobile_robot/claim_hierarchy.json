@@ -1,0 +1,32 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 12,
+      "n_relations_introduced": 13,
+      "n_wherein_introduced": 2,
+      "introduces": [
+        "robotic_arm_assembly",
+        "gripper_mechanism",
+        "gripper_fingers",
+        "cone",
+        "stepper_motors",
+        "stepper_motor_cone",
+        "power_source",
+        "first_sensing_system",
+        "feedback_loop",
+        "second_sensing_system",
+        "computer",
+        "data_input_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

@@ -23,6 +23,7 @@ import logging
 import sys
 from pathlib import Path
 
+from claim2cad.claim_hierarchy import filter_ir_to_claim, hierarchy_summary
 from claim2cad.claim_parser import parse_claim
 from claim2cad.ir_schema import ClaimIR
 from claim2cad.ir_to_cad import export_cad, synthesize_generator
@@ -76,11 +77,30 @@ def run_pipeline(
     write_generator: bool = True,
     example_name: str | None = None,
     dry_run: bool = False,
+    filter_claim: str | None = None,
+    write_hierarchy: bool = True,
 ) -> dict[str, Path]:
-    """Run the full pipeline. Returns a dict of artifact paths."""
+    """Run the full pipeline. Returns a dict of artifact paths.
+
+    ``filter_claim``: when set (e.g. ``"claim_1"`` or ``"1"``), the
+    pipeline filters the parsed IR down to that claim and its ancestors
+    before exporting CAD. This is the V1-8 multi-claim view.
+    ``write_hierarchy``: emit a ``claim_hierarchy.json`` summary alongside
+    the IR.
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
     ir, source_label = _load_or_parse(claim_path, ir_path, dry_run=dry_run)
     logger.info("IR ready (%s); %d components", source_label, len(ir.components))
+
+    if filter_claim is not None:
+        target = filter_claim if filter_claim.startswith("claim_") else f"claim_{filter_claim}"
+        ir = filter_ir_to_claim(ir, target, include_ancestors=True)
+        logger.info(
+            "Filtered IR to %s (+ ancestors): %d components, %d relations",
+            target,
+            len(ir.components),
+            len(ir.relations),
+        )
 
     name = example_name or out_dir.name
 
@@ -101,18 +121,26 @@ def run_pipeline(
     map_out = out_dir / "claim_map.json"
     write_claim_map(claim_map, map_out)
 
-    if write_generator:
-        gen_path = synthesize_generator(out_dir)
-        logger.info("Wrote %s", gen_path)
-
     artifacts: dict[str, Path] = {
         "claim_ir": ir_out,
         "step": cad_paths["step"],
         "glb": cad_paths["glb"],
         "claim_map": map_out,
     }
+
+    if write_hierarchy and len(ir.claims) >= 1:
+        hier_path = out_dir / "claim_hierarchy.json"
+        hier_path.write_text(
+            json.dumps(hierarchy_summary(ir), indent=2) + "\n", encoding="utf-8"
+        )
+        logger.info("Wrote %s", hier_path)
+        artifacts["claim_hierarchy"] = hier_path
+
     if write_generator:
+        gen_path = synthesize_generator(out_dir)
+        logger.info("Wrote %s", gen_path)
         artifacts["generator"] = out_dir / "pipeline_generator.py"
+
     return artifacts
 
 
@@ -150,6 +178,21 @@ def _build_arg_parser() -> argparse.ArgumentParser:
             "Used by CI to keep tests deterministic and offline."
         ),
     )
+    parser.add_argument(
+        "--filter-claim",
+        type=str,
+        default=None,
+        help=(
+            "Filter the IR to only the named claim (e.g. '2' or 'claim_2') "
+            "and its ancestors before generating CAD. Useful for visualising "
+            "what a single dependent claim adds on top of its parent."
+        ),
+    )
+    parser.add_argument(
+        "--no-hierarchy",
+        action="store_true",
+        help="Skip writing claim_hierarchy.json.",
+    )
     return parser
 
 
@@ -163,6 +206,8 @@ def main(argv: list[str] | None = None) -> int:
             write_generator=not args.no_generator,
             example_name=args.example_name,
             dry_run=args.dry_run,
+            filter_claim=args.filter_claim,
+            write_hierarchy=not args.no_hierarchy,
         )
     except Exception as exc:
         logger.exception("Pipeline failed: %s", exc)

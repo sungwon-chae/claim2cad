@@ -1,0 +1,39 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 19,
+      "n_relations_introduced": 11,
+      "n_wherein_introduced": 3,
+      "introduces": [
+        "hand_controller",
+        "means_transmitting_hc",
+        "commanded_position_signal_hc",
+        "robot_arm",
+        "robot_servo_system",
+        "servo_control_input_signal",
+        "actual_position_signal",
+        "signal_mixer",
+        "actual_servo_control_signal",
+        "compliance_control_feedback_gain",
+        "means_sensing_contact_force",
+        "contact_force_signal",
+        "low_pass_filter",
+        "low_pass_filtered_contact_force_signal",
+        "means_producing_force_reflection",
+        "force_reflection_signal",
+        "means_transmitting_force_reflection",
+        "gain_gps",
+        "following_commanded_position_signal"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

@@ -1,0 +1,38 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 18,
+      "n_relations_introduced": 12,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "fixed_stand",
+        "robot_body",
+        "swivel_stand",
+        "upper_arm",
+        "forearm",
+        "central_axis",
+        "first_wrist",
+        "second_wrist",
+        "third_wrist",
+        "first_pivot_axis",
+        "first_common_point",
+        "second_pivot_axis",
+        "second_common_point",
+        "first_driving_motor",
+        "first_reduction_gear",
+        "second_driving_motor",
+        "second_reduction_gear",
+        "operating_part"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

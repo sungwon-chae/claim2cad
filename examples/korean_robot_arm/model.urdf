@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<robot name="로봇_매니퓰레이터">
+  <link name="base">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_pair">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gripper">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sensor">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_base_to_finger_pair" type="fixed">
+    <parent link="base"/>
+    <child link="finger_pair"/>
+    <origin xyz="0.1200 0.0600 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_base_to_first_link" type="fixed">
+    <parent link="base"/>
+    <child link="first_link"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_base_to_sensor" type="fixed">
+    <parent link="base"/>
+    <child link="sensor"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_link_to_second_link" type="fixed">
+    <parent link="first_link"/>
+    <child link="second_link"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_link_to_gripper" type="fixed">
+    <parent link="second_link"/>
+    <child link="gripper"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+  </joint>
+</robot>

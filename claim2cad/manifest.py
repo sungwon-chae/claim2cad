@@ -33,6 +33,7 @@ EXAMPLE_TITLES = {
     "hinge_assembly": "Four-Bar Linkage / Hinge Assembly",
     "planetary_gear": "Planetary Gear Assembly",
     "korean_robot_arm": "로봇 매니퓰레이터 (Korean robot arm)",
+    "multi_claim_drone": "Quadrotor Drone (5-claim hierarchy)",
 }
 
 
@@ -66,6 +67,11 @@ class ManifestExample:
     # V1-6 additions:
     urdf_path: Optional[str] = None
     movable_joints: list[str] = field(default_factory=list)
+    # V1-8 additions:
+    n_claims: int = 1
+    n_dependent_claims: int = 0
+    max_claim_depth: int = 1
+    claim_hierarchy_path: Optional[str] = None
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -170,6 +176,28 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
     except Exception:  # pragma: no cover — defensive
         pass
 
+    # V1-8: claim hierarchy info. Compute from the IR rather than reading
+    # claim_hierarchy.json (which is optional).
+    n_claims = 1
+    n_dependent_claims = 0
+    max_claim_depth = 1
+    claim_hierarchy_path: Optional[str] = None
+    try:
+        from claim2cad.claim_hierarchy import hierarchy_summary
+        from claim2cad.ir_schema import ClaimIR
+        ir_text = (example_dir / "claim_ir.json").read_text(encoding="utf-8")
+        ir_obj = ClaimIR.model_validate_json(ir_text)
+        summary = hierarchy_summary(ir_obj)
+        n_claims = len(summary["claims"])
+        n_dependent_claims = summary["n_dependent"]
+        max_claim_depth = summary["max_depth"]
+        if n_dependent_claims > 0:
+            tags.append("multi_claim")
+        if (example_dir / "claim_hierarchy.json").exists():
+            claim_hierarchy_path = "claim_hierarchy.json"
+    except Exception:  # pragma: no cover — defensive
+        pass
+
     return ManifestExample(
         id=example_dir.name,
         title=_title_from_metadata(example_dir, example_dir.name),
@@ -186,6 +214,10 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         diffs_available=[],  # populated by _populate_diffs() below
         urdf_path=urdf_path,
         movable_joints=movable_joints,
+        n_claims=n_claims,
+        n_dependent_claims=n_dependent_claims,
+        max_claim_depth=max_claim_depth,
+        claim_hierarchy_path=claim_hierarchy_path,
     )
 
 
@@ -261,6 +293,8 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             shutil.copy2(src_dir / filename, target / filename)
         if ex.figure_map_path:
             shutil.copy2(src_dir / ex.figure_map_path, target / ex.figure_map_path)
+        if ex.claim_hierarchy_path:
+            shutil.copy2(src_dir / ex.claim_hierarchy_path, target / ex.claim_hierarchy_path)
         if ex.figure_image_path:
             src_img = src_dir / ex.figure_image_path
             dst_img = target / ex.figure_image_path

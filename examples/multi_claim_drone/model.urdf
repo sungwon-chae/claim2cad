@@ -1,0 +1,202 @@
+<?xml version="1.0" ?>
+<robot name="quadrotor_aerial_vehicle">
+  <link name="battery">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="camera">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_propeller">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="flight_controller">
+    <visual>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_propeller">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="position_sensor">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_propeller">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_motor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_propeller">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_flight_controller_to_position_sensor" type="fixed">
+    <parent link="flight_controller"/>
+    <child link="position_sensor"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_battery" type="fixed">
+    <parent link="frame"/>
+    <child link="battery"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_camera" type="fixed">
+    <parent link="frame"/>
+    <child link="camera"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_first_arm" type="fixed">
+    <parent link="frame"/>
+    <child link="first_arm"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_first_motor" type="fixed">
+    <parent link="frame"/>
+    <child link="first_motor"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_first_propeller" type="fixed">
+    <parent link="frame"/>
+    <child link="first_propeller"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_flight_controller" type="fixed">
+    <parent link="frame"/>
+    <child link="flight_controller"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_fourth_arm" type="fixed">
+    <parent link="frame"/>
+    <child link="fourth_arm"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_fourth_motor" type="fixed">
+    <parent link="frame"/>
+    <child link="fourth_motor"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_fourth_propeller" type="fixed">
+    <parent link="frame"/>
+    <child link="fourth_propeller"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_second_arm" type="fixed">
+    <parent link="frame"/>
+    <child link="second_arm"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_second_motor" type="fixed">
+    <parent link="frame"/>
+    <child link="second_motor"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_second_propeller" type="fixed">
+    <parent link="frame"/>
+    <child link="second_propeller"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_third_arm" type="fixed">
+    <parent link="frame"/>
+    <child link="third_arm"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_third_motor" type="fixed">
+    <parent link="frame"/>
+    <child link="third_motor"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_third_propeller" type="fixed">
+    <parent link="frame"/>
+    <child link="third_propeller"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

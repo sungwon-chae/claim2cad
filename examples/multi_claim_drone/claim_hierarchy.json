@@ -1,0 +1,96 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 13,
+      "n_relations_introduced": 9,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "frame",
+        "first_arm",
+        "second_arm",
+        "third_arm",
+        "fourth_arm",
+        "first_motor",
+        "second_motor",
+        "third_motor",
+        "fourth_motor",
+        "first_propeller",
+        "second_propeller",
+        "third_propeller",
+        "fourth_propeller"
+      ]
+    },
+    {
+      "id": "claim_2",
+      "is_independent": false,
+      "depends_on": "claim_1",
+      "chain": [
+        "claim_2",
+        "claim_1"
+      ],
+      "n_components_introduced": 1,
+      "n_relations_introduced": 1,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "battery"
+      ]
+    },
+    {
+      "id": "claim_3",
+      "is_independent": false,
+      "depends_on": "claim_1",
+      "chain": [
+        "claim_3",
+        "claim_1"
+      ],
+      "n_components_introduced": 1,
+      "n_relations_introduced": 2,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "flight_controller"
+      ]
+    },
+    {
+      "id": "claim_4",
+      "is_independent": false,
+      "depends_on": "claim_3",
+      "chain": [
+        "claim_4",
+        "claim_3",
+        "claim_1"
+      ],
+      "n_components_introduced": 1,
+      "n_relations_introduced": 1,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "position_sensor"
+      ]
+    },
+    {
+      "id": "claim_5",
+      "is_independent": false,
+      "depends_on": "claim_4",
+      "chain": [
+        "claim_5",
+        "claim_4",
+        "claim_3",
+        "claim_1"
+      ],
+      "n_components_introduced": 1,
+      "n_relations_introduced": 2,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "camera"
+      ]
+    }
+  ],
+  "max_depth": 4,
+  "n_independent": 1,
+  "n_dependent": 4
+}

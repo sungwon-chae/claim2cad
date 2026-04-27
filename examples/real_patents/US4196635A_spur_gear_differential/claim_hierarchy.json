@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 13,
+      "n_relations_introduced": 14,
+      "n_wherein_introduced": 0,
+      "introduces": [
+        "frame_means",
+        "load_means",
+        "torque_means",
+        "first_housing_means",
+        "piston_means",
+        "first_piston_rod",
+        "second_piston_rod",
+        "sample",
+        "fork_means",
+        "fork_ends",
+        "second_housing_means",
+        "rotary_piston_means",
+        "torque_transmitting_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

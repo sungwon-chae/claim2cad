@@ -1,0 +1,33 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 13,
+      "n_relations_introduced": 7,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "frame",
+        "first_input_link",
+        "first_actuator_assembly",
+        "first_joint",
+        "second_input_link",
+        "second_actuator_assembly",
+        "second_joint",
+        "mounting_means",
+        "first_output_link",
+        "third_joint",
+        "second_output_link",
+        "fourth_joint",
+        "fifth_joint"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

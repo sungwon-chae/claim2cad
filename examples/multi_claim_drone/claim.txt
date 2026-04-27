@@ -1,0 +1,9 @@
+1. A quadrotor aerial vehicle, comprising: a frame; a first motor mounted on a first arm of the frame; a second motor mounted on a second arm of the frame; a third motor mounted on a third arm of the frame; a fourth motor mounted on a fourth arm of the frame; a first propeller coupled to the first motor; a second propeller coupled to the second motor; a third propeller coupled to the third motor; and a fourth propeller coupled to the fourth motor; wherein each motor rotates its corresponding propeller about a substantially vertical axis.
+
+2. The quadrotor aerial vehicle of claim 1, further comprising a battery housed within the frame.
+
+3. The quadrotor aerial vehicle of claim 1, further comprising a flight controller mounted on the frame and operably connected to each motor.
+
+4. The quadrotor aerial vehicle of claim 3, further comprising a position sensor coupled to the flight controller.
+
+5. The quadrotor aerial vehicle of claim 4, further comprising a camera attached to the frame and operably connected to the flight controller.

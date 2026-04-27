@@ -1,0 +1,45 @@
+{
+  "claims": [
+    {
+      "id": "claim_1",
+      "is_independent": true,
+      "depends_on": null,
+      "chain": [
+        "claim_1"
+      ],
+      "n_components_introduced": 25,
+      "n_relations_introduced": 17,
+      "n_wherein_introduced": 1,
+      "introduces": [
+        "body_half_sub_assembly",
+        "vehicle_body",
+        "door_half_member",
+        "pintle_pin",
+        "hinge_axis",
+        "hinge_body_half_assembly",
+        "main_member",
+        "u_shaped_link_member",
+        "upper_extension",
+        "lower_extension",
+        "mounting_wall",
+        "main_member_pintle_pin_hole",
+        "base_wall",
+        "base_wall_exterior_guide_surface",
+        "upper_leg",
+        "lower_leg",
+        "link_member_pintle_pin_holes",
+        "leg_guide_edge_surface",
+        "stop_means",
+        "bight_wall",
+        "first_sidewall",
+        "second_sidewall",
+        "leaf_flange",
+        "leaf_flange_pintle_pin_hole",
+        "pintle_pin_stop_means"
+      ]
+    }
+  ],
+  "max_depth": 1,
+  "n_independent": 1,
+  "n_dependent": 0
+}

@@ -1,0 +1,16 @@
+{
+  "patent_id": "US4391163A",
+  "slug": "planetary_speed_reducer",
+  "primary_class": "074",
+  "title": "Planetary gear assembly",
+  "claim_text": "1. A planetary gear assembly comprising a housing (9), an input shaft (1) rotatably mounted in said housing, an output shaft (23) mounted for rotation adjacent said input shaft, a pair of outer central internal gears (6a,6b) fixed to said housing, an inner central gear (10) having two axially spaced opposite helical gear portions (10a,10b), first and second substantially parallel rotatable planetary gears (5a,5b) having oppositely helically geared portions disposed between said outer central internal gears and said inner central gear and in meshing engagement with said outer central internal gears and said axially spaced opposite helical gear portions of said inner central gear, first and second carriers (3a,3b) for supporting said first and second planetary gears for rotation respectively, and for revolving movement around said inner central gear, a first gear coupling (2) connecting said first carrier (3a) to said input shaft for co-rotation and relative axial motion for transmitting all rotational power from said input shaft to said first carrier, a second gear coupling (4) connecting said first and second carriers (3a,3b) for co-rotation and relative axial motion so that a portion of the rotational power from said first carrier is transmitted to said second carrier over said second gear coupling and a remainder of the power is transmitted directly to said central gear over one of said opposite helical gear portions, and bearing means (11,12) mounting said inner central gear for rotation and for axial displacement in a fixed radial position in said housing.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/2c/05/0f/2eb3924956fc67/US4391163-drawings-page-2.png"
+  ],
+  "publication_date": "1980-05-23",
+  "fetch_url": "https://patents.google.com/patent/US4391163A/en",
+  "fetched_at": "2026-04-27T19:39:20",
+  "saved_figures": [
+    "figure_1.png"
+  ]
+}

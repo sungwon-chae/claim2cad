@@ -50,3 +50,5 @@
 {"ts": "2026-04-27T19:32:50", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6480, "completion_tokens": 2126, "cost_usd": 0.05133, "note": ""}
 {"ts": "2026-04-27T19:33:11", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6480, "completion_tokens": 2795, "cost_usd": 0.061365, "note": ""}
 {"ts": "2026-04-27T19:33:33", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6480, "completion_tokens": 2586, "cost_usd": 0.05823, "note": ""}
+{"ts": "2026-04-27T19:34:05", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6619, "completion_tokens": 3769, "cost_usd": 0.076392, "note": ""}
+{"ts": "2026-04-27T19:34:32", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6619, "completion_tokens": 3503, "cost_usd": 0.072402, "note": ""}

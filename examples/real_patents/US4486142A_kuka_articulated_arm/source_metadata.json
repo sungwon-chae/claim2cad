@@ -1,0 +1,18 @@
+{
+  "patent_id": "US4486142A",
+  "slug": "kuka_articulated_arm",
+  "primary_class": "901",
+  "title": "Method of automatic limitation for a controlled variable in a multivariable system",
+  "claim_text": "1. A method of an automatic limitation for one controlled variable of a multivariable controlled object having a control means with a set point and a closed loop providing for said limitation, said method comprising: controlling the position of said control means by use of said closed control loop after said controlled variable reaches a level which is necessary to limit until there is a preestablished deviation of said controlled variable from said limited level; upon sensing of said preestablished deviation of said controlled variable from said limited level, adjustably changing the set point of said control means in one direction as quickly as possible to decrease said deviation and then immediately after said changing of the set point, exponentially changing said set point in an opposite direction; and controlling a required position of said control means by said closed control loop after said controlled variable reaches said limited level again as a result of said exponential changing of the set point of said control means.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/53/13/f0/5d6ce0f00e0ebc/US4486142-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/c2/d2/43/cac698a229eb07/US4486142-drawings-page-3.png"
+  ],
+  "publication_date": "1978-12-01",
+  "fetch_url": "https://patents.google.com/patent/US4486142A/en",
+  "fetched_at": "2026-04-27T19:37:40",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png"
+  ]
+}

@@ -351,3 +351,47 @@ Soft cap: $60 (auto-downgrade); hard cap: $80.
 
 **Time spent:** ~15 min vs. 30 min target.
 **Cost so far:** $0.00 (no LLM calls yet).
+
+## Phase V1-1 — Real patent collection — STARTED 2026-04-27 19:30, COMPLETED ~20:05
+
+- **USPTO PatentsView API is retired** (verified: a POST to
+  `https://api.patentsview.org/patents/query` returns 301 → an HTML
+  transition page on `data.uspto.gov`). Pivoted to a hand-curated
+  seed list of 33 well-known expired mechanical patents fetched
+  directly from `patents.google.com`. This is more deterministic than
+  scraping Google's JS-heavy search page.
+- Wrote `claim2cad/patent_collector.py`:
+  - HTTP layer with on-disk cache (`.cache/patents/<id>/`),
+    User-Agent identifying the project, ≥2.2 s rate limit.
+  - HTML parsing (BeautifulSoup + lxml): extracts title (DC.title
+    meta), publication date (DC.date meta), claim 1 (via the
+    `itemprop="claims"` section + a "1." regex), and the first 3
+    figure URLs (`itemprop="full"` meta tags pointing at
+    `patentimages.storage.googleapis.com`).
+  - Image fetcher infers extension from `Content-Type`, falls back
+    to URL suffix.
+  - Acceptance criteria: claim 100–8000 chars (real US claims often
+    run 1–6k), title present, ≥1 figure downloaded.
+- Wrote `claim2cad/dataset.py` (`stats`, `report`, `all` subcommands)
+  that walks `examples/real_patents/` and emits
+  `DATASET_STATS.md` + `COLLECTION_REPORT.md`.
+- Ran the collector against the 33-patent seed list. **First 25 of
+  the 25 attempted were accepted** (we stopped at 25 by design).
+  Distribution: USPC 074 (gears) 10, USPC 901 (robots) 9, USPC 414
+  (manipulators) 3, USPC 16 (hinges) 3. Decades: 1960s 1, 1970s 6,
+  1980s 15, 1990s 3. Claim-1 length: median 1343 chars (vs.
+  golden's 467 — real claims are roughly 3× longer than the
+  hand-crafted golden).
+- Each patent's directory has `claim.txt`, `figures/` (1–3 PNGs),
+  and `source_metadata.json` (fetch URL + timestamp + slug).
+- `.cache/patents/` ignored in git (regenerable from the collector
+  any time).
+
+**Working set:** 25 patents (the brief asked for 20; we keep all 25
+because they all passed acceptance and V1-2 wants more material to
+iterate over). The first 20 by directory order will be the
+"benchmark 20" referenced in the V1-2 report.
+
+**Time spent:** ~35 min vs. 90 min target.
+**Cost so far:** $0.00 (still no LLM calls — Google Patents fetches
+are free).

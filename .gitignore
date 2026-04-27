@@ -30,3 +30,6 @@ viewer/public/data/
 # OS
 .DS_Store
 Thumbs.db
+
+# Patent fetch cache (regenerable from claim2cad.patent_collector)
+.cache/

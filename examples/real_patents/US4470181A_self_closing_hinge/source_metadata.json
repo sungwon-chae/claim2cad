@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4470181A",
+  "slug": "self_closing_hinge",
+  "primary_class": "16",
+  "title": "Apparatus for loading color-coded wires into a connector half",
+  "claim_text": "1. Apparatus having a wire-activated, inserting mechanism, means for aligning said inserting mechanism in turn with respective terminals of a row of electrical terminals in an electrical connector half, a frame, a transporting mechanism for grasping single wires individually, in turn, from a random, serial array of color-coded wires, a drive mechanism for pivoting said transporting mechanism, a sensor for receiving an electrical identity signal carried by an individual wire, control means responsive to the sensor output, an escapement mechanism in said frame into which an individual wire is transferred by pivoting of said transporting mechanism, and a transferring mechanism for transferring an individual wire from said escapement mechanism to one of a plurality of color-coded positions, in which said color-coded positions are defined by rows of contacts in an electrical connector half, connector locating means being provided to locate the connector half extending from the same side of the transporting mechanism as said array of wires, said transporting mechanism being pivotable by the control means in a first direction for diverting an individual wire toward one row of terminals, and in a second direction for diverting an individual wire toward another row of terminals, and said transferring mechanism conveying an individual wire outwardly of said escapement means and into said inserting mechanism positioned at a selected terminal of a selected row of terminals by the control means to insert the individual wire into the selected terminal.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/1c/8d/6e/5c573c4d5fad0e/US4470181-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/b7/09/54/92ce669a398057/US4470181-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/bc/09/5e/aba8258914e97f/US4470181-drawings-page-4.png"
+  ],
+  "publication_date": "1981-04-27",
+  "fetch_url": "https://patents.google.com/patent/US4470181A/en",
+  "fetched_at": "2026-04-27T19:39:59",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

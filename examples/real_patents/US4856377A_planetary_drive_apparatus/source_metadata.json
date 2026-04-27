@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4856377A",
+  "slug": "planetary_drive_apparatus",
+  "primary_class": "074",
+  "title": "Planetary gear system for a gas turbine engine",
+  "claim_text": "1. A planetary gear transmission for use in gas turbine engines, including a gear case housing fixed to the engine housing, ring gear means including first and second ring gear members fixed to the housing, a first stage planetary gear assembly including a first sun gear coupled to the engine output shaft, a first planetary carrier rotatably mounted in said housing and first planetary pinion supported by the first carrier meshing with the first sun gear and with the first ring gear member, a second stage planetary gear assembly comprising a second sun gear coupled to the first planetary carrier, a second planetary carrier coupled to a propeller shaft, second planetary pinion gears supported on the second carrier meshing with the second ring gear member and the second sun gear characterized in that one of the first and second planetary carriers is exchangeable for a similar carrier with planetary pinion gears and supplementary pinion gear arrangement effective to provide reverse rotation of the propeller shaft, said similar planetary carrier with planetary pinion gears and supplementary pinion gears being of the same radial dimension and mass as the planetary carrier and planetary pinion gears it is replacing such that the overall mass of the planetary gear transmission is the same as the planetary gear transmission arrangement for standard rotation, and the effective gear ration of the resulting planetary gear transmission for reverse rotation is the same as the planetary gear transmission arrangement for standard rotation.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/5a/2c/57/2e679dfc243d77/US4856377-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/b5/3f/f0/e725ac0878635b/US4856377-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/e7/fb/f0/290d9ad24e4ea4/US4856377-drawings-page-4.png"
+  ],
+  "publication_date": "1987-01-07",
+  "fetch_url": "https://patents.google.com/patent/US4856377A/en",
+  "fetched_at": "2026-04-27T19:39:42",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

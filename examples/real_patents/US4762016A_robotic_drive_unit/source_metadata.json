@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4762016A",
+  "slug": "robotic_drive_unit",
+  "primary_class": "901",
+  "title": "Robotic manipulator having three degrees of freedom",
+  "claim_text": "1. A robotic manipulator comprising: a frame; a first input link; a first actuator assembly coupled at a first joint to one end of said first input link for manipulating said first link with two degrees of freedom; a second input link; a second actuator assembly coupled at a second joint to one end of said second link for manipulating said second link with one degree of freedom; means for mounting said first and second actuator assemblies on said frame; a first output link coupled at a third joint adjacent one of its ends to the other end of said first input link; a second output link coupled at a fourth joint at one of its ends to the other end of said second input link and coupled at a fifth joint at its other end to the other end of the first output link; where the mounting of said actuator assemblies on said frame, and said first through fifth joints allow manipulation of said one end of said first output link by said first and second actuator assemblies with three degrees of freedom.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/26/94/1c/8c8d7bb12ab1f7/US4762016-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/f3/f1/18/98e66de4636196/US4762016-drawings-page-4.png",
+    "https://patentimages.storage.googleapis.com/45/e3/8d/50e9757034955d/US4762016-drawings-page-5.png"
+  ],
+  "publication_date": "1987-03-27",
+  "fetch_url": "https://patents.google.com/patent/US4762016A/en",
+  "fetched_at": "2026-04-27T19:38:02",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

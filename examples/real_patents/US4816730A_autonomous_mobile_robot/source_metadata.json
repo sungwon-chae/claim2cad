@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4816730A",
+  "slug": "autonomous_mobile_robot",
+  "primary_class": "901",
+  "title": "Autosampler",
+  "claim_text": "1. An apparatus for handling and moving a plurality of objects; wherein the apparatus comprising: a. a robotic arm assembly capable of vertical, horizontal and rotational movement; b. gripper mechanism for holding objects attach to the arm of the assembly; said gripper mechanism having gripper fingers attached thereto actuated by a cone; p1 c. stepper motors for driving the robotic arm assembly, wherein one stepper motor drives the cone thereby simultaneously opening and closing the gripper fingers of the gripper mechanism; d. a power source that drives the stepper motors electrically coupled to the stepper motors; e. a first sensing system with a feedback loop that monitors the movement of the arm assembly; f. a second sensing system for the gripper that controls the amount of force applied to the object being moved, senses the presence of the object in the gripper and sense the presence of surrounding objects and prevents contact with such objects and thereby prevents damage to the gripper and surrounding objects; g. a computer electrically interfaced with the stepper motors, the power means and the first and second sensing systems with the feedback loop and receives operating data for the operation of the apparatus and movement of objects and feed back information from the first and second sensing systems and controls and corrects movements of the arm assembly and the force applied by the gripper mechanism by controlling the stepper motors that operates the gripper mechanism; h. means for providing operating data input to the computer.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/64/21/2a/6dd4ae85a61e97/US4816730-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/d9/b7/c3/f27808c7da6e8f/US4816730-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/72/b8/7c/6fa499281104fb/US4816730-drawings-page-4.png"
+  ],
+  "publication_date": "1986-12-22",
+  "fetch_url": "https://patents.google.com/patent/US4816730A/en",
+  "fetched_at": "2026-04-27T19:38:11",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

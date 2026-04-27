@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4467670A",
+  "slug": "epicyclic_transmission",
+  "primary_class": "074",
+  "title": "Belt drive continuously-variable speed automatic transmission",
+  "claim_text": "1. A belt drive continuously-variable speed automatic transmission comprising: a housing; an input shaft; an intermediate shaft supported coaxially with and rotatably relative to said input shaft; first means to rotatably support one end of said intermediate shaft, second means carried by said input shaft to rotatably support the other end of said intermediate shaft; an output shaft supported in said housing in parallel with said input shaft and said intermediate shaft; a belt drive continuously-variable speed transmission means including a primary variable-pitch pulley having a fixed pulley flange fixed to said intermediate shaft concentrically thereto and a movable pulley flange mounted axially slidably on said intermediate shaft relative to said fixed pulley flange, a secondary variable-pitch pulley having a fixed pulley flange fixed to said output shaft concentrically thereto and a movable pulley flange mounted axially slidably on said output shaft relative to said corresponding pulley flange, and an endless belt extended between said primary and secondary variable-pitch pulleys for varying the transmission ratio between said intermediate shaft and said output shaft by varying the respective working radial positions on said primary variable-pitch pulley and said secondary variable-pitch pulley; a clutch interposed between said input shaft and said intermediate shaft and adapted to couple said intermediate shaft with said input shaft; and a change-direction gear train with the input end thereof being connected to said input shaft, with the output end thereof being connected to said intermediate shaft, and capable of attaining forward drive and reverse drive; and said primary variable-pitch pulley and said change-direction gear train being placed between said two supporting means for supporting both ends of said intermediate shaft in said housing.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/87/eb/aa/16a8d8904d6e97/US4467670-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/4d/96/24/592efcb0fe6d19/US4467670-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/4b/5d/53/b4f8c197c6482d/US4467670-drawings-page-4.png"
+  ],
+  "publication_date": "1982-01-26",
+  "fetch_url": "https://patents.google.com/patent/US4467670A/en",
+  "fetched_at": "2026-04-27T19:39:24",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

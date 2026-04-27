@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4729261A",
+  "slug": "compact_gear_reduction",
+  "primary_class": "074",
+  "title": "Stepless transmission",
+  "claim_text": "1. In combination, a fixed displacement rotary pump comprising a housing having inlet and outlet ports, and a pumping unit in said housing operative upon relative rotation of said housing and unit to pump fluid from said inlet port to said outlet port; an adjustable pressure compensated flow control valve operatively interposed between said ports to adjustably limit the rate of flow of fluid therethrough and consequently the rate of relative rotation of said housing and unit from a predetermined maximum to a predetermined minimum whereat said housing and unit are locked against relative rotation; and an epicyclic gear train including a first shaft in driving engagement with a first gear of said train and with one of said housing and pumping unit, and a second shaft in driving engagement with a second gear of said train; the other of said housing and pumping unit being in driving engagement with a third gear of said train.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/41/1a/e5/2be64f1809d1a1/US4729261-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/a4/14/de/a0b0ba0015e50a/US4729261-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/ca/56/8b/e8f47b6bd3d05c/US4729261-drawings-page-4.png"
+  ],
+  "publication_date": "1986-11-20",
+  "fetch_url": "https://patents.google.com/patent/US4729261A/en",
+  "fetched_at": "2026-04-27T19:39:33",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

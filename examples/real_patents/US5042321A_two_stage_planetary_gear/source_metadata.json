@@ -1,0 +1,20 @@
+{
+  "patent_id": "US5042321A",
+  "slug": "two_stage_planetary_gear",
+  "primary_class": "074",
+  "title": "Transmission structure for an automotive vehicle",
+  "claim_text": "1. In combination, a transmission structure for an automotive vehicle and an engine, said transmission structure comprising: a first housing connected to the engine, the first housing accommodating a power transmitting device for transferring an output from the engine to a transmission device, a second housing for accommodating the transmission device, the second housing being connected to the first housing, a differential housing integrally formed with said first housing and positioned so as to be offset from an output shaft of the engine, and a reinforcement element having a pair of end portions, one end portion connected to the first housing, another end portion connected to the second housing and being located on the same side as the differential housing with respect to the output shaft of the engine.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/47/8b/9d/8507e0975dba6c/US5042321-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/85/57/c9/2ceea194f4928e/US5042321-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/be/dd/15/2b4336a605f861/US5042321-drawings-page-4.png"
+  ],
+  "publication_date": "1990-01-24",
+  "fetch_url": "https://patents.google.com/patent/US5042321A/en",
+  "fetched_at": "2026-04-27T19:39:50",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

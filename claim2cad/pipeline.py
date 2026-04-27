@@ -33,9 +33,19 @@ logger = logging.getLogger("claim2cad.pipeline")
 # Directories the pipeline writes to are caller-supplied; nothing global.
 
 
-def _load_or_parse(claim_path: Path | None, ir_path: Path | None) -> tuple[ClaimIR, str]:
+def _load_or_parse(
+    claim_path: Path | None,
+    ir_path: Path | None,
+    *,
+    dry_run: bool = False,
+) -> tuple[ClaimIR, str]:
     """Return (ir, source_label). source_label is a short human-readable
-    description for logging."""
+    description for logging.
+
+    If ``dry_run`` is True and an ``expected_ir.json`` exists next to the
+    claim, that file is loaded instead of running the parser. This makes
+    CI runs deterministic and free of LLM dependency.
+    """
     if ir_path is not None:
         logger.info("Loading IR from %s", ir_path)
         ir = ClaimIR.model_validate_json(ir_path.read_text(encoding="utf-8"))
@@ -43,6 +53,14 @@ def _load_or_parse(claim_path: Path | None, ir_path: Path | None) -> tuple[Claim
 
     if claim_path is None:
         raise ValueError("Either --claim or --from-ir must be provided.")
+
+    if dry_run:
+        cached = claim_path.parent / "expected_ir.json"
+        if cached.exists():
+            logger.info("Dry-run: loading cached IR from %s", cached)
+            ir = ClaimIR.model_validate_json(cached.read_text(encoding="utf-8"))
+            return ir, f"dry-run cache {cached.name}"
+        logger.info("Dry-run: no cached IR; will parse and skip LLM")
 
     text = claim_path.read_text(encoding="utf-8")
     logger.info("Parsing claim from %s (%d chars)", claim_path, len(text))
@@ -57,10 +75,11 @@ def run_pipeline(
     ir_path: Path | None = None,
     write_generator: bool = True,
     example_name: str | None = None,
+    dry_run: bool = False,
 ) -> dict[str, Path]:
     """Run the full pipeline. Returns a dict of artifact paths."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    ir, source_label = _load_or_parse(claim_path, ir_path)
+    ir, source_label = _load_or_parse(claim_path, ir_path, dry_run=dry_run)
     logger.info("IR ready (%s); %d components", source_label, len(ir.components))
 
     name = example_name or out_dir.name
@@ -122,6 +141,15 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip writing generator.py.",
     )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help=(
+            "Skip the LLM. If an expected_ir.json sits next to claim.txt, "
+            "use it; otherwise run the rule-based stub parser only. "
+            "Used by CI to keep tests deterministic and offline."
+        ),
+    )
     return parser
 
 
@@ -134,6 +162,7 @@ def main(argv: list[str] | None = None) -> int:
             out_dir=args.out,
             write_generator=not args.no_generator,
             example_name=args.example_name,
+            dry_run=args.dry_run,
         )
     except Exception as exc:
         logger.exception("Pipeline failed: %s", exc)

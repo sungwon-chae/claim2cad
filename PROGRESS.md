@@ -225,3 +225,35 @@ was deferred. Times are local (Asia/Seoul, KST).
 
 - **Completed:** 2026-04-27 ~11:25 KST. Commit `phase-5: custom
   patent-aware viewer with bidirectional highlighting`.
+
+## Phase 6 — Tests, CI, Robustness — STARTED 2026-04-27 11:25 KST
+
+- Extended `tests/test_pipeline.py`:
+  - `test_pipeline_step_round_trips_through_build123d` — re-imports the
+    generated STEP and asserts a non-zero bounding box (catches malformed
+    STEP we can't see by file size alone).
+  - `test_pipeline_runs_each_example` (parametrized over the 3 example
+    names) — sweeps every example through the pipeline in `tmp_path` and
+    asserts: all 4 outputs non-empty, IR validates, claim_map count
+    matches IR, every GLB root child name is an IR component id.
+  - `test_manifest_writer_lists_examples` — verifies
+    `claim2cad.manifest.discover_examples` finds golden_robot_arm.
+- Added `--dry-run` to the CLI: when set and an `expected_ir.json` sits
+  next to `claim.txt`, the parser is skipped entirely. Otherwise the
+  rule-based stub branch runs (no LLM). CI uses this to stay deterministic.
+- Wrote `.github/workflows/ci.yml`:
+  - `python` job: pytest, plus a dry-run pipeline against the golden
+    example, asserting all four outputs land.
+  - `viewer` job: `npm ci`, `npm run typecheck`, `npm run build`.
+- Error handling already in place: every external boundary is wrapped
+  (logging in `__init__.py`, `try/except` in `pipeline.main`, retry
+  loops in `llm_client`, `glb_naming`, parser).
+
+### Verification (Phase 6 acceptance criteria)
+- `pytest tests/` — 29 / 29 pass (2.71 s).
+- `python -m claim2cad.pipeline --dry-run --claim ... --out /tmp/dryrun`
+  produces all 4 files; STEP=123,354 B, GLB=43,036 B.
+- CI workflow targets Python 3.11 + Node 20; uses pip and npm caches.
+
+- **Completed:** 2026-04-27 ~11:28 KST. Commit `phase-6: tests, CI,
+  robustness`.

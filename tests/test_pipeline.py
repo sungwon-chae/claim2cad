@@ -93,3 +93,68 @@ def test_pipeline_step_is_nonempty(golden_pipeline_run: dict[str, Path]) -> None
     """STEP files start with the ISO-10303 magic line."""
     head = golden_pipeline_run["step"].read_bytes()[:120]
     assert head.startswith(b"ISO-10303-21"), head[:50]
+
+
+def test_pipeline_step_round_trips_through_build123d(
+    golden_pipeline_run: dict[str, Path],
+) -> None:
+    """The generated STEP must be re-importable by build123d."""
+    import build123d as bd
+
+    shape = bd.import_step(str(golden_pipeline_run["step"]))
+    bbox = shape.bounding_box()
+    assert bbox.size.length > 0
+
+
+# ---------------------------------------------------------------------------
+# Multi-example sweep
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.parametrize(
+    "example_name",
+    ["golden_robot_arm", "hinge_assembly", "planetary_gear"],
+)
+def test_pipeline_runs_each_example(
+    example_name: str, tmp_path: Path
+) -> None:
+    """Run the pipeline against each committed example and check structural
+    invariants. This sweep is the Phase-6 regression guard."""
+    src = REPO_ROOT / "examples" / example_name / "claim.txt"
+    if not src.exists():
+        pytest.skip(f"Example {example_name} has no claim.txt")
+    out = tmp_path / example_name
+    artifacts = run_pipeline(
+        claim_path=src,
+        out_dir=out,
+        write_generator=False,
+        example_name=example_name,
+    )
+    for key in ("claim_ir", "step", "glb", "claim_map"):
+        path = artifacts[key]
+        assert path.exists() and path.stat().st_size > 0, f"{example_name}/{key} missing"
+
+    ir = ClaimIR.model_validate_json(artifacts["claim_ir"].read_text("utf-8"))
+    cmap = json.loads(artifacts["claim_map"].read_text("utf-8"))
+    assert len(cmap["components"]) == len(ir.components)
+    assert len(ir.components) >= 2
+
+    glb_names = _glb_root_child_names(artifacts["glb"])
+    component_ids = {c.id for c in ir.components}
+    for name in glb_names:
+        assert name in component_ids
+
+
+def test_manifest_writer_lists_examples(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """`claim2cad.manifest.discover_examples` returns one row per example
+    that has all four required artifacts."""
+    from claim2cad.manifest import discover_examples
+
+    examples = discover_examples()
+    ids = {e.id for e in examples}
+    assert "golden_robot_arm" in ids
+    # The other two may or may not have artifacts in a fresh checkout; they
+    # are present in this run because we generated them in Phase 4 / 5.
+    for ex in examples:
+        assert ex.glb_path == "model.glb"
+        assert ex.ir_path == "claim_ir.json"

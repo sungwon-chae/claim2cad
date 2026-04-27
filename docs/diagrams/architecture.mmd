@@ -1,0 +1,25 @@
+%% Claim2CAD top-level architecture
+%% Render with: mmdc -i docs/diagrams/architecture.mmd -o docs/diagrams/architecture.svg
+
+flowchart TB
+    classDef in    fill:#1e3a8a,stroke:#3b82f6,color:#fff
+    classDef proc  fill:#1f2937,stroke:#374151,color:#fff
+    classDef out   fill:#065f46,stroke:#10b981,color:#fff
+    classDef view  fill:#7c2d12,stroke:#ea580c,color:#fff
+
+    A[claim.txt]:::in --> B[claim_segmenter]:::proc
+    B --> C{LLM available?}:::proc
+    C -- yes --> D[OpenRouter JSON-mode]:::proc
+    C -- no  --> E[rule-based stub]:::proc
+    D --> F[ClaimIR]:::proc
+    E --> F
+    F --> G[ir_to_cad]:::proc
+    G --> H[build123d Compound]:::proc
+    H --> I[model.step]:::out
+    H --> J[model.glb]:::out
+    J --> K[glb_naming<br/>renames root children]:::proc
+    F --> L[claim_ir.json]:::out
+    F --> M[claim_map.json]:::out
+    I & K & L & M --> N[manifest.json]:::out
+    N --> O[Vite + R3F viewer]:::view
+    O --> P((click span ⇄ click mesh)):::view

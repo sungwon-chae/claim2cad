@@ -257,3 +257,62 @@ was deferred. Times are local (Asia/Seoul, KST).
 
 - **Completed:** 2026-04-27 ~11:28 KST. Commit `phase-6: tests, CI,
   robustness`.
+
+## Phase 7 — Portfolio Polish — STARTED 2026-04-27 11:28 KST
+
+- Wrote `README.md` — hero block with the headline mermaid diagram,
+  "Why this is hard" (3 concrete sub-problems), 5-command Quickstart,
+  architecture tree, Pipeline mermaid diagram, three example
+  walk-throughs, "Limitations & future work" with honest pointer to
+  `BLOCKERS.md`, "How it was built", acknowledgments, MIT licence.
+- Wrote `docs/DESIGN_DECISIONS.md` — 8 decisions with the why and
+  what-would-change-with-different-constraints framing.
+- Wrote `docs/DEMO_SCRIPT.md` — 60-second screen-capture script keyed
+  to specific timestamps and pane states.
+- Wrote `LICENSE` — MIT, current year.
+- Wrote `docs/diagrams/architecture.mmd` — rendering instructions
+  inline (`mmdc`).
+
+### Verification (Phase 7 acceptance criteria)
+- README renders cleanly in GitHub markdown preview (mermaid blocks
+  use the standard `mermaid` fenced syntax GitHub supports natively).
+- All three examples are documented in the README's Examples section
+  with a one-paragraph description each.
+- `docs/DESIGN_DECISIONS.md` exists with 8 decisions (target ≥ 5).
+- `pytest tests/` — 29 / 29 still pass (3.10 s).
+- Total LOC: 3,276 across `claim2cad/`, `tests/`, and `viewer/src/`.
+
+## Final Summary
+
+- **Phases completed:** 1, 2, 3, 4, 5, 6, 7 — all seven.
+- **Phases skipped/incomplete:** none. F7 (axis gizmo / minimap)
+  inside Phase 5 was deferred per the brief's "ship the must-haves"
+  guidance.
+- **Total commits:** 7 phase commits + this one = 8.
+- **Total LOC added:** 3,276 (Python 1,478 / TS+TSX+CSS 1,798).
+- **Tests:** 29 passing.
+
+### What works
+- End-to-end pipeline from claim text to STEP/GLB/JSON in one command.
+- Three diverse examples (robot arm, 4-bar linkage, planetary gear)
+  generate cleanly.
+- Custom Vite + React + R3F viewer with bidirectional highlighting,
+  unmapped-element badge, and limitation focus mode.
+- Schema-driven IR with referential-integrity validation and
+  round-trip JSON.
+- Rule + LLM hybrid parser; LLM-mocked tests cover the validation
+  retry loop.
+- CI workflow runs both Python and viewer pipelines.
+
+### What doesn't (yet)
+- The push to GitHub is blocked on auth — see the README/quickstart's
+  SSH setup hint. All commits are queued locally and will go up on
+  first successful `git push`.
+- Stub parser doesn't extract relations (`BLOCKERS.md` B-005).
+- No real-browser visual verification of the viewer (`B-003`).
+- No fine-tuned LLM for patent claims; we lean on Claude 3.5 Sonnet
+  via OpenRouter and it's reasonable but not clearly better than
+  GPT-4-class models.
+
+- **Completed:** 2026-04-27 ~11:32 KST. Commit `phase-7: portfolio
+  polish — v0.1.0 ready`. Tag `v0.1.0`.

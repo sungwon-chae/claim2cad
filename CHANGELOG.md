@@ -44,6 +44,25 @@ All notable changes documented here. This project follows semantic versioning.
 - V1-2 baseline: **25/25 patents graded "good"** at iteration 0
   on the structural eval. No iterative improvement needed.
 
+### Added (V1-4)
+- **3-pane viewer**: left = ClaimPanel (existing), centre = 3D scene
+  (existing), right = new `FigurePanel.tsx`. Layout collapses to
+  2-pane when no figure is available.
+- `FigurePanel` renders the patent figure as `<img>` with absolutely
+  positioned hotspots over each VLM-extracted bbox. Hotspots highlight
+  in sync with the claim panel and 3D scene via lifted state in
+  `App.tsx`.
+- Manifest schema bumped to `0.2.0`. Each example entry now carries
+  `figure_map_path`, `figure_image_path`, `figure_coverage`,
+  `source` (`synthetic` / `real_patent` / `korean`), and `tags`.
+- `claim2cad.manifest` now discovers real-patent directories under
+  `examples/real_patents/` and stages their figure images +
+  `figure_map.json` into `viewer/public/data/<base>/`.
+- Header dropdown groups synthetic vs. real patents and shows a
+  coverage badge (★ ◐ ◷ ○) before each real-patent title. New
+  "full-mapping only" filter button surfaces the 8 fully-mapped
+  patents quickly.
+
 ### Added (V1-3)
 - `claim2cad.llm_vision` — OpenRouter vision wrapper with cost
   recording and JSON-mode parsing.

@@ -470,6 +470,50 @@ bug, $2.02 on the actual baseline).
 
 ---
 
+## Phase V1-4 — Three-pane viewer with FigurePanel — STARTED 2026-04-27
+20:30, COMPLETED ~20:55
+
+- New `viewer/src/components/FigurePanel.tsx` — renders the patent
+  figure with hotspots positioned by normalised bboxes from
+  `figure_map.json` (or synthesised from `approximate_position` when
+  bbox is absent). Hotspots respect the same selection / hover /
+  dependent-amber / independent-blue colour vocabulary as the claim
+  panel and 3D scene.
+- `App.tsx` refactored into a 3-pane layout (claim ↔ 3D ↔ figure).
+  Collapses to 2-pane automatically when no figure is available
+  (synthetic examples). Dropdown groups synthetic vs. real patents
+  and prefixes each real-patent title with a coverage badge
+  (★ full mapping, ◐ ≥50 %, ◷ partial, ○ none). New
+  "full-mapping only" filter button.
+- `claim2cad.manifest` rewritten:
+  - now discovers `examples/real_patents/<id>/` as well as the
+    top-level synthetic examples;
+  - manifest schema bumped to `0.2.0` with new fields
+    `figure_map_path`, `figure_image_path`, `figure_coverage`,
+    `source`, `tags`;
+  - figures and `figure_map.json` are staged alongside the existing
+    artefacts.
+- `viewer/src/types.ts` mirrors the schema changes (FigureReference,
+  VLMLabel, FigureMap types). `data.ts` returns
+  `{figureMap, figureImageUrl}` in addition to the original
+  `{ir, claimMap, glbUrl}`.
+- Styles: `--figure-panel-*` rules + a 3-column grid template;
+  hotspots get a subtle dark-on-light look so they read against the
+  patent figure (which we render on a near-white background).
+
+### Verification
+- `npm run typecheck` — clean.
+- `npm run build` — succeeds; bundle 1.06 MB raw / 295 KB gzipped.
+- Dev server smoke: `manifest.json`, a real patent's
+  `figures/figure_1.png`, and its `figure_map.json` all return HTTP
+  200 from `http://localhost:4179`.
+- 28 examples staged into `viewer/public/data/`
+  (3 synthetic + 25 real patents). Total: 4.1 MB.
+
+**Time spent:** ~25 min vs. 240 min target.
+**Cost so far:** $6.87 cumulative (no new LLM calls in V1-4 — pure
+front-end + manifest work).
+
 ## Phase V1-3 — Figure parsing via VLM — STARTED 2026-04-27 20:10,
 COMPLETED 20:25
 

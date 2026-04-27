@@ -1,26 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ClaimPanel } from "./components/ClaimPanel";
+import { FigurePanel } from "./components/FigurePanel";
 import { Scene } from "./components/Scene";
-import { loadExample, loadManifest } from "./data";
-import type { ClaimIR, ClaimMap, ManifestExample } from "./types";
+import { loadExample, loadManifest, type LoadedExample } from "./data";
+import type { ManifestExample } from "./types";
 
-type LoadedExample = {
-  example: ManifestExample;
-  claimText: string;
-  ir: ClaimIR;
-  claimMap: ClaimMap;
-  glbUrl: string;
-};
+type LoadedExamplePlus = LoadedExample & { example: ManifestExample };
 
 export function App() {
   const [examples, setExamples] = useState<ManifestExample[] | null>(null);
   const [currentId, setCurrentId] = useState<string | null>(null);
-  const [loaded, setLoaded] = useState<LoadedExample | null>(null);
+  const [loaded, setLoaded] = useState<LoadedExamplePlus | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [limitationFocus, setLimitationFocus] = useState<boolean>(false);
+  const [filterFullMappingOnly, setFilterFullMappingOnly] = useState<boolean>(false);
 
   // Initial manifest load.
   useEffect(() => {
@@ -29,7 +25,9 @@ export function App() {
         setExamples(m.examples);
         const fromHash = window.location.hash.replace(/^#/, "");
         const fallback = m.examples[0]?.id ?? null;
-        setCurrentId(fromHash && m.examples.some((e) => e.id === fromHash) ? fromHash : fallback);
+        setCurrentId(
+          fromHash && m.examples.some((e) => e.id === fromHash) ? fromHash : fallback
+        );
       })
       .catch((e) => setError(String(e)));
   }, []);
@@ -45,29 +43,53 @@ export function App() {
     setError(null);
     window.location.hash = ex.id;
     loadExample(ex)
-      .then(({ claimText, ir, claimMap, glbUrl }) =>
-        setLoaded({ example: ex, claimText, ir, claimMap, glbUrl })
-      )
+      .then((bundle) => setLoaded({ example: ex, ...bundle }))
       .catch((e) => setError(String(e)));
   }, [currentId, examples]);
+
+  const visibleExamples = useMemo(() => {
+    if (!examples) return [];
+    if (filterFullMappingOnly) {
+      return examples.filter(
+        (e) => (e.figure_coverage ?? 0) >= 0.999 || (e.tags ?? []).includes("full_figure_mapping")
+      );
+    }
+    return examples;
+  }, [examples, filterFullMappingOnly]);
+
+  const hasFigure = !!(loaded?.figureImageUrl && loaded?.figureMap);
 
   return (
     <div className="app">
       <header className="app-header">
         <h1>CLAIM2CAD</h1>
-        {examples && examples.length > 0 && currentId && (
+        {visibleExamples.length > 0 && currentId && (
           <select
             value={currentId}
             onChange={(e) => setCurrentId(e.target.value)}
             aria-label="Example selector"
           >
-            {examples.map((e) => (
-              <option key={e.id} value={e.id}>
-                {e.title}
-              </option>
-            ))}
+            <optgroup label="Synthetic">
+              {visibleExamples.filter((e) => e.source !== "real_patent").map((e) => (
+                <option key={e.id} value={e.id}>{e.title}</option>
+              ))}
+            </optgroup>
+            <optgroup label="Real patents">
+              {visibleExamples.filter((e) => e.source === "real_patent").map((e) => (
+                <option key={e.id} value={e.id}>
+                  {coverageBadge(e.figure_coverage ?? 0)} {e.title}
+                </option>
+              ))}
+            </optgroup>
           </select>
         )}
+        <button
+          className={filterFullMappingOnly ? "active" : ""}
+          onClick={() => setFilterFullMappingOnly((v) => !v)}
+          title="Show only patents whose IR components were 100% mapped to figure numbers"
+        >
+          {filterFullMappingOnly ? "★ full-mapping only" : "all examples"}
+        </button>
         <span className="grow" />
         <button
           className={limitationFocus ? "active" : ""}
@@ -78,7 +100,7 @@ export function App() {
         </button>
       </header>
 
-      <div className="split">
+      <div className={`split ${hasFigure ? "" : "two-pane"}`}>
         {/* Claim text pane */}
         <div className="pane">
           {error && <div className="error-overlay">Error: {error}</div>}
@@ -95,15 +117,15 @@ export function App() {
                 limitationFocus={limitationFocus}
               />
               <div className="legend">
-                <span>
-                  <span className="swatch independent" /> independent
-                </span>
-                <span>
-                  <span className="swatch dependent" /> dependent
-                </span>
-                <span>
-                  <span className="swatch selected" /> selected
-                </span>
+                <span><span className="swatch independent" /> independent</span>
+                <span><span className="swatch dependent" /> dependent</span>
+                <span><span className="swatch selected" /> selected</span>
+                {loaded.example.figure_coverage !== undefined && (
+                  <span style={{ marginLeft: "auto" }}>
+                    figure coverage:{" "}
+                    {Math.round((loaded.example.figure_coverage ?? 0) * 100)}%
+                  </span>
+                )}
               </div>
             </>
           )}
@@ -129,16 +151,38 @@ export function App() {
                 ? `Selected: ${labelOf(loaded, selectedId)}`
                 : hoveredId
                   ? `Hover: ${labelOf(loaded, hoveredId)}`
-                  : "Click a span or a part to select."}
+                  : "Click a span / hotspot / part to select."}
             </div>
           )}
         </div>
+
+        {/* Figure pane (only if data present) */}
+        {hasFigure && loaded && (
+          <div className="pane figure">
+            <FigurePanel
+              imageUrl={loaded.figureImageUrl}
+              figureMap={loaded.figureMap}
+              rows={loaded.claimMap.components}
+              selectedId={selectedId}
+              hoveredId={hoveredId}
+              onSelect={setSelectedId}
+              onHover={setHoveredId}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-function labelOf(loaded: LoadedExample, id: string): string {
+function labelOf(loaded: LoadedExamplePlus, id: string): string {
   const row = loaded.claimMap.components.find((c) => c.component_id === id);
   return row ? row.label : id;
+}
+
+function coverageBadge(coverage: number): string {
+  if (coverage >= 0.999) return "★";
+  if (coverage >= 0.5) return "◐";
+  if (coverage > 0) return "◷";
+  return "○";
 }

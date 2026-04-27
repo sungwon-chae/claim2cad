@@ -62,9 +62,12 @@ body {
 
 .split {
   display: grid;
-  grid-template-columns: minmax(360px, 38%) 1fr;
+  grid-template-columns: minmax(320px, 30%) minmax(0, 1fr) minmax(280px, 28%);
   height: 100%;
   min-height: 0;
+}
+.split.two-pane {
+  grid-template-columns: minmax(360px, 38%) 1fr;
 }
 .pane {
   height: 100%;
@@ -73,7 +76,8 @@ body {
   border-right: 1px solid var(--border-1);
   background: var(--bg-1);
 }
-.pane.scene { border-right: none; background: var(--bg-0); }
+.pane.scene { background: var(--bg-0); }
+.pane.figure { border-right: none; }
 
 .claim-panel {
   height: 100%;
@@ -188,4 +192,117 @@ body {
   font-size: 13px;
   padding: 20px;
   text-align: center;
+}
+
+/* ----------------------------------------------------------------- */
+/* V1-4 — Figure panel                                                */
+/* ----------------------------------------------------------------- */
+
+.figure-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-1);
+}
+.figure-panel-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--fg-1);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-1);
+}
+.figure-panel-title { font-weight: 600; color: var(--fg-0); }
+.figure-panel-meta { color: var(--fg-1); }
+
+.figure-stage {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f4;
+  padding: 4px;
+}
+.figure-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.figure-panel-empty,
+.figure-panel-warn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  color: var(--fg-1);
+  font-size: 12px;
+  text-align: center;
+}
+.figure-panel-empty {
+  flex: 1;
+  background: var(--bg-1);
+}
+.figure-panel-empty-title {
+  font-size: 14px;
+  color: var(--fg-0);
+  margin-bottom: 4px;
+}
+.figure-panel-empty-sub { line-height: 1.5; }
+.figure-panel-warn {
+  border-top: 1px solid var(--border-1);
+  background: rgba(255, 176, 74, 0.08);
+  color: var(--accent-dependent);
+}
+
+.figure-hotspot {
+  position: absolute;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, transform 0.12s;
+  background: transparent;
+}
+.figure-hotspot:hover,
+.figure-hotspot.hovered {
+  border-color: rgba(15, 23, 42, 0.6);
+  background: rgba(15, 23, 42, 0.08);
+}
+.figure-hotspot.independent.selected {
+  border-color: var(--selected);
+  background: var(--selected-soft);
+  box-shadow: 0 0 0 3px rgba(255, 215, 106, 0.25);
+}
+.figure-hotspot.dependent.selected {
+  border-color: var(--accent-dependent);
+  background: var(--accent-dependent-soft);
+  box-shadow: 0 0 0 3px rgba(255, 176, 74, 0.30);
+}
+.figure-hotspot-num {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  background: var(--bg-1);
+  color: var(--fg-0);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 4px;
+  border-radius: 3px;
+  border: 1px solid var(--border-2);
+  pointer-events: none;
+}
+.figure-hotspot.selected .figure-hotspot-num {
+  background: var(--selected);
+  color: #1a1410;
+  border-color: var(--selected);
 }

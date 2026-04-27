@@ -15,6 +15,11 @@ export type IRClaim = {
   depends_on: string | null;
 };
 
+export type FigureReference = {
+  figure_id: string;
+  bbox?: number[] | null;
+};
+
 export type IRComponent = {
   id: string;
   label: string;
@@ -25,6 +30,8 @@ export type IRComponent = {
   is_dependent: boolean;
   dependent_on: string | null;
   constraints: string[];
+  figure_number?: string | null;
+  figure_references?: FigureReference[];
 };
 
 export type IRRelation = {
@@ -60,6 +67,7 @@ export type ClaimMapRow = {
   kind: string;
   is_dependent: boolean;
   source_span: SourceSpan;
+  figure_number?: string;
 };
 
 export type ClaimMap = {
@@ -67,6 +75,24 @@ export type ClaimMap = {
   example: string;
   glb_path: string;
   components: ClaimMapRow[];
+};
+
+// V1-3 figure_map.json
+export type VLMLabel = {
+  number: string;
+  description?: string;
+  approximate_position?: number[];
+  bbox?: number[];
+};
+
+export type FigureMap = {
+  schema_version: string;
+  patent_id: string;
+  primary_figure: string | null;
+  numbered_phrases: { phrase: string; number: string; char_start: number; char_end: number }[];
+  vlm_labels: VLMLabel[];
+  component_to_number: Record<string, string>;
+  notes: string[];
 };
 
 export type Manifest = {
@@ -77,9 +103,14 @@ export type Manifest = {
 export type ManifestExample = {
   id: string;
   title: string;
-  base: string; // base path (under /data/<id>/) for the example
+  base: string; // base path (under /data/) for the example
   claim_text_path: string;
   ir_path: string;
   claim_map_path: string;
   glb_path: string;
+  figure_map_path?: string | null;
+  figure_image_path?: string | null;
+  figure_coverage?: number;
+  source?: "synthetic" | "real_patent" | "korean";
+  tags?: string[];
 };

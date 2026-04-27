@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US3279624A_unimate_industrial_robot",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "mechanical_output_device",
+      "glb_node_name": "mechanical_output_device",
+      "label": "mechanical output device",
+      "category": "structural",
+      "kind": "output_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 172,
+        "char_end": 197
+      },
+      "figure_number": "18"
+    },
+    {
+      "component_id": "servo_system",
+      "glb_node_name": "servo_system",
+      "label": "servo system",
+      "category": "functional",
+      "kind": "servo_system",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 199,
+        "char_end": 211
+      },
+      "figure_number": "102"
+    },
+    {
+      "component_id": "output_portion",
+      "glb_node_name": "output_portion",
+      "label": "output portion",
+      "category": "structural",
+      "kind": "output_portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 221,
+        "char_end": 235
+      },
+      "figure_number": "12"
+    },
+    {
+      "component_id": "sensing_interposer",
+      "glb_node_name": "sensing_interposer",
+      "label": "sensing interposer",
+      "category": "functional",
+      "kind": "interposer",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 312,
+        "char_end": 330
+      },
+      "figure_number": "24"
+    },
+    {
+      "component_id": "servo_input_control_member",
+      "glb_node_name": "servo_input_control_member",
+      "label": "servo input control member",
+      "category": "functional",
+      "kind": "control_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 364,
+        "char_end": 390
+      },
+      "figure_number": "76"
+    },
+    {
+      "component_id": "instruction_presenting_means",
+      "glb_node_name": "instruction_presenting_means",
+      "label": "means to present mechanically to the sensing interposer a succession of positional instructions",
+      "category": "functional",
+      "kind": "instruction_presenting_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 432,
+        "char_end": 527
+      }
+    },
+    {
+      "component_id": "interposer_positioning_means",
+      "glb_node_name": "interposer_positioning_means",
+      "label": "means to cause the interposer to assume a position corresponding to the prevailing mechanically presented instruction",
+      "category": "functional",
+      "kind": "positioning_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 529,
+        "char_end": 681
+      }
+    },
+    {
+      "component_id": "coaction_means",
+      "glb_node_name": "coaction_means",
+      "label": "means for effecting mutual coaction of said servo input control member and the interposer",
+      "category": "functional",
+      "kind": "coaction_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 687,
+        "char_end": 775
+      }
+    }
+  ]
+}

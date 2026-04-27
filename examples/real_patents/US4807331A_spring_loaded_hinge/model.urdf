@@ -1,0 +1,298 @@
+<?xml version="1.0" ?>
+<robot name="lift_off_hinge_assembly">
+  <link name="base_wall">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="base_wall_exterior_guide_surface">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="bight_wall">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="body_half_sub_assembly">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="door_half_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_sidewall">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hinge_axis">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hinge_body_half_assembly">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leaf_flange">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leaf_flange_pintle_pin_hole">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="leg_guide_edge_surface">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="link_member_pintle_pin_holes">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lower_extension">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lower_leg">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="main_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="main_member_pintle_pin_hole">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="mounting_wall">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pintle_pin">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pintle_pin_stop_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_sidewall">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="stop_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="u_shaped_link_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_extension">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_leg">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="vehicle_body">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_door_half_member_to_body_half_sub_assembly" type="fixed">
+    <parent link="door_half_member"/>
+    <child link="body_half_sub_assembly"/>
+    <origin xyz="0.0000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_base_wall" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="base_wall"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_base_wall_exterior_guide_surface" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="base_wall_exterior_guide_surface"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_bight_wall" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="bight_wall"/>
+    <origin xyz="1.0800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_door_half_member" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="door_half_member"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_first_sidewall" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="first_sidewall"/>
+    <origin xyz="1.1400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_hinge_axis" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="hinge_axis"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_hinge_body_half_assembly" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="hinge_body_half_assembly"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_leaf_flange" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="leaf_flange"/>
+    <origin xyz="1.2600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_leaf_flange_pintle_pin_hole" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="leaf_flange_pintle_pin_hole"/>
+    <origin xyz="1.3200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_leg_guide_edge_surface" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="leg_guide_edge_surface"/>
+    <origin xyz="0.9600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_link_member_pintle_pin_holes" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="link_member_pintle_pin_holes"/>
+    <origin xyz="0.9000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_lower_extension" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="lower_extension"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_lower_leg" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="lower_leg"/>
+    <origin xyz="0.8400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_main_member" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="main_member"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_main_member_pintle_pin_hole" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="main_member_pintle_pin_hole"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_mounting_wall" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="mounting_wall"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_pintle_pin" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="pintle_pin"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_pintle_pin_stop_means" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="pintle_pin_stop_means"/>
+    <origin xyz="1.3800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_second_sidewall" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="second_sidewall"/>
+    <origin xyz="1.2000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_stop_means" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="stop_means"/>
+    <origin xyz="1.0200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_upper_extension" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="upper_extension"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_upper_leg" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="upper_leg"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_u_shaped_link_member_to_vehicle_body" type="fixed">
+    <parent link="u_shaped_link_member"/>
+    <child link="vehicle_body"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

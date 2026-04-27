@@ -1,0 +1,322 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4729261A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "6",
+      "description": "control lever",
+      "approximate_position": [
+        0.3,
+        0.21
+      ]
+    },
+    {
+      "number": "8",
+      "description": "actuator element",
+      "approximate_position": [
+        0.42,
+        0.22
+      ]
+    },
+    {
+      "number": "7",
+      "description": "wheel/pulley with dashed belt",
+      "approximate_position": [
+        0.55,
+        0.27
+      ]
+    },
+    {
+      "number": "1",
+      "description": "pump/valve assembly (Fig.1)",
+      "approximate_position": [
+        0.43,
+        0.4
+      ]
+    },
+    {
+      "number": "4",
+      "description": "valve element",
+      "approximate_position": [
+        0.34,
+        0.38
+      ]
+    },
+    {
+      "number": "3",
+      "description": "valve component",
+      "approximate_position": [
+        0.29,
+        0.41
+      ]
+    },
+    {
+      "number": "5",
+      "description": "port element",
+      "approximate_position": [
+        0.24,
+        0.45
+      ]
+    },
+    {
+      "number": "2",
+      "description": "pump (Fig.1)",
+      "approximate_position": [
+        0.32,
+        0.54
+      ]
+    },
+    {
+      "number": "28",
+      "description": "gear housing top",
+      "approximate_position": [
+        0.67,
+        0.33
+      ]
+    },
+    {
+      "number": "2A",
+      "description": "gear set connector",
+      "approximate_position": [
+        0.78,
+        0.45
+      ]
+    },
+    {
+      "number": "1",
+      "description": "control element (Fig.1A)",
+      "approximate_position": [
+        0.86,
+        0.46
+      ]
+    },
+    {
+      "number": "2B",
+      "description": "gear housing bottom",
+      "approximate_position": [
+        0.76,
+        0.54
+      ]
+    },
+    {
+      "number": "2",
+      "description": "pump (Fig.1A)",
+      "approximate_position": [
+        0.58,
+        0.55
+      ]
+    },
+    {
+      "number": "10",
+      "description": "outer housing (Fig.3)",
+      "approximate_position": [
+        0.87,
+        0.67
+      ]
+    },
+    {
+      "number": "9",
+      "description": "inner housing",
+      "approximate_position": [
+        0.82,
+        0.67
+      ]
+    },
+    {
+      "number": "15",
+      "description": "upper seal/bearing",
+      "approximate_position": [
+        0.74,
+        0.68
+      ]
+    },
+    {
+      "number": "14",
+      "description": "shaft housing",
+      "approximate_position": [
+        0.68,
+        0.68
+      ]
+    },
+    {
+      "number": "16",
+      "description": "internal port",
+      "approximate_position": [
+        0.9,
+        0.71
+      ]
+    },
+    {
+      "number": "11",
+      "description": "internal element",
+      "approximate_position": [
+        0.88,
+        0.73
+      ]
+    },
+    {
+      "number": "1",
+      "description": "control element (Fig.3)",
+      "approximate_position": [
+        0.63,
+        0.74
+      ]
+    },
+    {
+      "number": "12",
+      "description": "shaft",
+      "approximate_position": [
+        0.82,
+        0.74
+      ]
+    },
+    {
+      "number": "13",
+      "description": "central gear/rotor",
+      "approximate_position": [
+        0.78,
+        0.76
+      ]
+    },
+    {
+      "number": "12",
+      "description": "shaft end",
+      "approximate_position": [
+        0.68,
+        0.77
+      ]
+    },
+    {
+      "number": "17",
+      "description": "output shaft",
+      "approximate_position": [
+        0.93,
+        0.77
+      ]
+    },
+    {
+      "number": "2",
+      "description": "pump (Fig.3)",
+      "approximate_position": [
+        0.73,
+        0.8
+      ]
+    },
+    {
+      "number": "15",
+      "description": "lower seal/bearing",
+      "approximate_position": [
+        0.78,
+        0.82
+      ]
+    },
+    {
+      "number": "19",
+      "description": "outer cover (Fig.4)",
+      "approximate_position": [
+        0.31,
+        0.79
+      ]
+    },
+    {
+      "number": "18",
+      "description": "housing element",
+      "approximate_position": [
+        0.35,
+        0.79
+      ]
+    },
+    {
+      "number": "23",
+      "description": "upper internal part",
+      "approximate_position": [
+        0.4,
+        0.79
+      ]
+    },
+    {
+      "number": "2",
+      "description": "pump (Fig.4)",
+      "approximate_position": [
+        0.5,
+        0.8
+      ]
+    },
+    {
+      "number": "24",
+      "description": "internal component",
+      "approximate_position": [
+        0.32,
+        0.82
+      ]
+    },
+    {
+      "number": "25",
+      "description": "shaft",
+      "approximate_position": [
+        0.5,
+        0.83
+      ]
+    },
+    {
+      "number": "22",
+      "description": "central element",
+      "approximate_position": [
+        0.48,
+        0.85
+      ]
+    },
+    {
+      "number": "21",
+      "description": "shaft end",
+      "approximate_position": [
+        0.29,
+        0.86
+      ]
+    },
+    {
+      "number": "1",
+      "description": "control element (Fig.4)",
+      "approximate_position": [
+        0.62,
+        0.86
+      ]
+    },
+    {
+      "number": "20",
+      "description": "lower cover",
+      "approximate_position": [
+        0.3,
+        0.9
+      ]
+    },
+    {
+      "number": "14",
+      "description": "housing (Fig.4)",
+      "approximate_position": [
+        0.52,
+        0.91
+      ]
+    },
+    {
+      "number": "23",
+      "description": "lower internal part",
+      "approximate_position": [
+        0.42,
+        0.93
+      ]
+    }
+  ],
+  "component_to_number": {
+    "housing": "28",
+    "inlet_port": "16",
+    "outlet_port": "5",
+    "flow_control_valve": "6",
+    "first_shaft": "12"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

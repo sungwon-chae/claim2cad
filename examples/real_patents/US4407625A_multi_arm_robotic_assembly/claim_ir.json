@@ -1,0 +1,383 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Robotic manipulator for automatically positioning a workhead",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A robotic manipulator for automatically positioning a workhead comprising: a support structure; three arms having their remote end portions hingedly connected together at a single location which is at least relatively close to the point of intersection of the axes of the three arms, said location being adjacent the workhead connected to said three arms, and having their proximate end portions carried in gimbaled relation from said support structure at spaced apart locations thereat together defining the points of a triangle; means for driving each arm axially and independently to move said workhead to different positions, said driving means being carried by said support structure and being fixed in location at said support structures, said workhead being in rigid relation to one of said three arms and spaced from said single location; each arm being substantially straight from its remote end portion to its proximate end portion and rigid for its length in the sense that no part of the arm is hingedly connected to another part so that the forces derived from the payload weight and movement subject said arms primarily only to compression and/or tension.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "support_structure",
+      "label": "support structure",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 96
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "three_arms",
+      "label": "three arms",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "substantially straight from remote end portion to proximate end portion",
+        "rigid for its length",
+        "no part of the arm is hingedly connected to another part",
+        "subject primarily only to compression and/or tension"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 98,
+        "char_end": 108
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.43,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remote_end_portions",
+      "label": "remote end portions",
+      "category": "structural",
+      "kind": "end portion",
+      "parent_id": "three_arms",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 122,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.69,
+            0.18000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "single_location",
+      "label": "single location",
+      "category": "structural",
+      "kind": "junction",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at least relatively close to the point of intersection of the axes of the three arms",
+        "adjacent the workhead"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 174,
+        "char_end": 189
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.5,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "workhead",
+      "label": "workhead",
+      "category": "functional",
+      "kind": "workhead",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in rigid relation to one of said three arms",
+        "spaced from said single location"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 55,
+        "char_end": 63
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.29,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proximate_end_portions",
+      "label": "proximate end portions",
+      "category": "structural",
+      "kind": "end portion",
+      "parent_id": "three_arms",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "carried in gimbaled relation from said support structure at spaced apart locations",
+        "together defining the points of a triangle"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 368,
+        "char_end": 390
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "gimbaled_connections",
+      "label": "gimbaled connections",
+      "category": "connection",
+      "kind": "gimbal",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at spaced apart locations thereat",
+        "together defining the points of a triangle"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 391,
+        "char_end": 470
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.2,
+            0.73,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "driving_means",
+      "label": "means for driving each arm axially and independently",
+      "category": "functional",
+      "kind": "drive mechanism",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "carried by said support structure",
+        "fixed in location at said support structure"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 527,
+        "char_end": 579
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_remote_ends_connected_at_single_location",
+      "kind": "connects",
+      "source": "remote_end_portions",
+      "target": "single_location",
+      "via": null,
+      "constraints": [
+        "hingedly connected together"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 122,
+        "char_end": 189
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_workhead_connected_to_arms",
+      "kind": "attached_to",
+      "source": "workhead",
+      "target": "three_arms",
+      "via": null,
+      "constraints": [
+        "adjacent said single location",
+        "in rigid relation to one of said three arms"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 316,
+        "char_end": 354
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_proximate_ends_carried_from_support",
+      "kind": "attached_to",
+      "source": "proximate_end_portions",
+      "target": "support_structure",
+      "via": "gimbaled_connections",
+      "constraints": [
+        "at spaced apart locations thereat",
+        "together defining the points of a triangle"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 391,
+        "char_end": 524
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_driving_means_moves_workhead",
+      "kind": "transmits_force_to",
+      "source": "driving_means",
+      "target": "workhead",
+      "via": null,
+      "constraints": [
+        "drives each arm axially and independently",
+        "moves workhead to different positions"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 527,
+        "char_end": 611
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_driving_means_carried_by_support",
+      "kind": "attached_to",
+      "source": "driving_means",
+      "target": "support_structure",
+      "via": null,
+      "constraints": [
+        "fixed in location at said support structure"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 613,
+        "char_end": 687
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_driving_means_drives_arms",
+      "kind": "transmits_force_to",
+      "source": "driving_means",
+      "target": "three_arms",
+      "via": null,
+      "constraints": [
+        "drives each arm axially and independently"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 527,
+        "char_end": 580
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_arm_straightness",
+      "text": "each arm being substantially straight from its remote end portion to its proximate end portion and rigid for its length in the sense that no part of the arm is hingedly connected to another part so that the forces derived from the payload weight and movement subject said arms primarily only to compression and/or tension",
+      "targets": [
+        "three_arms"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 736,
+        "char_end": 1056
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_workhead_rigid_spaced",
+      "text": "said workhead being in rigid relation to one of said three arms and spaced from said single location",
+      "targets": [
+        "workhead",
+        "three_arms",
+        "single_location"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 689,
+        "char_end": 734
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

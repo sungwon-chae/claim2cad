@@ -1,0 +1,13 @@
+{
+  "patent_id": "US5239246A",
+  "parsed": true,
+  "components_count": 19,
+  "cad_generated": true,
+  "mapping_complete": 1.0,
+  "errors": [],
+  "warnings": [],
+  "quality_grade": "good",
+  "duration_s": 42.68,
+  "title": "Force reflection with compliance control",
+  "primary_class": "901"
+}

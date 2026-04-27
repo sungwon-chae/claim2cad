@@ -1,0 +1,322 @@
+<?xml version="1.0" ?>
+<robot name="assembly_robot_adapted_to_be_manipulated_by_a_human_operator">
+  <link name="breastplate">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="central_hand_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="elbow_connecting_means">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="finger_sensor_elements">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_sensor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_fifth_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_fifth_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_fifth_sensor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hollow_finger_members">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hollow_hand_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="hollow_thumb_members">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lower_arm_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_sensor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_sensor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="thumb_driving_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="thumb_recording_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="thumb_sensor_elements">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_arm_member">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="pivoted_finger_joints" type="revolute">
+    <parent link="central_hand_member"/>
+    <child link="hollow_finger_members"/>
+    <origin xyz="0.0000 0.0000 0.1200" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="pivotal_thumb_joints" type="revolute">
+    <parent link="central_hand_member"/>
+    <child link="hollow_thumb_members"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="_attach_hollow_hand_member_to_fourth_fifth_driving_means" type="fixed">
+    <parent link="hollow_hand_member"/>
+    <child link="fourth_fifth_driving_means"/>
+    <origin xyz="0.0000 0.0000 0.1200" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_hollow_hand_member_to_fourth_fifth_sensor_means" type="fixed">
+    <parent link="hollow_hand_member"/>
+    <child link="fourth_fifth_sensor_means"/>
+    <origin xyz="0.0000 0.0000 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="knuckle_joint" type="revolute">
+    <parent link="lower_arm_member"/>
+    <child link="central_hand_member"/>
+    <origin xyz="0.0000 0.1800 0.0000" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="knuckle_joint" type="revolute">
+    <parent link="lower_arm_member"/>
+    <child link="hollow_hand_member"/>
+    <origin xyz="0.0000 0.1200 0.0000" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="_attach_lower_arm_member_to_third_driving_means" type="fixed">
+    <parent link="lower_arm_member"/>
+    <child link="third_driving_means"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="shoulder_joint" type="revolute">
+    <parent link="upper_arm_member"/>
+    <child link="breastplate"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_elbow_connecting_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="elbow_connecting_means"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_finger_driving_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="finger_driving_means"/>
+    <origin xyz="1.0800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_finger_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="finger_recording_means"/>
+    <origin xyz="1.0200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_finger_sensor_elements" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="finger_sensor_elements"/>
+    <origin xyz="0.9600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_first_driving_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="first_driving_means"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_first_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="first_recording_means"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_first_sensor_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="first_sensor_means"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_fourth_fifth_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="fourth_fifth_recording_means"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="third_joint" type="revolute">
+    <parent link="upper_arm_member"/>
+    <child link="lower_arm_member"/>
+    <origin xyz="0.3000 0.0000 0.0000" rpy="0 0 0"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-3.14" upper="3.14" velocity="1.0" effort="100"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_second_driving_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="second_driving_means"/>
+    <origin xyz="0.2400 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_second_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="second_recording_means"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_second_sensor_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="second_sensor_means"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_third_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="third_recording_means"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_third_sensor_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="third_sensor_means"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_thumb_driving_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="thumb_driving_means"/>
+    <origin xyz="0.8400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_thumb_recording_means" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="thumb_recording_means"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_arm_member_to_thumb_sensor_elements" type="fixed">
+    <parent link="upper_arm_member"/>
+    <child link="thumb_sensor_elements"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<robot name="wire_activated_inserting_and_transporting_apparatus">
+  <link name="aligning_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="color_coded_positions">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="connector_locating_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="control_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="drive_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="electrical_connector_half">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="escapement_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inserting_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="rows_of_contacts">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sensor">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transferring_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transporting_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="wire_array">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_frame_to_aligning_means" type="fixed">
+    <parent link="frame"/>
+    <child link="aligning_means"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_color_coded_positions" type="fixed">
+    <parent link="frame"/>
+    <child link="color_coded_positions"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_connector_locating_means" type="fixed">
+    <parent link="frame"/>
+    <child link="connector_locating_means"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_control_means" type="fixed">
+    <parent link="frame"/>
+    <child link="control_means"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_drive_mechanism" type="fixed">
+    <parent link="frame"/>
+    <child link="drive_mechanism"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_electrical_connector_half" type="fixed">
+    <parent link="frame"/>
+    <child link="electrical_connector_half"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_escapement_mechanism" type="fixed">
+    <parent link="frame"/>
+    <child link="escapement_mechanism"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_inserting_mechanism" type="fixed">
+    <parent link="frame"/>
+    <child link="inserting_mechanism"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_rows_of_contacts" type="fixed">
+    <parent link="frame"/>
+    <child link="rows_of_contacts"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_sensor" type="fixed">
+    <parent link="frame"/>
+    <child link="sensor"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_transferring_mechanism" type="fixed">
+    <parent link="frame"/>
+    <child link="transferring_mechanism"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_transporting_mechanism" type="fixed">
+    <parent link="frame"/>
+    <child link="transporting_mechanism"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_wire_array" type="fixed">
+    <parent link="frame"/>
+    <child link="wire_array"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

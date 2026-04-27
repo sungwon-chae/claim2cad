@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<robot name="planetary_gear_assembly">
+  <link name="carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_planet_gear">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="ring_gear">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_planet_gear">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sun_gear">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_planet_gear">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_sun_gear_to_carrier" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="carrier"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_first_planet_gear" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="first_planet_gear"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_ring_gear" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="ring_gear"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_second_planet_gear" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="second_planet_gear"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sun_gear_to_third_planet_gear" type="fixed">
+    <parent link="sun_gear"/>
+    <child link="third_planet_gear"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,231 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4467670A_epicyclic_transmission",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "housing",
+      "glb_node_name": "housing",
+      "label": "housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 87
+      },
+      "figure_number": "1"
+    },
+    {
+      "component_id": "input_shaft",
+      "glb_node_name": "input_shaft",
+      "label": "input shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 92,
+        "char_end": 103
+      },
+      "figure_number": "2"
+    },
+    {
+      "component_id": "intermediate_shaft",
+      "glb_node_name": "intermediate_shaft",
+      "label": "intermediate shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 108,
+        "char_end": 126
+      },
+      "figure_number": "3"
+    },
+    {
+      "component_id": "first_means",
+      "glb_node_name": "first_means",
+      "label": "first means to rotatably support one end of intermediate shaft",
+      "category": "connection",
+      "kind": "bearing support",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 197,
+        "char_end": 263
+      },
+      "figure_number": "4"
+    },
+    {
+      "component_id": "second_means",
+      "glb_node_name": "second_means",
+      "label": "second means to rotatably support other end of intermediate shaft",
+      "category": "connection",
+      "kind": "bearing support",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 265,
+        "char_end": 363
+      },
+      "figure_number": "5"
+    },
+    {
+      "component_id": "output_shaft",
+      "glb_node_name": "output_shaft",
+      "label": "output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 368,
+        "char_end": 380
+      },
+      "figure_number": "6"
+    },
+    {
+      "component_id": "cvt_means",
+      "glb_node_name": "cvt_means",
+      "label": "belt drive continuously-variable speed transmission means",
+      "category": "functional",
+      "kind": "CVT mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 470,
+        "char_end": 526
+      },
+      "figure_number": "7"
+    },
+    {
+      "component_id": "primary_pulley",
+      "glb_node_name": "primary_pulley",
+      "label": "primary variable-pitch pulley",
+      "category": "structural",
+      "kind": "variable-pitch pulley",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 537,
+        "char_end": 566
+      },
+      "figure_number": "8"
+    },
+    {
+      "component_id": "primary_fixed_flange",
+      "glb_node_name": "primary_fixed_flange",
+      "label": "fixed pulley flange of primary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 574,
+        "char_end": 592
+      },
+      "figure_number": "71"
+    },
+    {
+      "component_id": "primary_movable_flange",
+      "glb_node_name": "primary_movable_flange",
+      "label": "movable pulley flange of primary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 636,
+        "char_end": 657
+      },
+      "figure_number": "72"
+    },
+    {
+      "component_id": "secondary_pulley",
+      "glb_node_name": "secondary_pulley",
+      "label": "secondary variable-pitch pulley",
+      "category": "structural",
+      "kind": "variable-pitch pulley",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 731,
+        "char_end": 762
+      },
+      "figure_number": "9"
+    },
+    {
+      "component_id": "secondary_fixed_flange",
+      "glb_node_name": "secondary_fixed_flange",
+      "label": "fixed pulley flange of secondary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 770,
+        "char_end": 788
+      },
+      "figure_number": "81"
+    },
+    {
+      "component_id": "secondary_movable_flange",
+      "glb_node_name": "secondary_movable_flange",
+      "label": "movable pulley flange of secondary pulley",
+      "category": "structural",
+      "kind": "pulley flange",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 833,
+        "char_end": 854
+      },
+      "figure_number": "82"
+    },
+    {
+      "component_id": "endless_belt",
+      "glb_node_name": "endless_belt",
+      "label": "endless belt",
+      "category": "connection",
+      "kind": "belt",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 927,
+        "char_end": 939
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "clutch",
+      "glb_node_name": "clutch",
+      "label": "clutch",
+      "category": "connection",
+      "kind": "clutch",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1097,
+        "char_end": 1103
+      },
+      "figure_number": "11"
+    },
+    {
+      "component_id": "change_direction_gear_train",
+      "glb_node_name": "change_direction_gear_train",
+      "label": "change-direction gear train",
+      "category": "functional",
+      "kind": "gear train",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1174,
+        "char_end": 1201
+      },
+      "figure_number": "12"
+    }
+  ]
+}

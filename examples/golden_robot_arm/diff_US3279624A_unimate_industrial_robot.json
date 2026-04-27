@@ -1,0 +1,111 @@
+{
+  "base_patent": "golden_robot_arm",
+  "comparison_patent": "US3279624A_unimate_industrial_robot",
+  "matched": [
+    {
+      "base_id": "end_effector",
+      "base_label": "end effector",
+      "comparison_id": "mechanical_output_device",
+      "comparison_label": "mechanical output device",
+      "score": 0.7,
+      "category": "functional",
+      "kind_base": "end_effector",
+      "kind_comparison": "output_device"
+    },
+    {
+      "base_id": "position_sensor",
+      "base_label": "position sensor",
+      "comparison_id": "sensing_interposer",
+      "comparison_label": "sensing interposer",
+      "score": 0.65,
+      "category": "functional",
+      "kind_base": "sensor",
+      "kind_comparison": "interposer"
+    }
+  ],
+  "novel_in_base": [
+    {
+      "id": "base",
+      "label": "base",
+      "category": "structural",
+      "kind": "frame"
+    },
+    {
+      "id": "fastener",
+      "label": "fastener",
+      "category": "connection",
+      "kind": "fastener"
+    },
+    {
+      "id": "first_joint",
+      "label": "first revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint"
+    },
+    {
+      "id": "first_link",
+      "label": "first link",
+      "category": "structural",
+      "kind": "rod"
+    },
+    {
+      "id": "gripper",
+      "label": "gripper",
+      "category": "functional",
+      "kind": "end_effector"
+    },
+    {
+      "id": "second_joint",
+      "label": "second revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint"
+    },
+    {
+      "id": "second_link",
+      "label": "second link",
+      "category": "structural",
+      "kind": "rod"
+    }
+  ],
+  "only_in_comparison": [
+    {
+      "id": "coaction_means",
+      "label": "means for effecting mutual coaction of said servo input control member and the interposer",
+      "category": "functional",
+      "kind": "coaction_means"
+    },
+    {
+      "id": "instruction_presenting_means",
+      "label": "means to present mechanically to the sensing interposer a succession of positional instructions",
+      "category": "functional",
+      "kind": "instruction_presenting_means"
+    },
+    {
+      "id": "interposer_positioning_means",
+      "label": "means to cause the interposer to assume a position corresponding to the prevailing mechanically presented instruction",
+      "category": "functional",
+      "kind": "positioning_means"
+    },
+    {
+      "id": "output_portion",
+      "label": "output portion",
+      "category": "structural",
+      "kind": "output_portion"
+    },
+    {
+      "id": "servo_input_control_member",
+      "label": "servo input control member",
+      "category": "functional",
+      "kind": "control_member"
+    },
+    {
+      "id": "servo_system",
+      "label": "servo system",
+      "category": "functional",
+      "kind": "servo_system"
+    }
+  ],
+  "notes": [
+    "llm_added_pairs: 2"
+  ]
+}

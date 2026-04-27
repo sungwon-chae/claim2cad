@@ -1,0 +1,616 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Robotic manipulator structure",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A robotic manipulator structure comprising: a base supporting first and second independently operable motorized drive means; a first generally hollow arm rotatably supported by said base and means for driving said first arm from said first drive means for rotation through one planar space; a second arm having one end rotatably carried, by the end of said first arm opposite said base, for rotation through another planar space, parallel to and translationally displaced from said first planar space; and means coupled said second drive means to drive said second arm independently of said first arm, said coupling means extending from said base through said first arm to said one end of said second arm; said driving means for said first arm includes a hollow shaft rotatably supported from said base and fixed at its one end to said first arm and having, at its other end, driven means coupled to said first drive means; and said coupling means for said second arm includes a shaft concentrically and rotatably disposed within said first hollow shaft, said second shaft being hollow and defining an interiorly open space, and having at its one end toothed gearing coupled by toothed linking means through said first arm to drive said second arm, and at the other end of said second shaft driven means coupled to said second drive means.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "base",
+      "label": "base",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 48,
+        "char_end": 52
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.54,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_drive_means",
+      "label": "first motorized drive means",
+      "category": "functional",
+      "kind": "motorized_drive",
+      "parent_id": "base",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "independently operable"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_drive_means",
+      "label": "second motorized drive means",
+      "category": "functional",
+      "kind": "motorized_drive",
+      "parent_id": "base",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "independently operable"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_arm",
+      "label": "first generally hollow arm",
+      "category": "structural",
+      "kind": "hollow_arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "generally hollow",
+        "rotatable about base",
+        "rotates through one planar space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 126,
+        "char_end": 164
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_arm_driving_means",
+      "label": "means for driving first arm from first drive means",
+      "category": "functional",
+      "kind": "drive_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "drives first arm from first drive means",
+        "rotation through one planar space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 196,
+        "char_end": 290
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_arm",
+      "label": "second arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "one end rotatably carried by end of first arm opposite base",
+        "rotation through another planar space parallel to and translationally displaced from first planar space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 292,
+        "char_end": 302
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "coupling_means",
+      "label": "coupling means for second arm",
+      "category": "functional",
+      "kind": "coupling_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extends from base through first arm to one end of second arm",
+        "drives second arm independently of first arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 700
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "hollow_shaft",
+      "label": "hollow shaft (first arm driving shaft)",
+      "category": "structural",
+      "kind": "hollow_shaft",
+      "parent_id": "first_arm_driving_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably supported from base",
+        "fixed at its one end to first arm",
+        "has driven means at its other end coupled to first drive means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 756,
+        "char_end": 769
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.84,
+            0.21000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_driven_means",
+      "label": "driven means coupled to first drive means",
+      "category": "functional",
+      "kind": "driven_means",
+      "parent_id": "hollow_shaft",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at other end of hollow shaft",
+        "coupled to first drive means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 836,
+        "char_end": 876
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_shaft",
+      "label": "second shaft (concentrically disposed within first hollow shaft)",
+      "category": "structural",
+      "kind": "hollow_shaft",
+      "parent_id": "coupling_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "concentrically and rotatably disposed within first hollow shaft",
+        "hollow and defining an interiorly open space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 924,
+        "char_end": 977
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "toothed_gearing",
+      "label": "toothed gearing",
+      "category": "connection",
+      "kind": "gear",
+      "parent_id": "second_shaft",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at one end of second shaft",
+        "coupled by toothed linking means through first arm to drive second arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1061,
+        "char_end": 1076
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "toothed_linking_means",
+      "label": "toothed linking means",
+      "category": "connection",
+      "kind": "toothed_linking_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extends through first arm",
+        "couples toothed gearing to second arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1089,
+        "char_end": 1110
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_driven_means",
+      "label": "driven means coupled to second drive means",
+      "category": "functional",
+      "kind": "driven_means",
+      "parent_id": "second_shaft",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at other end of second shaft",
+        "coupled to second drive means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1137,
+        "char_end": 1179
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_first_drive_to_base",
+      "kind": "attached_to",
+      "source": "first_drive_means",
+      "target": "base",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 48,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_drive_to_base",
+      "kind": "attached_to",
+      "source": "second_drive_means",
+      "target": "base",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 48,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_arm_rotates_base",
+      "kind": "rotates_about",
+      "source": "first_arm",
+      "target": "base",
+      "via": null,
+      "constraints": [
+        "rotation through one planar space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 126,
+        "char_end": 290
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_driving_means_transmits_first_arm",
+      "kind": "transmits_force_to",
+      "source": "first_arm_driving_means",
+      "target": "first_arm",
+      "via": null,
+      "constraints": [
+        "from first drive means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 196,
+        "char_end": 290
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_drive_transmits_driving_means",
+      "kind": "transmits_force_to",
+      "source": "first_drive_means",
+      "target": "first_arm_driving_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 196,
+        "char_end": 290
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_arm_rotates_first_arm",
+      "kind": "rotates_about",
+      "source": "second_arm",
+      "target": "first_arm",
+      "via": null,
+      "constraints": [
+        "at end of first arm opposite base",
+        "rotation through another planar space parallel to and translationally displaced from first planar space"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 292,
+        "char_end": 499
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coupling_means_to_second_arm",
+      "kind": "transmits_force_to",
+      "source": "coupling_means",
+      "target": "second_arm",
+      "via": null,
+      "constraints": [
+        "independently of first arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 700
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_drive_to_coupling",
+      "kind": "transmits_force_to",
+      "source": "second_drive_means",
+      "target": "coupling_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 503,
+        "char_end": 540
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_coupling_extends_through_first_arm",
+      "kind": "translates_along",
+      "source": "coupling_means",
+      "target": "first_arm",
+      "via": null,
+      "constraints": [
+        "extends from base through first arm to one end of second arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 611,
+        "char_end": 700
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_hollow_shaft_supported_by_base",
+      "kind": "rotates_about",
+      "source": "hollow_shaft",
+      "target": "base",
+      "via": null,
+      "constraints": [
+        "rotatably supported from base"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 770,
+        "char_end": 810
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_hollow_shaft_fixed_to_first_arm",
+      "kind": "attached_to",
+      "source": "hollow_shaft",
+      "target": "first_arm",
+      "via": null,
+      "constraints": [
+        "fixed at its one end to first arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 811,
+        "char_end": 836
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_driven_means_to_first_drive",
+      "kind": "connects",
+      "source": "first_driven_means",
+      "target": "first_drive_means",
+      "via": null,
+      "constraints": [
+        "at other end of hollow shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 836,
+        "char_end": 876
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_shaft_in_hollow_shaft",
+      "kind": "contains",
+      "source": "hollow_shaft",
+      "target": "second_shaft",
+      "via": null,
+      "constraints": [
+        "concentrically and rotatably disposed within"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 924,
+        "char_end": 1000
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_toothed_gearing_drives_second_arm",
+      "kind": "transmits_force_to",
+      "source": "toothed_gearing",
+      "target": "second_arm",
+      "via": "toothed_linking_means",
+      "constraints": [
+        "through first arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1061,
+        "char_end": 1133
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_driven_means_to_second_drive",
+      "kind": "connects",
+      "source": "second_driven_means",
+      "target": "second_drive_means",
+      "via": null,
+      "constraints": [
+        "at other end of second shaft"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1137,
+        "char_end": 1179
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_first_arm_driving",
+      "text": "said driving means for said first arm includes a hollow shaft rotatably supported from said base and fixed at its one end to said first arm and having, at its other end, driven means coupled to said first drive means",
+      "targets": [
+        "first_arm_driving_means",
+        "hollow_shaft",
+        "first_driven_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 702,
+        "char_end": 876
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_second_arm_coupling",
+      "text": "said coupling means for said second arm includes a shaft concentrically and rotatably disposed within said first hollow shaft, said second shaft being hollow and defining an interiorly open space, and having at its one end toothed gearing coupled by toothed linking means through said first arm to drive said second arm, and at the other end of said second shaft driven means coupled to said second drive means",
+      "targets": [
+        "coupling_means",
+        "second_shaft",
+        "toothed_gearing",
+        "toothed_linking_means",
+        "second_driven_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 882,
+        "char_end": 1286
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

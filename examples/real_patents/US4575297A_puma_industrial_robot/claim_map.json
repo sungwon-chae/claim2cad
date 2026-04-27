@@ -1,0 +1,417 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4575297A_puma_industrial_robot",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "breastplate",
+      "glb_node_name": "breastplate",
+      "label": "breastplate",
+      "category": "structural",
+      "kind": "body_plate",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 521,
+        "char_end": 532
+      },
+      "figure_number": "1"
+    },
+    {
+      "component_id": "upper_arm_member",
+      "glb_node_name": "upper_arm_member",
+      "label": "upper arm member",
+      "category": "structural",
+      "kind": "arm_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 639,
+        "char_end": 655
+      },
+      "figure_number": "45"
+    },
+    {
+      "component_id": "shoulder_joint",
+      "glb_node_name": "shoulder_joint",
+      "label": "joint (shoulder)",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 745,
+        "char_end": 750
+      },
+      "figure_number": "40"
+    },
+    {
+      "component_id": "first_sensor_means",
+      "glb_node_name": "first_sensor_means",
+      "label": "first sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1005,
+        "char_end": 1023
+      },
+      "figure_number": "51"
+    },
+    {
+      "component_id": "first_recording_means",
+      "glb_node_name": "first_recording_means",
+      "label": "means for recording output of first sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1089,
+        "char_end": 1112
+      }
+    },
+    {
+      "component_id": "first_driving_means",
+      "glb_node_name": "first_driving_means",
+      "label": "first driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1160,
+        "char_end": 1179
+      }
+    },
+    {
+      "component_id": "second_sensor_means",
+      "glb_node_name": "second_sensor_means",
+      "label": "second sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1315,
+        "char_end": 1334
+      }
+    },
+    {
+      "component_id": "second_recording_means",
+      "glb_node_name": "second_recording_means",
+      "label": "means for recording output of second sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1401,
+        "char_end": 1424
+      }
+    },
+    {
+      "component_id": "second_driving_means",
+      "glb_node_name": "second_driving_means",
+      "label": "second driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1471,
+        "char_end": 1491
+      }
+    },
+    {
+      "component_id": "lower_arm_member",
+      "glb_node_name": "lower_arm_member",
+      "label": "lower arm member",
+      "category": "structural",
+      "kind": "arm_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1629,
+        "char_end": 1645
+      }
+    },
+    {
+      "component_id": "elbow_connecting_means",
+      "glb_node_name": "elbow_connecting_means",
+      "label": "means connecting lower arm member to upper arm member",
+      "category": "connection",
+      "kind": "pivot_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1697,
+        "char_end": 1712
+      },
+      "figure_number": "46"
+    },
+    {
+      "component_id": "third_joint",
+      "glb_node_name": "third_joint",
+      "label": "third joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1757,
+        "char_end": 1768
+      },
+      "figure_number": "47"
+    },
+    {
+      "component_id": "third_sensor_means",
+      "glb_node_name": "third_sensor_means",
+      "label": "third sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1844,
+        "char_end": 1862
+      }
+    },
+    {
+      "component_id": "third_recording_means",
+      "glb_node_name": "third_recording_means",
+      "label": "means for recording output of third sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1940,
+        "char_end": 1963
+      }
+    },
+    {
+      "component_id": "third_driving_means",
+      "glb_node_name": "third_driving_means",
+      "label": "third driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2010,
+        "char_end": 2029
+      }
+    },
+    {
+      "component_id": "hollow_hand_member",
+      "glb_node_name": "hollow_hand_member",
+      "label": "hollow hand member",
+      "category": "structural",
+      "kind": "hand_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2168,
+        "char_end": 2186
+      },
+      "figure_number": "4"
+    },
+    {
+      "component_id": "knuckle_joint",
+      "glb_node_name": "knuckle_joint",
+      "label": "knuckle joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2267,
+        "char_end": 2280
+      }
+    },
+    {
+      "component_id": "fourth_fifth_sensor_means",
+      "glb_node_name": "fourth_fifth_sensor_means",
+      "label": "fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2332,
+        "char_end": 2361
+      }
+    },
+    {
+      "component_id": "fourth_fifth_recording_means",
+      "glb_node_name": "fourth_fifth_recording_means",
+      "label": "means for recording outputs of fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2448,
+        "char_end": 2471
+      }
+    },
+    {
+      "component_id": "fourth_fifth_driving_means",
+      "glb_node_name": "fourth_fifth_driving_means",
+      "label": "fourth and fifth driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2521,
+        "char_end": 2550
+      }
+    },
+    {
+      "component_id": "central_hand_member",
+      "glb_node_name": "central_hand_member",
+      "label": "hollow central hand member",
+      "category": "structural",
+      "kind": "hand_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2686,
+        "char_end": 2712
+      }
+    },
+    {
+      "component_id": "hollow_thumb_members",
+      "glb_node_name": "hollow_thumb_members",
+      "label": "plurality of hollow thumb members",
+      "category": "structural",
+      "kind": "finger_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2774,
+        "char_end": 2807
+      }
+    },
+    {
+      "component_id": "pivotal_thumb_joints",
+      "glb_node_name": "pivotal_thumb_joints",
+      "label": "plurality of pivotal thumb joints",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 2841,
+        "char_end": 2874
+      }
+    },
+    {
+      "component_id": "thumb_sensor_elements",
+      "glb_node_name": "thumb_sensor_elements",
+      "label": "plurality of thumb member sensor elements",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3062,
+        "char_end": 3103
+      }
+    },
+    {
+      "component_id": "thumb_recording_means",
+      "glb_node_name": "thumb_recording_means",
+      "label": "means for recording outputs of thumb member sensor elements",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3157,
+        "char_end": 3180
+      }
+    },
+    {
+      "component_id": "thumb_driving_means",
+      "glb_node_name": "thumb_driving_means",
+      "label": "plurality of thumb member driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3230,
+        "char_end": 3269
+      }
+    },
+    {
+      "component_id": "hollow_finger_members",
+      "glb_node_name": "hollow_finger_members",
+      "label": "plurality of hollow finger members",
+      "category": "structural",
+      "kind": "finger_member",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3418,
+        "char_end": 3452
+      }
+    },
+    {
+      "component_id": "pivoted_finger_joints",
+      "glb_node_name": "pivoted_finger_joints",
+      "label": "plurality of pivoted finger joints",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3487,
+        "char_end": 3521
+      }
+    },
+    {
+      "component_id": "finger_sensor_elements",
+      "glb_node_name": "finger_sensor_elements",
+      "label": "plurality of finger member sensor elements",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3680,
+        "char_end": 3722
+      }
+    },
+    {
+      "component_id": "finger_recording_means",
+      "glb_node_name": "finger_recording_means",
+      "label": "means for recording outputs of finger member sensor elements",
+      "category": "functional",
+      "kind": "recording_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3778,
+        "char_end": 3801
+      }
+    },
+    {
+      "component_id": "finger_driving_means",
+      "glb_node_name": "finger_driving_means",
+      "label": "plurality of finger member driving means",
+      "category": "functional",
+      "kind": "actuator",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 3851,
+        "char_end": 3891
+      }
+    }
+  ]
+}

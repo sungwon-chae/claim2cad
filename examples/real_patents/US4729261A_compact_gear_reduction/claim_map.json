@@ -1,0 +1,155 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4729261A_compact_gear_reduction",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "housing",
+      "glb_node_name": "housing",
+      "label": "housing",
+      "category": "structural",
+      "kind": "pump_housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 63,
+        "char_end": 70
+      },
+      "figure_number": "28"
+    },
+    {
+      "component_id": "inlet_port",
+      "glb_node_name": "inlet_port",
+      "label": "inlet port",
+      "category": "structural",
+      "kind": "port",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 78,
+        "char_end": 89
+      },
+      "figure_number": "16"
+    },
+    {
+      "component_id": "outlet_port",
+      "glb_node_name": "outlet_port",
+      "label": "outlet port",
+      "category": "structural",
+      "kind": "port",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 94,
+        "char_end": 106
+      },
+      "figure_number": "5"
+    },
+    {
+      "component_id": "pumping_unit",
+      "glb_node_name": "pumping_unit",
+      "label": "pumping unit",
+      "category": "functional",
+      "kind": "pumping_unit",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 112,
+        "char_end": 124
+      }
+    },
+    {
+      "component_id": "flow_control_valve",
+      "glb_node_name": "flow_control_valve",
+      "label": "adjustable pressure compensated flow control valve",
+      "category": "functional",
+      "kind": "flow_control_valve",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 252,
+        "char_end": 302
+      },
+      "figure_number": "6"
+    },
+    {
+      "component_id": "epicyclic_gear_train",
+      "glb_node_name": "epicyclic_gear_train",
+      "label": "epicyclic gear train",
+      "category": "functional",
+      "kind": "gear_train",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 607,
+        "char_end": 627
+      }
+    },
+    {
+      "component_id": "first_shaft",
+      "glb_node_name": "first_shaft",
+      "label": "first shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 639,
+        "char_end": 650
+      },
+      "figure_number": "12"
+    },
+    {
+      "component_id": "first_gear",
+      "glb_node_name": "first_gear",
+      "label": "first gear",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 672,
+        "char_end": 683
+      }
+    },
+    {
+      "component_id": "second_shaft",
+      "glb_node_name": "second_shaft",
+      "label": "second shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 735,
+        "char_end": 747
+      }
+    },
+    {
+      "component_id": "second_gear",
+      "glb_node_name": "second_gear",
+      "label": "second gear",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 769,
+        "char_end": 780
+      }
+    },
+    {
+      "component_id": "third_gear",
+      "glb_node_name": "third_gear",
+      "label": "third gear",
+      "category": "structural",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 865,
+        "char_end": 875
+      }
+    }
+  ]
+}

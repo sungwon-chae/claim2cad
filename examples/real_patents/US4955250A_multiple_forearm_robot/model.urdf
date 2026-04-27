@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<robot name="robotic_elbow_configuration_apparatus">
+  <link name="actuator_canister">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="bearing_means">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_modular_actuator_assembly">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gearing_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lower_forearm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="main_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="motor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_hub_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="position_referencing_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.006"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_modular_actuator_assembly">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="shaft_means">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="spindle">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="upper_forearm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_modular_actuator_assembly_to_bearing_means" type="fixed">
+    <parent link="first_modular_actuator_assembly"/>
+    <child link="bearing_means"/>
+    <origin xyz="0.2400 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_lower_forearm_to_second_modular_actuator_assembly" type="fixed">
+    <parent link="lower_forearm"/>
+    <child link="second_modular_actuator_assembly"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_actuator_canister" type="fixed">
+    <parent link="main_arm"/>
+    <child link="actuator_canister"/>
+    <origin xyz="0.0600 0.0600 0.0600" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_gearing_means" type="fixed">
+    <parent link="main_arm"/>
+    <child link="gearing_means"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_lower_forearm" type="fixed">
+    <parent link="main_arm"/>
+    <child link="lower_forearm"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_motor_means" type="fixed">
+    <parent link="main_arm"/>
+    <child link="motor_means"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_output_hub_means" type="fixed">
+    <parent link="main_arm"/>
+    <child link="output_hub_means"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_position_referencing_means" type="fixed">
+    <parent link="main_arm"/>
+    <child link="position_referencing_means"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_shaft_means" type="fixed">
+    <parent link="main_arm"/>
+    <child link="shaft_means"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_spindle" type="fixed">
+    <parent link="main_arm"/>
+    <child link="spindle"/>
+    <origin xyz="0.0600 0.0600 0.1200" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_main_arm_to_upper_forearm" type="fixed">
+    <parent link="main_arm"/>
+    <child link="upper_forearm"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_upper_forearm_to_first_modular_actuator_assembly" type="fixed">
+    <parent link="upper_forearm"/>
+    <child link="first_modular_actuator_assembly"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

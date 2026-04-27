@@ -1,0 +1,266 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Method of automatic limitation for one controlled variable of a multivariable controlled object",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A method of an automatic limitation for one controlled variable of a multivariable controlled object having a control means with a set point and a closed loop providing for said limitation, said method comprising: controlling the position of said control means by use of said closed control loop after said controlled variable reaches a level which is necessary to limit until there is a preestablished deviation of said controlled variable from said limited level; upon sensing of said preestablished deviation of said controlled variable from said limited level, adjustably changing the set point of said control means in one direction as quickly as possible to decrease said deviation and then immediately after said changing of the set point, exponentially changing said set point in an opposite direction; and controlling a required position of said control means by said closed control loop after said controlled variable reaches said limited level again as a result of said exponential changing of the set point of said control means.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "controlled_variable",
+      "label": "controlled variable",
+      "category": "functional",
+      "kind": "process_variable",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 46,
+        "char_end": 65
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "multivariable_controlled_object",
+      "label": "multivariable controlled object",
+      "category": "structural",
+      "kind": "plant",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 71,
+        "char_end": 102
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "control_means",
+      "label": "control means",
+      "category": "functional",
+      "kind": "controller",
+      "parent_id": "multivariable_controlled_object",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 111,
+        "char_end": 124
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "119",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.32999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set_point",
+      "label": "set point",
+      "category": "functional",
+      "kind": "reference_signal",
+      "parent_id": "control_means",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 132,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "closed_loop",
+      "label": "closed loop",
+      "category": "connection",
+      "kind": "feedback_loop",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 148,
+        "char_end": 159
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "limited_level",
+      "label": "limited level",
+      "category": "functional",
+      "kind": "threshold",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 449,
+        "char_end": 462
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "preestablished_deviation",
+      "label": "preestablished deviation",
+      "category": "functional",
+      "kind": "error_signal",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 423
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_closed_loop_controls_control_means",
+      "kind": "transmits_force_to",
+      "source": "closed_loop",
+      "target": "control_means",
+      "via": null,
+      "constraints": [
+        "controlling position of control means after controlled variable reaches limited level"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 216,
+        "char_end": 464
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_set_point_attached_to_control_means",
+      "kind": "attached_to",
+      "source": "set_point",
+      "target": "control_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 130,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_closed_loop_connects_control_means",
+      "kind": "connects",
+      "source": "closed_loop",
+      "target": "control_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 146,
+        "char_end": 192
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_initial_control",
+      "text": "controlling the position of said control means by use of said closed control loop after said controlled variable reaches a level which is necessary to limit until there is a preestablished deviation of said controlled variable from said limited level",
+      "targets": [
+        "control_means",
+        "closed_loop",
+        "controlled_variable",
+        "limited_level"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 216,
+        "char_end": 464
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_set_point_adjustment",
+      "text": "upon sensing of said preestablished deviation of said controlled variable from said limited level, adjustably changing the set point of said control means in one direction as quickly as possible to decrease said deviation and then immediately after said changing of the set point, exponentially changing said set point in an opposite direction",
+      "targets": [
+        "preestablished_deviation",
+        "set_point",
+        "control_means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 466,
+        "char_end": 805
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_final_control",
+      "text": "controlling a required position of said control means by said closed control loop after said controlled variable reaches said limited level again as a result of said exponential changing of the set point of said control means",
+      "targets": [
+        "control_means",
+        "closed_loop",
+        "controlled_variable",
+        "limited_level",
+        "set_point"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 811,
+        "char_end": 1034
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+<?xml version="1.0" ?>
+<robot name="belt_drive_continuously_variable_speed_automatic_transmission">
+  <link name="change_direction_gear_train">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="clutch">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cvt_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="endless_belt">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_means">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="input_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="intermediate_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="primary_fixed_flange">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="primary_movable_flange">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="primary_pulley">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_means">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="secondary_fixed_flange">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="secondary_movable_flange">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="secondary_pulley">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_housing_to_change_direction_gear_train" type="fixed">
+    <parent link="housing"/>
+    <child link="change_direction_gear_train"/>
+    <origin xyz="0.7800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_clutch" type="fixed">
+    <parent link="housing"/>
+    <child link="clutch"/>
+    <origin xyz="0.7200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_cvt_means" type="fixed">
+    <parent link="housing"/>
+    <child link="cvt_means"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_endless_belt" type="fixed">
+    <parent link="housing"/>
+    <child link="endless_belt"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_first_means" type="fixed">
+    <parent link="housing"/>
+    <child link="first_means"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_input_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="input_shaft"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_intermediate_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="intermediate_shaft"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_output_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="output_shaft"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_primary_fixed_flange" type="fixed">
+    <parent link="housing"/>
+    <child link="primary_fixed_flange"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_primary_movable_flange" type="fixed">
+    <parent link="housing"/>
+    <child link="primary_movable_flange"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_primary_pulley" type="fixed">
+    <parent link="housing"/>
+    <child link="primary_pulley"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_second_means" type="fixed">
+    <parent link="housing"/>
+    <child link="second_means"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_secondary_movable_flange" type="fixed">
+    <parent link="housing"/>
+    <child link="secondary_movable_flange"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_secondary_pulley" type="fixed">
+    <parent link="housing"/>
+    <child link="secondary_pulley"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_output_shaft_to_secondary_fixed_flange" type="fixed">
+    <parent link="output_shaft"/>
+    <child link="secondary_fixed_flange"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4762016A_robotic_drive_unit",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "frame",
+      "glb_node_name": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 38,
+        "char_end": 45
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "first_input_link",
+      "glb_node_name": "first_input_link",
+      "label": "first input link",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 47,
+        "char_end": 64
+      },
+      "figure_number": "20"
+    },
+    {
+      "component_id": "first_actuator_assembly",
+      "glb_node_name": "first_actuator_assembly",
+      "label": "first actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 67,
+        "char_end": 91
+      },
+      "figure_number": "12"
+    },
+    {
+      "component_id": "first_joint",
+      "glb_node_name": "first_joint",
+      "label": "first joint",
+      "category": "connection",
+      "kind": "joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 114
+      },
+      "figure_number": "24"
+    },
+    {
+      "component_id": "second_input_link",
+      "glb_node_name": "second_input_link",
+      "label": "second input link",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 233
+      },
+      "figure_number": "22"
+    },
+    {
+      "component_id": "second_actuator_assembly",
+      "glb_node_name": "second_actuator_assembly",
+      "label": "second actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 235,
+        "char_end": 260
+      },
+      "figure_number": "14"
+    },
+    {
+      "component_id": "second_joint",
+      "glb_node_name": "second_joint",
+      "label": "second joint",
+      "category": "connection",
+      "kind": "joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 272,
+        "char_end": 284
+      },
+      "figure_number": "26"
+    },
+    {
+      "component_id": "mounting_means",
+      "glb_node_name": "mounting_means",
+      "label": "means for mounting",
+      "category": "functional",
+      "kind": "mounting_means",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 381,
+        "char_end": 454
+      },
+      "figure_number": "16"
+    },
+    {
+      "component_id": "first_output_link",
+      "glb_node_name": "first_output_link",
+      "label": "first output link",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 456,
+        "char_end": 474
+      },
+      "figure_number": "40"
+    },
+    {
+      "component_id": "third_joint",
+      "glb_node_name": "third_joint",
+      "label": "third joint",
+      "category": "connection",
+      "kind": "joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 486,
+        "char_end": 497
+      },
+      "figure_number": "28"
+    },
+    {
+      "component_id": "second_output_link",
+      "glb_node_name": "second_output_link",
+      "label": "second output link",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 563,
+        "char_end": 581
+      },
+      "figure_number": "50"
+    },
+    {
+      "component_id": "fourth_joint",
+      "glb_node_name": "fourth_joint",
+      "label": "fourth joint",
+      "category": "connection",
+      "kind": "joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 605
+      },
+      "figure_number": "30"
+    },
+    {
+      "component_id": "fifth_joint",
+      "glb_node_name": "fifth_joint",
+      "label": "fifth joint",
+      "category": "connection",
+      "kind": "joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 673,
+        "char_end": 684
+      },
+      "figure_number": "32"
+    }
+  ]
+}

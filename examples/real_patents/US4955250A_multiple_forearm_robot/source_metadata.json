@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4955250A",
+  "slug": "multiple_forearm_robot",
+  "primary_class": "414",
+  "title": "Multiple forearm robotic elbow configuration",
+  "claim_text": "1. A robotic elbow configuration apparatus comprising: a main arm having a first side and an opposing side; an upper forearm rotatably attached for support to said first side of said main arm and adapted to rotate coplanarly with said main arm; a lower forearm rotatably attached to said opposing side of said main arm and adapted to rotate coplanarly with said main arm and said upper forearm, said lower forearm capable of movement and operating independent of said upper forearm; a first modular actuator assembly carried by said upper forearm for moving said upper forearm; and a second modular actuator assembly having the same structure as said first modular actuator assembly carried by said lower forearm for moving said lower forearm; each of said first and second modular actuator assemblies comprising: an actuator canister within said modular actuator assembly having a motor means; a shaft means turned by said motor means; a gearing means in operative connection with said shaft means; a position referencing means in operative connection with said shaft means for determining position; a spindle within said modular actuator assembly for receiving said actuator canister having a bearing means on which bearing means said actuator assembly rotates; and an output hub means in operative connection with said gearing means for moving a forearm attached to said actuator assembly.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/cf/39/33/03f6ac80648f88/US4955250-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/9b/2c/12/67d83177612ba5/US4955250-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/fd/90/a4/776acc68f51618/US4955250-drawings-page-4.png"
+  ],
+  "publication_date": "1989-06-08",
+  "fetch_url": "https://patents.google.com/patent/US4955250A/en",
+  "fetched_at": "2026-04-27T19:38:20",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

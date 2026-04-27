@@ -1,0 +1,622 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Card screen with side ribs, center rib, and bar connection system",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. In a card screen having longitudinally extending side ribs and a center rib and transversely extending end and grid bars, the combination of each side rib having a plurality of openings extending therethrough and arranged in predetermined longitudinally spaced relation to each other, the center rib having a plurality of groups of openings extending therethrough and said groups being arranged in predetermined longitudinally spaced relation to each other, a first group of bars on one side of the center rib extending between one side rib and the center rib, a group of pins extending from each bar in the first group toward the center rib, a second group of bars extending between the other side frame and the center rib and each bar in the second group of bars having a group of sockets in it's end adjacent the center rib registrable with a selected group of openings in the center rib and receptive of the group of pins extending from an opposing bar in the first group of bars, each side rib having longitudinally spaced groups of openings effectively aligned with the groups of openings in the center rib, and fastening means penetrating the openings in the side ribs for connecting the bars to the side ribs.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "card_screen",
+      "label": "card screen",
+      "category": "structural",
+      "kind": "screen frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "longitudinally extending",
+        "transversely extending"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 19
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_ribs",
+      "label": "side ribs",
+      "category": "structural",
+      "kind": "rib",
+      "parent_id": "card_screen",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "longitudinally extending",
+        "having a plurality of openings extending therethrough and arranged in predetermined longitudinally spaced relation to each other",
+        "having longitudinally spaced groups of openings effectively aligned with the groups of openings in the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 52,
+        "char_end": 61
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.23,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "center_rib",
+      "label": "center rib",
+      "category": "structural",
+      "kind": "rib",
+      "parent_id": "card_screen",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having a plurality of groups of openings extending therethrough",
+        "groups arranged in predetermined longitudinally spaced relation to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 68,
+        "char_end": 78
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.36,
+            0.25,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "end_bars",
+      "label": "end bars",
+      "category": "structural",
+      "kind": "bar",
+      "parent_id": "card_screen",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "transversely extending"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 111,
+        "char_end": 119
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "13",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.26999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grid_bars",
+      "label": "grid bars",
+      "category": "structural",
+      "kind": "bar",
+      "parent_id": "card_screen",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "transversely extending"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 124,
+        "char_end": 133
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side_rib_openings",
+      "label": "openings in side ribs",
+      "category": "structural",
+      "kind": "opening",
+      "parent_id": "side_ribs",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending therethrough",
+        "arranged in predetermined longitudinally spaced relation to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 168,
+        "char_end": 176
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "15",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "center_rib_openings",
+      "label": "groups of openings in center rib",
+      "category": "structural",
+      "kind": "opening",
+      "parent_id": "center_rib",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending therethrough",
+        "groups arranged in predetermined longitudinally spaced relation to each other"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 316,
+        "char_end": 348
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.29,
+            0.84,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_group_bars",
+      "label": "first group of bars",
+      "category": "structural",
+      "kind": "bar",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "on one side of the center rib",
+        "extending between one side rib and the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 463,
+        "char_end": 482
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "17",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.18000000000000002,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pins",
+      "label": "group of pins",
+      "category": "functional",
+      "kind": "pin",
+      "parent_id": "first_group_bars",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending from each bar in the first group toward the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 558,
+        "char_end": 571
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_group_bars",
+      "label": "second group of bars",
+      "category": "structural",
+      "kind": "bar",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "extending between the other side frame and the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 638,
+        "char_end": 658
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "19",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.21000000000000002,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sockets",
+      "label": "group of sockets",
+      "category": "connection",
+      "kind": "socket",
+      "parent_id": "second_group_bars",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in end adjacent the center rib",
+        "registrable with a selected group of openings in the center rib",
+        "receptive of the group of pins extending from an opposing bar in the first group of bars"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 742,
+        "char_end": 758
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fastening_means",
+      "label": "fastening means",
+      "category": "connection",
+      "kind": "fastener",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "penetrating the openings in the side ribs"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1043,
+        "char_end": 1058
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "21",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_side_ribs_in_screen",
+      "kind": "contains",
+      "source": "card_screen",
+      "target": "side_ribs",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 61
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_center_rib_in_screen",
+      "kind": "contains",
+      "source": "card_screen",
+      "target": "center_rib",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 78
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_bars_to_side_rib",
+      "kind": "connects",
+      "source": "first_group_bars",
+      "target": "side_ribs",
+      "via": null,
+      "constraints": [
+        "on one side of the center rib",
+        "extending between one side rib and the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 463,
+        "char_end": 561
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_bars_to_center_rib",
+      "kind": "connects",
+      "source": "first_group_bars",
+      "target": "center_rib",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 507,
+        "char_end": 561
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_pins_on_first_bars",
+      "kind": "attached_to",
+      "source": "pins",
+      "target": "first_group_bars",
+      "via": null,
+      "constraints": [
+        "extending toward the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 556,
+        "char_end": 633
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_bars_to_center_rib",
+      "kind": "connects",
+      "source": "second_group_bars",
+      "target": "center_rib",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 638,
+        "char_end": 730
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_sockets_on_second_bars",
+      "kind": "contains",
+      "source": "second_group_bars",
+      "target": "sockets",
+      "via": null,
+      "constraints": [
+        "in end adjacent the center rib"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 730,
+        "char_end": 880
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_sockets_receive_pins",
+      "kind": "connects",
+      "source": "sockets",
+      "target": "pins",
+      "via": null,
+      "constraints": [
+        "registrable with a selected group of openings in the center rib",
+        "receptive of the group of pins from opposing bar in first group"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 758,
+        "char_end": 880
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fastening_to_side_ribs",
+      "kind": "connects",
+      "source": "fastening_means",
+      "target": "side_ribs",
+      "via": "side_rib_openings",
+      "constraints": [
+        "penetrating the openings in the side ribs",
+        "for connecting the bars to the side ribs"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1043,
+        "char_end": 1130
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_side_rib_openings",
+      "text": "each side rib having a plurality of openings extending therethrough and arranged in predetermined longitudinally spaced relation to each other",
+      "targets": [
+        "side_ribs",
+        "side_rib_openings"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 148,
+        "char_end": 288
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_center_rib_openings",
+      "text": "the center rib having a plurality of groups of openings extending therethrough and said groups being arranged in predetermined longitudinally spaced relation to each other",
+      "targets": [
+        "center_rib",
+        "center_rib_openings"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 290,
+        "char_end": 459
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_sockets_registrable",
+      "text": "each bar in the second group of bars having a group of sockets in it's end adjacent the center rib registrable with a selected group of openings in the center rib and receptive of the group of pins extending from an opposing bar in the first group of bars",
+      "targets": [
+        "second_group_bars",
+        "sockets",
+        "center_rib_openings",
+        "pins"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 720,
+        "char_end": 881
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_side_rib_aligned_openings",
+      "text": "each side rib having longitudinally spaced groups of openings effectively aligned with the groups of openings in the center rib",
+      "targets": [
+        "side_ribs",
+        "side_rib_openings",
+        "center_rib_openings"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 883,
+        "char_end": 1008
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

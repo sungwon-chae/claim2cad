@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<robot name="transmission_structure_for_an_automotive_vehicle_and_an_engine">
+  <link name="another_end_portion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="differential_housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="end_portions">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="engine">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="one_end_portion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="power_transmitting_device">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="reinforcement_element">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transmission_device">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_housing_to_differential_housing" type="fixed">
+    <parent link="first_housing"/>
+    <child link="differential_housing"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_end_portions" type="fixed">
+    <parent link="first_housing"/>
+    <child link="end_portions"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_engine" type="fixed">
+    <parent link="first_housing"/>
+    <child link="engine"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_one_end_portion" type="fixed">
+    <parent link="first_housing"/>
+    <child link="one_end_portion"/>
+    <origin xyz="0.2400 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_output_shaft" type="fixed">
+    <parent link="first_housing"/>
+    <child link="output_shaft"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_power_transmitting_device" type="fixed">
+    <parent link="first_housing"/>
+    <child link="power_transmitting_device"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_reinforcement_element" type="fixed">
+    <parent link="first_housing"/>
+    <child link="reinforcement_element"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_second_housing" type="fixed">
+    <parent link="first_housing"/>
+    <child link="second_housing"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_housing_to_transmission_device" type="fixed">
+    <parent link="first_housing"/>
+    <child link="transmission_device"/>
+    <origin xyz="0.1200 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_housing_to_another_end_portion" type="fixed">
+    <parent link="second_housing"/>
+    <child link="another_end_portion"/>
+    <origin xyz="0.0000 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

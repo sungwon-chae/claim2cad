@@ -1,0 +1,180 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4106366A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "1",
+      "description": "shaft/rotor body",
+      "approximate_position": [
+        0.67,
+        0.66
+      ]
+    },
+    {
+      "number": "2",
+      "description": "upper conical element",
+      "approximate_position": [
+        0.6,
+        0.5
+      ]
+    },
+    {
+      "number": "2",
+      "description": "lower conical element",
+      "approximate_position": [
+        0.6,
+        0.78
+      ]
+    },
+    {
+      "number": "3",
+      "description": "inclined surface",
+      "approximate_position": [
+        0.58,
+        0.43
+      ]
+    },
+    {
+      "number": "4",
+      "description": "central hub",
+      "approximate_position": [
+        0.49,
+        0.68
+      ]
+    },
+    {
+      "number": "5",
+      "description": "upper pin/roller",
+      "approximate_position": [
+        0.72,
+        0.53
+      ]
+    },
+    {
+      "number": "5",
+      "description": "lower pin/roller",
+      "approximate_position": [
+        0.72,
+        0.8
+      ]
+    },
+    {
+      "number": "6",
+      "description": "disc element",
+      "approximate_position": [
+        0.74,
+        0.57
+      ]
+    },
+    {
+      "number": "7",
+      "description": "output shaft",
+      "approximate_position": [
+        0.8,
+        0.65
+      ]
+    },
+    {
+      "number": "8",
+      "description": "housing flange",
+      "approximate_position": [
+        0.8,
+        0.75
+      ]
+    },
+    {
+      "number": "9",
+      "description": "housing (upper)",
+      "approximate_position": [
+        0.82,
+        0.42
+      ]
+    },
+    {
+      "number": "9",
+      "description": "housing (lower)",
+      "approximate_position": [
+        0.29,
+        0.74
+      ]
+    },
+    {
+      "number": "10,11",
+      "description": "top wall section",
+      "approximate_position": [
+        0.58,
+        0.38
+      ]
+    },
+    {
+      "number": "12",
+      "description": "upper piston",
+      "approximate_position": [
+        0.51,
+        0.38
+      ]
+    },
+    {
+      "number": "13",
+      "description": "upper spring",
+      "approximate_position": [
+        0.48,
+        0.46
+      ]
+    },
+    {
+      "number": "13",
+      "description": "lower spring",
+      "approximate_position": [
+        0.48,
+        0.87
+      ]
+    },
+    {
+      "number": "14",
+      "description": "piston chamber",
+      "approximate_position": [
+        0.45,
+        0.72
+      ]
+    },
+    {
+      "number": "15",
+      "description": "spring element",
+      "approximate_position": [
+        0.41,
+        0.66
+      ]
+    },
+    {
+      "number": "16",
+      "description": "bushing",
+      "approximate_position": [
+        0.32,
+        0.63
+      ]
+    },
+    {
+      "number": "17",
+      "description": "end cap/shaft extension",
+      "approximate_position": [
+        0.28,
+        0.63
+      ]
+    },
+    {
+      "number": "18",
+      "description": "sidewall portion",
+      "approximate_position": [
+        0.35,
+        0.44
+      ]
+    }
+  ],
+  "component_to_number": {},
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

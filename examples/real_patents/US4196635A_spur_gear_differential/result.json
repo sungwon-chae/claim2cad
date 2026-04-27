@@ -1,0 +1,13 @@
+{
+  "patent_id": "US4196635A",
+  "parsed": true,
+  "components_count": 13,
+  "cad_generated": true,
+  "mapping_complete": 1.0,
+  "errors": [],
+  "warnings": [],
+  "quality_grade": "good",
+  "duration_s": 33.88,
+  "title": "Test apparatus for the simultaneous loading of a test sample with longitudinal forces and with torque",
+  "primary_class": "074"
+}

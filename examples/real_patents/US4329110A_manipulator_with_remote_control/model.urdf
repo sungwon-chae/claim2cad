@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<robot name="manipulating_device_for_industrial_robots">
+  <link name="articulated_gripping_arm">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="common_member">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_drive_unit">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_lever_parallelogram">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_member">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gripper_or_tool">
+    <visual>
+      <geometry>
+        <box size="0.022 0.032 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="lever_system">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="pivot_axis">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_drive_unit">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_lever_parallelogram">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_member">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_parallel_member">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="support">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_member">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_member_to_pivot_axis" type="fixed">
+    <parent link="first_member"/>
+    <child link="pivot_axis"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_pivot_axis_to_second_parallel_member" type="fixed">
+    <parent link="pivot_axis"/>
+    <child link="second_parallel_member"/>
+    <origin xyz="-0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_articulated_gripping_arm" type="fixed">
+    <parent link="support"/>
+    <child link="articulated_gripping_arm"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_common_member" type="fixed">
+    <parent link="support"/>
+    <child link="common_member"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_first_drive_unit" type="fixed">
+    <parent link="support"/>
+    <child link="first_drive_unit"/>
+    <origin xyz="0.1800 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_first_lever_parallelogram" type="fixed">
+    <parent link="support"/>
+    <child link="first_lever_parallelogram"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_first_member" type="fixed">
+    <parent link="support"/>
+    <child link="first_member"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_gripper_or_tool" type="fixed">
+    <parent link="support"/>
+    <child link="gripper_or_tool"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_lever_system" type="fixed">
+    <parent link="support"/>
+    <child link="lever_system"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_second_drive_unit" type="fixed">
+    <parent link="support"/>
+    <child link="second_drive_unit"/>
+    <origin xyz="0.2400 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_second_lever_parallelogram" type="fixed">
+    <parent link="support"/>
+    <child link="second_lever_parallelogram"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_second_member" type="fixed">
+    <parent link="support"/>
+    <child link="second_member"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_to_third_member" type="fixed">
+    <parent link="support"/>
+    <child link="third_member"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

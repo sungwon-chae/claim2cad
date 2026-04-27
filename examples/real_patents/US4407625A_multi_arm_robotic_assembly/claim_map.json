@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4407625A_multi_arm_robotic_assembly",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "support_structure",
+      "glb_node_name": "support_structure",
+      "label": "support structure",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 96
+      }
+    },
+    {
+      "component_id": "three_arms",
+      "glb_node_name": "three_arms",
+      "label": "three arms",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 98,
+        "char_end": 108
+      },
+      "figure_number": "12"
+    },
+    {
+      "component_id": "remote_end_portions",
+      "glb_node_name": "remote_end_portions",
+      "label": "remote end portions",
+      "category": "structural",
+      "kind": "end portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 122,
+        "char_end": 141
+      },
+      "figure_number": "24"
+    },
+    {
+      "component_id": "single_location",
+      "glb_node_name": "single_location",
+      "label": "single location",
+      "category": "structural",
+      "kind": "junction",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 174,
+        "char_end": 189
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "workhead",
+      "glb_node_name": "workhead",
+      "label": "workhead",
+      "category": "functional",
+      "kind": "workhead",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 55,
+        "char_end": 63
+      },
+      "figure_number": "18"
+    },
+    {
+      "component_id": "proximate_end_portions",
+      "glb_node_name": "proximate_end_portions",
+      "label": "proximate end portions",
+      "category": "structural",
+      "kind": "end portion",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 368,
+        "char_end": 390
+      }
+    },
+    {
+      "component_id": "gimbaled_connections",
+      "glb_node_name": "gimbaled_connections",
+      "label": "gimbaled connections",
+      "category": "connection",
+      "kind": "gimbal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 391,
+        "char_end": 470
+      },
+      "figure_number": "20"
+    },
+    {
+      "component_id": "driving_means",
+      "glb_node_name": "driving_means",
+      "label": "means for driving each arm axially and independently",
+      "category": "functional",
+      "kind": "drive mechanism",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 527,
+        "char_end": 579
+      }
+    }
+  ]
+}

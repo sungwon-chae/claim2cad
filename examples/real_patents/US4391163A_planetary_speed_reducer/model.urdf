@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<robot name="planetary_gear_assembly">
+  <link name="bearing_means">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_gear_coupling">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="helical_gear_portions">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="housing">
+    <visual>
+      <geometry>
+        <box size="0.06 0.05 0.03"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inner_central_gear">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="input_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="outer_central_internal_gears">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_shaft">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="planetary_gears">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_carrier">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_gear_coupling">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_carrier_to_second_carrier" type="fixed">
+    <parent link="first_carrier"/>
+    <child link="second_carrier"/>
+    <origin xyz="0.1200 -0.2100 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_first_gear_coupling" type="fixed">
+    <parent link="housing"/>
+    <child link="first_gear_coupling"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_helical_gear_portions" type="fixed">
+    <parent link="housing"/>
+    <child link="helical_gear_portions"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_input_shaft" type="fixed">
+    <parent link="housing"/>
+    <child link="input_shaft"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_outer_central_internal_gears" type="fixed">
+    <parent link="housing"/>
+    <child link="outer_central_internal_gears"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_housing_to_second_gear_coupling" type="fixed">
+    <parent link="housing"/>
+    <child link="second_gear_coupling"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_inner_central_gear_to_bearing_means" type="fixed">
+    <parent link="inner_central_gear"/>
+    <child link="bearing_means"/>
+    <origin xyz="0.3000 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_input_shaft_to_first_carrier" type="fixed">
+    <parent link="input_shaft"/>
+    <child link="first_carrier"/>
+    <origin xyz="0.0000 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_input_shaft_to_output_shaft" type="fixed">
+    <parent link="input_shaft"/>
+    <child link="output_shaft"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_outer_central_internal_gears_to_planetary_gears" type="fixed">
+    <parent link="outer_central_internal_gears"/>
+    <child link="planetary_gears"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_planetary_gears_to_inner_central_gear" type="fixed">
+    <parent link="planetary_gears"/>
+    <child link="inner_central_gear"/>
+    <origin xyz="-0.0600 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

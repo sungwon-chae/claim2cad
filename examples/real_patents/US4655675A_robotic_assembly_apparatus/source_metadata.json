@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4655675A",
+  "slug": "robotic_assembly_apparatus",
+  "primary_class": "414",
+  "title": "Articulated robot",
+  "claim_text": "1. An articulated robot comprising: a fixed stand for supporting a robot body; a swivel stand rotatably disposed on said fixed stand; an upper arm which at one end is rotatably connected to said swivel stand; a forearm which at one end is rotatably connected to the other end of said upper arm, said forearm including a first wrist, a second wrist and a third wrist which are sequentially connected to said upper arm along a central axis of said forearm, said first and second wrists being connected along a first pivot axis about which said first and second wrists relatively rotate, center axes of both of said first and second wrists passing through a first common point on said first pivot axis, said second and third wrists being connected along a second pivot axis about which said second and third wrists relatively rotate, center axes of both of said second and third wrists passing through a second common point on said second pivot axis, and having a first driving motor mounted in an inner surface of said first wrist for driving said second wrist, a first reduction gear for directly transmitting the driving force of said first driving motor to said second wrist, and a second driving motor mounted in the inner surface of said second wrist for driving said third wrist, a second reduction gear for directly transmitting the driving force of said second driving motor to said third wrist, wherein said first and second driving motors are disposed on the central axis of said forearm; and an operating part which is connected to said forearm's other end.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/64/18/23/296cfb375233f2/US4655675-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/47/38/1a/9cb477431e38e8/US4655675-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/e7/65/78/e4a26c824e6302/US4655675-drawings-page-4.png"
+  ],
+  "publication_date": "1984-01-18",
+  "fetch_url": "https://patents.google.com/patent/US4655675A/en",
+  "fetched_at": "2026-04-27T19:37:54",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

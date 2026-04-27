@@ -1,0 +1,20 @@
+{
+  "patent_id": "US4329110A",
+  "slug": "manipulator_with_remote_control",
+  "primary_class": "414",
+  "title": "Manipulating device, particularly for industrial robots",
+  "claim_text": "1. A manipulating device, particularly for industrial robots, comprising an articulated gripping arm located on and extending from a support, said articulated gripping arm comprising a lever system having at least first, second and third members pivotally connected and mounted with the pivot axes parallel to each other, said first member being pivotally connected to the support, said manipulating device further comprising at least one first and one second drive unit to move said members to predetermined angular relationships with respect to the support, and at least one gripper or tool mounted on the third member, and having the improvement which consists in that the first member (11) forms part of a first lever parallelogram (31); in that the second (13) and third (15) members form part of a second lever parallelogram (33) having a member (35) in common with the first lever parallelogram (31), and in that two members (11,37) of said first lever parallelogram (31) have the same pivot axis (51) on the support (17) and in that said two members (11,37) are in operative connection, respectively with said first and second drive units (63,65), each of which drive units is mounted on said support (17).",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/c7/38/e2/97554d8702278e/US4329110-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/35/b9/57/50a147830dfa89/US4329110-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/8b/99/88/d1344d447ce1e3/US4329110-drawings-page-4.png"
+  ],
+  "publication_date": "1980-08-12",
+  "fetch_url": "https://patents.google.com/patent/US4329110A/en",
+  "fetched_at": "2026-04-27T19:37:14",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

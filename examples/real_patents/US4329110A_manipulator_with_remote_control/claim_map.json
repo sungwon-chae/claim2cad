@@ -1,0 +1,200 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4329110A_manipulator_with_remote_control",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "support",
+      "glb_node_name": "support",
+      "label": "support",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 131,
+        "char_end": 138
+      },
+      "figure_number": "17"
+    },
+    {
+      "component_id": "articulated_gripping_arm",
+      "glb_node_name": "articulated_gripping_arm",
+      "label": "articulated gripping arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 74,
+        "char_end": 97
+      }
+    },
+    {
+      "component_id": "lever_system",
+      "glb_node_name": "lever_system",
+      "label": "lever system",
+      "category": "structural",
+      "kind": "lever_system",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 183,
+        "char_end": 195
+      }
+    },
+    {
+      "component_id": "first_member",
+      "glb_node_name": "first_member",
+      "label": "first member (11)",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 227
+      },
+      "figure_number": "35"
+    },
+    {
+      "component_id": "second_member",
+      "glb_node_name": "second_member",
+      "label": "second member (13)",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 218,
+        "char_end": 224
+      },
+      "figure_number": "35"
+    },
+    {
+      "component_id": "third_member",
+      "glb_node_name": "third_member",
+      "label": "third member (15)",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 229,
+        "char_end": 241
+      },
+      "figure_number": "35"
+    },
+    {
+      "component_id": "first_drive_unit",
+      "glb_node_name": "first_drive_unit",
+      "label": "first drive unit (63)",
+      "category": "functional",
+      "kind": "drive_unit",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 436,
+        "char_end": 451
+      },
+      "figure_number": "63"
+    },
+    {
+      "component_id": "second_drive_unit",
+      "glb_node_name": "second_drive_unit",
+      "label": "second drive unit (65)",
+      "category": "functional",
+      "kind": "drive_unit",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 456,
+        "char_end": 472
+      },
+      "figure_number": "63"
+    },
+    {
+      "component_id": "gripper_or_tool",
+      "glb_node_name": "gripper_or_tool",
+      "label": "gripper or tool",
+      "category": "functional",
+      "kind": "end_effector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 585
+      }
+    },
+    {
+      "component_id": "first_lever_parallelogram",
+      "glb_node_name": "first_lever_parallelogram",
+      "label": "first lever parallelogram (31)",
+      "category": "structural",
+      "kind": "parallelogram_linkage",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 714,
+        "char_end": 742
+      },
+      "figure_number": "31"
+    },
+    {
+      "component_id": "second_lever_parallelogram",
+      "glb_node_name": "second_lever_parallelogram",
+      "label": "second lever parallelogram (33)",
+      "category": "structural",
+      "kind": "parallelogram_linkage",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 807,
+        "char_end": 836
+      },
+      "figure_number": "33"
+    },
+    {
+      "component_id": "common_member",
+      "glb_node_name": "common_member",
+      "label": "common member (35)",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 847,
+        "char_end": 858
+      },
+      "figure_number": "35"
+    },
+    {
+      "component_id": "second_parallel_member",
+      "glb_node_name": "second_parallel_member",
+      "label": "second parallel member (37) of first lever parallelogram",
+      "category": "structural",
+      "kind": "link",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 913,
+        "char_end": 919
+      },
+      "figure_number": "31"
+    },
+    {
+      "component_id": "pivot_axis",
+      "glb_node_name": "pivot_axis",
+      "label": "pivot axis (51)",
+      "category": "connection",
+      "kind": "pivot_axis",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 953,
+        "char_end": 964
+      },
+      "figure_number": "51"
+    }
+  ]
+}

@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/data.ts","./src/main.tsx","./src/types.ts","./src/components/claimpanel.tsx","./src/components/scene.tsx"],"version":"5.6.3"}
+{"root":["./src/app.tsx","./src/data.ts","./src/main.tsx","./src/types.ts","./src/urdf.ts","./src/components/claimpanel.tsx","./src/components/figurepanel.tsx","./src/components/kinematicsliders.tsx","./src/components/priorartoverlay.tsx","./src/components/scene.tsx"],"version":"5.6.3"}

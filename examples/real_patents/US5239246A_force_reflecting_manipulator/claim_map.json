@@ -1,0 +1,256 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US5239246A_force_reflecting_manipulator",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "hand_controller",
+      "glb_node_name": "hand_controller",
+      "label": "force-reflecting hand controller",
+      "category": "structural",
+      "kind": "hand_controller",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 100,
+        "char_end": 132
+      }
+    },
+    {
+      "component_id": "means_transmitting_hc",
+      "glb_node_name": "means_transmitting_hc",
+      "label": "means for transmitting commanded position signal HC from hand controller",
+      "category": "functional",
+      "kind": "signal_transmitter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 365,
+        "char_end": 463
+      }
+    },
+    {
+      "component_id": "commanded_position_signal_hc",
+      "glb_node_name": "commanded_position_signal_hc",
+      "label": "commanded position signal HC",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 408,
+        "char_end": 447
+      }
+    },
+    {
+      "component_id": "robot_arm",
+      "glb_node_name": "robot_arm",
+      "label": "robot arm",
+      "category": "structural",
+      "kind": "robot_arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 35,
+        "char_end": 44
+      },
+      "figure_number": "11"
+    },
+    {
+      "component_id": "robot_servo_system",
+      "glb_node_name": "robot_servo_system",
+      "label": "robot servo system",
+      "category": "functional",
+      "kind": "servo_system",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 466,
+        "char_end": 486
+      }
+    },
+    {
+      "component_id": "servo_control_input_signal",
+      "glb_node_name": "servo_control_input_signal",
+      "label": "servo control input signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 524,
+        "char_end": 550
+      }
+    },
+    {
+      "component_id": "actual_position_signal",
+      "glb_node_name": "actual_position_signal",
+      "label": "signal representative of actual position of robot arm",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 616,
+        "char_end": 678
+      }
+    },
+    {
+      "component_id": "signal_mixer",
+      "glb_node_name": "signal_mixer",
+      "label": "signal mixer",
+      "category": "structural",
+      "kind": "signal_mixer",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 681,
+        "char_end": 693
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "actual_servo_control_signal",
+      "glb_node_name": "actual_servo_control_signal",
+      "label": "actual servo control signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 843,
+        "char_end": 870
+      }
+    },
+    {
+      "component_id": "compliance_control_feedback_gain",
+      "glb_node_name": "compliance_control_feedback_gain",
+      "label": "compliance control feedback gain G cc",
+      "category": "functional",
+      "kind": "gain_parameter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 988,
+        "char_end": 1023
+      }
+    },
+    {
+      "component_id": "means_sensing_contact_force",
+      "glb_node_name": "means_sensing_contact_force",
+      "label": "means for sensing contact force",
+      "category": "functional",
+      "kind": "force_sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1064,
+        "char_end": 1094
+      }
+    },
+    {
+      "component_id": "contact_force_signal",
+      "glb_node_name": "contact_force_signal",
+      "label": "contact force signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1136,
+        "char_end": 1156
+      }
+    },
+    {
+      "component_id": "low_pass_filter",
+      "glb_node_name": "low_pass_filter",
+      "label": "low-pass filter",
+      "category": "structural",
+      "kind": "filter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1253,
+        "char_end": 1268
+      }
+    },
+    {
+      "component_id": "low_pass_filtered_contact_force_signal",
+      "glb_node_name": "low_pass_filtered_contact_force_signal",
+      "label": "low-pass filtered contact force signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 799,
+        "char_end": 837
+      }
+    },
+    {
+      "component_id": "means_producing_force_reflection",
+      "glb_node_name": "means_producing_force_reflection",
+      "label": "means for producing force reflection signal",
+      "category": "functional",
+      "kind": "signal_processor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1391,
+        "char_end": 1433
+      }
+    },
+    {
+      "component_id": "force_reflection_signal",
+      "glb_node_name": "force_reflection_signal",
+      "label": "force reflection signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1433,
+        "char_end": 1456
+      }
+    },
+    {
+      "component_id": "means_transmitting_force_reflection",
+      "glb_node_name": "means_transmitting_force_reflection",
+      "label": "means for transmitting force reflection signal to hand controller",
+      "category": "functional",
+      "kind": "signal_transmitter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1645,
+        "char_end": 1686
+      }
+    },
+    {
+      "component_id": "gain_gps",
+      "glb_node_name": "gain_gps",
+      "label": "gain G ps",
+      "category": "functional",
+      "kind": "gain_parameter",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 454,
+        "char_end": 462
+      }
+    },
+    {
+      "component_id": "following_commanded_position_signal",
+      "glb_node_name": "following_commanded_position_signal",
+      "label": "following commanded position signal",
+      "category": "functional",
+      "kind": "signal",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1748,
+        "char_end": 1783
+      }
+    }
+  ]
+}

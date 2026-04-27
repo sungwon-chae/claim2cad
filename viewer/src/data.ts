@@ -1,4 +1,11 @@
-import type { ClaimIR, ClaimMap, Manifest, ManifestExample } from "./types";
+import type {
+  ClaimIR,
+  ClaimMap,
+  FigureMap,
+  Manifest,
+  ManifestExample,
+  PriorArtDiff,
+} from "./types";
 
 const dataBase = "/data";
 
@@ -10,23 +17,50 @@ export async function loadManifest(): Promise<Manifest> {
   return (await res.json()) as Manifest;
 }
 
-export async function loadExample(example: ManifestExample): Promise<{
+export type LoadedExample = {
   claimText: string;
   ir: ClaimIR;
   claimMap: ClaimMap;
   glbUrl: string;
-}> {
+  figureMap: FigureMap | null;
+  figureImageUrl: string | null;
+};
+
+export async function loadExample(example: ManifestExample): Promise<LoadedExample> {
+  const baseUrl = `${dataBase}/${example.base}`;
   const [claimText, ir, claimMap] = await Promise.all([
-    fetchText(`${dataBase}/${example.base}/${example.claim_text_path}`),
-    fetchJson<ClaimIR>(`${dataBase}/${example.base}/${example.ir_path}`),
-    fetchJson<ClaimMap>(`${dataBase}/${example.base}/${example.claim_map_path}`),
+    fetchText(`${baseUrl}/${example.claim_text_path}`),
+    fetchJson<ClaimIR>(`${baseUrl}/${example.ir_path}`),
+    fetchJson<ClaimMap>(`${baseUrl}/${example.claim_map_path}`),
   ]);
+
+  let figureMap: FigureMap | null = null;
+  if (example.figure_map_path) {
+    try {
+      figureMap = await fetchJson<FigureMap>(`${baseUrl}/${example.figure_map_path}`);
+    } catch (err) {
+      console.warn(`figure_map.json missing for ${example.id}:`, err);
+    }
+  }
+  const figureImageUrl = example.figure_image_path
+    ? `${baseUrl}/${example.figure_image_path}`
+    : null;
+
   return {
     claimText,
     ir,
     claimMap,
-    glbUrl: `${dataBase}/${example.base}/${example.glb_path}`,
+    glbUrl: `${baseUrl}/${example.glb_path}`,
+    figureMap,
+    figureImageUrl,
   };
+}
+
+export async function loadDiff(
+  example: ManifestExample,
+  diffPath: string
+): Promise<PriorArtDiff> {
+  return fetchJson<PriorArtDiff>(`${dataBase}/${example.base}/${diffPath}`);
 }
 
 async function fetchText(url: string): Promise<string> {

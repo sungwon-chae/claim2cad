@@ -1,0 +1,696 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Articulated robot",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. An articulated robot comprising: a fixed stand for supporting a robot body; a swivel stand rotatably disposed on said fixed stand; an upper arm which at one end is rotatably connected to said swivel stand; a forearm which at one end is rotatably connected to the other end of said upper arm, said forearm including a first wrist, a second wrist and a third wrist which are sequentially connected to said upper arm along a central axis of said forearm, said first and second wrists being connected along a first pivot axis about which said first and second wrists relatively rotate, center axes of both of said first and second wrists passing through a first common point on said first pivot axis, said second and third wrists being connected along a second pivot axis about which said second and third wrists relatively rotate, center axes of both of said second and third wrists passing through a second common point on said second pivot axis, and having a first driving motor mounted in an inner surface of said first wrist for driving said second wrist, a first reduction gear for directly transmitting the driving force of said first driving motor to said second wrist, and a second driving motor mounted in the inner surface of said second wrist for driving said third wrist, a second reduction gear for directly transmitting the driving force of said second driving motor to said third wrist, wherein said first and second driving motors are disposed on the central axis of said forearm; and an operating part which is connected to said forearm's other end.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "fixed_stand",
+      "label": "fixed stand",
+      "category": "structural",
+      "kind": "stand",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "supports robot body"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 37,
+        "char_end": 48
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "robot_body",
+      "label": "robot body",
+      "category": "structural",
+      "kind": "body",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 65,
+        "char_end": 75
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "swivel_stand",
+      "label": "swivel stand",
+      "category": "structural",
+      "kind": "stand",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably disposed on fixed stand"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 91
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "upper_arm",
+      "label": "upper arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably connected to swivel stand at one end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 134,
+        "char_end": 143
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "forearm",
+      "label": "forearm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably connected to upper arm at one end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 210,
+        "char_end": 217
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "central_axis",
+      "label": "central axis of forearm",
+      "category": "functional",
+      "kind": "axis",
+      "parent_id": "forearm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 433,
+        "char_end": 456
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_wrist",
+      "label": "first wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "parent_id": "forearm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "sequentially connected to upper arm along central axis of forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 319,
+        "char_end": 330
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_wrist",
+      "label": "second wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "parent_id": "forearm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "sequentially connected along central axis of forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 334,
+        "char_end": 346
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "third_wrist",
+      "label": "third wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "parent_id": "forearm",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "sequentially connected along central axis of forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 353,
+        "char_end": 364
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_pivot_axis",
+      "label": "first pivot axis",
+      "category": "functional",
+      "kind": "axis",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "first and second wrists connected along this axis",
+        "center axes of first and second wrists pass through first common point on this axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 524,
+        "char_end": 540
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.42,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_common_point",
+      "label": "first common point",
+      "category": "functional",
+      "kind": "point",
+      "parent_id": "first_pivot_axis",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "center axes of first and second wrists pass through this point"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 624,
+        "char_end": 642
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "25",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5499999999999999,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_pivot_axis",
+      "label": "second pivot axis",
+      "category": "functional",
+      "kind": "axis",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "second and third wrists connected along this axis",
+        "center axes of second and third wrists pass through second common point on this axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 730,
+        "char_end": 747
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_common_point",
+      "label": "second common point",
+      "category": "functional",
+      "kind": "point",
+      "parent_id": "second_pivot_axis",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "center axes of second and third wrists pass through this point"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 833,
+        "char_end": 852
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_driving_motor",
+      "label": "first driving motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": "first_wrist",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted in inner surface of first wrist",
+        "disposed on central axis of forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 883,
+        "char_end": 902
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_reduction_gear",
+      "label": "first reduction gear",
+      "category": "functional",
+      "kind": "gear",
+      "parent_id": "first_wrist",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "directly transmits driving force of first driving motor to second wrist"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 941,
+        "char_end": 961
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_driving_motor",
+      "label": "second driving motor",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": "second_wrist",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounted in inner surface of second wrist",
+        "disposed on central axis of forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1022,
+        "char_end": 1042
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_reduction_gear",
+      "label": "second reduction gear",
+      "category": "functional",
+      "kind": "gear",
+      "parent_id": "second_wrist",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "directly transmits driving force of second driving motor to third wrist"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1088,
+        "char_end": 1109
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "operating_part",
+      "label": "operating part",
+      "category": "functional",
+      "kind": "end_effector",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "connected to forearm's other end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1213,
+        "char_end": 1227
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.82,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_swivel_on_fixed",
+      "kind": "rotates_about",
+      "source": "swivel_stand",
+      "target": "fixed_stand",
+      "via": null,
+      "constraints": [
+        "rotatably disposed"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 131
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_fixed_supports_body",
+      "kind": "contains",
+      "source": "fixed_stand",
+      "target": "robot_body",
+      "via": null,
+      "constraints": [
+        "supporting"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 37,
+        "char_end": 75
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_upper_arm_to_swivel",
+      "kind": "connects",
+      "source": "upper_arm",
+      "target": "swivel_stand",
+      "via": null,
+      "constraints": [
+        "rotatably connected at one end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 134,
+        "char_end": 207
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_forearm_to_upper_arm",
+      "kind": "connects",
+      "source": "forearm",
+      "target": "upper_arm",
+      "via": null,
+      "constraints": [
+        "rotatably connected at one end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 210,
+        "char_end": 294
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_wrists_in_forearm",
+      "kind": "contains",
+      "source": "forearm",
+      "target": "first_wrist",
+      "via": null,
+      "constraints": [
+        "sequentially connected along central axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 296,
+        "char_end": 460
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_second_wrist",
+      "kind": "rotates_about",
+      "source": "second_wrist",
+      "target": "first_wrist",
+      "via": "first_pivot_axis",
+      "constraints": [
+        "connected along first pivot axis",
+        "center axes pass through first common point"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 461,
+        "char_end": 654
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_third_wrist",
+      "kind": "rotates_about",
+      "source": "third_wrist",
+      "target": "second_wrist",
+      "via": "second_pivot_axis",
+      "constraints": [
+        "connected along second pivot axis",
+        "center axes pass through second common point"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 656,
+        "char_end": 872
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_motor_in_first_wrist",
+      "kind": "attached_to",
+      "source": "first_driving_motor",
+      "target": "first_wrist",
+      "via": null,
+      "constraints": [
+        "mounted in inner surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 883,
+        "char_end": 938
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_motor_drives_second_wrist",
+      "kind": "transmits_force_to",
+      "source": "first_driving_motor",
+      "target": "second_wrist",
+      "via": "first_reduction_gear",
+      "constraints": [
+        "directly transmitting driving force"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 941,
+        "char_end": 1018
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_motor_in_second_wrist",
+      "kind": "attached_to",
+      "source": "second_driving_motor",
+      "target": "second_wrist",
+      "via": null,
+      "constraints": [
+        "mounted in inner surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1022,
+        "char_end": 1085
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_motor_drives_third_wrist",
+      "kind": "transmits_force_to",
+      "source": "second_driving_motor",
+      "target": "third_wrist",
+      "via": "second_reduction_gear",
+      "constraints": [
+        "directly transmitting driving force"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1088,
+        "char_end": 1159
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_operating_part_to_forearm",
+      "kind": "attached_to",
+      "source": "operating_part",
+      "target": "forearm",
+      "via": null,
+      "constraints": [
+        "connected to forearm's other end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1213,
+        "char_end": 1261
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_motors_on_central_axis",
+      "text": "wherein said first and second driving motors are disposed on the central axis of said forearm",
+      "targets": [
+        "first_driving_motor",
+        "second_driving_motor",
+        "central_axis"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1161,
+        "char_end": 1253
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

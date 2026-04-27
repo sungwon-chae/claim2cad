@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<robot name="method_of_automatic_limitation_for_one_controlled_variable_of_a_multivariable_controlled_object">
+  <link name="closed_loop">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="control_means">
+    <visual>
+      <geometry>
+        <box size="0.03 0.024 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="controlled_variable">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="limited_level">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="multivariable_controlled_object">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="preestablished_deviation">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="set_point">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_control_means_to_closed_loop" type="fixed">
+    <parent link="control_means"/>
+    <child link="closed_loop"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_control_means_to_controlled_variable" type="fixed">
+    <parent link="control_means"/>
+    <child link="controlled_variable"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_control_means_to_limited_level" type="fixed">
+    <parent link="control_means"/>
+    <child link="limited_level"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_control_means_to_multivariable_controlled_object" type="fixed">
+    <parent link="control_means"/>
+    <child link="multivariable_controlled_object"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_control_means_to_preestablished_deviation" type="fixed">
+    <parent link="control_means"/>
+    <child link="preestablished_deviation"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_control_means_to_set_point" type="fixed">
+    <parent link="control_means"/>
+    <child link="set_point"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

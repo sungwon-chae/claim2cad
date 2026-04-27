@@ -1,0 +1,245 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4856377A_planetary_drive_apparatus",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "gear_case_housing",
+      "glb_node_name": "gear_case_housing",
+      "label": "gear case housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 75,
+        "char_end": 92
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "engine_housing",
+      "glb_node_name": "engine_housing",
+      "label": "engine housing",
+      "category": "structural",
+      "kind": "housing",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 105,
+        "char_end": 119
+      },
+      "figure_number": "12"
+    },
+    {
+      "component_id": "ring_gear_means",
+      "glb_node_name": "ring_gear_means",
+      "label": "ring gear means",
+      "category": "structural",
+      "kind": "ring_gear_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 121,
+        "char_end": 136
+      },
+      "figure_number": "14"
+    },
+    {
+      "component_id": "first_ring_gear_member",
+      "glb_node_name": "first_ring_gear_member",
+      "label": "first ring gear member",
+      "category": "structural",
+      "kind": "ring_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 147,
+        "char_end": 171
+      },
+      "figure_number": "16"
+    },
+    {
+      "component_id": "second_ring_gear_member",
+      "glb_node_name": "second_ring_gear_member",
+      "label": "second ring gear member",
+      "category": "structural",
+      "kind": "ring_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 173,
+        "char_end": 198
+      },
+      "figure_number": "18"
+    },
+    {
+      "component_id": "first_stage_assembly",
+      "glb_node_name": "first_stage_assembly",
+      "label": "first stage planetary gear assembly",
+      "category": "structural",
+      "kind": "planetary_gear_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 209,
+        "char_end": 244
+      },
+      "figure_number": "20"
+    },
+    {
+      "component_id": "first_sun_gear",
+      "glb_node_name": "first_sun_gear",
+      "label": "first sun gear",
+      "category": "structural",
+      "kind": "sun_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 256,
+        "char_end": 270
+      },
+      "figure_number": "22"
+    },
+    {
+      "component_id": "engine_output_shaft",
+      "glb_node_name": "engine_output_shaft",
+      "label": "engine output shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 282,
+        "char_end": 301
+      },
+      "figure_number": "24"
+    },
+    {
+      "component_id": "first_planetary_carrier",
+      "glb_node_name": "first_planetary_carrier",
+      "label": "first planetary carrier",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 305,
+        "char_end": 328
+      },
+      "figure_number": "26"
+    },
+    {
+      "component_id": "first_planetary_pinion",
+      "glb_node_name": "first_planetary_pinion",
+      "label": "first planetary pinion",
+      "category": "structural",
+      "kind": "planetary_pinion_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 362,
+        "char_end": 384
+      },
+      "figure_number": "28"
+    },
+    {
+      "component_id": "second_stage_assembly",
+      "glb_node_name": "second_stage_assembly",
+      "label": "second stage planetary gear assembly",
+      "category": "structural",
+      "kind": "planetary_gear_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 489,
+        "char_end": 525
+      },
+      "figure_number": "30"
+    },
+    {
+      "component_id": "second_sun_gear",
+      "glb_node_name": "second_sun_gear",
+      "label": "second sun gear",
+      "category": "structural",
+      "kind": "sun_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 537,
+        "char_end": 552
+      },
+      "figure_number": "32"
+    },
+    {
+      "component_id": "second_planetary_carrier",
+      "glb_node_name": "second_planetary_carrier",
+      "label": "second planetary carrier",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 575,
+        "char_end": 599
+      },
+      "figure_number": "34"
+    },
+    {
+      "component_id": "propeller_shaft",
+      "glb_node_name": "propeller_shaft",
+      "label": "propeller shaft",
+      "category": "structural",
+      "kind": "shaft",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 611,
+        "char_end": 626
+      },
+      "figure_number": "36"
+    },
+    {
+      "component_id": "second_planetary_pinion_gears",
+      "glb_node_name": "second_planetary_pinion_gears",
+      "label": "second planetary pinion gears",
+      "category": "structural",
+      "kind": "planetary_pinion_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 628,
+        "char_end": 657
+      },
+      "figure_number": "38"
+    },
+    {
+      "component_id": "similar_carrier",
+      "glb_node_name": "similar_carrier",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "category": "structural",
+      "kind": "planetary_carrier",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 789,
+        "char_end": 872
+      },
+      "figure_number": "40"
+    },
+    {
+      "component_id": "supplementary_pinion_gears",
+      "glb_node_name": "supplementary_pinion_gears",
+      "label": "supplementary pinion gears",
+      "category": "structural",
+      "kind": "pinion_gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 836,
+        "char_end": 862
+      },
+      "figure_number": "42"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "patent_id": "US4106366A",
+  "slug": "automotive_planetary_gearbox",
+  "primary_class": "074",
+  "title": "Planetary gear",
+  "claim_text": "1. A planetary drive comprising: a sun gear; an internal gear; at least two planet gears having teeth and being in engagement with said sun gear and said internal gear, said sun gear and said internal gears are axially movable with respect to the planet gears; a planet link connecting said planet gears; at least one of said sun gear, said planet link, and said internal gear being radially movable for equalizing the load; said sun gear, said internal gear and said planet gears having beveled spur gear teeth, with the bevel of said sun gear and of said internal gears matching the bevel of said planet gears; and means for axially urging said sun gear and internal gear into engagement with said planet gears.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/17/75/71/b699e3476c653c/US4106366-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/4e/f4/50/7c03a31ec33f5d/US4106366-drawings-page-3.png"
+  ],
+  "publication_date": "1976-11-26",
+  "fetch_url": "https://patents.google.com/patent/US4106366A/en",
+  "fetched_at": "2026-04-27T19:39:04",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png"
+  ]
+}

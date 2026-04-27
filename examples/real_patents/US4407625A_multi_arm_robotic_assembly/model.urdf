@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<robot name="robotic_manipulator_for_automatically_positioning_a_workhead">
+  <link name="driving_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gimbaled_connections">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="proximate_end_portions">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="remote_end_portions">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="single_location">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="support_structure">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="three_arms">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="workhead">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_support_structure_to_driving_means" type="fixed">
+    <parent link="support_structure"/>
+    <child link="driving_means"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_gimbaled_connections" type="fixed">
+    <parent link="support_structure"/>
+    <child link="gimbaled_connections"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_proximate_end_portions" type="fixed">
+    <parent link="support_structure"/>
+    <child link="proximate_end_portions"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_remote_end_portions" type="fixed">
+    <parent link="support_structure"/>
+    <child link="remote_end_portions"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_single_location" type="fixed">
+    <parent link="support_structure"/>
+    <child link="single_location"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_three_arms" type="fixed">
+    <parent link="support_structure"/>
+    <child link="three_arms"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_support_structure_to_workhead" type="fixed">
+    <parent link="support_structure"/>
+    <child link="workhead"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

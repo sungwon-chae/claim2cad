@@ -1,0 +1,103 @@
+{
+  "base_patent": "planetary_gear",
+  "comparison_patent": "US3705522A_planetary_gear_with_idler",
+  "matched": [
+    {
+      "base_id": "ring_gear",
+      "base_label": "ring gear",
+      "comparison_id": "second_ring_gear",
+      "comparison_label": "second ring gear",
+      "score": 0.87,
+      "category": "structural",
+      "kind_base": "frame",
+      "kind_comparison": "ring_gear"
+    },
+    {
+      "base_id": "carrier",
+      "base_label": "carrier",
+      "comparison_id": "planet_carrier_means",
+      "comparison_label": "planet carrier means",
+      "score": 0.87,
+      "category": "structural",
+      "kind_base": "block",
+      "kind_comparison": "carrier"
+    },
+    {
+      "base_id": "first_planet_gear",
+      "base_label": "first planet gear",
+      "comparison_id": "first_ring_gear",
+      "comparison_label": "first ring gear",
+      "score": 0.77,
+      "category": "structural",
+      "kind_base": "frame",
+      "kind_comparison": "ring_gear"
+    },
+    {
+      "base_id": "second_planet_gear",
+      "base_label": "second planet gear",
+      "comparison_id": "second_planet_pinion",
+      "comparison_label": "second planet pinion",
+      "score": 0.757,
+      "category": "structural",
+      "kind_base": "frame",
+      "kind_comparison": "planet_pinion"
+    },
+    {
+      "base_id": "third_planet_gear",
+      "base_label": "third planet gear",
+      "comparison_id": "third_planet_pinion",
+      "comparison_label": "third planet pinion",
+      "score": 0.742,
+      "category": "structural",
+      "kind_base": "frame",
+      "kind_comparison": "planet_pinion"
+    }
+  ],
+  "novel_in_base": [
+    {
+      "id": "sun_gear",
+      "label": "sun gear",
+      "category": "structural",
+      "kind": "frame"
+    }
+  ],
+  "only_in_comparison": [
+    {
+      "id": "first_mounting_means",
+      "label": "first mounting means",
+      "category": "structural",
+      "kind": "mounting"
+    },
+    {
+      "id": "first_planet_pinion",
+      "label": "first planet pinion",
+      "category": "structural",
+      "kind": "planet_pinion"
+    },
+    {
+      "id": "housing",
+      "label": "stationary housing",
+      "category": "structural",
+      "kind": "housing"
+    },
+    {
+      "id": "input_shaft",
+      "label": "input shaft",
+      "category": "structural",
+      "kind": "shaft"
+    },
+    {
+      "id": "output_shaft",
+      "label": "output shaft",
+      "category": "structural",
+      "kind": "shaft"
+    },
+    {
+      "id": "second_mounting_means",
+      "label": "second mounting means",
+      "category": "structural",
+      "kind": "mounting"
+    }
+  ],
+  "notes": []
+}

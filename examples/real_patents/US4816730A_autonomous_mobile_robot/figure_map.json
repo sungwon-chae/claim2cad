@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4816730A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "110",
+      "description": "top panel/cover",
+      "approximate_position": [
+        0.47,
+        0.32
+      ]
+    },
+    {
+      "number": "103",
+      "description": "grill or vent panel",
+      "approximate_position": [
+        0.47,
+        0.37
+      ]
+    },
+    {
+      "number": "102",
+      "description": "housing side",
+      "approximate_position": [
+        0.47,
+        0.44
+      ]
+    },
+    {
+      "number": "109",
+      "description": "keypad",
+      "approximate_position": [
+        0.47,
+        0.5
+      ]
+    },
+    {
+      "number": "101",
+      "description": "base/front panel",
+      "approximate_position": [
+        0.47,
+        0.58
+      ]
+    },
+    {
+      "number": "107",
+      "description": "component on container",
+      "approximate_position": [
+        0.36,
+        0.44
+      ]
+    },
+    {
+      "number": "104",
+      "description": "cylindrical container",
+      "approximate_position": [
+        0.36,
+        0.5
+      ]
+    },
+    {
+      "number": "105",
+      "description": "part at lower left",
+      "approximate_position": [
+        0.6,
+        0.44
+      ]
+    },
+    {
+      "number": "106",
+      "description": "arm/element",
+      "approximate_position": [
+        0.6,
+        0.48
+      ]
+    },
+    {
+      "number": "100",
+      "description": "lower cylindrical component",
+      "approximate_position": [
+        0.6,
+        0.52
+      ]
+    },
+    {
+      "number": "108",
+      "description": "display area",
+      "approximate_position": [
+        0.6,
+        0.58
+      ]
+    }
+  ],
+  "component_to_number": {
+    "robotic_arm_assembly": "106",
+    "data_input_means": "109",
+    "cone": "100"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "patent_id": "US4762016A",
+  "parsed": true,
+  "components_count": 13,
+  "cad_generated": true,
+  "mapping_complete": 1.0,
+  "errors": [],
+  "warnings": [],
+  "quality_grade": "good",
+  "duration_s": 27.4,
+  "title": "Robotic manipulator having three degrees of freedom",
+  "primary_class": "901"
+}

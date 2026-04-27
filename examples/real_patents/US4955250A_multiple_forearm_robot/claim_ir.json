@@ -1,0 +1,743 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Robotic elbow configuration apparatus",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A robotic elbow configuration apparatus comprising: a main arm having a first side and an opposing side; an upper forearm rotatably attached for support to said first side of said main arm and adapted to rotate coplanarly with said main arm; a lower forearm rotatably attached to said opposing side of said main arm and adapted to rotate coplanarly with said main arm and said upper forearm, said lower forearm capable of movement and operating independent of said upper forearm; a first modular actuator assembly carried by said upper forearm for moving said upper forearm; and a second modular actuator assembly having the same structure as said first modular actuator assembly carried by said lower forearm for moving said lower forearm; each of said first and second modular actuator assemblies comprising: an actuator canister within said modular actuator assembly having a motor means; a shaft means turned by said motor means; a gearing means in operative connection with said shaft means; a position referencing means in operative connection with said shaft means for determining position; a spindle within said modular actuator assembly for receiving said actuator canister having a bearing means on which bearing means said actuator assembly rotates; and an output hub means in operative connection with said gearing means for moving a forearm attached to said actuator assembly.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "main_arm",
+      "label": "main arm",
+      "category": "structural",
+      "kind": "arm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having a first side and an opposing side"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 56,
+        "char_end": 107
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.37,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upper_forearm",
+      "label": "upper forearm",
+      "category": "structural",
+      "kind": "forearm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably attached for support to first side of main arm",
+        "adapted to rotate coplanarly with main arm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 122
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower_forearm",
+      "label": "lower forearm",
+      "category": "structural",
+      "kind": "forearm",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "rotatably attached to opposing side of main arm",
+        "adapted to rotate coplanarly with main arm and upper forearm",
+        "capable of movement and operating independent of upper forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 243,
+        "char_end": 256
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.54,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_modular_actuator_assembly",
+      "label": "first modular actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "carried by upper forearm",
+        "for moving upper forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 511
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.6799999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_modular_actuator_assembly",
+      "label": "second modular actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "having the same structure as first modular actuator assembly",
+        "carried by lower forearm",
+        "for moving lower forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 603
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "actuator_canister",
+      "label": "actuator canister",
+      "category": "structural",
+      "kind": "canister",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "within modular actuator assembly",
+        "having a motor means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 787,
+        "char_end": 804
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.3,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motor_means",
+      "label": "motor means",
+      "category": "functional",
+      "kind": "motor",
+      "parent_id": "actuator_canister",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 830,
+        "char_end": 841
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.31,
+            0.85,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shaft_means",
+      "label": "shaft means",
+      "category": "structural",
+      "kind": "shaft",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "turned by motor means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 843,
+        "char_end": 854
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6799999999999999,
+            0.9,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gearing_means",
+      "label": "gearing means",
+      "category": "functional",
+      "kind": "gear",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in operative connection with shaft means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 877,
+        "char_end": 890
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.32,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "position_referencing_means",
+      "label": "position referencing means",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in operative connection with shaft means",
+        "for determining position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 931,
+        "char_end": 957
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.53,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spindle",
+      "label": "spindle",
+      "category": "structural",
+      "kind": "spindle",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "within modular actuator assembly",
+        "for receiving actuator canister"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1008,
+        "char_end": 1015
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bearing_means",
+      "label": "bearing means",
+      "category": "connection",
+      "kind": "bearing",
+      "parent_id": "spindle",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "actuator assembly rotates on bearing means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1068,
+        "char_end": 1081
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.29,
+            0.58,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "output_hub_means",
+      "label": "output hub means",
+      "category": "functional",
+      "kind": "hub",
+      "parent_id": "first_modular_actuator_assembly",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "in operative connection with gearing means",
+        "for moving a forearm attached to actuator assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1113,
+        "char_end": 1129
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.66,
+            0.58,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_upper_forearm_to_main_arm",
+      "kind": "attached_to",
+      "source": "upper_forearm",
+      "target": "main_arm",
+      "via": null,
+      "constraints": [
+        "rotatably attached for support to first side"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 109,
+        "char_end": 192
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_lower_forearm_to_main_arm",
+      "kind": "attached_to",
+      "source": "lower_forearm",
+      "target": "main_arm",
+      "via": null,
+      "constraints": [
+        "rotatably attached to opposing side"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 243,
+        "char_end": 320
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_assembly_on_upper_forearm",
+      "kind": "attached_to",
+      "source": "first_modular_actuator_assembly",
+      "target": "upper_forearm",
+      "via": null,
+      "constraints": [
+        "carried by upper forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 480,
+        "char_end": 566
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_assembly_moves_upper_forearm",
+      "kind": "transmits_force_to",
+      "source": "first_modular_actuator_assembly",
+      "target": "upper_forearm",
+      "via": null,
+      "constraints": [
+        "for moving upper forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 543,
+        "char_end": 566
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_assembly_on_lower_forearm",
+      "kind": "attached_to",
+      "source": "second_modular_actuator_assembly",
+      "target": "lower_forearm",
+      "via": null,
+      "constraints": [
+        "carried by lower forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 737
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_assembly_moves_lower_forearm",
+      "kind": "transmits_force_to",
+      "source": "second_modular_actuator_assembly",
+      "target": "lower_forearm",
+      "via": null,
+      "constraints": [
+        "for moving lower forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 712,
+        "char_end": 737
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_canister_in_assembly",
+      "kind": "contains",
+      "source": "first_modular_actuator_assembly",
+      "target": "actuator_canister",
+      "via": null,
+      "constraints": [
+        "within modular actuator assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 787,
+        "char_end": 841
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_motor_turns_shaft",
+      "kind": "transmits_force_to",
+      "source": "motor_means",
+      "target": "shaft_means",
+      "via": null,
+      "constraints": [
+        "turned by motor means"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 843,
+        "char_end": 875
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_shaft_to_gearing",
+      "kind": "connects",
+      "source": "shaft_means",
+      "target": "gearing_means",
+      "via": null,
+      "constraints": [
+        "in operative connection"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 877,
+        "char_end": 929
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_shaft_to_position_ref",
+      "kind": "connects",
+      "source": "shaft_means",
+      "target": "position_referencing_means",
+      "via": null,
+      "constraints": [
+        "in operative connection",
+        "for determining position"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 931,
+        "char_end": 1005
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_spindle_in_assembly",
+      "kind": "contains",
+      "source": "first_modular_actuator_assembly",
+      "target": "spindle",
+      "via": null,
+      "constraints": [
+        "within modular actuator assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1008,
+        "char_end": 1110
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_spindle_receives_canister",
+      "kind": "contains",
+      "source": "spindle",
+      "target": "actuator_canister",
+      "via": null,
+      "constraints": [
+        "for receiving actuator canister"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1016,
+        "char_end": 1065
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_assembly_rotates_on_bearing",
+      "kind": "rotates_about",
+      "source": "first_modular_actuator_assembly",
+      "target": "bearing_means",
+      "via": null,
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1068,
+        "char_end": 1110
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_output_hub_to_gearing",
+      "kind": "connects",
+      "source": "output_hub_means",
+      "target": "gearing_means",
+      "via": null,
+      "constraints": [
+        "in operative connection"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1113,
+        "char_end": 1163
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_output_hub_moves_forearm",
+      "kind": "transmits_force_to",
+      "source": "output_hub_means",
+      "target": "lower_forearm",
+      "via": null,
+      "constraints": [
+        "for moving a forearm attached to actuator assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1163,
+        "char_end": 1212
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_lower_forearm_independent",
+      "text": "said lower forearm capable of movement and operating independent of said upper forearm",
+      "targets": [
+        "lower_forearm",
+        "upper_forearm"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 392,
+        "char_end": 477
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_same_structure",
+      "text": "a second modular actuator assembly having the same structure as said first modular actuator assembly",
+      "targets": [
+        "second_modular_actuator_assembly",
+        "first_modular_actuator_assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 571,
+        "char_end": 670
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "wherein_bearing_rotation",
+      "text": "a spindle within said modular actuator assembly for receiving said actuator canister having a bearing means on which bearing means said actuator assembly rotates",
+      "targets": [
+        "spindle",
+        "actuator_canister",
+        "bearing_means",
+        "first_modular_actuator_assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1008,
+        "char_end": 1110
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

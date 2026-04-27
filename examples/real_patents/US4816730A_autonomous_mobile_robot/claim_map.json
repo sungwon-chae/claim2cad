@@ -1,0 +1,166 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4816730A_autonomous_mobile_robot",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "robotic_arm_assembly",
+      "glb_node_name": "robotic_arm_assembly",
+      "label": "robotic arm assembly",
+      "category": "structural",
+      "kind": "arm_assembly",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 101,
+        "char_end": 121
+      },
+      "figure_number": "106"
+    },
+    {
+      "component_id": "gripper_mechanism",
+      "glb_node_name": "gripper_mechanism",
+      "label": "gripper mechanism",
+      "category": "functional",
+      "kind": "gripper",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 179,
+        "char_end": 196
+      }
+    },
+    {
+      "component_id": "gripper_fingers",
+      "glb_node_name": "gripper_fingers",
+      "label": "gripper fingers",
+      "category": "structural",
+      "kind": "finger",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 268,
+        "char_end": 283
+      }
+    },
+    {
+      "component_id": "cone",
+      "glb_node_name": "cone",
+      "label": "cone",
+      "category": "structural",
+      "kind": "cone",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 330,
+        "char_end": 334
+      },
+      "figure_number": "100"
+    },
+    {
+      "component_id": "stepper_motors",
+      "glb_node_name": "stepper_motors",
+      "label": "stepper motors",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 342,
+        "char_end": 356
+      }
+    },
+    {
+      "component_id": "stepper_motor_cone",
+      "glb_node_name": "stepper_motor_cone",
+      "label": "one stepper motor (drives cone)",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 399,
+        "char_end": 417
+      }
+    },
+    {
+      "component_id": "power_source",
+      "glb_node_name": "power_source",
+      "label": "power source",
+      "category": "structural",
+      "kind": "power_supply",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 524,
+        "char_end": 536
+      }
+    },
+    {
+      "component_id": "first_sensing_system",
+      "glb_node_name": "first_sensing_system",
+      "label": "first sensing system",
+      "category": "functional",
+      "kind": "sensor_system",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 619,
+        "char_end": 639
+      }
+    },
+    {
+      "component_id": "feedback_loop",
+      "glb_node_name": "feedback_loop",
+      "label": "feedback loop",
+      "category": "functional",
+      "kind": "feedback_loop",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 647,
+        "char_end": 660
+      }
+    },
+    {
+      "component_id": "second_sensing_system",
+      "glb_node_name": "second_sensing_system",
+      "label": "second sensing system",
+      "category": "functional",
+      "kind": "sensor_system",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 706,
+        "char_end": 727
+      }
+    },
+    {
+      "component_id": "computer",
+      "glb_node_name": "computer",
+      "label": "computer",
+      "category": "functional",
+      "kind": "computer",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1020,
+        "char_end": 1028
+      }
+    },
+    {
+      "component_id": "data_input_means",
+      "glb_node_name": "data_input_means",
+      "label": "means for providing operating data input",
+      "category": "functional",
+      "kind": "input_device",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1307,
+        "char_end": 1347
+      },
+      "figure_number": "109"
+    }
+  ]
+}

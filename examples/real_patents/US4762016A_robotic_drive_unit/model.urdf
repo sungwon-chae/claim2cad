@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<robot name="robotic_manipulator">
+  <link name="fifth_joint">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_actuator_assembly">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_input_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_joint">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_output_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fourth_joint">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="frame">
+    <visual>
+      <geometry>
+        <box size="0.08 0.08 0.016"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="mounting_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_actuator_assembly">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_input_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_joint">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_output_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="third_joint">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_first_actuator_assembly_to_first_input_link" type="fixed">
+    <parent link="first_actuator_assembly"/>
+    <child link="first_input_link"/>
+    <origin xyz="0.0000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_input_link_to_first_output_link" type="fixed">
+    <parent link="first_input_link"/>
+    <child link="first_output_link"/>
+    <origin xyz="0.3000 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_fifth_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="fifth_joint"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_first_actuator_assembly" type="fixed">
+    <parent link="frame"/>
+    <child link="first_actuator_assembly"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_first_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="first_joint"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_fourth_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="fourth_joint"/>
+    <origin xyz="0.5400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_mounting_means" type="fixed">
+    <parent link="frame"/>
+    <child link="mounting_means"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_second_actuator_assembly" type="fixed">
+    <parent link="frame"/>
+    <child link="second_actuator_assembly"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_second_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="second_joint"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_frame_to_third_joint" type="fixed">
+    <parent link="frame"/>
+    <child link="third_joint"/>
+    <origin xyz="0.4200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_actuator_assembly_to_second_input_link" type="fixed">
+    <parent link="second_actuator_assembly"/>
+    <child link="second_input_link"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_second_input_link_to_second_output_link" type="fixed">
+    <parent link="second_input_link"/>
+    <child link="second_output_link"/>
+    <origin xyz="0.3000 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

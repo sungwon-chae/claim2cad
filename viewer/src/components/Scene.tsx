@@ -2,7 +2,7 @@ import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-import type { ClaimMapRow } from "../types";
+import type { ClaimMapRow, PriorArtDiff, URDFJoint } from "../types";
 
 type Props = {
   glbUrl: string;
@@ -12,6 +12,17 @@ type Props = {
   onSelect: (id: string | null) => void;
   onHover: (id: string | null) => void;
   limitationFocus: boolean;
+  /** When non-null, mesh tints follow the diff status:
+   *  - matched: keep original (white)
+   *  - novel_in_base: green
+   *  - else: dimmed neutral
+   */
+  diff?: PriorArtDiff | null;
+  /** V1-6: when non-empty, apply joint transforms to the corresponding
+   *  child link's GLB node (rotation for revolute/continuous, translation
+   *  for prismatic). */
+  joints?: URDFJoint[];
+  jointValues?: Record<string, number>;
 };
 
 const COLOR_INDEPENDENT = new THREE.Color("#4f8cff");
@@ -19,6 +30,9 @@ const COLOR_DEPENDENT = new THREE.Color("#ffb04a");
 const COLOR_SELECTED = new THREE.Color("#ffd76a");
 const COLOR_HOVER = new THREE.Color("#cfcfd8");
 const COLOR_DEFAULT = new THREE.Color("#9396a3");
+const COLOR_MATCHED = new THREE.Color("#e6e6ee");        // white-ish
+const COLOR_NOVEL = new THREE.Color("#56d97a");           // green
+const COLOR_NEUTRAL_DIM = new THREE.Color("#5a5a66");
 
 export function Scene(props: Props) {
   return (
@@ -42,7 +56,8 @@ export function Scene(props: Props) {
 }
 
 function ModelTree(props: Props) {
-  const { glbUrl, rows, selectedId, hoveredId, onSelect, onHover, limitationFocus } = props;
+  const { glbUrl, rows, selectedId, hoveredId, onSelect, onHover, limitationFocus, diff,
+          joints, jointValues } = props;
   const { scene } = useGLTF(glbUrl);
 
   const rowsById = useMemo(() => {
@@ -82,7 +97,86 @@ function ModelTree(props: Props) {
     });
   }, [nodeIndex]);
 
-  // Apply highlight materials whenever selection / hover / focus changes.
+  // Pre-index diff statuses by component_id when a diff is loaded.
+  const diffStatus = useMemo(() => {
+    if (!diff) return null;
+    const map = new Map<string, "matched" | "novel">();
+    for (const m of diff.matched) map.set(m.base_id, "matched");
+    for (const n of diff.novel_in_base) map.set(n.id, "novel");
+    return map;
+  }, [diff]);
+
+  // V1-6 — Apply joint transforms to child link nodes.
+  // Each child node gets its position reset to its rest position, plus a
+  // rotation about the joint axis (revolute/continuous) or a translation
+  // along the axis (prismatic).
+  const restPositions = useRef<Map<string, [number, number, number, [number, number, number, number]]>>(new Map());
+  useEffect(() => {
+    // Re-cache rest positions when scene changes.
+    restPositions.current.clear();
+    nodeIndex.forEach((_, nodeName) => {
+      const obj = scene.getObjectByName(nodeName);
+      if (!obj) return;
+      restPositions.current.set(nodeName, [
+        obj.position.x, obj.position.y, obj.position.z,
+        [obj.quaternion.x, obj.quaternion.y, obj.quaternion.z, obj.quaternion.w],
+      ]);
+    });
+  }, [scene, nodeIndex]);
+
+  useEffect(() => {
+    if (!joints || joints.length === 0) return;
+    for (const joint of joints) {
+      if (joint.type !== "revolute" && joint.type !== "continuous" && joint.type !== "prismatic") continue;
+      const obj = scene.getObjectByName(joint.child);
+      if (!obj) continue;
+      const rest = restPositions.current.get(joint.child);
+      if (!rest) continue;
+      const [rx, ry, rz, [qx, qy, qz, qw]] = rest;
+
+      // Reset to rest first.
+      obj.position.set(rx, ry, rz);
+      obj.quaternion.set(qx, qy, qz, qw);
+
+      const value = (jointValues || {})[joint.name] ?? 0;
+      if (Math.abs(value) < 1e-6) continue;
+
+      const axis = new THREE.Vector3(...joint.axis).normalize();
+      if (joint.type === "prismatic") {
+        const offset = axis.clone().multiplyScalar(value);
+        obj.position.set(rx + offset.x, ry + offset.y, rz + offset.z);
+      } else {
+        // Rotate child about the joint origin (which is in the parent's frame).
+        // We pivot the child's mesh around the joint origin: translate so origin
+        // is at the world origin, rotate, translate back.
+        const pivotWorld = new THREE.Vector3(...joint.origin);
+        // Joint origin is given relative to the parent in URDF; in our scene,
+        // both parent and child are siblings of the GLB root, so the joint
+        // origin is approximately at (parent_world_pos + joint.origin).
+        const parentObj = scene.getObjectByName(joint.parent);
+        const parentWorld = new THREE.Vector3();
+        if (parentObj) parentObj.getWorldPosition(parentWorld);
+        pivotWorld.add(parentWorld);
+
+        // We're operating in local space of the GLB scene root, so use parent's
+        // local position as pivot reference.
+        const pivot = parentObj
+          ? new THREE.Vector3(parentObj.position.x, parentObj.position.y, parentObj.position.z)
+              .add(new THREE.Vector3(...joint.origin))
+          : new THREE.Vector3(...joint.origin);
+
+        const rotQ = new THREE.Quaternion().setFromAxisAngle(axis, value);
+        // child_pos' = pivot + rotQ · (child_pos - pivot)
+        const offset = new THREE.Vector3(rx, ry, rz).sub(pivot).applyQuaternion(rotQ);
+        obj.position.copy(pivot.clone().add(offset));
+        // Apply rotation to child's quaternion.
+        const restQ = new THREE.Quaternion(qx, qy, qz, qw);
+        obj.quaternion.copy(rotQ.clone().multiply(restQ));
+      }
+    }
+  }, [scene, joints, jointValues, nodeIndex]);
+
+  // Apply highlight materials whenever selection / hover / focus / diff change.
   useEffect(() => {
     nodeIndex.forEach((meshes, nodeName) => {
       const row = rowsById.get(nodeName);
@@ -90,13 +184,23 @@ function ModelTree(props: Props) {
       const isHovered = hoveredId === nodeName && !isSelected;
       const isDimmedByFocus = limitationFocus && row?.is_dependent;
 
+      let baseColor: THREE.Color;
+      if (diffStatus) {
+        const status = diffStatus.get(nodeName);
+        if (status === "novel") baseColor = COLOR_NOVEL.clone();
+        else if (status === "matched") baseColor = COLOR_MATCHED.clone();
+        else baseColor = COLOR_NEUTRAL_DIM.clone();
+      } else {
+        baseColor = row
+          ? row.is_dependent
+            ? COLOR_DEPENDENT
+            : COLOR_INDEPENDENT
+          : COLOR_DEFAULT;
+      }
+
       for (const mesh of meshes) {
         const tinted = createTintedMaterial({
-          baseColor: row
-            ? row.is_dependent
-              ? COLOR_DEPENDENT
-              : COLOR_INDEPENDENT
-            : COLOR_DEFAULT,
+          baseColor,
           isSelected,
           isHovered,
           isDimmed: !!isDimmedByFocus,
@@ -105,7 +209,7 @@ function ModelTree(props: Props) {
         mesh.material = tinted;
       }
     });
-  }, [nodeIndex, rowsById, selectedId, hoveredId, limitationFocus]);
+  }, [nodeIndex, rowsById, selectedId, hoveredId, limitationFocus, diffStatus]);
 
   return (
     <primitive

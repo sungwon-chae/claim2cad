@@ -1,0 +1,16 @@
+{
+  "patent_id": "US3789698A",
+  "slug": "compact_planetary_drive",
+  "primary_class": "074",
+  "title": "Automatic shift for a transmission",
+  "claim_text": "1. In a transmission; an input element; an output element; a multi ratio drive gear unit connecting said input element to said output element having a low and a high fluid actuated friction device respectively providing a low and a high ratio drive selectively operable for establishing said low and high ratio drives; a source of fluid at a regulated pressure; a governor providing a governor pressure proportional to the operating speed of one of said elements; a manual valve connected to said source, having a manual low signal line and a low-high signal line and operative in a low position connecting the source of fluid pressure to said manual low signal line and in a low-high position connecting the source of fluid pressure to said low-high signal line and in each position exhausting the other of said connected lines; automatic control valve means operatively connected to said governor and said manual valve and operative in response to governor pressure to shift between a downshifted and an upshifted position and operative in either position in response to said manual low signal line pressure to supply fluid pressure to said low device to establish low drive and operative in response to said low-high signal line pressure in a downshifted position to supply fluid pressure to said low device to establish low drive and in an upshifted position to exhaust said low drive device and supply fluid pressure to said high drive device and inhibitor means operatively connected to said manual valve, automatic control valve means and said governor for controlling said manual valve, to permit at any of said operating speeds, when said automatic control valve means is downshifted, a low-high position to low position manual shift and to inhibit above a predetermined operating speed, when said automatic control valve is upshifted, a low-high position to low position manual shift.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/11/a0/d8/70e6398203932d/US3789698-drawings-page-2.png"
+  ],
+  "publication_date": "1972-05-12",
+  "fetch_url": "https://patents.google.com/patent/US3789698A/en",
+  "fetched_at": "2026-04-27T19:38:51",
+  "saved_figures": [
+    "figure_1.png"
+  ]
+}

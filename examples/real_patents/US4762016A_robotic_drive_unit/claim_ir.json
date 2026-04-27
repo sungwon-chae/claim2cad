@@ -1,0 +1,559 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Robotic manipulator",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "1. A robotic manipulator comprising: a frame; a first input link; a first actuator assembly coupled at a first joint to one end of said first input link for manipulating said first link with two degrees of freedom; a second input link; a second actuator assembly coupled at a second joint to one end of said second link for manipulating said second link with one degree of freedom; means for mounting said first and second actuator assemblies on said frame; a first output link coupled at a third joint adjacent one of its ends to the other end of said first input link; a second output link coupled at a fourth joint at one of its ends to the other end of said second input link and coupled at a fifth joint at its other end to the other end of the first output link; where the mounting of said actuator assemblies on said frame, and said first through fifth joints allow manipulation of said one end of said first output link by said first and second actuator assemblies with three degrees of freedom.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "frame",
+      "label": "frame",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 38,
+        "char_end": 45
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.26,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_input_link",
+      "label": "first input link",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 47,
+        "char_end": 64
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.74,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_actuator_assembly",
+      "label": "first actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "manipulates first input link with two degrees of freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 67,
+        "char_end": 91
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.94,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_joint",
+      "label": "first joint",
+      "category": "connection",
+      "kind": "joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 103,
+        "char_end": 114
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_input_link",
+      "label": "second input link",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 215,
+        "char_end": 233
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.84,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_actuator_assembly",
+      "label": "second actuator assembly",
+      "category": "functional",
+      "kind": "actuator_assembly",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "manipulates second input link with one degree of freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 235,
+        "char_end": 260
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.89,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_joint",
+      "label": "second joint",
+      "category": "connection",
+      "kind": "joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 272,
+        "char_end": 284
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mounting_means",
+      "label": "means for mounting",
+      "category": "functional",
+      "kind": "mounting_means",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "mounts first and second actuator assemblies on frame"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 381,
+        "char_end": 454
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.2,
+            0.9299999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "first_output_link",
+      "label": "first output link",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 456,
+        "char_end": 474
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "third_joint",
+      "label": "third joint",
+      "category": "connection",
+      "kind": "joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "adjacent one end of first output link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 486,
+        "char_end": 497
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "second_output_link",
+      "label": "second output link",
+      "category": "structural",
+      "kind": "link",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 563,
+        "char_end": 581
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "50",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.25,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fourth_joint",
+      "label": "fourth joint",
+      "category": "connection",
+      "kind": "joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at one end of second output link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 593,
+        "char_end": 605
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.54,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fifth_joint",
+      "label": "fifth joint",
+      "category": "connection",
+      "kind": "joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "at other end of second output link, connects to other end of first output link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 673,
+        "char_end": 684
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_first_actuator_to_first_input_link",
+      "kind": "connects",
+      "source": "first_actuator_assembly",
+      "target": "first_input_link",
+      "via": "first_joint",
+      "constraints": [
+        "coupled at one end of first input link",
+        "two degrees of freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 92,
+        "char_end": 212
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_actuator_to_second_input_link",
+      "kind": "connects",
+      "source": "second_actuator_assembly",
+      "target": "second_input_link",
+      "via": "second_joint",
+      "constraints": [
+        "coupled at one end of second input link",
+        "one degree of freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 261,
+        "char_end": 379
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_mounting_first_actuator_to_frame",
+      "kind": "attached_to",
+      "source": "first_actuator_assembly",
+      "target": "frame",
+      "via": "mounting_means",
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 381,
+        "char_end": 454
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_mounting_second_actuator_to_frame",
+      "kind": "attached_to",
+      "source": "second_actuator_assembly",
+      "target": "frame",
+      "via": "mounting_means",
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 381,
+        "char_end": 454
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_first_output_link_to_first_input_link",
+      "kind": "connects",
+      "source": "first_output_link",
+      "target": "first_input_link",
+      "via": "third_joint",
+      "constraints": [
+        "adjacent one end of first output link connected to other end of first input link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 475,
+        "char_end": 561
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_output_link_to_second_input_link",
+      "kind": "connects",
+      "source": "second_output_link",
+      "target": "second_input_link",
+      "via": "fourth_joint",
+      "constraints": [
+        "at one end of second output link connected to other end of second input link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 582,
+        "char_end": 661
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_output_link_to_first_output_link",
+      "kind": "connects",
+      "source": "second_output_link",
+      "target": "first_output_link",
+      "via": "fifth_joint",
+      "constraints": [
+        "at other end of second output link connected to other end of first output link"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 662,
+        "char_end": 759
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_three_dof",
+      "text": "where the mounting of said actuator assemblies on said frame, and said first through fifth joints allow manipulation of said one end of said first output link by said first and second actuator assemblies with three degrees of freedom",
+      "targets": [
+        "mounting_means",
+        "first_joint",
+        "second_joint",
+        "third_joint",
+        "fourth_joint",
+        "fifth_joint",
+        "first_output_link",
+        "first_actuator_assembly",
+        "second_actuator_assembly"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 761,
+        "char_end": 992
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

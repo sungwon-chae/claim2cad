@@ -1,0 +1,271 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4470181A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "1",
+      "approximate_position": [
+        0.74,
+        0.6
+      ]
+    },
+    {
+      "number": "1A",
+      "approximate_position": [
+        0.28,
+        0.58
+      ]
+    },
+    {
+      "number": "1A",
+      "approximate_position": [
+        0.58,
+        0.51
+      ]
+    },
+    {
+      "number": "2",
+      "approximate_position": [
+        0.64,
+        0.58
+      ]
+    },
+    {
+      "number": "2A",
+      "approximate_position": [
+        0.54,
+        0.5
+      ]
+    },
+    {
+      "number": "2B",
+      "approximate_position": [
+        0.52,
+        0.36
+      ]
+    },
+    {
+      "number": "2C",
+      "approximate_position": [
+        0.44,
+        0.34
+      ]
+    },
+    {
+      "number": "2D",
+      "approximate_position": [
+        0.55,
+        0.3
+      ]
+    },
+    {
+      "number": "4",
+      "approximate_position": [
+        0.55,
+        0.62
+      ]
+    },
+    {
+      "number": "4C",
+      "approximate_position": [
+        0.69,
+        0.73
+      ]
+    },
+    {
+      "number": "6",
+      "approximate_position": [
+        0.37,
+        0.63
+      ]
+    },
+    {
+      "number": "8",
+      "approximate_position": [
+        0.47,
+        0.73
+      ]
+    },
+    {
+      "number": "8A",
+      "approximate_position": [
+        0.49,
+        0.78
+      ]
+    },
+    {
+      "number": "8B",
+      "approximate_position": [
+        0.47,
+        0.81
+      ]
+    },
+    {
+      "number": "8C",
+      "approximate_position": [
+        0.5,
+        0.86
+      ]
+    },
+    {
+      "number": "8D",
+      "approximate_position": [
+        0.52,
+        0.8
+      ]
+    },
+    {
+      "number": "10",
+      "approximate_position": [
+        0.38,
+        0.85
+      ]
+    },
+    {
+      "number": "10A",
+      "approximate_position": [
+        0.28,
+        0.73
+      ]
+    },
+    {
+      "number": "10B",
+      "approximate_position": [
+        0.35,
+        0.73
+      ]
+    },
+    {
+      "number": "10E",
+      "approximate_position": [
+        0.42,
+        0.79
+      ]
+    },
+    {
+      "number": "10H",
+      "approximate_position": [
+        0.79,
+        0.74
+      ]
+    },
+    {
+      "number": "10M",
+      "approximate_position": [
+        0.25,
+        0.65
+      ]
+    },
+    {
+      "number": "10N",
+      "approximate_position": [
+        0.33,
+        0.65
+      ]
+    },
+    {
+      "number": "10P",
+      "approximate_position": [
+        0.76,
+        0.8
+      ]
+    },
+    {
+      "number": "10Q",
+      "approximate_position": [
+        0.82,
+        0.85
+      ]
+    },
+    {
+      "number": "10S",
+      "approximate_position": [
+        0.83,
+        0.8
+      ]
+    },
+    {
+      "number": "10T",
+      "approximate_position": [
+        0.58,
+        0.72
+      ]
+    },
+    {
+      "number": "12",
+      "approximate_position": [
+        0.59,
+        0.6
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.39,
+        0.58
+      ]
+    },
+    {
+      "number": "14G",
+      "approximate_position": [
+        0.33,
+        0.42
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.66,
+        0.43
+      ]
+    },
+    {
+      "number": "18",
+      "approximate_position": [
+        0.7,
+        0.55
+      ]
+    },
+    {
+      "number": "18A",
+      "approximate_position": [
+        0.34,
+        0.61
+      ]
+    },
+    {
+      "number": "18D",
+      "approximate_position": [
+        0.27,
+        0.65
+      ]
+    },
+    {
+      "number": "18D",
+      "approximate_position": [
+        0.66,
+        0.67
+      ]
+    },
+    {
+      "number": "18E",
+      "approximate_position": [
+        0.64,
+        0.87
+      ]
+    },
+    {
+      "number": "18F",
+      "approximate_position": [
+        0.63,
+        0.89
+      ]
+    }
+  ],
+  "component_to_number": {},
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

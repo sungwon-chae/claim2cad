@@ -1,0 +1,20 @@
+{
+  "patent_id": "US3897696A",
+  "slug": "harmonic_gear_drive",
+  "primary_class": "074",
+  "title": "Gear transmission",
+  "claim_text": "1. In a transmission including two gear trains having intermediate shafts driven by a single drive shaft through at least one respective transmission stage and carrying at least one pinion, respectively, meshing with a gear located between the two intermediate drive shafts each gear train being connectible to a machine driven by the transmission, means to make the meshing of the gear trAins to the driven machine self adjustable, comprising a pair of frames wherein the transmission stages are disposed, each of said frames being mounted on one of the intermediate shafts, and each being articulatingly connected on the other hand to the frame mounted on the other intermediate shaft, each of the frames being pivotally mounted and articulatingly connected about the drive shaft.",
+  "figure_urls": [
+    "https://patentimages.storage.googleapis.com/b1/4b/ab/e65fe07fd8adf7/US3897696-drawings-page-2.png",
+    "https://patentimages.storage.googleapis.com/aa/aa/0c/867f55b52b2da8/US3897696-drawings-page-3.png",
+    "https://patentimages.storage.googleapis.com/7f/c4/e2/d3345bf769037a/US3897696-drawings-page-4.png"
+  ],
+  "publication_date": "1973-03-16",
+  "fetch_url": "https://patents.google.com/patent/US3897696A/en",
+  "fetched_at": "2026-04-27T19:38:55",
+  "saved_figures": [
+    "figure_1.png",
+    "figure_2.png",
+    "figure_3.png"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US3897696A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "1",
+      "description": "upper housing/drum outline",
+      "approximate_position": [
+        0.48,
+        0.37
+      ]
+    },
+    {
+      "number": "2",
+      "description": "outer casing",
+      "approximate_position": [
+        0.58,
+        0.37
+      ]
+    },
+    {
+      "number": "3",
+      "description": "base/foundation",
+      "approximate_position": [
+        0.36,
+        0.87
+      ]
+    },
+    {
+      "number": "8",
+      "description": "small gear",
+      "approximate_position": [
+        0.52,
+        0.74
+      ]
+    },
+    {
+      "number": "17",
+      "description": "gear element",
+      "approximate_position": [
+        0.45,
+        0.76
+      ]
+    },
+    {
+      "number": "18",
+      "description": "gear element",
+      "approximate_position": [
+        0.57,
+        0.77
+      ]
+    },
+    {
+      "number": "19",
+      "description": "left gear assembly",
+      "approximate_position": [
+        0.29,
+        0.69
+      ]
+    },
+    {
+      "number": "20",
+      "description": "right gear assembly",
+      "approximate_position": [
+        0.74,
+        0.69
+      ]
+    },
+    {
+      "number": "21",
+      "description": "gear",
+      "approximate_position": [
+        0.3,
+        0.72
+      ]
+    },
+    {
+      "number": "22",
+      "description": "gear",
+      "approximate_position": [
+        0.74,
+        0.72
+      ]
+    },
+    {
+      "number": "23",
+      "description": "gear",
+      "approximate_position": [
+        0.67,
+        0.77
+      ]
+    },
+    {
+      "number": "24",
+      "description": "gear",
+      "approximate_position": [
+        0.4,
+        0.76
+      ]
+    },
+    {
+      "number": "32",
+      "description": "central component",
+      "approximate_position": [
+        0.49,
+        0.68
+      ]
+    },
+    {
+      "number": "34",
+      "description": "lower housing frame",
+      "approximate_position": [
+        0.23,
+        0.79
+      ]
+    }
+  ],
+  "component_to_number": {
+    "gear_train_1": "21",
+    "frame_1": "34",
+    "pinion": "8",
+    "gear_train_2": "20",
+    "pair_of_frames": "19"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

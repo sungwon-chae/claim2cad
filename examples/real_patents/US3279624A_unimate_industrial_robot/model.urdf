@@ -1,0 +1,94 @@
+<?xml version="1.0" ?>
+<robot name="automatic_control_means_for_operating_a_machine_to_a_succession_of_precisely_determined_positions">
+  <link name="coaction_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="instruction_presenting_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="interposer_positioning_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="mechanical_output_device">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_portion">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="sensing_interposer">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="servo_input_control_member">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="servo_system">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_sensing_interposer_to_instruction_presenting_means" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="instruction_presenting_means"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sensing_interposer_to_interposer_positioning_means" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="interposer_positioning_means"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sensing_interposer_to_mechanical_output_device" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="mechanical_output_device"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sensing_interposer_to_output_portion" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="output_portion"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sensing_interposer_to_servo_input_control_member" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="servo_input_control_member"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_sensing_interposer_to_servo_system" type="fixed">
+    <parent link="sensing_interposer"/>
+    <child link="servo_system"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_servo_input_control_member_to_coaction_means" type="fixed">
+    <parent link="servo_input_control_member"/>
+    <child link="coaction_means"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

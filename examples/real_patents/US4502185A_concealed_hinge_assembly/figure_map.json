@@ -1,0 +1,116 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4502185A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "11",
+      "approximate_position": [
+        0.25,
+        0.3
+      ]
+    },
+    {
+      "number": "12",
+      "approximate_position": [
+        0.38,
+        0.27
+      ]
+    },
+    {
+      "number": "13",
+      "approximate_position": [
+        0.67,
+        0.29
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.44,
+        0.36
+      ]
+    },
+    {
+      "number": "10",
+      "approximate_position": [
+        0.67,
+        0.46
+      ]
+    },
+    {
+      "number": "15",
+      "approximate_position": [
+        0.4,
+        0.59
+      ]
+    },
+    {
+      "number": "20",
+      "approximate_position": [
+        0.47,
+        0.59
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.62,
+        0.59
+      ]
+    },
+    {
+      "number": "19",
+      "approximate_position": [
+        0.23,
+        0.72
+      ]
+    },
+    {
+      "number": "17",
+      "approximate_position": [
+        0.2,
+        0.85
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.31,
+        0.86
+      ]
+    },
+    {
+      "number": "21",
+      "approximate_position": [
+        0.59,
+        0.85
+      ]
+    },
+    {
+      "number": "18",
+      "approximate_position": [
+        0.8,
+        0.85
+      ]
+    }
+  ],
+  "component_to_number": {
+    "card_screen": "10",
+    "side_ribs": "11",
+    "center_rib": "12",
+    "end_bars": "13",
+    "grid_bars": "14",
+    "side_rib_openings": "15",
+    "center_rib_openings": "16",
+    "first_group_bars": "17",
+    "pins": "18",
+    "second_group_bars": "19",
+    "sockets": "20",
+    "fastening_means": "21"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

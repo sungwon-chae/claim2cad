@@ -1,0 +1,131 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4655675A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "22",
+      "description": "horizontal arm/link (top)",
+      "approximate_position": [
+        0.62,
+        0.32
+      ]
+    },
+    {
+      "number": "24",
+      "description": "end fitting/pin",
+      "approximate_position": [
+        0.72,
+        0.34
+      ]
+    },
+    {
+      "number": "20",
+      "description": "link arm",
+      "approximate_position": [
+        0.42,
+        0.4
+      ]
+    },
+    {
+      "number": "14",
+      "description": "vertical link",
+      "approximate_position": [
+        0.58,
+        0.4
+      ]
+    },
+    {
+      "number": "18",
+      "description": "pivot joint",
+      "approximate_position": [
+        0.47,
+        0.44
+      ]
+    },
+    {
+      "number": "25",
+      "description": "connection point",
+      "approximate_position": [
+        0.57,
+        0.45
+      ]
+    },
+    {
+      "number": "12",
+      "description": "rotating head",
+      "approximate_position": [
+        0.63,
+        0.49
+      ]
+    },
+    {
+      "number": "10",
+      "description": "base",
+      "approximate_position": [
+        0.6,
+        0.53
+      ]
+    },
+    {
+      "number": "22",
+      "description": "horizontal arm",
+      "approximate_position": [
+        0.66,
+        0.8
+      ]
+    },
+    {
+      "number": "24",
+      "description": "end fitting",
+      "approximate_position": [
+        0.73,
+        0.83
+      ]
+    },
+    {
+      "number": "20",
+      "description": "arm",
+      "approximate_position": [
+        0.46,
+        0.82
+      ]
+    },
+    {
+      "number": "14",
+      "description": "vertical link",
+      "approximate_position": [
+        0.52,
+        0.85
+      ]
+    },
+    {
+      "number": "12",
+      "description": "rotating head",
+      "approximate_position": [
+        0.63,
+        0.84
+      ]
+    },
+    {
+      "number": "26",
+      "description": "shaft",
+      "approximate_position": [
+        0.57,
+        0.91
+      ]
+    }
+  ],
+  "component_to_number": {
+    "upper_arm": "20",
+    "first_pivot_axis": "18",
+    "first_common_point": "25",
+    "operating_part": "12",
+    "fixed_stand": "10",
+    "forearm": "22"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

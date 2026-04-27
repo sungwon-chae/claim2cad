@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main, claim2cad-mvp]
+    branches: [main, v1.0-dev]
   pull_request:
-    branches: [main, claim2cad-mvp]
+    branches: [main, v1.0-dev]
 
 jobs:
   python:

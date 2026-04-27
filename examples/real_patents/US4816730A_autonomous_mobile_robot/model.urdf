@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<robot name="apparatus_for_handling_and_moving_a_plurality_of_objects">
+  <link name="computer">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="cone">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="data_input_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="feedback_loop">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="first_sensing_system">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gripper_fingers">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="gripper_mechanism">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="power_source">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="robotic_arm_assembly">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="second_sensing_system">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="stepper_motor_cone">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="stepper_motors">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_computer_to_stepper_motors" type="fixed">
+    <parent link="computer"/>
+    <child link="stepper_motors"/>
+    <origin xyz="0.0000 -0.1500 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_first_sensing_system_to_computer" type="fixed">
+    <parent link="first_sensing_system"/>
+    <child link="computer"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gripper_mechanism_to_gripper_fingers" type="fixed">
+    <parent link="gripper_mechanism"/>
+    <child link="gripper_fingers"/>
+    <origin xyz="0.0000 0.0600 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_gripper_mechanism_to_second_sensing_system" type="fixed">
+    <parent link="gripper_mechanism"/>
+    <child link="second_sensing_system"/>
+    <origin xyz="0.0000 0.1200 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_cone" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="cone"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_data_input_means" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="data_input_means"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_feedback_loop" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="feedback_loop"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_first_sensing_system" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="first_sensing_system"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_gripper_mechanism" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="gripper_mechanism"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_power_source" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="power_source"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_robotic_arm_assembly_to_stepper_motor_cone" type="fixed">
+    <parent link="robotic_arm_assembly"/>
+    <child link="stepper_motor_cone"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

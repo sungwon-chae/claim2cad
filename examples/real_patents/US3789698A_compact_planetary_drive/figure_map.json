@@ -1,0 +1,447 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US3789698A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "3",
+      "approximate_position": [
+        0.26,
+        0.27
+      ]
+    },
+    {
+      "number": "31",
+      "approximate_position": [
+        0.4,
+        0.24
+      ]
+    },
+    {
+      "number": "23",
+      "approximate_position": [
+        0.46,
+        0.24
+      ]
+    },
+    {
+      "number": "21",
+      "approximate_position": [
+        0.6,
+        0.23
+      ]
+    },
+    {
+      "number": "47",
+      "approximate_position": [
+        0.7,
+        0.24
+      ]
+    },
+    {
+      "number": "32",
+      "approximate_position": [
+        0.36,
+        0.25
+      ]
+    },
+    {
+      "number": "19",
+      "approximate_position": [
+        0.5,
+        0.27
+      ]
+    },
+    {
+      "number": "29",
+      "approximate_position": [
+        0.55,
+        0.28
+      ]
+    },
+    {
+      "number": "46",
+      "approximate_position": [
+        0.68,
+        0.27
+      ]
+    },
+    {
+      "number": "48",
+      "approximate_position": [
+        0.79,
+        0.27
+      ]
+    },
+    {
+      "number": "61",
+      "approximate_position": [
+        0.31,
+        0.29
+      ]
+    },
+    {
+      "number": "62",
+      "approximate_position": [
+        0.35,
+        0.29
+      ]
+    },
+    {
+      "number": "28",
+      "approximate_position": [
+        0.47,
+        0.31
+      ]
+    },
+    {
+      "number": "25",
+      "approximate_position": [
+        0.52,
+        0.32
+      ]
+    },
+    {
+      "number": "18",
+      "approximate_position": [
+        0.58,
+        0.32
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.63,
+        0.33
+      ]
+    },
+    {
+      "number": "41",
+      "approximate_position": [
+        0.74,
+        0.33
+      ]
+    },
+    {
+      "number": "6",
+      "approximate_position": [
+        0.2,
+        0.34
+      ]
+    },
+    {
+      "number": "T",
+      "approximate_position": [
+        0.22,
+        0.3
+      ]
+    },
+    {
+      "number": "P",
+      "approximate_position": [
+        0.3,
+        0.3
+      ]
+    },
+    {
+      "number": "S",
+      "approximate_position": [
+        0.26,
+        0.35
+      ]
+    },
+    {
+      "number": "34",
+      "approximate_position": [
+        0.36,
+        0.35
+      ]
+    },
+    {
+      "number": "36",
+      "approximate_position": [
+        0.4,
+        0.36
+      ]
+    },
+    {
+      "number": "44",
+      "approximate_position": [
+        0.68,
+        0.36
+      ]
+    },
+    {
+      "number": "42",
+      "approximate_position": [
+        0.77,
+        0.36
+      ]
+    },
+    {
+      "number": "5",
+      "approximate_position": [
+        0.31,
+        0.38
+      ]
+    },
+    {
+      "number": "4",
+      "approximate_position": [
+        0.28,
+        0.4
+      ]
+    },
+    {
+      "number": "33",
+      "approximate_position": [
+        0.38,
+        0.4
+      ]
+    },
+    {
+      "number": "24",
+      "approximate_position": [
+        0.46,
+        0.4
+      ]
+    },
+    {
+      "number": "26",
+      "approximate_position": [
+        0.51,
+        0.4
+      ]
+    },
+    {
+      "number": "15",
+      "approximate_position": [
+        0.59,
+        0.41
+      ]
+    },
+    {
+      "number": "27",
+      "approximate_position": [
+        0.48,
+        0.43
+      ]
+    },
+    {
+      "number": "17",
+      "approximate_position": [
+        0.58,
+        0.43
+      ]
+    },
+    {
+      "number": "43",
+      "approximate_position": [
+        0.68,
+        0.43
+      ]
+    },
+    {
+      "number": "7",
+      "approximate_position": [
+        0.18,
+        0.42
+      ]
+    },
+    {
+      "number": "2",
+      "approximate_position": [
+        0.17,
+        0.4
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.8,
+        0.43
+      ]
+    },
+    {
+      "number": "63",
+      "approximate_position": [
+        0.42,
+        0.47
+      ]
+    },
+    {
+      "number": "121",
+      "approximate_position": [
+        0.62,
+        0.5
+      ]
+    },
+    {
+      "number": "118",
+      "approximate_position": [
+        0.22,
+        0.52
+      ]
+    },
+    {
+      "number": "112",
+      "approximate_position": [
+        0.38,
+        0.53
+      ]
+    },
+    {
+      "number": "109",
+      "approximate_position": [
+        0.45,
+        0.53
+      ]
+    },
+    {
+      "number": "104",
+      "approximate_position": [
+        0.48,
+        0.53
+      ]
+    },
+    {
+      "number": "107",
+      "approximate_position": [
+        0.53,
+        0.54
+      ]
+    },
+    {
+      "number": "102",
+      "approximate_position": [
+        0.55,
+        0.54
+      ]
+    },
+    {
+      "number": "103",
+      "approximate_position": [
+        0.58,
+        0.54
+      ]
+    },
+    {
+      "number": "106",
+      "approximate_position": [
+        0.6,
+        0.55
+      ]
+    },
+    {
+      "number": "132",
+      "approximate_position": [
+        0.66,
+        0.55
+      ]
+    },
+    {
+      "number": "128",
+      "approximate_position": [
+        0.69,
+        0.55
+      ]
+    },
+    {
+      "number": "129",
+      "approximate_position": [
+        0.72,
+        0.55
+      ]
+    },
+    {
+      "number": "114",
+      "approximate_position": [
+        0.36,
+        0.55
+      ]
+    },
+    {
+      "number": "115",
+      "approximate_position": [
+        0.39,
+        0.57
+      ]
+    },
+    {
+      "number": "82",
+      "approximate_position": [
+        0.28,
+        0.57
+      ]
+    },
+    {
+      "number": "81",
+      "approximate_position": [
+        0.23,
+        0.58
+      ]
+    },
+    {
+      "number": "116",
+      "approximate_position": [
+        0.4,
+        0.59
+      ]
+    },
+    {
+      "number": "131",
+      "approximate_position": [
+        0.76,
+        0.58
+      ]
+    },
+    {
+      "number": "117",
+      "approximate_position": [
+        0.38,
+        0.6
+      ]
+    },
+    {
+      "number": "83",
+      "approximate_position": [
+        0.42,
+        0.62
+      ]
+    },
+    {
+      "number": "126",
+      "approximate_position": [
+        0.77,
+        0.6
+      ]
+    },
+    {
+      "number": "130",
+      "approximate_position": [
+        0.75,
+        0.61
+      ]
+    }
+  ],
+  "component_to_number": {
+    "transmission": "2",
+    "input_element": "4",
+    "output_element": "6",
+    "multi_ratio_drive_gear_unit": "7",
+    "low_friction_device": "14",
+    "high_friction_device": "15",
+    "fluid_source": "17",
+    "governor": "19",
+    "governor_pressure": "21",
+    "manual_valve": "23",
+    "manual_low_signal_line": "25",
+    "low_high_signal_line": "27",
+    "automatic_control_valve_means": "29",
+    "inhibitor_means": "31"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

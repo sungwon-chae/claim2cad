@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<robot name="transmission_automatic_control_with_inhibitor_means">
+  <link name="automatic_control_valve_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="fluid_source">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="governor">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="governor_pressure">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="high_friction_device">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="inhibitor_means">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="input_element">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="low_friction_device">
+    <visual>
+      <geometry>
+        <sphere radius="0.008"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="low_high_signal_line">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="manual_low_signal_line">
+    <visual>
+      <geometry>
+        <box size="0.014 0.014 0.014"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="manual_valve">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="multi_ratio_drive_gear_unit">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="output_element">
+    <visual>
+      <geometry>
+        <cylinder radius="0.006" length="0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="transmission">
+    <visual>
+      <geometry>
+        <box size="0.04 0.04 0.02"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="_attach_automatic_control_valve_means_to_manual_valve" type="fixed">
+    <parent link="automatic_control_valve_means"/>
+    <child link="manual_valve"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_automatic_control_valve_means" type="fixed">
+    <parent link="governor"/>
+    <child link="automatic_control_valve_means"/>
+    <origin xyz="0.0600 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_governor_pressure" type="fixed">
+    <parent link="governor"/>
+    <child link="governor_pressure"/>
+    <origin xyz="0.4800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_high_friction_device" type="fixed">
+    <parent link="governor"/>
+    <child link="high_friction_device"/>
+    <origin xyz="0.3600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_inhibitor_means" type="fixed">
+    <parent link="governor"/>
+    <child link="inhibitor_means"/>
+    <origin xyz="0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_input_element" type="fixed">
+    <parent link="governor"/>
+    <child link="input_element"/>
+    <origin xyz="0.1200 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_low_friction_device" type="fixed">
+    <parent link="governor"/>
+    <child link="low_friction_device"/>
+    <origin xyz="0.3000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_low_high_signal_line" type="fixed">
+    <parent link="governor"/>
+    <child link="low_high_signal_line"/>
+    <origin xyz="0.6600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_manual_low_signal_line" type="fixed">
+    <parent link="governor"/>
+    <child link="manual_low_signal_line"/>
+    <origin xyz="0.6000 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_multi_ratio_drive_gear_unit" type="fixed">
+    <parent link="governor"/>
+    <child link="multi_ratio_drive_gear_unit"/>
+    <origin xyz="0.2400 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_output_element" type="fixed">
+    <parent link="governor"/>
+    <child link="output_element"/>
+    <origin xyz="0.1800 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_governor_to_transmission" type="fixed">
+    <parent link="governor"/>
+    <child link="transmission"/>
+    <origin xyz="0.0600 -0.0900 0.0000" rpy="0 0 0"/>
+  </joint>
+  <joint name="_attach_manual_valve_to_fluid_source" type="fixed">
+    <parent link="manual_valve"/>
+    <child link="fluid_source"/>
+    <origin xyz="-0.1200 0.0000 0.0000" rpy="0 0 0"/>
+  </joint>
+</robot>

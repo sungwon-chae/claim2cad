@@ -1,0 +1,247 @@
+{
+  "schema_version": "0.1.0",
+  "example": "US4655675A_robotic_assembly_apparatus",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "fixed_stand",
+      "glb_node_name": "fixed_stand",
+      "label": "fixed stand",
+      "category": "structural",
+      "kind": "stand",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 37,
+        "char_end": 48
+      },
+      "figure_number": "10"
+    },
+    {
+      "component_id": "robot_body",
+      "glb_node_name": "robot_body",
+      "label": "robot body",
+      "category": "structural",
+      "kind": "body",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 65,
+        "char_end": 75
+      }
+    },
+    {
+      "component_id": "swivel_stand",
+      "glb_node_name": "swivel_stand",
+      "label": "swivel stand",
+      "category": "structural",
+      "kind": "stand",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 79,
+        "char_end": 91
+      }
+    },
+    {
+      "component_id": "upper_arm",
+      "glb_node_name": "upper_arm",
+      "label": "upper arm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 134,
+        "char_end": 143
+      },
+      "figure_number": "20"
+    },
+    {
+      "component_id": "forearm",
+      "glb_node_name": "forearm",
+      "label": "forearm",
+      "category": "structural",
+      "kind": "arm",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 210,
+        "char_end": 217
+      },
+      "figure_number": "22"
+    },
+    {
+      "component_id": "central_axis",
+      "glb_node_name": "central_axis",
+      "label": "central axis of forearm",
+      "category": "functional",
+      "kind": "axis",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 433,
+        "char_end": 456
+      }
+    },
+    {
+      "component_id": "first_wrist",
+      "glb_node_name": "first_wrist",
+      "label": "first wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 319,
+        "char_end": 330
+      }
+    },
+    {
+      "component_id": "second_wrist",
+      "glb_node_name": "second_wrist",
+      "label": "second wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 334,
+        "char_end": 346
+      }
+    },
+    {
+      "component_id": "third_wrist",
+      "glb_node_name": "third_wrist",
+      "label": "third wrist",
+      "category": "structural",
+      "kind": "wrist",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 353,
+        "char_end": 364
+      }
+    },
+    {
+      "component_id": "first_pivot_axis",
+      "glb_node_name": "first_pivot_axis",
+      "label": "first pivot axis",
+      "category": "functional",
+      "kind": "axis",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 524,
+        "char_end": 540
+      },
+      "figure_number": "18"
+    },
+    {
+      "component_id": "first_common_point",
+      "glb_node_name": "first_common_point",
+      "label": "first common point",
+      "category": "functional",
+      "kind": "point",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 624,
+        "char_end": 642
+      },
+      "figure_number": "25"
+    },
+    {
+      "component_id": "second_pivot_axis",
+      "glb_node_name": "second_pivot_axis",
+      "label": "second pivot axis",
+      "category": "functional",
+      "kind": "axis",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 730,
+        "char_end": 747
+      }
+    },
+    {
+      "component_id": "second_common_point",
+      "glb_node_name": "second_common_point",
+      "label": "second common point",
+      "category": "functional",
+      "kind": "point",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 833,
+        "char_end": 852
+      }
+    },
+    {
+      "component_id": "first_driving_motor",
+      "glb_node_name": "first_driving_motor",
+      "label": "first driving motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 883,
+        "char_end": 902
+      }
+    },
+    {
+      "component_id": "first_reduction_gear",
+      "glb_node_name": "first_reduction_gear",
+      "label": "first reduction gear",
+      "category": "functional",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 941,
+        "char_end": 961
+      }
+    },
+    {
+      "component_id": "second_driving_motor",
+      "glb_node_name": "second_driving_motor",
+      "label": "second driving motor",
+      "category": "functional",
+      "kind": "motor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1022,
+        "char_end": 1042
+      }
+    },
+    {
+      "component_id": "second_reduction_gear",
+      "glb_node_name": "second_reduction_gear",
+      "label": "second reduction gear",
+      "category": "functional",
+      "kind": "gear",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1088,
+        "char_end": 1109
+      }
+    },
+    {
+      "component_id": "operating_part",
+      "glb_node_name": "operating_part",
+      "label": "operating part",
+      "category": "functional",
+      "kind": "end_effector",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 1213,
+        "char_end": 1227
+      },
+      "figure_number": "12"
+    }
+  ]
+}

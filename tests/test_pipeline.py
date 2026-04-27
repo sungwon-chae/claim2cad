@@ -40,6 +40,8 @@ def _glb_root_child_names(glb_path: Path) -> list[str]:
 @pytest.fixture(scope="module")
 def golden_pipeline_run(tmp_path_factory: pytest.TempPathFactory) -> dict[str, Path]:
     out_dir = tmp_path_factory.mktemp("golden")
+    # The golden claim short-circuits, so no LLM call happens regardless;
+    # but for parametrized non-golden tests below we explicitly disable.
     return run_pipeline(
         claim_path=GOLDEN_DIR / "claim.txt",
         out_dir=out_dir,
@@ -116,10 +118,16 @@ def test_pipeline_step_round_trips_through_build123d(
     ["golden_robot_arm", "hinge_assembly", "planetary_gear"],
 )
 def test_pipeline_runs_each_example(
-    example_name: str, tmp_path: Path
+    example_name: str,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
 ) -> None:
     """Run the pipeline against each committed example and check structural
-    invariants. This sweep is the Phase-6 regression guard."""
+    invariants. This sweep is the Phase-6 regression guard.
+
+    We disable the LLM so the test is offline-deterministic and free.
+    """
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     src = REPO_ROOT / "examples" / example_name / "claim.txt"
     if not src.exists():
         pytest.skip(f"Example {example_name} has no claim.txt")

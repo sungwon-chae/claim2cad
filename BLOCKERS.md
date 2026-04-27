@@ -36,6 +36,53 @@
 - **Status:** Limitation acknowledged. README and `docs/DESIGN_DECISIONS.md`
   call this out.
 
+## B-006 — v1.0 cannot start: `.env` missing `OPENROUTER_API_KEY` (HALT)
+- **Triggered:** 2026-04-27 18:55 KST, at the start of the v1.0 session.
+- **Why this is a hard halt:** the v1.0 brief explicitly says
+  > "If `.env` is missing OPENROUTER_API_KEY, halt immediately and write
+  > a clear message to BLOCKERS.md telling the user to add it. Do not
+  > proceed with stub implementations of LLM-dependent features."
+  Phases V1-2 (parser quality), V1-3 (figure parsing — VLM), V1-5
+  (prior-art LLM disambiguation), V1-7 (Korean parser), V1-8 (multi-
+  claim resolution), V1-9 (dimension inference), V1-13 (figure-aware
+  CAD), V1-14 (claim chart), V1-15 (eval-driven improvement) all hard-
+  depend on `OPENROUTER_API_KEY`. Building stub implementations would
+  violate the brief's "no fabrication" principle.
+- **What I did before halting:**
+  - Verified the v0.1.0 baseline: `main` branch + `v0.1.0` tag both up
+    on origin (HTTPS via osxkeychain credential helper).
+  - Cleaned three accidental empty files (`Branches`, `Default`,
+    `Settings`) and reset the dirty `examples/golden_robot_arm/model.{glb,step}`.
+  - Created local branch `v1.0-dev` (off `main`) so the work picks up
+    cleanly when this blocker resolves.
+- **What you (the user) need to do:**
+  1. Get an OpenRouter key from https://openrouter.ai/keys (the cap
+     should be set high enough — the v1.0 brief budgets ~$30, the
+     60-hour brief mentions $400).
+  2. Create `/Users/sungwon.chae/Desktop/claim2cad/Claim2CAD/.env`:
+     ```bash
+     cd /Users/sungwon.chae/Desktop/claim2cad/Claim2CAD
+     cp .env.example .env
+     # then edit .env and set:
+     # OPENROUTER_API_KEY=sk-or-v1-...
+     # OPENROUTER_MODEL=anthropic/claude-sonnet-4.6
+     # OPENROUTER_OPUS_MODEL=anthropic/claude-opus-4.7
+     # OPENROUTER_VISION_MODEL=anthropic/claude-opus-4.7
+     ```
+  3. (Optional but recommended) `gh auth login` so the agent can push
+     branches, edit the default branch, and create releases without
+     manual intervention. Without `gh`, B-008 will fire at V1-7.
+  4. (Optional) `pip install pdfplumber pymupdf playwright` into
+     `.venv` and `playwright install chromium` so V1-1 patent fetch
+     works without falling back to raw httpx.
+  5. (Optional) `brew install ffmpeg gifski` if you want the V1-7 hero
+     GIF to be generated automatically rather than handed to you as a
+     recording script.
+  6. Resume the agent — it will pick up at Phase V1-0 cleanup
+     (delete `origin/claim2cad-mvp`, push `v1.0-dev`) and proceed.
+- **Status:** Open. Resolution requires user action; no autonomous
+  workaround exists per the brief's explicit halt instruction.
+
 ## B-005 — Stub parser does not extract relations
 - **What it is:** When the LLM is unavailable, the rule-based stub parser
   produces components and wherein clauses but no `Relation` rows. This

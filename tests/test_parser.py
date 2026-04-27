@@ -58,9 +58,12 @@ def test_golden_short_circuit_returns_canonical_ir() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_hinge_stub_extracts_links_and_joints() -> None:
+def test_hinge_stub_extracts_links_and_joints(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Force the stub path by removing the API key for this test."""
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     text = HINGE_CLAIM.read_text(encoding="utf-8")
-    # No env key in CI → the stub path runs.
     ir = parse_claim(text)
     assert len(ir.components) >= 4, f"expected ≥4 components, got {len(ir.components)}"
     revolute = [c for c in ir.components if c.kind == "revolute_joint"]
@@ -84,14 +87,20 @@ def test_hinge_segmenter_finds_one_independent_claim() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_empty_claim_returns_stub_with_one_component() -> None:
+def test_empty_claim_returns_stub_with_one_component(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     ir = parse_claim("   ")
     assert len(ir.claims) == 1
     assert len(ir.components) == 1
     assert _all_components_have_provenance(ir)
 
 
-def test_minimal_claim_returns_at_least_one_component() -> None:
+def test_minimal_claim_returns_at_least_one_component(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
     ir = parse_claim("1. A widget.")
     assert len(ir.components) >= 1
     assert _all_components_have_provenance(ir)

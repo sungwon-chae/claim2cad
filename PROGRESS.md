@@ -316,3 +316,38 @@ was deferred. Times are local (Asia/Seoul, KST).
 
 - **Completed:** 2026-04-27 ~11:32 KST. Commit `phase-7: portfolio
   polish — v0.1.0 ready`. Tag `v0.1.0`.
+
+---
+
+# v1.0 Session — STARTED 2026-04-27 19:14 KST
+
+Scope for this session per the user's instruction: V1-0, V1-1, V1-2 only.
+LLM model routing: heavy → Opus 4.7, routine → Sonnet 4.6, vision → Opus 4.7.
+Soft cap: $60 (auto-downgrade); hard cap: $80.
+
+## Phase V1-0 — Branch hygiene — STARTED 2026-04-27 19:14, COMPLETED 19:30
+
+- Verified `.env` (4 keys present, 73-char API key).
+- `gh auth status` confirmed (token via keyring; HTTPS git protocol).
+- Set GitHub default branch to `main` via
+  `gh repo edit sungwon-chae/claim2cad --default-branch main`.
+- Deleted `origin/claim2cad-mvp` (was being held as default; deletion
+  worked once default flipped).
+- Created local `v1.0-dev` and pushed to origin.
+- Added `claim2cad.cost_tracker` (JSON-lines log + cumulative-cost
+  helper + auto-downgrade flag at $60).
+- Added `claim2cad.llm_client.route(task_type)` returning Opus / Sonnet
+  per the user's routing rule. `json_completion()` now records every
+  call with task_type + model + token usage.
+- `.env` autoloads via `python-dotenv` at package import.
+- `__version__` bumped to `1.0.0-dev`. Log file moved to
+  `logs/run-v1.log`.
+- Updated tests (`test_parser.py`, `test_pipeline.py`) to `delenv`
+  `OPENROUTER_API_KEY` for stub-path / parametrized examples so the
+  test suite stays free and fast (29/29 in 2.91 s vs. 394 s when LLM
+  was unintentionally hot).
+- Updated `.github/workflows/ci.yml` matrix branches.
+- Created `CHANGELOG.md` and `BACKLOG.md` per the brief.
+
+**Time spent:** ~15 min vs. 30 min target.
+**Cost so far:** $0.00 (no LLM calls yet).

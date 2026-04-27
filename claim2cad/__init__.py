@@ -11,11 +11,22 @@ import logging.handlers
 import os
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "1.0.0-dev"
 
 _LOG_DIR = Path(__file__).resolve().parent.parent / "logs"
-_LOG_FILE = _LOG_DIR / "run.log"
+# v1: per-major-version log file so we can grep release-aligned history.
+_LOG_FILE = _LOG_DIR / "run-v1.log"
 _FORMAT = "%(asctime)s %(levelname)-7s %(name)s :: %(message)s"
+
+# Best-effort .env autoload — silent if the file doesn't exist.
+try:
+    from dotenv import load_dotenv
+
+    _DOTENV_PATH = Path(__file__).resolve().parent.parent / ".env"
+    if _DOTENV_PATH.exists():
+        load_dotenv(_DOTENV_PATH)
+except ImportError:
+    pass
 
 
 def _configure_logging() -> None:

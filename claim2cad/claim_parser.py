@@ -40,6 +40,16 @@ from claim2cad.ir_schema import (
     SourceSpan,
     WhereinClause,
 )
+from claim2cad.lang_ko import (
+    EMBEDDED_JOINT_HINTS as KO_EMBEDDED_JOINT_HINTS,
+    HEAD_NP_TERMINATORS as KO_HEAD_NP_TERMINATORS,
+    HEAD_TRANSLATIONS as KO_HEAD_TRANSLATIONS,
+    KIND_HEURISTICS as KO_KIND_HEURISTICS,
+    LEADING_DEMONSTRATIVE as KO_LEADING_DEMONSTRATIVE,
+    ORDINAL_PREFIX as KO_ORDINAL_PREFIX,
+    ORDINAL_TRANSLATIONS as KO_ORDINAL_TRANSLATIONS,
+    RELATIVE_CLAUSE_VERBS as KO_RELATIVE_CLAUSE_VERBS,
+)
 from claim2cad.llm_client import (
     LLMConfigError,
     LLMResponseError,
@@ -128,14 +138,42 @@ _LEADING_ARTICLE = re.compile(r"^\s*(?:a|an|the|each)\s+", re.IGNORECASE)
 _NON_ID_CHARS = re.compile(r"[^a-z0-9]+")
 
 
-def _head_noun_phrase(element_text: str) -> str:
-    """Return the leading noun phrase of an element, stripped of articles.
+def _head_noun_phrase(element_text: str, language: str = "en") -> str:
+    """Return the head noun phrase of an element.
 
-    "a first rotating link pivotally connected to the fixed link"
-        → "first rotating link"
-    "an end effector attached to the second link"
-        → "end effector"
+    English: head is at the start (after articles); we cut at the first
+    grammatical terminator (e.g. "rotatably connected", "via", "to").
+
+        "a first rotating link pivotally connected to the fixed link"
+            → "first rotating link"
+
+    Korean: head is at the *end* (after the last relative-clause verb).
+
+        "상기 베이스에 회전 가능하게 결합된 제1 링크"
+            → "제1 링크"
     """
+    if language == "ko":
+        body = KO_LEADING_DEMONSTRATIVE.sub("", element_text).strip()
+        # Find the LAST relative-clause verb; the head is what follows.
+        last_match = None
+        for m in KO_RELATIVE_CLAUSE_VERBS.finditer(body):
+            last_match = m
+        if last_match is not None:
+            tail = body[last_match.end() :].strip()
+            if tail:
+                # Drop trailing topic markers like "는", "은", "이", "가",
+                # plus the connective "더" ("additionally"). Keep ordinal
+                # adjectives like "제1".
+                tail = re.sub(r"\s+더\s*$", "", tail).strip()
+                tail = re.sub(r"(을|를|이|가|는|은|의)\s*$", "", tail).strip()
+                return tail or body
+        # No relative-clause verb. Cut at the first NP terminator (e.g.
+        # particle), giving the leading noun.
+        match = KO_HEAD_NP_TERMINATORS.search(body)
+        if match:
+            body = body[: match.start()].strip()
+        return body or element_text.strip()
+
     body = _LEADING_ARTICLE.sub("", element_text).strip()
     match = _HEAD_NP_TERMINATORS.search(body)
     if match:
@@ -143,17 +181,47 @@ def _head_noun_phrase(element_text: str) -> str:
     return body or element_text.strip()
 
 
-def _slugify(label: str) -> str:
-    label = _LEADING_ARTICLE.sub("", label)
+def _romanise_korean(label: str) -> str:
+    """Translate the known Korean tokens in *label* to English equivalents.
+
+    Order tokens longest-first so multi-character entries (e.g.
+    ``엔드 이펙터``) win over their substrings.
+    """
+    out = label
+    # Replace ordinals: 제1 → first, 제2 → second, ...
+    def _ord_repl(match: re.Match[str]) -> str:
+        n = int(match.group(1))
+        return f" {KO_ORDINAL_TRANSLATIONS.get(n, f'n{n}')} "
+
+    out = KO_ORDINAL_PREFIX.sub(_ord_repl, out)
+
+    for ko_word in sorted(KO_HEAD_TRANSLATIONS, key=len, reverse=True):
+        out = out.replace(ko_word, f" {KO_HEAD_TRANSLATIONS[ko_word]} ")
+
+    return out
+
+
+def _slugify(label: str, language: str = "en") -> str:
+    if language == "ko":
+        label = KO_LEADING_DEMONSTRATIVE.sub("", label)
+        label = _romanise_korean(label)
+    else:
+        label = _LEADING_ARTICLE.sub("", label)
     slug = _NON_ID_CHARS.sub("_", label.lower()).strip("_")
     if not slug or not slug[0].isalpha():
         slug = f"part_{slug or 'x'}"
     return slug[:60]
 
 
-def _classify(element_text: str) -> tuple[str, str]:
+def _classify(element_text: str, language: str = "en") -> tuple[str, str]:
     """Classify based on the head noun phrase only, not the full element text."""
-    head = _head_noun_phrase(element_text)
+    head = _head_noun_phrase(element_text, language=language)
+    if language == "ko":
+        for pattern, category, kind in KO_KIND_HEURISTICS:
+            if re.search(pattern, head):
+                return category, kind
+        # Fall through to English heuristics for transliterated terms (e.g.
+        # the Korean head was already romanised to "link").
     for pattern, category, kind in _KIND_HEURISTICS:
         if re.search(pattern, head, flags=re.IGNORECASE):
             return category, kind
@@ -172,7 +240,7 @@ def _stub_component(
     start = body.find(element_text)
     if start < 0:
         # Element text was normalised; try a permissive fallback by stripping.
-        stripped = element_text.strip(" .;,")
+        stripped = element_text.strip(" .;,。")
         start = body.find(stripped)
         if start < 0:
             return None
@@ -180,9 +248,11 @@ def _stub_component(
     else:
         end = start + len(element_text)
 
-    head = _head_noun_phrase(element_text)
+    head = _head_noun_phrase(element_text, language=seg.language)
     label = head or " ".join(element_text.split()[:6]).rstrip(" .,;")
-    base_id = _slugify(label) or "component"
+    base_id = _slugify(label, language=seg.language) or "component"
+    if not base_id or not base_id[0].isalpha():
+        base_id = f"comp_{len(used_ids) + 1}"
     component_id = base_id
     counter = 1
     while component_id in used_ids:
@@ -190,7 +260,7 @@ def _stub_component(
         component_id = f"{base_id}_{counter}"
     used_ids.add(component_id)
 
-    category, kind = _classify(element_text)
+    category, kind = _classify(element_text, language=seg.language)
 
     return Component(
         id=component_id,
@@ -225,8 +295,36 @@ def _extract_embedded_joints(
     dependent_on: str | None,
 ) -> list[Component]:
     """Pull out joints/pivots that are mentioned inside element descriptions
-    (e.g. "...connected to X at a first revolute joint")."""
+    (e.g. "...connected to X at a first revolute joint" /
+    "...에 회전 가능하게 결합된")."""
     found: list[Component] = []
+
+    if seg.language == "ko":
+        # Korean: each "회전 가능하게 결합된" hint implies a joint between two
+        # components. We emit one connection component per hint.
+        for pattern, default_kind in KO_EMBEDDED_JOINT_HINTS:
+            for match in re.finditer(pattern, seg.text):
+                base_id = f"{default_kind}_{len([c for c in found if c.kind == default_kind]) + 1}"
+                while base_id in used_ids:
+                    base_id = f"{default_kind}_{len(used_ids) + 1}"
+                used_ids.add(base_id)
+                found.append(
+                    Component(
+                        id=base_id,
+                        label=match.group(0),
+                        category="connection",
+                        kind=default_kind,
+                        source_span=SourceSpan(
+                            claim_id=seg.claim_id,
+                            char_start=match.start(),
+                            char_end=match.end(),
+                        ),
+                        is_dependent=is_dependent,
+                        dependent_on=dependent_on,
+                    )
+                )
+        return found
+
     for regex, default_kind in (
         (_EMBEDDED_JOINT_RE, "revolute_joint"),
         (_EMBEDDED_PIVOT_RE, "revolute_joint"),
@@ -346,7 +444,10 @@ def _stub_ir(text: str) -> ClaimIR:
             )
 
     title = segments[0].preamble or "Unnamed apparatus"
-    title = title.lstrip("aAnN ").strip().capitalize() or "Unnamed apparatus"
+    if segments[0].language == "en":
+        title = title.lstrip("aAnN ").strip().capitalize() or "Unnamed apparatus"
+    else:
+        title = title.strip() or "Unnamed apparatus"
 
     if not components:
         components.append(

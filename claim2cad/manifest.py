@@ -32,6 +32,7 @@ EXAMPLE_TITLES = {
     "golden_robot_arm": "Articulated Robotic Manipulator (golden)",
     "hinge_assembly": "Four-Bar Linkage / Hinge Assembly",
     "planetary_gear": "Planetary Gear Assembly",
+    "korean_robot_arm": "로봇 매니퓰레이터 (Korean robot arm)",
 }
 
 
@@ -157,6 +158,17 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         tags.append("real_patent")
     if movable_joints:
         tags.append("kinematic")
+
+    # V1-7: detect Korean claims and tag them.
+    try:
+        from claim2cad.lang import detect_language
+        claim_text = (example_dir / "claim.txt").read_text(encoding="utf-8")
+        if detect_language(claim_text) == "ko":
+            tags.append("korean")
+            if source == "synthetic":
+                source = "korean"
+    except Exception:  # pragma: no cover — defensive
+        pass
 
     return ManifestExample(
         id=example_dir.name,

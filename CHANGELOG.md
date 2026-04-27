@@ -4,6 +4,23 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-7)
+- Korean (KIPO/KIPRIS) patent-claim support.
+  - `claim2cad/lang.py`: Hangul-block language detector.
+  - `claim2cad/lang_ko.py`: claim-split / dependent / preamble-tail /
+    element-split / NP-terminator / relative-clause-verb regexes,
+    Hangul→English head-noun translations (~40 entries), ordinal map
+    (제1→first…), Korean kind heuristics, embedded-joint hints
+    (`회전 가능하게 결합` → revolute_joint).
+  - Segmenter and parser dispatched on `detect_language(text)`. The
+    Korean parser scans for the *last* relative-clause verb to find the
+    head noun (Korean is head-final), romanises Korean tokens before
+    slugifying, and reuses the English kind heuristics on the
+    romanised label as a second pass.
+- New `examples/korean_robot_arm/` with bilingual claim + manifest
+  staging (tag `korean`, source `korean`).
+- 15 new tests in `tests/test_korean.py`. Test totals: 44 passed.
+
 ### Added
 - LLM model routing (`claim2cad.llm_client.route`) with `HEAVY_TASKS` /
   `ROUTINE_TASKS` taxonomy. Heavy reasoning → Opus 4.7, routine →

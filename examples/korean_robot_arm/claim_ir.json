@@ -1,0 +1,246 @@
+{
+  "schema_version": "0.1.0",
+  "title": "로봇 매니퓰레이터",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "【청구항 1】\n베이스;\n상기 베이스에 회전 가능하게 결합된 제1 링크;\n상기 제1 링크에 회전 가능하게 결합된 제2 링크;\n상기 제2 링크의 말단에 결합된 그리퍼; 및\n상기 베이스에 고정된 센서;\n를 포함하는 로봇 매니퓰레이터.",
+      "is_independent": true,
+      "depends_on": null
+    },
+    {
+      "id": "claim_2",
+      "text": "【청구항 2】\n제1항에 따른 로봇 매니퓰레이터에 있어서, 상기 그리퍼는 평행 이동 가능하게 구성된 한 쌍의 핑거를 더 구비하는 로봇 매니퓰레이터.",
+      "is_independent": false,
+      "depends_on": "claim_1"
+    }
+  ],
+  "components": [
+    {
+      "id": "base",
+      "label": "베이스",
+      "category": "structural",
+      "kind": "frame",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 11
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "first_link",
+      "label": "제1 링크",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 12,
+        "char_end": 37
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "second_link",
+      "label": "제2 링크",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 38,
+        "char_end": 63
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "gripper",
+      "label": "그리퍼",
+      "category": "functional",
+      "kind": "gripper",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 83
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "sensor",
+      "label": "센서",
+      "category": "functional",
+      "kind": "sensor",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 88,
+        "char_end": 101
+      },
+      "is_dependent": false,
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
+    },
+    {
+      "id": "finger_pair",
+      "label": "한 쌍의 핑거",
+      "category": "structural",
+      "kind": "finger",
+      "parent_id": "gripper",
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "평행 이동 가능하게 구성됨"
+      ],
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 55,
+        "char_end": 72
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1",
+      "figure_number": null,
+      "figure_references": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel_first_link_to_base",
+      "kind": "connects",
+      "source": "first_link",
+      "target": "base",
+      "via": null,
+      "constraints": [
+        "회전 가능하게 결합"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 12,
+        "char_end": 37
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_second_link_to_first_link",
+      "kind": "connects",
+      "source": "second_link",
+      "target": "first_link",
+      "via": null,
+      "constraints": [
+        "회전 가능하게 결합"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 38,
+        "char_end": 63
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gripper_to_second_link",
+      "kind": "attached_to",
+      "source": "gripper",
+      "target": "second_link",
+      "via": null,
+      "constraints": [
+        "말단에 결합"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 83
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_sensor_to_base",
+      "kind": "attached_to",
+      "source": "sensor",
+      "target": "base",
+      "via": null,
+      "constraints": [
+        "고정됨"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 88,
+        "char_end": 101
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "rel_gripper_contains_fingers",
+      "kind": "contains",
+      "source": "gripper",
+      "target": "finger_pair",
+      "via": null,
+      "constraints": [
+        "평행 이동 가능하게 구성됨"
+      ],
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 46,
+        "char_end": 72
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1"
+    }
+  ],
+  "wherein_clauses": [
+    {
+      "id": "wherein_finger_translation",
+      "text": "상기 그리퍼는 평행 이동 가능하게 구성된 한 쌍의 핑거를 더 구비하는",
+      "targets": [
+        "gripper",
+        "finger_pair"
+      ],
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 46,
+        "char_end": 80
+      },
+      "is_dependent": true,
+      "dependent_on": "claim_1"
+    }
+  ]
+}

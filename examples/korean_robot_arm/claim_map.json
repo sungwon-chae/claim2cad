@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1.0",
+  "example": "korean_robot_arm",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "base",
+      "glb_node_name": "base",
+      "label": "\ubca0\uc774\uc2a4",
+      "category": "structural",
+      "kind": "frame",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 8,
+        "char_end": 11
+      }
+    },
+    {
+      "component_id": "first_link",
+      "glb_node_name": "first_link",
+      "label": "\uc81c1 \ub9c1\ud06c",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 12,
+        "char_end": 37
+      }
+    },
+    {
+      "component_id": "second_link",
+      "glb_node_name": "second_link",
+      "label": "\uc81c2 \ub9c1\ud06c",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 38,
+        "char_end": 63
+      }
+    },
+    {
+      "component_id": "gripper",
+      "glb_node_name": "gripper",
+      "label": "\uadf8\ub9ac\ud37c",
+      "category": "functional",
+      "kind": "gripper",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 64,
+        "char_end": 83
+      }
+    },
+    {
+      "component_id": "sensor",
+      "glb_node_name": "sensor",
+      "label": "\uc13c\uc11c",
+      "category": "functional",
+      "kind": "sensor",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 88,
+        "char_end": 101
+      }
+    },
+    {
+      "component_id": "finger_pair",
+      "glb_node_name": "finger_pair",
+      "label": "\ud55c \uc30d\uc758 \ud551\uac70",
+      "category": "structural",
+      "kind": "finger",
+      "is_dependent": true,
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 55,
+        "char_end": 72
+      }
+    }
+  ]
+}

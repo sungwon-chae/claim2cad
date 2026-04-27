@@ -744,3 +744,47 @@ $60 not breached). Breakdown:
   component → figure_number bindings and (when the VLM cooperated)
   bbox hotspots in normalised coords.
 - Cost room: $73.13 remaining on the $80 cap.
+
+---
+
+## Phase V1-7 — Korean claims support — COMPLETED 2026-04-27
+
+### What shipped
+- `claim2cad/lang.py`: Hangul-block language detector (`detect_language` →
+  `"en"` | `"ko"`).
+- `claim2cad/lang_ko.py`: Korean regex bank (claim split, dependent,
+  preamble-tail, element split, NP terminators, relative-clause verbs),
+  Hangul→English head-noun translations, ordinal map, Korean kind
+  heuristics, embedded-joint hints (`회전 가능하게 결합` → revolute_joint).
+- `claim2cad/claim_segmenter.py`: dispatched on `detect_language`. Korean
+  segmenter handles `【청구항 N】` headers and trailing
+  `…를 포함하는 X` preambles. Returned `ClaimSegments` now carries a
+  `language` field.
+- `claim2cad/claim_parser.py`: `_head_noun_phrase`, `_slugify`,
+  `_classify`, `_stub_component`, `_extract_embedded_joints` are all
+  language-aware. Korean slugs route through a romanisation table
+  (베이스→base, 링크→link, 그리퍼→gripper, 센서→sensor, 제1→first, …).
+- `examples/korean_robot_arm/`: new bilingual mechanical claim with
+  expected_ir.json, model.step, model.glb, claim_map.json, urdf.
+- `claim2cad/manifest.py`: detects Korean claims at staging time and
+  applies a `korean` tag + `source: korean`.
+- `tests/test_korean.py`: 15 tests — language detection, segmentation,
+  stub-IR generation, span integrity, dry-run pipeline.
+
+### Verification
+- `pytest tests/` — 44 passed (29 existing + 15 new), 1.8 s.
+- `viewer/npm run typecheck` — clean.
+- `python -m claim2cad.pipeline --claim examples/korean_robot_arm/claim.txt
+  --out examples/korean_robot_arm` — produces 6 components, 5 relations,
+  1 wherein clause; STEP 58 KB / GLB 28 KB; LLM cost ~$0.06.
+- Golden + hinge + planetary regenerate identically (no regression).
+
+### Notes
+- Korean syntax is *head-final*: head nouns appear at the end of an element
+  after a chain of modifier verbs. The parser scans for the *last*
+  relative-clause verb (e.g. `결합된`, `구성된`, `있는`) and takes whatever
+  follows as the head noun. When no such verb appears, it falls back to the
+  English-style "first noun before particle" heuristic.
+- `lang_ko.HEAD_TRANSLATIONS` is intentionally small (~40 entries) — enough
+  to romanise the V1-7 example and the most common KIPO mechanical
+  vocabulary. Out-of-vocabulary head nouns slug to `comp_<n>`.

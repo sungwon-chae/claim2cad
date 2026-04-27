@@ -147,3 +147,4 @@
 {"ts": "2026-04-27T20:38:21", "task_type": "prior_art_diff", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 3040, "completion_tokens": 175, "cost_usd": 0.019575, "note": ""}
 {"ts": "2026-04-27T20:38:23", "task_type": "prior_art_diff", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 1471, "completion_tokens": 108, "cost_usd": 0.010055, "note": ""}
 {"ts": "2026-04-27T20:38:25", "task_type": "prior_art_diff", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 1596, "completion_tokens": 15, "cost_usd": 0.008355, "note": ""}
+{"ts": "2026-04-27T22:56:52", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6990, "completion_tokens": 2081, "cost_usd": 0.052185, "note": ""}

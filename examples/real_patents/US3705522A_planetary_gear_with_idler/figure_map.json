@@ -1,0 +1,429 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US3705522A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "14",
+      "description": "bolt/fastener (top)",
+      "approximate_position": [
+        0.31,
+        0.2
+      ]
+    },
+    {
+      "number": "10",
+      "description": "housing",
+      "approximate_position": [
+        0.7,
+        0.2
+      ]
+    },
+    {
+      "number": "12",
+      "description": "housing cover",
+      "approximate_position": [
+        0.28,
+        0.24
+      ]
+    },
+    {
+      "number": "16",
+      "description": "internal surface",
+      "approximate_position": [
+        0.4,
+        0.25
+      ]
+    },
+    {
+      "number": "40",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.47,
+        0.25
+      ]
+    },
+    {
+      "number": "18",
+      "description": "ring gear",
+      "approximate_position": [
+        0.57,
+        0.25
+      ]
+    },
+    {
+      "number": "30",
+      "description": "shaft portion",
+      "approximate_position": [
+        0.38,
+        0.3
+      ]
+    },
+    {
+      "number": "48",
+      "description": "planet gear",
+      "approximate_position": [
+        0.42,
+        0.29
+      ]
+    },
+    {
+      "number": "44",
+      "description": "bearing",
+      "approximate_position": [
+        0.58,
+        0.29
+      ]
+    },
+    {
+      "number": "34",
+      "description": "bearing",
+      "approximate_position": [
+        0.66,
+        0.28
+      ]
+    },
+    {
+      "number": "28",
+      "description": "bearing",
+      "approximate_position": [
+        0.3,
+        0.35
+      ]
+    },
+    {
+      "number": "22",
+      "description": "bearing",
+      "approximate_position": [
+        0.68,
+        0.35
+      ]
+    },
+    {
+      "number": "24",
+      "description": "output shaft",
+      "approximate_position": [
+        0.78,
+        0.39
+      ]
+    },
+    {
+      "number": "26",
+      "description": "input shaft",
+      "approximate_position": [
+        0.28,
+        0.42
+      ]
+    },
+    {
+      "number": "50",
+      "description": "gear",
+      "approximate_position": [
+        0.4,
+        0.41
+      ]
+    },
+    {
+      "number": "16",
+      "description": "internal surface",
+      "approximate_position": [
+        0.53,
+        0.4
+      ]
+    },
+    {
+      "number": "42",
+      "description": "gear",
+      "approximate_position": [
+        0.6,
+        0.41
+      ]
+    },
+    {
+      "number": "38",
+      "description": "shaft end",
+      "approximate_position": [
+        0.64,
+        0.43
+      ]
+    },
+    {
+      "number": "52",
+      "description": "gear",
+      "approximate_position": [
+        0.54,
+        0.47
+      ]
+    },
+    {
+      "number": "36",
+      "description": "shaft",
+      "approximate_position": [
+        0.6,
+        0.47
+      ]
+    },
+    {
+      "number": "50",
+      "description": "gear",
+      "approximate_position": [
+        0.44,
+        0.47
+      ]
+    },
+    {
+      "number": "32",
+      "description": "planet gear",
+      "approximate_position": [
+        0.31,
+        0.54
+      ]
+    },
+    {
+      "number": "48",
+      "description": "planet gear",
+      "approximate_position": [
+        0.4,
+        0.54
+      ]
+    },
+    {
+      "number": "40",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.5,
+        0.57
+      ]
+    },
+    {
+      "number": "16",
+      "description": "internal surface",
+      "approximate_position": [
+        0.54,
+        0.58
+      ]
+    },
+    {
+      "number": "44",
+      "description": "bearing",
+      "approximate_position": [
+        0.6,
+        0.58
+      ]
+    },
+    {
+      "number": "20",
+      "description": "base",
+      "approximate_position": [
+        0.5,
+        0.62
+      ]
+    },
+    {
+      "number": "14",
+      "description": "bolt/fastener (bottom)",
+      "approximate_position": [
+        0.3,
+        0.62
+      ]
+    },
+    {
+      "number": "10",
+      "description": "housing",
+      "approximate_position": [
+        0.72,
+        0.74
+      ]
+    },
+    {
+      "number": "18",
+      "description": "ring gear",
+      "approximate_position": [
+        0.25,
+        0.82
+      ]
+    },
+    {
+      "number": "D",
+      "description": "planet position D",
+      "approximate_position": [
+        0.44,
+        0.77
+      ]
+    },
+    {
+      "number": "40",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.5,
+        0.77
+      ]
+    },
+    {
+      "number": "44a",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.58,
+        0.77
+      ]
+    },
+    {
+      "number": "A",
+      "description": "planet position A",
+      "approximate_position": [
+        0.64,
+        0.79
+      ]
+    },
+    {
+      "number": "B",
+      "description": "planet position B",
+      "approximate_position": [
+        0.4,
+        0.81
+      ]
+    },
+    {
+      "number": "44",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.5,
+        0.82
+      ]
+    },
+    {
+      "number": "C",
+      "description": "planet position C",
+      "approximate_position": [
+        0.63,
+        0.82
+      ]
+    },
+    {
+      "number": "42",
+      "description": "gear",
+      "approximate_position": [
+        0.58,
+        0.83
+      ]
+    },
+    {
+      "number": "52",
+      "description": "gear",
+      "approximate_position": [
+        0.63,
+        0.84
+      ]
+    },
+    {
+      "number": "48a",
+      "description": "gear",
+      "approximate_position": [
+        0.44,
+        0.84
+      ]
+    },
+    {
+      "number": "42",
+      "description": "gear",
+      "approximate_position": [
+        0.41,
+        0.86
+      ]
+    },
+    {
+      "number": "48",
+      "description": "gear",
+      "approximate_position": [
+        0.48,
+        0.87
+      ]
+    },
+    {
+      "number": "36",
+      "description": "shaft center",
+      "approximate_position": [
+        0.52,
+        0.87
+      ]
+    },
+    {
+      "number": "52a",
+      "description": "gear",
+      "approximate_position": [
+        0.56,
+        0.88
+      ]
+    },
+    {
+      "number": "20",
+      "description": "base",
+      "approximate_position": [
+        0.72,
+        0.86
+      ]
+    },
+    {
+      "number": "F",
+      "description": "planet position F",
+      "approximate_position": [
+        0.65,
+        0.87
+      ]
+    },
+    {
+      "number": "32",
+      "description": "planet gear",
+      "approximate_position": [
+        0.72,
+        0.9
+      ]
+    },
+    {
+      "number": "48",
+      "description": "gear",
+      "approximate_position": [
+        0.58,
+        0.92
+      ]
+    },
+    {
+      "number": "52",
+      "description": "gear",
+      "approximate_position": [
+        0.42,
+        0.92
+      ]
+    },
+    {
+      "number": "44",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.62,
+        0.93
+      ]
+    },
+    {
+      "number": "40",
+      "description": "gear teeth",
+      "approximate_position": [
+        0.52,
+        0.94
+      ]
+    }
+  ],
+  "component_to_number": {
+    "housing": "10",
+    "input_shaft": "26",
+    "planet_carrier_means": "48",
+    "output_shaft": "24",
+    "first_ring_gear": "18",
+    "second_ring_gear": "52",
+    "first_planet_pinion": "32",
+    "third_planet_pinion": "42"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

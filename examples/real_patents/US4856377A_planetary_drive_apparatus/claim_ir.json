@@ -28,7 +28,19 @@
         "char_end": 92
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "engine_housing",
@@ -46,7 +58,19 @@
         "char_end": 119
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "ring_gear_means",
@@ -64,7 +88,19 @@
         "char_end": 136
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_ring_gear_member",
@@ -84,7 +120,19 @@
         "char_end": 171
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_ring_gear_member",
@@ -104,7 +152,19 @@
         "char_end": 198
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38999999999999996,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_stage_assembly",
@@ -122,7 +182,19 @@
         "char_end": 244
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.18000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_sun_gear",
@@ -140,7 +212,19 @@
         "char_end": 270
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.39999999999999997,
+            0.18000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "engine_output_shaft",
@@ -158,7 +242,19 @@
         "char_end": 301
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.24000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_planetary_carrier",
@@ -178,7 +274,19 @@
         "char_end": 328
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.43,
+            0.17,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_planetary_pinion",
@@ -198,7 +306,19 @@
         "char_end": 384
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_stage_assembly",
@@ -216,7 +336,19 @@
         "char_end": 525
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_sun_gear",
@@ -234,7 +366,19 @@
         "char_end": 552
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.83,
+            0.32,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_planetary_carrier",
@@ -252,7 +396,19 @@
         "char_end": 599
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "propeller_shaft",
@@ -270,7 +426,19 @@
         "char_end": 626
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "36",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_planetary_pinion_gears",
@@ -290,7 +458,19 @@
         "char_end": 657
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "38",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.48,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "similar_carrier",
@@ -314,7 +494,19 @@
         "char_end": 872
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "supplementary_pinion_gears",
@@ -333,7 +525,19 @@
         "char_end": 862
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "42",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7999999999999999,
+            0.5,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

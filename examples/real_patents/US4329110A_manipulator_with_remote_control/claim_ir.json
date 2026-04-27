@@ -26,7 +26,19 @@
         "char_end": 138
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "17",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.62,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "articulated_gripping_arm",
@@ -44,7 +56,9 @@
         "char_end": 97
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "lever_system",
@@ -62,7 +76,9 @@
         "char_end": 195
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_member",
@@ -83,7 +99,19 @@
         "char_end": 227
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "35",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_member",
@@ -103,7 +131,19 @@
         "char_end": 224
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "35",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "third_member",
@@ -123,7 +163,19 @@
         "char_end": 241
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "35",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_drive_unit",
@@ -143,7 +195,19 @@
         "char_end": 451
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "63",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.5599999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_drive_unit",
@@ -163,7 +227,19 @@
         "char_end": 472
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "63",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.5599999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "gripper_or_tool",
@@ -183,7 +259,9 @@
         "char_end": 585
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_lever_parallelogram",
@@ -201,7 +279,19 @@
         "char_end": 742
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "31",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.63,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_lever_parallelogram",
@@ -219,7 +309,19 @@
         "char_end": 836
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "33",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "common_member",
@@ -239,7 +341,19 @@
         "char_end": 858
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "35",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_parallel_member",
@@ -259,7 +373,19 @@
         "char_end": 919
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "31",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.63,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "pivot_axis",
@@ -279,7 +405,19 @@
         "char_end": 964
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "51",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.6,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

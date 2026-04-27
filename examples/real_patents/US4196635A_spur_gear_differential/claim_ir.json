@@ -26,7 +26,9 @@
         "char_end": 138
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "load_means",
@@ -47,7 +49,9 @@
         "char_end": 150
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "torque_means",
@@ -68,7 +72,19 @@
         "char_end": 264
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "5",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_housing_means",
@@ -86,7 +102,19 @@
         "char_end": 405
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.64,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "piston_means",
@@ -104,7 +132,19 @@
         "char_end": 422
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.85,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_piston_rod",
@@ -124,7 +164,19 @@
         "char_end": 451
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "25",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.86,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_piston_rod",
@@ -144,7 +196,19 @@
         "char_end": 475
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "4",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "sample",
@@ -162,7 +226,9 @@
         "char_end": 594
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fork_means",
@@ -182,7 +248,9 @@
         "char_end": 627
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fork_ends",
@@ -202,7 +270,9 @@
         "char_end": 656
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_housing_means",
@@ -220,7 +290,9 @@
         "char_end": 730
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "rotary_piston_means",
@@ -240,7 +312,9 @@
         "char_end": 751
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "torque_transmitting_means",
@@ -261,7 +335,19 @@
         "char_end": 823
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.53,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 37,
         "char_end": 48
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "robot_body",
@@ -53,7 +54,8 @@
         "claim_id": "claim_1",
         "char_start": 134,
         "char_end": 143
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "forearm",
@@ -66,7 +68,8 @@
         "claim_id": "claim_1",
         "char_start": 210,
         "char_end": 217
-      }
+      },
+      "figure_number": "22"
     },
     {
       "component_id": "central_axis",
@@ -131,7 +134,8 @@
         "claim_id": "claim_1",
         "char_start": 524,
         "char_end": 540
-      }
+      },
+      "figure_number": "18"
     },
     {
       "component_id": "first_common_point",
@@ -144,7 +148,8 @@
         "claim_id": "claim_1",
         "char_start": 624,
         "char_end": 642
-      }
+      },
+      "figure_number": "25"
     },
     {
       "component_id": "second_pivot_axis",
@@ -235,7 +240,8 @@
         "claim_id": "claim_1",
         "char_start": 1213,
         "char_end": 1227
-      }
+      },
+      "figure_number": "12"
     }
   ]
 }

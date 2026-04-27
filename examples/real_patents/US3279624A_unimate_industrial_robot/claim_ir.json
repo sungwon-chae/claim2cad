@@ -26,7 +26,19 @@
         "char_end": 197
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "servo_system",
@@ -44,7 +56,19 @@
         "char_end": 211
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "102",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.24000000000000002,
+            0.6799999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "output_portion",
@@ -62,7 +86,19 @@
         "char_end": 235
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.25,
+            0.32999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "sensing_interposer",
@@ -80,7 +116,19 @@
         "char_end": 330
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "servo_input_control_member",
@@ -100,7 +148,19 @@
         "char_end": 390
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "76",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.5599999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "instruction_presenting_means",
@@ -118,7 +178,9 @@
         "char_end": 527
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "interposer_positioning_means",
@@ -136,7 +198,9 @@
         "char_end": 681
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "coaction_means",
@@ -154,7 +218,9 @@
         "char_end": 775
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

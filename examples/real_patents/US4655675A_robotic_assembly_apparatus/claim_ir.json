@@ -28,7 +28,19 @@
         "char_end": 48
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "robot_body",
@@ -46,7 +58,9 @@
         "char_end": 75
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "swivel_stand",
@@ -66,7 +80,9 @@
         "char_end": 91
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "upper_arm",
@@ -86,7 +102,19 @@
         "char_end": 143
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "forearm",
@@ -106,7 +134,19 @@
         "char_end": 217
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "central_axis",
@@ -124,7 +164,9 @@
         "char_end": 456
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_wrist",
@@ -144,7 +186,9 @@
         "char_end": 330
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_wrist",
@@ -164,7 +208,9 @@
         "char_end": 346
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_wrist",
@@ -184,7 +230,9 @@
         "char_end": 364
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_pivot_axis",
@@ -205,7 +253,19 @@
         "char_end": 540
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.42,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_common_point",
@@ -225,7 +285,19 @@
         "char_end": 642
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "25",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5499999999999999,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_pivot_axis",
@@ -246,7 +318,9 @@
         "char_end": 747
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_common_point",
@@ -266,7 +340,9 @@
         "char_end": 852
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_driving_motor",
@@ -287,7 +363,9 @@
         "char_end": 902
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_reduction_gear",
@@ -307,7 +385,9 @@
         "char_end": 961
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_driving_motor",
@@ -328,7 +408,9 @@
         "char_end": 1042
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_reduction_gear",
@@ -348,7 +430,9 @@
         "char_end": 1109
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "operating_part",
@@ -368,7 +452,19 @@
         "char_end": 1227
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.82,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

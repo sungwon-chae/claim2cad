@@ -27,7 +27,8 @@
         "claim_id": "claim_1",
         "char_start": 125,
         "char_end": 138
-      }
+      },
+      "figure_number": "2"
     },
     {
       "component_id": "power_transmitting_device",

@@ -26,7 +26,19 @@
         "char_end": 87
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "1",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.76,
+            0.44999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "input_shaft",
@@ -44,7 +56,19 @@
         "char_end": 103
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "2",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6799999999999999,
+            0.32,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "intermediate_shaft",
@@ -64,7 +88,19 @@
         "char_end": 126
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "3",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.35,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_means",
@@ -84,7 +120,19 @@
         "char_end": 263
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "4",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6699999999999999,
+            0.35,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_means",
@@ -105,7 +153,19 @@
         "char_end": 363
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "5",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.71,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "output_shaft",
@@ -125,7 +185,19 @@
         "char_end": 380
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "6",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.71,
+            0.37,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "cvt_means",
@@ -143,7 +215,19 @@
         "char_end": 526
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "7",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.62,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "primary_pulley",
@@ -161,7 +245,19 @@
         "char_end": 566
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "8",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.32999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "primary_fixed_flange",
@@ -181,7 +277,19 @@
         "char_end": 592
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "71",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "primary_movable_flange",
@@ -201,7 +309,19 @@
         "char_end": 657
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "72",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.44999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "secondary_pulley",
@@ -219,7 +339,19 @@
         "char_end": 762
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "9",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.53,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "secondary_fixed_flange",
@@ -239,7 +371,19 @@
         "char_end": 788
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "81",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.47,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "secondary_movable_flange",
@@ -259,7 +403,19 @@
         "char_end": 854
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "82",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "endless_belt",
@@ -279,7 +435,19 @@
         "char_end": 939
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.3,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "clutch",
@@ -300,7 +468,19 @@
         "char_end": 1103
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.29,
+            0.54,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "change_direction_gear_train",
@@ -322,7 +502,19 @@
         "char_end": 1201
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.35,
+            0.52,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

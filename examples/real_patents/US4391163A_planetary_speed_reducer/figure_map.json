@@ -1,0 +1,350 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4391163A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [
+    {
+      "phrase": "housing",
+      "number": "9",
+      "char_start": 42,
+      "char_end": 52
+    },
+    {
+      "phrase": "input shaft",
+      "number": "1",
+      "char_start": 58,
+      "char_end": 72
+    },
+    {
+      "phrase": "output shaft",
+      "number": "23",
+      "char_start": 112,
+      "char_end": 128
+    },
+    {
+      "phrase": "inner central gear",
+      "number": "10",
+      "char_start": 251,
+      "char_end": 273
+    },
+    {
+      "phrase": "first gear coupling",
+      "number": "2",
+      "char_start": 863,
+      "char_end": 885
+    },
+    {
+      "phrase": "second gear coupling",
+      "number": "4",
+      "char_start": 1069,
+      "char_end": 1092
+    }
+  ],
+  "vlm_labels": [
+    {
+      "number": "17",
+      "approximate_position": [
+        0.28,
+        0.31
+      ]
+    },
+    {
+      "number": "18",
+      "approximate_position": [
+        0.28,
+        0.29
+      ]
+    },
+    {
+      "number": "21",
+      "approximate_position": [
+        0.36,
+        0.28
+      ]
+    },
+    {
+      "number": "20",
+      "approximate_position": [
+        0.39,
+        0.27
+      ]
+    },
+    {
+      "number": "22",
+      "approximate_position": [
+        0.42,
+        0.23
+      ]
+    },
+    {
+      "number": "23",
+      "approximate_position": [
+        0.45,
+        0.23
+      ]
+    },
+    {
+      "number": "9",
+      "approximate_position": [
+        0.26,
+        0.38
+      ]
+    },
+    {
+      "number": "19",
+      "approximate_position": [
+        0.49,
+        0.34
+      ]
+    },
+    {
+      "number": "8",
+      "approximate_position": [
+        0.39,
+        0.45
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.39,
+        0.46
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.78,
+        0.48
+      ]
+    },
+    {
+      "number": "12",
+      "approximate_position": [
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "number": "10c",
+      "approximate_position": [
+        0.52,
+        0.5
+      ]
+    },
+    {
+      "number": "1a",
+      "approximate_position": [
+        0.35,
+        0.5
+      ]
+    },
+    {
+      "number": "5b",
+      "approximate_position": [
+        0.33,
+        0.51
+      ]
+    },
+    {
+      "number": "3b",
+      "approximate_position": [
+        0.29,
+        0.55
+      ]
+    },
+    {
+      "number": "6b",
+      "approximate_position": [
+        0.31,
+        0.55
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.4,
+        0.55
+      ]
+    },
+    {
+      "number": "32",
+      "approximate_position": [
+        0.42,
+        0.57
+      ]
+    },
+    {
+      "number": "3b",
+      "approximate_position": [
+        0.83,
+        0.58
+      ]
+    },
+    {
+      "number": "1a",
+      "approximate_position": [
+        0.28,
+        0.62
+      ]
+    },
+    {
+      "number": "13",
+      "approximate_position": [
+        0.38,
+        0.62
+      ]
+    },
+    {
+      "number": "10b",
+      "approximate_position": [
+        0.55,
+        0.63
+      ]
+    },
+    {
+      "number": "10a",
+      "approximate_position": [
+        0.58,
+        0.64
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.4,
+        0.66
+      ]
+    },
+    {
+      "number": "30",
+      "approximate_position": [
+        0.42,
+        0.68
+      ]
+    },
+    {
+      "number": "4",
+      "approximate_position": [
+        0.63,
+        0.69
+      ]
+    },
+    {
+      "number": "1a",
+      "approximate_position": [
+        0.78,
+        0.7
+      ]
+    },
+    {
+      "number": "5a",
+      "approximate_position": [
+        0.3,
+        0.72
+      ]
+    },
+    {
+      "number": "6a",
+      "approximate_position": [
+        0.32,
+        0.72
+      ]
+    },
+    {
+      "number": "13",
+      "approximate_position": [
+        0.38,
+        0.71
+      ]
+    },
+    {
+      "number": "3a",
+      "approximate_position": [
+        0.82,
+        0.73
+      ]
+    },
+    {
+      "number": "3a",
+      "approximate_position": [
+        0.27,
+        0.81
+      ]
+    },
+    {
+      "number": "9",
+      "approximate_position": [
+        0.25,
+        0.82
+      ]
+    },
+    {
+      "number": "2",
+      "approximate_position": [
+        0.46,
+        0.79
+      ]
+    },
+    {
+      "number": "9",
+      "approximate_position": [
+        0.33,
+        0.84
+      ]
+    },
+    {
+      "number": "7",
+      "approximate_position": [
+        0.35,
+        0.85
+      ]
+    },
+    {
+      "number": "1",
+      "approximate_position": [
+        0.37,
+        0.86
+      ]
+    },
+    {
+      "number": "11",
+      "approximate_position": [
+        0.45,
+        0.87
+      ]
+    },
+    {
+      "number": "10",
+      "approximate_position": [
+        0.51,
+        0.87
+      ]
+    },
+    {
+      "number": "50",
+      "approximate_position": [
+        0.81,
+        0.85
+      ]
+    },
+    {
+      "number": "9",
+      "approximate_position": [
+        0.79,
+        0.82
+      ]
+    }
+  ],
+  "component_to_number": {
+    "housing": "9",
+    "input_shaft": "1",
+    "output_shaft": "23",
+    "outer_central_internal_gears": "10",
+    "inner_central_gear": "10",
+    "first_gear_coupling": "2",
+    "second_gear_coupling": "4",
+    "bearing_means": "11"
+  },
+  "notes": []
+}

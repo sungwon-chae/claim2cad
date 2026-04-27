@@ -28,7 +28,19 @@
         "char_end": 64
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.15000000000000002,
+            0.85,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "parallelogram_structure",
@@ -49,7 +61,19 @@
         "char_end": 97
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.77,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "base_structure",
@@ -67,7 +91,19 @@
         "char_end": 118
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.94,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_arm",
@@ -87,7 +123,19 @@
         "char_end": 225
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_arm",
@@ -107,7 +155,19 @@
         "char_end": 240
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.41,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "center_shaft",
@@ -128,7 +188,19 @@
         "char_end": 297
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.43,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_arm_first_section",
@@ -148,7 +220,19 @@
         "char_end": 333
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "38",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.59,
+            0.77,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_arm_first_end",
@@ -166,7 +250,19 @@
         "char_end": 350
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "39",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.63,
+            0.8099999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_arm_second_section",
@@ -187,7 +283,19 @@
         "char_end": 373
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32,
+            0.26,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_arm_second_end",
@@ -205,7 +313,19 @@
         "char_end": 391
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "41",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_arm_first_section",
@@ -225,7 +345,19 @@
         "char_end": 333
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "44",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38999999999999996,
+            0.24000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_arm_second_end",
@@ -243,7 +375,19 @@
         "char_end": 391
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "46",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.37,
+            0.36,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "third_arm",
@@ -264,7 +408,19 @@
         "char_end": 466
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26999999999999996,
+            0.74,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "fourth_arm",
@@ -285,7 +441,19 @@
         "char_end": 481
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.9,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "end_effector",
@@ -305,7 +473,19 @@
         "char_end": 691
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.89,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "means_for_moving",
@@ -323,7 +503,19 @@
         "char_end": 746
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "50",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.45999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "electromagnetic_coil",
@@ -343,7 +535,19 @@
         "char_end": 822
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "60",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.74,
+            0.73,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "magnets",
@@ -363,7 +567,19 @@
         "char_end": 855
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "62",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.44999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "stationary_iron_structures",
@@ -384,7 +600,19 @@
         "char_end": 918
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "64",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6799999999999999,
+            0.58,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

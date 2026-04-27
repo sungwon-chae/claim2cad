@@ -26,7 +26,19 @@
         "char_end": 52
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.54,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_drive_means",
@@ -46,7 +58,9 @@
         "char_end": 124
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_drive_means",
@@ -66,7 +80,9 @@
         "char_end": 124
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_arm",
@@ -88,7 +104,9 @@
         "char_end": 164
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_arm_driving_means",
@@ -109,7 +127,9 @@
         "char_end": 290
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_arm",
@@ -130,7 +150,9 @@
         "char_end": 302
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "coupling_means",
@@ -151,7 +173,9 @@
         "char_end": 700
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "hollow_shaft",
@@ -173,7 +197,19 @@
         "char_end": 769
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.84,
+            0.21000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_driven_means",
@@ -194,7 +230,9 @@
         "char_end": 876
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_shaft",
@@ -215,7 +253,9 @@
         "char_end": 977
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "toothed_gearing",
@@ -236,7 +276,9 @@
         "char_end": 1076
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "toothed_linking_means",
@@ -257,7 +299,9 @@
         "char_end": 1110
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_driven_means",
@@ -278,7 +322,9 @@
         "char_end": 1179
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

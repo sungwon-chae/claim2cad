@@ -40,7 +40,8 @@
         "claim_id": "claim_1",
         "char_start": 252,
         "char_end": 264
-      }
+      },
+      "figure_number": "5"
     },
     {
       "component_id": "first_housing_means",
@@ -53,7 +54,8 @@
         "claim_id": "claim_1",
         "char_start": 386,
         "char_end": 405
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "piston_means",
@@ -66,7 +68,8 @@
         "claim_id": "claim_1",
         "char_start": 410,
         "char_end": 422
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "first_piston_rod",
@@ -79,7 +82,8 @@
         "claim_id": "claim_1",
         "char_start": 435,
         "char_end": 451
-      }
+      },
+      "figure_number": "25"
     },
     {
       "component_id": "second_piston_rod",
@@ -92,7 +96,8 @@
         "claim_id": "claim_1",
         "char_start": 458,
         "char_end": 475
-      }
+      },
+      "figure_number": "4"
     },
     {
       "component_id": "sample",
@@ -170,7 +175,8 @@
         "claim_id": "claim_1",
         "char_start": 794,
         "char_end": 823
-      }
+      },
+      "figure_number": "11"
     }
   ]
 }

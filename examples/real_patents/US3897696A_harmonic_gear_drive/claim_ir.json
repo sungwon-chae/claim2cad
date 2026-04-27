@@ -26,7 +26,9 @@
         "char_end": 21
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "gear_train_1",
@@ -46,7 +48,19 @@
         "char_end": 43
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "21",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "gear_train_2",
@@ -66,7 +80,19 @@
         "char_end": 43
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.72,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "intermediate_shaft_1",
@@ -84,7 +110,9 @@
         "char_end": 71
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "intermediate_shaft_2",
@@ -102,7 +130,9 @@
         "char_end": 71
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "drive_shaft",
@@ -122,7 +152,9 @@
         "char_end": 99
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "transmission_stage",
@@ -142,7 +174,9 @@
         "char_end": 134
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "pinion",
@@ -163,7 +197,19 @@
         "char_end": 187
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "8",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "gear",
@@ -183,7 +229,9 @@
         "char_end": 217
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "driven_machine",
@@ -201,7 +249,9 @@
         "char_end": 330
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "pair_of_frames",
@@ -223,7 +273,19 @@
         "char_end": 458
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "19",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26999999999999996,
+            0.6699999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "frame_1",
@@ -244,7 +306,19 @@
         "char_end": 508
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.21000000000000002,
+            0.77,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "frame_2",
@@ -265,7 +339,9 @@
         "char_end": 508
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

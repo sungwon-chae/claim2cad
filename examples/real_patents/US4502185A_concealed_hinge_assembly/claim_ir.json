@@ -29,7 +29,19 @@
         "char_end": 19
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.44,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "side_ribs",
@@ -51,7 +63,19 @@
         "char_end": 61
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.23,
+            0.27999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "center_rib",
@@ -72,7 +96,19 @@
         "char_end": 78
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.36,
+            0.25,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "end_bars",
@@ -92,7 +128,19 @@
         "char_end": 119
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "13",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.26999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "grid_bars",
@@ -112,7 +160,19 @@
         "char_end": 133
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "side_rib_openings",
@@ -133,7 +193,19 @@
         "char_end": 176
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "15",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "center_rib_openings",
@@ -154,7 +226,19 @@
         "char_end": 348
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.29,
+            0.84,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_group_bars",
@@ -175,7 +259,19 @@
         "char_end": 482
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "17",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.18000000000000002,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "pins",
@@ -195,7 +291,19 @@
         "char_end": 571
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_group_bars",
@@ -215,7 +323,19 @@
         "char_end": 658
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "19",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.21000000000000002,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "sockets",
@@ -237,7 +357,19 @@
         "char_end": 758
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "fastening_means",
@@ -257,7 +389,19 @@
         "char_end": 1058
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "21",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.83,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

@@ -28,7 +28,19 @@
         "char_end": 532
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "1",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.33999999999999997,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "upper_arm_member",
@@ -48,7 +60,19 @@
         "char_end": 655
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "45",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5499999999999999,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "shoulder_joint",
@@ -69,7 +93,19 @@
         "char_end": 750
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_sensor_means",
@@ -89,7 +125,19 @@
         "char_end": 1023
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "51",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.31,
+            0.45999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_recording_means",
@@ -109,7 +157,9 @@
         "char_end": 1112
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_driving_means",
@@ -131,7 +181,9 @@
         "char_end": 1179
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_sensor_means",
@@ -151,7 +203,9 @@
         "char_end": 1334
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_recording_means",
@@ -171,7 +225,9 @@
         "char_end": 1424
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_driving_means",
@@ -193,7 +249,9 @@
         "char_end": 1491
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "lower_arm_member",
@@ -213,7 +271,9 @@
         "char_end": 1645
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "elbow_connecting_means",
@@ -234,7 +294,19 @@
         "char_end": 1712
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "46",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.48,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "third_joint",
@@ -254,7 +326,19 @@
         "char_end": 1768
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "47",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.59,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "third_sensor_means",
@@ -274,7 +358,9 @@
         "char_end": 1862
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_recording_means",
@@ -294,7 +380,9 @@
         "char_end": 1963
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_driving_means",
@@ -316,7 +404,9 @@
         "char_end": 2029
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "hollow_hand_member",
@@ -336,7 +426,19 @@
         "char_end": 2186
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "4",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "knuckle_joint",
@@ -356,7 +458,9 @@
         "char_end": 2280
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fourth_fifth_sensor_means",
@@ -376,7 +480,9 @@
         "char_end": 2361
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fourth_fifth_recording_means",
@@ -396,7 +502,9 @@
         "char_end": 2471
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fourth_fifth_driving_means",
@@ -417,7 +525,9 @@
         "char_end": 2550
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "central_hand_member",
@@ -437,7 +547,9 @@
         "char_end": 2712
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "hollow_thumb_members",
@@ -459,7 +571,9 @@
         "char_end": 2807
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "pivotal_thumb_joints",
@@ -477,7 +591,9 @@
         "char_end": 2874
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "thumb_sensor_elements",
@@ -497,7 +613,9 @@
         "char_end": 3103
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "thumb_recording_means",
@@ -517,7 +635,9 @@
         "char_end": 3180
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "thumb_driving_means",
@@ -538,7 +658,9 @@
         "char_end": 3269
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "hollow_finger_members",
@@ -560,7 +682,9 @@
         "char_end": 3452
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "pivoted_finger_joints",
@@ -578,7 +702,9 @@
         "char_end": 3521
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "finger_sensor_elements",
@@ -598,7 +724,9 @@
         "char_end": 3722
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "finger_recording_means",
@@ -618,7 +746,9 @@
         "char_end": 3801
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "finger_driving_means",
@@ -639,7 +769,9 @@
         "char_end": 3891
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

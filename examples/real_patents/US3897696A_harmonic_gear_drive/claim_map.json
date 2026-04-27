@@ -27,7 +27,8 @@
         "claim_id": "claim_1",
         "char_start": 32,
         "char_end": 43
-      }
+      },
+      "figure_number": "21"
     },
     {
       "component_id": "gear_train_2",
@@ -40,7 +41,8 @@
         "claim_id": "claim_1",
         "char_start": 32,
         "char_end": 43
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "intermediate_shaft_1",
@@ -105,7 +107,8 @@
         "claim_id": "claim_1",
         "char_start": 181,
         "char_end": 187
-      }
+      },
+      "figure_number": "8"
     },
     {
       "component_id": "gear",
@@ -144,7 +147,8 @@
         "claim_id": "claim_1",
         "char_start": 444,
         "char_end": 458
-      }
+      },
+      "figure_number": "19"
     },
     {
       "component_id": "frame_1",
@@ -157,7 +161,8 @@
         "claim_id": "claim_1",
         "char_start": 502,
         "char_end": 508
-      }
+      },
+      "figure_number": "34"
     },
     {
       "component_id": "frame_2",

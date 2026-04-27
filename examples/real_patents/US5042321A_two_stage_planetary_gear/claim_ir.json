@@ -26,7 +26,9 @@
         "char_end": 83
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_housing",
@@ -44,7 +46,19 @@
         "char_end": 138
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "2",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "power_transmitting_device",
@@ -64,7 +78,9 @@
         "char_end": 223
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "transmission_device",
@@ -82,7 +98,9 @@
         "char_end": 291
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_housing",
@@ -100,7 +118,9 @@
         "char_end": 307
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "differential_housing",
@@ -121,7 +141,9 @@
         "char_end": 426
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "output_shaft",
@@ -139,7 +161,9 @@
         "char_end": 536
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "reinforcement_element",
@@ -157,7 +181,9 @@
         "char_end": 563
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "end_portions",
@@ -175,7 +201,9 @@
         "char_end": 591
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "one_end_portion",
@@ -193,7 +221,9 @@
         "char_end": 608
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "another_end_portion",
@@ -213,7 +243,9 @@
         "char_end": 662
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

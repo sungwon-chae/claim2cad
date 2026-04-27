@@ -28,7 +28,28 @@
         "char_end": 59
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.76,
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.72,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "input_shaft",
@@ -48,7 +69,28 @@
         "char_end": 75
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.43,
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "planet_carrier_means",
@@ -68,7 +110,19 @@
         "char_end": 132
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "48",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.9,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_mounting_means",
@@ -88,7 +142,9 @@
         "char_end": 210
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_mounting_means",
@@ -108,7 +164,9 @@
         "char_end": 236
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "output_shaft",
@@ -128,7 +186,28 @@
         "char_end": 261
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.77,
+            0.38999999999999996,
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.76,
+            0.37,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_ring_gear",
@@ -148,7 +227,28 @@
         "char_end": 316
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.3,
+            0.83,
+            0.04,
+            0.04
+          ]
+        },
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.23,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_ring_gear",
@@ -168,7 +268,19 @@
         "char_end": 378
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "52",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.39999999999999997,
+            0.9,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_planet_pinion",
@@ -189,7 +301,19 @@
         "char_end": 425
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.88,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_planet_pinion",
@@ -211,7 +335,9 @@
         "char_end": 523
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_planet_pinion",
@@ -233,7 +359,19 @@
         "char_end": 719
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "42",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38999999999999996,
+            0.84,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

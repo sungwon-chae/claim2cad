@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 172,
         "char_end": 197
-      }
+      },
+      "figure_number": "18"
     },
     {
       "component_id": "servo_system",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 199,
         "char_end": 211
-      }
+      },
+      "figure_number": "102"
     },
     {
       "component_id": "output_portion",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 221,
         "char_end": 235
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "sensing_interposer",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 312,
         "char_end": 330
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "servo_input_control_member",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 364,
         "char_end": 390
-      }
+      },
+      "figure_number": "76"
     },
     {
       "component_id": "instruction_presenting_means",

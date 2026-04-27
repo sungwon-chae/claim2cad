@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 52,
         "char_end": 74
-      }
+      },
+      "figure_number": "14"
     },
     {
       "component_id": "vehicle_body",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 101,
         "char_end": 113
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "door_half_member",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 118,
         "char_end": 134
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "pintle_pin",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 163,
         "char_end": 173
-      }
+      },
+      "figure_number": "22"
     },
     {
       "component_id": "hinge_axis",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 181,
         "char_end": 200
-      }
+      },
+      "figure_number": "18"
     },
     {
       "component_id": "hinge_body_half_assembly",
@@ -79,7 +84,8 @@
         "claim_id": "claim_1",
         "char_start": 406,
         "char_end": 430
-      }
+      },
+      "figure_number": "16"
     },
     {
       "component_id": "main_member",
@@ -92,7 +98,8 @@
         "claim_id": "claim_1",
         "char_start": 443,
         "char_end": 454
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "u_shaped_link_member",
@@ -105,7 +112,8 @@
         "claim_id": "claim_1",
         "char_start": 497,
         "char_end": 517
-      }
+      },
+      "figure_number": "26"
     },
     {
       "component_id": "upper_extension",
@@ -118,7 +126,8 @@
         "claim_id": "claim_1",
         "char_start": 614,
         "char_end": 620
-      }
+      },
+      "figure_number": "28"
     },
     {
       "component_id": "lower_extension",
@@ -131,7 +140,8 @@
         "claim_id": "claim_1",
         "char_start": 625,
         "char_end": 631
-      }
+      },
+      "figure_number": "30"
     },
     {
       "component_id": "mounting_wall",
@@ -144,7 +154,8 @@
         "claim_id": "claim_1",
         "char_start": 651,
         "char_end": 664
-      }
+      },
+      "figure_number": "32"
     },
     {
       "component_id": "main_member_pintle_pin_hole",
@@ -157,7 +168,8 @@
         "claim_id": "claim_1",
         "char_start": 718,
         "char_end": 732
-      }
+      },
+      "figure_number": "34"
     },
     {
       "component_id": "base_wall",
@@ -170,7 +182,8 @@
         "claim_id": "claim_1",
         "char_start": 782,
         "char_end": 791
-      }
+      },
+      "figure_number": "36"
     },
     {
       "component_id": "base_wall_exterior_guide_surface",
@@ -183,7 +196,8 @@
         "claim_id": "claim_1",
         "char_start": 800,
         "char_end": 829
-      }
+      },
+      "figure_number": "38"
     },
     {
       "component_id": "upper_leg",
@@ -196,7 +210,8 @@
         "claim_id": "claim_1",
         "char_start": 834,
         "char_end": 845
-      }
+      },
+      "figure_number": "40"
     },
     {
       "component_id": "lower_leg",
@@ -209,7 +224,8 @@
         "claim_id": "claim_1",
         "char_start": 850,
         "char_end": 861
-      }
+      },
+      "figure_number": "41"
     },
     {
       "component_id": "link_member_pintle_pin_holes",
@@ -222,7 +238,8 @@
         "claim_id": "claim_1",
         "char_start": 878,
         "char_end": 900
-      }
+      },
+      "figure_number": "44"
     },
     {
       "component_id": "leg_guide_edge_surface",
@@ -235,7 +252,8 @@
         "claim_id": "claim_1",
         "char_start": 968,
         "char_end": 990
-      }
+      },
+      "figure_number": "54"
     },
     {
       "component_id": "stop_means",
@@ -248,7 +266,8 @@
         "claim_id": "claim_1",
         "char_start": 1087,
         "char_end": 1097
-      }
+      },
+      "figure_number": "56"
     },
     {
       "component_id": "bight_wall",
@@ -261,7 +280,8 @@
         "claim_id": "claim_1",
         "char_start": 1254,
         "char_end": 1264
-      }
+      },
+      "figure_number": "57"
     },
     {
       "component_id": "first_sidewall",
@@ -274,7 +294,8 @@
         "claim_id": "claim_1",
         "char_start": 1277,
         "char_end": 1291
-      }
+      },
+      "figure_number": "58"
     },
     {
       "component_id": "second_sidewall",
@@ -287,7 +308,8 @@
         "claim_id": "claim_1",
         "char_start": 1296,
         "char_end": 1311
-      }
+      },
+      "figure_number": "60"
     },
     {
       "component_id": "leaf_flange",
@@ -300,7 +322,8 @@
         "claim_id": "claim_1",
         "char_start": 1389,
         "char_end": 1400
-      }
+      },
+      "figure_number": "64"
     },
     {
       "component_id": "leaf_flange_pintle_pin_hole",
@@ -313,7 +336,8 @@
         "claim_id": "claim_1",
         "char_start": 1401,
         "char_end": 1415
-      }
+      },
+      "figure_number": "66"
     },
     {
       "component_id": "pintle_pin_stop_means",
@@ -326,7 +350,8 @@
         "claim_id": "claim_1",
         "char_start": 1869,
         "char_end": 1879
-      }
+      },
+      "figure_number": "68"
     }
   ]
 }

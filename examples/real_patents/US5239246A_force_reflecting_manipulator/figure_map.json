@@ -1,0 +1,31 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US5239246A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "11",
+      "description": "Robot Servo System R(s) block",
+      "approximate_position": [
+        0.44,
+        0.37
+      ]
+    },
+    {
+      "number": "10",
+      "description": "summing junction",
+      "approximate_position": [
+        0.66,
+        0.32
+      ]
+    }
+  ],
+  "component_to_number": {
+    "robot_arm": "11",
+    "signal_mixer": "10"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

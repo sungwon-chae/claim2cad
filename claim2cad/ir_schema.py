@@ -114,6 +114,15 @@ ComponentKind = Union[StructuralKind, ConnectionKind, FunctionalKind, str]
 ComponentCategory = Literal["structural", "connection", "functional"]
 
 
+class FigureReference(BaseModel):
+    """A pointer back to a numbered label in a patent figure."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    figure_id: str = Field(..., min_length=1, max_length=32)  # e.g. "figure_1"
+    bbox: Optional[list[float]] = None  # [x, y, w, h] in *normalised* image coords (0..1)
+
+
 class Component(BaseModel):
     """A named physical part referenced by the claim."""
 
@@ -129,6 +138,11 @@ class Component(BaseModel):
     source_span: SourceSpan
     is_dependent: bool = False
     dependent_on: Optional[str] = None  # ID of the parent claim if dependent.
+
+    # V1-3: figure-parsing additions. Both default to absent so old IRs stay
+    # valid and the LLM doesn't need to know about these fields.
+    figure_number: Optional[str] = None
+    figure_references: list[FigureReference] = Field(default_factory=list)
 
 
 # ---------------------------------------------------------------------------
@@ -268,6 +282,7 @@ __all__ = [
     "DimensionRelative",
     "DimensionUnspecified",
     "DimensionValue",
+    "FigureReference",
     "Relation",
     "RelationKind",
     "SourceSpan",

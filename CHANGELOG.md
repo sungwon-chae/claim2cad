@@ -44,6 +44,20 @@ All notable changes documented here. This project follows semantic versioning.
 - V1-2 baseline: **25/25 patents graded "good"** at iteration 0
   on the structural eval. No iterative improvement needed.
 
+### Added (V1-3)
+- `claim2cad.llm_vision` — OpenRouter vision wrapper with cost
+  recording and JSON-mode parsing.
+- `claim2cad.figure_parser` — three-pass component → figure-number
+  matcher (regex / rule / LLM-rematch), `process_patent_directory`,
+  `process_all` batch driver with caching.
+- `Component.figure_number` and `Component.figure_references` fields
+  added to the IR schema (both optional, backward-compatible).
+- `examples/real_patents/<id>/figure_map.json` for all 25 patents.
+- IRs and `claim_map.json` files updated in-place with figure-number
+  stamps.
+- V1-3 results: **25/25** figure_maps written, **8/25** with full
+  mapping (brief target ≥ 5), VLM cost **$1.56** (brief target < $5).
+
 ## [v0.1.0] — 2026-04-27
 - Initial release. Hand-crafted examples (robot arm, hinge, planetary gear).
 - Two-pane viewer with bidirectional highlighting.

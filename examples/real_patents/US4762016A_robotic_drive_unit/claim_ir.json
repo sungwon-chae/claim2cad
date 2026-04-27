@@ -26,7 +26,19 @@
         "char_end": 45
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.26,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_input_link",
@@ -44,7 +56,19 @@
         "char_end": 64
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "20",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.74,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_actuator_assembly",
@@ -64,7 +88,19 @@
         "char_end": 91
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.94,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_joint",
@@ -82,7 +118,19 @@
         "char_end": 114
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_input_link",
@@ -100,7 +148,19 @@
         "char_end": 233
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.52,
+            0.84,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_actuator_assembly",
@@ -120,7 +180,19 @@
         "char_end": 260
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.89,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_joint",
@@ -138,7 +210,19 @@
         "char_end": 284
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.7,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "mounting_means",
@@ -158,7 +242,19 @@
         "char_end": 454
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.2,
+            0.9299999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_output_link",
@@ -176,7 +272,19 @@
         "char_end": 474
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "third_joint",
@@ -196,7 +304,19 @@
         "char_end": 497
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_output_link",
@@ -214,7 +334,19 @@
         "char_end": 581
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "50",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.25,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "fourth_joint",
@@ -234,7 +366,19 @@
         "char_end": 605
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.54,
+            0.78,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "fifth_joint",
@@ -254,7 +398,19 @@
         "char_end": 684
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.7999999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

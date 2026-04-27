@@ -26,7 +26,9 @@
         "char_end": 132
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "means_transmitting_hc",
@@ -46,7 +48,9 @@
         "char_end": 463
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "commanded_position_signal_hc",
@@ -66,7 +70,9 @@
         "char_end": 447
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "robot_arm",
@@ -84,7 +90,19 @@
         "char_end": 44
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "11",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.42,
+            0.35,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "robot_servo_system",
@@ -105,7 +123,9 @@
         "char_end": 486
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "servo_control_input_signal",
@@ -123,7 +143,9 @@
         "char_end": 550
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "actual_position_signal",
@@ -141,7 +163,9 @@
         "char_end": 678
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "signal_mixer",
@@ -163,7 +187,19 @@
         "char_end": 693
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.3,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "actual_servo_control_signal",
@@ -184,7 +220,9 @@
         "char_end": 870
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "compliance_control_feedback_gain",
@@ -202,7 +240,9 @@
         "char_end": 1023
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "means_sensing_contact_force",
@@ -222,7 +262,9 @@
         "char_end": 1094
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "contact_force_signal",
@@ -242,7 +284,9 @@
         "char_end": 1156
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "low_pass_filter",
@@ -262,7 +306,9 @@
         "char_end": 1268
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "low_pass_filtered_contact_force_signal",
@@ -280,7 +326,9 @@
         "char_end": 837
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "means_producing_force_reflection",
@@ -301,7 +349,9 @@
         "char_end": 1433
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "force_reflection_signal",
@@ -321,7 +371,9 @@
         "char_end": 1456
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "means_transmitting_force_reflection",
@@ -339,7 +391,9 @@
         "char_end": 1686
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "gain_gps",
@@ -357,7 +411,9 @@
         "char_end": 462
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "following_commanded_position_signal",
@@ -377,7 +433,9 @@
         "char_end": 1783
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 45,
         "char_end": 64
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "parallelogram_structure",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 73,
         "char_end": 97
-      }
+      },
+      "figure_number": "14"
     },
     {
       "component_id": "base_structure",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 104,
         "char_end": 118
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "first_arm",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 220,
         "char_end": 225
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "second_arm",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 230,
         "char_end": 240
-      }
+      },
+      "figure_number": "22"
     },
     {
       "component_id": "center_shaft",
@@ -79,7 +84,8 @@
         "claim_id": "claim_1",
         "char_start": 285,
         "char_end": 297
-      }
+      },
+      "figure_number": "30"
     },
     {
       "component_id": "first_arm_first_section",
@@ -92,7 +98,8 @@
         "claim_id": "claim_1",
         "char_start": 318,
         "char_end": 333
-      }
+      },
+      "figure_number": "38"
     },
     {
       "component_id": "first_arm_first_end",
@@ -105,7 +112,8 @@
         "claim_id": "claim_1",
         "char_start": 339,
         "char_end": 350
-      }
+      },
+      "figure_number": "39"
     },
     {
       "component_id": "first_arm_second_section",
@@ -118,7 +126,8 @@
         "claim_id": "claim_1",
         "char_start": 357,
         "char_end": 373
-      }
+      },
+      "figure_number": "40"
     },
     {
       "component_id": "first_arm_second_end",
@@ -131,7 +140,8 @@
         "claim_id": "claim_1",
         "char_start": 379,
         "char_end": 391
-      }
+      },
+      "figure_number": "41"
     },
     {
       "component_id": "second_arm_first_section",
@@ -144,7 +154,8 @@
         "claim_id": "claim_1",
         "char_start": 318,
         "char_end": 333
-      }
+      },
+      "figure_number": "44"
     },
     {
       "component_id": "second_arm_second_end",
@@ -157,7 +168,8 @@
         "claim_id": "claim_1",
         "char_start": 379,
         "char_end": 391
-      }
+      },
+      "figure_number": "46"
     },
     {
       "component_id": "third_arm",
@@ -170,7 +182,8 @@
         "claim_id": "claim_1",
         "char_start": 457,
         "char_end": 466
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "fourth_arm",
@@ -183,7 +196,8 @@
         "claim_id": "claim_1",
         "char_start": 471,
         "char_end": 481
-      }
+      },
+      "figure_number": "28"
     },
     {
       "component_id": "end_effector",
@@ -196,7 +210,8 @@
         "claim_id": "claim_1",
         "char_start": 679,
         "char_end": 691
-      }
+      },
+      "figure_number": "16"
     },
     {
       "component_id": "means_for_moving",
@@ -209,7 +224,8 @@
         "claim_id": "claim_1",
         "char_start": 718,
         "char_end": 746
-      }
+      },
+      "figure_number": "50"
     },
     {
       "component_id": "electromagnetic_coil",
@@ -222,7 +238,8 @@
         "claim_id": "claim_1",
         "char_start": 802,
         "char_end": 822
-      }
+      },
+      "figure_number": "60"
     },
     {
       "component_id": "magnets",
@@ -235,7 +252,8 @@
         "claim_id": "claim_1",
         "char_start": 848,
         "char_end": 855
-      }
+      },
+      "figure_number": "62"
     },
     {
       "component_id": "stationary_iron_structures",
@@ -248,7 +266,8 @@
         "claim_id": "claim_1",
         "char_start": 892,
         "char_end": 918
-      }
+      },
+      "figure_number": "64"
     }
   ]
 }

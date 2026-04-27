@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 101,
         "char_end": 121
-      }
+      },
+      "figure_number": "106"
     },
     {
       "component_id": "gripper_mechanism",
@@ -53,7 +54,8 @@
         "claim_id": "claim_1",
         "char_start": 330,
         "char_end": 334
-      }
+      },
+      "figure_number": "100"
     },
     {
       "component_id": "stepper_motors",
@@ -157,7 +159,8 @@
         "claim_id": "claim_1",
         "char_start": 1307,
         "char_end": 1347
-      }
+      },
+      "figure_number": "109"
     }
   ]
 }

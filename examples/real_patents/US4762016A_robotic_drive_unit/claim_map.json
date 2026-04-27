@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 38,
         "char_end": 45
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "first_input_link",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 47,
         "char_end": 64
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "first_actuator_assembly",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 67,
         "char_end": 91
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "first_joint",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 103,
         "char_end": 114
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "second_input_link",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 215,
         "char_end": 233
-      }
+      },
+      "figure_number": "22"
     },
     {
       "component_id": "second_actuator_assembly",
@@ -79,7 +84,8 @@
         "claim_id": "claim_1",
         "char_start": 235,
         "char_end": 260
-      }
+      },
+      "figure_number": "14"
     },
     {
       "component_id": "second_joint",
@@ -92,7 +98,8 @@
         "claim_id": "claim_1",
         "char_start": 272,
         "char_end": 284
-      }
+      },
+      "figure_number": "26"
     },
     {
       "component_id": "mounting_means",
@@ -105,7 +112,8 @@
         "claim_id": "claim_1",
         "char_start": 381,
         "char_end": 454
-      }
+      },
+      "figure_number": "16"
     },
     {
       "component_id": "first_output_link",
@@ -118,7 +126,8 @@
         "claim_id": "claim_1",
         "char_start": 456,
         "char_end": 474
-      }
+      },
+      "figure_number": "40"
     },
     {
       "component_id": "third_joint",
@@ -131,7 +140,8 @@
         "claim_id": "claim_1",
         "char_start": 486,
         "char_end": 497
-      }
+      },
+      "figure_number": "28"
     },
     {
       "component_id": "second_output_link",
@@ -144,7 +154,8 @@
         "claim_id": "claim_1",
         "char_start": 563,
         "char_end": 581
-      }
+      },
+      "figure_number": "50"
     },
     {
       "component_id": "fourth_joint",
@@ -157,7 +168,8 @@
         "claim_id": "claim_1",
         "char_start": 593,
         "char_end": 605
-      }
+      },
+      "figure_number": "30"
     },
     {
       "component_id": "fifth_joint",
@@ -170,7 +182,8 @@
         "claim_id": "claim_1",
         "char_start": 673,
         "char_end": 684
-      }
+      },
+      "figure_number": "32"
     }
   ]
 }

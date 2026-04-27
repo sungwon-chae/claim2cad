@@ -26,7 +26,19 @@
         "char_end": 20
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "2",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.15000000000000002,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "input_element",
@@ -44,7 +56,19 @@
         "char_end": 38
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "4",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.26,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "output_element",
@@ -62,7 +86,19 @@
         "char_end": 57
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "6",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.18000000000000002,
+            0.32,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "multi_ratio_drive_gear_unit",
@@ -80,7 +116,19 @@
         "char_end": 88
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "7",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.16,
+            0.39999999999999997,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "low_friction_device",
@@ -100,7 +148,19 @@
         "char_end": 196
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.61,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "high_friction_device",
@@ -120,7 +180,19 @@
         "char_end": 196
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "15",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.57,
+            0.38999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "fluid_source",
@@ -140,7 +212,19 @@
         "char_end": 356
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "17",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5599999999999999,
+            0.41,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "governor",
@@ -160,7 +244,19 @@
         "char_end": 368
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "19",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.48,
+            0.25,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "governor_pressure",
@@ -179,7 +275,19 @@
         "char_end": 396
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "21",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.21000000000000002,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "manual_valve",
@@ -202,7 +310,19 @@
         "char_end": 474
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "23",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "manual_low_signal_line",
@@ -220,7 +340,19 @@
         "char_end": 521
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "25",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.3,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "low_high_signal_line",
@@ -238,7 +370,19 @@
         "char_end": 548
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "27",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.41,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "automatic_control_valve_means",
@@ -261,7 +405,19 @@
         "char_end": 851
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "29",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.26,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "inhibitor_means",
@@ -283,7 +439,19 @@
         "char_end": 1291
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "31",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.38,
+            0.22,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

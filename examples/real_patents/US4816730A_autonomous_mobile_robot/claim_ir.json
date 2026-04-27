@@ -28,7 +28,19 @@
         "char_end": 121
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "106",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.45999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "gripper_mechanism",
@@ -49,7 +61,9 @@
         "char_end": 196
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "gripper_fingers",
@@ -69,7 +83,9 @@
         "char_end": 283
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "cone",
@@ -87,7 +103,19 @@
         "char_end": 334
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "100",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.5,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "stepper_motors",
@@ -107,7 +135,9 @@
         "char_end": 356
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "stepper_motor_cone",
@@ -127,7 +157,9 @@
         "char_end": 417
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "power_source",
@@ -147,7 +179,9 @@
         "char_end": 536
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_sensing_system",
@@ -168,7 +202,9 @@
         "char_end": 639
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "feedback_loop",
@@ -186,7 +222,9 @@
         "char_end": 660
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_sensing_system",
@@ -211,7 +249,9 @@
         "char_end": 727
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "computer",
@@ -235,7 +275,9 @@
         "char_end": 1028
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "data_input_means",
@@ -255,7 +297,19 @@
         "char_end": 1347
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "109",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.44999999999999996,
+            0.48,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

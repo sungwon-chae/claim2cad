@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 40,
         "char_end": 52
-      }
+      },
+      "figure_number": "9"
     },
     {
       "component_id": "input_shaft",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 57,
         "char_end": 72
-      }
+      },
+      "figure_number": "1"
     },
     {
       "component_id": "output_shaft",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 109,
         "char_end": 126
-      }
+      },
+      "figure_number": "23"
     },
     {
       "component_id": "outer_central_internal_gears",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 179,
         "char_end": 215
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "inner_central_gear",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 249,
         "char_end": 272
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "helical_gear_portions",
@@ -131,7 +136,8 @@
         "claim_id": "claim_1",
         "char_start": 799,
         "char_end": 822
-      }
+      },
+      "figure_number": "2"
     },
     {
       "component_id": "second_gear_coupling",
@@ -144,7 +150,8 @@
         "claim_id": "claim_1",
         "char_start": 956,
         "char_end": 980
-      }
+      },
+      "figure_number": "4"
     },
     {
       "component_id": "bearing_means",
@@ -157,7 +164,8 @@
         "claim_id": "claim_1",
         "char_start": 1256,
         "char_end": 1277
-      }
+      },
+      "figure_number": "11"
     }
   ]
 }

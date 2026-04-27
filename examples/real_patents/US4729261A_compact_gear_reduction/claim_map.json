@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 63,
         "char_end": 70
-      }
+      },
+      "figure_number": "28"
     },
     {
       "component_id": "inlet_port",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 78,
         "char_end": 89
-      }
+      },
+      "figure_number": "16"
     },
     {
       "component_id": "outlet_port",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 94,
         "char_end": 106
-      }
+      },
+      "figure_number": "5"
     },
     {
       "component_id": "pumping_unit",
@@ -66,7 +69,8 @@
         "claim_id": "claim_1",
         "char_start": 252,
         "char_end": 302
-      }
+      },
+      "figure_number": "6"
     },
     {
       "component_id": "epicyclic_gear_train",
@@ -92,7 +96,8 @@
         "claim_id": "claim_1",
         "char_start": 639,
         "char_end": 650
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "first_gear",

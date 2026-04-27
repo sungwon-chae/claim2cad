@@ -28,7 +28,9 @@
         "char_end": 57
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "aligning_means",
@@ -48,7 +50,9 @@
         "char_end": 201
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "electrical_connector_half",
@@ -66,7 +70,9 @@
         "char_end": 200
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "frame",
@@ -84,7 +90,9 @@
         "char_end": 210
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "transporting_mechanism",
@@ -106,7 +114,9 @@
         "char_end": 334
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "wire_array",
@@ -128,7 +138,9 @@
         "char_end": 334
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "drive_mechanism",
@@ -148,7 +160,9 @@
         "char_end": 393
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "sensor",
@@ -168,7 +182,9 @@
         "char_end": 478
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "control_means",
@@ -188,7 +204,9 @@
         "char_end": 524
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "escapement_mechanism",
@@ -208,7 +226,9 @@
         "char_end": 548
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "transferring_mechanism",
@@ -229,7 +249,9 @@
         "char_end": 779
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "color_coded_positions",
@@ -250,7 +272,9 @@
         "char_end": 779
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "rows_of_contacts",
@@ -270,7 +294,9 @@
         "char_end": 824
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "connector_locating_means",
@@ -290,7 +316,9 @@
         "char_end": 885
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

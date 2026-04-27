@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 40,
         "char_end": 59
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "input_shaft",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 64,
         "char_end": 75
-      }
+      },
+      "figure_number": "26"
     },
     {
       "component_id": "planet_carrier_means",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 112,
         "char_end": 132
-      }
+      },
+      "figure_number": "48"
     },
     {
       "component_id": "first_mounting_means",
@@ -79,7 +82,8 @@
         "claim_id": "claim_1",
         "char_start": 249,
         "char_end": 261
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "first_ring_gear",
@@ -92,7 +96,8 @@
         "claim_id": "claim_1",
         "char_start": 301,
         "char_end": 316
-      }
+      },
+      "figure_number": "18"
     },
     {
       "component_id": "second_ring_gear",
@@ -105,7 +110,8 @@
         "claim_id": "claim_1",
         "char_start": 362,
         "char_end": 378
-      }
+      },
+      "figure_number": "52"
     },
     {
       "component_id": "first_planet_pinion",
@@ -118,7 +124,8 @@
         "claim_id": "claim_1",
         "char_start": 406,
         "char_end": 425
-      }
+      },
+      "figure_number": "32"
     },
     {
       "component_id": "second_planet_pinion",
@@ -144,7 +151,8 @@
         "claim_id": "claim_1",
         "char_start": 700,
         "char_end": 719
-      }
+      },
+      "figure_number": "42"
     }
   ]
 }

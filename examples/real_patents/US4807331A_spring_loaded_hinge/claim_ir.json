@@ -28,7 +28,19 @@
         "char_end": 74
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "14",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.6,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "vehicle_body",
@@ -46,7 +58,19 @@
         "char_end": 113
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "10",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "door_half_member",
@@ -66,7 +90,19 @@
         "char_end": 134
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "pintle_pin",
@@ -84,7 +120,19 @@
         "char_end": 173
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "22",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.32999999999999996,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "hinge_axis",
@@ -104,7 +152,19 @@
         "char_end": 200
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "18",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.49,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "hinge_body_half_assembly",
@@ -122,7 +182,19 @@
         "char_end": 430
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.48,
+            0.2,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "main_member",
@@ -142,7 +214,19 @@
         "char_end": 454
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "24",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.53,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "u_shaped_link_member",
@@ -162,7 +246,19 @@
         "char_end": 517
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "26",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.41,
+            0.5599999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "upper_extension",
@@ -182,7 +278,19 @@
         "char_end": 620
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "lower_extension",
@@ -202,7 +310,19 @@
         "char_end": 631
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "30",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.71,
+            0.38,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "mounting_wall",
@@ -223,7 +343,19 @@
         "char_end": 664
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "32",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.47,
+            0.6,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "main_member_pintle_pin_hole",
@@ -243,7 +375,19 @@
         "char_end": 732
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "34",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.64,
+            0.5499999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "base_wall",
@@ -263,7 +407,19 @@
         "char_end": 791
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "36",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.66,
+            0.37,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "base_wall_exterior_guide_surface",
@@ -283,7 +439,19 @@
         "char_end": 829
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "38",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.75,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "upper_leg",
@@ -304,7 +472,19 @@
         "char_end": 845
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "40",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.54,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "lower_leg",
@@ -325,7 +505,19 @@
         "char_end": 861
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "41",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.78,
+            0.52,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "link_member_pintle_pin_holes",
@@ -345,7 +537,19 @@
         "char_end": 900
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "44",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.69,
+            0.59,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "leg_guide_edge_surface",
@@ -365,7 +569,19 @@
         "char_end": 990
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "54",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.69,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "stop_means",
@@ -385,7 +601,19 @@
         "char_end": 1097
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "56",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.76,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "bight_wall",
@@ -403,7 +631,19 @@
         "char_end": 1264
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "57",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.7,
+            0.5499999999999999,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_sidewall",
@@ -423,7 +663,19 @@
         "char_end": 1291
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "58",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.5,
+            0.51,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "second_sidewall",
@@ -443,7 +695,19 @@
         "char_end": 1311
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "60",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.58,
+            0.36,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "leaf_flange",
@@ -465,7 +729,19 @@
         "char_end": 1400
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "64",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.45999999999999996,
+            0.3,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "leaf_flange_pintle_pin_hole",
@@ -483,7 +759,19 @@
         "char_end": 1415
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "66",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.49,
+            0.57,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "pintle_pin_stop_means",
@@ -501,7 +789,19 @@
         "char_end": 1879
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "68",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.49,
+            0.37,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     }
   ],
   "relations": [

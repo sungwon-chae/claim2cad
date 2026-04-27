@@ -1,0 +1,433 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4329110A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [
+    {
+      "phrase": "in that the first member",
+      "number": "11",
+      "char_start": 664,
+      "char_end": 692
+    },
+    {
+      "phrase": "first lever parallelogram",
+      "number": "31",
+      "char_start": 710,
+      "char_end": 739
+    },
+    {
+      "phrase": "in that the second",
+      "number": "13",
+      "char_start": 742,
+      "char_end": 764
+    },
+    {
+      "phrase": "second lever parallelogram",
+      "number": "33",
+      "char_start": 804,
+      "char_end": 834
+    },
+    {
+      "phrase": "member",
+      "number": "35",
+      "char_start": 845,
+      "char_end": 855
+    },
+    {
+      "phrase": "have the same pivot axis",
+      "number": "51",
+      "char_start": 979,
+      "char_end": 1007
+    },
+    {
+      "phrase": "on the support",
+      "number": "17",
+      "char_start": 1009,
+      "char_end": 1027
+    },
+    {
+      "phrase": "in that said two members",
+      "number": "11",
+      "char_start": 1033,
+      "char_end": 1061
+    },
+    {
+      "phrase": "first and second drive units",
+      "number": "63",
+      "char_start": 1118,
+      "char_end": 1150
+    },
+    {
+      "phrase": "is mounted on said support",
+      "number": "17",
+      "char_start": 1182,
+      "char_end": 1212
+    }
+  ],
+  "vlm_labels": [
+    {
+      "number": "19",
+      "approximate_position": [
+        0.42,
+        0.24
+      ]
+    },
+    {
+      "number": "17",
+      "approximate_position": [
+        0.4,
+        0.28
+      ]
+    },
+    {
+      "number": "25",
+      "approximate_position": [
+        0.33,
+        0.3
+      ]
+    },
+    {
+      "number": "23",
+      "approximate_position": [
+        0.4,
+        0.32
+      ]
+    },
+    {
+      "number": "10",
+      "approximate_position": [
+        0.25,
+        0.33
+      ]
+    },
+    {
+      "number": "11",
+      "approximate_position": [
+        0.29,
+        0.34
+      ]
+    },
+    {
+      "number": "27",
+      "approximate_position": [
+        0.33,
+        0.43
+      ]
+    },
+    {
+      "number": "13",
+      "approximate_position": [
+        0.3,
+        0.49
+      ]
+    },
+    {
+      "number": "29",
+      "approximate_position": [
+        0.27,
+        0.58
+      ]
+    },
+    {
+      "number": "15",
+      "approximate_position": [
+        0.37,
+        0.59
+      ]
+    },
+    {
+      "number": "21",
+      "approximate_position": [
+        0.39,
+        0.62
+      ]
+    },
+    {
+      "number": "75",
+      "approximate_position": [
+        0.6,
+        0.41
+      ]
+    },
+    {
+      "number": "76",
+      "approximate_position": [
+        0.55,
+        0.45
+      ]
+    },
+    {
+      "number": "77",
+      "approximate_position": [
+        0.68,
+        0.44
+      ]
+    },
+    {
+      "number": "19",
+      "approximate_position": [
+        0.6,
+        0.48
+      ]
+    },
+    {
+      "number": "59",
+      "approximate_position": [
+        0.7,
+        0.47
+      ]
+    },
+    {
+      "number": "67",
+      "approximate_position": [
+        0.74,
+        0.48
+      ]
+    },
+    {
+      "number": "45",
+      "approximate_position": [
+        0.78,
+        0.49
+      ]
+    },
+    {
+      "number": "43",
+      "approximate_position": [
+        0.82,
+        0.49
+      ]
+    },
+    {
+      "number": "17",
+      "approximate_position": [
+        0.64,
+        0.51
+      ]
+    },
+    {
+      "number": "68",
+      "approximate_position": [
+        0.74,
+        0.52
+      ]
+    },
+    {
+      "number": "73",
+      "approximate_position": [
+        0.78,
+        0.52
+      ]
+    },
+    {
+      "number": "60",
+      "approximate_position": [
+        0.85,
+        0.52
+      ]
+    },
+    {
+      "number": "71",
+      "approximate_position": [
+        0.73,
+        0.56
+      ]
+    },
+    {
+      "number": "66",
+      "approximate_position": [
+        0.77,
+        0.56
+      ]
+    },
+    {
+      "number": "64",
+      "approximate_position": [
+        0.6,
+        0.57
+      ]
+    },
+    {
+      "number": "63",
+      "approximate_position": [
+        0.63,
+        0.58
+      ]
+    },
+    {
+      "number": "65",
+      "approximate_position": [
+        0.79,
+        0.58
+      ]
+    },
+    {
+      "number": "47",
+      "approximate_position": [
+        0.85,
+        0.58
+      ]
+    },
+    {
+      "number": "69",
+      "approximate_position": [
+        0.66,
+        0.61
+      ]
+    },
+    {
+      "number": "51",
+      "approximate_position": [
+        0.72,
+        0.62
+      ]
+    },
+    {
+      "number": "37",
+      "approximate_position": [
+        0.8,
+        0.61
+      ]
+    },
+    {
+      "number": "11",
+      "approximate_position": [
+        0.62,
+        0.63
+      ]
+    },
+    {
+      "number": "31",
+      "approximate_position": [
+        0.52,
+        0.65
+      ]
+    },
+    {
+      "number": "55",
+      "approximate_position": [
+        0.68,
+        0.67
+      ]
+    },
+    {
+      "number": "54",
+      "approximate_position": [
+        0.86,
+        0.68
+      ]
+    },
+    {
+      "number": "52",
+      "approximate_position": [
+        0.55,
+        0.71
+      ]
+    },
+    {
+      "number": "39",
+      "approximate_position": [
+        0.82,
+        0.71
+      ]
+    },
+    {
+      "number": "35",
+      "approximate_position": [
+        0.6,
+        0.74
+      ]
+    },
+    {
+      "number": "53",
+      "approximate_position": [
+        0.68,
+        0.75
+      ]
+    },
+    {
+      "number": "41",
+      "approximate_position": [
+        0.79,
+        0.74
+      ]
+    },
+    {
+      "number": "56",
+      "approximate_position": [
+        0.56,
+        0.78
+      ]
+    },
+    {
+      "number": "61",
+      "approximate_position": [
+        0.69,
+        0.79
+      ]
+    },
+    {
+      "number": "58",
+      "approximate_position": [
+        0.82,
+        0.78
+      ]
+    },
+    {
+      "number": "33",
+      "approximate_position": [
+        0.6,
+        0.82
+      ]
+    },
+    {
+      "number": "13",
+      "approximate_position": [
+        0.72,
+        0.83
+      ]
+    },
+    {
+      "number": "15",
+      "approximate_position": [
+        0.83,
+        0.82
+      ]
+    },
+    {
+      "number": "57",
+      "approximate_position": [
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "number": "15",
+      "approximate_position": [
+        0.82,
+        0.9
+      ]
+    },
+    {
+      "number": "21",
+      "approximate_position": [
+        0.84,
+        0.93
+      ]
+    }
+  ],
+  "component_to_number": {
+    "support": "17",
+    "first_member": "35",
+    "second_member": "35",
+    "third_member": "35",
+    "first_drive_unit": "63",
+    "second_drive_unit": "63",
+    "first_lever_parallelogram": "31",
+    "second_lever_parallelogram": "33",
+    "common_member": "35",
+    "second_parallel_member": "31",
+    "pivot_axis": "51"
+  },
+  "notes": []
+}

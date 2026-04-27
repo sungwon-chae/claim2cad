@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 79,
         "char_end": 87
-      }
+      },
+      "figure_number": "1"
     },
     {
       "component_id": "input_shaft",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 92,
         "char_end": 103
-      }
+      },
+      "figure_number": "2"
     },
     {
       "component_id": "intermediate_shaft",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 108,
         "char_end": 126
-      }
+      },
+      "figure_number": "3"
     },
     {
       "component_id": "first_means",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 197,
         "char_end": 263
-      }
+      },
+      "figure_number": "4"
     },
     {
       "component_id": "second_means",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 265,
         "char_end": 363
-      }
+      },
+      "figure_number": "5"
     },
     {
       "component_id": "output_shaft",
@@ -79,7 +84,8 @@
         "claim_id": "claim_1",
         "char_start": 368,
         "char_end": 380
-      }
+      },
+      "figure_number": "6"
     },
     {
       "component_id": "cvt_means",
@@ -92,7 +98,8 @@
         "claim_id": "claim_1",
         "char_start": 470,
         "char_end": 526
-      }
+      },
+      "figure_number": "7"
     },
     {
       "component_id": "primary_pulley",
@@ -105,7 +112,8 @@
         "claim_id": "claim_1",
         "char_start": 537,
         "char_end": 566
-      }
+      },
+      "figure_number": "8"
     },
     {
       "component_id": "primary_fixed_flange",
@@ -118,7 +126,8 @@
         "claim_id": "claim_1",
         "char_start": 574,
         "char_end": 592
-      }
+      },
+      "figure_number": "71"
     },
     {
       "component_id": "primary_movable_flange",
@@ -131,7 +140,8 @@
         "claim_id": "claim_1",
         "char_start": 636,
         "char_end": 657
-      }
+      },
+      "figure_number": "72"
     },
     {
       "component_id": "secondary_pulley",
@@ -144,7 +154,8 @@
         "claim_id": "claim_1",
         "char_start": 731,
         "char_end": 762
-      }
+      },
+      "figure_number": "9"
     },
     {
       "component_id": "secondary_fixed_flange",
@@ -157,7 +168,8 @@
         "claim_id": "claim_1",
         "char_start": 770,
         "char_end": 788
-      }
+      },
+      "figure_number": "81"
     },
     {
       "component_id": "secondary_movable_flange",
@@ -170,7 +182,8 @@
         "claim_id": "claim_1",
         "char_start": 833,
         "char_end": 854
-      }
+      },
+      "figure_number": "82"
     },
     {
       "component_id": "endless_belt",
@@ -183,7 +196,8 @@
         "claim_id": "claim_1",
         "char_start": 927,
         "char_end": 939
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "clutch",
@@ -196,7 +210,8 @@
         "claim_id": "claim_1",
         "char_start": 1097,
         "char_end": 1103
-      }
+      },
+      "figure_number": "11"
     },
     {
       "component_id": "change_direction_gear_train",
@@ -209,7 +224,8 @@
         "claim_id": "claim_1",
         "char_start": 1174,
         "char_end": 1201
-      }
+      },
+      "figure_number": "12"
     }
   ]
 }

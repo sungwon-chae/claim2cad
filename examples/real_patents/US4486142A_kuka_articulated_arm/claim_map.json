@@ -40,7 +40,8 @@
         "claim_id": "claim_1",
         "char_start": 111,
         "char_end": 124
-      }
+      },
+      "figure_number": "119"
     },
     {
       "component_id": "set_point",

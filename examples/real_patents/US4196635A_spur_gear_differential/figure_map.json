@@ -1,0 +1,315 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4196635A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "3",
+      "description": "top plate",
+      "approximate_position": [
+        0.72,
+        0.25
+      ]
+    },
+    {
+      "number": "5",
+      "description": "force and torque measuring device",
+      "approximate_position": [
+        0.63,
+        0.3
+      ]
+    },
+    {
+      "number": "2",
+      "description": "left column",
+      "approximate_position": [
+        0.37,
+        0.41
+      ]
+    },
+    {
+      "number": "2",
+      "description": "right column",
+      "approximate_position": [
+        0.75,
+        0.47
+      ]
+    },
+    {
+      "number": "4",
+      "description": "shaft",
+      "approximate_position": [
+        0.58,
+        0.4
+      ]
+    },
+    {
+      "number": "11",
+      "description": "shaft coupling",
+      "approximate_position": [
+        0.48,
+        0.55
+      ]
+    },
+    {
+      "number": "1",
+      "description": "middle plate",
+      "approximate_position": [
+        0.67,
+        0.57
+      ]
+    },
+    {
+      "number": "15",
+      "description": "upper bearing element",
+      "approximate_position": [
+        0.46,
+        0.62
+      ]
+    },
+    {
+      "number": "13",
+      "description": "bearing housing part",
+      "approximate_position": [
+        0.47,
+        0.63
+      ]
+    },
+    {
+      "number": "14",
+      "description": "bearing element",
+      "approximate_position": [
+        0.46,
+        0.65
+      ]
+    },
+    {
+      "number": "16",
+      "description": "lower bearing element",
+      "approximate_position": [
+        0.46,
+        0.67
+      ]
+    },
+    {
+      "number": "10'",
+      "description": "upper portion of part 10",
+      "approximate_position": [
+        0.56,
+        0.64
+      ]
+    },
+    {
+      "number": "12",
+      "description": "middle portion",
+      "approximate_position": [
+        0.54,
+        0.66
+      ]
+    },
+    {
+      "number": "10",
+      "description": "housing",
+      "approximate_position": [
+        0.62,
+        0.66
+      ]
+    },
+    {
+      "number": "11'",
+      "description": "lower shaft portion",
+      "approximate_position": [
+        0.58,
+        0.68
+      ]
+    },
+    {
+      "number": "6",
+      "description": "left outer wall",
+      "approximate_position": [
+        0.35,
+        0.66
+      ]
+    },
+    {
+      "number": "6",
+      "description": "right outer wall",
+      "approximate_position": [
+        0.77,
+        0.66
+      ]
+    },
+    {
+      "number": "11a'",
+      "description": "shaft extension",
+      "approximate_position": [
+        0.47,
+        0.71
+      ]
+    },
+    {
+      "number": "33",
+      "description": "inner chamber top",
+      "approximate_position": [
+        0.58,
+        0.71
+      ]
+    },
+    {
+      "number": "30",
+      "description": "outer chamber",
+      "approximate_position": [
+        0.68,
+        0.71
+      ]
+    },
+    {
+      "number": "31",
+      "description": "chamber wall",
+      "approximate_position": [
+        0.66,
+        0.74
+      ]
+    },
+    {
+      "number": "32",
+      "description": "inner element left",
+      "approximate_position": [
+        0.52,
+        0.75
+      ]
+    },
+    {
+      "number": "34",
+      "description": "inner element right",
+      "approximate_position": [
+        0.61,
+        0.75
+      ]
+    },
+    {
+      "number": "42",
+      "description": "left fitting",
+      "approximate_position": [
+        0.45,
+        0.78
+      ]
+    },
+    {
+      "number": "43",
+      "description": "right fitting",
+      "approximate_position": [
+        0.7,
+        0.78
+      ]
+    },
+    {
+      "number": "2",
+      "description": "section arrow left",
+      "approximate_position": [
+        0.47,
+        0.8
+      ]
+    },
+    {
+      "number": "2",
+      "description": "section arrow right",
+      "approximate_position": [
+        0.69,
+        0.8
+      ]
+    },
+    {
+      "number": "40",
+      "description": "inner block",
+      "approximate_position": [
+        0.7,
+        0.82
+      ]
+    },
+    {
+      "number": "23",
+      "description": "lower housing portion",
+      "approximate_position": [
+        0.46,
+        0.83
+      ]
+    },
+    {
+      "number": "21a",
+      "description": "upper seat portion",
+      "approximate_position": [
+        0.52,
+        0.85
+      ]
+    },
+    {
+      "number": "21",
+      "description": "seat",
+      "approximate_position": [
+        0.65,
+        0.85
+      ]
+    },
+    {
+      "number": "20",
+      "description": "lower piston",
+      "approximate_position": [
+        0.48,
+        0.87
+      ]
+    },
+    {
+      "number": "24",
+      "description": "side wall",
+      "approximate_position": [
+        0.66,
+        0.87
+      ]
+    },
+    {
+      "number": "25",
+      "description": "piston body",
+      "approximate_position": [
+        0.52,
+        0.88
+      ]
+    },
+    {
+      "number": "22",
+      "description": "base portion",
+      "approximate_position": [
+        0.66,
+        0.88
+      ]
+    },
+    {
+      "number": "26",
+      "description": "bottom plate",
+      "approximate_position": [
+        0.46,
+        0.91
+      ]
+    },
+    {
+      "number": "20'",
+      "description": "lower indicator",
+      "approximate_position": [
+        0.6,
+        0.91
+      ]
+    }
+  ],
+  "component_to_number": {
+    "torque_means": "5",
+    "first_housing_means": "10",
+    "piston_means": "20",
+    "first_piston_rod": "25",
+    "second_piston_rod": "4",
+    "torque_transmitting_means": "11"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

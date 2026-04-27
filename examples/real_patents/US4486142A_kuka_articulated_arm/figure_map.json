@@ -1,0 +1,286 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4486142A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "106",
+      "description": "circular element (top left)",
+      "approximate_position": [
+        0.27,
+        0.3
+      ]
+    },
+    {
+      "number": "105",
+      "description": "line/conduit",
+      "approximate_position": [
+        0.23,
+        0.4
+      ]
+    },
+    {
+      "number": "107",
+      "description": "valve",
+      "approximate_position": [
+        0.28,
+        0.48
+      ]
+    },
+    {
+      "number": "108",
+      "description": "actuator on valve",
+      "approximate_position": [
+        0.33,
+        0.46
+      ]
+    },
+    {
+      "number": "101",
+      "description": "compressor/turbine stage",
+      "approximate_position": [
+        0.24,
+        0.75
+      ]
+    },
+    {
+      "number": "102",
+      "description": "compressor/turbine stage",
+      "approximate_position": [
+        0.24,
+        0.85
+      ]
+    },
+    {
+      "number": "103",
+      "description": "valve",
+      "approximate_position": [
+        0.3,
+        0.91
+      ]
+    },
+    {
+      "number": "104",
+      "description": "exhaust/outlet element",
+      "approximate_position": [
+        0.3,
+        0.94
+      ]
+    },
+    {
+      "number": "109",
+      "description": "line within module 110",
+      "approximate_position": [
+        0.4,
+        0.77
+      ]
+    },
+    {
+      "number": "110",
+      "description": "module (dashed box)",
+      "approximate_position": [
+        0.42,
+        0.6
+      ]
+    },
+    {
+      "number": "111",
+      "description": "delta PT OR sensor",
+      "approximate_position": [
+        0.45,
+        0.62
+      ]
+    },
+    {
+      "number": "112",
+      "description": "ST element",
+      "approximate_position": [
+        0.43,
+        0.8
+      ]
+    },
+    {
+      "number": "113",
+      "description": "P2 T sensor",
+      "approximate_position": [
+        0.43,
+        0.72
+      ]
+    },
+    {
+      "number": "114",
+      "description": "divider block",
+      "approximate_position": [
+        0.49,
+        0.63
+      ]
+    },
+    {
+      "number": "115",
+      "description": "integrator block (dashed)",
+      "approximate_position": [
+        0.58,
+        0.7
+      ]
+    },
+    {
+      "number": "116",
+      "description": "summer module (dashed)",
+      "approximate_position": [
+        0.66,
+        0.78
+      ]
+    },
+    {
+      "number": "117",
+      "description": "summer block",
+      "approximate_position": [
+        0.75,
+        0.8
+      ]
+    },
+    {
+      "number": "118",
+      "description": "K block",
+      "approximate_position": [
+        0.67,
+        0.82
+      ]
+    },
+    {
+      "number": "119",
+      "description": "control module (dashed box)",
+      "approximate_position": [
+        0.55,
+        0.35
+      ]
+    },
+    {
+      "number": "120",
+      "description": "integrator block",
+      "approximate_position": [
+        0.56,
+        0.63
+      ]
+    },
+    {
+      "number": "121",
+      "description": "H block",
+      "approximate_position": [
+        0.58,
+        0.6
+      ]
+    },
+    {
+      "number": "122",
+      "description": "R1 relay",
+      "approximate_position": [
+        0.77,
+        0.59
+      ]
+    },
+    {
+      "number": "123",
+      "description": "TDR1",
+      "approximate_position": [
+        0.77,
+        0.51
+      ]
+    },
+    {
+      "number": "124",
+      "description": "TDR2",
+      "approximate_position": [
+        0.77,
+        0.55
+      ]
+    },
+    {
+      "number": "125",
+      "description": "A diamond",
+      "approximate_position": [
+        0.62,
+        0.4
+      ]
+    },
+    {
+      "number": "126",
+      "description": "TS+1 block",
+      "approximate_position": [
+        0.79,
+        0.36
+      ]
+    },
+    {
+      "number": "127",
+      "description": "summing amplifier",
+      "approximate_position": [
+        0.85,
+        0.36
+      ]
+    },
+    {
+      "number": "128",
+      "description": "summer output block",
+      "approximate_position": [
+        0.9,
+        0.36
+      ]
+    },
+    {
+      "number": "129",
+      "description": "A diamond",
+      "approximate_position": [
+        0.68,
+        0.63
+      ]
+    },
+    {
+      "number": "130",
+      "description": "A diamond",
+      "approximate_position": [
+        0.74,
+        0.59
+      ]
+    },
+    {
+      "number": "131",
+      "description": "H block",
+      "approximate_position": [
+        0.58,
+        0.46
+      ]
+    },
+    {
+      "number": "132",
+      "description": "R2 relay",
+      "approximate_position": [
+        0.77,
+        0.46
+      ]
+    },
+    {
+      "number": "133",
+      "description": "PB pushbutton",
+      "approximate_position": [
+        0.71,
+        0.5
+      ]
+    },
+    {
+      "number": "134",
+      "description": "input element",
+      "approximate_position": [
+        0.4,
+        0.6
+      ]
+    }
+  ],
+  "component_to_number": {
+    "control_means": "119"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

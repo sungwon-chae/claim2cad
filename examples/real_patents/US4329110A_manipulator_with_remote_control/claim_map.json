@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 131,
         "char_end": 138
-      }
+      },
+      "figure_number": "17"
     },
     {
       "component_id": "articulated_gripping_arm",
@@ -53,7 +54,8 @@
         "claim_id": "claim_1",
         "char_start": 215,
         "char_end": 227
-      }
+      },
+      "figure_number": "35"
     },
     {
       "component_id": "second_member",
@@ -66,7 +68,8 @@
         "claim_id": "claim_1",
         "char_start": 218,
         "char_end": 224
-      }
+      },
+      "figure_number": "35"
     },
     {
       "component_id": "third_member",
@@ -79,7 +82,8 @@
         "claim_id": "claim_1",
         "char_start": 229,
         "char_end": 241
-      }
+      },
+      "figure_number": "35"
     },
     {
       "component_id": "first_drive_unit",
@@ -92,7 +96,8 @@
         "claim_id": "claim_1",
         "char_start": 436,
         "char_end": 451
-      }
+      },
+      "figure_number": "63"
     },
     {
       "component_id": "second_drive_unit",
@@ -105,7 +110,8 @@
         "claim_id": "claim_1",
         "char_start": 456,
         "char_end": 472
-      }
+      },
+      "figure_number": "63"
     },
     {
       "component_id": "gripper_or_tool",
@@ -131,7 +137,8 @@
         "claim_id": "claim_1",
         "char_start": 714,
         "char_end": 742
-      }
+      },
+      "figure_number": "31"
     },
     {
       "component_id": "second_lever_parallelogram",
@@ -144,7 +151,8 @@
         "claim_id": "claim_1",
         "char_start": 807,
         "char_end": 836
-      }
+      },
+      "figure_number": "33"
     },
     {
       "component_id": "common_member",
@@ -157,7 +165,8 @@
         "claim_id": "claim_1",
         "char_start": 847,
         "char_end": 858
-      }
+      },
+      "figure_number": "35"
     },
     {
       "component_id": "second_parallel_member",
@@ -170,7 +179,8 @@
         "claim_id": "claim_1",
         "char_start": 913,
         "char_end": 919
-      }
+      },
+      "figure_number": "31"
     },
     {
       "component_id": "pivot_axis",
@@ -183,7 +193,8 @@
         "claim_id": "claim_1",
         "char_start": 953,
         "char_end": 964
-      }
+      },
+      "figure_number": "51"
     }
   ]
 }

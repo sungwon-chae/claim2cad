@@ -1,0 +1,498 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US3279624A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "16",
+      "description": "reel in Fig. 1A",
+      "approximate_position": [
+        0.14,
+        0.19
+      ]
+    },
+    {
+      "number": "18",
+      "description": "drum",
+      "approximate_position": [
+        0.17,
+        0.22
+      ]
+    },
+    {
+      "number": "44",
+      "description": "element near reel",
+      "approximate_position": [
+        0.22,
+        0.2
+      ]
+    },
+    {
+      "number": "20",
+      "description": "line/cable",
+      "approximate_position": [
+        0.22,
+        0.23
+      ]
+    },
+    {
+      "number": "12",
+      "description": "support column",
+      "approximate_position": [
+        0.22,
+        0.26
+      ]
+    },
+    {
+      "number": "44",
+      "description": "top element Fig.1",
+      "approximate_position": [
+        0.32,
+        0.2
+      ]
+    },
+    {
+      "number": "18",
+      "description": "cylinder Fig.1",
+      "approximate_position": [
+        0.4,
+        0.2
+      ]
+    },
+    {
+      "number": "20",
+      "description": "rod",
+      "approximate_position": [
+        0.45,
+        0.2
+      ]
+    },
+    {
+      "number": "40",
+      "description": "fitting",
+      "approximate_position": [
+        0.52,
+        0.2
+      ]
+    },
+    {
+      "number": "32",
+      "description": "end element",
+      "approximate_position": [
+        0.6,
+        0.21
+      ]
+    },
+    {
+      "number": "16",
+      "description": "pulley",
+      "approximate_position": [
+        0.32,
+        0.24
+      ]
+    },
+    {
+      "number": "24",
+      "description": "sensor",
+      "approximate_position": [
+        0.48,
+        0.25
+      ]
+    },
+    {
+      "number": "24'",
+      "description": "sensor prime",
+      "approximate_position": [
+        0.42,
+        0.27
+      ]
+    },
+    {
+      "number": "14",
+      "description": "base element",
+      "approximate_position": [
+        0.48,
+        0.27
+      ]
+    },
+    {
+      "number": "28",
+      "description": "block",
+      "approximate_position": [
+        0.52,
+        0.28
+      ]
+    },
+    {
+      "number": "30",
+      "description": "lever",
+      "approximate_position": [
+        0.61,
+        0.28
+      ]
+    },
+    {
+      "number": "20",
+      "description": "line",
+      "approximate_position": [
+        0.33,
+        0.29
+      ]
+    },
+    {
+      "number": "18'",
+      "description": "cylinder prime",
+      "approximate_position": [
+        0.44,
+        0.3
+      ]
+    },
+    {
+      "number": "20'",
+      "description": "rod prime",
+      "approximate_position": [
+        0.42,
+        0.33
+      ]
+    },
+    {
+      "number": "12",
+      "description": "column lower",
+      "approximate_position": [
+        0.27,
+        0.35
+      ]
+    },
+    {
+      "number": "10",
+      "description": "base",
+      "approximate_position": [
+        0.37,
+        0.38
+      ]
+    },
+    {
+      "number": "24\"",
+      "description": "sensor double prime",
+      "approximate_position": [
+        0.26,
+        0.4
+      ]
+    },
+    {
+      "number": "20\"",
+      "description": "line double prime",
+      "approximate_position": [
+        0.42,
+        0.39
+      ]
+    },
+    {
+      "number": "22\"",
+      "description": "element",
+      "approximate_position": [
+        0.45,
+        0.4
+      ]
+    },
+    {
+      "number": "22'",
+      "description": "element prime",
+      "approximate_position": [
+        0.43,
+        0.43
+      ]
+    },
+    {
+      "number": "22",
+      "description": "element",
+      "approximate_position": [
+        0.44,
+        0.47
+      ]
+    },
+    {
+      "number": "18\"",
+      "description": "cylinder double prime",
+      "approximate_position": [
+        0.35,
+        0.47
+      ]
+    },
+    {
+      "number": "56",
+      "description": "fixture block",
+      "approximate_position": [
+        0.56,
+        0.38
+      ]
+    },
+    {
+      "number": "62",
+      "description": "pin",
+      "approximate_position": [
+        0.63,
+        0.38
+      ]
+    },
+    {
+      "number": "58",
+      "description": "bar",
+      "approximate_position": [
+        0.7,
+        0.38
+      ]
+    },
+    {
+      "number": "64",
+      "description": "contact",
+      "approximate_position": [
+        0.72,
+        0.42
+      ]
+    },
+    {
+      "number": "60",
+      "description": "base block",
+      "approximate_position": [
+        0.6,
+        0.44
+      ]
+    },
+    {
+      "number": "60",
+      "description": "base block",
+      "approximate_position": [
+        0.7,
+        0.44
+      ]
+    },
+    {
+      "number": "102",
+      "description": "motor",
+      "approximate_position": [
+        0.13,
+        0.48
+      ]
+    },
+    {
+      "number": "66",
+      "description": "shaft",
+      "approximate_position": [
+        0.24,
+        0.49
+      ]
+    },
+    {
+      "number": "104",
+      "description": "link",
+      "approximate_position": [
+        0.22,
+        0.53
+      ]
+    },
+    {
+      "number": "68",
+      "description": "rod",
+      "approximate_position": [
+        0.3,
+        0.54
+      ]
+    },
+    {
+      "number": "84",
+      "description": "element",
+      "approximate_position": [
+        0.38,
+        0.55
+      ]
+    },
+    {
+      "number": "84a",
+      "description": "element a",
+      "approximate_position": [
+        0.4,
+        0.57
+      ]
+    },
+    {
+      "number": "84b",
+      "description": "element b",
+      "approximate_position": [
+        0.4,
+        0.59
+      ]
+    },
+    {
+      "number": "80",
+      "description": "coil",
+      "approximate_position": [
+        0.38,
+        0.61
+      ]
+    },
+    {
+      "number": "76",
+      "description": "member",
+      "approximate_position": [
+        0.3,
+        0.58
+      ]
+    },
+    {
+      "number": "98",
+      "description": "element",
+      "approximate_position": [
+        0.1,
+        0.59
+      ]
+    },
+    {
+      "number": "86",
+      "description": "lever",
+      "approximate_position": [
+        0.15,
+        0.58
+      ]
+    },
+    {
+      "number": "100",
+      "description": "weight",
+      "approximate_position": [
+        0.13,
+        0.63
+      ]
+    },
+    {
+      "number": "70",
+      "description": "shaft",
+      "approximate_position": [
+        0.24,
+        0.62
+      ]
+    },
+    {
+      "number": "70a",
+      "description": "shaft a",
+      "approximate_position": [
+        0.27,
+        0.63
+      ]
+    },
+    {
+      "number": "72",
+      "description": "member",
+      "approximate_position": [
+        0.27,
+        0.65
+      ]
+    },
+    {
+      "number": "78",
+      "description": "spring",
+      "approximate_position": [
+        0.33,
+        0.65
+      ]
+    },
+    {
+      "number": "58",
+      "description": "bar",
+      "approximate_position": [
+        0.2,
+        0.65
+      ]
+    },
+    {
+      "number": "66",
+      "description": "shaft",
+      "approximate_position": [
+        0.17,
+        0.69
+      ]
+    },
+    {
+      "number": "56",
+      "description": "block",
+      "approximate_position": [
+        0.22,
+        0.71
+      ]
+    },
+    {
+      "number": "102",
+      "description": "motor",
+      "approximate_position": [
+        0.26,
+        0.7
+      ]
+    },
+    {
+      "number": "18a",
+      "description": "cylinder a",
+      "approximate_position": [
+        0.48,
+        0.59
+      ]
+    },
+    {
+      "number": "44",
+      "description": "top",
+      "approximate_position": [
+        0.55,
+        0.57
+      ]
+    },
+    {
+      "number": "18b",
+      "description": "cylinder b",
+      "approximate_position": [
+        0.6,
+        0.59
+      ]
+    },
+    {
+      "number": "18",
+      "description": "cylinder",
+      "approximate_position": [
+        0.66,
+        0.59
+      ]
+    },
+    {
+      "number": "40",
+      "description": "fitting",
+      "approximate_position": [
+        0.72,
+        0.59
+      ]
+    },
+    {
+      "number": "24",
+      "description": "sensor",
+      "approximate_position": [
+        0.77,
+        0.59
+      ]
+    },
+    {
+      "number": "34a",
+      "description": "element",
+      "approximate_position": [
+        0.47,
+        0.63
+      ]
+    }
+  ],
+  "component_to_number": {
+    "output_portion": "12",
+    "servo_input_control_member": "76",
+    "servo_system": "102",
+    "sensing_interposer": "24",
+    "mechanical_output_device": "18"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

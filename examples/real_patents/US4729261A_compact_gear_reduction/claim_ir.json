@@ -26,7 +26,19 @@
         "char_end": 70
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "28",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.65,
+            0.31,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "inlet_port",
@@ -44,7 +56,19 @@
         "char_end": 89
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "16",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.88,
+            0.69,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "outlet_port",
@@ -62,7 +86,19 @@
         "char_end": 106
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "5",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.22,
+            0.43,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "pumping_unit",
@@ -82,7 +118,9 @@
         "char_end": 124
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "flow_control_valve",
@@ -104,7 +142,19 @@
         "char_end": 302
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "6",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.27999999999999997,
+            0.19,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "epicyclic_gear_train",
@@ -122,7 +172,9 @@
         "char_end": 627
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_shaft",
@@ -143,7 +195,19 @@
         "char_end": 650
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "12",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.66,
+            0.75,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "first_gear",
@@ -161,7 +225,9 @@
         "char_end": 683
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_shaft",
@@ -181,7 +247,9 @@
         "char_end": 747
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_gear",
@@ -199,7 +267,9 @@
         "char_end": 780
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_gear",
@@ -217,7 +287,9 @@
         "char_end": 875
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 48,
         "char_end": 52
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "first_drive_means",
@@ -105,7 +106,8 @@
         "claim_id": "claim_1",
         "char_start": 756,
         "char_end": 769
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "first_driven_means",

@@ -26,7 +26,9 @@
         "char_end": 65
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "multivariable_controlled_object",
@@ -44,7 +46,9 @@
         "char_end": 102
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "control_means",
@@ -62,7 +66,19 @@
         "char_end": 124
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": "119",
+      "figure_references": [
+        {
+          "figure_id": "figure_1",
+          "bbox": [
+            0.53,
+            0.32999999999999996,
+            0.04,
+            0.04
+          ]
+        }
+      ]
     },
     {
       "id": "set_point",
@@ -80,7 +96,9 @@
         "char_end": 141
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "closed_loop",
@@ -98,7 +116,9 @@
         "char_end": 159
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "limited_level",
@@ -116,7 +136,9 @@
         "char_end": 462
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "preestablished_deviation",
@@ -134,7 +156,9 @@
         "char_end": 423
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [

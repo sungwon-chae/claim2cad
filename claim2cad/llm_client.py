@@ -211,6 +211,12 @@ __all__ = [
     "LLMConfig",
     "LLMConfigError",
     "LLMResponseError",
+    "extract_json",
     "json_completion",
     "route",
 ]
+
+
+# Public alias so other modules (e.g. llm_vision) don't have to import
+# the underscore-prefixed name.
+extract_json = _extract_json

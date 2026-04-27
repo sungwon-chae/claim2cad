@@ -27,7 +27,8 @@
         "claim_id": "claim_1",
         "char_start": 98,
         "char_end": 108
-      }
+      },
+      "figure_number": "12"
     },
     {
       "component_id": "remote_end_portions",
@@ -40,7 +41,8 @@
         "claim_id": "claim_1",
         "char_start": 122,
         "char_end": 141
-      }
+      },
+      "figure_number": "24"
     },
     {
       "component_id": "single_location",
@@ -53,7 +55,8 @@
         "claim_id": "claim_1",
         "char_start": 174,
         "char_end": 189
-      }
+      },
+      "figure_number": "10"
     },
     {
       "component_id": "workhead",
@@ -66,7 +69,8 @@
         "claim_id": "claim_1",
         "char_start": 55,
         "char_end": 63
-      }
+      },
+      "figure_number": "18"
     },
     {
       "component_id": "proximate_end_portions",
@@ -92,7 +96,8 @@
         "claim_id": "claim_1",
         "char_start": 391,
         "char_end": 470
-      }
+      },
+      "figure_number": "20"
     },
     {
       "component_id": "driving_means",

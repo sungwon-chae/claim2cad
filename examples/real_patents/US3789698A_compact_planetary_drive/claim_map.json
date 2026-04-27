@@ -14,7 +14,8 @@
         "claim_id": "claim_1",
         "char_start": 8,
         "char_end": 20
-      }
+      },
+      "figure_number": "2"
     },
     {
       "component_id": "input_element",
@@ -27,7 +28,8 @@
         "claim_id": "claim_1",
         "char_start": 25,
         "char_end": 38
-      }
+      },
+      "figure_number": "4"
     },
     {
       "component_id": "output_element",
@@ -40,7 +42,8 @@
         "claim_id": "claim_1",
         "char_start": 43,
         "char_end": 57
-      }
+      },
+      "figure_number": "6"
     },
     {
       "component_id": "multi_ratio_drive_gear_unit",
@@ -53,7 +56,8 @@
         "claim_id": "claim_1",
         "char_start": 61,
         "char_end": 88
-      }
+      },
+      "figure_number": "7"
     },
     {
       "component_id": "low_friction_device",
@@ -66,7 +70,8 @@
         "claim_id": "claim_1",
         "char_start": 148,
         "char_end": 196
-      }
+      },
+      "figure_number": "14"
     },
     {
       "component_id": "high_friction_device",
@@ -79,7 +84,8 @@
         "claim_id": "claim_1",
         "char_start": 148,
         "char_end": 196
-      }
+      },
+      "figure_number": "15"
     },
     {
       "component_id": "fluid_source",
@@ -92,7 +98,8 @@
         "claim_id": "claim_1",
         "char_start": 317,
         "char_end": 356
-      }
+      },
+      "figure_number": "17"
     },
     {
       "component_id": "governor",
@@ -105,7 +112,8 @@
         "claim_id": "claim_1",
         "char_start": 360,
         "char_end": 368
-      }
+      },
+      "figure_number": "19"
     },
     {
       "component_id": "governor_pressure",
@@ -118,7 +126,8 @@
         "claim_id": "claim_1",
         "char_start": 379,
         "char_end": 396
-      }
+      },
+      "figure_number": "21"
     },
     {
       "component_id": "manual_valve",
@@ -131,7 +140,8 @@
         "claim_id": "claim_1",
         "char_start": 462,
         "char_end": 474
-      }
+      },
+      "figure_number": "23"
     },
     {
       "component_id": "manual_low_signal_line",
@@ -144,7 +154,8 @@
         "claim_id": "claim_1",
         "char_start": 499,
         "char_end": 521
-      }
+      },
+      "figure_number": "25"
     },
     {
       "component_id": "low_high_signal_line",
@@ -157,7 +168,8 @@
         "claim_id": "claim_1",
         "char_start": 528,
         "char_end": 548
-      }
+      },
+      "figure_number": "27"
     },
     {
       "component_id": "automatic_control_valve_means",
@@ -170,7 +182,8 @@
         "claim_id": "claim_1",
         "char_start": 822,
         "char_end": 851
-      }
+      },
+      "figure_number": "29"
     },
     {
       "component_id": "inhibitor_means",
@@ -183,7 +196,8 @@
         "claim_id": "claim_1",
         "char_start": 1276,
         "char_end": 1291
-      }
+      },
+      "figure_number": "31"
     }
   ]
 }

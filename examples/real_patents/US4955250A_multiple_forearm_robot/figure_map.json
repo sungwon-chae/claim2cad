@@ -1,0 +1,131 @@
+{
+  "schema_version": "0.1.0",
+  "patent_id": "US4955250A",
+  "primary_figure": "figure_1.png",
+  "numbered_phrases": [],
+  "vlm_labels": [
+    {
+      "number": "10",
+      "approximate_position": [
+        0.39,
+        0.51
+      ]
+    },
+    {
+      "number": "12",
+      "approximate_position": [
+        0.43,
+        0.69
+      ]
+    },
+    {
+      "number": "14",
+      "approximate_position": [
+        0.56,
+        0.69
+      ]
+    },
+    {
+      "number": "16",
+      "approximate_position": [
+        0.47,
+        0.7
+      ]
+    },
+    {
+      "number": "18",
+      "approximate_position": [
+        0.34,
+        0.45
+      ]
+    },
+    {
+      "number": "20",
+      "approximate_position": [
+        0.32,
+        0.22
+      ]
+    },
+    {
+      "number": "22",
+      "approximate_position": [
+        0.33,
+        0.87
+      ]
+    },
+    {
+      "number": "24",
+      "approximate_position": [
+        0.7,
+        0.92
+      ]
+    },
+    {
+      "number": "26",
+      "approximate_position": [
+        0.55,
+        0.34
+      ]
+    },
+    {
+      "number": "28",
+      "approximate_position": [
+        0.59,
+        0.55
+      ]
+    },
+    {
+      "number": "30",
+      "approximate_position": [
+        0.72,
+        0.3
+      ]
+    },
+    {
+      "number": "32",
+      "approximate_position": [
+        0.31,
+        0.6
+      ]
+    },
+    {
+      "number": "34",
+      "approximate_position": [
+        0.68,
+        0.6
+      ]
+    },
+    {
+      "number": "62",
+      "approximate_position": [
+        0.19,
+        0.71
+      ]
+    },
+    {
+      "number": "62",
+      "approximate_position": [
+        0.22,
+        0.81
+      ]
+    }
+  ],
+  "component_to_number": {
+    "main_arm": "10",
+    "upper_forearm": "12",
+    "lower_forearm": "14",
+    "first_modular_actuator_assembly": "16",
+    "second_modular_actuator_assembly": "18",
+    "actuator_canister": "20",
+    "motor_means": "22",
+    "shaft_means": "24",
+    "gearing_means": "26",
+    "position_referencing_means": "28",
+    "spindle": "30",
+    "bearing_means": "32",
+    "output_hub_means": "34"
+  },
+  "notes": [
+    "no_numbered_phrases_in_claim"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1.0",
+  "example": "hinge_assembly",
+  "glb_path": "model.glb",
+  "components": [
+    {
+      "component_id": "fixed_link",
+      "glb_node_name": "fixed_link",
+      "label": "fixed link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 42,
+        "char_end": 54
+      }
+    },
+    {
+      "component_id": "first_rotating_link",
+      "glb_node_name": "first_rotating_link",
+      "label": "first rotating link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 56,
+        "char_end": 141
+      }
+    },
+    {
+      "component_id": "coupler_link",
+      "glb_node_name": "coupler_link",
+      "label": "coupler link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 143,
+        "char_end": 231
+      }
+    },
+    {
+      "component_id": "second_rotating_link",
+      "glb_node_name": "second_rotating_link",
+      "label": "second rotating link",
+      "category": "structural",
+      "kind": "rod",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 233,
+        "char_end": 370
+      }
+    },
+    {
+      "component_id": "first_revolute_joint",
+      "glb_node_name": "first_revolute_joint",
+      "label": "first revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 119,
+        "char_end": 141
+      }
+    },
+    {
+      "component_id": "second_revolute_joint",
+      "glb_node_name": "second_revolute_joint",
+      "label": "second revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 208,
+        "char_end": 231
+      }
+    },
+    {
+      "component_id": "third_revolute_joint",
+      "glb_node_name": "third_revolute_joint",
+      "label": "third revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 299,
+        "char_end": 321
+      }
+    },
+    {
+      "component_id": "fourth_revolute_joint",
+      "glb_node_name": "fourth_revolute_joint",
+      "label": "fourth revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "is_dependent": false,
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 347,
+        "char_end": 370
+      }
+    }
+  ]
+}

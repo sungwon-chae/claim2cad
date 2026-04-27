@@ -1,0 +1,173 @@
+{
+  "schema_version": "0.1.0",
+  "title": "Four-bar linkage mechanism",
+  "claims": [
+    {
+      "id": "claim_1",
+      "text": "A four-bar linkage mechanism, comprising: a fixed link; a first rotating link pivotally connected to the fixed link at a first revolute joint; a coupler link pivotally connected to the first rotating link at a second revolute joint; a second rotating link pivotally connected to the coupler link at a third revolute joint and to the fixed link at a fourth revolute joint; wherein the four revolute joints define a planar four-bar linkage that converts rotational motion of the first rotating link into a constrained planar motion of the coupler link.",
+      "is_independent": true,
+      "depends_on": null
+    }
+  ],
+  "components": [
+    {
+      "id": "fixed_link",
+      "label": "fixed link",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 42,
+        "char_end": 54
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_rotating_link",
+      "label": "first rotating link",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 56,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "coupler_link",
+      "label": "coupler link",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 143,
+        "char_end": 231
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_rotating_link",
+      "label": "second rotating link",
+      "category": "structural",
+      "kind": "rod",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 233,
+        "char_end": 370
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "first_revolute_joint",
+      "label": "first revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 119,
+        "char_end": 141
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "second_revolute_joint",
+      "label": "second revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 208,
+        "char_end": 231
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "third_revolute_joint",
+      "label": "third revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 299,
+        "char_end": 321
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    },
+    {
+      "id": "fourth_revolute_joint",
+      "label": "fourth revolute joint",
+      "category": "connection",
+      "kind": "revolute_joint",
+      "parent_id": null,
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 347,
+        "char_end": 370
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ],
+  "relations": [],
+  "wherein_clauses": [
+    {
+      "id": "wherein_1",
+      "text": "wherein the four revolute joints define a planar four-bar linkage that converts rotational motion of the first rotating link into a constrained planar motion of the coupler link",
+      "targets": [],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 372,
+        "char_end": 549
+      },
+      "is_dependent": false,
+      "dependent_on": null
+    }
+  ]
+}

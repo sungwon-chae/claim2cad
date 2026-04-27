@@ -36,6 +36,20 @@
 - **Status:** Limitation acknowledged. README and `docs/DESIGN_DECISIONS.md`
   call this out.
 
+## B-005 — Stub parser does not extract relations
+- **What it is:** When the LLM is unavailable, the rule-based stub parser
+  produces components and wherein clauses but no `Relation` rows. This
+  means the layout engine in Phase 5 has no graph to BFS over and falls
+  back to the line-along-X layout for stub IRs.
+- **Why it's not blocking:** The structural test rubric (Phase 4) only
+  checks component-level properties. The LLM path (when configured)
+  produces relations correctly. Most demo runs use the golden short-circuit
+  or the LLM path.
+- **Resolution path:** Add a relation extractor that scans
+  `connected to`, `coupled to`, `attached to`, `secured to` between known
+  components. Defer until Phase 5 stress-tests the layout.
+- **Status:** Open, deferred to Phase 5 (or a future sprint).
+
 ## B-004 — `make demo` from a fresh clone needs a Python venv
 - **What it was:** Phase 6's brief says "test by running `make demo` in a temp
   directory".

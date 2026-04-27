@@ -123,3 +123,47 @@ was deferred. Times are local (Asia/Seoul, KST).
 
 - **Completed:** 2026-04-27 ~11:12 KST. Commit `phase-3: end-to-end
   pipeline skeleton`.
+
+## Phase 4 — Real LLM-Based Parser — STARTED 2026-04-27 11:13 KST
+
+- Wrote `claim2cad/claim_segmenter.py` — pure-Python rule-based splitter.
+  Returns `ClaimSegments(claim_id, text, is_independent, depends_on,
+  preamble, elements, wherein_clauses)`. Handles dependent claims by
+  matching `"^The X of claim N"`.
+- Rewrote `claim2cad/claim_parser.py`:
+  - **Golden short-circuit** unchanged.
+  - **LLM path**: now sends a few-shot prompt (golden claim → golden IR
+    in JSON) plus the segmenter's structured breakdown of the new claim.
+    Validation errors on the first response are fed back into the user
+    prompt and the model retries once.
+  - **Stub fallback**: instead of one "unknown" component, emits one
+    component per segmenter element with a head-noun-phrase classifier
+    that handles articles ("a/an/the/each") and stops at common verb /
+    preposition boundaries (e.g. "rotatably connected to..."). Adds a
+    second pass that scans element descriptions for embedded joints
+    ("...at a first revolute joint") and emits them as separate
+    `connection` components.
+- Hand-wrote `examples/hinge_assembly/claim.txt` — a single-claim
+  4-bar-linkage. Stub parser yields 8 components (4 rod links + 4
+  revolute joints).
+- Ran `python -m claim2cad.pipeline --claim examples/hinge_assembly/claim.txt
+  --out examples/hinge_assembly` → 4 outputs (STEP 60 KB, GLB 36 KB,
+  claim_ir.json, claim_map.json). Stub-parsed IR is *reasonable* by the
+  Phase-4 rubric: structural property tests pass and a human reading
+  `claim_map.json` recognises the parts.
+- Wrote `tests/test_parser.py` — 9 tests covering: golden short-circuit;
+  hinge stub structural properties (≥4 components, ≥1 revolute_joint, ≥4
+  rods, all have provenance); empty / minimal-claim edge cases; LLM path
+  with mocked `json_completion` (success on first try, success after one
+  validation retry, fall-through to stub on persistent invalid LLM
+  output).
+
+### Verification (Phase 4 acceptance criteria)
+- All parser tests pass — `pytest tests/` → 24/24 (2.16 s).
+- Hinge claim end-to-end produces a valid IR; structural-property
+  judgment: **reasonable** — 4 explicit links and 4 explicit joints, all
+  classified correctly. The `wherein` clause is captured; relations are
+  not extracted by the stub (LLM path would handle them; logged in
+  `BLOCKERS.md` as B-005).
+
+- **Completed:** 2026-04-27 ~11:16 KST.

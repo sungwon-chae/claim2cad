@@ -44,6 +44,26 @@ All notable changes documented here. This project follows semantic versioning.
 - V1-2 baseline: **25/25 patents graded "good"** at iteration 0
   on the structural eval. No iterative improvement needed.
 
+### Added (V1-5)
+- `claim2cad.prior_art` — bipartite-greedy fuzzy matcher + Sonnet 4.6
+  disambiguation. CLI:
+  `python -m claim2cad.prior_art --base <dir> --compare <dir>` writes
+  `<base>/diff_<comp_id>.json` with `matched`, `novel_in_base`,
+  `only_in_comparison` rows.
+- 4 demo diffs precomputed: `golden_robot_arm` × {Unimate 1962, PUMA
+  1982}; `planetary_gear` × {US3705522A 1971, US3789698A 1972}.
+- Manifest gains `diffs_available[]`. Diff JSONs are staged into
+  `viewer/public/data/<base>/`.
+- New viewer component `PriorArtOverlay.tsx` (sectioned matched /
+  novel / prior-only list with click-to-select rows).
+- `Scene.tsx` accepts an optional `diff` prop — when set, mesh tints
+  switch to diff status colours (matched white, novel green,
+  unmatched dimmed).
+- `App.tsx` header gains a "Compare to prior art…" `<select>` that
+  swaps the right pane from `FigurePanel` to `PriorArtOverlay` and
+  re-tints the scene.
+- Total V1-5 cost: $0.06 across 4 LLM disambiguation calls (Opus 4.7).
+
 ### Added (V1-4)
 - **3-pane viewer**: left = ClaimPanel (existing), centre = 3D scene
   (existing), right = new `FigurePanel.tsx`. Layout collapses to

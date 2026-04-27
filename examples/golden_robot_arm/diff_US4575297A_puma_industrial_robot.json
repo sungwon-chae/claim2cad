@@ -1,0 +1,237 @@
+{
+  "base_patent": "golden_robot_arm",
+  "comparison_patent": "US4575297A_puma_industrial_robot",
+  "matched": [
+    {
+      "base_id": "position_sensor",
+      "base_label": "position sensor",
+      "comparison_id": "second_sensor_means",
+      "comparison_label": "second sensor means",
+      "score": 0.658,
+      "category": "functional",
+      "kind_base": "sensor",
+      "kind_comparison": "sensor"
+    },
+    {
+      "base_id": "second_joint",
+      "base_label": "second revolute joint",
+      "comparison_id": "knuckle_joint",
+      "comparison_label": "knuckle joint",
+      "score": 0.599,
+      "category": "connection",
+      "kind_base": "revolute_joint",
+      "kind_comparison": "revolute_joint"
+    },
+    {
+      "base_id": "first_joint",
+      "base_label": "first revolute joint",
+      "comparison_id": "third_joint",
+      "comparison_label": "third joint",
+      "score": 0.586,
+      "category": "connection",
+      "kind_base": "revolute_joint",
+      "kind_comparison": "revolute_joint"
+    },
+    {
+      "base_id": "second_link",
+      "base_label": "second link",
+      "comparison_id": "second_driving_means",
+      "comparison_label": "second driving means",
+      "score": 0.581,
+      "category": "structural",
+      "kind_base": "rod",
+      "kind_comparison": "actuator"
+    },
+    {
+      "base_id": "base",
+      "base_label": "base",
+      "comparison_id": "breastplate",
+      "comparison_label": "breastplate",
+      "score": 0.553,
+      "category": "structural",
+      "kind_base": "frame",
+      "kind_comparison": "body_plate"
+    },
+    {
+      "base_id": "first_link",
+      "base_label": "first link",
+      "comparison_id": "first_driving_means",
+      "comparison_label": "first driving means",
+      "score": 0.552,
+      "category": "structural",
+      "kind_base": "rod",
+      "kind_comparison": "actuator"
+    },
+    {
+      "base_id": "end_effector",
+      "base_label": "end effector",
+      "comparison_id": "hollow_hand_member",
+      "comparison_label": "hollow hand member",
+      "score": 0.7,
+      "category": "functional",
+      "kind_base": "end_effector",
+      "kind_comparison": "hand_member"
+    },
+    {
+      "base_id": "gripper",
+      "base_label": "gripper",
+      "comparison_id": "central_hand_member",
+      "comparison_label": "hollow central hand member",
+      "score": 0.65,
+      "category": "functional",
+      "kind_base": "end_effector",
+      "kind_comparison": "hand_member"
+    }
+  ],
+  "novel_in_base": [
+    {
+      "id": "fastener",
+      "label": "fastener",
+      "category": "connection",
+      "kind": "fastener"
+    }
+  ],
+  "only_in_comparison": [
+    {
+      "id": "elbow_connecting_means",
+      "label": "means connecting lower arm member to upper arm member",
+      "category": "connection",
+      "kind": "pivot_joint"
+    },
+    {
+      "id": "finger_driving_means",
+      "label": "plurality of finger member driving means",
+      "category": "functional",
+      "kind": "actuator"
+    },
+    {
+      "id": "finger_recording_means",
+      "label": "means for recording outputs of finger member sensor elements",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "finger_sensor_elements",
+      "label": "plurality of finger member sensor elements",
+      "category": "functional",
+      "kind": "sensor"
+    },
+    {
+      "id": "first_recording_means",
+      "label": "means for recording output of first sensor means",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "first_sensor_means",
+      "label": "first sensor means",
+      "category": "functional",
+      "kind": "sensor"
+    },
+    {
+      "id": "fourth_fifth_driving_means",
+      "label": "fourth and fifth driving means",
+      "category": "functional",
+      "kind": "actuator"
+    },
+    {
+      "id": "fourth_fifth_recording_means",
+      "label": "means for recording outputs of fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "fourth_fifth_sensor_means",
+      "label": "fourth and fifth sensor means",
+      "category": "functional",
+      "kind": "sensor"
+    },
+    {
+      "id": "hollow_finger_members",
+      "label": "plurality of hollow finger members",
+      "category": "structural",
+      "kind": "finger_member"
+    },
+    {
+      "id": "hollow_thumb_members",
+      "label": "plurality of hollow thumb members",
+      "category": "structural",
+      "kind": "finger_member"
+    },
+    {
+      "id": "lower_arm_member",
+      "label": "lower arm member",
+      "category": "structural",
+      "kind": "arm_member"
+    },
+    {
+      "id": "pivotal_thumb_joints",
+      "label": "plurality of pivotal thumb joints",
+      "category": "connection",
+      "kind": "revolute_joint"
+    },
+    {
+      "id": "pivoted_finger_joints",
+      "label": "plurality of pivoted finger joints",
+      "category": "connection",
+      "kind": "revolute_joint"
+    },
+    {
+      "id": "second_recording_means",
+      "label": "means for recording output of second sensor means",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "shoulder_joint",
+      "label": "joint (shoulder)",
+      "category": "connection",
+      "kind": "revolute_joint"
+    },
+    {
+      "id": "third_driving_means",
+      "label": "third driving means",
+      "category": "functional",
+      "kind": "actuator"
+    },
+    {
+      "id": "third_recording_means",
+      "label": "means for recording output of third sensor means",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "third_sensor_means",
+      "label": "third sensor means",
+      "category": "functional",
+      "kind": "sensor"
+    },
+    {
+      "id": "thumb_driving_means",
+      "label": "plurality of thumb member driving means",
+      "category": "functional",
+      "kind": "actuator"
+    },
+    {
+      "id": "thumb_recording_means",
+      "label": "means for recording outputs of thumb member sensor elements",
+      "category": "functional",
+      "kind": "recording_device"
+    },
+    {
+      "id": "thumb_sensor_elements",
+      "label": "plurality of thumb member sensor elements",
+      "category": "functional",
+      "kind": "sensor"
+    },
+    {
+      "id": "upper_arm_member",
+      "label": "upper arm member",
+      "category": "structural",
+      "kind": "arm_member"
+    }
+  ],
+  "notes": [
+    "llm_added_pairs: 2"
+  ]
+}

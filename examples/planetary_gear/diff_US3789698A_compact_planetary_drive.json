@@ -1,0 +1,130 @@
+{
+  "base_patent": "planetary_gear",
+  "comparison_patent": "US3789698A_compact_planetary_drive",
+  "matched": [],
+  "novel_in_base": [
+    {
+      "id": "carrier",
+      "label": "carrier",
+      "category": "structural",
+      "kind": "block"
+    },
+    {
+      "id": "first_planet_gear",
+      "label": "first planet gear",
+      "category": "structural",
+      "kind": "frame"
+    },
+    {
+      "id": "ring_gear",
+      "label": "ring gear",
+      "category": "structural",
+      "kind": "frame"
+    },
+    {
+      "id": "second_planet_gear",
+      "label": "second planet gear",
+      "category": "structural",
+      "kind": "frame"
+    },
+    {
+      "id": "sun_gear",
+      "label": "sun gear",
+      "category": "structural",
+      "kind": "frame"
+    },
+    {
+      "id": "third_planet_gear",
+      "label": "third planet gear",
+      "category": "structural",
+      "kind": "frame"
+    }
+  ],
+  "only_in_comparison": [
+    {
+      "id": "automatic_control_valve_means",
+      "label": "automatic control valve means",
+      "category": "functional",
+      "kind": "control_valve"
+    },
+    {
+      "id": "fluid_source",
+      "label": "source of fluid at a regulated pressure",
+      "category": "structural",
+      "kind": "fluid_source"
+    },
+    {
+      "id": "governor",
+      "label": "governor",
+      "category": "functional",
+      "kind": "governor"
+    },
+    {
+      "id": "governor_pressure",
+      "label": "governor pressure",
+      "category": "functional",
+      "kind": "pressure_signal"
+    },
+    {
+      "id": "high_friction_device",
+      "label": "high fluid actuated friction device",
+      "category": "functional",
+      "kind": "friction_device"
+    },
+    {
+      "id": "inhibitor_means",
+      "label": "inhibitor means",
+      "category": "functional",
+      "kind": "inhibitor"
+    },
+    {
+      "id": "input_element",
+      "label": "input element",
+      "category": "structural",
+      "kind": "shaft"
+    },
+    {
+      "id": "low_friction_device",
+      "label": "low fluid actuated friction device",
+      "category": "functional",
+      "kind": "friction_device"
+    },
+    {
+      "id": "low_high_signal_line",
+      "label": "low-high signal line",
+      "category": "connection",
+      "kind": "fluid_line"
+    },
+    {
+      "id": "manual_low_signal_line",
+      "label": "manual low signal line",
+      "category": "connection",
+      "kind": "fluid_line"
+    },
+    {
+      "id": "manual_valve",
+      "label": "manual valve",
+      "category": "structural",
+      "kind": "valve"
+    },
+    {
+      "id": "multi_ratio_drive_gear_unit",
+      "label": "multi ratio drive gear unit",
+      "category": "structural",
+      "kind": "gear_unit"
+    },
+    {
+      "id": "output_element",
+      "label": "output element",
+      "category": "structural",
+      "kind": "shaft"
+    },
+    {
+      "id": "transmission",
+      "label": "transmission",
+      "category": "structural",
+      "kind": "transmission"
+    }
+  ],
+  "notes": []
+}

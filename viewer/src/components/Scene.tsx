@@ -2,7 +2,7 @@ import { Suspense, useEffect, useMemo, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-import type { ClaimMapRow } from "../types";
+import type { ClaimMapRow, PriorArtDiff } from "../types";
 
 type Props = {
   glbUrl: string;
@@ -12,6 +12,12 @@ type Props = {
   onSelect: (id: string | null) => void;
   onHover: (id: string | null) => void;
   limitationFocus: boolean;
+  /** When non-null, mesh tints follow the diff status:
+   *  - matched: keep original (white)
+   *  - novel_in_base: green
+   *  - else: dimmed neutral
+   */
+  diff?: PriorArtDiff | null;
 };
 
 const COLOR_INDEPENDENT = new THREE.Color("#4f8cff");
@@ -19,6 +25,9 @@ const COLOR_DEPENDENT = new THREE.Color("#ffb04a");
 const COLOR_SELECTED = new THREE.Color("#ffd76a");
 const COLOR_HOVER = new THREE.Color("#cfcfd8");
 const COLOR_DEFAULT = new THREE.Color("#9396a3");
+const COLOR_MATCHED = new THREE.Color("#e6e6ee");        // white-ish
+const COLOR_NOVEL = new THREE.Color("#56d97a");           // green
+const COLOR_NEUTRAL_DIM = new THREE.Color("#5a5a66");
 
 export function Scene(props: Props) {
   return (
@@ -42,7 +51,7 @@ export function Scene(props: Props) {
 }
 
 function ModelTree(props: Props) {
-  const { glbUrl, rows, selectedId, hoveredId, onSelect, onHover, limitationFocus } = props;
+  const { glbUrl, rows, selectedId, hoveredId, onSelect, onHover, limitationFocus, diff } = props;
   const { scene } = useGLTF(glbUrl);
 
   const rowsById = useMemo(() => {
@@ -82,7 +91,16 @@ function ModelTree(props: Props) {
     });
   }, [nodeIndex]);
 
-  // Apply highlight materials whenever selection / hover / focus changes.
+  // Pre-index diff statuses by component_id when a diff is loaded.
+  const diffStatus = useMemo(() => {
+    if (!diff) return null;
+    const map = new Map<string, "matched" | "novel">();
+    for (const m of diff.matched) map.set(m.base_id, "matched");
+    for (const n of diff.novel_in_base) map.set(n.id, "novel");
+    return map;
+  }, [diff]);
+
+  // Apply highlight materials whenever selection / hover / focus / diff change.
   useEffect(() => {
     nodeIndex.forEach((meshes, nodeName) => {
       const row = rowsById.get(nodeName);
@@ -90,13 +108,23 @@ function ModelTree(props: Props) {
       const isHovered = hoveredId === nodeName && !isSelected;
       const isDimmedByFocus = limitationFocus && row?.is_dependent;
 
+      let baseColor: THREE.Color;
+      if (diffStatus) {
+        const status = diffStatus.get(nodeName);
+        if (status === "novel") baseColor = COLOR_NOVEL.clone();
+        else if (status === "matched") baseColor = COLOR_MATCHED.clone();
+        else baseColor = COLOR_NEUTRAL_DIM.clone();
+      } else {
+        baseColor = row
+          ? row.is_dependent
+            ? COLOR_DEPENDENT
+            : COLOR_INDEPENDENT
+          : COLOR_DEFAULT;
+      }
+
       for (const mesh of meshes) {
         const tinted = createTintedMaterial({
-          baseColor: row
-            ? row.is_dependent
-              ? COLOR_DEPENDENT
-              : COLOR_INDEPENDENT
-            : COLOR_DEFAULT,
+          baseColor,
           isSelected,
           isHovered,
           isDimmed: !!isDimmedByFocus,
@@ -105,7 +133,7 @@ function ModelTree(props: Props) {
         mesh.material = tinted;
       }
     });
-  }, [nodeIndex, rowsById, selectedId, hoveredId, limitationFocus]);
+  }, [nodeIndex, rowsById, selectedId, hoveredId, limitationFocus, diffStatus]);
 
   return (
     <primitive

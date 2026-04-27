@@ -36,6 +36,16 @@ EXAMPLE_TITLES = {
 
 
 @dataclass
+class DiffSummary:
+    comparison_id: str
+    comparison_title: str
+    diff_path: str  # filename relative to the example's staged directory
+    matched: int = 0
+    novel_in_base: int = 0
+    only_in_comparison: int = 0
+
+
+@dataclass
 class ManifestExample:
     id: str
     title: str
@@ -50,6 +60,8 @@ class ManifestExample:
     figure_coverage: float = 0.0  # fraction of components mapped to a figure number
     source: str = "synthetic"   # "synthetic" | "real_patent" | "korean"
     tags: list[str] = field(default_factory=list)
+    # V1-5 additions:
+    diffs_available: list[DiffSummary] = field(default_factory=list)
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -101,6 +113,16 @@ def _title_from_metadata(example_dir: Path, fallback_id: str) -> str:
     return EXAMPLE_TITLES.get(fallback_id, fallback_id.replace("_", " ").title())
 
 
+def _diffs_in(example_dir: Path) -> list[tuple[str, str]]:
+    """Return list of (comparison_id, diff_filename) for every
+    ``diff_<id>.json`` in the example dir."""
+    out: list[tuple[str, str]] = []
+    for child in sorted(example_dir.glob("diff_*.json")):
+        cid = child.stem[len("diff_"):]
+        out.append((cid, child.name))
+    return out
+
+
 def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> Optional[ManifestExample]:
     missing = _missing(example_dir)
     if missing:
@@ -129,6 +151,7 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         figure_coverage=coverage,
         source=source,
         tags=tags,
+        diffs_available=[],  # populated by _populate_diffs() below
     )
 
 
@@ -155,6 +178,37 @@ def discover_examples() -> list[ManifestExample]:
     return examples
 
 
+def _populate_diffs(examples: list[ManifestExample]) -> None:
+    """Fill in ``diffs_available`` for each example by scanning for
+    ``diff_<id>.json`` files. Each diff is paired with the manifest entry
+    of its comparison (if it's a known example), so the viewer can show
+    a friendly title."""
+    by_id = {e.id: e for e in examples}
+    for ex in examples:
+        src_dir = _src_dir_for(ex)
+        if not src_dir.exists():
+            continue
+        for cid, filename in _diffs_in(src_dir):
+            diff = json.loads((src_dir / filename).read_text(encoding="utf-8"))
+            comparison_title = (
+                by_id[cid].title if cid in by_id else cid.replace("_", " ")
+            )
+            ex.diffs_available.append(DiffSummary(
+                comparison_id=cid,
+                comparison_title=comparison_title,
+                diff_path=filename,
+                matched=len(diff.get("matched", [])),
+                novel_in_base=len(diff.get("novel_in_base", [])),
+                only_in_comparison=len(diff.get("only_in_comparison", [])),
+            ))
+
+
+def _src_dir_for(ex: ManifestExample) -> Path:
+    if ex.source == "real_patent":
+        return REAL_PATENTS_DIR / ex.id
+    return EXAMPLES_DIR / ex.id
+
+
 def stage_for_viewer(*, clean: bool = True) -> Path:
     """Copy each example's artefacts into ``viewer/public/data/``."""
     if clean and VIEWER_DATA_DIR.exists():
@@ -162,11 +216,12 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
     VIEWER_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     examples = discover_examples()
+    _populate_diffs(examples)
     for ex in examples:
         # ``base`` may be ``real_patents/<id>``, mirroring the source layout.
         target = VIEWER_DATA_DIR / ex.base
         target.mkdir(parents=True, exist_ok=True)
-        src_dir = (REAL_PATENTS_DIR if ex.source == "real_patent" else EXAMPLES_DIR) / ex.id
+        src_dir = _src_dir_for(ex)
 
         for filename in (ex.claim_text_path, ex.ir_path, ex.claim_map_path, ex.glb_path):
             shutil.copy2(src_dir / filename, target / filename)
@@ -177,8 +232,10 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             dst_img = target / ex.figure_image_path
             dst_img.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src_img, dst_img)
-        logger.info("Staged %s (source=%s, fig_coverage=%.0f%%)",
-                    ex.id, ex.source, ex.figure_coverage * 100)
+        for ds in ex.diffs_available:
+            shutil.copy2(src_dir / ds.diff_path, target / ds.diff_path)
+        logger.info("Staged %s (source=%s, fig_coverage=%.0f%%, diffs=%d)",
+                    ex.id, ex.source, ex.figure_coverage * 100, len(ex.diffs_available))
 
     manifest = {
         "schema_version": "0.2.0",

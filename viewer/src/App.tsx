@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { ClaimPanel } from "./components/ClaimPanel";
 import { FigurePanel } from "./components/FigurePanel";
+import { PriorArtOverlay } from "./components/PriorArtOverlay";
 import { Scene } from "./components/Scene";
-import { loadExample, loadManifest, type LoadedExample } from "./data";
-import type { ManifestExample } from "./types";
+import { loadDiff, loadExample, loadManifest, type LoadedExample } from "./data";
+import type { ManifestExample, PriorArtDiff } from "./types";
 
 type LoadedExamplePlus = LoadedExample & { example: ManifestExample };
 
@@ -17,6 +18,10 @@ export function App() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [limitationFocus, setLimitationFocus] = useState<boolean>(false);
   const [filterFullMappingOnly, setFilterFullMappingOnly] = useState<boolean>(false);
+
+  // V1-5 prior-art state.
+  const [activeDiffId, setActiveDiffId] = useState<string | null>(null);
+  const [activeDiff, setActiveDiff] = useState<PriorArtDiff | null>(null);
 
   // Initial manifest load.
   useEffect(() => {
@@ -41,11 +46,33 @@ export function App() {
     setSelectedId(null);
     setHoveredId(null);
     setError(null);
+    setActiveDiffId(null);
+    setActiveDiff(null);
     window.location.hash = ex.id;
     loadExample(ex)
       .then((bundle) => setLoaded({ example: ex, ...bundle }))
       .catch((e) => setError(String(e)));
   }, [currentId, examples]);
+
+  // Load the chosen diff JSON whenever activeDiffId changes.
+  useEffect(() => {
+    if (!loaded || !activeDiffId) {
+      setActiveDiff(null);
+      return;
+    }
+    const summary = (loaded.example.diffs_available || []).find(
+      (d) => d.comparison_id === activeDiffId
+    );
+    if (!summary) return;
+    loadDiff(loaded.example, summary.diff_path)
+      .then(setActiveDiff)
+      .catch((e) => {
+        console.warn("Failed to load diff:", e);
+        setActiveDiff(null);
+      });
+  }, [loaded, activeDiffId]);
+
+  const availableDiffs = loaded?.example.diffs_available ?? [];
 
   const visibleExamples = useMemo(() => {
     if (!examples) return [];
@@ -58,6 +85,11 @@ export function App() {
   }, [examples, filterFullMappingOnly]);
 
   const hasFigure = !!(loaded?.figureImageUrl && loaded?.figureMap);
+  const hasDiff = !!activeDiff;
+  // When a diff is active, the right pane shows the PriorArtOverlay
+  // *instead of* the figure panel (we still want the 3-pane layout to
+  // stay visible).
+  const showRightPane = hasFigure || hasDiff;
 
   return (
     <div className="app">
@@ -90,6 +122,22 @@ export function App() {
         >
           {filterFullMappingOnly ? "★ full-mapping only" : "all examples"}
         </button>
+        {availableDiffs.length > 0 && (
+          <select
+            value={activeDiffId ?? ""}
+            onChange={(e) => setActiveDiffId(e.target.value || null)}
+            aria-label="Compare against prior art"
+            title="Compare this claim's IR against another patent"
+            className={hasDiff ? "active-select" : ""}
+          >
+            <option value="">Compare to prior art…</option>
+            {availableDiffs.map((d) => (
+              <option key={d.comparison_id} value={d.comparison_id}>
+                vs. {d.comparison_title} ({d.matched}/{d.matched + d.novel_in_base + d.only_in_comparison})
+              </option>
+            ))}
+          </select>
+        )}
         <span className="grow" />
         <button
           className={limitationFocus ? "active" : ""}
@@ -100,7 +148,7 @@ export function App() {
         </button>
       </header>
 
-      <div className={`split ${hasFigure ? "" : "two-pane"}`}>
+      <div className={`split ${showRightPane ? "" : "two-pane"}`}>
         {/* Claim text pane */}
         <div className="pane">
           {error && <div className="error-overlay">Error: {error}</div>}
@@ -143,10 +191,16 @@ export function App() {
               onSelect={setSelectedId}
               onHover={setHoveredId}
               limitationFocus={limitationFocus}
+              diff={activeDiff}
             />
           )}
           {loaded && (
             <div className="scene-status">
+              {hasDiff && (
+                <span style={{ color: "var(--accent-novel, #56d97a)" }}>
+                  diff active —
+                </span>
+              )}{" "}
               {selectedId
                 ? `Selected: ${labelOf(loaded, selectedId)}`
                 : hoveredId
@@ -156,18 +210,33 @@ export function App() {
           )}
         </div>
 
-        {/* Figure pane (only if data present) */}
-        {hasFigure && loaded && (
+        {/* Right pane: prior-art overlay if active, else figure panel. */}
+        {showRightPane && loaded && (
           <div className="pane figure">
-            <FigurePanel
-              imageUrl={loaded.figureImageUrl}
-              figureMap={loaded.figureMap}
-              rows={loaded.claimMap.components}
-              selectedId={selectedId}
-              hoveredId={hoveredId}
-              onSelect={setSelectedId}
-              onHover={setHoveredId}
-            />
+            {hasDiff ? (
+              <PriorArtOverlay
+                diff={activeDiff}
+                comparisonTitle={
+                  availableDiffs.find((d) => d.comparison_id === activeDiffId)
+                    ?.comparison_title ?? activeDiffId ?? ""
+                }
+                selectedId={selectedId}
+                hoveredId={hoveredId}
+                onSelect={setSelectedId}
+                onHover={setHoveredId}
+                onClose={() => setActiveDiffId(null)}
+              />
+            ) : (
+              <FigurePanel
+                imageUrl={loaded.figureImageUrl}
+                figureMap={loaded.figureMap}
+                rows={loaded.claimMap.components}
+                selectedId={selectedId}
+                hoveredId={hoveredId}
+                onSelect={setSelectedId}
+                onHover={setHoveredId}
+              />
+            )}
           </div>
         )}
       </div>

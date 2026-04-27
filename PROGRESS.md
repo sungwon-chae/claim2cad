@@ -470,6 +470,56 @@ bug, $2.02 on the actual baseline).
 
 ---
 
+## Phase V1-5 — Prior-art comparison — STARTED 2026-04-27 20:55,
+COMPLETED ~21:15
+
+- New `claim2cad/prior_art.py`:
+  - `_greedy_pair(base, comparison)` — bipartite-greedy fuzzy matcher
+    over component labels with kind / category bonuses. Threshold 0.55.
+  - `_llm_disambiguate()` — Sonnet 4.6 (routed via `prior_art_diff`
+    task) re-pairs the still-unmatched leftovers. Confidence floor 0.6.
+  - `diff_irs(base, comparison)` returns a `PriorArtDiff` with
+    `matched`, `novel_in_base`, `only_in_comparison` rows.
+  - CLI: `python -m claim2cad.prior_art --base <dir> --compare <dir>`
+    writes `<base>/diff_<comp_id>.json`.
+- 4 demo diffs precomputed and committed:
+  - `golden_robot_arm` vs `US3279624A_unimate_industrial_robot`
+    (1962): 2 matched, 7 novel, 6 prior-only.
+  - `golden_robot_arm` vs `US4575297A_puma_industrial_robot`
+    (1982): 8 matched, 1 novel, 23 prior-only.
+  - `planetary_gear` vs `US3705522A_planetary_gear_with_idler`
+    (1971): 5 matched, 1 novel, 6 prior-only.
+  - `planetary_gear` vs `US3789698A_compact_planetary_drive`
+    (1972): 0 matched (vocab mismatch), 6 novel, 14 prior-only.
+- `claim2cad.manifest` extended with `DiffSummary` and
+  `_populate_diffs()` so the viewer's manifest exposes
+  `diffs_available[]`. Diff JSONs are staged into the viewer.
+- Viewer additions:
+  - `PriorArtOverlay.tsx` — sectioned list of matched / novel /
+    prior-only components with chip counts + click-to-select rows
+    that drive the same selection state as the claim panel and 3D
+    scene.
+  - `Scene.tsx` accepts an optional `diff` prop: when set, mesh tints
+    follow diff status (matched=neutral, novel=green, others dimmed).
+  - `App.tsx` adds a "Compare to prior art…" header `<select>` that
+    appears when at least one diff is staged. Activating a diff
+    swaps the right pane from `FigurePanel` to `PriorArtOverlay`,
+    re-tints the 3D scene, and shows a small "diff active" badge in
+    the scene status bar.
+
+### Verification
+- `npm run typecheck` clean. `npm run build` produces 1.07 MB JS /
+  297 KB gzipped (CSS now 7.8 KB after the prior-art rules).
+- Dev server smoke: `manifest.json` and a staged
+  `diff_US3279624A_unimate_industrial_robot.json` both return HTTP
+  200.
+- 29/29 Python tests still pass.
+
+**Time spent:** ~20 min vs. 240 min target.
+**Cost so far:** $6.92 cumulative — V1-5 added $0.06 across 5
+prior-art LLM calls (4 diffs + the smoke test), all routed to
+Opus 4.7 per the `HEAVY_TASKS` rule.
+
 ## Phase V1-4 — Three-pane viewer with FigurePanel — STARTED 2026-04-27
 20:30, COMPLETED ~20:55
 

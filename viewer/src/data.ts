@@ -4,6 +4,7 @@ import type {
   FigureMap,
   Manifest,
   ManifestExample,
+  PriorArtDiff,
 } from "./types";
 
 const dataBase = "/data";
@@ -53,6 +54,13 @@ export async function loadExample(example: ManifestExample): Promise<LoadedExamp
     figureMap,
     figureImageUrl,
   };
+}
+
+export async function loadDiff(
+  example: ManifestExample,
+  diffPath: string
+): Promise<PriorArtDiff> {
+  return fetchJson<PriorArtDiff>(`${dataBase}/${example.base}/${diffPath}`);
 }
 
 async function fetchText(url: string): Promise<string> {

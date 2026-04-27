@@ -100,6 +100,15 @@ export type Manifest = {
   examples: ManifestExample[];
 };
 
+export type DiffSummary = {
+  comparison_id: string;
+  comparison_title: string;
+  diff_path: string; // filename relative to the example's staged directory
+  matched: number;
+  novel_in_base: number;
+  only_in_comparison: number;
+};
+
 export type ManifestExample = {
   id: string;
   title: string;
@@ -113,4 +122,24 @@ export type ManifestExample = {
   figure_coverage?: number;
   source?: "synthetic" | "real_patent" | "korean";
   tags?: string[];
+  diffs_available?: DiffSummary[];
+};
+
+// V1-5 prior-art diff payload (mirrors claim2cad/prior_art.py PriorArtDiff).
+export type PriorArtDiff = {
+  base_patent: string;
+  comparison_patent: string;
+  matched: {
+    base_id: string;
+    base_label: string;
+    comparison_id: string;
+    comparison_label: string;
+    score: number;
+    category: string;
+    kind_base: string;
+    kind_comparison: string;
+  }[];
+  novel_in_base: { id: string; label: string; category: string; kind: string }[];
+  only_in_comparison: { id: string; label: string; category: string; kind: string }[];
+  notes?: string[];
 };

@@ -31,6 +31,7 @@ from pathlib import Path
 from pydantic import ValidationError
 
 from claim2cad.claim_segmenter import ClaimSegments, segment_claim
+from claim2cad.dimension_extractor import extract_dimension
 from claim2cad.ir_schema import (
     Claim,
     ClaimIR,
@@ -161,14 +162,19 @@ def _head_noun_phrase(element_text: str, language: str = "en") -> str:
         if last_match is not None:
             tail = body[last_match.end() :].strip()
             if tail:
-                # Drop trailing topic markers like "는", "은", "이", "가",
-                # plus the connective "더" ("additionally"). Keep ordinal
-                # adjectives like "제1".
                 tail = re.sub(r"\s+더\s*$", "", tail).strip()
                 tail = re.sub(r"(을|를|이|가|는|은|의)\s*$", "", tail).strip()
                 return tail or body
-        # No relative-clause verb. Cut at the first NP terminator (e.g.
-        # particle), giving the leading noun.
+        # No relative-clause verb. Try trailing possessive ``의`` — Korean
+        # NPs like "길이 50 mm 의 제1 링크" put the head after the 의.
+        possessive = list(re.finditer(r"\s의\s+", body))
+        if possessive:
+            tail = body[possessive[-1].end() :].strip()
+            if tail:
+                tail = re.sub(r"(을|를|이|가|는|은|의)\s*$", "", tail).strip()
+                return tail
+        # Cut at the first NP terminator (particle), giving the leading
+        # noun. Fall through.
         match = KO_HEAD_NP_TERMINATORS.search(body)
         if match:
             body = body[: match.start()].strip()
@@ -262,13 +268,19 @@ def _stub_component(
 
     category, kind = _classify(element_text, language=seg.language)
 
+    # V1-9: deterministic dimension extraction from the element text.
+    dimension, qualifier = extract_dimension(element_text, language=seg.language)
+    constraints: list[str] = []
+    if qualifier is not None:
+        constraints.append(f"dimension:{qualifier}")
+
     return Component(
         id=component_id,
         label=label,
         category=category,
         kind=kind,
-        dimension=DimensionUnspecified(),
-        constraints=[],
+        dimension=dimension,
+        constraints=constraints,
         source_span=SourceSpan(claim_id=seg.claim_id, char_start=start, char_end=end),
         is_dependent=is_dependent,
         dependent_on=dependent_on,
@@ -511,6 +523,50 @@ def _segment_summary(segments: list[ClaimSegments]) -> str:
     return "\n".join(lines)
 
 
+def _backfill_dimensions(ir: ClaimIR) -> ClaimIR:
+    """Run the deterministic dimension extractor on every Component whose
+    LLM-produced dimension is ``DimensionUnspecified``. Components the LLM
+    correctly dimensioned are left alone.
+
+    This catches the common case where the LLM emits a structurally
+    correct IR but skips the explicit ``"30 mm"`` it saw in the claim.
+    """
+    from claim2cad.lang import detect_language
+
+    by_claim_id = {c.id: c for c in ir.claims}
+    new_components: list[Component] = []
+    changed = 0
+    for comp in ir.components:
+        if not isinstance(comp.dimension, DimensionUnspecified):
+            new_components.append(comp)
+            continue
+        claim = by_claim_id.get(comp.source_span.claim_id)
+        if claim is None:
+            new_components.append(comp)
+            continue
+        # Slice the element text using the IR span.
+        snippet = claim.text[comp.source_span.char_start : comp.source_span.char_end]
+        if not snippet.strip():
+            new_components.append(comp)
+            continue
+        lang = detect_language(snippet)
+        dim, qualifier = extract_dimension(snippet, language=lang)
+        if isinstance(dim, DimensionUnspecified):
+            new_components.append(comp)
+            continue
+        constraints = list(comp.constraints)
+        if qualifier is not None and f"dimension:{qualifier}" not in constraints:
+            constraints.append(f"dimension:{qualifier}")
+        new_components.append(comp.model_copy(update={
+            "dimension": dim,
+            "constraints": constraints,
+        }))
+        changed += 1
+    if changed:
+        logger.info("Backfilled %d dimension(s) on LLM IR", changed)
+    return ir.model_copy(update={"components": new_components})
+
+
 def _try_llm(text: str) -> ClaimIR | None:
     schema_json = json.dumps(ClaimIR.model_json_schema(), indent=2)
     segments = segment_claim(text)
@@ -566,7 +622,7 @@ def parse_claim(text: str) -> ClaimIR:
 
     ir = _try_llm(text)
     if ir is not None:
-        return ir
+        return _backfill_dimensions(ir)
 
     return _stub_ir(text)
 

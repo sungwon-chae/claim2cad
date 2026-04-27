@@ -149,3 +149,4 @@
 {"ts": "2026-04-27T20:38:25", "task_type": "prior_art_diff", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 1596, "completion_tokens": 15, "cost_usd": 0.008355, "note": ""}
 {"ts": "2026-04-27T22:56:52", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6990, "completion_tokens": 2081, "cost_usd": 0.052185, "note": ""}
 {"ts": "2026-04-27T23:04:14", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 7138, "completion_tokens": 4702, "cost_usd": 0.091944, "note": ""}
+{"ts": "2026-04-27T23:11:47", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6647, "completion_tokens": 648, "cost_usd": 0.029661, "note": ""}

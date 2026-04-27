@@ -4,6 +4,26 @@ All notable changes documented here. This project follows semantic versioning.
 
 ## [Unreleased] — v1.0-dev
 
+### Added (V1-9)
+- Deterministic dimension extractor (`claim2cad/dimension_extractor.py`)
+  for English and Korean.
+  - Patterns: explicit values (``"30 mm"``), approximate
+    (``"approximately 30 mm"`` / ``"약 30 mm"``), ranges
+    (``"between 10 and 20 mm"`` / ``"5 내지 10 mm"``), at-least /
+    at-most (``"at least 5 mm"`` / ``"5 mm 이상"``), comparatives
+    (``"longer than the first link"`` / ``"제1 링크보다 긴"``).
+  - Unit normalisation across mm / cm / m / in / ft / deg + Korean
+    aliases.
+- Stub parser populates dimensions automatically from element text;
+  qualifier (approximate / minimum / range:lo-hi) is recorded in
+  `Component.constraints` (no precision loss).
+- LLM parser gets a `_backfill_dimensions` post-pass that fills
+  `unspecified` entries from source-span text — LLM-set dimensions
+  pass through unchanged.
+- Korean head-noun extraction now follows trailing possessive ``의``,
+  so ``"길이 50 mm 의 제1 링크"`` resolves to head "제1 링크".
+- 26 new tests in `tests/test_dimensions.py`. Total: 87 passed.
+
 ### Added (V1-8)
 - Multi-claim hierarchy operations.
   - `claim2cad/claim_hierarchy.py`: `claim_chain`, `components_for_claim`,

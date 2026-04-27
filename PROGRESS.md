@@ -835,3 +835,47 @@ $60 not breached). Breakdown:
 - Viewer integration was tagged optional in the brief and is deferred to
   a v1.1 follow-up. The CLI + JSON output are sufficient for the
   evaluation harness in V1-11.
+
+---
+
+## Phase V1-9 — Dimension extraction — COMPLETED 2026-04-27
+
+### What shipped
+- `claim2cad/dimension_extractor.py`: deterministic patterns for English
+  and Korean.
+  - Explicit values: ``"30 mm"``, ``"12.5mm"``, ``"0.5 inches"``,
+    ``"길이 30 mm"``.
+  - Approximate: ``"approximately 30 mm"``, ``"약 30 mm"`` →
+    DimensionValue + ``constraints=["dimension:approximate"]``.
+  - Ranges: ``"between 10 and 20 mm"``, ``"5 to 15 mm"``, ``"5 내지 10 mm"``
+    → midpoint DimensionValue + ``constraints=["dimension:range:lo-hi"]``.
+  - Min/max: ``"at least 5 mm"`` / ``"5 mm 이상"``,
+    ``"at most 5 mm"`` / ``"0.5 mm 이하"``.
+  - Comparative: ``"longer than the first link"`` / ``"제1 링크보다 긴"``
+    → DimensionRelative + ``constraints=["dimension:comparative"]``.
+- Unit normalisation: 12+ surface variants (mm / cm / m / in / ft / deg /
+  Korean 밀리미터·센티미터·미터·도) collapse to canonical IR units.
+- Parser integration:
+  - Stub path (`_stub_component`): runs the extractor on every element
+    text. The qualifier (approximate / minimum / range:…) is appended to
+    `Component.constraints` so the round-trip is loss-less.
+  - LLM path (`_backfill_dimensions`): for components the LLM marked
+    `unspecified`, runs the extractor on the source-span slice. LLM-set
+    dimensions are preserved untouched.
+- Korean head-noun extraction: now follows trailing possessive ``의`` so
+  ``"길이 50 mm 의 제1 링크"`` correctly identifies "제1 링크" as the head.
+
+### Verification
+- `pytest tests/` — 87 passed (61 + 26 new), 1.9 s.
+- `tests/test_dimensions.py` covers: 11 English value/qualifier cases,
+  7 Korean cases, 4 stub-parser integration cases, 2 LLM-backfill cases,
+  2 missing/ambiguous cases.
+
+### Notes
+- The brief said *never hallucinate exact precision*. Approximate and
+  range phrases produce a single DimensionValue **with** a qualifier
+  string in constraints — downstream code (CAD generator, viewer) can
+  read both. Our CAD generator currently doesn't use dimensions
+  (placeholder shapes); V1-10/V1-11 may surface them.
+- Bare numbers without units (``"comprising 30 components"``) stay
+  unspecified — count nouns aren't dimensions.

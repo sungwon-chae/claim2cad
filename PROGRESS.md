@@ -1010,3 +1010,49 @@ $60 not breached). Breakdown:
   v1.1-dev.
 - Static screenshots not added — none were already generated locally
   and the brief said "only if already generated."
+
+---
+
+## v1.1 Session 1 — STARTED 2026-04-28 11:31 KST
+
+Goal: figure-aware CAD generation. Component library + visual validator +
+figure-driven generator + iterative refinement loop, applied end-to-end to
+US4807331A_spring_loaded_hinge.
+
+
+## Phase V11-1 — Component Library Foundation — COMPLETED 2026-04-28 11:39 KST
+
+### What shipped
+- `claim2cad/components/` package with 12 registered library entries:
+  primitives (`plate`, `leaf`, `rod`, `l_bracket`, `u_bracket`, `pin`),
+  joints (`leaf_hinge`, `revolute_joint`, `prismatic_joint`),
+  transmission (`spur_gear`, `ball_bearing`),
+  fasteners (`helical_spring`).
+- `Component` ABC with build/bbox/tag/export_step/export_glb (preserves
+  v1.0 GLB-naming contract via `glb_naming.rename_glb_root_children`).
+- `library.lookup` does fuzzy token-overlap matching with aliases; returns
+  None below threshold so the V11-3 generator can VLM-fallback.
+- `library.instantiate` filters unknown VLM-supplied kwargs to dataclass
+  fields, so noisy figure analyses don't break construction.
+- 53 new tests: every entry builds, exports STEP+GLB, and shape-specific
+  invariants (LeafHinge has leaf_a/leaf_b/pin children; SpurGear OD ≈
+  m·(z+2); BallBearing has 7 balls; spring height ≈ free length).
+
+### Verification
+- `pytest tests/test_components.py -q` — 53 passed.
+- `pytest -q` — **154 passed** (101 baseline + 53 new).
+- All 12 components exported as STEP and GLB to a temp dir; no empties.
+
+### Notes
+- SpurGear is built by extruding a single tooth polygon and rotating N
+  copies (build123d's Plane is not a context manager, so the obvious
+  `with rot:` pattern fails — pivoted to `Solid.rotate(Axis.Z, deg)`).
+- HelicalSpring uses `bd.Helix` + `bd.sweep` — true helical wire, not a
+  stack of donuts. Rendering will reveal whether this is enough.
+- "Unknown Compound type, color not set" warnings from build123d's STEP/GLB
+  exporters are noise from compounds — we set color on the parts, not the
+  compound. Not blocking; can be silenced in a follow-up.
+
+### Cost so far
+- $0 (pure local construction; no LLM calls in this phase).
+

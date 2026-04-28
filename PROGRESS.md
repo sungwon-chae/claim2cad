@@ -1056,3 +1056,46 @@ US4807331A_spring_loaded_hinge.
 ### Cost so far
 - $0 (pure local construction; no LLM calls in this phase).
 
+
+## Phase V11-2 — Visual Validator + v1.0 Baseline — COMPLETED 2026-04-28 11:45 KST
+
+### What shipped
+- `claim2cad/visual_validator.py` — headless renderer + VLM comparison.
+  - `render_shape_to_png` and `render_step_to_pngs` use build123d
+    tessellation + matplotlib's 3D backend (no new deps; trimesh/pyrender
+    not available in this venv).
+  - 4 default views: iso, front, right, top. White background, soft
+    Lambertian shading from a single light, thin black edges.
+  - `make_comparison_grid` composes a side-by-side PNG: patent figure on
+    the left, 2x2 render grid on the right. This is the single image sent
+    to the VLM.
+  - `compare_to_figure` calls `claim2cad.llm_vision.vision_completion`
+    with Opus 4.7, returns a structured `SimilarityReport` with overall +
+    per-axis scores and a list of defects keyed to component_id.
+  - `validate_example` CLI wraps everything end-to-end; `--dry-run` skips
+    the VLM call (used by tests and CI).
+- `tests/test_visual_validator.py` — 5 tests covering render, composite,
+  and dry-run paths.
+
+### v1.0 baseline for US4807331A
+- Composite + report saved to
+  `examples/real_patents/US4807331A_spring_loaded_hinge/baseline_validation.json`.
+- VLM rated v1.0 **0/10** across every axis. Notes: "right-hand CAD
+  panels show only faint dotted artifacts with no discernible 3D
+  geometry". Defects list every claim component as "absent from CAD
+  render".
+- This is honest, not generous. The v1.0 layout lays 25 components in a
+  line along X (~1250 mm extent), so each component renders at <4% of
+  the frame width. v1.0 was *topology-correct, not visually faithful* —
+  exactly the gap v1.1 is built to close.
+- Number to beat in V11-4: any non-zero score beats baseline; target
+  ≥7/10 overall.
+
+### Verification
+- `python -m claim2cad.visual_validator examples/real_patents/US4807331A_spring_loaded_hinge`
+  ran end-to-end with the live VLM in 13 s.
+- `pytest -q` — **159 passed** (154 + 5 new).
+
+### Cost so far (Session 1)
+- $0.030 (one Opus 4.7 vision call). Cap: $100, soft cap: $70.
+

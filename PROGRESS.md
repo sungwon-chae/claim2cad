@@ -1099,3 +1099,50 @@ US4807331A_spring_loaded_hinge.
 ### Cost so far (Session 1)
 - $0.030 (one Opus 4.7 vision call). Cap: $100, soft cap: $70.
 
+
+## Phase V11-3 — Figure-to-CAD Generator — COMPLETED 2026-04-28 11:48 KST
+
+### What shipped
+- `claim2cad/figure_to_cad.py` — single-call VLM generator.
+  - `analyze_figure(figure, ir)` sends Opus 4.7 the figure + claim IR and
+    asks for a JSON `FigureSpec`: per-component library_part, params,
+    position_mm, rotation_deg, features, notes.
+  - `generate_assembly(spec, ir)` looks up each `library_part` in the V11-1
+    registry, instantiates with VLM-supplied params, falls back to v1.0
+    primitives when unmatched, applies pose, and composes a Compound.
+  - VLM is told to mark redundant components with `library_part=null` +
+    `notes: "covered by leaf_hinge"` so the leaf hinge isn't double-built.
+  - Generator writes per-component STEP files to `components/<id>.step`,
+    plus `model_v1.1.step` and `model_v1.1.glb`.
+  - GLB root-child names are renamed to component IDs in the order they
+    were added — same contract as v1.0's pipeline.
+- `tests/test_figure_to_cad.py` — 10 tests covering spec parsing,
+  IR-completeness fallback, library/primitive instantiation, and
+  pose application.
+
+### Applied to US4807331A
+- One Opus 4.7 vision call produced a 25-component spec.
+- Library part assignments: `leaf_hinge` (1), `u_bracket` (2), `pin` (2),
+  `plate` (13), null/fallback (7 — abstract claim concepts like
+  `hinge_axis` and `body_half_sub_assembly`).
+- 25 STEP files in `components/`, `model_v1.1.step` (512 KB),
+  `model_v1.1.glb` (400 KB).
+- Iso render shows visible 3D geometry: two large mounting plates with
+  the hinge cluster between them. Compare to v1.0's row-of-dots — this
+  is already a qualitative improvement before any refinement.
+- The two outer plates are oversized (~250-300 mm vs the hinge's ~80 mm)
+  — exactly the kind of proportion error V11-4's refinement loop will
+  catch and fix.
+
+### Verification
+- `python -m claim2cad.figure_to_cad examples/real_patents/US4807331A_spring_loaded_hinge`
+  ran end-to-end, ~13s including the VLM call.
+- Leaf hinge component exists and contains `leaf_a`, `leaf_b`, `pin`
+  children — basic figure-understanding test passes.
+- `pytest -q` — **169 passed** (159 + 10 new).
+
+### Cost so far (Session 1)
+- Phase V11-2: $0.030 (vision baseline).
+- Phase V11-3: $0.111 (one figure-to-spec call).
+- **Total session: $0.141**, cap $100, soft cap $70.
+

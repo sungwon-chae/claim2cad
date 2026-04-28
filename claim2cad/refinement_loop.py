@@ -324,10 +324,11 @@ def _validate(
     *,
     patent_context: str,
     component_list: list[str],
+    render_style: str = "line",
 ) -> tuple[SimilarityReport, Path]:
     """Render + validate a single iteration. Returns (report, composite_path)."""
     renders_dir = example_dir / f"renders_iter{iteration:02d}"
-    renders = render_step_to_pngs(step_path, renders_dir)
+    renders = render_step_to_pngs(step_path, renders_dir, style=render_style)
     composite = example_dir / f"composite_iter{iteration:02d}.png"
     report = compare_to_figure(
         renders,
@@ -352,6 +353,7 @@ def refine(
     cost_soft_cap: float = 70.0,
     patent_context: str = "",
     enable_codegen: bool = True,
+    render_style: str = "line",
 ) -> dict[str, Any]:
     """Run the iterative refinement loop on ``example_dir``.
 
@@ -429,6 +431,7 @@ def refine(
             it,
             patent_context=patent_context,
             component_list=component_list,
+            render_style=render_style,
         )
         cost = cumulative_cost()
         record = IterationRecord(
@@ -614,6 +617,11 @@ def _build_argparser() -> argparse.ArgumentParser:
         action="store_true",
         help="Disable VLM build123d codegen during refinement.",
     )
+    p.add_argument(
+        "--render-style",
+        choices=("shaded", "line"),
+        default="line",
+    )
     return p
 
 
@@ -634,6 +642,7 @@ def main(argv: list[str] | None = None) -> int:
         cost_soft_cap=args.cost_soft_cap,
         patent_context=args.patent_context,
         enable_codegen=not args.no_codegen,
+        render_style=args.render_style,
     )
     print(json.dumps(summary, indent=2))
     return 0

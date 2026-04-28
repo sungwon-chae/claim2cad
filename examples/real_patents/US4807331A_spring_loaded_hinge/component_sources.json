@@ -1,8 +1,8 @@
 {
-  "door_half_member": "codegen",
+  "door_half_member": "library:u_bracket",
   "pintle_pin": "library:pin",
-  "main_member": "codegen",
-  "u_shaped_link_member": "codegen",
+  "main_member": "library:u_bracket",
+  "u_shaped_link_member": "library:u_bracket",
   "stop_means": "library:rod",
-  "leaf_flange": "codegen"
+  "leaf_flange": "library:leaf"
 }

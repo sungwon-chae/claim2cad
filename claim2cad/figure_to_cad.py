@@ -553,6 +553,10 @@ def run_generator(
     use_cached_spec: bool = False,
     enable_codegen: bool = True,
     crop_radius: float = 0.12,
+    enable_spatial_composer: bool = True,
+    multi_figure: bool = True,
+    render_style: str = "line",
+    patent_context: str = "",
 ) -> dict[str, Path]:
     """Main entry: run the figure-to-CAD pipeline on a single example."""
     example_dir = Path(example_dir)
@@ -613,6 +617,61 @@ def run_generator(
         enable_codegen=enable_codegen,
     )
 
+    # --- Spatial composer pass --------------------------------------------
+    # The first build is the VLM's per-component guess at where things go.
+    # Now ask the VLM to look at the *whole rendered assembly* against the
+    # figure(s) and revise every pose so shared axes line up. One call.
+    if enable_spatial_composer and len(ordered_ids) >= 2:
+        from claim2cad.visual_validator import render_step_to_pngs
+
+        try:
+            tmp_step = example_dir / "_pre_compose.step"
+            bd.export_step(compound, str(tmp_step))
+            tmp_renders_dir = example_dir / "renders_pre_compose"
+            tmp_renders = render_step_to_pngs(
+                tmp_step, tmp_renders_dir, style=render_style
+            )
+            composer_figure = _compose_multi_figure(
+                example_dir, primary=figure_path, multi=multi_figure
+            )
+            from claim2cad.spatial_composer import compose_spatial
+
+            ir_constraints = {c.id: list(c.constraints or []) for c in ir.components}
+            id_to_solid: dict[str, bd.Part | bd.Compound] = {}
+            for child in compound.children:
+                if getattr(child, "label", None):
+                    id_to_solid[child.label] = child
+            revised_spec, explanation = compose_spatial(
+                spec=figure_spec,
+                component_solids=id_to_solid,
+                figure_path=composer_figure,
+                rendered_pngs=tmp_renders,
+                ir_constraints=ir_constraints,
+                relations=ir.relations or [],
+                composite_path=example_dir / "composer_composite.png",
+                patent_context=patent_context,
+            )
+            # Persist revised spec.
+            spec_path.write_text(
+                json.dumps(revised_spec.to_dict(), indent=2), encoding="utf-8"
+            )
+            (example_dir / "spatial_composer_explanation.txt").write_text(
+                explanation, encoding="utf-8"
+            )
+            # Rebuild assembly with revised poses.
+            figure_spec = revised_spec
+            compound, ordered_ids, source_tags = generate_assembly(
+                figure_spec,
+                ir,
+                components_dir=components_dir,
+                figure_crops=figure_crops_dict,
+                code_cache_dir=code_cache_dir,
+                enable_codegen=enable_codegen,
+            )
+            tmp_step.unlink(missing_ok=True)
+        except Exception as exc:  # noqa: BLE001 — composer is best-effort
+            logger.warning("Spatial composer failed: %s — keeping un-composed assembly", exc)
+
     step_path = example_dir / out_step
     glb_path = example_dir / out_glb
     bd.export_step(compound, str(step_path))
@@ -651,6 +710,48 @@ def run_generator(
 # ---------------------------------------------------------------------------
 
 
+def _compose_multi_figure(
+    example_dir: Path, *, primary: Path, multi: bool
+) -> Path:
+    """Compose figure_1, figure_2, figure_3 (if present) into one PNG so
+    the VLM sees all view states at once. Returns the path to the composite
+    (or just ``primary`` if no extras exist or multi is False)."""
+    if not multi:
+        return primary
+    figures_dir = example_dir / "figures"
+    extras: list[Path] = []
+    for name in ("figure_2.png", "figure_3.png"):
+        p = figures_dir / name
+        if p.exists():
+            extras.append(p)
+    if not extras:
+        return primary
+    try:
+        from PIL import Image
+
+        all_figures = [primary] + extras
+        loaded = [Image.open(p).convert("RGB") for p in all_figures]
+        # Letterbox each to a max 1024 wide canvas.
+        target_w = 1024
+        items: list[Image.Image] = []
+        for im in loaded:
+            ratio = im.height / im.width
+            new_h = int(target_w * ratio)
+            items.append(im.resize((target_w, new_h), Image.LANCZOS))
+        total_h = sum(im.height for im in items) + 8 * (len(items) - 1)
+        canvas = Image.new("RGB", (target_w, total_h), (255, 255, 255))
+        y = 0
+        for im in items:
+            canvas.paste(im, (0, y))
+            y += im.height + 8
+        out = example_dir / "_multi_figure.png"
+        canvas.save(out)
+        return out
+    except Exception as exc:  # noqa: BLE001
+        logger.warning("Multi-figure composition failed: %s — using primary", exc)
+        return primary
+
+
 def _build_argparser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run the v1.1 figure-driven CAD generator on an example.")
     p.add_argument("example_dir", type=Path)
@@ -674,6 +775,27 @@ def _build_argparser() -> argparse.ArgumentParser:
         default=0.12,
         help="Radius (normalised) for per-component figure crops.",
     )
+    p.add_argument(
+        "--no-spatial-composer",
+        action="store_true",
+        help="Skip the spatial composer pass after initial build.",
+    )
+    p.add_argument(
+        "--no-multi-figure",
+        action="store_true",
+        help="Use only figure_1 (skip composing figures 2 and 3).",
+    )
+    p.add_argument(
+        "--render-style",
+        choices=("shaded", "line"),
+        default="line",
+        help="Render style for composer + validation (default: line drawing).",
+    )
+    p.add_argument(
+        "--patent-context",
+        default="",
+        help="Free-text context surfaced to the spatial composer.",
+    )
     return p
 
 
@@ -693,6 +815,10 @@ def main(argv: list[str] | None = None) -> int:
         use_cached_spec=args.use_cached_spec,
         enable_codegen=not args.no_codegen,
         crop_radius=args.crop_radius,
+        enable_spatial_composer=not args.no_spatial_composer,
+        multi_figure=not args.no_multi_figure,
+        render_style=args.render_style,
+        patent_context=args.patent_context,
     )
     print(json.dumps({k: str(v) for k, v in out.items()}, indent=2))
     return 0

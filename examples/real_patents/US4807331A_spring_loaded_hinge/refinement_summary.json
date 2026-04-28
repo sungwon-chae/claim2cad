@@ -2,39 +2,39 @@
   "iterations": [
     {
       "iteration": 0,
-      "score": 3.0,
-      "silhouette": 3.0,
-      "proportion": 3.0,
-      "feature": 2.0,
-      "arrangement": 3.0,
+      "score": 4.0,
+      "silhouette": 4.0,
+      "proportion": 5.0,
+      "feature": 3.0,
+      "arrangement": 4.0,
       "defect_count": 8,
       "refined_components": [
-        "u_shaped_link_member",
         "main_member",
-        "door_half_member",
-        "pintle_pin",
-        "hinge_axis"
+        "upper_extension",
+        "lower_extension",
+        "u_shaped_link_member",
+        "pintle_pin"
       ],
-      "notes": "The CAD captures the general notion of a bracket meeting a channel-like member with a small pin, but the defining U-shaped link, paired upper/lower extensions with aligned pintle holes, and the channel door-half with leaf flange are not clearly modeled. Silhouettes are blocky approximations rather than recognizable hinge geometry.",
-      "cost_usd_so_far": 8.206244999999997
+      "notes": "The CAD captures a bracket-in-bracket arrangement with a mounting plate and some pin, but the fundamental vertical-axis U geometry with upper/lower extension legs carrying a through pintle pin is not clearly realized. Silhouette and feature presence diverge noticeably from the patent figure.",
+      "cost_usd_so_far": 9.106019999999996
     },
     {
       "iteration": 1,
       "score": 3.0,
       "silhouette": 3.0,
       "proportion": 3.0,
-      "feature": 2.0,
-      "arrangement": 4.0,
-      "defect_count": 7,
+      "feature": 4.0,
+      "arrangement": 2.0,
+      "defect_count": 8,
       "refined_components": [
         "main_member",
         "u_shaped_link_member",
-        "pintle_pin",
         "door_half_member",
-        "leaf_flange_pintle_pin_hole"
+        "pintle_pin",
+        "hinge_axis"
       ],
-      "notes": "The CAD captures a rough two-part hinge arrangement with a body-side block and door-side channel, but the key topology \u2014 U-bracket extensions, U-shaped link legs, and the vertical pintle pin with holes \u2014 is missing or indistinct. Proportions and silhouettes are only loosely related to the patent figure.",
-      "cost_usd_so_far": 8.296579999999997
+      "notes": "The CAD captures the general idea of a mounting plate with a U-bracket and a mating door-side piece, but it misses the defining nested double-U geometry, the upper/lower extension legs, the through-running vertical pintle pin, and the leaf flange hole. Silhouette and arrangement are only loosely reminiscent of FIG. 1.",
+      "cost_usd_so_far": 9.195844999999997
     },
     {
       "iteration": 2,
@@ -42,19 +42,19 @@
       "silhouette": 3.0,
       "proportion": 3.0,
       "feature": 2.0,
-      "arrangement": 4.0,
-      "defect_count": 8,
+      "arrangement": 3.0,
+      "defect_count": 7,
       "refined_components": [],
-      "notes": "The CAD captures the general idea of a bracket with a pin crossing between two bodies, but the characteristic U-bracket main member, U-shaped link, and channel-shaped door member with leaf flange are not recognizably modeled. Proportions and feature details (holes, extensions, legs) are largely missing.",
-      "cost_usd_so_far": 8.387299999999996
+      "notes": "The CAD captures a rough notion of two parallel brackets with a central block and a separate leaf element, so the basic body-half/door-half split is present. However, the distinctive nested-U geometry, pintle pin, leaf flange channel, and stop features are largely absent or oversimplified, making the model only loosely recognisable against the patent figure.",
+      "cost_usd_so_far": 9.295229999999998
     }
   ],
   "final_score": 3.0,
-  "best_score": 3.0,
+  "best_score": 4.0,
   "best_iteration": 0,
-  "target_score": 5.0,
-  "max_iterations": 2,
-  "stopped_reason": "max_iterations 2",
+  "target_score": 6.0,
+  "max_iterations": 3,
+  "stopped_reason": "no improvement for 2 iterations",
   "model_v1.1_step": "examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.step",
   "model_v1.1_glb": "examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.glb",
   "render_comparison_png": "examples/real_patents/US4807331A_spring_loaded_hinge/render_comparison.png"

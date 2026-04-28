@@ -167,6 +167,113 @@ def render_shape_to_png(
     return out_path
 
 
+def render_step_to_line_drawing(
+    step_path: Path | str,
+    out_path: Path | str,
+    *,
+    elev: float = 25.0,
+    azim: float = 45.0,
+    resolution: int = 1024,
+    tolerance: float = 0.3,
+    line_width: float = 1.0,
+    background: str = "white",
+) -> Path:
+    """Render a STEP as a line-drawing — every edge of every face drawn
+    as a thin black line on a white background.
+
+    This matches patent-figure visual language much better than a shaded
+    render. The VLM stops misreading shaded U-channels as flat plates
+    once both halves of the comparison composite are line drawings.
+    """
+    import matplotlib
+
+    matplotlib.use("Agg", force=True)
+    import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d.art3d import Line3DCollection
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    shape = bd.import_step(str(step_path))
+
+    # Walk every face → every edge → tessellate the edge into a polyline.
+    # We dedupe by quantised endpoint pair so shared edges are only drawn
+    # once. Curves get sampled into ~30 segments; lines stay at 2 points.
+    segments: list[np.ndarray] = []
+    seen: set[tuple[int, int, int, int, int, int]] = set()
+
+    def _q(p: bd.Vector) -> tuple[int, int, int]:
+        return (int(round(p.X * 100)), int(round(p.Y * 100)), int(round(p.Z * 100)))
+
+    bb_all = shape.bounding_box()
+    span_diag = float(np.linalg.norm([bb_all.max.X - bb_all.min.X, bb_all.max.Y - bb_all.min.Y, bb_all.max.Z - bb_all.min.Z]))
+    sample_tol = max(0.5, span_diag / 200.0)
+
+    for face in shape.faces():
+        for edge in face.edges():
+            try:
+                a = edge.start_point()
+                b = edge.end_point()
+            except Exception:  # noqa: BLE001
+                continue
+            qa = _q(a)
+            qb = _q(b)
+            key = qa + qb if qa <= qb else qb + qa
+            if key in seen:
+                continue
+            seen.add(key)
+            geom_type = str(getattr(edge, "geom_type", "")).upper()
+            if "LINE" in geom_type:
+                segments.append(np.array([[a.X, a.Y, a.Z], [b.X, b.Y, b.Z]], dtype=np.float32))
+            else:
+                # Sample the edge into a polyline.
+                length = max(edge.length, 1e-3)
+                n = max(2, min(64, int(length / sample_tol) + 2))
+                pts: list[tuple[float, float, float]] = []
+                for i in range(n + 1):
+                    t = i / n
+                    try:
+                        p = edge @ t
+                    except Exception:  # noqa: BLE001
+                        continue
+                    pts.append((p.X, p.Y, p.Z))
+                if len(pts) >= 2:
+                    arr = np.array(pts, dtype=np.float32)
+                    # Break into 2-point segments so Line3DCollection can
+                    # render contiguous lines per polyline more cleanly.
+                    for i in range(len(arr) - 1):
+                        segments.append(arr[i : i + 2])
+
+    if not segments:
+        raise RuntimeError("Line-drawing renderer collected 0 edges")
+
+    fig = plt.figure(figsize=(resolution / 100, resolution / 100), dpi=100)
+    ax = fig.add_subplot(111, projection="3d")
+    lc = Line3DCollection(
+        [list(map(tuple, s)) for s in segments],
+        colors=(0.0, 0.0, 0.0, 0.85),
+        linewidths=line_width,
+    )
+    ax.add_collection3d(lc)
+    bb_min = np.min([s.min(axis=0) for s in segments], axis=0)
+    bb_max = np.max([s.max(axis=0) for s in segments], axis=0)
+    center = (bb_min + bb_max) / 2.0
+    half = float(np.max(bb_max - bb_min)) * 0.55
+    ax.set_xlim(center[0] - half, center[0] + half)
+    ax.set_ylim(center[1] - half, center[1] + half)
+    ax.set_zlim(center[2] - half, center[2] + half)
+    try:
+        ax.set_box_aspect((1, 1, 1))
+    except Exception:  # noqa: BLE001
+        pass
+    ax.view_init(elev=elev, azim=azim)
+    ax.set_axis_off()
+    ax.set_facecolor(background)
+    fig.patch.set_facecolor(background)
+    fig.savefig(out_path, dpi=100, bbox_inches="tight", pad_inches=0.05, facecolor=background)
+    plt.close(fig)
+    return out_path
+
+
 def render_step_to_pngs(
     step_path: Path | str,
     out_dir: Path | str,
@@ -176,13 +283,32 @@ def render_step_to_pngs(
     tolerance: float = 0.3,
     edge_alpha: float = 0.10,
     edge_width: float = 0.10,
+    style: str = "shaded",
 ) -> list[Path]:
-    """Render multiple views of a STEP file. Returns the list of PNG paths."""
+    """Render multiple views of a STEP file. Returns the list of PNG paths.
+
+    ``style`` selects the renderer:
+      * ``"shaded"`` (default) — multi-light Lambertian shading.
+      * ``"line"`` — patent-figure-style line drawing (no fills).
+    """
     step_path = Path(step_path)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    shape = bd.import_step(str(step_path))
     out_paths: list[Path] = []
+    if style == "line":
+        for name, elev, azim in views:
+            png = out_dir / f"{step_path.stem}_{name}.png"
+            render_step_to_line_drawing(
+                step_path,
+                png,
+                elev=elev,
+                azim=azim,
+                resolution=resolution,
+                tolerance=tolerance,
+            )
+            out_paths.append(png)
+        return out_paths
+    shape = bd.import_step(str(step_path))
     for name, elev, azim in views:
         png = out_dir / f"{step_path.stem}_{name}.png"
         render_shape_to_png(

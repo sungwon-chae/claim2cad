@@ -38,17 +38,17 @@
     },
     {
       "component_id": "door_half_member",
-      "library_part": null,
+      "library_part": "u_bracket",
       "params": {
         "base_length": 60,
         "base_width": 40,
-        "side_height": 50,
+        "side_height": 80,
         "thickness": 3,
         "side_hole_diameter": 6,
-        "side_hole_offset": 8
+        "side_hole_offset": 10
       },
       "position_mm": [
-        -30.0,
+        -20.0,
         0.0,
         0.0
       ],
@@ -58,18 +58,18 @@
         0.0
       ],
       "features": [
-        "U-shaped door channel with bight and two sidewalls"
+        "U-channel door half with bight and two sidewalls"
       ],
-      "notes": "codegen \u2014 VLM-generated build123d from figure crop"
+      "notes": "door half formed with bight wall and two sidewalls"
     },
     {
       "component_id": "pintle_pin",
       "library_part": "pin",
       "params": {
-        "length": 70,
-        "diameter": 5,
+        "length": 90,
+        "diameter": 6,
         "head_style": "round",
-        "head_diameter": 9,
+        "head_diameter": 10,
         "head_height": 3,
         "has_groove": true
       },
@@ -84,9 +84,9 @@
         0.0
       ],
       "features": [
-        "vertical pintle with stop shoulder"
+        "vertical pintle pin through leaf flange and link legs"
       ],
-      "notes": "vertical pin 22 along Z"
+      "notes": "pintle pin aligned on vertical hinge axis"
     },
     {
       "component_id": "hinge_axis",
@@ -124,19 +124,19 @@
     },
     {
       "component_id": "main_member",
-      "library_part": null,
+      "library_part": "u_bracket",
       "params": {
         "base_length": 70,
         "base_width": 30,
-        "side_height": 40,
+        "side_height": 60,
         "thickness": 3,
-        "side_hole_diameter": 5.2,
-        "side_hole_offset": 6
+        "side_hole_diameter": 6,
+        "side_hole_offset": 8
       },
       "position_mm": [
-        25.0,
+        30.0,
         0.0,
-        -5.0
+        0.0
       ],
       "rotation_deg": [
         0.0,
@@ -144,25 +144,25 @@
         0.0
       ],
       "features": [
-        "main bracket with upper/lower extensions and mounting wall"
+        "C-shaped main member with upper/lower extensions and mounting wall"
       ],
-      "notes": "codegen \u2014 VLM-generated build123d from figure crop"
+      "notes": "main member: mounting wall + upper and lower parallel extensions"
     },
     {
       "component_id": "u_shaped_link_member",
-      "library_part": null,
+      "library_part": "u_bracket",
       "params": {
-        "base_length": 35,
+        "base_length": 40,
         "base_width": 20,
-        "side_height": 25,
-        "thickness": 2.5,
-        "side_hole_diameter": 5.2,
-        "side_hole_offset": 5
+        "side_height": 35,
+        "thickness": 3,
+        "side_hole_diameter": 6,
+        "side_hole_offset": 6
       },
       "position_mm": [
-        8.0,
+        10.0,
         0.0,
-        -5.0
+        0.0
       ],
       "rotation_deg": [
         0.0,
@@ -170,9 +170,9 @@
         180.0
       ],
       "features": [
-        "U-link coupling door-half to main member"
+        "U-shaped link pivots on pintle pin between main member legs"
       ],
-      "notes": "codegen \u2014 VLM-generated build123d from figure crop"
+      "notes": "U-shaped link with base wall and two parallel legs"
     },
     {
       "component_id": "upper_extension",
@@ -181,7 +181,7 @@
       "position_mm": [
         0.0,
         0.0,
-        0.0
+        30.0
       ],
       "rotation_deg": [
         0.0,
@@ -198,7 +198,7 @@
       "position_mm": [
         0.0,
         0.0,
-        0.0
+        -30.0
       ],
       "rotation_deg": [
         0.0,
@@ -348,25 +348,25 @@
       "component_id": "stop_means",
       "library_part": "rod",
       "params": {
-        "length": 10,
+        "length": 12,
         "diameter": 4,
         "end_a_style": "flat",
         "end_b_style": "rounded"
       },
       "position_mm": [
-        20.0,
-        12.0,
+        15.0,
+        -15.0,
         0.0
       ],
       "rotation_deg": [
-        0.0,
+        90.0,
         0.0,
         0.0
       ],
       "features": [
-        "stop tab/projection on link member"
+        "stop tab/lug on link to contact main member at lift-off position"
       ],
-      "notes": "contact stop 56 limiting link pivot"
+      "notes": "stop projection on link member"
     },
     {
       "component_id": "bight_wall",
@@ -421,17 +421,17 @@
     },
     {
       "component_id": "leaf_flange",
-      "library_part": null,
+      "library_part": "leaf",
       "params": {
         "length": 25,
         "width": 20,
-        "thickness": 2.5,
+        "thickness": 3,
         "fillet_radius": 2
       },
       "position_mm": [
-        -30.0,
-        0.0,
-        28.0
+        -5.0,
+        15.0,
+        40.0
       ],
       "rotation_deg": [
         0.0,
@@ -439,9 +439,9 @@
         0.0
       ],
       "features": [
-        "inwardly bent flange with pin hole at upper end of sidewall 58"
+        "inwardly extending flange at upper end of first sidewall with pintle hole"
       ],
-      "notes": "codegen \u2014 VLM-generated build123d from figure crop"
+      "notes": "leaf flange carries pintle pin hole"
     },
     {
       "component_id": "leaf_flange_pintle_pin_hole",
@@ -520,13 +520,13 @@
         "params": {
           "base_length": 60,
           "base_width": 40,
-          "side_height": 50,
+          "side_height": 80,
           "thickness": 3,
           "side_hole_diameter": 6,
-          "side_hole_offset": 8
+          "side_hole_offset": 10
         },
         "position_mm": [
-          -30,
+          -40,
           0,
           0
         ],
@@ -536,18 +536,18 @@
           0
         ],
         "features": [
-          "U-shaped door channel with bight and two sidewalls"
+          "U-channel door half with bight and two sidewalls"
         ],
-        "notes": "bight wall 57 + first/second sidewalls 58/60"
+        "notes": "door half formed with bight wall and two sidewalls"
       },
       {
         "component_id": "pintle_pin",
         "library_part": "pin",
         "params": {
-          "length": 70,
-          "diameter": 5,
+          "length": 90,
+          "diameter": 6,
           "head_style": "round",
-          "head_diameter": 9,
+          "head_diameter": 10,
           "head_height": 3,
           "has_groove": true
         },
@@ -562,9 +562,9 @@
           0
         ],
         "features": [
-          "vertical pintle with stop shoulder"
+          "vertical pintle pin through leaf flange and link legs"
         ],
-        "notes": "vertical pin 22 along Z"
+        "notes": "pintle pin aligned on vertical hinge axis"
       },
       {
         "component_id": "hinge_axis",
@@ -606,15 +606,15 @@
         "params": {
           "base_length": 70,
           "base_width": 30,
-          "side_height": 40,
+          "side_height": 60,
           "thickness": 3,
-          "side_hole_diameter": 5.2,
-          "side_hole_offset": 6
+          "side_hole_diameter": 6,
+          "side_hole_offset": 8
         },
         "position_mm": [
           25,
-          0,
-          -5
+          15,
+          -30
         ],
         "rotation_deg": [
           0,
@@ -622,35 +622,35 @@
           0
         ],
         "features": [
-          "main bracket with upper/lower extensions and mounting wall"
+          "C-shaped main member with upper/lower extensions and mounting wall"
         ],
-        "notes": "carries upper extension 28, lower extension 30, mounting wall 32"
+        "notes": "main member: mounting wall + upper and lower parallel extensions"
       },
       {
         "component_id": "u_shaped_link_member",
         "library_part": "u_bracket",
         "params": {
-          "base_length": 35,
+          "base_length": 40,
           "base_width": 20,
-          "side_height": 25,
-          "thickness": 2.5,
-          "side_hole_diameter": 5.2,
-          "side_hole_offset": 5
+          "side_height": 35,
+          "thickness": 3,
+          "side_hole_diameter": 6,
+          "side_hole_offset": 6
         },
         "position_mm": [
-          8,
-          0,
-          -5
+          15,
+          -5,
+          -20
         ],
         "rotation_deg": [
           0,
           0,
-          180
+          90
         ],
         "features": [
-          "U-link coupling door-half to main member"
+          "U-shaped link pivots on pintle pin between main member legs"
         ],
-        "notes": "link 26 with base wall 36 and legs 40/41"
+        "notes": "U-shaped link with base wall and two parallel legs"
       },
       {
         "component_id": "upper_extension",
@@ -659,7 +659,7 @@
         "position_mm": [
           0,
           0,
-          0
+          30
         ],
         "rotation_deg": [
           0,
@@ -676,7 +676,7 @@
         "position_mm": [
           0,
           0,
-          0
+          -30
         ],
         "rotation_deg": [
           0,
@@ -826,15 +826,15 @@
         "component_id": "stop_means",
         "library_part": "rod",
         "params": {
-          "length": 10,
+          "length": 12,
           "diameter": 4,
           "end_a_style": "flat",
           "end_b_style": "rounded"
         },
         "position_mm": [
-          20,
-          12,
-          0
+          30,
+          -15,
+          -10
         ],
         "rotation_deg": [
           0,
@@ -842,9 +842,9 @@
           0
         ],
         "features": [
-          "stop tab/projection on link member"
+          "stop tab/lug on link to contact main member at lift-off position"
         ],
-        "notes": "contact stop 56 limiting link pivot"
+        "notes": "stop projection on link member"
       },
       {
         "component_id": "bight_wall",
@@ -903,13 +903,13 @@
         "params": {
           "length": 25,
           "width": 20,
-          "thickness": 2.5,
+          "thickness": 3,
           "fillet_radius": 2
         },
         "position_mm": [
-          -30,
-          0,
-          28
+          -25,
+          10,
+          35
         ],
         "rotation_deg": [
           0,
@@ -917,9 +917,9 @@
           0
         ],
         "features": [
-          "inwardly bent flange with pin hole at upper end of sidewall 58"
+          "inwardly extending flange at upper end of first sidewall with pintle hole"
         ],
-        "notes": "leaf flange 64"
+        "notes": "leaf flange carries pintle pin hole"
       },
       {
         "component_id": "leaf_flange_pintle_pin_hole",
@@ -957,6 +957,6 @@
       }
     ],
     "scale_anchor_mm": 150,
-    "assembly_notes": "The main member (24) is a U-shaped bracket with upper and lower parallel extensions whose aligned pintle-pin holes lie on a vertical hinge axis. A smaller U-shaped link member (26) nests between the extensions and is pivotally pinned via the pintle pin (22) to the main member. The door-half member (12), modeled as a larger U channel with a bight and two sidewalls, mounts to the link through the leaf flange (64) whose pin hole also receives the pintle pin, producing the lift-off hinge action."
+    "assembly_notes": "The main member (u_bracket) is secured to the vehicle body via its mounting wall, with upper and lower parallel extensions carrying aligned pintle pin holes on a vertical hinge axis. A U-shaped link member pivots between these extensions on the pintle pin, and its base wall exterior guide surface engages the door-half member's leaf flange during lift-off. The door-half member (u_bracket oriented as bight wall plus sidewalls) receives the pintle pin through its leaf flange hole to complete the lift-off hinge."
   }
 }

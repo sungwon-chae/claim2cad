@@ -81,6 +81,19 @@ def _missing(example_dir: Path) -> list[str]:
     return [name for name in _REQUIRED if not (example_dir / name).exists()]
 
 
+def _preferred_glb(example_dir: Path) -> str:
+    """Return the GLB filename to ship to the viewer for ``example_dir``.
+
+    v1.1 introduced ``model_v1.1.glb`` as the figure-driven CAD output.
+    When present we prefer it over the v1.0 ``model.glb`` so the viewer at
+    ``localhost:4179`` shows the v1.1 quality where it exists, and the
+    v1.0 row-of-primitives where v1.1 hasn't been run yet.
+    """
+    if (example_dir / "model_v1.1.glb").exists():
+        return "model_v1.1.glb"
+    return "model.glb"
+
+
 def _figure_info(example_dir: Path) -> tuple[Optional[str], Optional[str], float]:
     """Return (figure_map_path, figure_image_path, coverage) for ``example_dir``."""
     fmap_path = example_dir / "figure_map.json"
@@ -198,6 +211,12 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
     except Exception:  # pragma: no cover — defensive
         pass
 
+    # The viewer always loads ``model.glb`` from the staged dir; we choose
+    # which source GLB to copy under that name (v1.1 if present, else v1.0)
+    # and tag the example so the UI can surface "v1.1 figure-driven CAD"
+    # next to the older primitive-CAD examples.
+    if (example_dir / "model_v1.1.glb").exists():
+        tags.append("v1.1_cad")
     return ManifestExample(
         id=example_dir.name,
         title=_title_from_metadata(example_dir, example_dir.name),
@@ -289,8 +308,13 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
         target.mkdir(parents=True, exist_ok=True)
         src_dir = _src_dir_for(ex)
 
-        for filename in (ex.claim_text_path, ex.ir_path, ex.claim_map_path, ex.glb_path):
+        for filename in (ex.claim_text_path, ex.ir_path, ex.claim_map_path):
             shutil.copy2(src_dir / filename, target / filename)
+        # Stage the chosen source GLB under the canonical name ``model.glb``.
+        # If model_v1.1.glb exists in the source we ship that — the viewer
+        # codepath is unchanged.
+        source_glb = src_dir / _preferred_glb(src_dir)
+        shutil.copy2(source_glb, target / "model.glb")
         if ex.figure_map_path:
             shutil.copy2(src_dir / ex.figure_map_path, target / ex.figure_map_path)
         if ex.claim_hierarchy_path:

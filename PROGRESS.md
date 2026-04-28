@@ -1211,3 +1211,102 @@ Honest write-up at
 - V11-4: $0.180 (3 validations + 2 refinements).
 - **Total session: ~$0.32** of $100 cap, $70 soft cap.
 
+
+## Phase V11-5 — Documentation + Session 1 Wrap — COMPLETED 2026-04-28 11:58 KST
+
+### What shipped
+- `docs/V11_DESIGN.md` — full architecture document covering figure-driven
+  generation, the component library design, the refinement-loop semantics,
+  and an honest comparison against text-to-cad-video quality.
+- `docs/VISUAL_VALIDATION_DESIGN.md` — design notes for the renderer +
+  composite + scoring pipeline.
+- `examples/real_patents/US4807331A_spring_loaded_hinge/QUALITY_NOTES.md`
+  (already shipped in V11-4) — honest per-example assessment.
+- `CHANGELOG.md` v1.1.0-dev (Session 1) entry: every V11-x phase listed
+  with what was added, what changed, what's tested.
+- `claim2cad/manifest.py` now auto-detects `model_v1.1.glb` and stages
+  it under the canonical `model.glb` so the viewer at localhost:4179
+  immediately shows the v1.1 quality difference for US4807331A while
+  the other 29 examples stay on v1.0. Examples with v1.1 CAD are tagged
+  `v1.1_cad`.
+- `viewer/public/data/manifest.json` regenerated; only US4807331A
+  carries the `v1.1_cad` tag so far (matches the brief).
+
+### Verification
+- All docs are non-stub (>50 lines each).
+- `pytest -q` — **177 passing**.
+- Manifest regeneration confirmed `US4807331A_spring_loaded_hinge`
+  gets `v1.1_cad` and the staged `model.glb` is the 400 KB v1.1 file
+  (not the 88 KB v1.0).
+
+---
+
+## Session 1 Summary
+
+**Phases completed:** V11-1 through V11-5 (all 5).
+
+**Total cost (Session 1 only):** ~$0.32 of the $100 cap.
+- V11-1: $0.00 (no LLM calls — pure local construction).
+- V11-2: $0.030 (one Opus-4.7 vision call to score the v1.0 baseline).
+- V11-3: $0.111 (one figure-to-spec vision call).
+- V11-4: $0.180 (3 validations + 2 refinement calls across the loop).
+- V11-5: $0.00.
+
+**Components added to library (12 total):** plate, leaf, rod, l_bracket,
+u_bracket, pin (primitives); leaf_hinge, revolute_joint, prismatic_joint
+(joints); spur_gear, ball_bearing (transmission); helical_spring
+(fasteners).
+
+**Quality score achieved (US4807331A):** v1.0 baseline 0/10 → v1.1
+final **3/10**. Below the 7/10 target. Documented honestly in
+`QUALITY_NOTES.md` rather than faked. Refinement loop regressed twice;
+iter00 was promoted as the best.
+
+**New code:** ~3,500 lines across `claim2cad/components/`,
+`claim2cad/visual_validator.py`, `claim2cad/figure_to_cad.py`,
+`claim2cad/refinement_loop.py`, plus tests + docs.
+
+**Tests:** 101 → 177 passing (76 new tests).
+
+---
+
+## Session 2 plan
+
+Goal: apply the v1.1 pipeline to **US4762016A_robotic_drive_unit**
+(revolute joints + transmission components), iterate on the loop's
+known weaknesses, push closer to the 7-8/10 target.
+
+### Library extensions needed
+- **Output shaft with keyway** — current `rod` doesn't have keyways.
+- **Helical / harmonic gear** — `spur_gear` is the only gear today.
+- **Ball-bearing detail** — current `ball_bearing` is generic; the
+  patent has a specific bearing arrangement.
+- **Motor housing** — currently falls back to a primitive box.
+
+### Loop fixes (driven by Session 1's QUALITY_NOTES)
+1. **Per-component rendering** — crop around each component instead of
+   re-rendering the whole assembly. Likely 2-3× score improvement on
+   small components.
+2. **Constraint-aware revisions** — pass the VLM "anchor" points the
+   refinement must NOT move (shared pin axes, mounting walls). This is
+   the dominant cause of refinement regressions on US4807331A.
+3. **Multi-figure context** — feed figures 2-3 alongside figure 1 so
+   the VLM understands articulated states.
+4. **VLM-fallback build123d code** — currently the spec is "library or
+   primitive"; add the documented sandbox-exec path for spec rows
+   that name no library_part but have a VLM-generated `code` field.
+
+### Cost budget
+- Estimate: 4-5 hours per refined patent. Two patents in Session 2
+  (US4762016A primary, plus revisiting US4807331A with the loop
+  fixes if budget allows).
+- Cost target: $80 of next session's $100.
+- If a refinement run starts costing >$1.50 with no improvement,
+  halt and document.
+
+### Acceptance criteria for Session 2
+- US4762016A reaches a v1.1 score ≥ 5/10 (target 7), or
+  QUALITY_NOTES.md explains why not.
+- US4807331A's v1.1 score moves up by ≥2 points after the loop fixes.
+- At least one of the four loop fixes above is shipped end-to-end.
+

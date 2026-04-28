@@ -2,7 +2,88 @@
 
 All notable changes documented here. This project follows semantic versioning.
 
-## [Unreleased] — v1.0-dev
+## [Unreleased] — v1.1.0-dev (Session 1)
+
+Figure-aware CAD generation. v1.0 produced topology-correct CAD that
+didn't visually resemble the patent figures; v1.1 introduces a
+component library, a vision-grounded validator, and an iterative
+refinement loop to close that gap.
+
+### Added (V11-1)
+- New `claim2cad/components/` package with 12 parameterised mechanical
+  parts: `plate`, `leaf`, `rod`, `l_bracket`, `u_bracket`, `pin`,
+  `leaf_hinge`, `revolute_joint`, `prismatic_joint`, `spur_gear`,
+  `ball_bearing`, `helical_spring`.
+- `Component` ABC: `build()` / `bbox()` / `tag()` / `export_step()` /
+  `export_glb()`. Preserves the v1.0 GLB-naming contract via
+  `glb_naming.rename_glb_root_children`.
+- `library.lookup` does fuzzy token-overlap matching with aliases;
+  returns `None` below threshold so callers can fall back to
+  primitives or VLM-generated code.
+- 53 new tests in `tests/test_components.py`.
+
+### Added (V11-2)
+- `claim2cad/visual_validator.py`: build123d tessellation +
+  matplotlib's 3D backend (no new heavy deps), Pillow-based
+  side-by-side composite, and VLM similarity scoring via
+  `llm_vision.vision_completion`.
+- 4 default views (iso, front, right, top) at 1024×1024 with
+  Lambertian shading on white background.
+- `SimilarityReport` dataclass with overall + per-axis scores and a
+  structured `defects` list keyed to component IDs.
+- `validate_example` CLI; `--dry-run` skips the VLM call for tests.
+- v1.0 baseline scored for US4807331A: **0/10** across every axis.
+- 5 new tests in `tests/test_visual_validator.py`.
+
+### Added (V11-3)
+- `claim2cad/figure_to_cad.py`: single Opus-4.7 vision call analyses
+  the patent figure + claim IR and returns a JSON `FigureSpec` with
+  per-component library mapping, params, position, rotation.
+- `generate_assembly` looks up each library entry, applies pose,
+  composes a `Compound`, and writes per-component STEP files plus
+  `model_v1.1.step` and `model_v1.1.glb`.
+- 10 new tests in `tests/test_figure_to_cad.py`.
+
+### Added (V11-4)
+- `claim2cad/refinement_loop.py`: whole-assembly validate → identify
+  worst components → ask VLM for revised spec rows → rebuild → repeat.
+- Stop conditions: target score, max iterations, cost soft cap, or
+  two consecutive non-improving iterations.
+- The **best**-scoring iteration is promoted to canonical
+  `model_v1.1.step / .glb`; refinements are allowed to regress and
+  we don't ship the regression.
+- Per-iteration STEP/GLB/composite/spec files written for full
+  resumability. Markdown `refinement_log.md` and machine-readable
+  `refinement_summary.json` per example.
+- Applied to US4807331A_spring_loaded_hinge: scores 3 → 2 → 2.
+  iter00 promoted. v1.0=0 → v1.1=3/10 (target was 7-8; documented
+  honestly in `QUALITY_NOTES.md`).
+- 8 new tests in `tests/test_refinement_loop.py`.
+
+### Added (V11-5)
+- `docs/V11_DESIGN.md` — figure-driven architecture, library design,
+  refinement-loop semantics, honest comparison to text-to-cad-video
+  quality.
+- `docs/VISUAL_VALIDATION_DESIGN.md` — renderer/composite/scoring
+  pipeline.
+- Per-example `QUALITY_NOTES.md` and `refinement_log.md` for
+  US4807331A.
+
+### Changed
+- `claim2cad/manifest.py` now prefers `model_v1.1.glb` over
+  `model.glb` when both are present, and tags such examples with
+  `v1.1_cad`. The viewer codepath is unchanged — the chosen GLB is
+  staged under the canonical `model.glb` name.
+
+### Tests / cost / scope
+- Tests: 101 → **177 passing**.
+- Session 1 cost: ~$0.32 of the $100 cap.
+- Out of scope this session: US4762016A robotic_drive_unit (Session 2),
+  golden_robot_arm v1.1 conversion (Session 3).
+
+---
+
+## [Unreleased earlier] — v1.0-dev
 
 ### Added (V1-12)
 - README rewritten for v1.0: badge line gains a v1.0 summary, "What's

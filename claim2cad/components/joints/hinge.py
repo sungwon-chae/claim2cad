@@ -143,13 +143,10 @@ _LEAF_HINGE_PARAM_SCHEMA = {
 @register(
     "leaf_hinge",
     aliases=(
-        "hinge",
-        "lift_off_hinge",
         "knuckle_hinge",
-        "hinge_assembly",
-        "hinge_body_half_assembly",
+        "leaf_knuckle_hinge",
     ),
-    description="Two-leaf knuckle hinge with through pin.",
+    description="Two-leaf knuckle hinge with through pin (door / cabinet style).",
     param_aliases=_LEAF_HINGE_PARAM_ALIASES,
     param_schema=_LEAF_HINGE_PARAM_SCHEMA,
 )

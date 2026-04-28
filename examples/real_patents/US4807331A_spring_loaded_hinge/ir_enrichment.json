@@ -1,66 +1,57 @@
 {
   "additions": [
     {
-      "component_id": "door_mount_plate",
-      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 30x25x2mm with two end tabs",
+      "component_id": "anti_disengagement_bracket",
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 25x20x2mm with two mounting ears",
       "features": [
-        "flat rectangular plate 30x25x2mm with two end tabs",
+        "flat rectangular plate 25x20x2mm with two mounting ears",
         "figure_number=100",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "mount_plate_tongue",
-      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tab 8x10x2mm projecting from plate center",
+      "component_id": "bracket_tab",
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: small rectangular tab 6x4x2mm projecting from plate",
       "features": [
-        "rectangular tab 8x10x2mm projecting from plate center",
+        "small rectangular tab 6x4x2mm projecting from plate",
         "figure_number=102",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "mount_plate_ear_upper",
-      "notes": "codegen \u2014 IR-enrichment from figure number 106: rolled tab 8mm wide with 4mm thru hole",
+      "component_id": "bracket_upper_ear",
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear 8mm dia with 4mm thru hole",
       "features": [
-        "rolled tab 8mm wide with 4mm thru hole",
+        "rounded ear 8mm dia with 4mm thru hole",
         "figure_number=106",
         "kind=hole"
       ]
     },
     {
-      "component_id": "mount_plate_ear_lower",
-      "notes": "codegen \u2014 IR-enrichment from figure number 108: rolled tab 8mm wide with 4mm thru hole",
+      "component_id": "bracket_lower_ear",
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear 8mm dia with 4mm thru hole",
       "features": [
-        "rolled tab 8mm wide with 4mm thru hole",
+        "rounded ear 8mm dia with 4mm thru hole",
         "figure_number=108",
         "kind=hole"
       ]
     },
     {
-      "component_id": "pintle_pin_2",
-      "notes": "codegen \u2014 IR-enrichment from figure number 120: vertical threaded cylinder 5mm dia x 28mm long with small head",
+      "component_id": "retainer_finger",
+      "notes": "codegen \u2014 IR-enrichment from figure number 118: bent finger 10x3x2mm projecting upward",
       "features": [
-        "vertical threaded cylinder 5mm dia x 28mm long with small head",
-        "figure_number=120",
-        "kind=fastener"
-      ]
-    },
-    {
-      "component_id": "detent_pin",
-      "notes": "codegen \u2014 IR-enrichment from figure number 78: cylindrical pin 3mm dia x 6mm tall",
-      "features": [
-        "cylindrical pin 3mm dia x 6mm tall",
-        "figure_number=78",
+        "bent finger 10x3x2mm projecting upward",
+        "figure_number=118",
         "kind=stop"
       ]
     },
     {
-      "component_id": "mount_hole_oblong",
-      "notes": "codegen \u2014 IR-enrichment from figure number 39: oblong slot 10x5mm through flange",
+      "component_id": "pintle_head",
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: cylindrical pin head 6mm dia 3mm tall",
       "features": [
-        "oblong slot 10x5mm through flange",
-        "figure_number=39",
-        "kind=hole"
+        "cylindrical pin head 6mm dia 3mm tall",
+        "figure_number=120",
+        "kind=fastener"
       ]
     },
     {
@@ -69,6 +60,15 @@
       "features": [
         "flat washer 10mm OD 5mm ID 1.5mm thick",
         "figure_number=98",
+        "kind=stop"
+      ]
+    },
+    {
+      "component_id": "detent_cam",
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: disc 12mm dia 4mm thick with lobed profile",
+      "features": [
+        "disc 12mm dia 4mm thick with lobed profile",
+        "figure_number=78",
         "kind=sub-feature"
       ]
     }
@@ -76,31 +76,27 @@
   "skipped": [
     {
       "figure_number": "110",
-      "reason": "duplicate ear callout on mount plate"
+      "reason": "hole in bracket ear already covered by 106/108"
     },
     {
       "figure_number": "116",
-      "reason": "label pointing at door panel edge"
-    },
-    {
-      "figure_number": "118",
-      "reason": "label/leader for mount plate area"
+      "reason": "label/leader for door panel edge"
     },
     {
       "figure_number": "119",
-      "reason": "label/leader only"
+      "reason": "label arrow on bracket"
     },
     {
       "figure_number": "122",
-      "reason": "duplicate ear/hole callout"
+      "reason": "duplicate ear hole label"
     },
     {
       "figure_number": "130",
-      "reason": "leader to pintle area, already covered"
+      "reason": "label indicating pintle axis area"
     },
     {
       "figure_number": "132",
-      "reason": "leader to bushing area, covered by parent"
+      "reason": "label/leader only"
     },
     {
       "figure_number": "134",
@@ -108,19 +104,23 @@
     },
     {
       "figure_number": "154",
-      "reason": "label arrow, no distinct geometry"
+      "reason": "label/leader only"
+    },
+    {
+      "figure_number": "39",
+      "reason": "mounting slot already in leaf flange 38"
     },
     {
       "figure_number": "39'",
-      "reason": "duplicate of 39 mounting hole"
+      "reason": "mounting slot already in leaf flange 38"
     },
     {
       "figure_number": "92",
-      "reason": "leader to pintle axis, covered by pin"
+      "reason": "label for pintle shaft portion covered by hinge body"
     },
     {
       "figure_number": "96",
-      "reason": "leader line only"
+      "reason": "label for pintle shaft region covered by hinge body"
     }
   ]
 }

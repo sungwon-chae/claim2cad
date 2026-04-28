@@ -91,35 +91,35 @@
       "component_id": "hinge_body_half_assembly",
       "library_part": "lift_off_hinge",
       "params": {
-        "pin_diameter": 6.0,
-        "pin_length": 95.0,
+        "pin_diameter": 6,
+        "pin_length": 90,
         "pin_head_style": "round",
-        "main_thickness": 3.0,
-        "main_mounting_wall_width": 40.0,
-        "main_mounting_wall_height": 75.0,
-        "main_extension_length": 35.0,
-        "main_extension_width": 25.0,
-        "main_extension_gap": 50.0,
-        "main_hole_offset_x": 25.0,
-        "link_base_length": 20.0,
-        "link_thickness": 3.0,
-        "link_base_width": 30.0,
-        "link_leg_length": 30.0,
-        "link_leg_width": 22.0,
-        "link_leg_gap": 40.0,
-        "door_offset_x": 30.0,
-        "door_bight_width": 40.0,
-        "door_bight_height": 80.0,
+        "main_thickness": 3,
+        "main_mounting_wall_width": 40,
+        "main_mounting_wall_height": 70,
+        "main_extension_length": 35,
+        "main_extension_width": 25,
+        "main_extension_gap": 45,
+        "main_hole_offset_x": 15,
+        "link_base_length": 20,
+        "link_thickness": 3,
+        "link_base_width": 30,
+        "link_leg_length": 30,
+        "link_leg_width": 20,
+        "link_leg_gap": 30,
+        "door_offset_x": 32,
+        "door_bight_width": 40,
+        "door_bight_height": 70,
         "door_thickness": 2.5,
-        "door_sidewall_depth": 20.0,
-        "leaf_flange_length": 20.0,
-        "leaf_flange_width": 25.0,
+        "door_sidewall_depth": 25,
+        "leaf_flange_length": 22,
+        "leaf_flange_width": 25,
         "leaf_flange_thickness": 2.5,
-        "leaf_flange_z": 30.0,
+        "leaf_flange_z": 30,
         "include_stop": true,
-        "stop_diameter": 6.0,
-        "stop_height": 5.0,
-        "stop_y_offset": 0.0
+        "stop_diameter": 6,
+        "stop_height": 4,
+        "stop_y_offset": 10
       },
       "position_mm": [
         0.0,
@@ -132,9 +132,9 @@
         0.0
       ],
       "features": [
-        "lift-off pintle hinge with body-half, U-link, and door-half leaf flange"
+        "lift-off pintle hinge with main member, U-link, door leaf flange"
       ],
-      "notes": "complete hinge body-half assembly from the figure"
+      "notes": "whole hinge assembly covers pin, leaf flange, link, main member, door half"
     },
     {
       "component_id": "main_member",
@@ -460,13 +460,13 @@
       "notes": "covered by lift_off_hinge"
     },
     {
-      "component_id": "anti_disengagement_bracket",
+      "component_id": "door_mounting_bracket",
       "library_part": null,
       "params": {},
       "position_mm": [
-        20.0,
+        -20.0,
         0.0,
-        40.0
+        0.0
       ],
       "rotation_deg": [
         0.0,
@@ -474,20 +474,20 @@
         0.0
       ],
       "features": [
-        "flat rectangular plate 25x20x2mm with two mounting ears",
+        "flat rectangular plate 40x25x2mm with two mounting ear tabs",
         "figure_number=100",
         "kind=sub-feature"
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 25x20x2mm with two mounting ears"
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 40x25x2mm with two mounting ear tabs"
     },
     {
-      "component_id": "bracket_tab",
+      "component_id": "bracket_tongue",
       "library_part": null,
       "params": {},
       "position_mm": [
-        20.0,
-        12.0,
-        40.0
+        -21.0,
+        0.0,
+        50.0
       ],
       "rotation_deg": [
         0.0,
@@ -495,20 +495,20 @@
         0.0
       ],
       "features": [
-        "small rectangular tab 6x4x2mm projecting from plate",
+        "rectangular tongue tab 10x8x2mm extending from bracket",
         "figure_number=102",
         "kind=sub-feature"
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 102: small rectangular tab 6x4x2mm projecting from plate"
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tongue tab 10x8x2mm extending from bracket"
     },
     {
       "component_id": "bracket_upper_ear",
       "library_part": null,
       "params": {},
       "position_mm": [
-        20.0,
-        0.0,
-        54.0
+        -21.0,
+        14.0,
+        30.0
       ],
       "rotation_deg": [
         0.0,
@@ -516,20 +516,20 @@
         0.0
       ],
       "features": [
-        "rounded ear 8mm dia with 4mm thru hole",
+        "rounded ear tab 10x8x2mm with 4mm thru hole",
         "figure_number=106",
         "kind=hole"
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear 8mm dia with 4mm thru hole"
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear tab 10x8x2mm with 4mm thru hole"
     },
     {
       "component_id": "bracket_lower_ear",
       "library_part": null,
       "params": {},
       "position_mm": [
-        20.0,
-        0.0,
-        26.0
+        -21.0,
+        14.0,
+        -30.0
       ],
       "rotation_deg": [
         0.0,
@@ -537,32 +537,11 @@
         0.0
       ],
       "features": [
-        "rounded ear 8mm dia with 4mm thru hole",
+        "rounded ear tab 10x8x2mm with 4mm thru hole",
         "figure_number=108",
         "kind=hole"
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear 8mm dia with 4mm thru hole"
-    },
-    {
-      "component_id": "retainer_finger",
-      "library_part": null,
-      "params": {},
-      "position_mm": [
-        18.0,
-        0.0,
-        60.0
-      ],
-      "rotation_deg": [
-        0.0,
-        0.0,
-        0.0
-      ],
-      "features": [
-        "bent finger 10x3x2mm projecting upward",
-        "figure_number=118",
-        "kind=stop"
-      ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 118: bent finger 10x3x2mm projecting upward"
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear tab 10x8x2mm with 4mm thru hole"
     },
     {
       "component_id": "pintle_head",
@@ -571,7 +550,7 @@
       "position_mm": [
         0.0,
         0.0,
-        52.0
+        50.0
       ],
       "rotation_deg": [
         0.0,
@@ -579,20 +558,41 @@
         0.0
       ],
       "features": [
-        "cylindrical pin head 6mm dia 3mm tall",
+        "small cylindrical head 8mm dia 3mm tall",
         "figure_number=120",
         "kind=fastener"
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 120: cylindrical pin head 6mm dia 3mm tall"
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: small cylindrical head 8mm dia 3mm tall"
     },
     {
-      "component_id": "pintle_washer",
+      "component_id": "detent_spring_post",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        10.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "cylindrical post 4mm dia 6mm tall",
+        "figure_number=78",
+        "kind=stop"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: cylindrical post 4mm dia 6mm tall"
+    },
+    {
+      "component_id": "thrust_washer",
       "library_part": null,
       "params": {},
       "position_mm": [
         0.0,
         0.0,
-        48.0
+        30.0
       ],
       "rotation_deg": [
         0.0,
@@ -602,30 +602,30 @@
       "features": [
         "flat washer 10mm OD 5mm ID 1.5mm thick",
         "figure_number=98",
-        "kind=stop"
+        "kind=sub-feature"
       ],
       "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 10mm OD 5mm ID 1.5mm thick"
     },
     {
-      "component_id": "detent_cam",
+      "component_id": "leaf_mount_slot",
       "library_part": null,
       "params": {},
       "position_mm": [
-        0.0,
-        0.0,
-        20.0
-      ],
-      "rotation_deg": [
-        0.0,
+        15.0,
         0.0,
         0.0
       ],
-      "features": [
-        "disc 12mm dia 4mm thick with lobed profile",
-        "figure_number=78",
-        "kind=sub-feature"
+      "rotation_deg": [
+        0.0,
+        90.0,
+        0.0
       ],
-      "notes": "codegen \u2014 IR-enrichment from figure number 78: disc 12mm dia 4mm thick with lobed profile"
+      "features": [
+        "oblong slot 12x5 thru 2mm plate",
+        "figure_number=39",
+        "kind=hole"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 39: oblong slot 12x5 thru 2mm plate"
     }
   ],
   "raw": {
@@ -719,35 +719,35 @@
         "component_id": "hinge_body_half_assembly",
         "library_part": "lift_off_hinge",
         "params": {
-          "pin_diameter": 6.0,
-          "pin_length": 95.0,
+          "pin_diameter": 6,
+          "pin_length": 90,
           "pin_head_style": "round",
-          "main_thickness": 3.0,
-          "main_mounting_wall_width": 40.0,
-          "main_mounting_wall_height": 75.0,
-          "main_extension_length": 35.0,
-          "main_extension_width": 25.0,
-          "main_extension_gap": 50.0,
-          "main_hole_offset_x": 25.0,
-          "link_base_length": 20.0,
-          "link_thickness": 3.0,
-          "link_base_width": 30.0,
-          "link_leg_length": 30.0,
-          "link_leg_width": 22.0,
-          "link_leg_gap": 40.0,
-          "door_offset_x": 30.0,
-          "door_bight_width": 40.0,
-          "door_bight_height": 80.0,
+          "main_thickness": 3,
+          "main_mounting_wall_width": 40,
+          "main_mounting_wall_height": 70,
+          "main_extension_length": 35,
+          "main_extension_width": 25,
+          "main_extension_gap": 45,
+          "main_hole_offset_x": 15,
+          "link_base_length": 20,
+          "link_thickness": 3,
+          "link_base_width": 30,
+          "link_leg_length": 30,
+          "link_leg_width": 20,
+          "link_leg_gap": 30,
+          "door_offset_x": 32,
+          "door_bight_width": 40,
+          "door_bight_height": 70,
           "door_thickness": 2.5,
-          "door_sidewall_depth": 20.0,
-          "leaf_flange_length": 20.0,
-          "leaf_flange_width": 25.0,
+          "door_sidewall_depth": 25,
+          "leaf_flange_length": 22,
+          "leaf_flange_width": 25,
           "leaf_flange_thickness": 2.5,
-          "leaf_flange_z": 30.0,
+          "leaf_flange_z": 30,
           "include_stop": true,
-          "stop_diameter": 6.0,
-          "stop_height": 5.0,
-          "stop_y_offset": 0.0
+          "stop_diameter": 6,
+          "stop_height": 4,
+          "stop_y_offset": 10
         },
         "position_mm": [
           0,
@@ -760,9 +760,9 @@
           0
         ],
         "features": [
-          "lift-off pintle hinge with body-half, U-link, and door-half leaf flange"
+          "lift-off pintle hinge with main member, U-link, door leaf flange"
         ],
-        "notes": "complete hinge body-half assembly from the figure"
+        "notes": "whole hinge assembly covers pin, leaf flange, link, main member, door half"
       },
       {
         "component_id": "main_member",
@@ -1088,7 +1088,7 @@
         "notes": "covered by lift_off_hinge"
       }
     ],
-    "scale_anchor_mm": 100,
-    "assembly_notes": "The lift_off_hinge library part encapsulates the entire claimed hinge body-half assembly: the main member (mounting wall plus upper/lower parallel extensions with aligned pintle pin holes), the U-shaped link member (base wall with upper/lower legs and pintle pin holes), the pintle pin on the vertical hinge axis, and the door-half leaf flange with its pintle pin hole. The main member mounts to the vehicle body while the door-half bight/sidewalls carry the leaf flange that drops onto the pintle pin, enabling lift-off. Contextual bodies (vehicle body, door panel) and pure features (axis, holes, surfaces) are marked abstract."
+    "scale_anchor_mm": 120,
+    "assembly_notes": "The lift_off_hinge library part encapsulates the entire hinge body-half assembly: the main member (upper/lower extensions joined by a mounting wall) secured to the vehicle body, the U-shaped link member pivoted to the main member by the vertical pintle pin, and the door-half member's leaf flange carried on the same pintle pin. The link's base wall guide surface and leg edge surface define the lift-off orientation, and the stop on the link limits rotation relative to the main member."
   }
 }

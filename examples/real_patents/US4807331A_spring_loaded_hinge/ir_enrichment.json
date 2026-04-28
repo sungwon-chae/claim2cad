@@ -1,126 +1,126 @@
 {
   "additions": [
     {
-      "component_id": "anti_disengagement_bracket",
-      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 25x20x2mm with two mounting ears",
+      "component_id": "door_mounting_bracket",
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 40x25x2mm with two mounting ear tabs",
       "features": [
-        "flat rectangular plate 25x20x2mm with two mounting ears",
+        "flat rectangular plate 40x25x2mm with two mounting ear tabs",
         "figure_number=100",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "bracket_tab",
-      "notes": "codegen \u2014 IR-enrichment from figure number 102: small rectangular tab 6x4x2mm projecting from plate",
+      "component_id": "bracket_tongue",
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tongue tab 10x8x2mm extending from bracket",
       "features": [
-        "small rectangular tab 6x4x2mm projecting from plate",
+        "rectangular tongue tab 10x8x2mm extending from bracket",
         "figure_number=102",
         "kind=sub-feature"
       ]
     },
     {
       "component_id": "bracket_upper_ear",
-      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear 8mm dia with 4mm thru hole",
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear tab 10x8x2mm with 4mm thru hole",
       "features": [
-        "rounded ear 8mm dia with 4mm thru hole",
+        "rounded ear tab 10x8x2mm with 4mm thru hole",
         "figure_number=106",
         "kind=hole"
       ]
     },
     {
       "component_id": "bracket_lower_ear",
-      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear 8mm dia with 4mm thru hole",
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear tab 10x8x2mm with 4mm thru hole",
       "features": [
-        "rounded ear 8mm dia with 4mm thru hole",
+        "rounded ear tab 10x8x2mm with 4mm thru hole",
         "figure_number=108",
         "kind=hole"
       ]
     },
     {
-      "component_id": "retainer_finger",
-      "notes": "codegen \u2014 IR-enrichment from figure number 118: bent finger 10x3x2mm projecting upward",
-      "features": [
-        "bent finger 10x3x2mm projecting upward",
-        "figure_number=118",
-        "kind=stop"
-      ]
-    },
-    {
       "component_id": "pintle_head",
-      "notes": "codegen \u2014 IR-enrichment from figure number 120: cylindrical pin head 6mm dia 3mm tall",
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: small cylindrical head 8mm dia 3mm tall",
       "features": [
-        "cylindrical pin head 6mm dia 3mm tall",
+        "small cylindrical head 8mm dia 3mm tall",
         "figure_number=120",
         "kind=fastener"
       ]
     },
     {
-      "component_id": "pintle_washer",
-      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 10mm OD 5mm ID 1.5mm thick",
+      "component_id": "detent_spring_post",
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: cylindrical post 4mm dia 6mm tall",
       "features": [
-        "flat washer 10mm OD 5mm ID 1.5mm thick",
-        "figure_number=98",
+        "cylindrical post 4mm dia 6mm tall",
+        "figure_number=78",
         "kind=stop"
       ]
     },
     {
-      "component_id": "detent_cam",
-      "notes": "codegen \u2014 IR-enrichment from figure number 78: disc 12mm dia 4mm thick with lobed profile",
+      "component_id": "thrust_washer",
+      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 10mm OD 5mm ID 1.5mm thick",
       "features": [
-        "disc 12mm dia 4mm thick with lobed profile",
-        "figure_number=78",
+        "flat washer 10mm OD 5mm ID 1.5mm thick",
+        "figure_number=98",
         "kind=sub-feature"
+      ]
+    },
+    {
+      "component_id": "leaf_mount_slot",
+      "notes": "codegen \u2014 IR-enrichment from figure number 39: oblong slot 12x5 thru 2mm plate",
+      "features": [
+        "oblong slot 12x5 thru 2mm plate",
+        "figure_number=39",
+        "kind=hole"
       ]
     }
   ],
   "skipped": [
     {
       "figure_number": "110",
-      "reason": "hole in bracket ear already covered by 106/108"
+      "reason": "hole in bracket ear, covered by 106/108"
     },
     {
       "figure_number": "116",
-      "reason": "label/leader for door panel edge"
+      "reason": "label pointing to door panel 22"
+    },
+    {
+      "figure_number": "118",
+      "reason": "label/arrow to bracket edge"
     },
     {
       "figure_number": "119",
-      "reason": "label arrow on bracket"
+      "reason": "label/arrow to bracket feature"
     },
     {
       "figure_number": "122",
-      "reason": "duplicate ear hole label"
+      "reason": "label to bracket tongue feature"
     },
     {
       "figure_number": "130",
-      "reason": "label indicating pintle axis area"
+      "reason": "label to pintle area, covered by hinge"
     },
     {
       "figure_number": "132",
-      "reason": "label/leader only"
+      "reason": "label to hinge lower region"
     },
     {
       "figure_number": "134",
-      "reason": "label/leader only"
+      "reason": "label line only"
     },
     {
       "figure_number": "154",
-      "reason": "label/leader only"
-    },
-    {
-      "figure_number": "39",
-      "reason": "mounting slot already in leaf flange 38"
+      "reason": "label to hinge body feature covered by library part"
     },
     {
       "figure_number": "39'",
-      "reason": "mounting slot already in leaf flange 38"
+      "reason": "duplicate slot callout, covered by 39"
     },
     {
       "figure_number": "92",
-      "reason": "label for pintle shaft portion covered by hinge body"
+      "reason": "label to pintle/pin, covered by library part"
     },
     {
       "figure_number": "96",
-      "reason": "label for pintle shaft region covered by hinge body"
+      "reason": "label to pintle shaft, covered by library part"
     }
   ]
 }

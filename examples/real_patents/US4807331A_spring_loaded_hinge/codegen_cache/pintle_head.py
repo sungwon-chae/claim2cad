@@ -1,2 +1,2 @@
-head = bd.Cylinder(radius=3, height=3)
+head = bd.Cylinder(radius=4, height=3)
 result = head

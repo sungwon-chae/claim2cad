@@ -167,6 +167,85 @@ def render_shape_to_png(
     return out_path
 
 
+# Feature-edge angle: edges where adjacent face normals subtend more than
+# this angle are kept as engineering-drawing strokes. 32° is the threshold
+# the upstream text-to-cad/skills/cad/scripts/snapshot tool uses (and a
+# common default in CAD viewers — adjustable but rarely tuned).
+FEATURE_EDGE_ANGLE_DEG = 32.0
+
+
+def _feature_edges(
+    triangles: np.ndarray,
+    face_normals: np.ndarray,
+) -> list[tuple[int, int]]:
+    """Return the list of triangle-edge endpoints that should be drawn as
+    engineering-drawing strokes. Algorithm (lifted from
+    ``text-to-cad/skills/cad/scripts/snapshot/cli.py``):
+
+      * boundary edges (only 1 incident face) → keep,
+      * non-manifold edges (>2 incident faces) → keep,
+      * edges where the two adjacent face normals subtend an angle larger
+        than ``FEATURE_EDGE_ANGLE_DEG`` (sharp crease) → keep,
+      * edges where adjacent face normals straddle the camera plane
+        (silhouette under the current view) → keep,
+      * everything else (smooth interior of a face) → drop.
+
+    This collapses the matplotlib triangle-edge soup into the few
+    silhouette + sharp-crease lines that read as a clean line drawing.
+    """
+    edge_faces: dict[tuple[int, int], list[int]] = {}
+    for fi, tri in enumerate(triangles):
+        a, b, c = int(tri[0]), int(tri[1]), int(tri[2])
+        for s, e in ((a, b), (b, c), (c, a)):
+            key = (s, e) if s < e else (e, s)
+            edge_faces.setdefault(key, []).append(fi)
+
+    import math
+    cos_thresh = math.cos(math.radians(FEATURE_EDGE_ANGLE_DEG))
+    out: list[tuple[int, int]] = []
+    for edge, faces in edge_faces.items():
+        if len(faces) == 1 or len(faces) > 2:
+            out.append(edge)
+            continue
+        n0 = face_normals[faces[0]]
+        n1 = face_normals[faces[1]]
+        if float(np.dot(n0, n1)) <= cos_thresh:
+            out.append(edge)
+            continue
+        # Silhouette under current camera Z: keep edges where the two
+        # adjacent faces face opposite directions in the view.
+        if (n0[2] >= 0.0) != (n1[2] >= 0.0):
+            out.append(edge)
+    out.sort()
+    return out
+
+
+def _camera_basis(elev_deg: float, azim_deg: float) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Return (right, up, view) unit vectors for matplotlib's
+    elevation/azimuth convention. ``view`` points FROM the scene TOWARD
+    the camera (so n_z > 0 means "facing camera")."""
+    import math
+    el = math.radians(elev_deg)
+    az = math.radians(azim_deg)
+    # mpl's mplot3d uses:
+    #   x' = cos(az)*x + sin(az)*y
+    #   y' = -sin(az)*sin(el)*x + cos(az)*sin(el)*y + cos(el)*z
+    #   z' = sin(az)*cos(el)*x - cos(az)*cos(el)*y + sin(el)*z   (toward camera)
+    view = np.array(
+        [math.sin(az) * math.cos(el), -math.cos(az) * math.cos(el), math.sin(el)],
+        dtype=np.float32,
+    )
+    up = np.array(
+        [-math.sin(az) * math.sin(el), math.cos(az) * math.sin(el), math.cos(el)],
+        dtype=np.float32,
+    )
+    right = np.cross(up, view)
+    right /= np.linalg.norm(right) + 1e-9
+    up /= np.linalg.norm(up) + 1e-9
+    view /= np.linalg.norm(view) + 1e-9
+    return right, up, view
+
+
 def render_step_to_line_drawing(
     step_path: Path | str,
     out_path: Path | str,
@@ -175,15 +254,16 @@ def render_step_to_line_drawing(
     azim: float = 45.0,
     resolution: int = 1024,
     tolerance: float = 0.3,
-    line_width: float = 1.0,
+    line_width: float = 0.9,
     background: str = "white",
 ) -> Path:
-    """Render a STEP as a line-drawing — every edge of every face drawn
-    as a thin black line on a white background.
+    """Render a STEP as an engineering-drawing-style line drawing.
 
-    This matches patent-figure visual language much better than a shaded
-    render. The VLM stops misreading shaded U-channels as flat plates
-    once both halves of the comparison composite are line drawings.
+    Drops smooth interior edges (which were creating the "triangle
+    tessellation X-marks" artefact in the previous renderer) and keeps
+    only silhouette + sharp-crease edges. The threshold and algorithm
+    come from the upstream text-to-cad snapshot tool (see
+    ``_feature_edges`` for the exact criteria).
     """
     import matplotlib
 
@@ -194,68 +274,47 @@ def render_step_to_line_drawing(
     out_path = Path(out_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     shape = bd.import_step(str(step_path))
+    verts, tris = _tessellate_shape(shape, tolerance=tolerance)
+    if len(tris) == 0:
+        raise RuntimeError("Line-drawing renderer: 0 triangles")
 
-    # Walk every face → every edge → tessellate the edge into a polyline.
-    # We dedupe by quantised endpoint pair so shared edges are only drawn
-    # once. Curves get sampled into ~30 segments; lines stay at 2 points.
-    segments: list[np.ndarray] = []
-    seen: set[tuple[int, int, int, int, int, int]] = set()
+    # Per-face normals in WORLD space.
+    a = verts[tris[:, 0]]
+    b = verts[tris[:, 1]]
+    c = verts[tris[:, 2]]
+    face_normals_world = np.cross(b - a, c - a)
+    norms = np.linalg.norm(face_normals_world, axis=1, keepdims=True)
+    norms[norms < 1e-9] = 1.0
+    face_normals_world = face_normals_world / norms
 
-    def _q(p: bd.Vector) -> tuple[int, int, int]:
-        return (int(round(p.X * 100)), int(round(p.Y * 100)), int(round(p.Z * 100)))
+    # Transform face normals to CAMERA space so the silhouette test is
+    # meaningful for the current view. We just need the z-component
+    # relative to the view direction.
+    right, up, view = _camera_basis(elev, azim)
+    # Build rotation matrix: rows are (right, up, view) — view-z is the
+    # third row, which is what _feature_edges checks via index [2].
+    R = np.stack([right, up, view], axis=0)
+    face_normals_cam = face_normals_world @ R.T
 
-    bb_all = shape.bounding_box()
-    span_diag = float(np.linalg.norm([bb_all.max.X - bb_all.min.X, bb_all.max.Y - bb_all.min.Y, bb_all.max.Z - bb_all.min.Z]))
-    sample_tol = max(0.5, span_diag / 200.0)
+    edges = _feature_edges(tris, face_normals_cam)
+    if not edges:
+        raise RuntimeError("No feature edges detected")
 
-    for face in shape.faces():
-        for edge in face.edges():
-            try:
-                a = edge.start_point()
-                b = edge.end_point()
-            except Exception:  # noqa: BLE001
-                continue
-            qa = _q(a)
-            qb = _q(b)
-            key = qa + qb if qa <= qb else qb + qa
-            if key in seen:
-                continue
-            seen.add(key)
-            geom_type = str(getattr(edge, "geom_type", "")).upper()
-            if "LINE" in geom_type:
-                segments.append(np.array([[a.X, a.Y, a.Z], [b.X, b.Y, b.Z]], dtype=np.float32))
-            else:
-                # Sample the edge into a polyline.
-                length = max(edge.length, 1e-3)
-                n = max(2, min(64, int(length / sample_tol) + 2))
-                pts: list[tuple[float, float, float]] = []
-                for i in range(n + 1):
-                    t = i / n
-                    try:
-                        p = edge @ t
-                    except Exception:  # noqa: BLE001
-                        continue
-                    pts.append((p.X, p.Y, p.Z))
-                if len(pts) >= 2:
-                    arr = np.array(pts, dtype=np.float32)
-                    # Break into 2-point segments so Line3DCollection can
-                    # render contiguous lines per polyline more cleanly.
-                    for i in range(len(arr) - 1):
-                        segments.append(arr[i : i + 2])
-
-    if not segments:
-        raise RuntimeError("Line-drawing renderer collected 0 edges")
+    segments = [
+        np.stack([verts[i0], verts[i1]], axis=0).astype(np.float32)
+        for (i0, i1) in edges
+    ]
 
     fig = plt.figure(figsize=(resolution / 100, resolution / 100), dpi=100)
     ax = fig.add_subplot(111, projection="3d")
     lc = Line3DCollection(
         [list(map(tuple, s)) for s in segments],
-        colors=(0.0, 0.0, 0.0, 0.85),
+        colors=(0.0, 0.0, 0.0, 0.95),
         linewidths=line_width,
     )
     ax.add_collection3d(lc)
-    bb_min = np.min([s.min(axis=0) for s in segments], axis=0)
-    bb_max = np.max([s.max(axis=0) for s in segments], axis=0)
+    bb_min = verts.min(axis=0)
+    bb_max = verts.max(axis=0)
     center = (bb_min + bb_max) / 2.0
     half = float(np.max(bb_max - bb_min)) * 0.55
     ax.set_xlim(center[0] - half, center[0] + half)

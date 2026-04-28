@@ -24,6 +24,7 @@ import build123d as bd
 from claim2cad.components import library
 from claim2cad.components.base import Component, ComponentBuildError
 from claim2cad.figure_crops import FigureCrop, crop_all_components, crops_by_component_id
+from claim2cad.geometric_invariants import InvariantReport, evaluate_invariants
 from claim2cad.glb_naming import rename_glb_root_children
 from claim2cad.ir_schema import ClaimIR, Component as IRComponent
 from claim2cad.llm_vision import vision_completion
@@ -558,6 +559,7 @@ def run_generator(
     render_style: str = "line",
     patent_context: str = "",
     enable_ir_enrichment: bool = True,
+    n_candidates: int = 1,
 ) -> dict[str, Path]:
     """Main entry: run the figure-to-CAD pipeline on a single example."""
     example_dir = Path(example_dir)
@@ -586,10 +588,34 @@ def run_generator(
         logger.info("Using cached figure spec at %s", spec_path)
         figure_spec = FigureSpec.from_dict(json.loads(spec_path.read_text("utf-8")))
     else:
-        logger.info("Calling VLM to analyse %s", figure_path.name)
-        figure_spec = analyze_figure(
-            figure_path, ir, figure_id=figure_path.stem, figure_map=figure_map
+        logger.info(
+            "Calling VLM to analyse %s (n_candidates=%d)",
+            figure_path.name,
+            n_candidates,
         )
+        if n_candidates <= 1:
+            figure_spec = analyze_figure(
+                figure_path,
+                ir,
+                figure_id=figure_path.stem,
+                figure_map=figure_map,
+            )
+        else:
+            # CADFusion-style best-of-N: generate N parametric sequences,
+            # rank by geometric invariants on the BUILT assembly, pick
+            # the highest-scoring spec. Saves the per-candidate scores
+            # for audit.
+            figure_spec, candidate_scores = _best_of_n_spec(
+                figure_path,
+                ir,
+                figure_id=figure_path.stem,
+                figure_map=figure_map,
+                n_candidates=n_candidates,
+            )
+            (example_dir / "best_of_n_scores.json").write_text(
+                json.dumps(candidate_scores, indent=2),
+                encoding="utf-8",
+            )
         # IR enrichment: pull sub-features from figure callouts not bound to
         # any claim component. Adds them as codegen specs.
         if enable_ir_enrichment and figure_map:
@@ -767,6 +793,92 @@ def run_generator(
 # ---------------------------------------------------------------------------
 
 
+def _best_of_n_spec(
+    figure_path: Path,
+    ir: ClaimIR,
+    *,
+    figure_id: str,
+    figure_map: dict[str, Any] | None,
+    n_candidates: int,
+) -> tuple[FigureSpec, list[dict[str, Any]]]:
+    """Sample N candidate figure_specs, score each by trial-build +
+    geometric invariants, return the highest-scoring spec.
+
+    The CADFusion paper trains an LLM to prefer parametric sequences
+    whose renders look correct. We can't retrain, but we can apply the
+    inference-time analogue: sample multiple candidates, score by a
+    cheap geometric invariant, and pick the best.
+
+    Geometric invariants (claim2cad.geometric_invariants) catch the
+    failure modes we know — pin missing some hole-bearing components,
+    link too tall to nest, door not wrapping the body, etc. — without
+    needing an extra VLM call per candidate.
+    """
+    candidates: list[tuple[float, FigureSpec, dict[str, Any]]] = []
+    for i in range(n_candidates):
+        try:
+            spec = analyze_figure(
+                figure_path, ir, figure_id=figure_id, figure_map=figure_map
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Candidate %d failed in analyze_figure: %s", i, exc)
+            continue
+        # Trial-build with no codegen / composer to keep this cheap
+        # and deterministic. The geometric invariants can already tell
+        # which candidate is going to compose well.
+        try:
+            ir_aug = _augment_ir_with_enrichment(ir, spec)
+            compound, _, _ = generate_assembly(
+                spec,
+                ir_aug,
+                components_dir=None,
+                figure_crops=None,
+                code_cache_dir=None,
+                enable_codegen=False,
+            )
+            inv = evaluate_invariants(compound)
+            score = inv.composite()
+            entry = {
+                "candidate": i,
+                "score": round(score, 3),
+                "invariants": inv.as_dict(),
+                "n_components": len(spec.components),
+                "library_parts_used": [
+                    s.library_part
+                    for s in spec.components
+                    if s.library_part
+                ],
+            }
+            candidates.append((score, spec, entry))
+            logger.info(
+                "Best-of-N candidate %d/%d: score=%.3f",
+                i + 1,
+                n_candidates,
+                score,
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Candidate %d trial-build failed: %s", i, exc)
+            candidates.append(
+                (
+                    0.0,
+                    spec,
+                    {"candidate": i, "score": 0.0, "error": str(exc)},
+                )
+            )
+
+    if not candidates:
+        raise RuntimeError("Best-of-N failed for every candidate")
+    # Sort highest first.
+    candidates.sort(key=lambda t: -t[0])
+    best_score, best_spec, _ = candidates[0]
+    logger.info(
+        "Best-of-N picked candidate with score %.3f (out of %d)",
+        best_score,
+        len(candidates),
+    )
+    return best_spec, [c[2] for c in candidates]
+
+
 def _augment_ir_with_enrichment(ir: ClaimIR, spec: FigureSpec) -> ClaimIR:
     """If ``spec`` references component_ids the IR doesn't know about (added
     by the IR enricher), splice stub IRComponents in so generate_assembly
@@ -893,6 +1005,12 @@ def _build_argparser() -> argparse.ArgumentParser:
         action="store_true",
         help="Skip the IR enrichment pass (don't add features beyond claim text).",
     )
+    p.add_argument(
+        "--n-candidates",
+        type=int,
+        default=1,
+        help="Best-of-N candidate sampling for the figure-to-spec stage.",
+    )
     return p
 
 
@@ -917,6 +1035,7 @@ def main(argv: list[str] | None = None) -> int:
         render_style=args.render_style,
         patent_context=args.patent_context,
         enable_ir_enrichment=not args.no_ir_enrichment,
+        n_candidates=args.n_candidates,
     )
     print(json.dumps({k: str(v) for k, v in out.items()}, indent=2))
     return 0

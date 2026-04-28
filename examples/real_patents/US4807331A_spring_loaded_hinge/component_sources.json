@@ -1,11 +1,11 @@
 {
   "hinge_body_half_assembly": "library:lift_off_hinge",
-  "anti_disengagement_bracket": "codegen-cached",
-  "bracket_tab": "codegen-cached",
+  "door_mounting_bracket": "codegen-cached",
+  "bracket_tongue": "codegen-cached",
   "bracket_upper_ear": "codegen-cached",
   "bracket_lower_ear": "codegen-cached",
-  "retainer_finger": "codegen-cached",
   "pintle_head": "codegen-cached",
-  "pintle_washer": "codegen-cached",
-  "detent_cam": "codegen-cached"
+  "detent_spring_post": "codegen-cached",
+  "thrust_washer": "codegen-cached",
+  "leaf_mount_slot": "codegen-cached"
 }

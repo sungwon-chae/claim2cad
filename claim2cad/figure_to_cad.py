@@ -557,6 +557,7 @@ def run_generator(
     multi_figure: bool = True,
     render_style: str = "line",
     patent_context: str = "",
+    enable_ir_enrichment: bool = True,
 ) -> dict[str, Path]:
     """Main entry: run the figure-to-CAD pipeline on a single example."""
     example_dir = Path(example_dir)
@@ -568,6 +569,9 @@ def run_generator(
         raise FileNotFoundError(f"claim_ir.json not found: {ir_path}")
 
     ir = ClaimIR.model_validate_json(ir_path.read_text("utf-8"))
+    # If IR enrichment added components beyond what the IR knows about, we
+    # need to skip the "missing-from-IR" check in generate_assembly. We
+    # do that by adding stub IRComponents for the enriched ids below.
 
     spec_path = example_dir / spec_out
     figure_spec: FigureSpec
@@ -586,6 +590,38 @@ def run_generator(
         figure_spec = analyze_figure(
             figure_path, ir, figure_id=figure_path.stem, figure_map=figure_map
         )
+        # IR enrichment: pull sub-features from figure callouts not bound to
+        # any claim component. Adds them as codegen specs.
+        if enable_ir_enrichment and figure_map:
+            try:
+                from claim2cad.ir_enricher import enrich_ir, merge_into_spec
+
+                additions, skipped = enrich_ir(
+                    figure_path=figure_path,
+                    figure_map=figure_map,
+                    spec=figure_spec,
+                    patent_context=patent_context,
+                )
+                figure_spec = merge_into_spec(figure_spec, additions)
+                (example_dir / "ir_enrichment.json").write_text(
+                    json.dumps(
+                        {
+                            "additions": [
+                                {
+                                    "component_id": s.component_id,
+                                    "notes": s.notes,
+                                    "features": s.features,
+                                }
+                                for s in additions
+                            ],
+                            "skipped": skipped,
+                        },
+                        indent=2,
+                    ),
+                    encoding="utf-8",
+                )
+            except Exception as exc:  # noqa: BLE001 — best-effort
+                logger.warning("IR enrichment failed: %s", exc)
         spec_path.write_text(json.dumps(figure_spec.to_dict(), indent=2), encoding="utf-8")
         logger.info("Wrote figure spec to %s", spec_path)
 
@@ -595,6 +631,7 @@ def run_generator(
     # Per-component figure crops (if figure_map.json is present).
     crops_dir = example_dir / "crops"
     figure_crops_dict: dict[str, FigureCrop] = {}
+    crops_by_number: dict[str, FigureCrop] = {}
     if figure_map and figure_path.exists():
         try:
             crops = crop_all_components(
@@ -604,9 +641,29 @@ def run_generator(
                 crop_radius=crop_radius,
             )
             figure_crops_dict = crops_by_component_id(crops)
+            crops_by_number = {c.figure_number: c for c in crops}
             logger.info("Cropped %d component regions into %s", len(crops), crops_dir)
         except Exception as exc:  # noqa: BLE001 — cropping is auxiliary
             logger.warning("Figure cropping failed: %s", exc)
+
+    # For IR-enrichment-added components, bind their figure crops via
+    # `figure_number=N` in the spec's features list.
+    for s in figure_spec.components:
+        if s.component_id in figure_crops_dict:
+            continue
+        for feat in s.features or []:
+            if not feat.startswith("figure_number="):
+                continue
+            num = feat.split("=", 1)[1].strip()
+            crop = crops_by_number.get(num)
+            if crop is not None:
+                figure_crops_dict[s.component_id] = crop
+            break
+
+    # Add stub IR components for any spec entry whose component_id isn't in
+    # the IR (the enricher will have added some). Without this stub,
+    # generate_assembly skips them.
+    ir = _augment_ir_with_enrichment(ir, figure_spec)
 
     compound, ordered_ids, source_tags = generate_assembly(
         figure_spec,
@@ -710,6 +767,41 @@ def run_generator(
 # ---------------------------------------------------------------------------
 
 
+def _augment_ir_with_enrichment(ir: ClaimIR, spec: FigureSpec) -> ClaimIR:
+    """If ``spec`` references component_ids the IR doesn't know about (added
+    by the IR enricher), splice stub IRComponents in so generate_assembly
+    sees them. Stubs are kind="other", category="structural", with empty
+    constraints — the enricher's notes/features carry the geometry hint."""
+    from claim2cad.ir_schema import (
+        Component as IRComponent,
+        DimensionUnspecified,
+        SourceSpan,
+    )
+
+    known = {c.id for c in ir.components}
+    extras: list[IRComponent] = []
+    for s in spec.components:
+        if s.component_id in known:
+            continue
+        extras.append(
+            IRComponent(
+                id=s.component_id,
+                label=s.component_id.replace("_", " "),
+                category="structural",
+                kind="sub_feature",
+                parent_id=None,
+                dimension=DimensionUnspecified(),
+                constraints=[],
+                source_span=SourceSpan(claim_id=ir.claims[0].id if ir.claims else "claim_1", char_start=0, char_end=1),
+                figure_number=None,
+                figure_references=[],
+            )
+        )
+    if not extras:
+        return ir
+    return ir.model_copy(update={"components": list(ir.components) + extras})
+
+
 def _compose_multi_figure(
     example_dir: Path, *, primary: Path, multi: bool
 ) -> Path:
@@ -796,6 +888,11 @@ def _build_argparser() -> argparse.ArgumentParser:
         default="",
         help="Free-text context surfaced to the spatial composer.",
     )
+    p.add_argument(
+        "--no-ir-enrichment",
+        action="store_true",
+        help="Skip the IR enrichment pass (don't add features beyond claim text).",
+    )
     return p
 
 
@@ -819,6 +916,7 @@ def main(argv: list[str] | None = None) -> int:
         multi_figure=not args.no_multi_figure,
         render_style=args.render_style,
         patent_context=args.patent_context,
+        enable_ir_enrichment=not args.no_ir_enrichment,
     )
     print(json.dumps({k: str(v) for k, v in out.items()}, indent=2))
     return 0

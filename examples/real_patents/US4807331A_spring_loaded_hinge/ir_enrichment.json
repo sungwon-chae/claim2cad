@@ -1,0 +1,126 @@
+{
+  "additions": [
+    {
+      "component_id": "door_mount_plate",
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 30x25x2mm with two end tabs",
+      "features": [
+        "flat rectangular plate 30x25x2mm with two end tabs",
+        "figure_number=100",
+        "kind=sub-feature"
+      ]
+    },
+    {
+      "component_id": "mount_plate_tongue",
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tab 8x10x2mm projecting from plate center",
+      "features": [
+        "rectangular tab 8x10x2mm projecting from plate center",
+        "figure_number=102",
+        "kind=sub-feature"
+      ]
+    },
+    {
+      "component_id": "mount_plate_ear_upper",
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rolled tab 8mm wide with 4mm thru hole",
+      "features": [
+        "rolled tab 8mm wide with 4mm thru hole",
+        "figure_number=106",
+        "kind=hole"
+      ]
+    },
+    {
+      "component_id": "mount_plate_ear_lower",
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rolled tab 8mm wide with 4mm thru hole",
+      "features": [
+        "rolled tab 8mm wide with 4mm thru hole",
+        "figure_number=108",
+        "kind=hole"
+      ]
+    },
+    {
+      "component_id": "pintle_pin_2",
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: vertical threaded cylinder 5mm dia x 28mm long with small head",
+      "features": [
+        "vertical threaded cylinder 5mm dia x 28mm long with small head",
+        "figure_number=120",
+        "kind=fastener"
+      ]
+    },
+    {
+      "component_id": "detent_pin",
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: cylindrical pin 3mm dia x 6mm tall",
+      "features": [
+        "cylindrical pin 3mm dia x 6mm tall",
+        "figure_number=78",
+        "kind=stop"
+      ]
+    },
+    {
+      "component_id": "mount_hole_oblong",
+      "notes": "codegen \u2014 IR-enrichment from figure number 39: oblong slot 10x5mm through flange",
+      "features": [
+        "oblong slot 10x5mm through flange",
+        "figure_number=39",
+        "kind=hole"
+      ]
+    },
+    {
+      "component_id": "pintle_washer",
+      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 10mm OD 5mm ID 1.5mm thick",
+      "features": [
+        "flat washer 10mm OD 5mm ID 1.5mm thick",
+        "figure_number=98",
+        "kind=sub-feature"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "figure_number": "110",
+      "reason": "duplicate ear callout on mount plate"
+    },
+    {
+      "figure_number": "116",
+      "reason": "label pointing at door panel edge"
+    },
+    {
+      "figure_number": "118",
+      "reason": "label/leader for mount plate area"
+    },
+    {
+      "figure_number": "119",
+      "reason": "label/leader only"
+    },
+    {
+      "figure_number": "122",
+      "reason": "duplicate ear/hole callout"
+    },
+    {
+      "figure_number": "130",
+      "reason": "leader to pintle area, already covered"
+    },
+    {
+      "figure_number": "132",
+      "reason": "leader to bushing area, covered by parent"
+    },
+    {
+      "figure_number": "134",
+      "reason": "label/leader only"
+    },
+    {
+      "figure_number": "154",
+      "reason": "label arrow, no distinct geometry"
+    },
+    {
+      "figure_number": "39'",
+      "reason": "duplicate of 39 mounting hole"
+    },
+    {
+      "figure_number": "92",
+      "reason": "leader to pintle axis, covered by pin"
+    },
+    {
+      "figure_number": "96",
+      "reason": "leader line only"
+    }
+  ]
+}

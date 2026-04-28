@@ -11,6 +11,32 @@ The architectural improvements landed; the score did not.
 | v1.1 pass 1 (V11-1..5) | 3/10 (false +) | library picked but params dropped → default-sized boxes |
 | v1.1 pass 2 (Fix-A..G) | 3/10 (real) | params now flow, codegen works, edges cleaned |
 | v1.1 pass 3 (Fix-H..K) | **3/10 stable** | spatial composer + line render + multi-figure |
+| v1.1 pass 4 (Fix-L, M) | **3/10 stable** | A/B'd validator; IR enrichment added 8 sub-features → 23 total components |
+
+### Validator A/B (Fix-L)
+
+Same model, two validators, three runs each:
+
+| Validator | Mean overall |
+|-----------|-------------:|
+| Opus 4.7  | 3.0 |
+| Sonnet 4.6 | 2.33 |
+
+Sonnet is **harsher** than Opus on this CAD, not more lenient. The
+3.0 plateau is a real model+validator ceiling, not a side effect of
+choosing Opus.
+
+### IR enrichment (Fix-M)
+
+`claim2cad/ir_enricher.py` walks `figure_map.json` for numbered
+callouts not bound to any IR component, asks the VLM to classify each
+into "skip" or "add small geometry", and splices the additions into
+`figure_spec.json` as codegen specs. For US4807331A this added 8
+sub-features (mounting plate, tabs, ears, pin head, washer, boss,
+slot) and skipped 12 (label arrows, duplicate callouts, dimension
+lines). Resulting assembly has **23 components** vs 7 before — much
+busier silhouette, closer to the patent's level of detail. Score
+unchanged at 3.0.
 
 The user target was 5+/10. **We did not reach it.** Three independent
 validation calls on the canonical model returned 3.0/3.0/3.0. The

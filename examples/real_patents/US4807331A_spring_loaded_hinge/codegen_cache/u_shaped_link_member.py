@@ -1,0 +1,13 @@
+L=60.0
+W=22.0
+T=3.0
+plate=bd.Box(T,W,L)
+flange_w=14.0
+flange_h=10.0
+f1=bd.Box(T+flange_w,W,flange_h).translate((flange_w/2,0,L/2-flange_h/2))
+f2=bd.Box(T+flange_w,W,flange_h).translate((flange_w/2,0,-L/2+flange_h/2))
+body=plate+f1+f2
+hole1=bd.Cylinder(radius=2.0,height=W+2).rotate(bd.Axis.X,90).translate((flange_w-1,0,L/2-flange_h/2))
+hole2=bd.Cylinder(radius=2.0,height=W+2).rotate(bd.Axis.X,90).translate((flange_w-1,0,-L/2+flange_h/2))
+slot=bd.Box(T+2,6,20).translate((flange_w/2+2,W/2-3,-L/4))
+result=body-hole1-hole2-slot

@@ -99,10 +99,32 @@ class Pin(Component):
         }
 
 
+_PIN_PARAM_ALIASES = {
+    "od": "diameter",
+    "outer_diameter": "diameter",
+    "shaft_diameter": "diameter",
+    "pin_diameter": "diameter",
+    "shaft_length": "length",
+    "pin_length": "length",
+    "height": "length",
+}
+
+_PIN_PARAM_SCHEMA = {
+    "length": "float, mm — total pin length along Z",
+    "diameter": "float, mm — shaft diameter",
+    "head_style": "string in {none, flat, round, hex}",
+    "head_diameter": "float, mm — 0 = auto (1.6 × shaft diameter)",
+    "head_height": "float, mm — 0 = auto",
+    "has_groove": "bool — adds a retention groove near the bottom end",
+}
+
+
 @register(
     "pin",
     aliases=("pintle_pin", "dowel", "dowel_pin", "pivot_pin", "hinge_pin"),
     description="Cylindrical pin with optional head and retention groove.",
+    param_aliases=_PIN_PARAM_ALIASES,
+    param_schema=_PIN_PARAM_SCHEMA,
 )
 def make_pin(**kwargs) -> Pin:
     return Pin(**kwargs)

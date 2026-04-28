@@ -117,6 +117,29 @@ class LeafHinge(Component):
         }
 
 
+_LEAF_HINGE_PARAM_ALIASES = {
+    "leaf_height": "leaf_width",
+    "pin_length": "leaf_width",  # the pin spans the full leaf width
+    "height": "leaf_width",
+    "length": "leaf_length",
+    "width": "leaf_width",
+    "thickness": "leaf_thickness",
+    "leaf_depth": "leaf_thickness",
+    "knuckles": "knuckle_count",
+    "n_knuckles": "knuckle_count",
+}
+
+_LEAF_HINGE_PARAM_SCHEMA = {
+    "leaf_length": "float, mm — leaf extent away from the pin axis (Y)",
+    "leaf_width": "float, mm — leaf extent along the pin axis (Z, also pin length)",
+    "leaf_thickness": "float, mm — sheet thickness in X",
+    "knuckle_count": "int >= 3 — total knuckle segments alternating between leaves",
+    "pin_diameter": "float, mm — through-pin diameter (must be < knuckle_diameter)",
+    "knuckle_diameter": "float, mm — outer diameter of each knuckle barrel",
+    "leaf_offset_y": "float, mm — distance from pin axis to leaf root",
+}
+
+
 @register(
     "leaf_hinge",
     aliases=(
@@ -127,6 +150,8 @@ class LeafHinge(Component):
         "hinge_body_half_assembly",
     ),
     description="Two-leaf knuckle hinge with through pin.",
+    param_aliases=_LEAF_HINGE_PARAM_ALIASES,
+    param_schema=_LEAF_HINGE_PARAM_SCHEMA,
 )
 def make_leaf_hinge(**kwargs) -> LeafHinge:
     return LeafHinge(**kwargs)

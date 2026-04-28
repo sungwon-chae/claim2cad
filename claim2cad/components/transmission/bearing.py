@@ -90,6 +90,20 @@ class BallBearing(Component):
     "ball_bearing",
     aliases=("bearing", "rolling_bearing", "deep_groove_bearing"),
     description="Ball bearing with outer race, inner race, and balls.",
+    param_aliases={
+        "od": "outer_diameter",
+        "id": "inner_diameter",
+        "bore": "inner_diameter",
+        "width": "thickness",
+        "height": "thickness",
+        "depth": "thickness",
+    },
+    param_schema={
+        "outer_diameter": "float, mm — OD of the outer race",
+        "inner_diameter": "float, mm — bore (must be < outer_diameter)",
+        "thickness": "float, mm — overall depth along Z",
+        "ball_count": "int >= 3",
+    },
 )
 def make_ball_bearing(**kwargs) -> BallBearing:
     return BallBearing(**kwargs)

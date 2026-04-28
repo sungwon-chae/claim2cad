@@ -29,12 +29,28 @@ logger = logging.getLogger(__name__)
 @dataclass(frozen=True)
 class LibraryEntry:
     """A single registered factory. ``aliases`` are alternative names that
-    figure analysis might use; they are also matched by lookup."""
+    figure analysis might use; they are also matched by lookup.
+
+    ``param_aliases`` maps VLM-natural parameter names (``"length"``,
+    ``"height"``) onto the canonical dataclass field names
+    (``"leg_a_length"``, ``"side_height"``). Without this, VLM-supplied
+    params are silently dropped and the library entry is built with all
+    defaults — looking like a primitive in the rendered output.
+    """
 
     name: str
     factory: Callable[..., Component]
     aliases: tuple[str, ...] = ()
     description: str = ""
+    param_aliases: dict[str, str] = None  # type: ignore[assignment]
+    param_schema: dict[str, str] = None  # type: ignore[assignment]
+
+    def __post_init__(self) -> None:
+        # frozen=True dataclass — bypass setattr via object.__setattr__.
+        if self.param_aliases is None:
+            object.__setattr__(self, "param_aliases", {})
+        if self.param_schema is None:
+            object.__setattr__(self, "param_schema", {})
 
 
 _REGISTRY: dict[str, LibraryEntry] = {}
@@ -45,8 +61,18 @@ def register(
     *,
     aliases: Iterable[str] = (),
     description: str = "",
+    param_aliases: dict[str, str] | None = None,
+    param_schema: dict[str, str] | None = None,
 ) -> Callable[[Callable[..., Component]], Callable[..., Component]]:
-    """Decorator: register a Component factory under ``name``."""
+    """Decorator: register a Component factory under ``name``.
+
+    ``param_aliases`` lets VLM-natural parameter names map to canonical
+    dataclass field names (e.g. ``{"length": "leg_a_length"}``).
+
+    ``param_schema`` is a one-line description per accepted parameter
+    so :mod:`claim2cad.figure_to_cad` can include the schema in its
+    prompt to the VLM.
+    """
 
     def deco(factory: Callable[..., Component]) -> Callable[..., Component]:
         if name in _REGISTRY:
@@ -58,6 +84,8 @@ def register(
             description=description or (factory.__doc__ or "").strip().splitlines()[0]
             if (factory.__doc__ or "").strip()
             else "",
+            param_aliases=dict(param_aliases) if param_aliases else {},
+            param_schema=dict(param_schema) if param_schema else {},
         )
         logger.debug("Registered library entry: %s", name)
         return factory
@@ -166,17 +194,94 @@ def instantiate(
     params: dict[str, Any] | None = None,
     hints: dict[str, Any] | None = None,
 ) -> Component | None:
-    """Lookup + instantiate. Drops unknown kwargs so VLM-supplied hints
-    that don't match the dataclass fields don't break construction."""
+    """Lookup + instantiate. Routes VLM-natural param names through the
+    entry's ``param_aliases`` map first, then drops anything still
+    unrecognised. Logs at WARNING when params get dropped so a noisy
+    VLM response is visible in the run log instead of silently
+    producing a default-sized primitive."""
     entry = lookup(component_type, hints=hints)
     if entry is None:
         return None
-    safe_params = _safe_kwargs(entry.factory, params or {})
+    aliased_params = _apply_aliases(entry, params or {})
+    safe_params, dropped = _safe_kwargs_with_dropped(entry.factory, aliased_params)
+    if dropped:
+        logger.warning(
+            "Library %s: dropped VLM params %s (no matching field). "
+            "Surviving params: %s",
+            entry.name,
+            sorted(dropped),
+            sorted(safe_params),
+        )
     try:
         return entry.factory(**safe_params)
     except TypeError as exc:
         logger.warning("Library factory %s rejected params: %s", entry.name, exc)
         return None
+    except Exception as exc:  # noqa: BLE001 — bubble construction errors as None
+        logger.warning("Library factory %s failed: %s", entry.name, exc)
+        return None
+
+
+def _apply_aliases(entry: LibraryEntry, params: dict[str, Any]) -> dict[str, Any]:
+    """Rename keys per ``entry.param_aliases``, last-write-wins.
+
+    Canonical names always win over their aliased twin: if both
+    ``length`` (alias) and ``leg_a_length`` (canonical) appear, we keep
+    the canonical and drop the alias."""
+    if not entry.param_aliases:
+        return dict(params)
+    canonical_names = set(entry.param_aliases.values())
+    out: dict[str, Any] = {}
+    for k, v in params.items():
+        target = entry.param_aliases.get(k, k)
+        if target == k or target not in canonical_names:
+            out[k] = v
+            continue
+        # alias hit. Don't overwrite a canonical that's already set.
+        if target in out and k != target:
+            continue
+        out[target] = v
+    return out
+
+
+def _safe_kwargs_with_dropped(
+    factory: Callable[..., Any], params: dict[str, Any]
+) -> tuple[dict[str, Any], set[str]]:
+    """Like ``_safe_kwargs`` but also returns the set of dropped keys."""
+    accepted = _accepted_kwargs(factory)
+    if accepted is None:
+        return dict(params), set()
+    keep = {k: v for k, v in params.items() if k in accepted}
+    drop = {k for k in params if k not in accepted}
+    return keep, drop
+
+
+def _accepted_kwargs(factory: Callable[..., Any]) -> set[str] | None:
+    """Return the set of kwarg names ``factory`` will accept, or ``None``
+    if introspection fails — caller treats that as 'pass everything'."""
+    fields = getattr(factory, "__dataclass_fields__", None)
+    if fields is not None:
+        return set(fields.keys())
+    try:
+        sample = factory()
+        sample_fields = getattr(type(sample), "__dataclass_fields__", None)
+        if sample_fields is not None:
+            return set(sample_fields.keys())
+    except Exception:  # noqa: BLE001 — discovery is best-effort
+        pass
+    try:
+        import inspect
+        sig = inspect.signature(factory)
+        accepted = {
+            name
+            for name, p in sig.parameters.items()
+            if p.kind not in (inspect.Parameter.VAR_KEYWORD, inspect.Parameter.VAR_POSITIONAL)
+        }
+        if accepted:
+            return accepted
+    except (TypeError, ValueError):
+        pass
+    return None
 
 
 def _safe_kwargs(factory: Callable[..., Any], params: dict[str, Any]) -> dict[str, Any]:

@@ -64,11 +64,20 @@ def _tessellate_shape(
 def _shade_facecolors(
     verts: np.ndarray,
     tris: np.ndarray,
-    base_color: tuple[float, float, float] = (0.72, 0.74, 0.78),
-    light_dir: tuple[float, float, float] = (0.4, 0.6, 0.7),
+    base_color: tuple[float, float, float] = (0.78, 0.80, 0.84),
+    lights: tuple[tuple[tuple[float, float, float], float], ...] = (
+        ((0.4, 0.6, 0.8), 0.55),   # key light from upper-front-right
+        ((-0.5, -0.3, 0.6), 0.30), # fill light from upper-back-left
+        ((0.0, 0.0, -1.0), 0.15),  # bottom rim (slight)
+    ),
+    ambient: float = 0.55,
 ) -> np.ndarray:
-    """Compute a per-triangle RGB color from face normal and a single
-    Lambertian light. Returns Mx4 (RGBA) with alpha = 1."""
+    """Per-triangle Lambertian shading from a 3-light setup.
+
+    Brighter ambient and softer directional contribution than the V11-2
+    default — necessary because high-contrast shading on thin walls (a
+    3mm U-bracket side) was reading as a separate object to the VLM.
+    """
     a = verts[tris[:, 0]]
     b = verts[tris[:, 1]]
     c = verts[tris[:, 2]]
@@ -76,13 +85,14 @@ def _shade_facecolors(
     norms = np.linalg.norm(n, axis=1, keepdims=True)
     norms[norms < 1e-9] = 1.0
     n = n / norms
-    light = np.array(light_dir, dtype=np.float32)
-    light /= np.linalg.norm(light) + 1e-9
-    intensity = np.clip(np.abs(n @ light), 0.0, 1.0)
-    # Blend between 0.35 ambient and 1.0 lit.
-    shade = 0.35 + 0.65 * intensity
+    intensity = np.full(n.shape[0], ambient, dtype=np.float32)
+    for direction, weight in lights:
+        L = np.array(direction, dtype=np.float32)
+        L /= np.linalg.norm(L) + 1e-9
+        intensity = intensity + float(weight) * np.clip(np.abs(n @ L), 0.0, 1.0)
+    intensity = np.clip(intensity, 0.0, 1.0)
     base = np.array(base_color, dtype=np.float32)
-    cols = base[None, :] * shade[:, None]
+    cols = base[None, :] * intensity[:, None]
     cols = np.clip(cols, 0.0, 1.0)
     rgba = np.concatenate([cols, np.ones((cols.shape[0], 1), dtype=np.float32)], axis=1)
     return rgba
@@ -95,10 +105,18 @@ def render_shape_to_png(
     elev: float = 25.0,
     azim: float = 45.0,
     resolution: int = 1024,
-    tolerance: float = 0.5,
+    tolerance: float = 0.3,
     background: str = "white",
+    edge_alpha: float = 0.0,
+    edge_width: float = 0.0,
 ) -> Path:
-    """Render a single view of a build123d shape to PNG."""
+    """Render a single view of a build123d shape to PNG.
+
+    Defaults to no edge lines — wireframe-style edges over thin walls
+    visually merge into "triangle" shapes that the VLM mis-reads. If you
+    need wireframes for documentation, pass ``edge_alpha`` and
+    ``edge_width`` > 0.
+    """
     import matplotlib
 
     matplotlib.use("Agg", force=True)
@@ -122,7 +140,15 @@ def render_shape_to_png(
 
     fig = plt.figure(figsize=(resolution / 100, resolution / 100), dpi=100)
     ax = fig.add_subplot(111, projection="3d")
-    pc = Poly3DCollection(polys, facecolors=facecolors, edgecolor=(0, 0, 0, 0.18), linewidth=0.15)
+    edgecolor = (0.0, 0.0, 0.0, edge_alpha) if edge_alpha > 0 else "none"
+    pc = Poly3DCollection(
+        polys,
+        facecolors=facecolors,
+        edgecolor=edgecolor,
+        linewidth=edge_width,
+        antialiased=True,
+    )
+    pc.set_zsort("min")  # stable depth ordering
     ax.add_collection3d(pc)
     ax.set_xlim(center[0] - half, center[0] + half)
     ax.set_ylim(center[1] - half, center[1] + half)
@@ -147,7 +173,9 @@ def render_step_to_pngs(
     *,
     views: tuple[tuple[str, float, float], ...] = DEFAULT_VIEWS,
     resolution: int = 1024,
-    tolerance: float = 0.5,
+    tolerance: float = 0.3,
+    edge_alpha: float = 0.10,
+    edge_width: float = 0.10,
 ) -> list[Path]:
     """Render multiple views of a STEP file. Returns the list of PNG paths."""
     step_path = Path(step_path)
@@ -157,7 +185,16 @@ def render_step_to_pngs(
     out_paths: list[Path] = []
     for name, elev, azim in views:
         png = out_dir / f"{step_path.stem}_{name}.png"
-        render_shape_to_png(shape, png, elev=elev, azim=azim, resolution=resolution, tolerance=tolerance)
+        render_shape_to_png(
+            shape,
+            png,
+            elev=elev,
+            azim=azim,
+            resolution=resolution,
+            tolerance=tolerance,
+            edge_alpha=edge_alpha,
+            edge_width=edge_width,
+        )
         out_paths.append(png)
     return out_paths
 

@@ -160,10 +160,56 @@ class UBracket(Component):
         }
 
 
+_L_BRACKET_PARAM_ALIASES = {
+    "length": "leg_a_length",
+    "height": "leg_b_length",
+    "leg_length": "leg_a_length",
+    "vertical_length": "leg_b_length",
+    "horizontal_length": "leg_a_length",
+    "depth": "width",
+}
+
+_L_BRACKET_PARAM_SCHEMA = {
+    "leg_a_length": "float, mm — extent of plate A in +X (horizontal leg)",
+    "leg_b_length": "float, mm — extent of plate B in +Z (vertical leg)",
+    "width": "float, mm — common Y dimension",
+    "thickness": "float, mm — sheet thickness",
+    "fillet_radius": "float, mm — inner-corner fillet (0 = sharp)",
+}
+
+
+_U_BRACKET_PARAM_ALIASES = {
+    "length": "base_length",
+    "width": "base_width",
+    "height": "side_height",
+    "depth": "base_width",
+    "size_x": "base_length",
+    "size_y": "base_width",
+    "size_z": "side_height",
+    "leg_height": "side_height",
+    "side_length": "side_height",
+    "channel_width": "base_width",
+    "wall_thickness": "thickness",
+    "hole_diameter": "side_hole_diameter",
+    "pin_hole_diameter": "side_hole_diameter",
+}
+
+_U_BRACKET_PARAM_SCHEMA = {
+    "base_length": "float, mm — base plate extent along X",
+    "base_width": "float, mm — base plate extent along Y (also the inner gap of the U)",
+    "side_height": "float, mm — how far the sides rise in +Z",
+    "thickness": "float, mm — sheet thickness for all three plates",
+    "side_hole_diameter": "float, mm — pivot through-hole drilled in both sides (0 = no hole)",
+    "side_hole_offset": "float, mm — distance from top of side to hole centre",
+}
+
+
 @register(
     "l_bracket",
     aliases=("angle_bracket", "corner_bracket"),
     description="L-shaped two-plate bracket.",
+    param_aliases=_L_BRACKET_PARAM_ALIASES,
+    param_schema=_L_BRACKET_PARAM_SCHEMA,
 )
 def make_l_bracket(**kwargs) -> LBracket:
     return LBracket(**kwargs)
@@ -178,6 +224,8 @@ def make_l_bracket(**kwargs) -> LBracket:
         "clevis",
     ),
     description="U-shaped channel bracket with optional pivot hole.",
+    param_aliases=_U_BRACKET_PARAM_ALIASES,
+    param_schema=_U_BRACKET_PARAM_SCHEMA,
 )
 def make_u_bracket(**kwargs) -> UBracket:
     return UBracket(**kwargs)

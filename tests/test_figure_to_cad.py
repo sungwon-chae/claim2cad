@@ -102,31 +102,49 @@ def test_parse_figure_spec_normalises_position_and_rotation() -> None:
 # ---------------------------------------------------------------------------
 
 
+def _ir_comp(id: str, kind: str, category: str = "structural") -> Component:
+    return Component(
+        id=id,
+        label=id.replace("_", " "),
+        category=category,
+        kind=kind,
+        parent_id=None,
+        dimension=DimensionUnspecified(),
+        constraints=[],
+        source_span=SourceSpan(claim_id="claim_1", char_start=0, char_end=4),
+    )
+
+
 def test_instantiate_uses_library_when_part_known() -> None:
     spec = ComponentSpec(
         component_id="x",
         library_part="rod",
         params={"length": 40.0, "diameter": 5.0},
     )
-    solid = _instantiate_component(spec, "rod", "structural")
+    solid, tag = _instantiate_component(spec, _ir_comp("x", "rod"))
     bb = solid.bounding_box()
     assert bb.size.Z == pytest.approx(40.0, abs=0.01)
+    assert tag == "library:rod"
 
 
 def test_instantiate_falls_back_to_primitive_for_unknown_part() -> None:
     spec = ComponentSpec(component_id="x", library_part="not_a_real_thing")
-    solid = _instantiate_component(spec, "block", "structural")
+    solid, tag = _instantiate_component(spec, _ir_comp("x", "block"))
     bb = solid.bounding_box()
     # Default fallback for unknown structural is a 20x20x20 box.
     assert bb.size.X == pytest.approx(20.0, abs=0.01)
+    assert tag == "primitive"
 
 
 def test_instantiate_falls_back_when_no_library_part() -> None:
     spec = ComponentSpec(component_id="x", library_part=None)
-    solid = _instantiate_component(spec, "pin", "connection")
+    solid, tag = _instantiate_component(
+        spec, _ir_comp("x", "pin", category="connection")
+    )
     # Pin fallback is a small cylinder (r=3, h=14).
     bb = solid.bounding_box()
     assert bb.size.Z == pytest.approx(14.0, abs=0.01)
+    assert tag == "primitive"
 
 
 # ---------------------------------------------------------------------------
@@ -159,7 +177,7 @@ def test_generate_assembly_skips_components_marked_covered(tmp_path: Path) -> No
             ),
         ],
     )
-    compound, ordered = generate_assembly(spec, ir)
+    compound, ordered, _ = generate_assembly(spec, ir)
     assert ordered == ["hinge"]  # leaf_a + pin skipped
 
 
@@ -182,7 +200,7 @@ def test_generate_assembly_writes_component_steps(tmp_path: Path) -> None:
         ],
     )
     components_dir = tmp_path / "components"
-    compound, ordered = generate_assembly(spec, ir, components_dir=components_dir)
+    compound, ordered, _ = generate_assembly(spec, ir, components_dir=components_dir)
     assert ordered == ["a", "b"]
     assert (components_dir / "a.step").exists()
     assert (components_dir / "b.step").exists()
@@ -206,7 +224,7 @@ def test_generate_assembly_applies_rotation() -> None:
             )
         ],
     )
-    compound, _ = generate_assembly(spec, ir)
+    compound, _, _ = generate_assembly(spec, ir)
     bb = compound.bounding_box()
     assert bb.size.X == pytest.approx(50.0, abs=0.5)
 

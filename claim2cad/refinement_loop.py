@@ -116,6 +116,13 @@ Registered library parts available:
   leaf_hinge, revolute_joint, prismatic_joint,
   spur_gear, ball_bearing, helical_spring.
 
+CRITICAL: For any component whose current `notes` contains "codegen",
+keep its `library_part`, `params`, and `notes` EXACTLY as-is. You may
+ONLY revise `position_mm` and `rotation_deg` for those — the geometry
+was VLM-synthesised from the figure crop and must not be re-mapped to
+a library shape. For components with library_part set, you may revise
+params, position, and rotation freely.
+
 Return JSON in this EXACT shape (revisions only — do not include
 unchanged components):
 {{
@@ -243,9 +250,25 @@ def _request_refinements(
 
 
 def _merge_revisions(spec: FigureSpec, revisions: list[ComponentSpec]) -> FigureSpec:
-    """Return a new FigureSpec with ``revisions`` overriding by component_id."""
+    """Return a new FigureSpec with ``revisions`` overriding by component_id.
+
+    For codegen components (current notes contain "codegen"), we preserve
+    library_part / params / notes / features and only accept position +
+    rotation revisions. The VLM is told this in the prompt; this is a
+    second line of defence in case it slips up."""
     by_id = {s.component_id: s for s in spec.components}
     for r in revisions:
+        existing = by_id.get(r.component_id)
+        if existing is not None and "codegen" in (existing.notes or "").lower():
+            r = ComponentSpec(
+                component_id=r.component_id,
+                library_part=existing.library_part,
+                params=existing.params,
+                position_mm=r.position_mm,
+                rotation_deg=r.rotation_deg,
+                features=existing.features,
+                notes=existing.notes,
+            )
         by_id[r.component_id] = r
     return FigureSpec(
         patent_id=spec.patent_id,
@@ -265,10 +288,22 @@ def _write_iteration_artifacts(
     iteration: int,
     spec: FigureSpec,
     ir: ClaimIR,
+    *,
+    figure_crops: dict[str, Any] | None = None,
+    code_cache_dir: Path | None = None,
+    enable_codegen: bool = False,
 ) -> tuple[Path, Path]:
     """Build + write step/glb for one iteration and return (step_path, glb_path)."""
-    components_dir = example_dir / "components"
-    compound, ordered_ids = generate_assembly(spec, ir, components_dir=components_dir)
+    # Per-iteration components dir avoids overwriting earlier iterations.
+    components_dir = example_dir / f"components_iter{iteration:02d}"
+    compound, ordered_ids, _ = generate_assembly(
+        spec,
+        ir,
+        components_dir=components_dir,
+        figure_crops=figure_crops,
+        code_cache_dir=code_cache_dir,
+        enable_codegen=enable_codegen,
+    )
     suffix = f"_iter{iteration:02d}"
     step_path = example_dir / f"model_v1.1{suffix}.step"
     glb_path = example_dir / f"model_v1.1{suffix}.glb"
@@ -316,6 +351,7 @@ def refine(
     target_score: float = 8.0,
     cost_soft_cap: float = 70.0,
     patent_context: str = "",
+    enable_codegen: bool = True,
 ) -> dict[str, Any]:
     """Run the iterative refinement loop on ``example_dir``.
 
@@ -341,6 +377,27 @@ def refine(
     spec = FigureSpec.from_dict(json.loads(initial_spec_path.read_text("utf-8")))
     component_list = [c.id + ": " + c.label for c in ir.components]
 
+    # Reuse the figure crops + codegen cache the figure_to_cad stage
+    # produced. If they don't exist (e.g. user ran an earlier figure_to_cad
+    # before this code shipped), regenerate now.
+    from claim2cad.figure_crops import crop_all_components, crops_by_component_id
+
+    figure_crops_dict: dict[str, Any] = {}
+    figure_map_path = example_dir / "figure_map.json"
+    if figure_map_path.exists():
+        try:
+            fmap = json.loads(figure_map_path.read_text("utf-8"))
+            crops = crop_all_components(
+                figure_path,
+                fmap,
+                out_dir=example_dir / "crops",
+                crop_radius=0.12,
+            )
+            figure_crops_dict = crops_by_component_id(crops)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Could not refresh figure crops: %s", exc)
+    code_cache_dir = example_dir / "codegen_cache"
+
     history: list[IterationRecord] = []
     last_two_scores: list[float] = []
     final_step: Path | None = None
@@ -356,7 +413,15 @@ def refine(
 
     for it in range(max_iterations + 1):
         # Iteration 0 = build + validate the input spec as-is.
-        step_path, glb_path = _write_iteration_artifacts(example_dir, it, spec, ir)
+        step_path, glb_path = _write_iteration_artifacts(
+            example_dir,
+            it,
+            spec,
+            ir,
+            figure_crops=figure_crops_dict,
+            code_cache_dir=code_cache_dir,
+            enable_codegen=enable_codegen,
+        )
         report, composite = _validate(
             example_dir,
             step_path,
@@ -544,6 +609,11 @@ def _build_argparser() -> argparse.ArgumentParser:
     p.add_argument("--target-score", type=float, default=8.0)
     p.add_argument("--cost-soft-cap", type=float, default=70.0)
     p.add_argument("--patent-context", default="")
+    p.add_argument(
+        "--no-codegen",
+        action="store_true",
+        help="Disable VLM build123d codegen during refinement.",
+    )
     return p
 
 
@@ -563,6 +633,7 @@ def main(argv: list[str] | None = None) -> int:
         target_score=args.target_score,
         cost_soft_cap=args.cost_soft_cap,
         patent_context=args.patent_context,
+        enable_codegen=not args.no_codegen,
     )
     print(json.dumps(summary, indent=2))
     return 0

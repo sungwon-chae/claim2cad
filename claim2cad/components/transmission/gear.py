@@ -107,6 +107,19 @@ class SpurGear(Component):
     "spur_gear",
     aliases=("gear", "pinion", "spur"),
     description="Spur gear with cosmetic teeth.",
+    param_aliases={
+        "n_teeth": "teeth",
+        "tooth_count": "teeth",
+        "face_width": "thickness",
+        "width": "thickness",
+        "bore": "bore_diameter",
+    },
+    param_schema={
+        "module": "float, mm — gear module (pitch dia = module*teeth)",
+        "teeth": "int >= 6",
+        "thickness": "float, mm — face width along Z",
+        "bore_diameter": "float, mm — center bore (0 = no bore)",
+    },
 )
 def make_spur_gear(**kwargs) -> SpurGear:
     return SpurGear(**kwargs)

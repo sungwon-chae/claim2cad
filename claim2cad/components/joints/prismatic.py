@@ -69,6 +69,18 @@ class PrismaticJoint(Component):
     "prismatic_joint",
     aliases=("rail_slider", "linear_rail", "slide", "linear_stage"),
     description="Rail-and-slider prismatic joint.",
+    param_aliases={
+        "length": "rail_length",
+        "width": "rail_width",
+        "height": "rail_height",
+    },
+    param_schema={
+        "rail_length": "float, mm — extent along Y",
+        "rail_width": "float, mm — cross-section width along X",
+        "rail_height": "float, mm — extent along Z",
+        "slider_length": "float, mm",
+        "slider_clearance": "float, mm — gap between rail and slider",
+    },
 )
 def make_prismatic_joint(**kwargs) -> PrismaticJoint:
     return PrismaticJoint(**kwargs)

@@ -1,0 +1,8 @@
+{
+  "door_half_member": "codegen",
+  "pintle_pin": "library:pin",
+  "main_member": "codegen",
+  "u_shaped_link_member": "codegen",
+  "stop_means": "library:rod",
+  "leaf_flange": "codegen"
+}

@@ -82,10 +82,29 @@ class Plate(Component):
         return points
 
 
+_PLATE_PARAM_ALIASES = {
+    # VLM commonly emits these — route to canonical field names.
+    "size_x": "length",
+    "size_y": "width",
+    "size_z": "thickness",
+    "depth": "thickness",
+    "height": "thickness",  # for a flat plate, "height" almost always means thickness
+}
+
+_PLATE_PARAM_SCHEMA = {
+    "length": "float, mm — extent along X (the long axis)",
+    "width": "float, mm — extent along Y",
+    "thickness": "float, mm — extent along Z (the sheet thickness)",
+    "fillet_radius": "float, mm — corner fillet radius (0 = sharp)",
+}
+
+
 @register(
     "plate",
     aliases=("flat_plate", "sheet", "wall", "mounting_wall", "base_plate"),
     description="Rectangular plate with optional hole pattern and rounded corners.",
+    param_aliases=_PLATE_PARAM_ALIASES,
+    param_schema=_PLATE_PARAM_SCHEMA,
 )
 def make_plate(**kwargs) -> Plate:
     return Plate(**kwargs)
@@ -95,6 +114,8 @@ def make_plate(**kwargs) -> Plate:
     "leaf",
     aliases=("hinge_leaf", "leaf_plate", "leaf_flange"),
     description="Hinge leaf — a plate sized for a knuckle hinge.",
+    param_aliases=_PLATE_PARAM_ALIASES,
+    param_schema=_PLATE_PARAM_SCHEMA,
 )
 def make_leaf(**kwargs) -> Plate:
     """Defaults sized for the US4807331A leaves: 80x40x3 with 4 mounting holes."""

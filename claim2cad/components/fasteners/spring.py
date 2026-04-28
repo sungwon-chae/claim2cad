@@ -103,6 +103,24 @@ class HelicalSpring(Component):
     "helical_spring",
     aliases=("spring", "compression_spring", "coil_spring"),
     description="Helical compression spring with true helical wire.",
+    param_aliases={
+        "od": "outer_diameter",
+        "diameter": "outer_diameter",
+        "wire_thickness": "wire_diameter",
+        "length": "free_length",
+        "height": "free_length",
+        "n_coils": "active_coils",
+        "coils": "active_coils",
+        "turns": "active_coils",
+    },
+    param_schema={
+        "outer_diameter": "float, mm",
+        "wire_diameter": "float, mm — must be < outer_diameter / 2",
+        "free_length": "float, mm — uncompressed length",
+        "pitch": "float, mm — distance between coils (0 = derive from active_coils)",
+        "active_coils": "float — number of full turns",
+        "end_type": "string in {open, closed, ground}",
+    },
 )
 def make_helical_spring(**kwargs) -> HelicalSpring:
     return HelicalSpring(**kwargs)

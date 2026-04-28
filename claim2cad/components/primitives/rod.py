@@ -87,12 +87,32 @@ class Rod(Component):
         }
 
 
+_ROD_PARAM_ALIASES = {
+    "od": "diameter",
+    "outer_diameter": "diameter",
+    "radius": "diameter",  # callers occasionally send radius — we'll *2 below
+    "height": "length",
+}
+
+_ROD_PARAM_SCHEMA = {
+    "length": "float, mm — overall length along Z",
+    "diameter": "float, mm — outer diameter",
+    "end_a_style": "string in {flat, rounded, threaded, flat_face}",
+    "end_b_style": "string in {flat, rounded, threaded, flat_face}",
+}
+
+
 @register(
     "rod",
     aliases=("shaft", "axle", "link_rod", "strut", "cylinder_rod"),
     description="Cylindrical rod with optional rounded / threaded / flat ends.",
+    param_aliases=_ROD_PARAM_ALIASES,
+    param_schema=_ROD_PARAM_SCHEMA,
 )
 def make_rod(**kwargs) -> Rod:
+    # Special-case: if VLM passed "radius" via alias, double it once.
+    if "radius" in kwargs and "diameter" not in kwargs:
+        kwargs["diameter"] = float(kwargs.pop("radius")) * 2.0
     return Rod(**kwargs)
 
 

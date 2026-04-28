@@ -85,10 +85,27 @@ class RevoluteJoint(Component):
         }
 
 
+_REVOLUTE_PARAM_ALIASES = {
+    "length": "arm_a_length",
+    "width": "arm_width",
+    "thickness": "arm_thickness",
+    "height": "arm_width",
+}
+
+
 @register(
     "revolute_joint",
     aliases=("pivot", "pivot_joint", "rotary_joint"),
     description="Generic two-arm revolute joint.",
+    param_aliases=_REVOLUTE_PARAM_ALIASES,
+    param_schema={
+        "arm_a_length": "float, mm — arm A extent in +Y from the pivot",
+        "arm_b_length": "float, mm — arm B extent in -Y from the pivot",
+        "arm_width": "float, mm — width of each arm along Z",
+        "arm_thickness": "float, mm — thickness along X",
+        "pin_diameter": "float, mm",
+        "knuckle_diameter": "float, mm — bushing OD (must be > pin_diameter)",
+    },
 )
 def make_revolute_joint(**kwargs) -> RevoluteJoint:
     return RevoluteJoint(**kwargs)

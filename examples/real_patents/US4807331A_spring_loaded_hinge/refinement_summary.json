@@ -1,0 +1,61 @@
+{
+  "iterations": [
+    {
+      "iteration": 0,
+      "score": 3.0,
+      "silhouette": 3.0,
+      "proportion": 4.0,
+      "feature": 2.0,
+      "arrangement": 3.0,
+      "defect_count": 7,
+      "refined_components": [
+        "u_shaped_link_member",
+        "door_half_member",
+        "main_member",
+        "upper_leg",
+        "pintle_pin"
+      ],
+      "notes": "The CAD captures only the broadest arrangement: a mounting plate with a small hinge block and a perpendicular plate. Almost none of the distinctive hinge geometry \u2014 U-shaped link, parallel extensions, leaf flange, pintle pin with stops \u2014 is visible, so the model reads as a placeholder rather than a faithful depiction.",
+      "cost_usd_so_far": 7.273904999999997
+    },
+    {
+      "iteration": 1,
+      "score": 2.0,
+      "silhouette": 2.0,
+      "proportion": 2.0,
+      "feature": 1.0,
+      "arrangement": 2.0,
+      "defect_count": 6,
+      "refined_components": [
+        "u_shaped_link_member",
+        "door_half_member",
+        "body_half_sub_assembly",
+        "pintle_pin",
+        "vehicle_body"
+      ],
+      "notes": "The CAD shows a flat plate with a small blocky fixture, which vaguely suggests a hinge mounted to a body panel, but none of the defining hinge features (U-link, pintle pin, leaf flange, parallel extensions) are identifiable. Overall fidelity to the patent figure is very low.",
+      "cost_usd_so_far": 7.360434999999997
+    },
+    {
+      "iteration": 2,
+      "score": 2.0,
+      "silhouette": 2.0,
+      "proportion": 3.0,
+      "feature": 2.0,
+      "arrangement": 2.0,
+      "defect_count": 7,
+      "refined_components": [],
+      "notes": "The CAD model shows a generic blocky assembly of plates and slabs with a small protruding pin, but it fails to reproduce the hinge's key topology: a U-shaped link with upper/lower legs, a bracket main member, and a vertical pintle. Overall silhouette and feature presence are far from the patent figure.",
+      "cost_usd_so_far": 7.451349999999997
+    }
+  ],
+  "final_score": 2.0,
+  "best_score": 3.0,
+  "target_score": 8.0,
+  "max_iterations": 2,
+  "stopped_reason": "max_iterations 2",
+  "model_v1.1_step": "examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.step",
+  "model_v1.1_glb": "examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.glb",
+  "render_comparison_png": "examples/real_patents/US4807331A_spring_loaded_hinge/render_comparison.png",
+  "best_iteration": 0
+}

@@ -152,3 +152,8 @@
 {"ts": "2026-04-27T23:11:47", "task_type": "claim_parse", "model": "anthropic/claude-sonnet-4.6", "prompt_tokens": 6647, "completion_tokens": 648, "cost_usd": 0.029661, "note": ""}
 {"ts": "2026-04-28T11:43:22", "task_type": "v11_visual_validation", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4082, "completion_tokens": 385, "cost_usd": 0.030035, "note": "img=render_v1.0_vs_figure.png"}
 {"ts": "2026-04-28T11:47:16", "task_type": "v11_figure_to_spec", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 7188, "completion_tokens": 3022, "cost_usd": 0.11149, "note": "img=figure_1.png"}
+{"ts": "2026-04-28T11:52:42", "task_type": "v11_refinement_validation", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4064, "completion_tokens": 546, "cost_usd": 0.03397, "note": "img=composite_iter00.png"}
+{"ts": "2026-04-28T11:52:59", "task_type": "v11_refinement", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4767, "completion_tokens": 1222, "cost_usd": 0.054385, "note": "img=composite_iter00.png"}
+{"ts": "2026-04-28T11:53:22", "task_type": "v11_refinement_validation", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4064, "completion_tokens": 473, "cost_usd": 0.032145, "note": "img=composite_iter01.png"}
+{"ts": "2026-04-28T11:53:40", "task_type": "v11_refinement", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4874, "completion_tokens": 1312, "cost_usd": 0.05717, "note": "img=composite_iter01.png"}
+{"ts": "2026-04-28T11:54:00", "task_type": "v11_refinement_validation", "model": "anthropic/claude-opus-4.7", "prompt_tokens": 4064, "completion_tokens": 537, "cost_usd": 0.033745, "note": "img=composite_iter02.png"}

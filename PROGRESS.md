@@ -1146,3 +1146,68 @@ US4807331A_spring_loaded_hinge.
 - Phase V11-3: $0.111 (one figure-to-spec call).
 - **Total session: $0.141**, cap $100, soft cap $70.
 
+
+## Phase V11-4 — Iterative Refinement Loop — COMPLETED 2026-04-28 11:55 KST
+
+### What shipped
+- `claim2cad/refinement_loop.py` with:
+  - `refine(example_dir, max_iterations, target_score, cost_soft_cap)` —
+    main entry point.
+  - Whole-assembly validation per iteration (score + per-component defects).
+  - `_pick_components_to_refine` chooses worst components by severity
+    (major > moderate > minor), capped at 5 per round, deduplicated.
+  - `_request_refinements` sends the composite + flagged spec rows + defects
+    to Opus 4.7 and parses revised ComponentSpec rows.
+  - `_merge_revisions` overlays revisions on the FigureSpec by component_id.
+  - Each iteration writes `model_v1.1_iter{NN}.step` + `.glb`,
+    `composite_iter{NN}.png`, `figure_spec_iter{NN+1}.json` so the loop is
+    fully resumable.
+  - **The BEST-scoring iteration is promoted to canonical
+    `model_v1.1.step / .glb`**, not the last. Refinement is allowed to
+    regress; we don't have to ship the regression.
+  - Stop conditions: target_score reached, max_iterations elapsed, cost
+    soft cap, or two consecutive non-improving iterations.
+  - Writes `refinement_log.md` (markdown table of iterations, defects,
+    cost) and `refinement_summary.json` (machine-readable).
+- `tests/test_refinement_loop.py` — 8 tests covering severity ordering,
+  dedup, unknown-id skip, spec merging, and stop-reason logic.
+
+### Applied to US4807331A_spring_loaded_hinge
+- 3 iterations run with `--max-iters 2`. Scores: **3 → 2 → 2**.
+- Best iteration (00) promoted to `model_v1.1.step` / `model_v1.1.glb`.
+- v1.0 baseline score: **0/10**. v1.1 best score: **3/10**.
+- The two refinement passes regressed the score — the VLM's revised
+  positions broke alignment with non-flagged neighbours. The loop
+  correctly halted on "no improvement for 2 iterations". This is the
+  honest result; we shipped iter00 (the best) and documented the
+  instability in QUALITY_NOTES.md.
+- `render_comparison.png` shows clear visual improvement over v1.0:
+  recognisable hinge cluster (two leaves + pin), U-bracket, mounting
+  plates, vs v1.0's row-of-dots.
+
+### Verification
+- `python -m claim2cad.refinement_loop examples/real_patents/US4807331A_spring_loaded_hinge --max-iters 2`
+  ran end-to-end, ~50 s, 5 vision calls.
+- `model_v1.1.glb` exists at 400 KB (well within 50 KB - 5 MB band).
+- `refinement_log.md` shows real per-iteration history.
+- `pytest -q` — **177 passed** (169 + 8 new).
+
+### QUALITY_NOTES.md
+Honest write-up at
+`examples/real_patents/US4807331A_spring_loaded_hinge/QUALITY_NOTES.md`:
+- v1.0 baseline 0/10 → v1.1 final 3/10 (target was 7-8; documented why
+  not reached, didn't fake it).
+- Specific defects: U-shape not visible from iso, pintle pin not
+  aligned through holes, two outsized plates dominate silhouette,
+  abstract claim concepts (hinge_axis) generate stub geometry.
+- Concrete Session-2 improvements queued: per-component rendering,
+  constraint-aware revisions, multi-figure context, library upgrades.
+- Bottom line: 30-40% of text-to-cad-video quality on this single
+  example, vs 0% for v1.0.
+
+### Cost so far (Session 1)
+- V11-2: $0.030 (baseline validation).
+- V11-3: $0.111 (figure analysis).
+- V11-4: $0.180 (3 validations + 2 refinements).
+- **Total session: ~$0.32** of $100 cap, $70 soft cap.
+

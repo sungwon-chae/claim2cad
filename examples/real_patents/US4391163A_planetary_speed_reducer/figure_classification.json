@@ -1,0 +1,12 @@
+{
+  "example_id": "US4391163A_planetary_speed_reducer",
+  "view_type": "oblique",
+  "topology": "planetary_gear",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:planetary_gear:keyword:'planetary gear'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

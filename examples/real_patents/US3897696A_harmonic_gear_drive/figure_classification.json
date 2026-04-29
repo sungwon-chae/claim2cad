@@ -1,0 +1,12 @@
+{
+  "example_id": "US3897696A_harmonic_gear_drive",
+  "view_type": "oblique",
+  "topology": "harmonic_gear",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:harmonic_gear:keyword:'harmonic gear'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

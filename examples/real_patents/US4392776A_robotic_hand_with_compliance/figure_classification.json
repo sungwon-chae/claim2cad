@@ -1,0 +1,12 @@
+{
+  "example_id": "US4392776A_robotic_hand_with_compliance",
+  "view_type": "oblique",
+  "topology": "rotary_shaft",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:rotary_shaft:keyword:'shaft'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "example_id": "US4816730A_autonomous_mobile_robot",
+  "view_type": "oblique",
+  "topology": "robotic_arm",
+  "recommended_scaffold": "linkage",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:robotic_arm:keyword:'robotic arm'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

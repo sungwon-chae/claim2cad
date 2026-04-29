@@ -1,0 +1,12 @@
+{
+  "example_id": "US5180955A_positioning_apparatus_for_arm",
+  "view_type": "sectional",
+  "topology": "rotary_shaft",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.8,
+  "evidence": [
+    "topology:rotary_shaft:keyword:'shaft'",
+    "view:sectional:keyword"
+  ],
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "example_id": "US3789698A_compact_planetary_drive",
+  "view_type": "oblique",
+  "topology": "rotary_shaft",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:rotary_shaft:keyword:'transmission'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

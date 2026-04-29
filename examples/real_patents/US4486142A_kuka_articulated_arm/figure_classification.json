@@ -1,0 +1,12 @@
+{
+  "example_id": "US4486142A_kuka_articulated_arm",
+  "view_type": "oblique",
+  "topology": "unknown",
+  "recommended_scaffold": "fallback_grid",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:unknown \u2014 no keyword match",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": "no topology keyword matched; using fallback_grid"
+}

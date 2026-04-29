@@ -1,0 +1,12 @@
+{
+  "example_id": "US4807331A_spring_loaded_hinge",
+  "view_type": "oblique",
+  "topology": "door_hinge",
+  "recommended_scaffold": "door_hinge",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:door_hinge:keyword:'spring loaded hinge'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

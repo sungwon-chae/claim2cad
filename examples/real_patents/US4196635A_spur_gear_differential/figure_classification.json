@@ -1,0 +1,12 @@
+{
+  "example_id": "US4196635A_spur_gear_differential",
+  "view_type": "oblique",
+  "topology": "housing_panel",
+  "recommended_scaffold": "housing_panel",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:housing_panel:keyword:'housing'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

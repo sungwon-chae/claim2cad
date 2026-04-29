@@ -1,0 +1,12 @@
+{
+  "example_id": "US4762016A_robotic_drive_unit",
+  "view_type": "oblique",
+  "topology": "robotic_arm",
+  "recommended_scaffold": "linkage",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:robotic_arm:keyword:'manipulator'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

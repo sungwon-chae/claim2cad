@@ -1,0 +1,12 @@
+{
+  "example_id": "US4407625A_multi_arm_robotic_assembly",
+  "view_type": "sectional",
+  "topology": "robotic_arm",
+  "recommended_scaffold": "linkage",
+  "confidence": 0.8,
+  "evidence": [
+    "topology:robotic_arm:keyword:'manipulator'",
+    "view:sectional:keyword"
+  ],
+  "notes": ""
+}

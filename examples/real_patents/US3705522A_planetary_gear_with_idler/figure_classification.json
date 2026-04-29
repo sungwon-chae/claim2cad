@@ -1,0 +1,12 @@
+{
+  "example_id": "US3705522A_planetary_gear_with_idler",
+  "view_type": "oblique",
+  "topology": "planetary_gear",
+  "recommended_scaffold": "rotary_shaft",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:planetary_gear:keyword:'planetary gear'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

@@ -1,0 +1,12 @@
+{
+  "example_id": "US4575297A_puma_industrial_robot",
+  "view_type": "oblique",
+  "topology": "robotic_arm",
+  "recommended_scaffold": "linkage",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:robotic_arm:keyword:'elbow joint'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

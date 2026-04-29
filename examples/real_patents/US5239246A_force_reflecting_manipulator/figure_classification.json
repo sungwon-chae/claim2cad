@@ -1,0 +1,12 @@
+{
+  "example_id": "US5239246A_force_reflecting_manipulator",
+  "view_type": "oblique",
+  "topology": "robotic_arm",
+  "recommended_scaffold": "linkage",
+  "confidence": 0.55,
+  "evidence": [
+    "topology:robotic_arm:keyword:'robot arm'",
+    "view:oblique:default_for_mechanical_patent"
+  ],
+  "notes": ""
+}

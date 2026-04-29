@@ -41,6 +41,72 @@
     "n_distinct_large": 15,
     "floating_score": 0.556
   },
+  "oblique_scene": {
+    "score": 1.0,
+    "door_panel_y_span_mm": 111.4,
+    "note": "Y-span > ~80 mm indicates a substantial out-of-frame rotation"
+  },
+  "door_frame_angle": {
+    "score": 1.0,
+    "door_bbox_angle_deg": 36.0,
+    "frame_bbox_angle_deg": 9.9,
+    "delta_deg": 26.1,
+    "target_window_deg": [
+      25.0,
+      55.0
+    ]
+  },
+  "hinge_axis_between_planes": {
+    "score": 0.0,
+    "verdict": "outside both panels",
+    "pintle_cxcy_mm": [
+      -1.0,
+      0.0
+    ],
+    "in_door_bbox": false,
+    "in_frame_bbox": false
+  },
+  "attached_component_ratio": {
+    "score": 1.0,
+    "attached": 4,
+    "total": 4,
+    "per_component": [
+      {
+        "label": "lower_door_leaf",
+        "door": true,
+        "frame": false,
+        "other_hinge": false
+      },
+      {
+        "label": "upper_hinge_knuckle",
+        "door": false,
+        "frame": false,
+        "other_hinge": true
+      },
+      {
+        "label": "lower_hinge_knuckle",
+        "door": false,
+        "frame": false,
+        "other_hinge": true
+      },
+      {
+        "label": "pintle_pin",
+        "door": false,
+        "frame": false,
+        "other_hinge": true
+      }
+    ]
+  },
+  "default_camera_is_patent_figure": {
+    "score": 1.0,
+    "preset_id": "patent_figure",
+    "elev_deg": 22,
+    "azim_deg": -60
+  },
+  "demo_hero_exists": {
+    "score": 1.0,
+    "size_bytes": 89582
+  },
   "v11_carryover": {
     "v11_composite": 0.768,
     "axis_scores": {
@@ -57,14 +123,20 @@
     }
   },
   "overall": {
-    "composite": 0.662,
+    "composite": 0.753,
     "weights": {
-      "figure_resemblance": 0.15,
-      "panel_dominance": 0.15,
-      "hinge_axis_visibility": 0.1,
-      "floating_components": 0.1,
-      "demo_readability": 0.2,
-      "v11": 0.3
+      "figure_resemblance": 0.08,
+      "panel_dominance": 0.1,
+      "hinge_axis_visibility": 0.07,
+      "floating_components": 0.05,
+      "demo_readability": 0.1,
+      "oblique_scene": 0.1,
+      "door_frame_angle": 0.1,
+      "hinge_axis_between_planes": 0.05,
+      "attached_component_ratio": 0.05,
+      "default_camera_is_patent_figure": 0.03,
+      "demo_hero_exists": 0.02,
+      "v11": 0.25
     },
     "verdict_short": "ok"
   },

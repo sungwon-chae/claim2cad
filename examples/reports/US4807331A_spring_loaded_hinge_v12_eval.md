@@ -1,6 +1,6 @@
 # Claim2CAD v1.2 evaluation — US4807331A_spring_loaded_hinge
 
-**Composite: 0.662** (verdict: *ok*)
+**Composite: 0.753** (verdict: *ok*)
 
 ## Visual axes (the human-aligned ones)
 
@@ -11,6 +11,12 @@
 | `hinge_axis_visibility` | 1.000 | long_axis_mm=180.0, short_axis_mm=9.0, aspect_ratio=20.0 |
 | `floating_components` | 0.556 | n_total=15, n_floating=2 |
 | `demo_readability` | 0.616 | verdict=ok, panel_dominance=1.0, n_distinct_large=15, floating_score=0.556 |
+| `oblique_scene` | 1.000 | door_panel_y_span_mm=111.4, note=Y-span > ~80 mm indicates a substantial out-of-frame rotation |
+| `door_frame_angle` | 1.000 | door_bbox_angle_deg=36.0, frame_bbox_angle_deg=9.9, delta_deg=26.1 |
+| `hinge_axis_between_planes` | 0.000 | verdict=outside both panels, in_door_bbox=False, in_frame_bbox=False |
+| `attached_component_ratio` | 1.000 | attached=4, total=4 |
+| `default_camera_is_patent_figure` | 1.000 | preset_id=patent_figure, elev_deg=22, azim_deg=-60 |
+| `demo_hero_exists` | 1.000 | size_bytes=89582 |
 
 ## V11 axes (carryover — structural correctness)
 
@@ -33,6 +39,13 @@ V11 composite: **0.768**
 (none)
 
 ## Visual artefacts to inspect
+- `renders_v1.2/hero_oblique.png`
+- `renders_v1.2/hero_oblique_comparison.png`
+- `renders_v1.2/oblique_iso.png`
+- `renders_v1.2/oblique_figure_match.png`
+- `renders_v1.2/oblique_comparison.png`
+- `renders_v1.2/patent_figure_camera.png`
+- `renders_v1.2/patent_figure_comparison.png`
 - `renders_v1.2/readable_figure_aligned.png`
 - `renders_v1.2/readable_iso.png`
 - `renders_v1.2/readable_exploded.png`

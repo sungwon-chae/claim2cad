@@ -57,6 +57,13 @@ class V12EvalReport:
     hinge_axis_visibility: dict[str, Any] = field(default_factory=dict)
     floating_components: dict[str, Any] = field(default_factory=dict)
     demo_readability: dict[str, Any] = field(default_factory=dict)
+    # V12-O additions — measure the oblique reconstruction.
+    oblique_scene: dict[str, Any] = field(default_factory=dict)
+    door_frame_angle: dict[str, Any] = field(default_factory=dict)
+    hinge_axis_between_planes: dict[str, Any] = field(default_factory=dict)
+    attached_component_ratio: dict[str, Any] = field(default_factory=dict)
+    default_camera_is_patent_figure: dict[str, Any] = field(default_factory=dict)
+    demo_hero_exists: dict[str, Any] = field(default_factory=dict)
     v11_carryover: dict[str, Any] = field(default_factory=dict)
     overall: dict[str, Any] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
@@ -70,6 +77,12 @@ class V12EvalReport:
             "hinge_axis_visibility": self.hinge_axis_visibility,
             "floating_components": self.floating_components,
             "demo_readability": self.demo_readability,
+            "oblique_scene": self.oblique_scene,
+            "door_frame_angle": self.door_frame_angle,
+            "hinge_axis_between_planes": self.hinge_axis_between_planes,
+            "attached_component_ratio": self.attached_component_ratio,
+            "default_camera_is_patent_figure": self.default_camera_is_patent_figure,
+            "demo_hero_exists": self.demo_hero_exists,
             "v11_carryover": self.v11_carryover,
             "overall": self.overall,
             "notes": self.notes,
@@ -357,6 +370,266 @@ def _eval_demo_readability(
     }
 
 
+def _eval_oblique_scene(example_dir: Path) -> dict[str, Any]:
+    """V12-O — does an oblique opened-door model exist alongside
+    the flat one? Pass-through if model_v1.2_oblique.glb exists
+    AND has a substantially different door bbox from the flat
+    model (signalling an actual rotation, not just renaming)."""
+    flat_step = example_dir / "model_v1.2.step"
+    oblique_step = example_dir / "model_v1.2_oblique.step"
+    if not oblique_step.exists():
+        return {"score": 0.0, "note": "no model_v1.2_oblique.step"}
+    try:
+        import build123d as bd
+
+        ob = bd.import_step(str(oblique_step))
+        door = next((c for c in getattr(ob, "children", [])
+                     if c.label == "door_panel"), None)
+        if door is None:
+            return {"score": 0.0, "note": "no door_panel in oblique model"}
+        bb = door.bounding_box()
+        # In a flat closed-door model the door would lie in a thin
+        # Y slab (sy ≈ 6-10 mm). After 35° rotation about Z, the
+        # door's projection onto Y grows substantially — sy spans
+        # ~100 mm.
+        sy = bb.max.Y - bb.min.Y
+        score = max(0.0, min(1.0, (sy - 20.0) / 60.0))
+        return {
+            "score": round(score, 3),
+            "door_panel_y_span_mm": round(sy, 1),
+            "note": "Y-span > ~80 mm indicates a substantial out-of-frame rotation",
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_door_frame_angle(example_dir: Path) -> dict[str, Any]:
+    """V12-O — measure the angle between door_panel plane normal and
+    fixed_frame plane normal in the oblique model. Patent figure
+    shows the door open ~35-50°, which means the normals are at
+    that same angle (since both panels were originally parallel,
+    rotating one about a vertical axis rotates its normal by the
+    same angle)."""
+    step_path = example_dir / "model_v1.2_oblique.step"
+    if not step_path.exists():
+        return {"score": 0.0, "note": "no oblique model"}
+    try:
+        import build123d as bd
+        import numpy as np
+
+        sh = bd.import_step(str(step_path))
+        door = next((c for c in getattr(sh, "children", [])
+                      if c.label == "door_panel"), None)
+        frame = next((c for c in getattr(sh, "children", [])
+                       if c.label == "fixed_frame"), None)
+        if door is None or frame is None:
+            return {"score": 0.0, "note": "missing door or frame in oblique model"}
+
+        def _principal_normal(part) -> tuple[float, float, float]:
+            """The dominant normal direction of a thin part — the
+            axis along which the bbox is THINNEST."""
+            bb = part.bounding_box()
+            sx = bb.max.X - bb.min.X
+            sy = bb.max.Y - bb.min.Y
+            sz = bb.max.Z - bb.min.Z
+            sizes = [(sx, (1.0, 0.0, 0.0)),
+                     (sy, (0.0, 1.0, 0.0)),
+                     (sz, (0.0, 0.0, 1.0))]
+            sizes.sort(key=lambda r: r[0])
+            return sizes[0][1]
+
+        # The thinnest dimension *would* be the panel normal IF the
+        # panels stayed axis-aligned. After rotation they aren't, so
+        # this approximation only works for the flat model. For the
+        # oblique we approximate using the door's Y-extent vs X-extent
+        # ratio — a closed door has X >> Y; an open door has Y ~ X.
+        d_bb = door.bounding_box()
+        f_bb = frame.bounding_box()
+        d_sx = d_bb.max.X - d_bb.min.X
+        d_sy = d_bb.max.Y - d_bb.min.Y
+        f_sx = f_bb.max.X - f_bb.min.X
+        f_sy = f_bb.max.Y - f_bb.min.Y
+        # Door angle ≈ atan(sy_door / sx_door) - atan(sy_frame / sx_frame).
+        ang_door = np.degrees(np.arctan2(d_sy, d_sx))
+        ang_frame = np.degrees(np.arctan2(f_sy, f_sx))
+        delta = abs(ang_door - ang_frame)
+        # Score: 1.0 when delta in [25, 55]°, decays linearly outside.
+        if delta < 10.0:
+            score = 0.0
+        elif delta < 25.0:
+            score = (delta - 10.0) / 15.0
+        elif delta <= 55.0:
+            score = 1.0
+        elif delta <= 80.0:
+            score = 1.0 - (delta - 55.0) / 25.0
+        else:
+            score = 0.0
+        return {
+            "score": round(max(0.0, min(1.0, score)), 3),
+            "door_bbox_angle_deg": round(ang_door, 1),
+            "frame_bbox_angle_deg": round(ang_frame, 1),
+            "delta_deg": round(delta, 1),
+            "target_window_deg": [25.0, 55.0],
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_hinge_axis_between_planes(example_dir: Path) -> dict[str, Any]:
+    """V12-O — pintle pin's X must sit between the door's right
+    edge X and the frame's left edge X (i.e. between the two
+    panels, not on top of either). The figure shows the pintle on
+    the shared hinge edge."""
+    step_path = example_dir / "model_v1.2_oblique.step"
+    if not step_path.exists():
+        return {"score": 0.0, "note": "no oblique model"}
+    try:
+        import build123d as bd
+
+        sh = bd.import_step(str(step_path))
+        door = next((c for c in getattr(sh, "children", [])
+                      if c.label == "door_panel"), None)
+        frame = next((c for c in getattr(sh, "children", [])
+                       if c.label == "fixed_frame"), None)
+        pintle = next((c for c in getattr(sh, "children", [])
+                        if c.label == "pintle_pin"), None)
+        if not all([door, frame, pintle]):
+            return {"score": 0.0, "note": "missing door / frame / pintle"}
+        d_bb = door.bounding_box()
+        f_bb = frame.bounding_box()
+        p_bb = pintle.bounding_box()
+        pintle_cx = (p_bb.min.X + p_bb.max.X) / 2
+        pintle_cy = (p_bb.min.Y + p_bb.max.Y) / 2
+        # After door rotation about Z the door's bbox can extend
+        # past the frame's bbox in X, so a strict "between in X"
+        # test no longer applies. Instead we test whether the
+        # pintle XY position lies WITHIN both panels' XY bbox
+        # union — i.e. it's in the same horizontal region as the
+        # hinge edge.
+        in_door_xy = (d_bb.min.X <= pintle_cx <= d_bb.max.X
+                       and d_bb.min.Y <= pintle_cy <= d_bb.max.Y)
+        in_frame_xy = (f_bb.min.X <= pintle_cx <= f_bb.max.X
+                        and f_bb.min.Y <= pintle_cy <= f_bb.max.Y)
+        # Strong score when the pintle is shared by both panels
+        # (i.e. on the literal hinge edge); weak score when only
+        # one panel touches it.
+        if in_door_xy and in_frame_xy:
+            score = 1.0
+            verdict = "shared by both panels (hinge edge)"
+        elif in_door_xy or in_frame_xy:
+            score = 0.6
+            verdict = "in one panel's XY footprint only"
+        else:
+            score = 0.0
+            verdict = "outside both panels"
+        return {
+            "score": round(score, 3),
+            "verdict": verdict,
+            "pintle_cxcy_mm": [round(pintle_cx, 1), round(pintle_cy, 1)],
+            "in_door_bbox": in_door_xy,
+            "in_frame_bbox": in_frame_xy,
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_attached_component_ratio(example_dir: Path) -> dict[str, Any]:
+    """V12-O — fraction of the hinge sub-assembly meshes
+    (door_leaf, frame_bracket, knuckle, pintle) that intersect
+    EITHER the door_panel bbox OR the fixed_frame bbox OR each
+    other's bbox. A high ratio means the hinge is "attached";
+    a low ratio means the hinge is floating in space."""
+    step_path = example_dir / "model_v1.2_oblique.step"
+    if not step_path.exists():
+        return {"score": 0.0, "note": "no oblique model"}
+    try:
+        import build123d as bd
+
+        sh = bd.import_step(str(step_path))
+        children = list(getattr(sh, "children", []))
+        by_label = {c.label: c for c in children}
+        door = by_label.get("door_panel")
+        frame = by_label.get("fixed_frame")
+        if door is None or frame is None:
+            return {"score": 0.0, "note": "missing panels"}
+        targets = [
+            "upper_door_leaf", "lower_door_leaf",
+            "upper_frame_bracket", "lower_frame_bracket",
+            "upper_hinge_knuckle", "lower_hinge_knuckle",
+            "pintle_pin",
+        ]
+
+        def _intersects(a, b) -> bool:
+            ab = a.bounding_box()
+            bb = b.bounding_box()
+            return (ab.min.X <= bb.max.X and ab.max.X >= bb.min.X and
+                    ab.min.Y <= bb.max.Y and ab.max.Y >= bb.min.Y and
+                    ab.min.Z <= bb.max.Z and ab.max.Z >= bb.min.Z)
+
+        attached = 0
+        attempted = 0
+        statuses: list[dict[str, Any]] = []
+        for label in targets:
+            child = by_label.get(label)
+            if child is None:
+                continue
+            attempted += 1
+            ok_door = _intersects(child, door)
+            ok_frame = _intersects(child, frame)
+            ok_other = any(
+                lbl != label and by_label.get(lbl) is not None
+                and _intersects(child, by_label[lbl])
+                for lbl in targets
+            )
+            if ok_door or ok_frame or ok_other:
+                attached += 1
+            statuses.append({
+                "label": label, "door": ok_door,
+                "frame": ok_frame, "other_hinge": ok_other,
+            })
+        ratio = attached / max(attempted, 1)
+        return {
+            "score": round(ratio, 3),
+            "attached": attached,
+            "total": attempted,
+            "per_component": statuses,
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_default_camera_is_patent_figure(example_dir: Path) -> dict[str, Any]:
+    cam_path = example_dir / "camera_v12.json"
+    if not cam_path.exists():
+        return {"score": 0.0, "note": "no camera_v12.json"}
+    try:
+        cam = json.loads(cam_path.read_text("utf-8"))
+        ok = cam.get("preset_id") == "patent_figure"
+        return {
+            "score": 1.0 if ok else 0.0,
+            "preset_id": cam.get("preset_id"),
+            "elev_deg": cam.get("matplotlib_render", {}).get("elev_deg"),
+            "azim_deg": cam.get("matplotlib_render", {}).get("azim_deg"),
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_demo_hero_exists(example_dir: Path) -> dict[str, Any]:
+    hero = example_dir / "renders_v1.2" / "hero_oblique.png"
+    if not hero.exists():
+        return {"score": 0.0, "note": "no hero_oblique.png"}
+    try:
+        sz = hero.stat().st_size
+        ok = sz >= 50_000  # demo-grade hero is at least 50 KB
+        return {
+            "score": 1.0 if ok else 0.5,
+            "size_bytes": sz,
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
 def _v11_carryover(example_dir: Path) -> dict[str, Any]:
     """Run the V11 evaluator and pass through its overall composite
     so the V12 report shows both lenses at once."""
@@ -418,15 +691,32 @@ def evaluate_example_v12(example_dir: Path) -> V12EvalReport:
         floating_score=float(rep.floating_components.get("score", 0.0)),
         n_distinct_large=n_large,
     )
+    rep.oblique_scene = _eval_oblique_scene(example_dir)
+    rep.door_frame_angle = _eval_door_frame_angle(example_dir)
+    rep.hinge_axis_between_planes = _eval_hinge_axis_between_planes(example_dir)
+    rep.attached_component_ratio = _eval_attached_component_ratio(example_dir)
+    rep.default_camera_is_patent_figure = _eval_default_camera_is_patent_figure(example_dir)
+    rep.demo_hero_exists = _eval_demo_hero_exists(example_dir)
     rep.v11_carryover = _v11_carryover(example_dir)
 
+    # V12-O weights — oblique axes get 30% combined; original V12-G
+    # visual axes 40%; v11 carryover 30%. demo_readability now also
+    # acts as central-pile guard: if its score is 0 (refused credit),
+    # everything gets penalised by the same hard fail.
     weights = {
-        "figure_resemblance": 0.15,
-        "panel_dominance": 0.15,
-        "hinge_axis_visibility": 0.10,
-        "floating_components": 0.10,
-        "demo_readability": 0.20,
-        "v11": 0.30,
+        "figure_resemblance": 0.08,
+        "panel_dominance": 0.10,
+        "hinge_axis_visibility": 0.07,
+        "floating_components": 0.05,
+        "demo_readability": 0.10,
+        # V12-O additions:
+        "oblique_scene": 0.10,
+        "door_frame_angle": 0.10,
+        "hinge_axis_between_planes": 0.05,
+        "attached_component_ratio": 0.05,
+        "default_camera_is_patent_figure": 0.03,
+        "demo_hero_exists": 0.02,
+        "v11": 0.25,
     }
     composite = (
         weights["figure_resemblance"] * float(rep.figure_resemblance.get("score", 0.0))
@@ -435,6 +725,15 @@ def evaluate_example_v12(example_dir: Path) -> V12EvalReport:
             * float(rep.hinge_axis_visibility.get("score", 0.0))
         + weights["floating_components"] * float(rep.floating_components.get("score", 0.0))
         + weights["demo_readability"] * float(rep.demo_readability.get("score", 0.0))
+        + weights["oblique_scene"] * float(rep.oblique_scene.get("score", 0.0))
+        + weights["door_frame_angle"] * float(rep.door_frame_angle.get("score", 0.0))
+        + weights["hinge_axis_between_planes"]
+            * float(rep.hinge_axis_between_planes.get("score", 0.0))
+        + weights["attached_component_ratio"]
+            * float(rep.attached_component_ratio.get("score", 0.0))
+        + weights["default_camera_is_patent_figure"]
+            * float(rep.default_camera_is_patent_figure.get("score", 0.0))
+        + weights["demo_hero_exists"] * float(rep.demo_hero_exists.get("score", 0.0))
         + weights["v11"] * float(rep.v11_carryover.get("v11_composite", 0.0))
     )
     rep.overall = {
@@ -459,6 +758,12 @@ def write_v12_report(rep: V12EvalReport, *, report_dir: Path) -> tuple[Path, Pat
         ("hinge_axis_visibility", rep.hinge_axis_visibility),
         ("floating_components", rep.floating_components),
         ("demo_readability", rep.demo_readability),
+        ("oblique_scene", rep.oblique_scene),
+        ("door_frame_angle", rep.door_frame_angle),
+        ("hinge_axis_between_planes", rep.hinge_axis_between_planes),
+        ("attached_component_ratio", rep.attached_component_ratio),
+        ("default_camera_is_patent_figure", rep.default_camera_is_patent_figure),
+        ("demo_hero_exists", rep.demo_hero_exists),
     ):
         score = axis.get("score", 0)
         detail = ", ".join(f"{k}={v}" for k, v in axis.items()
@@ -481,6 +786,13 @@ def write_v12_report(rep: V12EvalReport, *, report_dir: Path) -> tuple[Path, Pat
     md.append("")
     md.append("## Visual artefacts to inspect")
     for art in (
+        "renders_v1.2/hero_oblique.png",
+        "renders_v1.2/hero_oblique_comparison.png",
+        "renders_v1.2/oblique_iso.png",
+        "renders_v1.2/oblique_figure_match.png",
+        "renders_v1.2/oblique_comparison.png",
+        "renders_v1.2/patent_figure_camera.png",
+        "renders_v1.2/patent_figure_comparison.png",
         "renders_v1.2/readable_figure_aligned.png",
         "renders_v1.2/readable_iso.png",
         "renders_v1.2/readable_exploded.png",

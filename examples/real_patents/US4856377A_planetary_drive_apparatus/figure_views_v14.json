@@ -1,0 +1,41 @@
+{
+  "example_id": "US4856377A_planetary_drive_apparatus",
+  "figure_path": "examples/real_patents/US4856377A_planetary_drive_apparatus/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "oblique",
+  "secondary_views": [
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        444,
+        375,
+        1873,
+        2176
+      ],
+      "view_type": "oblique",
+      "label": "subview_1"
+    },
+    {
+      "bbox": [
+        855,
+        1971,
+        1717,
+        2381
+      ],
+      "view_type": "top",
+      "label": "subview_2"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.691",
+    "connected_components=2",
+    "vert_frac=0.289 horiz_frac=0.417",
+    "max_region_density=0.148",
+    "subviews=['oblique', 'top']"
+  ],
+  "notes": ""
+}

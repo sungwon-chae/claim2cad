@@ -1,0 +1,41 @@
+{
+  "example_id": "US4762016A_robotic_drive_unit",
+  "figure_path": "examples/real_patents/US4762016A_robotic_drive_unit/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "oblique",
+  "secondary_views": [
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        305,
+        328,
+        1953,
+        1655
+      ],
+      "view_type": "oblique",
+      "label": "subview_1"
+    },
+    {
+      "bbox": [
+        252,
+        1924,
+        2056,
+        2841
+      ],
+      "view_type": "top",
+      "label": "subview_2"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.670",
+    "connected_components=2",
+    "vert_frac=0.419 horiz_frac=0.631",
+    "max_region_density=0.068",
+    "subviews=['oblique', 'top']"
+  ],
+  "notes": ""
+}

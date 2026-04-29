@@ -1,0 +1,17 @@
+{
+  "example_id": "US4392776A_robotic_hand_with_compliance",
+  "figure_path": "examples/real_patents/US4392776A_robotic_hand_with_compliance/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.678",
+    "connected_components=2",
+    "vert_frac=0.525 horiz_frac=0.409",
+    "max_region_density=0.078"
+  ],
+  "notes": ""
+}

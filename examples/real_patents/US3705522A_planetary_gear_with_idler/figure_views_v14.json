@@ -1,0 +1,74 @@
+{
+  "example_id": "US3705522A_planetary_gear_with_idler",
+  "figure_path": "examples/real_patents/US3705522A_planetary_gear_with_idler/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "plan",
+  "secondary_views": [
+    "plan",
+    "front",
+    "top",
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        387,
+        333,
+        1940,
+        1731
+      ],
+      "view_type": "plan",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        200,
+        1775,
+        1603,
+        3034
+      ],
+      "view_type": "plan",
+      "label": "subview_3"
+    },
+    {
+      "bbox": [
+        0,
+        2532,
+        362,
+        3366
+      ],
+      "view_type": "front",
+      "label": "subview_4"
+    },
+    {
+      "bbox": [
+        1349,
+        2725,
+        2029,
+        3136
+      ],
+      "view_type": "top",
+      "label": "subview_5"
+    },
+    {
+      "bbox": [
+        172,
+        50,
+        932,
+        402
+      ],
+      "view_type": "top",
+      "label": "subview_1"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.679",
+    "connected_components=5",
+    "vert_frac=0.416 horiz_frac=0.493",
+    "max_region_density=0.126",
+    "subviews=['top', 'plan', 'plan', 'front', 'top']"
+  ],
+  "notes": ""
+}

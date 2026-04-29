@@ -1,0 +1,74 @@
+{
+  "example_id": "US4729261A_compact_gear_reduction",
+  "figure_path": "examples/real_patents/US4729261A_compact_gear_reduction/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "plan",
+  "secondary_views": [
+    "oblique",
+    "oblique",
+    "plan",
+    "plan"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        403,
+        349,
+        1339,
+        1233
+      ],
+      "view_type": "plan",
+      "label": "subview_1"
+    },
+    {
+      "bbox": [
+        983,
+        1532,
+        2003,
+        2311
+      ],
+      "view_type": "oblique",
+      "label": "subview_4"
+    },
+    {
+      "bbox": [
+        415,
+        2071,
+        1277,
+        2798
+      ],
+      "view_type": "oblique",
+      "label": "subview_5"
+    },
+    {
+      "bbox": [
+        1179,
+        662,
+        1903,
+        1427
+      ],
+      "view_type": "plan",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        436,
+        1276,
+        1027,
+        1902
+      ],
+      "view_type": "plan",
+      "label": "subview_3"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.675",
+    "connected_components=5",
+    "vert_frac=0.470 horiz_frac=0.489",
+    "max_region_density=0.130",
+    "subviews=['plan', 'plan', 'plan', 'oblique', 'oblique']"
+  ],
+  "notes": ""
+}

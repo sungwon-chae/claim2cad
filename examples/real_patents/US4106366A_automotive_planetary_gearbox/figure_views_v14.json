@@ -1,0 +1,17 @@
+{
+  "example_id": "US4106366A_automotive_planetary_gearbox",
+  "figure_path": "examples/real_patents/US4106366A_automotive_planetary_gearbox/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.681",
+    "connected_components=2",
+    "vert_frac=0.504 horiz_frac=0.573",
+    "max_region_density=0.315"
+  ],
+  "notes": ""
+}

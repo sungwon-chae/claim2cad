@@ -1,0 +1,52 @@
+{
+  "example_id": "US4575297A_puma_industrial_robot",
+  "figure_path": "examples/real_patents/US4575297A_puma_industrial_robot/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "front",
+  "secondary_views": [
+    "front",
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        594,
+        438,
+        1934,
+        2640
+      ],
+      "view_type": "front",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        573,
+        1759,
+        1107,
+        2535
+      ],
+      "view_type": "front",
+      "label": "subview_3"
+    },
+    {
+      "bbox": [
+        1704,
+        228,
+        2171,
+        343
+      ],
+      "view_type": "top",
+      "label": "subview_1"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.678",
+    "connected_components=3",
+    "vert_frac=0.535 horiz_frac=0.530",
+    "max_region_density=0.120",
+    "subviews=['top', 'front', 'front']"
+  ],
+  "notes": ""
+}

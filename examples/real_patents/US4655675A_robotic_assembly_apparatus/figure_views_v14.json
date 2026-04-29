@@ -1,0 +1,74 @@
+{
+  "example_id": "US4655675A_robotic_assembly_apparatus",
+  "figure_path": "examples/real_patents/US4655675A_robotic_assembly_apparatus/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "plan",
+  "secondary_views": [
+    "plan",
+    "top",
+    "sectional",
+    "sectional"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        839,
+        1706,
+        1672,
+        2609
+      ],
+      "view_type": "plan",
+      "label": "subview_5"
+    },
+    {
+      "bbox": [
+        937,
+        699,
+        1678,
+        1366
+      ],
+      "view_type": "plan",
+      "label": "subview_3"
+    },
+    {
+      "bbox": [
+        1131,
+        1567,
+        1654,
+        1717
+      ],
+      "view_type": "top",
+      "label": "subview_4"
+    },
+    {
+      "bbox": [
+        1212,
+        579,
+        1659,
+        680
+      ],
+      "view_type": "sectional",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        338,
+        200,
+        756,
+        302
+      ],
+      "view_type": "sectional",
+      "label": "subview_1"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.656",
+    "connected_components=5",
+    "vert_frac=0.535 horiz_frac=0.533",
+    "max_region_density=0.202",
+    "subviews=['sectional', 'sectional', 'plan', 'top', 'plan']"
+  ],
+  "notes": ""
+}

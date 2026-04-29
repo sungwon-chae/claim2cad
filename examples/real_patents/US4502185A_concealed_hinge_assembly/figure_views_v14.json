@@ -1,0 +1,52 @@
+{
+  "example_id": "US4502185A_concealed_hinge_assembly",
+  "figure_path": "examples/real_patents/US4502185A_concealed_hinge_assembly/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "top",
+  "secondary_views": [
+    "top",
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        311,
+        1846,
+        1983,
+        2897
+      ],
+      "view_type": "top",
+      "label": "subview_3"
+    },
+    {
+      "bbox": [
+        520,
+        648,
+        1844,
+        1407
+      ],
+      "view_type": "top",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        331,
+        192,
+        748,
+        344
+      ],
+      "view_type": "top",
+      "label": "subview_1"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.678",
+    "connected_components=3",
+    "vert_frac=0.641 horiz_frac=0.359",
+    "max_region_density=0.126",
+    "subviews=['top', 'top', 'top']"
+  ],
+  "notes": ""
+}

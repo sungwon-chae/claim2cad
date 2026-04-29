@@ -1,0 +1,17 @@
+{
+  "example_id": "US3897696A_harmonic_gear_drive",
+  "figure_path": "examples/real_patents/US3897696A_harmonic_gear_drive/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.738",
+    "connected_components=2",
+    "vert_frac=0.379 horiz_frac=0.521",
+    "max_region_density=0.082"
+  ],
+  "notes": ""
+}

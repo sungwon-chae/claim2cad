@@ -1,0 +1,235 @@
+{
+  "examples": [
+    {
+      "id": "US3279624A_unimate_industrial_robot",
+      "view_type": "multi_view_sheet",
+      "primary": "front",
+      "secondary": [
+        "sectional",
+        "plan",
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 4
+    },
+    {
+      "id": "US3705522A_planetary_gear_with_idler",
+      "view_type": "multi_view_sheet",
+      "primary": "plan",
+      "secondary": [
+        "plan",
+        "front",
+        "top",
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 5
+    },
+    {
+      "id": "US3789698A_compact_planetary_drive",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US3897696A_harmonic_gear_drive",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4106366A_automotive_planetary_gearbox",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4196635A_spur_gear_differential",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4329110A_manipulator_with_remote_control",
+      "view_type": "multi_view_sheet",
+      "primary": "front",
+      "secondary": [
+        "front"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 2
+    },
+    {
+      "id": "US4391163A_planetary_speed_reducer",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4392776A_robotic_hand_with_compliance",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4407625A_multi_arm_robotic_assembly",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4467670A_epicyclic_transmission",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4470181A_self_closing_hinge",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4486142A_kuka_articulated_arm",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4502185A_concealed_hinge_assembly",
+      "view_type": "multi_view_sheet",
+      "primary": "top",
+      "secondary": [
+        "top",
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 3
+    },
+    {
+      "id": "US4575297A_puma_industrial_robot",
+      "view_type": "multi_view_sheet",
+      "primary": "front",
+      "secondary": [
+        "front",
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 3
+    },
+    {
+      "id": "US4655675A_robotic_assembly_apparatus",
+      "view_type": "multi_view_sheet",
+      "primary": "plan",
+      "secondary": [
+        "plan",
+        "top",
+        "sectional",
+        "sectional"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 5
+    },
+    {
+      "id": "US4729261A_compact_gear_reduction",
+      "view_type": "multi_view_sheet",
+      "primary": "plan",
+      "secondary": [
+        "oblique",
+        "oblique",
+        "plan",
+        "plan"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 5
+    },
+    {
+      "id": "US4762016A_robotic_drive_unit",
+      "view_type": "multi_view_sheet",
+      "primary": "oblique",
+      "secondary": [
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 2
+    },
+    {
+      "id": "US4807331A_spring_loaded_hinge",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4816730A_autonomous_mobile_robot",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US4856377A_planetary_drive_apparatus",
+      "view_type": "multi_view_sheet",
+      "primary": "oblique",
+      "secondary": [
+        "top"
+      ],
+      "camera": "patent_oblique",
+      "n_regions": 2
+    },
+    {
+      "id": "US4955250A_multiple_forearm_robot",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US5042321A_two_stage_planetary_gear",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US5180955A_positioning_apparatus_for_arm",
+      "view_type": "oblique",
+      "primary": "oblique",
+      "secondary": [],
+      "camera": "patent_oblique",
+      "n_regions": 0
+    },
+    {
+      "id": "US5239246A_force_reflecting_manipulator",
+      "view_type": "front",
+      "primary": "front",
+      "secondary": [],
+      "camera": "front",
+      "n_regions": 0
+    }
+  ]
+}

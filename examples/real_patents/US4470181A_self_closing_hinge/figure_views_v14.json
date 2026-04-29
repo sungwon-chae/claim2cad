@@ -1,0 +1,17 @@
+{
+  "example_id": "US4470181A_self_closing_hinge",
+  "figure_path": "examples/real_patents/US4470181A_self_closing_hinge/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.684",
+    "connected_components=1",
+    "vert_frac=0.336 horiz_frac=0.462",
+    "max_region_density=0.058"
+  ],
+  "notes": ""
+}

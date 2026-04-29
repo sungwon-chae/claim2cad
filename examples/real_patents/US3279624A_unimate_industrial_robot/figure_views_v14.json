@@ -1,0 +1,63 @@
+{
+  "example_id": "US3279624A_unimate_industrial_robot",
+  "figure_path": "examples/real_patents/US3279624A_unimate_industrial_robot/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "front",
+  "secondary_views": [
+    "sectional",
+    "plan",
+    "top"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        155,
+        430,
+        1790,
+        2996
+      ],
+      "view_type": "front",
+      "label": "subview_3"
+    },
+    {
+      "bbox": [
+        2009,
+        30,
+        2123,
+        3377
+      ],
+      "view_type": "sectional",
+      "label": "subview_1"
+    },
+    {
+      "bbox": [
+        1292,
+        749,
+        1766,
+        1174
+      ],
+      "view_type": "plan",
+      "label": "subview_4"
+    },
+    {
+      "bbox": [
+        733,
+        311,
+        1317,
+        465
+      ],
+      "view_type": "top",
+      "label": "subview_2"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.616",
+    "connected_components=4",
+    "vert_frac=0.600 horiz_frac=0.612",
+    "max_region_density=0.399",
+    "subviews=['sectional', 'top', 'front', 'plan']"
+  ],
+  "notes": ""
+}

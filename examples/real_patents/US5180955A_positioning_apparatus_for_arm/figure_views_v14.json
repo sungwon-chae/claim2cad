@@ -1,0 +1,17 @@
+{
+  "example_id": "US5180955A_positioning_apparatus_for_arm",
+  "figure_path": "examples/real_patents/US5180955A_positioning_apparatus_for_arm/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.666",
+    "connected_components=1",
+    "vert_frac=0.587 horiz_frac=0.651",
+    "max_region_density=0.122"
+  ],
+  "notes": ""
+}

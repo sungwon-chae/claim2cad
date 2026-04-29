@@ -1,0 +1,41 @@
+{
+  "example_id": "US4329110A_manipulator_with_remote_control",
+  "figure_path": "examples/real_patents/US4329110A_manipulator_with_remote_control/figures/figure_1.png",
+  "view_type": "multi_view_sheet",
+  "primary_view": "front",
+  "secondary_views": [
+    "front"
+  ],
+  "required_camera": "patent_oblique",
+  "view_regions": [
+    {
+      "bbox": [
+        982,
+        1018,
+        1931,
+        2785
+      ],
+      "view_type": "front",
+      "label": "subview_2"
+    },
+    {
+      "bbox": [
+        463,
+        531,
+        1061,
+        1673
+      ],
+      "view_type": "front",
+      "label": "subview_1"
+    }
+  ],
+  "confidence": 0.75,
+  "evidence": [
+    "aspect=0.748",
+    "connected_components=2",
+    "vert_frac=0.418 horiz_frac=0.416",
+    "max_region_density=0.049",
+    "subviews=['front', 'front']"
+  ],
+  "notes": ""
+}

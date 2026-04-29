@@ -1,0 +1,17 @@
+{
+  "example_id": "US5042321A_two_stage_planetary_gear",
+  "figure_path": "examples/real_patents/US5042321A_two_stage_planetary_gear/figures/figure_1.png",
+  "view_type": "oblique",
+  "primary_view": "oblique",
+  "secondary_views": [],
+  "required_camera": "patent_oblique",
+  "view_regions": [],
+  "confidence": 0.55,
+  "evidence": [
+    "aspect=0.657",
+    "connected_components=1",
+    "vert_frac=0.332 horiz_frac=0.489",
+    "max_region_density=0.053"
+  ],
+  "notes": ""
+}

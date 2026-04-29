@@ -2024,3 +2024,61 @@ known limitations: no leader-line tracing, heuristic per-instance
 disambiguation, no manual_overrides block today, no per-part
 image segmentation.
 
+
+
+## Phase V11-34 — Patent figure leader-line detection — COMPLETED 2026-04-28
+
+`claim2cad/leader_lines.py` traces the line from each numbered
+callout to the part it points to using OpenCV `HoughLinesP` over
+each label's local ROI. A candidate segment qualifies when the
+near endpoint sits within ~18 px of the label box, the far
+endpoint is outside the box, and the segment is at least 30 px
+long. The longest qualifying segment's far endpoint becomes the
+part anchor.
+
+For US4807331A_spring_loaded_hinge: 57/60 leaders detected (95%),
+confidences 0.71–1.00. Output:
+``examples/.../leader_lines.json`` and
+``renders_v1.1/leader_line_debug.png``.
+
+No VLM calls; runs in < 1 s on the 2320×3408 figure.
+
+## Phase V11-35..36 — Leader-grounded hotspots + repeated instances — COMPLETED 2026-04-28
+
+`claim2cad/figure_hotspots.py` rebuilt to emit one record per
+`(label_index, component_id, hotspot_kind)`. New schema fields:
+`hotspot_kind` ("part" | "label"), `instance_id` (per-component
+counter, preserves upper/lower hinge duplicates), `label_center_px`
+and `label_bbox_px` (so the debug overlay can draw the leader).
+
+Source priority: leader_endpoint → projection_anchor (first
+instance only) → label_center. Result on US4807331A: 32 part + 32
+label hotspots, 31/32 leader-grounded, 7 components with > 1
+instance preserved (first_sidewall, main_member,
+main_member_pintle_pin_hole, leaf_flange_pintle_pin_hole,
+u_shaped_link_member, upper_extension, mounting_wall).
+
+`viewer/src/components/FigurePanel.tsx` reads the new schema,
+splits into part vs label hotspots, colour-codes part hotspots by
+source (green = leader_endpoint, blue = projection_anchor, red =
+label_center), and adds a "show labels" toggle to reveal the
+label hotspots in a debug overlay.
+
+## Phase V11-37 — Hotspot grounding metrics + visual validation — COMPLETED 2026-04-28
+
+`eval_v11._eval_hotspot_grounding` adds five metrics to the
+composite eval: `leader_line_detection_rate` (Hough hits over
+candidates), `hotspot_source_distribution`, `repeated_instance_count`,
+`low_confidence_count`, `out_of_bounds_count`. Composite hotspot
+score = 0.6·detection_rate + 0.3·repeated_instance_score +
+0.1·in_bounds_score.
+
+For US4807331A_spring_loaded_hinge: hotspot_grounding score 0.96,
+overall composite 0.768 (was 0.74-ish in V11-32).
+
+`renders_v1.1/figure_hotspot_triplets.png` — three-panel visual:
+figure with leader→part overlays, world-XY scatter of CAD anchors,
+claim text + colour legend. `docs/HOTSPOT_GROUNDING.md` rewritten
+to reflect the V11-34..37 pipeline.
+
+278 tests still passing.

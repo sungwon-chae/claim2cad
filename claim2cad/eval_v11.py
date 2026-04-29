@@ -51,6 +51,7 @@ class EvalReport:
     projection_anchor_match: dict[str, Any] = field(default_factory=dict)  # V11-26
     central_density: dict[str, Any] = field(default_factory=dict)  # V11-26
     view_match: dict[str, Any] = field(default_factory=dict)  # V11-26
+    hotspot_grounding: dict[str, Any] = field(default_factory=dict)  # V11-37
     overall: dict[str, Any] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
 
@@ -347,6 +348,114 @@ def _eval_view_match(example_dir: Path) -> dict[str, Any]:
     }
 
 
+def _eval_hotspot_grounding(example_dir: Path) -> dict[str, Any]:
+    """V11-37 — figure-hotspot grounding metrics.
+
+    Measures four things:
+      1. **leader_line_detection_rate** — fraction of vlm_labels for
+         which leader_lines.json found a Hough line. Tells us how
+         many callouts have a *real* part anchor vs a fallback.
+      2. **hotspot_source_distribution** — counts of part hotspots by
+         source (leader_endpoint / projection_anchor / label_center /
+         crop_center / median_label / manual_override). The leader
+         fraction is what we actually want to maximise.
+      3. **repeated_instance_count** — how many components have > 1
+         hotspot instance preserved (V11-36 promise that upper/lower
+         hinge duplicates aren't collapsed by median).
+      4. **low_confidence_count** — part hotspots with conf < 0.5
+         and **out_of_bounds_count** — part hotspots whose center_px
+         is outside (0, image_width)×(0, image_height). Both should
+         be 0 in a clean run.
+
+    Composite score = 0.6·leader_rate + 0.3·repeated_instance_score +
+                      0.1·in_bounds_score
+    where ``repeated_instance_score`` rewards preserving > 0 repeats
+    when the figure has duplicate callouts.
+    """
+    fh_path = example_dir / "figure_hotspots.json"
+    fm_path = example_dir / "figure_map.json"
+    if not fh_path.exists():
+        return {"score": 0.0, "note": "no figure_hotspots.json"}
+    fh = json.loads(fh_path.read_text("utf-8"))
+    hotspots = fh.get("hotspots", []) or []
+    part_hotspots = [h for h in hotspots if h.get("hotspot_kind", "part") == "part"]
+    label_hotspots = [h for h in hotspots if h.get("hotspot_kind") == "label"]
+
+    src_dist: dict[str, int] = {}
+    for h in part_hotspots:
+        src_dist[h.get("source", "unknown")] = src_dist.get(h.get("source", "unknown"), 0) + 1
+
+    leader_grounded = src_dist.get("leader_endpoint", 0)
+    leader_rate = leader_grounded / max(len(part_hotspots), 1)
+
+    # leader_line_detection_rate uses the raw leader_lines.json file
+    # rather than the post-fallback hotspot count, because some labels
+    # have no claim component bound and thus never reach figure_hotspots.
+    leader_total = 0
+    leader_hits = 0
+    leaders_path = example_dir / "leader_lines.json"
+    if leaders_path.exists():
+        try:
+            ld = json.loads(leaders_path.read_text("utf-8"))
+            for l in ld.get("leaders", []) or []:
+                leader_total += 1
+                if l.get("method") == "hough":
+                    leader_hits += 1
+        except Exception:  # noqa: BLE001
+            pass
+    detection_rate = leader_hits / max(leader_total, 1) if leader_total else 0.0
+
+    instance_count_by_cid: dict[str, int] = {}
+    for h in part_hotspots:
+        cid = h.get("component_id") or ""
+        instance_count_by_cid[cid] = instance_count_by_cid.get(cid, 0) + 1
+    repeated_components = {cid: n for cid, n in instance_count_by_cid.items() if n > 1}
+
+    # The figure has some callout numbers that appear twice; check
+    # whether we *could* have preserved repeats.
+    duplicate_callout_numbers = 0
+    if fm_path.exists():
+        fm = json.loads(fm_path.read_text("utf-8"))
+        seen: dict[str, int] = {}
+        for lab in fm.get("vlm_labels", []) or []:
+            num = str(lab.get("number") or "").strip()
+            if num:
+                seen[num] = seen.get(num, 0) + 1
+        duplicate_callout_numbers = sum(1 for n in seen.values() if n > 1)
+
+    if duplicate_callout_numbers == 0:
+        repeated_score = 1.0  # nothing to preserve, full credit
+    else:
+        repeated_score = min(1.0, len(repeated_components) / max(duplicate_callout_numbers, 1))
+
+    low_confidence = sum(1 for h in part_hotspots if float(h.get("confidence", 0.5)) < 0.5)
+    W = int(fh.get("image_width_px", 0) or 0)
+    H = int(fh.get("image_height_px", 0) or 0)
+    out_of_bounds = 0
+    for h in part_hotspots:
+        cx, cy = h.get("center_px", [0, 0])
+        if not (0 <= cx <= W and 0 <= cy <= H):
+            out_of_bounds += 1
+    in_bounds_score = 1.0 - (out_of_bounds / max(len(part_hotspots), 1))
+
+    score = 0.6 * detection_rate + 0.3 * repeated_score + 0.1 * in_bounds_score
+    return {
+        "score": round(score, 3),
+        "leader_line_detection_rate": round(detection_rate, 3),
+        "leader_lines_total": leader_total,
+        "leader_lines_detected": leader_hits,
+        "n_part_hotspots": len(part_hotspots),
+        "n_label_hotspots": len(label_hotspots),
+        "hotspot_source_distribution": src_dist,
+        "leader_grounded_fraction": round(leader_rate, 3),
+        "duplicate_callout_numbers": duplicate_callout_numbers,
+        "repeated_instance_count": len(repeated_components),
+        "repeated_components": sorted(repeated_components.keys())[:8],
+        "low_confidence_count": low_confidence,
+        "out_of_bounds_count": out_of_bounds,
+    }
+
+
 def _eval_assembly_coherence(example_dir: Path) -> dict[str, Any]:
     """V11-22 — penalises collage-like output. Reads the diagnostics
     cache (or runs the diagnostics in-process if it isn't present).
@@ -412,20 +521,22 @@ def evaluate_example(example_dir: Path) -> EvalReport:
     report.projection_anchor_match = _eval_projection_anchor_match(example_dir)
     report.central_density = _eval_central_density(example_dir)
     report.view_match = _eval_view_match(example_dir)
+    report.hotspot_grounding = _eval_hotspot_grounding(example_dir)
 
-    # Composite weights. V11-26 adds three figure-grounded axes that
-    # measure whether the CAD's projection genuinely tracks the
-    # patent figure (not just whether it looks coherent in isolation).
+    # Composite weights. V11-37 adds hotspot_grounding (leader-line
+    # rate + repeated-instance preservation + bounds) so the eval
+    # surface reflects the click-through accuracy of the viewer.
     weights = {
-        "span_correctness": 0.20,
-        "glb_coverage": 0.15,
+        "span_correctness": 0.18,
+        "glb_coverage": 0.13,
         "figure_callout_coverage": 0.05,
         "geometric_invariants": 0.10,
-        "projection_fit": 0.05,
-        "assembly_coherence": 0.15,
-        "projection_anchor_match": 0.15,
-        "central_density": 0.10,
+        "projection_fit": 0.04,
+        "assembly_coherence": 0.13,
+        "projection_anchor_match": 0.13,
+        "central_density": 0.09,
         "view_match": 0.05,
+        "hotspot_grounding": 0.10,
     }
     overall = 0.0
     for name, w in weights.items():
@@ -455,6 +566,7 @@ def write_markdown_report(report: EvalReport, out_path: Path) -> Path:
         "projection_anchor_match",
         "central_density",
         "view_match",
+        "hotspot_grounding",
     ):
         m = getattr(report, name)
         score = m.get("score", 0)
@@ -479,6 +591,9 @@ def write_markdown_report(report: EvalReport, out_path: Path) -> Path:
         "renders_v1.1/projection_front.png",
         "renders_v1.1/projection_right.png",
         "renders_v1.1/projection_iso.png",
+        "renders_v1.1/leader_line_debug.png",
+        "renders_v1.1/figure_hotspot_debug.png",
+        "renders_v1.1/figure_hotspot_triplets.png",
     ):
         ap = Path(report.example_dir) / art
         if ap.exists():

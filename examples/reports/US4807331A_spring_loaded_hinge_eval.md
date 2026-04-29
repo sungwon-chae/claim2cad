@@ -1,6 +1,6 @@
 # Evaluation report — US4807331A_spring_loaded_hinge
 
-**Composite score: 0.769**
+**Composite score: 0.768**
 
 ## Metric breakdown
 
@@ -15,6 +15,7 @@
 | `projection_anchor_match` | 0.843 | mean_error_mm=7.87, max_error_mm=55.74, n_anchors=25 |
 | `central_density` | 0.000 | central_density=0.9566, outer_density=0.0496, ratio=19.3, image=renders_v1.1/figure_aligned_view.png |
 | `view_match` | 1.000 | view_kind=isometric, best_view=front |
+| `hotspot_grounding` | 0.810 | leader_line_detection_rate=0.95, leader_lines_total=60, leader_lines_detected=57, n_part_hotspots=32, n_label_hotspots=32, hotspot_source_distribution={'leader_endpoint': 31, 'projection_anchor': 1}, leader_grounded_fraction=0.969, duplicate_callout_numbers=15, repeated_instance_count=7, low_confidence_count=0, out_of_bounds_count=0 |
 
 ## Notes
 (none)
@@ -26,3 +27,6 @@
 - `renders_v1.1/projection_front.png`
 - `renders_v1.1/projection_right.png`
 - `renders_v1.1/projection_iso.png`
+- `renders_v1.1/leader_line_debug.png`
+- `renders_v1.1/figure_hotspot_debug.png`
+- `renders_v1.1/figure_hotspot_triplets.png`

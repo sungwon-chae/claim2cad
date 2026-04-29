@@ -90,18 +90,45 @@
       "iso"
     ]
   },
+  "hotspot_grounding": {
+    "score": 0.81,
+    "leader_line_detection_rate": 0.95,
+    "leader_lines_total": 60,
+    "leader_lines_detected": 57,
+    "n_part_hotspots": 32,
+    "n_label_hotspots": 32,
+    "hotspot_source_distribution": {
+      "leader_endpoint": 31,
+      "projection_anchor": 1
+    },
+    "leader_grounded_fraction": 0.969,
+    "duplicate_callout_numbers": 15,
+    "repeated_instance_count": 7,
+    "repeated_components": [
+      "first_sidewall",
+      "leaf_flange_pintle_pin_hole",
+      "main_member",
+      "main_member_pintle_pin_hole",
+      "mounting_wall",
+      "u_shaped_link_member",
+      "upper_extension"
+    ],
+    "low_confidence_count": 0,
+    "out_of_bounds_count": 0
+  },
   "overall": {
-    "composite": 0.769,
+    "composite": 0.768,
     "weights": {
-      "span_correctness": 0.2,
-      "glb_coverage": 0.15,
+      "span_correctness": 0.18,
+      "glb_coverage": 0.13,
       "figure_callout_coverage": 0.05,
       "geometric_invariants": 0.1,
-      "projection_fit": 0.05,
-      "assembly_coherence": 0.15,
-      "projection_anchor_match": 0.15,
-      "central_density": 0.1,
-      "view_match": 0.05
+      "projection_fit": 0.04,
+      "assembly_coherence": 0.13,
+      "projection_anchor_match": 0.13,
+      "central_density": 0.09,
+      "view_match": 0.05,
+      "hotspot_grounding": 0.1
     }
   },
   "notes": []

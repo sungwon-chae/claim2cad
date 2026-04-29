@@ -1,0 +1,10 @@
+{
+  "example_id": "US4486142A_kuka_articulated_arm",
+  "status": "ok",
+  "scaffold_id": "fallback_grid",
+  "quality_tier": "fallback",
+  "n_components": 7,
+  "n_glb_children": 7,
+  "error": "",
+  "notes": ""
+}

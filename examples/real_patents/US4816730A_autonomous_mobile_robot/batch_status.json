@@ -1,0 +1,10 @@
+{
+  "example_id": "US4816730A_autonomous_mobile_robot",
+  "status": "ok",
+  "scaffold_id": "linkage",
+  "quality_tier": "partial",
+  "n_components": 12,
+  "n_glb_children": 12,
+  "error": "",
+  "notes": ""
+}

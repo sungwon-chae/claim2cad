@@ -1,0 +1,10 @@
+{
+  "example_id": "US4407625A_multi_arm_robotic_assembly",
+  "status": "ok",
+  "scaffold_id": "linkage",
+  "quality_tier": "partial",
+  "n_components": 8,
+  "n_glb_children": 8,
+  "error": "",
+  "notes": ""
+}

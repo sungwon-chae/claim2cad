@@ -1,0 +1,10 @@
+{
+  "example_id": "US4106366A_automotive_planetary_gearbox",
+  "status": "ok",
+  "scaffold_id": "rotary_shaft",
+  "quality_tier": "partial",
+  "n_components": 5,
+  "n_glb_children": 5,
+  "error": "",
+  "notes": ""
+}

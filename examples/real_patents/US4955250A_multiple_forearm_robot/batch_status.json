@@ -1,0 +1,10 @@
+{
+  "example_id": "US4955250A_multiple_forearm_robot",
+  "status": "ok",
+  "scaffold_id": "rotary_shaft",
+  "quality_tier": "partial",
+  "n_components": 13,
+  "n_glb_children": 13,
+  "error": "",
+  "notes": ""
+}

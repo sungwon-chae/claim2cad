@@ -1,0 +1,10 @@
+{
+  "example_id": "US4655675A_robotic_assembly_apparatus",
+  "status": "ok",
+  "scaffold_id": "linkage",
+  "quality_tier": "partial",
+  "n_components": 18,
+  "n_glb_children": 18,
+  "error": "",
+  "notes": ""
+}

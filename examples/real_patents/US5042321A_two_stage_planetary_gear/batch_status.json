@@ -1,0 +1,10 @@
+{
+  "example_id": "US5042321A_two_stage_planetary_gear",
+  "status": "ok",
+  "scaffold_id": "rotary_shaft",
+  "quality_tier": "partial",
+  "n_components": 11,
+  "n_glb_children": 11,
+  "error": "",
+  "notes": ""
+}

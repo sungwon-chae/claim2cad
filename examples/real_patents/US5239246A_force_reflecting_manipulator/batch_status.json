@@ -1,0 +1,10 @@
+{
+  "example_id": "US5239246A_force_reflecting_manipulator",
+  "status": "ok",
+  "scaffold_id": "linkage",
+  "quality_tier": "partial",
+  "n_components": 19,
+  "n_glb_children": 19,
+  "error": "",
+  "notes": ""
+}

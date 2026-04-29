@@ -9,6 +9,34 @@ type Props = {
   hoveredId: string | null;
   onSelect: (id: string | null) => void;
   onHover: (id: string | null) => void;
+  /** V11-31: canonical figure_hotspots.json (raw image-pixel
+   *  coordinates). When present, the viewer uses these instead of
+   *  recomputing from figure_map.vlm_labels. */
+  hotspotsCanonical: FigureHotspotSet | null;
+};
+
+export type FigureHotspot = {
+  hotspot_id: string;
+  figure_id: string;
+  component_id: string | null;
+  callout_number: string;
+  label: string;
+  coord_space: string;
+  image_width_px: number;
+  image_height_px: number;
+  center_px: [number, number];
+  bbox_px: [number, number, number, number];
+  confidence: number;
+  source: string;
+};
+
+export type FigureHotspotSet = {
+  schema_version: string;
+  figure_id: string;
+  figure_path: string;
+  image_width_px: number;
+  image_height_px: number;
+  hotspots: FigureHotspot[];
 };
 
 type Hotspot = {
@@ -77,14 +105,45 @@ function buildHotspots(figureMap: FigureMap | null, rows: ClaimMapRow[]): Hotspo
 }
 
 export function FigurePanel(props: Props) {
-  const { imageUrl, figureMap, rows, selectedId, hoveredId, onSelect, onHover } = props;
+  const {
+    imageUrl, figureMap, rows, selectedId, hoveredId, onSelect, onHover,
+    hotspotsCanonical,
+  } = props;
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [imgSize, setImgSize] = useState<{ w: number; h: number } | null>(null);
 
-  const hotspots = useMemo(
-    () => buildHotspots(figureMap, rows),
-    [figureMap, rows]
-  );
+  const hotspots = useMemo<Hotspot[]>(() => {
+    // V11-31: prefer the canonical figure_hotspots.json with raw
+    // image-pixel coordinates. Convert to normalised [0..1] for
+    // CSS percentage rendering. Fall back to the v1.0 path
+    // (figure_map.vlm_labels) when the canonical file is missing.
+    if (hotspotsCanonical && hotspotsCanonical.hotspots.length > 0) {
+      const W = Math.max(hotspotsCanonical.image_width_px, 1);
+      const H = Math.max(hotspotsCanonical.image_height_px, 1);
+      const rowsById = new Map<string, ClaimMapRow>();
+      for (const r of rows) rowsById.set(r.component_id, r);
+      const out: Hotspot[] = [];
+      for (const h of hotspotsCanonical.hotspots) {
+        if (!h.component_id) continue;
+        const row = rowsById.get(h.component_id);
+        if (!row) continue;
+        const [x0, y0, x1, y1] = h.bbox_px;
+        const x = x0 / W;
+        const y = y0 / H;
+        const w = Math.max((x1 - x0) / W, 0.02);
+        const hs = Math.max((y1 - y0) / H, 0.02);
+        out.push({
+          componentId: h.component_id,
+          number: h.callout_number,
+          description: h.label || row.label,
+          bbox: { x, y, w, h: hs },
+          isDependent: row.is_dependent,
+        });
+      }
+      return out;
+    }
+    return buildHotspots(figureMap, rows);
+  }, [figureMap, rows, hotspotsCanonical]);
 
   useEffect(() => {
     setImgSize(null);

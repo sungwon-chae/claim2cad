@@ -4,6 +4,7 @@ import { FigurePanel } from "./components/FigurePanel";
 import { KinematicSliders } from "./components/KinematicSliders";
 import { PriorArtOverlay } from "./components/PriorArtOverlay";
 import { Scene, type CameraPreset } from "./components/Scene";
+import type { FigureHotspotSet } from "./components/FigurePanel";
 import { loadDiff, loadExample, loadManifest, type LoadedExample } from "./data";
 import type { ManifestExample, PriorArtDiff, URDFJoint } from "./types";
 import { loadUrdf } from "./urdf";
@@ -35,6 +36,9 @@ export function App() {
   const [cameraPreset, setCameraPreset] = useState<CameraPreset | null>(null);
   const [bestView, setBestView] = useState<CameraPreset | null>(null);
 
+  // V11-31: canonical figure hotspots (raw image-pixel coordinates).
+  const [hotspots, setHotspots] = useState<FigureHotspotSet | null>(null);
+
   // Initial manifest load.
   useEffect(() => {
     loadManifest()
@@ -48,6 +52,19 @@ export function App() {
       })
       .catch((e) => setError(String(e)));
   }, []);
+
+  // V11-31: load figure_hotspots.json (when present).
+  useEffect(() => {
+    if (!loaded) {
+      setHotspots(null);
+      return;
+    }
+    const url = `data/${loaded.example.base}/figure_hotspots.json`;
+    fetch(url)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: FigureHotspotSet | null) => setHotspots(j))
+      .catch(() => setHotspots(null));
+  }, [loaded]);
 
   // V11-15 / V11-27: load projection_report.json + figure_projection.json
   // (when present). The V11-27 default for figure-grounded examples
@@ -381,6 +398,7 @@ export function App() {
                 hoveredId={hoveredId}
                 onSelect={setSelectedId}
                 onHover={setHoveredId}
+                hotspotsCanonical={hotspots}
               />
             )}
           </div>

@@ -1,0 +1,635 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "vehicle_body_10",
+      "figure_id": "figure_1.png",
+      "component_id": "vehicle_body",
+      "callout_number": "10",
+      "label": "vehicle body",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        749.76
+      ],
+      "bbox_px": [
+        1577.6,
+        613.44,
+        1763.1999999999998,
+        886.0799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "door_half_member_12",
+      "figure_id": "figure_1.png",
+      "component_id": "door_half_member",
+      "callout_number": "12",
+      "label": "door-half member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1856.0,
+        749.76
+      ],
+      "bbox_px": [
+        1763.2,
+        613.44,
+        1948.8,
+        886.0799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "body_half_sub_assembly_14",
+      "figure_id": "figure_1.png",
+      "component_id": "body_half_sub_assembly",
+      "callout_number": "14",
+      "label": "body-half sub-assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1438.4,
+        749.76
+      ],
+      "bbox_px": [
+        1345.6000000000001,
+        613.44,
+        1531.2,
+        886.0799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "hinge_body_half_assembly_16",
+      "figure_id": "figure_1.png",
+      "component_id": "hinge_body_half_assembly",
+      "callout_number": "16",
+      "label": "hinge body-half assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1160.0,
+        749.76
+      ],
+      "bbox_px": [
+        1067.2,
+        613.44,
+        1252.8,
+        886.0799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "hinge_axis_18",
+      "figure_id": "figure_1.png",
+      "component_id": "hinge_axis",
+      "callout_number": "18",
+      "label": "vertical hinge axis",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1136.8,
+        1738.08
+      ],
+      "bbox_px": [
+        1044.0,
+        1601.76,
+        1229.6,
+        1874.3999999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "pintle_pin_22",
+      "figure_id": "figure_1.png",
+      "component_id": "pintle_pin",
+      "callout_number": "22",
+      "label": "pintle pin",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        812.0,
+        749.76
+      ],
+      "bbox_px": [
+        719.2,
+        613.44,
+        904.8,
+        886.0799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "main_member_24",
+      "figure_id": "figure_1.png",
+      "component_id": "main_member",
+      "callout_number": "24",
+      "label": "main member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        1874.4
+      ],
+      "bbox_px": [
+        1438.4,
+        1738.0800000000002,
+        1624.0,
+        2010.72
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "u_shaped_link_member_26",
+      "figure_id": "figure_1.png",
+      "component_id": "u_shaped_link_member",
+      "callout_number": "26",
+      "label": "U-shaped link member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        997.6,
+        1976.6399999999999
+      ],
+      "bbox_px": [
+        904.8000000000001,
+        1840.32,
+        1090.4,
+        2112.96
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "upper_extension_28",
+      "figure_id": "figure_1.png",
+      "component_id": "upper_extension",
+      "callout_number": "28",
+      "label": "upper parallel extension",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1276.0,
+        2078.88
+      ],
+      "bbox_px": [
+        1183.2,
+        1942.5600000000002,
+        1368.8,
+        2215.2000000000003
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "lower_extension_30",
+      "figure_id": "figure_1.png",
+      "component_id": "lower_extension",
+      "callout_number": "30",
+      "label": "lower parallel extension",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1693.6,
+        1363.2
+      ],
+      "bbox_px": [
+        1600.8,
+        1226.88,
+        1786.3999999999999,
+        1499.52
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "mounting_wall_32",
+      "figure_id": "figure_1.png",
+      "component_id": "mounting_wall",
+      "callout_number": "32",
+      "label": "mounting wall",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1136.8,
+        2112.96
+      ],
+      "bbox_px": [
+        1044.0,
+        1976.64,
+        1229.6,
+        2249.28
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "main_member_pintle_pin_hole_34",
+      "figure_id": "figure_1.png",
+      "component_id": "main_member_pintle_pin_hole",
+      "callout_number": "34",
+      "label": "pintle pin hole (main member)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        1942.56
+      ],
+      "bbox_px": [
+        1438.4,
+        1806.24,
+        1624.0,
+        2078.88
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "base_wall_36",
+      "figure_id": "figure_1.png",
+      "component_id": "base_wall",
+      "callout_number": "36",
+      "label": "base wall",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1577.6000000000001,
+        1329.1200000000001
+      ],
+      "bbox_px": [
+        1484.8000000000002,
+        1192.8000000000002,
+        1670.4,
+        1465.44
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "base_wall_exterior_guide_surface_38",
+      "figure_id": "figure_1.png",
+      "component_id": "base_wall_exterior_guide_surface",
+      "callout_number": "38",
+      "label": "base wall exterior guide surface",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1786.4,
+        1124.64
+      ],
+      "bbox_px": [
+        1693.6000000000001,
+        988.3200000000002,
+        1879.2,
+        1260.96
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "upper_leg_40",
+      "figure_id": "figure_1.png",
+      "component_id": "upper_leg",
+      "callout_number": "40",
+      "label": "upper parallel leg",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1856.0,
+        1908.4800000000002
+      ],
+      "bbox_px": [
+        1763.2,
+        1772.1600000000003,
+        1948.8,
+        2044.8000000000002
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "lower_leg_41",
+      "figure_id": "figure_1.png",
+      "component_id": "lower_leg",
+      "callout_number": "41",
+      "label": "lower parallel leg",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1856.0,
+        1840.3200000000002
+      ],
+      "bbox_px": [
+        1763.2,
+        1704.0000000000002,
+        1948.8,
+        1976.64
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "link_member_pintle_pin_holes_44",
+      "figure_id": "figure_1.png",
+      "component_id": "link_member_pintle_pin_holes",
+      "callout_number": "44",
+      "label": "aligned pintle pin holes (link member)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1647.1999999999998,
+        2078.88
+      ],
+      "bbox_px": [
+        1554.3999999999999,
+        1942.5600000000002,
+        1739.9999999999998,
+        2215.2000000000003
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "leg_guide_edge_surface_54",
+      "figure_id": "figure_1.png",
+      "component_id": "leg_guide_edge_surface",
+      "callout_number": "54",
+      "label": "leg guide edge surface",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1647.1999999999998,
+        1806.24
+      ],
+      "bbox_px": [
+        1554.3999999999999,
+        1669.92,
+        1739.9999999999998,
+        1942.56
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "stop_means_56",
+      "figure_id": "figure_1.png",
+      "component_id": "stop_means",
+      "callout_number": "56",
+      "label": "stop means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1809.6000000000001,
+        2010.7199999999998
+      ],
+      "bbox_px": [
+        1716.8000000000002,
+        1874.3999999999999,
+        1902.4,
+        2147.04
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "bight_wall_57",
+      "figure_id": "figure_1.png",
+      "component_id": "bight_wall",
+      "callout_number": "57",
+      "label": "bight wall",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        1942.56
+      ],
+      "bbox_px": [
+        1577.6,
+        1806.24,
+        1763.1999999999998,
+        2078.88
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "first_sidewall_58",
+      "figure_id": "figure_1.png",
+      "component_id": "first_sidewall",
+      "callout_number": "58",
+      "label": "first sidewall",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        1806.24
+      ],
+      "bbox_px": [
+        1113.6000000000001,
+        1669.92,
+        1299.2,
+        1942.56
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "second_sidewall_60",
+      "figure_id": "figure_1.png",
+      "component_id": "second_sidewall",
+      "callout_number": "60",
+      "label": "second sidewall",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        1295.04
+      ],
+      "bbox_px": [
+        1299.2,
+        1158.72,
+        1484.8,
+        1431.36
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "leaf_flange_64",
+      "figure_id": "figure_1.png",
+      "component_id": "leaf_flange",
+      "callout_number": "64",
+      "label": "leaf flange",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        1090.56
+      ],
+      "bbox_px": [
+        1020.8,
+        954.24,
+        1206.3999999999999,
+        1226.8799999999999
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "leaf_flange_pintle_pin_hole_66",
+      "figure_id": "figure_1.png",
+      "component_id": "leaf_flange_pintle_pin_hole",
+      "callout_number": "66",
+      "label": "pintle pin hole (leaf flange)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        2010.7199999999998
+      ],
+      "bbox_px": [
+        1090.4,
+        1874.3999999999999,
+        1276.0,
+        2147.04
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    },
+    {
+      "hotspot_id": "pintle_pin_stop_means_68",
+      "figure_id": "figure_1.png",
+      "component_id": "pintle_pin_stop_means",
+      "callout_number": "68",
+      "label": "stop means on pintle pin",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        1329.1200000000001
+      ],
+      "bbox_px": [
+        1090.4,
+        1192.8000000000002,
+        1276.0,
+        1465.44
+      ],
+      "confidence": 0.85,
+      "source": "figure_projection",
+      "debug": {
+        "origin": "figure_projection.json component_anchors"
+      }
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). The viewer should multiply by displayed_size/natural_size at render time."
+}

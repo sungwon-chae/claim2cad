@@ -13,7 +13,9 @@
     "n_components": 25,
     "n_in_glb": 25,
     "missing_examples": [],
-    "extra_glb_names": []
+    "extra_glb_names": [
+      "_scaffold_door_panel"
+    ]
   },
   "figure_callout_coverage": {
     "score": 0.556,
@@ -22,26 +24,84 @@
     "n_unbound": 20
   },
   "geometric_invariants": {
-    "score": 0.73,
-    "pin_through_holes": 0.7142857142857143,
+    "score": 0.445,
+    "pin_through_holes": 0.0,
     "link_nests_in_main": 0.0,
     "door_wraps_assembly": 1.0,
-    "bbox_sane": 0.96,
+    "bbox_sane": 0.968,
     "no_obvious_overlap": 1.0
   },
   "projection_fit": {
-    "score": 0.869,
-    "best_view": "top",
+    "score": 0.838,
+    "best_view": "front",
     "n_views_rendered": 4
   },
+  "assembly_coherence": {
+    "score": 0.858,
+    "collage_score": 0.142,
+    "central_cluster_count": 3,
+    "central_cluster_fraction": 0.115,
+    "z_separation_score": 0.525,
+    "panel_separation_score": 1.0,
+    "pair_overlap_fraction": 0.006153846153846154,
+    "n_components": 26
+  },
+  "projection_anchor_match": {
+    "score": 0.843,
+    "mean_error_mm": 7.87,
+    "max_error_mm": 55.74,
+    "n_anchors": 25,
+    "worst": [
+      {
+        "id": "pintle_pin",
+        "error_mm": 55.7
+      },
+      {
+        "id": "hinge_body_half_assembly",
+        "error_mm": 28.5
+      },
+      {
+        "id": "body_half_sub_assembly",
+        "error_mm": 28.5
+      },
+      {
+        "id": "door_half_member",
+        "error_mm": 28.5
+      },
+      {
+        "id": "main_member",
+        "error_mm": 18.5
+      }
+    ]
+  },
+  "central_density": {
+    "score": 0.0,
+    "central_density": 0.9566,
+    "outer_density": 0.0496,
+    "ratio": 19.3,
+    "image": "renders_v1.1/figure_aligned_view.png"
+  },
+  "view_match": {
+    "score": 1.0,
+    "view_kind": "isometric",
+    "best_view": "front",
+    "expected": [
+      "front",
+      "iso"
+    ]
+  },
   "overall": {
-    "composite": 0.882,
+    "composite": 0.769,
     "weights": {
-      "span_correctness": 0.3,
-      "glb_coverage": 0.25,
-      "figure_callout_coverage": 0.1,
-      "geometric_invariants": 0.2,
-      "projection_fit": 0.15
+      "span_correctness": 0.2,
+      "glb_coverage": 0.15,
+      "figure_callout_coverage": 0.05,
+      "geometric_invariants": 0.1,
+      "projection_fit": 0.05,
+      "assembly_coherence": 0.15,
+      "projection_anchor_match": 0.15,
+      "central_density": 0.1,
+      "view_match": 0.05
     }
   },
   "notes": []

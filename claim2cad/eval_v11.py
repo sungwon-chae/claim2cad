@@ -48,6 +48,9 @@ class EvalReport:
     geometric_invariants: dict[str, Any] = field(default_factory=dict)
     projection_fit: dict[str, Any] = field(default_factory=dict)
     assembly_coherence: dict[str, Any] = field(default_factory=dict)  # V11-22
+    projection_anchor_match: dict[str, Any] = field(default_factory=dict)  # V11-26
+    central_density: dict[str, Any] = field(default_factory=dict)  # V11-26
+    view_match: dict[str, Any] = field(default_factory=dict)  # V11-26
     overall: dict[str, Any] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
 
@@ -191,6 +194,159 @@ def _eval_projection_fit(example_dir: Path) -> dict[str, Any]:
     }
 
 
+def _eval_projection_anchor_match(example_dir: Path) -> dict[str, Any]:
+    """V11-26 — does the CAD projection match the figure anchors?
+
+    Reads ``figure_projection.json`` to get per-component (u, v)
+    anchors and the matching CAD anchor. Then loads the built STEP,
+    projects each labelled child's centre onto the figure plane, and
+    compares.
+
+    The lower the average anchor error, the better the projection
+    tracks the figure. ``score = 1.0 - clamp(error / 50mm)``.
+    """
+    fp_path = example_dir / "figure_projection.json"
+    if not fp_path.exists():
+        return {"score": 0.0, "note": "no figure_projection.json"}
+    step_path = example_dir / "model_v1.1.step"
+    if not step_path.exists():
+        return {"score": 0.0, "note": "no STEP file"}
+    try:
+        from claim2cad.figure_projection import load_layout
+        import build123d as bd
+
+        layout = load_layout(fp_path)
+        anchors_by_id = {a.id: a for a in layout.component_anchors}
+        shape = bd.import_step(str(step_path))
+        proj = layout.projection
+        idx = {"X": 0, "Y": 1, "Z": 2}
+        ax_u, ax_v = proj.projection_plane
+        u_idx = idx[ax_u]
+        v_idx = idx[ax_v]
+        errors: list[float] = []
+        per_component: list[dict[str, Any]] = []
+        for child in shape.children:
+            cid = getattr(child, "label", "") or ""
+            if not cid or cid.startswith("_scaffold_"):
+                continue
+            a = anchors_by_id.get(cid)
+            if a is None:
+                continue
+            bb = child.bounding_box()
+            cx = (bb.min.X + bb.max.X) / 2
+            cy = (bb.min.Y + bb.max.Y) / 2
+            cz = (bb.min.Z + bb.max.Z) / 2
+            cad = (cx, cy, cz)
+            # Distance in projection plane only.
+            anchor = a.cad_anchor_mm
+            du = cad[u_idx] - anchor[u_idx]
+            dv = cad[v_idx] - anchor[v_idx]
+            err = (du * du + dv * dv) ** 0.5
+            errors.append(err)
+            per_component.append(
+                {"id": cid, "error_mm": round(err, 1)}
+            )
+        if not errors:
+            return {"score": 0.0, "note": "no overlap between anchors and GLB"}
+        mean_err = sum(errors) / len(errors)
+        score = max(0.0, 1.0 - mean_err / 50.0)
+        per_component.sort(key=lambda r: -r["error_mm"])
+        return {
+            "score": round(score, 3),
+            "mean_error_mm": round(mean_err, 2),
+            "max_error_mm": round(max(errors), 2),
+            "n_anchors": len(errors),
+            "worst": per_component[:5],
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_central_density(example_dir: Path) -> dict[str, Any]:
+    """V11-26 — measures whether the figure-aligned render is a
+    central pile. Reads ``renders_v1.1/figure_aligned_view.png`` (or
+    falls back to ``solid_iso.png``); compares ink density in the
+    central 30 % of the image to the outer ring."""
+    candidates = [
+        example_dir / "renders_v1.1" / "figure_aligned_view.png",
+        example_dir / "renders_v1.1" / "solid_iso.png",
+        example_dir / "renders_v1.1" / "projection_iso.png",
+    ]
+    img_path: Path | None = None
+    for c in candidates:
+        if c.exists():
+            img_path = c
+            break
+    if img_path is None:
+        return {"score": 0.0, "note": "no inspectable render available"}
+    try:
+        import numpy as np
+        from PIL import Image
+
+        arr = np.asarray(Image.open(img_path).convert("L"))
+        ink = arr < 200  # any non-white pixel
+        H, W = arr.shape
+        cx0 = int(W * 0.35)
+        cx1 = int(W * 0.65)
+        cy0 = int(H * 0.35)
+        cy1 = int(H * 0.65)
+        central_pixels = ink[cy0:cy1, cx0:cx1].sum()
+        central_area = (cx1 - cx0) * (cy1 - cy0)
+        outer_pixels = ink.sum() - central_pixels
+        outer_area = (W * H) - central_area
+        central_density = float(central_pixels) / max(central_area, 1)
+        outer_density = float(outer_pixels) / max(outer_area, 1)
+        # Healthy ratio: central ≤ 2x outer. Pile-up: central >> outer.
+        ratio = central_density / max(outer_density, 1e-6)
+        # Score 1 if ratio ≤ 1, decays to 0 at ratio = 5.
+        score = max(0.0, 1.0 - max(0.0, ratio - 1.0) / 4.0)
+        return {
+            "score": round(score, 3),
+            "central_density": round(central_density, 4),
+            "outer_density": round(outer_density, 4),
+            "ratio": round(ratio, 2),
+            "image": str(img_path.relative_to(example_dir)),
+        }
+    except Exception as exc:  # noqa: BLE001
+        return {"score": 0.0, "error": str(exc)}
+
+
+def _eval_view_match(example_dir: Path) -> dict[str, Any]:
+    """V11-26 — does the figure_view_classifier's ``view_kind`` match
+    the projection_compare's chosen ``best_view`` (mapped to the same
+    canonical plane)?"""
+    fview_path = example_dir / "figure_view.json"
+    pr_path = example_dir / "projection_report.json"
+    if not fview_path.exists() or not pr_path.exists():
+        return {"score": 0.0, "note": "missing figure_view.json or projection_report.json"}
+    fv = json.loads(fview_path.read_text("utf-8"))
+    pr = json.loads(pr_path.read_text("utf-8"))
+    view_kind = (fv.get("view_kind") or "").lower()
+    best = (pr.get("best_view") or "").lower()
+    # Acceptable matches per view_kind (the figure-vs-CAD plane match).
+    acceptable = {
+        "top": {"top"},
+        "bottom": {"top"},
+        "front": {"front"},
+        "back": {"front"},
+        "right": {"right"},
+        "left": {"right"},
+        "iso": {"front", "iso"},
+        "isometric": {"front", "iso"},
+        "exploded": {"front", "iso"},
+        "perspective": {"front", "iso"},
+        "sectional": {"front", "iso"},
+    }
+    expected = acceptable.get(view_kind, {"front", "iso"})
+    score = 1.0 if best in expected else 0.0
+    return {
+        "score": score,
+        "view_kind": view_kind,
+        "best_view": best,
+        "expected": sorted(expected),
+    }
+
+
 def _eval_assembly_coherence(example_dir: Path) -> dict[str, Any]:
     """V11-22 — penalises collage-like output. Reads the diagnostics
     cache (or runs the diagnostics in-process if it isn't present).
@@ -253,18 +409,23 @@ def evaluate_example(example_dir: Path) -> EvalReport:
     report.geometric_invariants = _eval_geometric_invariants(example_dir)
     report.projection_fit = _eval_projection_fit(example_dir)
     report.assembly_coherence = _eval_assembly_coherence(example_dir)
+    report.projection_anchor_match = _eval_projection_anchor_match(example_dir)
+    report.central_density = _eval_central_density(example_dir)
+    report.view_match = _eval_view_match(example_dir)
 
-    # Composite score: weighted average. Span and glb coverage are the
-    # hardest blockers (they affect interaction). Assembly coherence
-    # was added in V11-22 because the scaffold rebuild moves visual
-    # quality independently of the LLM-grounded metrics.
+    # Composite weights. V11-26 adds three figure-grounded axes that
+    # measure whether the CAD's projection genuinely tracks the
+    # patent figure (not just whether it looks coherent in isolation).
     weights = {
-        "span_correctness": 0.25,
-        "glb_coverage": 0.20,
-        "figure_callout_coverage": 0.10,
-        "geometric_invariants": 0.15,
-        "projection_fit": 0.10,
-        "assembly_coherence": 0.20,
+        "span_correctness": 0.20,
+        "glb_coverage": 0.15,
+        "figure_callout_coverage": 0.05,
+        "geometric_invariants": 0.10,
+        "projection_fit": 0.05,
+        "assembly_coherence": 0.15,
+        "projection_anchor_match": 0.15,
+        "central_density": 0.10,
+        "view_match": 0.05,
     }
     overall = 0.0
     for name, w in weights.items():
@@ -291,6 +452,9 @@ def write_markdown_report(report: EvalReport, out_path: Path) -> Path:
         "geometric_invariants",
         "projection_fit",
         "assembly_coherence",
+        "projection_anchor_match",
+        "central_density",
+        "view_match",
     ):
         m = getattr(report, name)
         score = m.get("score", 0)

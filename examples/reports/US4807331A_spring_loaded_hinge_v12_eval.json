@@ -1,0 +1,72 @@
+{
+  "example_id": "US4807331A_spring_loaded_hinge",
+  "example_dir": "/Users/sungwon.chae/Desktop/claim2cad/Claim2CAD/examples/real_patents/US4807331A_spring_loaded_hinge",
+  "figure_resemblance": {
+    "score": 0.016,
+    "rendered_path": "renders_v1.2/readable_figure_aligned.png",
+    "intersection_pixels": 822,
+    "union_pixels": 51109
+  },
+  "panel_dominance": {
+    "score": 1.0,
+    "panel_pixel_ratio": 0.988,
+    "panel_children": [
+      "vehicle_body",
+      "door_half_member",
+      "door_panel",
+      "fixed_frame"
+    ],
+    "full_pixels": 49417,
+    "panel_pixels": 48817
+  },
+  "hinge_axis_visibility": {
+    "score": 1.0,
+    "long_axis_mm": 180.0,
+    "short_axis_mm": 9.0,
+    "aspect_ratio": 20.0
+  },
+  "floating_components": {
+    "score": 0.556,
+    "n_total": 15,
+    "n_floating": 2,
+    "floating_examples": [
+      "mounting_wall",
+      "door_panel"
+    ]
+  },
+  "demo_readability": {
+    "score": 0.616,
+    "verdict": "ok",
+    "panel_dominance": 1.0,
+    "n_distinct_large": 15,
+    "floating_score": 0.556
+  },
+  "v11_carryover": {
+    "v11_composite": 0.768,
+    "axis_scores": {
+      "span_correctness": 1.0,
+      "glb_coverage": 1.0,
+      "figure_callout_coverage": 0.556,
+      "geometric_invariants": 0.445,
+      "projection_fit": 0.838,
+      "assembly_coherence": 0.858,
+      "projection_anchor_match": 0.843,
+      "central_density": 0.0,
+      "view_match": 1.0,
+      "hotspot_grounding": 0.81
+    }
+  },
+  "overall": {
+    "composite": 0.662,
+    "weights": {
+      "figure_resemblance": 0.15,
+      "panel_dominance": 0.15,
+      "hinge_axis_visibility": 0.1,
+      "floating_components": 0.1,
+      "demo_readability": 0.2,
+      "v11": 0.3
+    },
+    "verdict_short": "ok"
+  },
+  "notes": []
+}

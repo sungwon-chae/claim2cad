@@ -60,20 +60,29 @@ scene — all three panels stay in sync.
   + 78 low-tier hotspots.
 * **Multi-patent evaluator** (V13-G) — per-example quality
   verdict (flagship | good | partial | fallback | failed) plus
-  9-axis breakdown. Corpus mean score: **0.796**.
+  9-axis breakdown.
 * **Multi-example viewer** (V13-H) — quality badges in the
   example dropdown; per-example warning banner for non-flagship
   outputs; no crash on partial data.
+* **Semantic mismatch correction** (V13-J → V13-P) — three
+  inspected examples that classified into the wrong topology
+  (positioning apparatus → rotary, self-closing hinge → door,
+  planetary → coaxial gear stack) get dedicated scaffolds; a
+  lightweight detector flags any future mismatch in the viewer
+  with a ⚠ banner.
 
-**Corpus status (V13-G):**
+**Corpus status (V13-M / V13-N):**
 
 | Verdict | Count |
 | --- | ---: |
 | flagship | 1 (US4807331A) |
-| good | 2 |
-| partial | 20 |
+| good | 4 |
+| partial | 18 |
 | fallback | 2 |
 | failed | 0 |
+
+Mean overall_score: **0.804**. Semantic mismatch detector:
+0 warnings, 1 advisory (close-family hinge), 24 clean.
 
 `make demo-v13` regenerates everything and opens the viewer.
 

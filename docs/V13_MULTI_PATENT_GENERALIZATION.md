@@ -51,7 +51,7 @@ examples/real_patents/<patent>/
                                        quality badge in dropdown
 ```
 
-## Scaffold registry (V13-B)
+## Scaffold registry (V13-B + V13-L)
 
 `claim2cad/scaffolds/` is a package whose modules each register
 one Scaffold subclass via the `@register_scaffold` decorator:
@@ -60,7 +60,10 @@ one Scaffold subclass via the `@register_scaffold` decorator:
 | --- | --- | --- |
 | `door_hinge` | door hinges (generalised from V12-J) | good |
 | `two_plate_hinge` | simpler concealed hinges | good |
-| `rotary_shaft` | gears, transmissions, planetary, harmonic, differential | partial |
+| `self_closing_hinge_mechanism` (V13-L) | self-closing / spring-loaded closers (US4470181A) — vertical post + cam + lever, NOT a flat door panel | good |
+| `rotary_shaft` | transmissions, rotors, generic shaft assemblies | partial |
+| `planetary_gear` (V13-L) | planetary / epicyclic gears (US3705522A) — sun + N planets distributed on an orbit, NOT coaxial stack | good |
+| `positioning_apparatus` (V13-L) | parallelogram-arm positioners (US5180955A) — four arms in a 2D rectangular footprint with central pivot | good |
 | `linkage` | robotic arms, four-bar linkages | partial |
 | `bracket_mount` | base + bracket + fasteners | partial |
 | `housing_panel` | enclosures, covers | partial |
@@ -73,22 +76,32 @@ otherwise lays them out on a grid biased by component-label
 shape hints. Smoke-tested on US3279624A (8 components, no
 figure data): X span 163 mm, Z span 84 mm — coherent, not piled.
 
-## Topology classifier (V13-C)
+## Topology classifier (V13-C + V13-K)
 
 `claim2cad/figure_topology_classifier.py` is keyword-based
 and deterministic. Inputs: claim_map labels + claim.txt + the
 example's id. Outputs: `figure_classification.json` with
-view_type, topology, recommended_scaffold, confidence, evidence.
+view_type, topology, recommended_scaffold, confidence,
+evidence, and (V13-K) a `multi_view` hint listing additional
+canonical views to render — e.g. ``["sectional", "plan"]`` for
+planetary gears.
 
-10 topology rules covering door_hinge, two_plate_hinge,
-planetary_gear, harmonic_gear, differential_gear, rotary_shaft,
-robotic_arm, linkage, bracket_mount, housing_panel.
+V13-K rules cover door_hinge, self_closing_hinge_mechanism,
+two_plate_hinge, planetary_gear, harmonic_gear,
+differential_gear, rotary_shaft, positioning_apparatus,
+robotic_arm, linkage, bracket_mount, housing_panel. **Order
+matters** — specific topologies (positioning_apparatus,
+self_closing_hinge_mechanism) come before broader ones
+(rotary_shaft, door_hinge) so a generic 'shaft' or
+'self closing hinge' substring no longer swallows the
+specific case.
 
-Run on the corpus:
+Run on the corpus (post-V13-K):
 ```
-{'planetary_gear': 8, 'robotic_arm': 7, 'rotary_shaft': 4,
- 'door_hinge': 3, 'harmonic_gear': 1, 'housing_panel': 1,
- 'unknown': 1}
+{'planetary_gear': 8, 'robotic_arm': 7, 'rotary_shaft': 3,
+ 'door_hinge': 2, 'self_closing_hinge_mechanism': 1,
+ 'positioning_apparatus': 1, 'harmonic_gear': 1,
+ 'housing_panel': 1, 'unknown': 1}
 ```
 
 The 1 'unknown' falls through to FallbackGridScaffold by
@@ -122,20 +135,75 @@ OpenCV Hough leader-line detection ran across all 25 examples:
 
 Demo mode hides low-tier hotspots; debug mode reveals them.
 
-## Eval (V13-G)
+## Eval (V13-G + V13-N)
 
 `MULTI_PATENT_EVAL.md` ranks each example by 9 axes and
-assigns an overall_quality verdict. On the corpus:
+assigns an overall_quality verdict. V13-N adds a 10th column
+(`mismatch`) flagging examples whose classifier output
+disagrees with the example slug or claim labels.
+
+On the corpus, post-V13-K/L/M:
 
 | Verdict | Count |
 | --- | ---: |
 | flagship | 1 |
-| good | 2 |
-| partial | 20 |
+| good | 4 |
+| partial | 18 |
 | fallback | 2 |
 | failed | 0 |
 
-Mean overall_score: **0.796**.
+Mean overall_score: **0.804**.
+
+## Semantic mismatch correction pass (V13-J → V13-P)
+
+Manual inspection of the v1.3 viewer surfaced three examples
+whose pipeline ran cleanly but whose scaffold output was
+semantically wrong:
+
+* **US5180955A_positioning_apparatus_for_arm** — the
+  classifier matched 'shaft' (in `center_shaft`) before it
+  could match 'positioning apparatus', so it picked
+  `rotary_shaft`. The downstream RotaryShaftScaffold built
+  coaxial cylinders — nothing like the four-arm parallelogram
+  in the figure.
+* **US4470181A_self_closing_hinge** — classifier matched
+  'self closing hinge' but recommended the generic
+  `door_hinge` scaffold, which produces flat door + frame
+  panels with a pintle. The actual figure shows a
+  cam-and-spring closer mechanism dominated by a vertical
+  post. This example also has a corpus-level caveat: its
+  claim_map describes a wire-insertion machine that doesn't
+  match its own figure_1, so we treat the figure as ground
+  truth.
+* **US3705522A_planetary_gear_with_idler** — topology was
+  correct (`planetary_gear`) but routed to `rotary_shaft`,
+  which stacked the planet pinions coaxially with the sun.
+  Patent has multi-view (sectional + plan) figures the
+  pipeline did not honor.
+
+V13-J recorded these as
+`examples/reports/V13_SEMANTIC_MISMATCH_AUDIT.md`. The fix
+shipped in V13-K (classifier ordering, two new topology
+labels, `multi_view` field), V13-L (three new scaffolds),
+V13-M (regenerate the three examples + plan-view render for
+the planetary gear), V13-N (mismatch detector that compares
+classifier output against example slug + claim labels), V13-O
+(viewer ⚠ banner) and this V13-P documentation pass.
+
+Before / after composite:
+`examples/reports/V13_SEMANTIC_BEFORE_AFTER.png`. Per-example
+side-by-side: `<example>/renders_v1.3/semantic_before_after.png`.
+
+Mismatch detector status on the live corpus:
+```
+0 warnings, 1 advisory, 24 clean.
+```
+The single advisory (US4502185A_concealed_hinge_assembly:
+`door_hinge` picked over the close-family
+`two_plate_hinge`) is intentional — those two scaffolds are
+geometrically near-neighbours and both build a recognizable
+hinge. A user can spot the difference in the viewer banner
+and decide whether to override.
 
 ## Honest assessment
 

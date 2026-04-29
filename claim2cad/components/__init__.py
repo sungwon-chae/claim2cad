@@ -24,6 +24,7 @@ from claim2cad.components.joints import hinge as _hinge  # noqa: F401
 from claim2cad.components.joints import revolute as _revolute  # noqa: F401
 from claim2cad.components.joints import prismatic as _prismatic  # noqa: F401
 from claim2cad.components.joints import lift_off_hinge as _lift_off_hinge  # noqa: F401
+from claim2cad.components.joints import hinge_primitives as _hinge_primitives  # noqa: F401
 from claim2cad.components.transmission import gear as _gear  # noqa: F401
 from claim2cad.components.transmission import bearing as _bearing  # noqa: F401
 from claim2cad.components.fasteners import spring as _spring  # noqa: F401

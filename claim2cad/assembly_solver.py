@@ -1,5 +1,16 @@
 """Build the 3D assembly from per-component shapes + constraints.
 
+V11-18 update: shape-family builders for ``knuckle``, ``hinge_leaf``,
+``pin``, ``shaft``, ``washer`` and ``boss`` route to the genuine 3D
+hinge primitives in :mod:`claim2cad.components.joints.hinge_primitives`
+(``HingeKnuckle``, ``HingeLeafWithKnuckles``, ``HingeShaft``,
+``Washer``, ``Boss``). The solver also runs an *auto-drill* pass that
+adds a real cylindrical bore to plate / bracket / flange / tab parts
+whose constraint list contains ``passes_through`` or ``coaxial_with``
+to a pin/shaft — that single change converts most of the previously-
+flat parts into solids with at least one curved face.
+
+
 Inputs from :mod:`claim2cad.shape_inference`:
 
 * per-component ``shape_family`` + dimensions
@@ -74,51 +85,84 @@ def _build_bracket(s: ComponentShape) -> bd.Part | None:
 
 
 def _build_hinge_leaf(s: ComponentShape) -> bd.Part | None:
-    """Plate with one or more knuckle barrels along its long edge."""
-    w = max(s.width_mm, 60.0)
-    h = max(s.height_mm, 30.0)
+    """Plate with one or more integrated knuckle barrels along its
+    hinge edge — uses ``HingeLeafWithKnuckles`` for real cylindrical
+    barrel geometry, not a flat extrusion."""
+    from claim2cad.components.joints.hinge_primitives import HingeLeafWithKnuckles
+    w = max(s.width_mm, 50.0)
+    h = max(s.height_mm, max(s.depth_mm, 60.0))
     t = max(s.thickness_mm, 3.0)
-    leaf = bd.Box(w, h, t)
-    barrel_d = max(s.diameter_mm, t * 2.5)
-    barrel_h = h * 0.8
-    barrel_x = -w / 2.0 + barrel_d / 2.0
-    barrel = bd.Cylinder(barrel_d / 2.0, barrel_h).translate((barrel_x, 0, 0))
-    pin_r = max(s.diameter_mm * 0.4, 1.5)
-    bore = bd.Cylinder(pin_r, barrel_h * 1.05).translate((barrel_x, 0, 0))
-    return (leaf + barrel) - bore
+    od = max(s.diameter_mm, t * 2.5)
+    bore = max(s.diameter_mm * 0.45 if s.diameter_mm else 2.5, 2.0)
+    if bore >= od:
+        bore = od * 0.4
+    knuckle_count = max(1, min(5, int(round(h / max(od * 1.4, 12.0)))))
+    leaf = HingeLeafWithKnuckles(
+        leaf_width=w,
+        leaf_height=h,
+        leaf_thickness=t,
+        barrel_outer_diameter=od,
+        barrel_inner_diameter=bore,
+        knuckle_count=knuckle_count,
+    )
+    return leaf.build()
 
 
 def _build_knuckle(s: ComponentShape) -> bd.Part | None:
-    """Hinge knuckle / barrel: short cylinder with through-hole."""
+    """Hinge knuckle / barrel via ``HingeKnuckle`` — chamfered hollow
+    cylinder."""
+    from claim2cad.components.joints.hinge_primitives import HingeKnuckle
     od = max(s.diameter_mm, max(s.width_mm, 12.0))
-    height = max(s.depth_mm, max(s.height_mm, 12.0))
-    bore = max(s.diameter_mm * 0.45, 2.5)
-    cyl = bd.Cylinder(od / 2.0, height)
-    hole = bd.Cylinder(bore, height * 1.05)
-    return cyl - hole
+    bore = max(s.diameter_mm * 0.45 if s.diameter_mm else 2.5, 2.0)
+    if bore >= od:
+        bore = od * 0.45
+    height = max(s.depth_mm, max(s.height_mm, max(s.thickness_mm, 12.0)))
+    k = HingeKnuckle(
+        barrel_outer_diameter=od,
+        barrel_inner_diameter=bore,
+        barrel_height=height,
+        chamfer_mm=min(0.6, height * 0.05, (od - bore) * 0.45),
+    )
+    return k.build()
 
 
 def _build_pin(s: ComponentShape) -> bd.Part | None:
-    """Cylindrical pin / shaft along its main axis."""
+    """Cylindrical hinge pin / pintle / shaft via ``HingeShaft`` — the
+    body has chamfered ends and an optional rounded head; never just a
+    bare cylinder anymore."""
+    from claim2cad.components.joints.hinge_primitives import HingeShaft
     diameter = max(s.diameter_mm, max(s.thickness_mm, 4.0))
     length = max(s.depth_mm, max(s.height_mm, 50.0))
-    cyl = bd.Cylinder(diameter / 2.0, length)
-    return cyl
+    pin = HingeShaft(
+        diameter=diameter,
+        length=length,
+        head_style="round",
+        chamfer_mm=min(0.5, diameter * 0.1),
+        groove=False,
+    )
+    return pin.build()
 
 
 def _build_washer(s: ComponentShape) -> bd.Part | None:
-    od = max(s.diameter_mm, 14.0)
-    bore = max(s.diameter_mm * 0.45, 4.0)
-    t = max(s.thickness_mm, 1.5)
-    outer = bd.Cylinder(od / 2.0, t)
-    inner = bd.Cylinder(bore, t * 1.05)
-    return outer - inner
+    """Annular washer via ``Washer``."""
+    from claim2cad.components.joints.hinge_primitives import Washer
+    od = max(s.diameter_mm, max(s.width_mm, 12.0))
+    bore = max(s.diameter_mm * 0.45 if s.diameter_mm else 4.0, 3.0)
+    if bore >= od:
+        bore = od * 0.45
+    t = max(s.thickness_mm, max(s.depth_mm, 1.5))
+    w = Washer(outer_diameter=od, inner_diameter=bore, thickness=t)
+    return w.build()
 
 
 def _build_boss(s: ComponentShape) -> bd.Part | None:
-    diameter = max(s.diameter_mm, 8.0)
-    h = max(s.depth_mm, max(s.height_mm, 6.0))
-    return bd.Cylinder(diameter / 2.0, h)
+    """Cylindrical boss via ``Boss`` — has a top chamfer, not a bare
+    cylinder."""
+    from claim2cad.components.joints.hinge_primitives import Boss
+    diameter = max(s.diameter_mm, max(s.width_mm, 8.0))
+    h = max(s.depth_mm, max(s.height_mm, max(s.thickness_mm, 6.0)))
+    boss = Boss(diameter=diameter, height=h, chamfer_mm=min(0.5, h * 0.1))
+    return boss.build()
 
 
 def _build_spring(s: ComponentShape) -> bd.Part | None:
@@ -176,6 +220,38 @@ def _build_other(s: ComponentShape) -> bd.Part | None:
     h = max(s.height_mm, 8.0)
     d = max(s.depth_mm, 8.0)
     return bd.Box(w, h, d)
+
+
+def _build_bracket_c_from_shape(s: ComponentShape) -> bd.Part | None:
+    """V11-18: HingeBracketC for bracket/link/housing parts that share
+    a pin axis. Real cylindrical barrels at the pin axis, not a hollow
+    U-channel."""
+    from claim2cad.components.joints.hinge_primitives import HingeBracketC
+    w = max(s.width_mm, 30.0)
+    h = max(s.height_mm, 60.0)
+    d = max(s.depth_mm, 25.0)
+    t = max(s.thickness_mm, 3.0)
+    # Pin diameter heuristic (the actual pin's diameter is checked
+    # later by _pin_axis_for, but we don't want to over-couple here).
+    pin_d = max(s.diameter_mm or 6.0, 4.0)
+    # Choose hole_offset_x to place barrel inside the extension length.
+    hole_x = min(d * 0.6, max(d * 0.45, 18.0))
+    barrel_d = min(max(pin_d * 2.2, t * 2.5), w * 0.45, h * 0.35)
+    if barrel_d <= pin_d:
+        barrel_d = pin_d * 1.6
+    bracket = HingeBracketC(
+        mounting_wall_width=w,
+        mounting_wall_height=h,
+        mounting_wall_thickness=t,
+        extension_length=d,
+        extension_width=w * 0.5,
+        extension_thickness=t,
+        extension_gap=h * 0.5,
+        pin_diameter=pin_d,
+        hole_offset_x=hole_x,
+        barrel_diameter=barrel_d,
+    )
+    return bracket.build()
 
 
 _SHAPE_BUILDERS = {
@@ -303,6 +379,108 @@ def _orient_for_axis(part: bd.Part, axis: str) -> bd.Part:
     return part
 
 
+# V11-18: which shape families are "drillable" (we'll cut a pin-axis
+# hole in their solid when the constraint graph says they share a pin
+# axis with a pin/shaft component).
+_DRILLABLE_FAMILIES = frozenset(
+    {"plate", "bracket", "tab", "flange", "link", "housing", "hinge_leaf"}
+)
+
+
+def _pin_axis_for(
+    cid: str,
+    shapes_by_id: dict[str, ComponentShape],
+    poses: dict[str, tuple[float, float, float]],
+) -> tuple[float, float, float, float] | None:
+    """Return ``(x, y, axis_z_low, axis_z_high, pin_diameter)`` for the
+    pin axis this component shares, or None.
+
+    A part shares a pin axis if it has a ``passes_through`` /
+    ``coaxial_with`` constraint to a pin/shaft component (or a
+    transitive: a hole that itself passes_through a pin).
+    """
+    s = shapes_by_id.get(cid)
+    if s is None:
+        return None
+    pin_id: str | None = None
+    pin_diameter: float = 0.0
+    seen: set[str] = set()
+    queue: list[str] = [cid]
+    while queue:
+        cur = queue.pop(0)
+        if cur in seen:
+            continue
+        seen.add(cur)
+        cs = shapes_by_id.get(cur)
+        if cs is None:
+            continue
+        if cs.shape_family in {"pin", "shaft"} and cur != cid:
+            pin_id = cur
+            pin_diameter = cs.diameter_mm or cs.thickness_mm or 4.0
+            break
+        for c in cs.constraints:
+            if c["kind"] in ("passes_through", "coaxial_with"):
+                tgt = c["target"]
+                if tgt not in seen:
+                    queue.append(tgt)
+    if pin_id is None:
+        return None
+    px, py, _pz = poses[pin_id]
+    # Pin diameter heuristic: shape_inference gives `diameter_mm`; if
+    # missing, infer from `thickness_mm` or default to 4 mm.
+    return (
+        px,
+        py,
+        -1e6,
+        1e6,
+        max(pin_diameter, 2.0),
+    )
+
+
+def _auto_drill_part(
+    solid: bd.Part,
+    cid: str,
+    pose: tuple[float, float, float],
+    shapes_by_id: dict[str, ComponentShape],
+    poses: dict[str, tuple[float, float, float]],
+) -> tuple[bd.Part, bool]:
+    """If the part should have a pin-axis hole, drill it. Returns
+    (possibly-modified solid, drilled-flag)."""
+    s = shapes_by_id.get(cid)
+    if s is None or s.shape_family not in _DRILLABLE_FAMILIES:
+        return solid, False
+    axis_info = _pin_axis_for(cid, shapes_by_id, poses)
+    if axis_info is None:
+        return solid, False
+    px, py, _zlo, _zhi, pin_d = axis_info
+    # The drill happens AFTER pose translation, so we need the hole's
+    # XY in the part's local frame, which is the world XY (px, py)
+    # minus the part's own (pose.x, pose.y).
+    local_x = px - pose[0]
+    local_y = py - pose[1]
+    # Don't drill if the pin axis sits outside this part's bbox.
+    bb = solid.bounding_box()
+    margin = 1.0
+    if not (
+        bb.min.X - margin <= local_x <= bb.max.X + margin
+        and bb.min.Y - margin <= local_y <= bb.max.Y + margin
+    ):
+        return solid, False
+    # Drill a vertical bore through the part.
+    z_extent = max(bb.max.Z - bb.min.Z, 5.0)
+    bore_radius = pin_d / 2.0 * 1.05
+    if bore_radius * 2 >= min(bb.size.X, bb.size.Y) * 0.9:
+        # The bore would consume the whole part — skip.
+        return solid, False
+    try:
+        bore = bd.Cylinder(bore_radius, z_extent * 1.5).translate(
+            (local_x, local_y, (bb.min.Z + bb.max.Z) / 2.0)
+        )
+        return solid - bore, True
+    except Exception:  # noqa: BLE001
+        return solid, False
+
+
 def build_assembly(
     inference: ShapeInferenceSet,
 ) -> tuple[bd.Compound, list[str], list[SolverDiagnostics]]:
@@ -318,7 +496,17 @@ def build_assembly(
     diagnostics: list[SolverDiagnostics] = []
 
     for cid, s in shapes_by_id.items():
+        # V11-18 auto-upgrade: a bracket / link / housing whose
+        # constraint list says it passes_through or is coaxial_with a
+        # pin/shaft is mechanically a HINGE bracket — rebuild it via
+        # HingeBracketC so the bracket has a real cylindrical barrel
+        # at the pin axis (not just a hollow U-channel that the bore
+        # subtraction misses).
         builder = _SHAPE_BUILDERS.get(s.shape_family, _build_other)
+        if s.shape_family in {"bracket", "link", "housing"}:
+            shares_pin = _pin_axis_for(cid, shapes_by_id, poses)
+            if shares_pin is not None:
+                builder = _build_bracket_c_from_shape  # type: ignore[assignment]
         try:
             solid = builder(s)
         except Exception as exc:  # noqa: BLE001
@@ -348,8 +536,22 @@ def build_assembly(
         if abs(rz) > 1e-6:
             solid = solid.rotate(bd.Axis.Z, rz)
 
-        # Apply translated pose.
+        # V11-18 auto-drill: if this part is a plate / bracket / etc.
+        # that shares a pin axis with a pin/shaft component (per the
+        # constraint graph), drill a real cylindrical bore at the pin
+        # axis. This is the single biggest source of curved faces in
+        # the assembly.
         x, y, z = poses[cid]
+        drilled = False
+        try:
+            solid, drilled = _auto_drill_part(
+                solid, cid, (x, y, z), shapes_by_id, poses
+            )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("auto-drill failed on %s: %s", cid, exc)
+            drilled = False
+
+        # Apply translated pose.
         solid = solid.translate((x, y, z))
         solid.label = cid
         children.append(solid)
@@ -361,15 +563,16 @@ def build_assembly(
             bb.max.Y - bb.min.Y,
             bb.max.Z - bb.min.Z,
         )
+        constraint_descs = [f"{c['kind']}:{c['target']}" for c in s.constraints]
+        if drilled:
+            constraint_descs.append("auto_drilled:pin_axis")
         diagnostics.append(
             SolverDiagnostics(
                 component_id=cid,
                 shape_family=s.shape_family,
                 bbox_mm=sz,
                 pose_applied_mm=(x, y, z),
-                constraints_applied=[
-                    f"{c['kind']}:{c['target']}" for c in s.constraints
-                ],
+                constraints_applied=constraint_descs,
                 fell_back_to_box=(s.shape_family == "other"),
                 notes=s.notes[:120],
             )

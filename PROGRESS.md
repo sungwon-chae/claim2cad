@@ -1736,3 +1736,74 @@ geometric_invariants (V11-10 deterministic), projection_fit
 - geometric_invariants    0.730
 - projection_fit          0.869
 
+
+## Phase V11-18 — Complete 3D hinge primitive library — COMPLETED 2026-04-29 11:55 KST
+
+### What was wrong
+V11-14 made the assembly *constraint-correct* in 3D (pin through
+coaxial holes, link nested in main, door wrapping body), but the
+underlying ``shape_family`` builders for ``plate``, ``bracket``,
+``hinge_leaf``, ``knuckle``, ``pin``, ``shaft``, ``washer`` and
+``boss`` were all built from bare ``Box`` and ``Cylinder`` calls. An
+audit on US4807331A: **21/25 components had 0 curved faces.** The
+hinge looked like a stack of flat slabs even though the constraints
+were right.
+
+### What shipped
+- ``claim2cad/components/joints/hinge_primitives.py`` — six new
+  parametric library entries with genuine cylindrical / spherical /
+  toroidal geometry:
+    * ``HingeKnuckle`` — chamfered hollow barrel (≥ 2 curved faces).
+    * ``HingeLeafWithKnuckles`` — plate with N integrated barrels along
+      the hinge edge, ``knuckle_pattern_offset`` lets a paired leaf
+      interleave (≥ 5 curved faces typical).
+    * ``HingeShaft`` — pintle with chamfered ends, optional round /
+      flat / knurled head and snap-ring groove (≥ 2 curved faces).
+    * ``HingeBracketC`` — C-shape main-member bracket with **drilled
+      cylindrical barrels** at the pin axis on both extensions (≥ 2
+      curved faces — the bracket itself becomes a hinge feature).
+    * ``Washer``, ``Boss`` — annulus and chamfered cylinder helpers.
+- ``claim2cad/assembly_solver.py`` — three solver upgrades:
+    1. ``_build_knuckle`` / ``_build_pin`` / ``_build_hinge_leaf`` /
+       ``_build_washer`` / ``_build_boss`` rerouted to the new
+       hinge primitives.
+    2. **Auto-upgrade**: a ``bracket`` / ``link`` / ``housing`` whose
+       constraint graph contains ``passes_through`` or
+       ``coaxial_with`` to a pin/shaft is rebuilt via
+       ``HingeBracketC`` instead of the box U-channel — the part
+       gets a real cylindrical barrel at the pin axis.
+    3. **Auto-drill**: any ``plate`` / ``flange`` / ``tab`` / ``link``
+       part that shares a pin axis (transitive constraint walk to
+       a pin/shaft) gets a real cylindrical bore drilled along Z at
+       the pin's XY.
+- 19 new tests in ``tests/test_hinge_primitives.py`` — every
+  primitive must build with ≥ 1 curved face, must accept VLM-natural
+  param aliases (``od``, ``id``, ``height``, ``depth_mm``, …), and
+  must export a labelled GLB.
+
+### US4807331A regenerated
+- **Curved-face count: 4/25 → 15/25 components** with cylindrical /
+  spherical / toroidal geometry. The remaining 10 are sheet-metal
+  walls (mounting_wall, base_wall, bight_wall, first/second_sidewall),
+  a tab, and abstract IR concepts (vehicle_body, hinge_axis,
+  *_guide_surface) — these are correctly flat.
+- pintle_pin: ``HingeShaft`` chamfered cylinder + round head.
+- Three brackets (main_member, door_half_member, lower_leg) +
+  link (u_shaped_link_member) + 2 housings (hinge_body_half_assembly,
+  body_half_sub_assembly) auto-upgraded to ``HingeBracketC``: each
+  has integrated barrels at the pin axis.
+- Five flange/plate parts (upper_extension, lower_extension,
+  leaf_flange, upper_leg, pintle_pin_stop_means) auto-drilled with
+  the pin bore.
+- 25/25 GLB root children still match claim_map.
+- ``eval_v11`` composite **0.882** preserved (the metric doesn't
+  count curved faces directly; the visible 3D-ness is the headline).
+
+### Verification
+- ``pytest -q`` — **246 passed** (227 + 19 new).
+- ``viewer/public/data/.../model.glb`` re-staged at 732 KB
+  (vs 184 KB pre-V11-18 — the bigger size is the curved-face
+  tessellation).
+- ``examples/real_patents/.../renders_v1.1/projection_*.png``
+  re-rendered.
+

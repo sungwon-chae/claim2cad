@@ -24,6 +24,12 @@ from claim2cad.scaffolds import (  # noqa: F401
     housing_panel,
     generic_exploded,
     fallback_layout,
+    # V13-L: dedicated scaffolds for the three semantic-mismatch
+    # examples (positioning apparatus, self-closing hinge,
+    # planetary gear with orbital planet layout).
+    positioning_apparatus,
+    self_closing_hinge_mechanism,
+    planetary_gear,
 )
 
 

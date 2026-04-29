@@ -50,7 +50,22 @@ COORD_SPACE_NORMALISED = "normalised"
 
 @dataclass
 class FigureHotspot:
-    """One viewer hotspot, in raw image-pixel coordinates."""
+    """One viewer hotspot, in raw image-pixel coordinates.
+
+    V11-35/36 additions:
+      * ``hotspot_kind`` distinguishes a *part* hotspot (default
+        viewer marker) from a *label* hotspot (the digit text); the
+        viewer can render label hotspots in a debug overlay.
+      * ``instance_id`` preserves repeated callout occurrences (the
+        same component_id can have N hotspots, one per geographic
+        instance like upper/lower hinge).
+      * ``label_center_px`` and ``label_bbox_px`` are kept on the
+        record so the viewer can show "label vs part" toggles
+        without reloading other artefacts.
+      * ``source`` enumerates: ``leader_endpoint`` |
+        ``projection_anchor`` | ``crop_center`` | ``median_label`` |
+        ``label_center`` | ``manual_override``.
+    """
 
     hotspot_id: str
     figure_id: str
@@ -63,13 +78,21 @@ class FigureHotspot:
     center_px: tuple[float, float] = (0.0, 0.0)
     bbox_px: tuple[float, float, float, float] = (0.0, 0.0, 0.0, 0.0)
     confidence: float = 0.5
-    source: str = "label"  # "figure_projection" | "median_label" | "label"
+    source: str = "label_center"
+    hotspot_kind: str = "part"  # "part" | "label"
+    instance_id: int = 0
+    label_center_px: tuple[float, float] | None = None
+    label_bbox_px: tuple[float, float, float, float] | None = None
     debug: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
         d["center_px"] = list(self.center_px)
         d["bbox_px"] = list(self.bbox_px)
+        if self.label_center_px is not None:
+            d["label_center_px"] = list(self.label_center_px)
+        if self.label_bbox_px is not None:
+            d["label_bbox_px"] = list(self.label_bbox_px)
         return d
 
 
@@ -95,24 +118,31 @@ class FigureHotspotSet:
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "FigureHotspotSet":
-        hs = [
-            FigureHotspot(
-                hotspot_id=h["hotspot_id"],
-                figure_id=h["figure_id"],
-                component_id=h.get("component_id"),
-                callout_number=h.get("callout_number", ""),
-                label=h.get("label", ""),
-                coord_space=h.get("coord_space", COORD_SPACE_IMAGE_PIXEL),
-                image_width_px=int(h.get("image_width_px", 0)),
-                image_height_px=int(h.get("image_height_px", 0)),
-                center_px=tuple(h.get("center_px", (0.0, 0.0))),  # type: ignore[arg-type]
-                bbox_px=tuple(h.get("bbox_px", (0.0, 0.0, 0.0, 0.0))),  # type: ignore[arg-type]
-                confidence=float(h.get("confidence", 0.5)),
-                source=h.get("source", "label"),
-                debug=h.get("debug", {}),
+        hs: list[FigureHotspot] = []
+        for h in d.get("hotspots", []):
+            label_center = h.get("label_center_px")
+            label_bbox = h.get("label_bbox_px")
+            hs.append(
+                FigureHotspot(
+                    hotspot_id=h["hotspot_id"],
+                    figure_id=h["figure_id"],
+                    component_id=h.get("component_id"),
+                    callout_number=h.get("callout_number", ""),
+                    label=h.get("label", ""),
+                    coord_space=h.get("coord_space", COORD_SPACE_IMAGE_PIXEL),
+                    image_width_px=int(h.get("image_width_px", 0)),
+                    image_height_px=int(h.get("image_height_px", 0)),
+                    center_px=tuple(h.get("center_px", (0.0, 0.0))),  # type: ignore[arg-type]
+                    bbox_px=tuple(h.get("bbox_px", (0.0, 0.0, 0.0, 0.0))),  # type: ignore[arg-type]
+                    confidence=float(h.get("confidence", 0.5)),
+                    source=h.get("source", "label_center"),
+                    hotspot_kind=h.get("hotspot_kind", "part"),
+                    instance_id=int(h.get("instance_id", 0)),
+                    label_center_px=tuple(label_center) if label_center else None,  # type: ignore[arg-type]
+                    label_bbox_px=tuple(label_bbox) if label_bbox else None,  # type: ignore[arg-type]
+                    debug=h.get("debug", {}),
+                )
             )
-            for h in d.get("hotspots", [])
-        ]
         return cls(
             figure_id=d["figure_id"],
             image_width_px=int(d["image_width_px"]),
@@ -164,21 +194,28 @@ def build_hotspots_for_example(
 ) -> FigureHotspotSet | None:
     """Build a ``FigureHotspotSet`` for an example.
 
-    Sources, in priority order, per claim component:
-      1. ``figure_projection.json`` component_anchor (figure_uv) —
-         the median over all label occurrences for this component,
-         which dampens the duplicate-label problem.
-      2. The median (u, v) of all `vlm_labels` whose number maps to
-         this component (handles duplicates by averaging).
-      3. The single `vlm_labels[i].approximate_position` if only one
-         occurrence exists.
+    V11-35/36 strategy — produce one hotspot per **callout instance**
+    (preserving repeats so upper/lower hinge occurrences are
+    separate), with both a part hotspot and a label hotspot per
+    instance:
 
-    Returns ``None`` when the figure or claim_map is missing.
+      * Each `vlm_labels[i]` becomes one (or two) hotspots tied to
+        the component_id its number maps to.
+      * The **part** hotspot's source is the leader endpoint when
+        leader_lines.json provides one; otherwise it falls back to
+        the figure_projection anchor (only for the first instance
+        per component, since the projection collapses repeats),
+        then to the label center as a last resort.
+      * The **label** hotspot is always emitted with source
+        ``label_center`` so debug overlays can show both.
+
+    Returns ``None`` when figure or claim_map is missing.
     """
     figure_path = example_dir / figure_filename
     fmap_path = example_dir / "figure_map.json"
     cmap_path = example_dir / "claim_map.json"
     fproj_path = example_dir / "figure_projection.json"
+    leaders_path = example_dir / "leader_lines.json"
     if not figure_path.exists() or not fmap_path.exists() or not cmap_path.exists():
         return None
     try:
@@ -195,18 +232,10 @@ def build_hotspots_for_example(
     rows = cmap.get("components", [])
 
     component_to_number = fmap.get("component_to_number", {}) or {}
+    number_to_components: dict[str, list[str]] = {}
+    for cid, num in component_to_number.items():
+        number_to_components.setdefault(str(num).strip(), []).append(cid)
     labels = fmap.get("vlm_labels", []) or []
-    label_positions: dict[str, list[tuple[float, float]]] = {}
-    for lab in labels:
-        num = str(lab.get("number") or "").strip()
-        pos = lab.get("approximate_position") or []
-        if not num or len(pos) < 2:
-            continue
-        try:
-            uv = (float(pos[0]), float(pos[1]))
-        except (TypeError, ValueError):
-            continue
-        label_positions.setdefault(num, []).append(uv)
 
     proj_anchors: dict[str, tuple[float, float]] = {}
     if fproj_path.exists():
@@ -220,74 +249,125 @@ def build_hotspots_for_example(
         except Exception as exc:  # noqa: BLE001
             logger.warning("Could not load figure_projection.json: %s", exc)
 
+    # Index leader lines by label_index.
+    leader_by_label_index: dict[int, dict[str, Any]] = {}
+    if leaders_path.exists():
+        try:
+            ld = json.loads(leaders_path.read_text("utf-8"))
+            for l in ld.get("leaders", []) or []:
+                idx = int(l.get("label_index", -1))
+                if idx >= 0 and l.get("method") == "hough":
+                    leader_by_label_index[idx] = l
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Could not load leader_lines.json: %s", exc)
+
     def _label_for(cid: str) -> str:
         for r in rows:
             if r.get("component_id") == cid:
                 return r.get("label", cid)
         return cid
 
-    label_label_text: dict[str, str] = {
-        str(lab.get("number") or "").strip(): str(lab.get("description") or "")
-        for lab in labels
-    }
-
     hotspots: list[FigureHotspot] = []
-    seen_pairs: set[tuple[str, tuple[float, float]]] = set()
-    for cid, num in component_to_number.items():
-        num = str(num).strip()
-        # Source 1 — figure_projection anchor
-        source = "label"
-        confidence = 0.5
-        debug: dict[str, Any] = {}
-        if cid in proj_anchors:
-            u, v = proj_anchors[cid]
-            source = "figure_projection"
-            confidence = 0.85
-            debug["origin"] = "figure_projection.json component_anchors"
-        else:
-            occ = label_positions.get(num, [])
-            if len(occ) >= 2:
-                # Source 2 — median of duplicates
-                u = sum(p[0] for p in occ) / len(occ)
-                v = sum(p[1] for p in occ) / len(occ)
-                source = "median_label"
-                confidence = 0.6
-                debug["origin"] = f"median of {len(occ)} label occurrences"
-            elif len(occ) == 1:
-                # Source 3 — single label
-                u, v = occ[0]
-                source = "label"
-                confidence = 0.45
-                debug["origin"] = "single label occurrence"
-            else:
-                continue
-        # Validate within image bounds.
-        if not (0.0 <= u <= 1.0 and 0.0 <= v <= 1.0):
-            logger.debug("Hotspot %s out of bounds: (%.2f, %.2f)", cid, u, v)
-            u = max(0.0, min(1.0, u))
-            v = max(0.0, min(1.0, v))
-        if (cid, (round(u, 3), round(v, 3))) in seen_pairs:
+    instance_counter: dict[str, int] = {}  # per component_id
+    fp_anchor_used: set[str] = set()  # don't reuse projection anchor across instances
+
+    for label_index, lab in enumerate(labels):
+        num = str(lab.get("number") or "").strip()
+        pos = lab.get("approximate_position") or []
+        if not num or len(pos) < 2:
             continue
-        seen_pairs.add((cid, (round(u, 3), round(v, 3))))
-        centre_px = _norm_to_px((u, v), W, H)
-        bbox_px = _bbox_around_centre(centre_px, W, H, radius_frac=0.04)
-        hotspots.append(
-            FigureHotspot(
-                hotspot_id=f"{cid}_{num}",
-                figure_id=fmap.get("primary_figure", "figure_1"),
-                component_id=cid,
-                callout_number=num,
-                label=_label_for(cid) or label_label_text.get(num, ""),
-                coord_space=COORD_SPACE_IMAGE_PIXEL,
-                image_width_px=W,
-                image_height_px=H,
-                center_px=centre_px,
-                bbox_px=bbox_px,
-                confidence=confidence,
-                source=source,
-                debug=debug,
+        cids = number_to_components.get(num, [])
+        if not cids:
+            continue  # no claim component bound to this callout
+        try:
+            label_uv = (float(pos[0]), float(pos[1]))
+        except (TypeError, ValueError):
+            continue
+        label_uv = (max(0.0, min(1.0, label_uv[0])), max(0.0, min(1.0, label_uv[1])))
+        label_center_px = _norm_to_px(label_uv, W, H)
+        leader_record = leader_by_label_index.get(label_index)
+        if leader_record and leader_record.get("line_end_px"):
+            label_bbox_px = tuple(
+                leader_record.get("label_bbox_px") or (0, 0, 0, 0)
             )
-        )
+        else:
+            label_bbox_px = _bbox_around_centre(label_center_px, W, H, radius_frac=0.022)
+
+        for cid in cids:
+            instance_counter[cid] = instance_counter.get(cid, 0) + 1
+            instance_id = instance_counter[cid] - 1
+            label_text = _label_for(cid) or str(lab.get("description") or "")
+
+            # PART hotspot — leader endpoint if available, else
+            # projection anchor (first time only), else label centre.
+            part_centre_px: tuple[float, float]
+            part_source: str
+            part_confidence: float
+            part_debug: dict[str, Any] = {"label_index": label_index}
+            if leader_record and leader_record.get("line_end_px"):
+                end = leader_record["line_end_px"]
+                part_centre_px = (float(end[0]), float(end[1]))
+                part_source = "leader_endpoint"
+                part_confidence = float(leader_record.get("confidence", 0.7))
+                part_debug["leader_length_px"] = leader_record.get("length_px")
+            elif cid in proj_anchors and cid not in fp_anchor_used:
+                u, v = proj_anchors[cid]
+                part_centre_px = _norm_to_px((u, v), W, H)
+                part_source = "projection_anchor"
+                part_confidence = 0.65
+                fp_anchor_used.add(cid)
+                part_debug["origin"] = "figure_projection.json"
+            else:
+                part_centre_px = label_center_px
+                part_source = "label_center"
+                part_confidence = 0.4
+                part_debug["origin"] = "fallback to label centre"
+
+            part_bbox_px = _bbox_around_centre(part_centre_px, W, H, radius_frac=0.035)
+            hotspots.append(
+                FigureHotspot(
+                    hotspot_id=f"{cid}__{num}__{instance_id}__part",
+                    figure_id=fmap.get("primary_figure", "figure_1"),
+                    component_id=cid,
+                    callout_number=num,
+                    label=label_text,
+                    coord_space=COORD_SPACE_IMAGE_PIXEL,
+                    image_width_px=W,
+                    image_height_px=H,
+                    center_px=part_centre_px,
+                    bbox_px=part_bbox_px,
+                    confidence=part_confidence,
+                    source=part_source,
+                    hotspot_kind="part",
+                    instance_id=instance_id,
+                    label_center_px=label_center_px,
+                    label_bbox_px=label_bbox_px,
+                    debug=part_debug,
+                )
+            )
+            # LABEL hotspot — always emitted at the digit text
+            # position so the viewer can show "label vs part" toggles.
+            hotspots.append(
+                FigureHotspot(
+                    hotspot_id=f"{cid}__{num}__{instance_id}__label",
+                    figure_id=fmap.get("primary_figure", "figure_1"),
+                    component_id=cid,
+                    callout_number=num,
+                    label=label_text,
+                    coord_space=COORD_SPACE_IMAGE_PIXEL,
+                    image_width_px=W,
+                    image_height_px=H,
+                    center_px=label_center_px,
+                    bbox_px=label_bbox_px,
+                    confidence=0.6,
+                    source="label_center",
+                    hotspot_kind="label",
+                    instance_id=instance_id,
+                    label_center_px=label_center_px,
+                    label_bbox_px=label_bbox_px,
+                    debug={"label_index": label_index},
+                )
+            )
 
     return FigureHotspotSet(
         figure_id=fmap.get("primary_figure", "figure_1"),
@@ -297,8 +377,10 @@ def build_hotspots_for_example(
         hotspots=hotspots,
         notes=(
             "Hotspots are in raw image-pixel coordinates (origin "
-            "top-left). The viewer should multiply by displayed_size/"
-            "natural_size at render time."
+            "top-left). Each callout instance gets a part hotspot "
+            "(leader endpoint when available) AND a label hotspot. "
+            "Repeated callouts (e.g. upper/lower hinge) are preserved "
+            "as separate instance_id rows."
         ),
     )
 
@@ -345,21 +427,39 @@ def render_hotspot_debug_overlay(
         font = ImageFont.load_default()
 
     color_by_source = {
-        "figure_projection": (40, 80, 220),  # blue
+        "leader_endpoint": (40, 180, 60),    # green
+        "projection_anchor": (40, 80, 220),  # blue
         "median_label": (180, 60, 200),      # purple
-        "label": (220, 60, 60),              # red
+        "label_center": (220, 60, 60),       # red
+        "crop_center": (220, 140, 30),       # orange
+        "manual_override": (140, 80, 200),   # violet
     }
+    # Draw label hotspots (smaller, lighter)
+    for h in hotspots.hotspots:
+        if h.hotspot_kind != "label":
+            continue
+        cx = h.center_px[0] * sx
+        cy = h.center_px[1] * sy
+        draw.ellipse((cx - 3, cy - 3, cx + 3, cy + 3),
+                      outline=(180, 180, 180), width=1)
+    # Draw part hotspots (bigger, source-coloured)
     r = 6
     for h in hotspots.hotspots:
+        if h.hotspot_kind != "part":
+            continue
         cx = h.center_px[0] * sx
         cy = h.center_px[1] * sy
         col = color_by_source.get(h.source, (90, 90, 90))
-        draw.ellipse(
-            (cx - r, cy - r, cx + r, cy + r),
-            outline=col,
-            width=2,
-        )
-        draw.text((cx + 8, cy - 6), h.component_id or h.callout_number,
+        draw.ellipse((cx - r, cy - r, cx + r, cy + r),
+                      outline=col, width=2)
+        # Draw a thin line from label to part to make the leader
+        # connection visible in the debug overlay.
+        if h.label_center_px is not None:
+            lx = h.label_center_px[0] * sx
+            ly = h.label_center_px[1] * sy
+            draw.line((lx, ly, cx, cy), fill=col + (90,), width=1)
+        draw.text((cx + 8, cy - 6),
+                  f"{h.component_id} #{h.callout_number}.{h.instance_id}",
                   fill=col, font=font)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path)

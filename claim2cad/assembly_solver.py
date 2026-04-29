@@ -756,9 +756,39 @@ def build_assembly_scaffold_first(
         except Exception:  # noqa: BLE001
             solid = _build_other(s)
 
-        # Pin / shaft along Z, anchored at pintle_axis.
+        # Pin / shaft along Z, anchored at pintle_axis. Stretch the
+        # pin so it spans the scaffold's pintle_axis bbox; otherwise a
+        # 90 mm pin built from VLM-suggested length won't reach
+        # extensions placed at z = ±90 by the scaffold groups.
         if s.shape_family in {"pin", "shaft"}:
             solid = _orient_for_axis(solid, "Z")
+            target_pin_z = (
+                groups["pintle_axis"].nominal_bbox_mm[2]
+                if "pintle_axis" in groups
+                else 0.0
+            )
+            if target_pin_z > 0:
+                bb = solid.bounding_box()
+                cur_z = bb.max.Z - bb.min.Z
+                if cur_z > 0 and target_pin_z > cur_z * 1.2:
+                    scale = target_pin_z / cur_z
+                    # Apply non-uniform scale only along Z. build123d's
+                    # `scale` accepts a tuple; if it doesn't we
+                    # rebuild a stretched cylinder of the same dia.
+                    try:
+                        solid = solid.scale(
+                            (1.0, 1.0, scale)  # type: ignore[arg-type]
+                        )
+                    except Exception:  # noqa: BLE001
+                        # Fallback: rebuild from scratch.
+                        from claim2cad.components.joints.hinge_primitives import HingeShaft
+                        new = HingeShaft(
+                            diameter=max(s.diameter_mm or s.thickness_mm or 4.0, 3.0),
+                            length=target_pin_z,
+                            head_style="round",
+                            chamfer_mm=0.5,
+                        ).build()
+                        solid = _orient_for_axis(new, "Z")
 
         # Apply rotation_deg (still respect VLM hints for orientation).
         rx, ry, rz = s.rotation_deg

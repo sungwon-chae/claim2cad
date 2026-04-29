@@ -307,6 +307,51 @@ body {
   border-color: var(--selected);
 }
 
+/* V11-35 — colour-code hotspots by source so a reviewer can spot
+   leader-grounded vs fallback positions at a glance. */
+.figure-hotspot.source-leader-endpoint {
+  border-color: rgba(40, 180, 60, 0.55);
+}
+.figure-hotspot.source-leader-endpoint:hover,
+.figure-hotspot.source-leader-endpoint.hovered {
+  background: rgba(40, 180, 60, 0.10);
+}
+.figure-hotspot.source-projection-anchor {
+  border-color: rgba(40, 80, 220, 0.55);
+}
+.figure-hotspot.source-projection-anchor:hover,
+.figure-hotspot.source-projection-anchor.hovered {
+  background: rgba(40, 80, 220, 0.10);
+}
+.figure-hotspot.source-label-center,
+.figure-hotspot.source-median-label {
+  border-color: rgba(220, 80, 60, 0.55);
+}
+
+/* V11-36 — label hotspots are a debug overlay. Keep them subdued
+   so the part hotspots are still the primary affordance. */
+.figure-hotspot.label-hotspot {
+  border: 1px dashed rgba(120, 120, 130, 0.55);
+  background: rgba(180, 180, 200, 0.08);
+}
+.figure-hotspot.label-hotspot.selected {
+  border-color: rgba(180, 80, 200, 0.7);
+  background: rgba(180, 80, 200, 0.10);
+}
+
+.figure-panel-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  color: var(--fg-1);
+  cursor: pointer;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-left: 12px;
+}
+.figure-panel-toggle input { margin: 0; }
+
 /* ----------------------------------------------------------------- */
 /* V1-5 — Prior-art overlay                                            */
 /* ----------------------------------------------------------------- */

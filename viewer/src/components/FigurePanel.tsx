@@ -28,6 +28,12 @@ export type FigureHotspot = {
   bbox_px: [number, number, number, number];
   confidence: number;
   source: string;
+  /** V11-35: "part" (default) | "label" */
+  hotspot_kind?: string;
+  /** V11-36: per-component instance index (0, 1, ...) */
+  instance_id?: number;
+  label_center_px?: [number, number];
+  label_bbox_px?: [number, number, number, number];
 };
 
 export type FigureHotspotSet = {
@@ -40,11 +46,22 @@ export type FigureHotspotSet = {
 };
 
 type Hotspot = {
+  hotspotId: string;
   componentId: string;
   number: string;
   description: string;
   bbox: { x: number; y: number; w: number; h: number }; // normalised 0..1
   isDependent: boolean;
+  /** V11-35: "part" | "label" — viewer renders part by default,
+   *  label hotspots only show when "show labels" toggle is on. */
+  kind: "part" | "label";
+  /** V11-36: per-component instance index */
+  instanceId: number;
+  /** V11-35: leader/anchor source — used to colour-code the marker */
+  source: string;
+  /** Normalised label-centre coordinates so the label hotspot can be
+   *  drawn alongside the part hotspot when the debug toggle is on. */
+  labelBbox?: { x: number; y: number; w: number; h: number };
 };
 
 function bboxFromVLM(label: VLMLabel): { x: number; y: number; w: number; h: number } | null {
@@ -94,11 +111,15 @@ function buildHotspots(figureMap: FigureMap | null, rows: ClaimMapRow[]): Hotspo
     const bb = bboxFromVLM(label);
     if (!bb) continue;
     hotspots.push({
+      hotspotId: `${row.component_id}__${num}__legacy`,
       componentId: row.component_id,
       number: num,
       description: label.description || row.label,
       bbox: bb,
       isDependent: row.is_dependent,
+      kind: "part",
+      instanceId: 0,
+      source: "label_center",
     });
   }
   return hotspots;
@@ -111,12 +132,15 @@ export function FigurePanel(props: Props) {
   } = props;
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [imgSize, setImgSize] = useState<{ w: number; h: number } | null>(null);
+  // V11-36: debug toggle — when on, render label hotspots alongside
+  // part hotspots so reviewers can visually verify the leader trace.
+  const [showLabelHotspots, setShowLabelHotspots] = useState<boolean>(false);
 
   const hotspots = useMemo<Hotspot[]>(() => {
-    // V11-31: prefer the canonical figure_hotspots.json with raw
-    // image-pixel coordinates. Convert to normalised [0..1] for
-    // CSS percentage rendering. Fall back to the v1.0 path
-    // (figure_map.vlm_labels) when the canonical file is missing.
+    // V11-35/36: prefer canonical figure_hotspots.json. The canonical
+    // file emits BOTH a part hotspot AND a label hotspot per callout
+    // instance; the viewer hides the label by default and reveals it
+    // when ``showLabelHotspots`` is on.
     if (hotspotsCanonical && hotspotsCanonical.hotspots.length > 0) {
       const W = Math.max(hotspotsCanonical.image_width_px, 1);
       const H = Math.max(hotspotsCanonical.image_height_px, 1);
@@ -132,18 +156,44 @@ export function FigurePanel(props: Props) {
         const y = y0 / H;
         const w = Math.max((x1 - x0) / W, 0.02);
         const hs = Math.max((y1 - y0) / H, 0.02);
+        let labelBbox: { x: number; y: number; w: number; h: number } | undefined;
+        if (h.label_bbox_px) {
+          const [lx0, ly0, lx1, ly1] = h.label_bbox_px;
+          labelBbox = {
+            x: lx0 / W,
+            y: ly0 / H,
+            w: Math.max((lx1 - lx0) / W, 0.015),
+            h: Math.max((ly1 - ly0) / H, 0.015),
+          };
+        }
         out.push({
+          hotspotId: h.hotspot_id,
           componentId: h.component_id,
           number: h.callout_number,
           description: h.label || row.label,
           bbox: { x, y, w, h: hs },
           isDependent: row.is_dependent,
+          kind: (h.hotspot_kind === "label" ? "label" : "part") as "part" | "label",
+          instanceId: h.instance_id ?? 0,
+          source: h.source,
+          labelBbox,
         });
       }
       return out;
     }
     return buildHotspots(figureMap, rows);
   }, [figureMap, rows, hotspotsCanonical]);
+
+  // V11-36: split for rendering — part hotspots are always shown,
+  // label hotspots only show when the debug toggle is on.
+  const partHotspots = useMemo(
+    () => hotspots.filter((h) => h.kind === "part"),
+    [hotspots],
+  );
+  const labelHotspots = useMemo(
+    () => hotspots.filter((h) => h.kind === "label"),
+    [hotspots],
+  );
 
   useEffect(() => {
     setImgSize(null);
@@ -173,8 +223,19 @@ export function FigurePanel(props: Props) {
           {figureMap?.primary_figure ?? "Figure"}
         </span>
         <span className="figure-panel-meta">
-          {hotspots.length} hotspot{hotspots.length === 1 ? "" : "s"}
+          {partHotspots.length} part{partHotspots.length === 1 ? "" : "s"}
+          {labelHotspots.length > 0 && ` · ${labelHotspots.length} labels`}
         </span>
+        {labelHotspots.length > 0 && (
+          <label className="figure-panel-toggle">
+            <input
+              type="checkbox"
+              checked={showLabelHotspots}
+              onChange={(e) => setShowLabelHotspots(e.target.checked)}
+            />
+            show labels
+          </label>
+        )}
       </div>
       <div className="figure-stage">
         <img
@@ -188,7 +249,7 @@ export function FigurePanel(props: Props) {
           }}
           draggable={false}
         />
-        {imgSize && hotspots.map((h) => {
+        {imgSize && partHotspots.map((h) => {
           const isSelected = selectedId === h.componentId;
           const isHovered = hoveredId === h.componentId && !isSelected;
           const cls = [
@@ -196,10 +257,11 @@ export function FigurePanel(props: Props) {
             h.isDependent ? "dependent" : "independent",
             isSelected ? "selected" : "",
             isHovered ? "hovered" : "",
+            `source-${h.source.replace(/_/g, "-")}`,
           ].filter(Boolean).join(" ");
           return (
             <div
-              key={`${h.componentId}-${h.number}`}
+              key={h.hotspotId}
               className={cls}
               style={{
                 left: `${h.bbox.x * 100}%`,
@@ -213,14 +275,41 @@ export function FigurePanel(props: Props) {
               }}
               onMouseEnter={() => onHover(h.componentId)}
               onMouseLeave={() => onHover(null)}
-              title={`#${h.number} — ${h.description}`}
+              title={`#${h.number}${h.instanceId > 0 ? ` (instance ${h.instanceId + 1})` : ""} — ${h.description} [${h.source}]`}
             >
               <span className="figure-hotspot-num">{h.number}</span>
             </div>
           );
         })}
+        {imgSize && showLabelHotspots && labelHotspots.map((h) => {
+          const isSelected = selectedId === h.componentId;
+          const cls = [
+            "figure-hotspot",
+            "label-hotspot",
+            isSelected ? "selected" : "",
+          ].filter(Boolean).join(" ");
+          return (
+            <div
+              key={h.hotspotId}
+              className={cls}
+              style={{
+                left: `${h.bbox.x * 100}%`,
+                top: `${h.bbox.y * 100}%`,
+                width: `${h.bbox.w * 100}%`,
+                height: `${h.bbox.h * 100}%`,
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(isSelected ? null : h.componentId);
+              }}
+              onMouseEnter={() => onHover(h.componentId)}
+              onMouseLeave={() => onHover(null)}
+              title={`label #${h.number}${h.instanceId > 0 ? ` (instance ${h.instanceId + 1})` : ""} — ${h.description}`}
+            />
+          );
+        })}
       </div>
-      {hotspots.length === 0 && (
+      {partHotspots.length === 0 && (
         <div className="figure-panel-warn">
           The VLM extracted figure labels but none were matched to a claim
           component. The figure is shown without hotspots.

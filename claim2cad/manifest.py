@@ -315,6 +315,18 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
         # codepath is unchanged.
         source_glb = src_dir / _preferred_glb(src_dir)
         shutil.copy2(source_glb, target / "model.glb")
+        # V11-15: stage optional v1.1 sidecars (best-effort) so the viewer
+        # can show camera presets / shape metadata when present.
+        for optional in (
+            "projection_report.json",
+            "figure_view.json",
+            "shape_inference.json",
+            "solver_diagnostics.json",
+            "render_comparison.png",
+        ):
+            src_p = src_dir / optional
+            if src_p.exists():
+                shutil.copy2(src_p, target / optional)
         if ex.figure_map_path:
             shutil.copy2(src_dir / ex.figure_map_path, target / ex.figure_map_path)
         if ex.claim_hierarchy_path:

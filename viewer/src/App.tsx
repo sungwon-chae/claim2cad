@@ -3,7 +3,7 @@ import { ClaimPanel } from "./components/ClaimPanel";
 import { FigurePanel } from "./components/FigurePanel";
 import { KinematicSliders } from "./components/KinematicSliders";
 import { PriorArtOverlay } from "./components/PriorArtOverlay";
-import { Scene } from "./components/Scene";
+import { Scene, type CameraPreset } from "./components/Scene";
 import { loadDiff, loadExample, loadManifest, type LoadedExample } from "./data";
 import type { ManifestExample, PriorArtDiff, URDFJoint } from "./types";
 import { loadUrdf } from "./urdf";
@@ -30,6 +30,11 @@ export function App() {
   const [jointValues, setJointValues] = useState<Record<string, number>>({});
   const [showKinematics, setShowKinematics] = useState<boolean>(false);
 
+  // V11-15: camera preset for figure-aligned inspection. The "best"
+  // preset comes from projection_report.json's best_view (when present).
+  const [cameraPreset, setCameraPreset] = useState<CameraPreset | null>(null);
+  const [bestView, setBestView] = useState<CameraPreset | null>(null);
+
   // Initial manifest load.
   useEffect(() => {
     loadManifest()
@@ -43,6 +48,28 @@ export function App() {
       })
       .catch((e) => setError(String(e)));
   }, []);
+
+  // V11-15: load projection_report.json (when present) to learn the
+  // best-match canonical camera preset.
+  useEffect(() => {
+    if (!loaded) {
+      setBestView(null);
+      return;
+    }
+    const url = `data/${loaded.example.base}/projection_report.json`;
+    fetch(url)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j: { best_view?: string } | null) => {
+        if (!j || !j.best_view) {
+          setBestView(null);
+          return;
+        }
+        const candidate = j.best_view as CameraPreset;
+        const valid = ["top", "front", "right", "left", "iso", "iso2"];
+        setBestView(valid.includes(candidate) ? candidate : null);
+      })
+      .catch(() => setBestView(null));
+  }, [loaded]);
 
   // Whenever currentId changes, fetch the example bundle.
   useEffect(() => {
@@ -242,7 +269,41 @@ export function App() {
               diff={activeDiff}
               joints={kinematicsActive ? joints : undefined}
               jointValues={kinematicsActive ? jointValues : undefined}
+              cameraPreset={cameraPreset}
             />
+          )}
+          {/* V11-15 camera preset bar — shown only when a model is loaded */}
+          {loaded && (
+            <div className="camera-presets">
+              {(["top", "front", "right", "iso"] as const).map((preset) => {
+                const active = cameraPreset === preset;
+                const isBest = bestView === preset;
+                const cls = `camera-preset${active ? " active" : ""}${isBest ? " best" : ""}`;
+                return (
+                  <button
+                    key={preset}
+                    className={cls}
+                    onClick={() =>
+                      setCameraPreset(active ? null : preset)
+                    }
+                    title={
+                      isBest
+                        ? `${preset} — best aspect-match to figure`
+                        : `${preset} view`
+                    }
+                  >
+                    {preset}{isBest ? " ★" : ""}
+                  </button>
+                );
+              })}
+              <button
+                className="camera-preset reset"
+                onClick={() => setCameraPreset(null)}
+                title="Free orbit"
+              >
+                free
+              </button>
+            </div>
           )}
           {loaded && (
             <div className="scene-status">

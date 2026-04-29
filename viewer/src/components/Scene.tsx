@@ -23,6 +23,23 @@ type Props = {
    *  for prismatic). */
   joints?: URDFJoint[];
   jointValues?: Record<string, number>;
+  /** V11-15: camera preset key. When set, the OrbitControls target+camera
+   *  snap to that view. */
+  cameraPreset?: CameraPreset | null;
+};
+
+export type CameraPreset = "top" | "front" | "right" | "left" | "iso" | "iso2";
+
+/** World-space camera positions (relative to scene bounds, normalised
+ *  to roughly fit the model). The OrbitControls' target stays at the
+ *  scene origin. */
+export const CAMERA_PRESETS: Record<CameraPreset, [number, number, number]> = {
+  top: [0.001, 1.0, 0.001],
+  front: [0.0, 0.0, 1.0],
+  right: [1.0, 0.0, 0.0],
+  left: [-1.0, 0.0, 0.0],
+  iso: [0.7, 0.5, 0.7],
+  iso2: [-0.7, 0.5, -0.7],
 };
 
 const COLOR_INDEPENDENT = new THREE.Color("#4f8cff");
@@ -51,8 +68,34 @@ export function Scene(props: Props) {
         </Bounds>
       </Suspense>
       <OrbitControls makeDefault enableDamping dampingFactor={0.12} />
+      {props.cameraPreset ? <CameraSnap preset={props.cameraPreset} /> : null}
     </Canvas>
   );
+}
+
+function CameraSnap({ preset }: { preset: CameraPreset }) {
+  const dir = CAMERA_PRESETS[preset];
+  // Use useFrame to snap once after first render (after Bounds fits).
+  const snappedRef = useRef(false);
+  const previousPresetRef = useRef<CameraPreset | null>(null);
+  useFrame((state) => {
+    if (previousPresetRef.current !== preset) {
+      snappedRef.current = false;
+      previousPresetRef.current = preset;
+    }
+    if (snappedRef.current) return;
+    // Place the camera along `dir` at a distance proportional to the
+    // current scene bounds. Look at origin.
+    const cam = state.camera;
+    // Target distance: 1.4 × world bounds radius.
+    const radius = cam.position.length() || 1.0;
+    const r = Math.max(radius, 0.4) * 1.4;
+    cam.position.set(dir[0] * r, dir[1] * r, dir[2] * r);
+    cam.lookAt(0, 0, 0);
+    cam.updateProjectionMatrix();
+    snappedRef.current = true;
+  });
+  return null;
 }
 
 function ModelTree(props: Props) {

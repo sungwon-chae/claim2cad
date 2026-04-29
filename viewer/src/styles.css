@@ -510,3 +510,49 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+
+/* V11-15: camera preset bar */
+.camera-presets {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  z-index: 5;
+  background: rgba(11, 11, 16, 0.7);
+  padding: 4px 6px;
+  border-radius: 6px;
+  backdrop-filter: blur(2px);
+}
+.camera-preset {
+  background: var(--bg-1, #161620);
+  color: var(--fg-0, #d6d6dc);
+  border: 1px solid #2a2a35;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 4px 9px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.camera-preset:hover {
+  border-color: var(--accent-independent, #4f8cff);
+  color: var(--fg-0, #fff);
+}
+.camera-preset.active {
+  background: var(--accent-independent, #4f8cff);
+  color: #0b0b10;
+  border-color: var(--accent-independent, #4f8cff);
+}
+.camera-preset.best {
+  border-color: #56d97a;
+}
+.camera-preset.best.active {
+  background: #56d97a;
+  color: #0b0b10;
+}
+.camera-preset.reset {
+  background: transparent;
+  color: var(--fg-1, #999);
+  margin-left: 4px;
+}

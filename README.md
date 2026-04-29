@@ -40,6 +40,45 @@ US4807331A_spring_loaded_hinge by default. Click any callout
 on the figure, any span in the claim, or any face in the 3D
 scene — all three panels stay in sync.
 
+**v1.3-dev** · multi-patent generalization
+* **Multi-patent audit** (V13-A) — programmatic survey of all
+  25 real-patent examples; honest about which are flagship
+  candidates and which need fallback.
+* **Scaffold taxonomy** (V13-B) — `claim2cad/scaffolds/` package:
+  door_hinge, two_plate_hinge, rotary_shaft, linkage,
+  bracket_mount, housing_panel, generic_exploded,
+  fallback_grid. Registry pattern; per-template quality_tier.
+* **Figure-topology classifier** (V13-C) — deterministic
+  keyword classifier; 10 topology rules; outputs
+  figure_classification.json.
+* **Batch pipeline** (V13-D/E) — `make batch-v13` regenerates
+  every example with its topology-matched scaffold; per-example
+  failures don't abort the run.
+* **Multi-patent hotspot grounding** (V13-F) — Hough
+  leader-line detection across all 25 figures.
+  **70.7% corpus-wide detection rate**. 151 high + 31 medium
+  + 78 low-tier hotspots.
+* **Multi-patent evaluator** (V13-G) — per-example quality
+  verdict (flagship | good | partial | fallback | failed) plus
+  9-axis breakdown. Corpus mean score: **0.796**.
+* **Multi-example viewer** (V13-H) — quality badges in the
+  example dropdown; per-example warning banner for non-flagship
+  outputs; no crash on partial data.
+
+**Corpus status (V13-G):**
+
+| Verdict | Count |
+| --- | ---: |
+| flagship | 1 (US4807331A) |
+| good | 2 |
+| partial | 20 |
+| fallback | 2 |
+| failed | 0 |
+
+`make demo-v13` regenerates everything and opens the viewer.
+
+---
+
 **v1.2-dev** · honest patent-grounded reconstruction
 * **Visual truth audit** (V12-A) — written critique of the v1.1
   output; identifies the central-pile failure mode honestly.

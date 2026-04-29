@@ -10,7 +10,7 @@ PY ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 EXAMPLE ?= golden_robot_arm
 
-.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout demo-v12 eval eval-stub eval-v12 test clean viewer viewer-install viewer-build viewer-dev help
+.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout demo-v12 demo-v13 eval eval-stub eval-v12 eval-v13 batch-v13 test clean viewer viewer-install viewer-build viewer-dev help
 
 help:
 	@echo "Available targets:"
@@ -95,6 +95,25 @@ demo-v12:
 	@echo "===> staging viewer data (preferring model_v1.2.glb where present)"
 	$(PY) -m claim2cad.manifest
 	@echo "===> opening viewer at http://localhost:4179 (Ctrl+C to stop)"
+	cd viewer && npm run dev
+
+batch-v13:
+	$(PY) -m claim2cad.batch_generate --all-real-patents
+
+eval-v13:
+	$(PY) -m claim2cad.eval_v13
+
+demo-v13:
+	@echo "===> regenerating all examples with v1.3 scaffolds"
+	@echo "===> (skip with: make demo-v13-stage if already generated)"
+	$(PY) -m claim2cad.batch_generate --all-real-patents
+	$(PY) -m claim2cad.eval_v13
+	$(PY) -m claim2cad.manifest
+	@echo "===> opening viewer at http://localhost:4179 (Ctrl+C to stop)"
+	cd viewer && npm run dev
+
+demo-v13-stage:
+	$(PY) -m claim2cad.manifest
 	cd viewer && npm run dev
 
 viewer-install:

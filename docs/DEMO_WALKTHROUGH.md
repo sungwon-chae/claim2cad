@@ -111,20 +111,26 @@ examples/real_patents/US4807331A_spring_loaded_hinge/
 
 ## 7. Running on a different patent
 
-Today the v1.2 demo scaffold (`claim2cad/demo_scaffold.py`) is
-patent-family-specific. To get the same demo quality on another
-example you need:
+V1.3 added multi-patent generalisation. Every example in
+`examples/real_patents/` now has a `model_v1.3.glb` from a
+topology-matched scaffold (door_hinge, rotary_shaft, linkage,
+etc). The viewer's dropdown shows quality badges:
 
-1. A `figure_layout_lock.json` with hand-traced regions for the
-   major groups (door / frame / hinges / etc — replace with the
-   appropriate group set for that patent family).
-2. A demo scaffold builder that produces the right geometry —
-   for now, fork `build_demo_assembly_us4807331a` and write the
-   per-family equivalent.
+* `★ flagship` — US4807331A only; full V1.2 oblique pipeline.
+* `● good` — topology scaffold matched cleanly.
+* `◐ partial` — recognisable assembly, not flagship polish.
+* `○ fallback` — fell through to FallbackGridScaffold;
+  geometry is a coherent grid, not a figure reconstruction.
+* `× failed` — viewer artefacts incomplete (none today).
 
-Generic scaffold inference is on the v1.3 roadmap. For v1.2,
-the brief explicitly allows a hand-built scaffold for the
-flagship example.
+For non-flagship examples a banner above the claim panel
+explains what the user is looking at — so visitors don't
+expect flagship polish from a fallback layout.
+
+Lifting an example to flagship quality requires the V1.2-style
+hand work: `figure_layout_lock.json`, mesh specs, manual
+overrides. See `docs/V13_MULTI_PATENT_GENERALIZATION.md` for
+the multi-patent design + honest limitations.
 
 ## 8. What's NOT yet polished
 

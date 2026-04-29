@@ -88,6 +88,46 @@ Mean overall_score: **0.804**. Semantic mismatch detector:
 
 ---
 
+**v1.4-dev** · figure-faithful reconstruction
+* **Strict visual audit** (V14-A) — re-graded the corpus with
+  harsher rules; baseline 1 flagship, 23 partial, 1 fallback.
+* **Figure view classifier** (V14-B) — image-heuristic
+  (no LLM). Detects top / front / side / sectional / oblique
+  / multi_view_sheet. 9 multi-view, 14 oblique, 2 front.
+* **Projection-locked rendering** (V14-C) — every example
+  gets a `figure_matched.png` rendered through a camera that
+  honors the detected view. Multi-view examples additionally
+  get `plan_view.png` and `section_view.png`.
+* **Mechanical primitive vocabulary** (V14-D) — 36 reusable
+  build123d helpers: gears (toothed), springs (multi-coil),
+  linkages (link_bar / clevis / pivot_pin), rails, housings
+  (hollow + cover-plated), brackets (l/u/c/gusset), cams,
+  bearings, fasteners. 39 unit tests.
+* **Scaffold upgrades** (V14-E) — `rotary_shaft`, `linkage`,
+  `bracket_mount`, `housing_panel` rebuilt around the V14
+  primitives. Output is `model_v1.4.{glb,step}`.
+* **Stricter eval** (V14-G) — six axes + cylinder-stack /
+  view-rotation flags. 'good' requires a manually inspected
+  scaffold whitelist + primitive richness + topology match
+  + bbox attachment + ≥8 GLB children. Honest gate.
+* **Viewer** (V14-H) — prefers `model_v1.4.glb`; per-example
+  view-info strip shows detected view + links to
+  figure-matched / plan / section renders.
+
+**Corpus status (V14-G):**
+
+| Verdict | Count |
+| --- | ---: |
+| flagship | 1 (US4807331A) |
+| good | 10 |
+| partial | 13 |
+| fallback | 1 |
+| failed | 0 |
+
+`make demo-v14` runs the full V1.4 pipeline end-to-end.
+
+---
+
 **v1.2-dev** · honest patent-grounded reconstruction
 * **Visual truth audit** (V12-A) — written critique of the v1.1
   output; identifies the central-pile failure mode honestly.

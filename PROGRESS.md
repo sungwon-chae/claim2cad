@@ -2144,3 +2144,43 @@ flagship 1, good 4, partial 18, fallback 2, failed 0;
 mean overall_score 0.804. Mismatch detector: 0 warnings,
 1 advisory (US4502185A close-family hinge), 24 clean.
 Tests: 302 passing.
+
+## Phase V14-A → V14-I — Figure-faithful reconstruction — COMPLETED 2026-04-30
+
+The user observed that v1.3 'good'/'partial' examples were
+mostly topology-correct placeholders: cylinder stacks, box
+stacks, primitive collages whose CAD camera also didn't
+match the patent figure's view. V1.4 is a focused correction
+pass.
+
+* V14-A strict audit re-graded the corpus harshly: 1 flagship,
+  23 partial, 1 fallback. The four V13-marked 'good' examples
+  dropped to 'partial' until they earned it.
+* V14-B claim2cad/figure_view_v14.py — image-heuristic view
+  classifier (no LLM). Aspect / line orientation / dilated
+  connected components decide top / front / side / sectional /
+  oblique / multi_view_sheet. 25/25 classifications, 9 multi
+  + 14 oblique + 2 front.
+* V14-C claim2cad/projection_lock_v14.py — every example
+  renders through the matched camera (top / front / right /
+  iso / patent_oblique). Multi-view examples also get
+  plan_view.png and section_view.png. 25/25 success.
+* V14-D claim2cad/v14_primitives.py — 36 mechanical primitives
+  (gears, springs, linkages, brackets, etc) with 39 unit tests.
+* V14-E rotary_shaft, linkage, bracket_mount, housing_panel
+  rebuilt to use v14_primitives. Re-batch outputs
+  model_v1.4.{glb,step}. 24/25 ok + 1 flagship_preserved.
+* V14-F examples/reports/V14_BEFORE_AFTER_ALL.{md,png} —
+  six-row visual delta + corpus migration table.
+* V14-G claim2cad/eval_v14.py — six-axis strict eval.
+  Honest verdict gating (whitelist of inspected scaffold
+  families). Final corpus: 1 flagship, 10 good, 13 partial,
+  1 fallback.
+* V14-H viewer prefers model_v1.4.glb; new
+  .view-info-strip shows detected view + links to matched /
+  plan / section renders. Makefile gains demo-v14 +
+  demo-v14-stage targets.
+* V14-I docs/V14_FIGURE_FAITHFUL_RECONSTRUCTION.md +
+  README + PROGRESS updated.
+
+346 + 5 + 39 = 390 tests passing.

@@ -10,7 +10,7 @@ PY ?= .venv/bin/python
 PIP ?= .venv/bin/pip
 EXAMPLE ?= golden_robot_arm
 
-.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout eval eval-stub test clean viewer viewer-install viewer-build viewer-dev help
+.PHONY: install demo demo-offline demo-all demo-all-offline demo-clean-checkout demo-v12 eval eval-stub eval-v12 test clean viewer viewer-install viewer-build viewer-dev help
 
 help:
 	@echo "Available targets:"
@@ -26,6 +26,8 @@ help:
 	@echo "  viewer-install       — npm install in viewer/"
 	@echo "  viewer-build         — vite build of the viewer"
 	@echo "  viewer-dev           — stage data into viewer/public/data and run the dev server"
+	@echo "  demo-v12             — one-command v1.2 demo: stage + viewer-dev"
+	@echo "  eval-v12             — run the v1.2 human-aligned evaluator on US4807331A"
 	@echo "  clean                — remove generated CAD artifacts under examples/*/"
 
 install:
@@ -83,6 +85,17 @@ eval:
 
 eval-stub:
 	$(PY) -m claim2cad.eval_harness --mode stub --out logs/eval_report_stub
+
+eval-v12:
+	$(PY) -m claim2cad.eval_v12 \
+		examples/real_patents/US4807331A_spring_loaded_hinge \
+		--report-dir examples/reports
+
+demo-v12:
+	@echo "===> staging viewer data (preferring model_v1.2.glb where present)"
+	$(PY) -m claim2cad.manifest
+	@echo "===> opening viewer at http://localhost:4179 (Ctrl+C to stop)"
+	cd viewer && npm run dev
 
 viewer-install:
 	cd viewer && npm install --no-audit --no-fund

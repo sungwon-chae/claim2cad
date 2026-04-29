@@ -1,40 +1,69 @@
 # Claim2CAD
 
-> **From a patent claim to a clickable 3D model.**
+> **From a patent claim to a clickable, figure-grounded 3D model.**
 > Type a mechanical patent claim, get a structured intermediate
-> representation, an editable build123d source file, a STEP + GLB model,
-> and a viewer that bidirectionally links every claim element to its 3D
-> geometry.
+> representation, an editable build123d source file, a STEP + GLB
+> model, and a viewer that bidirectionally links every claim
+> element to its patent-figure region AND its 3D geometry.
 
 [![CI](https://github.com/sungwon-chae/claim2cad/actions/workflows/ci.yml/badge.svg)](https://github.com/sungwon-chae/claim2cad/actions/workflows/ci.yml)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
 [![build123d](https://img.shields.io/badge/CAD-build123d-00A676)](https://github.com/gumyr/build123d)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-**v1.1-dev** · figure-grounded 3D CAD generation · per-component
-**shape inference + constraint solver** so pins actually thread
-through hole-bearing parts and links nest inside main brackets ·
-verified claim-text spans (97.7% corpus-wide, V11-13) · GLB nodes
-match every claim component_id (V11-14) · canonical-view camera
-presets in the viewer (V11-15) · 5-axis structural+visual eval
-harness without VLM scoring (V11-16) · **215 tests** · offline demo
-unchanged.
+## v1.2 demo — US4807331A spring-loaded door hinge
 
-**Composite eval on US4807331A:** `0.890`
-(span 1.00 · GLB 1.00 · invariants 0.66 · projection 0.97 ·
-callout coverage 0.56 · **assembly_coherence 0.94** ★ new in V11-22).
-See `examples/reports/`.
+![v1.2 readable iso render](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/readable_iso.png)
 
-> **V11-19..22 (April 2026)**: Replaced the "component collage" output
-> with a scaffold-first layout. The US4807331A assembly now shows a
-> recognisable door panel, fixed frame, vertical pintle axis, and
-> Z-separated upper/lower hinge clusters in iso view. Patent-family-
-> specific scaffold (`LiftOffDoorHingeScaffold`); generic automatic
-> scaffold inference is future work. See
-> `examples/real_patents/US4807331A_spring_loaded_hinge/assembly_diagnostics.md`.
+| Patent figure | Claim2CAD v1.2 (figure-aligned) |
+| --- | --- |
+| ![figure](examples/real_patents/US4807331A_spring_loaded_hinge/figures/figure_1.png) | ![cad](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/readable_figure_aligned.png) |
 
-**v1.0** · 30 examples (3 synthetic + 25 real US patents + 1 Korean + 1
-multi-claim drone) · 101 tests · offline demo, no API key required.
+The image on the right was generated automatically from the
+patent claim text. The blue translucent panel is the door, the
+tan translucent panel is the body frame, the brown vertical
+shaft is the pintle pin, and the steel-coloured clusters are
+the upper and lower hinge brackets. Every face links back to
+its claim phrase via `claim_map.json` — clicking the upper
+bracket in the viewer highlights "the upper extension of the
+main member" in the claim panel and the corresponding hotspot
+on the patent figure.
+
+```bash
+make demo-v12   # one command: builds + stages + opens the viewer
+```
+
+Open <http://localhost:4179>. The demo loads
+US4807331A_spring_loaded_hinge by default. Click any callout
+on the figure, any span in the claim, or any face in the 3D
+scene — all three panels stay in sync.
+
+**v1.2-dev** · honest patent-grounded reconstruction
+* **Visual truth audit** (V12-A) — written critique of the v1.1
+  output; identifies the central-pile failure mode honestly.
+* **Figure-first layout lock** (V12-B) — hand-traced UV regions
+  per group prevent the assembly from collapsing to a column.
+* **Demo-quality scaffold** (V12-C) — patent-family-specific
+  builder that produces recognisable hinge geometry, not bars.
+* **Readable rendering** (V12-D) — per-mesh styling, transparent
+  panels, silhouette outlines.
+* **Productised viewer** (V12-E) — defaults to the demo example,
+  Demo / Debug mode toggle, mode persisted in URL.
+* **Hotspot tiers** (V12-F) — confidence_tier on every hotspot;
+  demo mode hides low-tier markers.
+* **Human-aligned eval** (V12-G) — figure_resemblance,
+  panel_dominance, hinge_axis_visibility, floating_components,
+  demo_readability. **Refuses credit for central piles.**
+
+**Composite eval on US4807331A (V12-G):** `0.662`
+(panel_dominance **1.00** · hinge_axis_visibility **1.00** ·
+floating_components 0.56 · demo_readability 0.62 · v11_carryover
+0.77). See `examples/reports/US4807331A_spring_loaded_hinge_v12_eval.md`.
+
+**v1.1** kept for comparison — figure-grounded layout solver,
+leader-line hotspot detection (95% on US4807331A), 289 tests.
+**v1.0** kept for comparison — 30 examples, 101 tests, offline
+demo unchanged.
 
 ```mermaid
 flowchart LR

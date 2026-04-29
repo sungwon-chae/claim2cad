@@ -1,0 +1,48 @@
+{
+  "example_id": "US4807331A_spring_loaded_hinge",
+  "example_dir": "/Users/sungwon.chae/Desktop/claim2cad/Claim2CAD/examples/real_patents/US4807331A_spring_loaded_hinge",
+  "span_correctness": {
+    "score": 1.0,
+    "n_total": 25,
+    "n_verified": 25,
+    "n_bad": 0,
+    "bad_examples": []
+  },
+  "glb_coverage": {
+    "score": 1.0,
+    "n_components": 25,
+    "n_in_glb": 25,
+    "missing_examples": [],
+    "extra_glb_names": []
+  },
+  "figure_callout_coverage": {
+    "score": 0.556,
+    "n_callouts": 45,
+    "n_bound": 25,
+    "n_unbound": 20
+  },
+  "geometric_invariants": {
+    "score": 0.73,
+    "pin_through_holes": 0.7142857142857143,
+    "link_nests_in_main": 0.0,
+    "door_wraps_assembly": 1.0,
+    "bbox_sane": 0.96,
+    "no_obvious_overlap": 1.0
+  },
+  "projection_fit": {
+    "score": 0.869,
+    "best_view": "top",
+    "n_views_rendered": 4
+  },
+  "overall": {
+    "composite": 0.882,
+    "weights": {
+      "span_correctness": 0.3,
+      "glb_coverage": 0.25,
+      "figure_callout_coverage": 0.1,
+      "geometric_invariants": 0.2,
+      "projection_fit": 0.15
+    }
+  },
+  "notes": []
+}

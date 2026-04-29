@@ -76,6 +76,13 @@ class ManifestExample:
     quality_badge: str = "unknown"  # flagship | good | partial | fallback | failed | unknown
     quality_score: float = 0.0
     scaffold_id: str = ""
+    # V13-O additions: semantic mismatch warning surfaced from
+    # claim2cad.semantic_mismatch (per-example
+    # semantic_mismatch.json sidecar). The viewer renders a ⚠
+    # banner above the claim panel when severity != "none".
+    mismatch_severity: str = "none"   # "none" | "advisory" | "warning"
+    mismatch_reason: str = ""
+    mismatch_expected: list[str] = field(default_factory=list)
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -354,6 +361,14 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
         if ev:
             ex.quality_badge = ev.get("overall_quality", ex.quality_badge)
             ex.quality_score = float(ev.get("overall_score", ex.quality_score))
+            # V13-O: pull mismatch fields off the eval entry.
+            ex.mismatch_severity = ev.get("mismatch_severity",
+                                            ex.mismatch_severity)
+            ex.mismatch_reason = ev.get("mismatch_reason",
+                                          ex.mismatch_reason)
+            mexp = ev.get("mismatch_expected")
+            if isinstance(mexp, list):
+                ex.mismatch_expected = mexp
     for ex in examples:
         # ``base`` may be ``real_patents/<id>``, mirroring the source layout.
         target = VIEWER_DATA_DIR / ex.base
@@ -380,6 +395,8 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             "assembly_diagnostics.json",
             "render_comparison.png",
             "camera_v12.json",
+            # V13-O: per-example mismatch sidecar for the viewer.
+            "semantic_mismatch.json",
         ):
             src_p = src_dir / optional
             if src_p.exists():

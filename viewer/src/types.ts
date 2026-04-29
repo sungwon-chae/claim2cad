@@ -130,6 +130,11 @@ export type ManifestExample = {
   quality_badge?: string;
   quality_score?: number;
   scaffold_id?: string;
+  /** V13-O: semantic mismatch surfaced from
+   *  claim2cad.semantic_mismatch. */
+  mismatch_severity?: "none" | "advisory" | "warning";
+  mismatch_reason?: string;
+  mismatch_expected?: string[];
 };
 
 // V1-6 — URDF parsed payload (subset).

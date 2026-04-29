@@ -378,6 +378,28 @@ body {
   color: #2e7a4d;
 }
 
+/* V13-O — semantic mismatch banner. Sits above the quality
+ * banner and uses a warmer, more attention-grabbing palette
+ * since this signal indicates the scaffold may not match the
+ * patent figure even though the rest of the pipeline ran. */
+.mismatch-banner {
+  padding: 8px 14px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border-1);
+  background: rgba(220, 90, 80, 0.16);
+  color: #8a2a1f;
+  font-weight: 600;
+}
+.mismatch-banner.mismatch-advisory {
+  background: rgba(245, 160, 60, 0.16);
+  color: #8a5520;
+}
+.mismatch-banner.mismatch-warning {
+  background: rgba(220, 60, 50, 0.20);
+  color: #7a1f17;
+}
+
 .app-header .mode-toggle {
   background: var(--selected, #ffd76a);
   color: #1a1410;

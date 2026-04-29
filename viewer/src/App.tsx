@@ -241,7 +241,9 @@ export function App() {
             <optgroup label="Real patents">
               {visibleExamples.filter((e) => e.source === "real_patent").map((e) => (
                 <option key={e.id} value={e.id}>
-                  {qualityBadge(e.quality_badge)} {e.title}
+                  {qualityBadge(e.quality_badge)}
+                  {e.mismatch_severity && e.mismatch_severity !== "none" ? " ⚠" : ""}
+                  {" "}{e.title}
                 </option>
               ))}
             </optgroup>
@@ -305,6 +307,19 @@ export function App() {
           {!error && !loaded && <div className="error-overlay">Loading…</div>}
           {!error && loaded && (
             <>
+              {loaded.example.source === "real_patent"
+                && loaded.example.mismatch_severity
+                && loaded.example.mismatch_severity !== "none" && (
+                <div className={`mismatch-banner mismatch-${loaded.example.mismatch_severity}`}>
+                  {mismatchBadge(loaded.example.mismatch_severity)} —
+                  {loaded.example.mismatch_reason
+                    ? ` ${loaded.example.mismatch_reason}.`
+                    : " classifier topology may not match the patent figure."}
+                  {loaded.example.mismatch_expected
+                    && loaded.example.mismatch_expected.length > 0
+                    && ` Expected family: ${loaded.example.mismatch_expected.join(", ")}.`}
+                </div>
+              )}
               {loaded.example.source === "real_patent"
                 && loaded.example.quality_badge
                 && loaded.example.quality_badge !== "flagship" && (
@@ -480,5 +495,13 @@ function qualityBadge(quality?: string): string {
     case "fallback": return "○ fallback";
     case "failed": return "× failed";
     default: return "·";
+  }
+}
+
+function mismatchBadge(severity?: string): string {
+  switch (severity) {
+    case "warning": return "⚠ semantic mismatch";
+    case "advisory": return "⚠ semantic advisory";
+    default: return "";
   }
 }

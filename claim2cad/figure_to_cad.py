@@ -24,6 +24,15 @@ import build123d as bd
 from claim2cad.components import library
 from claim2cad.components.base import Component, ComponentBuildError
 from claim2cad.figure_crops import FigureCrop, crop_all_components, crops_by_component_id
+from claim2cad.figure_to_sketch import (
+    ComponentOutline,
+    OutlineSet,
+    extract_outlines_for_components,
+)
+from claim2cad.sketch_to_extrusion import (
+    ExtrusionResult,
+    build_assembly_from_outlines,
+)
 from claim2cad.geometric_invariants import InvariantReport, evaluate_invariants
 from claim2cad.glb_naming import rename_glb_root_children
 from claim2cad.ir_schema import ClaimIR, Component as IRComponent
@@ -560,6 +569,8 @@ def run_generator(
     patent_context: str = "",
     enable_ir_enrichment: bool = True,
     n_candidates: int = 1,
+    outline_first: bool = True,
+    figure_scale_mm: float = 200.0,
 ) -> dict[str, Path]:
     """Main entry: run the figure-to-CAD pipeline on a single example."""
     example_dir = Path(example_dir)
@@ -690,6 +701,97 @@ def run_generator(
     # the IR (the enricher will have added some). Without this stub,
     # generate_assembly skips them.
     ir = _augment_ir_with_enrichment(ir, figure_spec)
+
+    # ----------------------------------------------------------------------
+    # OUTLINE-FIRST PATH (V11-12)
+    # ----------------------------------------------------------------------
+    # The user's correct observation: when a 2D engineering drawing is
+    # available, the right way to produce CAD that matches is to TRACE
+    # the silhouette of each component in the drawing and EXTRUDE it
+    # along Z. The library/codegen path picks generic primitives that
+    # only loosely resemble what's actually drawn. This path traces the
+    # actual silhouette per component crop.
+    if outline_first and figure_crops_dict:
+        try:
+            ir_components_by_id = {
+                c.id: {"label": c.label, "kind": c.kind, "category": c.category}
+                for c in ir.components
+            }
+            outline_set = extract_outlines_for_components(
+                figure_path=figure_path,
+                component_crops=figure_crops_dict,
+                ir_components=ir_components_by_id,
+                patent_title=ir.title or "",
+                figure_scale_mm=figure_scale_mm,
+                use_vlm=True,
+            )
+            (example_dir / "outline_set.json").write_text(
+                json.dumps(outline_set.to_dict(), indent=2),
+                encoding="utf-8",
+            )
+            n_valid = sum(1 for o in outline_set.outlines if o.is_valid())
+            logger.info(
+                "Outline-first: extracted %d/%d valid outlines",
+                n_valid,
+                len(outline_set.outlines),
+            )
+            if n_valid >= 2:
+                compound, ordered_ids, ext_results = build_assembly_from_outlines(
+                    outline_set
+                )
+                # STEP per component for the components/ dir.
+                components_dir.mkdir(parents=True, exist_ok=True)
+                source_tags: dict[str, str] = {}
+                for r in ext_results:
+                    if r.solid is None:
+                        continue
+                    try:
+                        bd.export_step(
+                            r.solid, str(components_dir / f"{r.component_id}.step")
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        logger.warning(
+                            "per-component STEP export failed for %s: %s",
+                            r.component_id,
+                            exc,
+                        )
+                    source_tags[r.component_id] = f"outline:{outline_set.outlines and 'vlm'}"
+                # Skip the spatial composer entirely — outlines are
+                # already positioned in figure-XY space, which is what
+                # the user asked for.
+                step_path = example_dir / out_step
+                glb_path = example_dir / out_glb
+                bd.export_step(compound, str(step_path))
+                bd.export_gltf(compound, str(glb_path), binary=True)
+                try:
+                    rename_glb_root_children(glb_path, ordered_ids)
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("GLB rename failed: %s", exc)
+                sources_path = example_dir / "component_sources.json"
+                sources_path.write_text(
+                    json.dumps(source_tags, indent=2), encoding="utf-8"
+                )
+                logger.info(
+                    "Outline-first wrote %s and %s with %d components",
+                    step_path,
+                    glb_path,
+                    len(ordered_ids),
+                )
+                return {
+                    "spec": spec_path,
+                    "step": step_path,
+                    "glb": glb_path,
+                    "components_dir": components_dir,
+                    "sources": sources_path,
+                    "outline_set": example_dir / "outline_set.json",
+                }
+            else:
+                logger.warning(
+                    "Outline-first: only %d valid outlines — falling back to library path",
+                    n_valid,
+                )
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Outline-first path failed: %s — falling back", exc)
 
     compound, ordered_ids, source_tags = generate_assembly(
         figure_spec,
@@ -1011,6 +1113,17 @@ def _build_argparser() -> argparse.ArgumentParser:
         default=1,
         help="Best-of-N candidate sampling for the figure-to-spec stage.",
     )
+    p.add_argument(
+        "--no-outline-first",
+        action="store_true",
+        help="Skip the outline→extrusion path; use library/codegen instead.",
+    )
+    p.add_argument(
+        "--figure-scale-mm",
+        type=float,
+        default=200.0,
+        help="How many mm the longest figure axis represents (default 200).",
+    )
     return p
 
 
@@ -1036,6 +1149,8 @@ def main(argv: list[str] | None = None) -> int:
         patent_context=args.patent_context,
         enable_ir_enrichment=not args.no_ir_enrichment,
         n_candidates=args.n_candidates,
+        outline_first=not args.no_outline_first,
+        figure_scale_mm=args.figure_scale_mm,
     )
     print(json.dumps({k: str(v) for k, v in out.items()}, indent=2))
     return 0

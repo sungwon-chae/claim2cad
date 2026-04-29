@@ -11,6 +11,13 @@
 [![build123d](https://img.shields.io/badge/CAD-build123d-00A676)](https://github.com/gumyr/build123d)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
+**v1.1-dev** · figure-aware CAD generation · 12-part component library
++ 1 patent-family compound (`LiftOffHingeAssembly`) · CADFusion-style
+best-of-N sampling · deterministic geometric invariants ·
+engineering-drawing renderer · honest hard-case benchmark documented in
+[`docs/V11_HARD_CASE_ANALYSIS.md`](docs/V11_HARD_CASE_ANALYSIS.md) ·
+**192 tests** · offline demo unchanged.
+
 **v1.0** · 30 examples (3 synthetic + 25 real US patents + 1 Korean + 1
 multi-claim drone) · 101 tests · offline demo, no API key required.
 
@@ -90,6 +97,74 @@ python -m claim2cad.pipeline --claim path/to/claim.txt --out path/to/out
 Korean claims work transparently — the language is auto-detected. Pass
 `--filter-claim N` to restrict the output to a single claim plus its
 ancestors.
+
+---
+
+## What's new in v1.1 (in development)
+
+v1.0 produced **topology-correct** CAD: claim words bound to mesh nodes,
+but the geometry was a row of primitive Boxes and Cylinders. v1.1
+upgrades the *visual fidelity* path while preserving the v1.0 contract.
+
+| Phase | Module | Headline |
+|---|---|---|
+| V11-1 | `claim2cad/components/` | 12-entry parameterised mechanical library: plate, leaf, rod, l_bracket, u_bracket, pin, leaf_hinge, revolute_joint, prismatic_joint, spur_gear, ball_bearing, helical_spring |
+| V11-2 | `claim2cad/visual_validator.py` | build123d tessellation + matplotlib rendering; Pillow side-by-side composite; Opus 4.7 vision call returns a `SimilarityReport` |
+| V11-3 | `claim2cad/figure_to_cad.py` | One vision call analyses figure + IR, emits `figure_spec.json` with library_part / params / pose per component |
+| V11-4 | `claim2cad/refinement_loop.py` | Validate → identify worst components → revise spec rows → rebuild; the **best**-scoring iteration wins |
+| V11-5 | docs | `docs/V11_DESIGN.md` + `docs/VISUAL_VALIDATION_DESIGN.md` |
+| V11-6 | `claim2cad/components/library.py` + `claim2cad/figure_crops.py` + `claim2cad/vlm_codegen.py` | Param aliases (route VLM-natural names to canonical fields), per-callout figure crops, sandboxed VLM build123d codegen |
+| V11-7 | `claim2cad/spatial_composer.py` | One vision call rewrites every component's pose so shared axes line up |
+| V11-8 | `claim2cad/ir_enricher.py` | Walks figure_map for unmapped numbered callouts and proposes new sub-feature components |
+| V11-9 | `claim2cad/components/joints/lift_off_hinge.py` | Patent-family compound primitive: body-half bracket + nested U-link + door-half channel + pintle pin, all coaxial *by construction* |
+| V11-10 | `claim2cad/geometric_invariants.py` + best-of-N + feature-edge renderer | CADFusion-style sampling, deterministic CAD-validity reward, engineering-drawing line strokes (silhouette + 32° creases) |
+| V11-11 | `docs/V11_HARD_CASE_ANALYSIS.md` | Hard-case write-up with score history table |
+
+### v1.1 architecture (figure-aware path)
+
+```mermaid
+flowchart LR
+    subgraph In[Inputs]
+        C([claim.txt])
+        F([figures/figure_1.png])
+        FM([figure_map.json])
+    end
+    C --> P1[claim_parser]
+    P1 --> IR[ClaimIR]
+    F & FM --> CR[figure_crops]
+    IR & F & FM --> AF[analyze_figure]
+    AF --> BoN{best-of-N\ncandidates}
+    BoN -->|N specs| GA[generate_assembly]
+    GA --> SC[spatial_composer]
+    GA --> CG[vlm_codegen\nsandbox exec]
+    GA --> LIB[components library\n+ LiftOffHingeAssembly]
+    SC --> CO[bd.Compound]
+    CG --> CO
+    LIB --> CO
+    CO --> INV[geometric_invariants]
+    CO --> R1[engineering-drawing\nrenderer]
+    R1 --> COMP[render_comparison.png]
+    COMP --> VV[Opus-4.7\nvisual validator]
+    VV --> SR([SimilarityReport])
+    INV --> Pick((pick best))
+    BoN -.-> Pick
+    CO --> Out[model_v1.1.step\nmodel_v1.1.glb]
+```
+
+### What's honest about v1.1
+
+The figure-aware path makes the **CAD geometry materially more
+faithful** to the patent figure (real U-brackets with side holes; pin
+that provably threads through every coaxial hole; sub-features from
+figure callouts). The **VLM-judge score on the hardest example
+(US4807331A) is stuck at 3.0/10** — a real validator+spec ceiling for
+that 1989 line drawing, not a build-quality issue. The hard-case
+analysis documents this honestly with score history,
+before/after renders, and the deterministic geometric-invariant
+composite (which scores **0.92 / 1.00** on the same model — a fair
+non-VLM check).
+
+See `docs/V11_HARD_CASE_ANALYSIS.md` for the full write-up.
 
 ---
 
@@ -259,11 +334,52 @@ prioritised follow-ups.
 
 ---
 
+## v1.1 demo (figure-aware path)
+
+```bash
+# Figure-aware CAD on a real patent example
+python -m claim2cad.figure_to_cad \
+    examples/real_patents/US4807331A_spring_loaded_hinge \
+    --n-candidates 3 \
+    --patent-context "Lift-off vehicle door hinge"
+
+# Generated artefacts:
+#   examples/.../model_v1.1.step     — full assembly
+#   examples/.../model_v1.1.glb      — viewer-ready
+#   examples/.../figure_spec.json    — per-component params from VLM
+#   examples/.../crops/              — per-callout figure crops
+#   examples/.../codegen_cache/      — VLM-written build123d snippets
+#   examples/.../best_of_n_scores.json — invariant score per candidate
+#   examples/.../render_comparison.png — patent figure | v1.1 CAD
+
+# Inspect the geometric invariants on the built model
+python -c "
+import build123d as bd
+from claim2cad.geometric_invariants import evaluate_invariants
+shape = bd.import_step(
+    'examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.step'
+)
+print(evaluate_invariants(shape).as_dict())
+"
+```
+
+The VLM-judge score on US4807331A is **3.0/10 stable** (with engineering
+-drawing renders, best-of-N sampling, and a patent-family primitive
+that's coaxial by construction). The deterministic invariants score
+**0.92 / 1.00** on the same model. See
+`docs/V11_HARD_CASE_ANALYSIS.md`.
+
 ## Roadmap (post-v1.0)
 
-**v1.1 (next)**:
-- Surface V1-9 dimensions to the CAD shapes (so a "30 mm shaft" actually
-  renders 30 mm long).
+**v1.1 (in development)**:
+- ~~Component library + figure-driven generation~~ (V11-1..V11-3)
+- ~~Vision-grounded validation + refinement loop~~ (V11-2, V11-4)
+- ~~VLM build123d codegen with sandbox~~ (V11-6)
+- ~~Spatial composer + IR enrichment~~ (V11-7..V11-8)
+- ~~Patent-family compound primitive~~ (V11-9)
+- ~~CADFusion-style best-of-N + geometric invariants + engineering-drawing renderer~~ (V11-10)
+- Apply the v1.1 path to a less-busy patent (next pass).
+- Surface V1-9 dimensions to library-component params.
 - Multi-figure VLM pass (combine figure_1 + figure_2 into one map).
 - Browser-side selection memory (URL params or Zustand).
 - Claim-chart export.

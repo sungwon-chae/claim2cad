@@ -1541,3 +1541,100 @@ remaining defects fall into two persistent categories:
 - `renders_v1.1/model_v1.1_iso.png` shows the engineering-drawing
   output (also baked into `render_comparison.png`).
 
+
+## Phase V11-12 — Outline-first pipeline (figure trace → extrude) — COMPLETED 2026-04-29 11:02 KST
+
+### Why this phase exists
+User feedback after V11-11 was direct and correct: the v1.1 output was
+still box+cylinder+sphere primitives no matter what library entry the
+VLM picked, because every library Component is constructed from those
+primitives and the lift_off_hinge compound just nests more of the
+same. Worse, the GLB was emitting only 9 root children whose names
+matched the figure_spec (e.g. `bracket_tongue`, `pintle_head`) instead
+of the 25 claim component_ids in `claim_map.json` — so the viewer's
+span↔mesh highlight contract was broken for 24 of 25 claim
+components.
+
+The user's correct prescription: **trace the 2D silhouette of each
+component in the figure, then extrude along Z**. That's how
+sketch-and-extrude CAD has worked since AutoCAD; it makes the top-
+down view of the assembly *literally be the figure*.
+
+### What shipped
+- `claim2cad/figure_to_sketch.py` — VLM-based polygon trace per crop.
+  For each component crop already produced by `figure_crops`, the VLM
+  returns a list of (x, y) outline vertices in normalised crop
+  coordinates plus an `extrude_depth_mm` and `z_offset_mm` and any
+  interior `holes`. We map the polygon to figure-global normalised
+  coordinates and store an `OutlineSet`. OpenCV contour fallback is
+  available when the VLM declines or returns degenerate output.
+- `claim2cad/sketch_to_extrusion.py` — turns each `ComponentOutline`
+  into a `build123d` Sketch + extrusion in mm world coordinates,
+  centred on origin and y-flipped from image convention. Holes are
+  subtracted in the same sketch. The result is a flat `Compound` (no
+  nesting), so every component_id ends up as a direct top-level child
+  — restoring the v1.0 GLB-naming contract that the viewer relies on.
+- `figure_to_cad.run_generator(outline_first=True)` — new primary path.
+  When figure_map.json is present and ≥2 outlines extract validly,
+  the outline path takes over; library/codegen become fallbacks. New
+  CLI flags `--no-outline-first` and `--figure-scale-mm`.
+- 13 new tests in `tests/test_outline_pipeline.py` covering polygon
+  area, normalised-to-mm mapping, extrusion of plates with holes, and
+  the GLB-naming contract (every part is a labelled top-level child).
+
+### Re-run on US4807331A
+- 25/25 outlines extracted by the VLM (no fallback needed).
+- 25/25 GLB root children match the 25 claim component_ids in
+  `claim_map.json` — the viewer's span↔mesh highlight contract is
+  fully restored.
+- Top-down render now shows two recognisable hinge clusters (closed
+  state + lifted-off state) with U-bracket profiles, knuckle barrels,
+  leaf flange shapes, holes — traced directly from figure_1.png.
+- See `examples/.../renders_v1.1/model_v1.1_topdown.png` and
+  `model_v1.1_iso.png`.
+
+### What's different this time
+v1.0 → v1.1 first pass → V11-9 primitive → **V11-12 outline-extruded**:
+
+| Pass | Top-down silhouette of CAD |
+|------|----------------------------|
+| v1.0 | row of 25 boxes (looks like dots) |
+| V11-1..8 | nested generic U-brackets + small primitive bodies |
+| V11-9 | one well-composed lift_off_hinge primitive (still box+cylinder shapes inside) |
+| **V11-12** | **outlines traced from figure_1, extruded along Z — silhouette = figure** |
+
+The user can now open the viewer at localhost:4179, click any claim
+span, and the corresponding 3D mesh highlights — because every IR
+component_id is a labelled top-level GLB node again.
+
+### Verification
+- `pytest -q` — **205 passed** (192 + 13 new).
+- `claim_map.json` ↔ GLB names: 25/25 match.
+- `viewer/public/data/real_patents/.../model.glb` is the new outline-
+  extruded model (268 KB).
+- `outline_set.json` records every component's traced polygon + depth
+  for full reproducibility (the run is deterministic given the cached
+  outline set).
+
+### Cost
+- V11-12 vision calls: 25 polygon traces + 1 figure-to-spec ≈ $0.85.
+- Cumulative across the v1.1 fix arc: ≈ $13.
+
+### Honest assessment
+The geometry is now *traced from the figure* rather than picked from
+a primitive catalogue. That fixes the user's core complaint ("only
+cylinders/spheres/boxes"). The trade-offs:
+
+- **Each part is 2.5D**, not full 3D. The Z extent is a single VLM-
+  estimated thickness; we don't yet model parts whose cross-section
+  varies along Z (e.g. a tapered shaft or a stepped shoulder).
+- **Top-down assumption**: we treat the figure as a top view. For
+  most patent figures showing assembled mechanical hardware this
+  holds; for purely sectional or exploded views it would not. v1.1
+  ships single-figure tracing.
+- **The VLM-judge score** wasn't re-measured this phase. The point of
+  V11-12 was to fix the geometry and the GLB contract, not to chase
+  the validator again. The geometric invariants on the outline-
+  extruded model still apply (pin axis through holes is now
+  determined per-figure rather than by composer).
+

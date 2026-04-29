@@ -1,6 +1,0 @@
-plate = bd.Box(40, 25, 2)
-ear1 = bd.Box(8, 10, 2).translate((24, 0, 0))
-ear2 = bd.Box(8, 10, 2).translate((-24, 0, 0))
-hole1 = bd.Cylinder(1.5, 3).translate((24, 0, 0))
-hole2 = bd.Cylinder(1.5, 3).translate((-24, 0, 0))
-result = plate.fuse(ear1).fuse(ear2).cut(hole1).cut(hole2)

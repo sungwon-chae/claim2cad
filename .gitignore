@@ -16,6 +16,8 @@ dist/
 # Generated artifacts that we WANT to commit (golden, hinge, planetary_gear)
 # are kept; transient logs and snapshots are ignored.
 logs/*.log
+logs/*.log.*
+logs/run-*.log*
 docs/diagrams/*.tmp.*
 
 # Node / viewer

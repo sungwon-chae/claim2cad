@@ -13,21 +13,23 @@
 
 ## v1.2 demo — US4807331A spring-loaded door hinge
 
-![v1.2 readable iso render](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/readable_iso.png)
+![v1.2 oblique opened-door hero](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/hero_oblique.png)
 
-| Patent figure | Claim2CAD v1.2 (figure-aligned) |
+| Patent figure | Claim2CAD v1.2 (oblique opened-door) |
 | --- | --- |
-| ![figure](examples/real_patents/US4807331A_spring_loaded_hinge/figures/figure_1.png) | ![cad](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/readable_figure_aligned.png) |
+| ![figure](examples/real_patents/US4807331A_spring_loaded_hinge/figures/figure_1.png) | ![cad](examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.2/hero_oblique.png) |
 
 The image on the right was generated automatically from the
-patent claim text. The blue translucent panel is the door, the
-tan translucent panel is the body frame, the brown vertical
-shaft is the pintle pin, and the steel-coloured clusters are
-the upper and lower hinge brackets. Every face links back to
+patent claim text. The translucent blue plate is the door
+swung open ~35° on its hinges; the translucent tan plate is the
+vehicle body frame; the bronze vertical shaft is the pintle
+pin; the steel-coloured clusters bridging the two are the
+upper and lower hinge plates (door-side leaves on the door,
+frame-side brackets on the frame). Every face links back to
 its claim phrase via `claim_map.json` — clicking the upper
-bracket in the viewer highlights "the upper extension of the
-main member" in the claim panel and the corresponding hotspot
-on the patent figure.
+hinge plate in the viewer highlights "the upper extension of
+the main member" in the claim panel and the corresponding
+hotspot on the patent figure.
 
 ```bash
 make demo-v12   # one command: builds + stages + opens the viewer
@@ -54,6 +56,17 @@ scene — all three panels stay in sync.
 * **Human-aligned eval** (V12-G) — figure_resemblance,
   panel_dominance, hinge_axis_visibility, floating_components,
   demo_readability. **Refuses credit for central piles.**
+* **Perspective mismatch audit** (V12-I) — written critique of
+  the v12-h flat front-only output.
+* **Oblique opened-door scaffold** (V12-J/K) — door panel
+  rotated ~35° about the pintle axis; door-side hinge plates
+  rotate with the door, frame-side plates stay glued to the
+  frame.
+* **Patent-figure camera preset** (V12-L) — viewer defaults to
+  the oblique three-quarter view that matches figure_1.png.
+* **Readable oblique hero** (V12-M) — per-mesh colour, pintle
+  shown in bronze, panels translucent so the hinge stays
+  visible through them.
 
 **Composite eval on US4807331A (V12-G):** `0.662`
 (panel_dominance **1.00** · hinge_axis_visibility **1.00** ·

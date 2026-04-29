@@ -28,10 +28,14 @@ claim component. Hover a span → the matching figure hotspot and
 3D mesh highlight. Click → the highlight stays put.
 
 **Centre pane — 3D scene.**
-* Camera defaults to the figure-aligned preset (front view, same
-  projection as the patent figure).
-* Camera presets bar at the bottom: `figure ★ · top · front ·
-  right · iso · free`.
+* Camera defaults to the **patent_figure** preset (V12-L) — the
+  oblique three-quarter view that matches the patent figure.
+* Camera presets bar at the bottom:
+  `patent fig. ★ · figure · top · front · right · iso · free`.
+* The 3D model is the V12-J **oblique opened-door** geometry:
+  the door is swung open ~35° on the pintle axis; the frame
+  stays upright. The flat front model is still in the repo as
+  `model_v1.2.glb` for debug.
 * Click any face to select that component; the claim span and
   figure hotspot light up.
 

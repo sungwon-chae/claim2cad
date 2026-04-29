@@ -147,6 +147,87 @@ Composite weight: 70 % visual + 30 % v11_carryover. Refusing
 credit for a central pile is intentional — V11 metrics could
 score 0.77 while the render still looked piled.
 
+## V12-I — Perspective mismatch audit
+
+After V12-H shipped, manual inspection showed the demo still
+read as a flat schematic vs the patent figure's oblique
+opened-door drawing. The audit
+(`PERSPECTIVE_MISMATCH_AUDIT.md`) called out:
+
+* The figure is axonometric / oblique, not pure ortho front.
+  Camera estimate elev ≈ 18-25°, azim ≈ -55°.
+* The door is OPEN at ~35-45° relative to the frame; both
+  inside faces are visible.
+* The figure shows two distinct plates per hinge (door-side
+  leaf + frame-side bracket), not a single C-bracket.
+
+## V12-J — Oblique opened-door scaffold
+
+`claim2cad/oblique_demo_scaffold.py` builds geometry in two passes:
+
+  1. Build every mesh in its CLOSED position (all panels parallel).
+  2. Apply parent-class transforms:
+       door_side    rotate +door_angle_deg about the vertical
+                    pintle axis (default 35°).
+       frame_side   rotate +frame_angle_deg (default 0°).
+       shared_axis  identity (pintle stays on the axis).
+       feature      identity.
+
+New plate primitives:
+  `_door_side_leaf`  flange + knuckle-mounting tab; bolts to
+                      the door's inside face.
+  `_frame_side_bracket`  back plate + L-bend reaching the
+                          pintle; bolts to the frame.
+
+## V12-K — Component-class attachment
+
+The classification table:
+  DOOR_SIDE_MESHES = {door_panel, upper/lower_door_leaf, ...}
+  FRAME_SIDE_MESHES = {fixed_frame, upper/lower_frame_bracket,
+                       spring_link, spring_coil, mounting_wall,
+                       fasteners}
+  SHARED_AXIS_MESHES = {pintle_pin, upper/lower_hinge_knuckle}
+
+Plate alias remap so claim ids fall through to the correct side:
+  leaf_flange*           → upper_door_leaf
+  main_member*           → upper_frame_bracket
+  upper_extension etc.   → upper_frame_bracket
+  lower_extension        → lower_frame_bracket
+  hinge_body_half_*      → upper_frame_bracket
+  body_half_sub_*        → lower_frame_bracket
+
+## V12-L — Patent figure camera preset
+
+`camera_v12.json` records the grid-search best:
+  matplotlib elev=22°, azim=-60°
+  three.js direction = [0.80, 0.37, 0.46] (y-up)
+
+Viewer (`Scene.tsx` + `App.tsx`):
+  * New CameraPreset value `patent_figure`.
+  * For demo_quality-tagged examples with camera_v12.json
+    present, default cameraPreset = "patent_figure".
+  * Added "patent fig." button at the front of the preset bar.
+
+## V12-M — Readable oblique detailing
+
+US4807331A_DEMO_STYLES updated:
+  door_panel              cooler blue α=0.42  layer 4 (back)
+  fixed_frame             warmer tan  α=0.55  layer 3
+  *door_leaf*             cool steel  α=1.0   layer 2
+  *frame_bracket*         warm steel  α=1.0   layer 2
+  pintle_pin              bronze      α=1.0   layer 2
+
+Renders generated:
+  hero_oblique.png            README hero
+  hero_oblique_comparison.png patent figure ↔ hero
+  oblique_readable_iso.png    iso variant
+
+The hero image is suitable for portfolio use: a translucent
+blue door panel swung open on the left, translucent tan body
+frame on the right, bronze pintle pin between them, steel
+hinge plates bridging the two — the same composition as
+figure_1.png within ~10° of the apparent opening angle.
+
 ## What's still patent-specific
 
 `figure_layout_lock.json`, `demo_scaffold.py`'s
@@ -169,19 +250,27 @@ A v1.3+ generic builder would need to:
 claim2cad/
 ├── figure_layout_lock.py       # V12-B
 ├── demo_scaffold.py            # V12-C
-├── readable_render.py          # V12-D
-└── eval_v12.py                 # V12-G
+├── readable_render.py          # V12-D + V12-M
+├── oblique_demo_scaffold.py    # V12-J / K
+└── eval_v12.py                 # V12-G + V12-O
 
 examples/real_patents/US4807331A_spring_loaded_hinge/
-├── VISUAL_TRUTH_AUDIT.md       # V12-A
-├── figure_layout_lock.json     # V12-B
-├── figure_projection_locked.json   # V12-B output
-├── model_v1.2.{step,glb}       # V12-C
-├── figure_hotspot_overrides.json   # V12-F
+├── VISUAL_TRUTH_AUDIT.md            # V12-A
+├── PERSPECTIVE_MISMATCH_AUDIT.md    # V12-I
+├── figure_layout_lock.json          # V12-B
+├── figure_projection_locked.json    # V12-B output
+├── model_v1.2.{step,glb}            # V12-C (flat, debug)
+├── model_v1.2_oblique.{step,glb}    # V12-J / K (demo default)
+├── figure_hotspot_overrides.json    # V12-F
+├── camera_v12.json                  # V12-L
 └── renders_v1.2/
     ├── figure_projection_lock_debug.png
     ├── solid_{figure_aligned, iso, top, comparison}.png
     ├── readable_{figure_aligned, iso, exploded, debug_labels, comparison}.png
+    ├── oblique_{iso, figure_match, comparison}.png       # V12-J
+    ├── patent_figure_{camera, comparison}.png            # V12-L
+    ├── hero_oblique.png  hero_oblique_comparison.png     # V12-M
+    ├── oblique_readable_iso.png                           # V12-M
     ├── figure_hotspot_debug.png
     └── hotspot_quality_debug.png
 

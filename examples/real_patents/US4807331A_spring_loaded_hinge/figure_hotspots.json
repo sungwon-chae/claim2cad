@@ -41,7 +41,8 @@
       "debug": {
         "label_index": 1,
         "leader_length_px": 110.01818031580054
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "pintle_pin__22__0__label",
@@ -78,7 +79,8 @@
       ],
       "debug": {
         "label_index": 1
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "hinge_body_half_assembly__16__0__part",
@@ -116,7 +118,8 @@
       "debug": {
         "label_index": 2,
         "leader_length_px": 250.353749722268
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "hinge_body_half_assembly__16__0__label",
@@ -153,7 +156,8 @@
       ],
       "debug": {
         "label_index": 2
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "body_half_sub_assembly__14__0__part",
@@ -191,7 +195,8 @@
       "debug": {
         "label_index": 3,
         "leader_length_px": 56.61271941887264
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "body_half_sub_assembly__14__0__label",
@@ -228,7 +233,8 @@
       ],
       "debug": {
         "label_index": 3
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "vehicle_body__10__0__part",
@@ -266,7 +272,8 @@
       "debug": {
         "label_index": 4,
         "leader_length_px": 59.00847396772772
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "vehicle_body__10__0__label",
@@ -303,7 +310,8 @@
       ],
       "debug": {
         "label_index": 4
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "door_half_member__12__0__part",
@@ -341,7 +349,8 @@
       "debug": {
         "label_index": 5,
         "leader_length_px": 218.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "door_half_member__12__0__label",
@@ -378,7 +387,8 @@
       ],
       "debug": {
         "label_index": 5
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "first_sidewall__58__0__part",
@@ -416,7 +426,8 @@
       "debug": {
         "label_index": 7,
         "leader_length_px": 198.022725968511
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "first_sidewall__58__0__label",
@@ -453,7 +464,8 @@
       ],
       "debug": {
         "label_index": 7
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member_pintle_pin_hole__34__0__part",
@@ -491,7 +503,8 @@
       "debug": {
         "label_index": 8,
         "leader_length_px": 175.231275747225
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member_pintle_pin_hole__34__0__label",
@@ -528,7 +541,8 @@
       ],
       "debug": {
         "label_index": 8
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member__24__0__part",
@@ -566,7 +580,8 @@
       "debug": {
         "label_index": 9,
         "leader_length_px": 175.64168070250295
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "main_member__24__0__label",
@@ -603,7 +618,8 @@
       ],
       "debug": {
         "label_index": 9
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "leaf_flange_pintle_pin_hole__66__0__part",
@@ -641,7 +657,8 @@
       "debug": {
         "label_index": 11,
         "leader_length_px": 199.44924166313595
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "leaf_flange_pintle_pin_hole__66__0__label",
@@ -678,7 +695,8 @@
       ],
       "debug": {
         "label_index": 11
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "u_shaped_link_member__26__0__part",
@@ -716,7 +734,8 @@
       "debug": {
         "label_index": 14,
         "leader_length_px": 200.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "u_shaped_link_member__26__0__label",
@@ -753,7 +772,8 @@
       ],
       "debug": {
         "label_index": 14
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "upper_extension__28__0__part",
@@ -791,7 +811,8 @@
       "debug": {
         "label_index": 16,
         "leader_length_px": 212.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "upper_extension__28__0__label",
@@ -828,7 +849,8 @@
       ],
       "debug": {
         "label_index": 16
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "leaf_flange__64__0__part",
@@ -866,7 +888,8 @@
       "debug": {
         "label_index": 19,
         "leader_length_px": 259.6247291765559
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "leaf_flange__64__0__label",
@@ -903,7 +926,8 @@
       ],
       "debug": {
         "label_index": 19
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "base_wall_exterior_guide_surface__38__0__part",
@@ -941,7 +965,8 @@
       "debug": {
         "label_index": 20,
         "origin": "figure_projection.json"
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "base_wall_exterior_guide_surface__38__0__label",
@@ -978,7 +1003,8 @@
       ],
       "debug": {
         "label_index": 20
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "mounting_wall__32__0__part",
@@ -1016,7 +1042,8 @@
       "debug": {
         "label_index": 22,
         "leader_length_px": 223.503914954526
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "mounting_wall__32__0__label",
@@ -1053,7 +1080,8 @@
       ],
       "debug": {
         "label_index": 22
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "pintle_pin_stop_means__68__0__part",
@@ -1091,7 +1119,8 @@
       "debug": {
         "label_index": 24,
         "leader_length_px": 106.00471687618433
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "pintle_pin_stop_means__68__0__label",
@@ -1128,7 +1157,8 @@
       ],
       "debug": {
         "label_index": 24
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "second_sidewall__60__0__part",
@@ -1166,7 +1196,8 @@
       "debug": {
         "label_index": 26,
         "leader_length_px": 168.0
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "second_sidewall__60__0__label",
@@ -1203,7 +1234,8 @@
       ],
       "debug": {
         "label_index": 26
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "base_wall__36__0__part",
@@ -1241,7 +1273,8 @@
       "debug": {
         "label_index": 27,
         "leader_length_px": 46.010868281309364
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "base_wall__36__0__label",
@@ -1278,7 +1311,8 @@
       ],
       "debug": {
         "label_index": 27
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "lower_extension__30__0__part",
@@ -1316,7 +1350,8 @@
       "debug": {
         "label_index": 28,
         "leader_length_px": 200.0399960007998
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "lower_extension__30__0__label",
@@ -1353,7 +1388,8 @@
       ],
       "debug": {
         "label_index": 28
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "hinge_axis__18__0__part",
@@ -1375,7 +1411,7 @@
         1617.28
       ],
       "confidence": 1.0,
-      "source": "leader_endpoint",
+      "source": "manual_override",
       "hotspot_kind": "part",
       "instance_id": 0,
       "label_center_px": [
@@ -1390,8 +1426,10 @@
       ],
       "debug": {
         "label_index": 33,
-        "leader_length_px": 253.38705570727168
-      }
+        "leader_length_px": 253.38705570727168,
+        "manual_override_note": "abstract centreline \u2014 not a physical part; demo-mode-eligible but tier downgraded"
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "hinge_axis__18__0__label",
@@ -1428,7 +1466,8 @@
       ],
       "debug": {
         "label_index": 33
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "first_sidewall__58__1__part",
@@ -1466,7 +1505,8 @@
       "debug": {
         "label_index": 34,
         "leader_length_px": 262.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "first_sidewall__58__1__label",
@@ -1503,7 +1543,8 @@
       ],
       "debug": {
         "label_index": 34
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "leg_guide_edge_surface__54__0__part",
@@ -1541,7 +1582,8 @@
       "debug": {
         "label_index": 35,
         "leader_length_px": 278.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "leg_guide_edge_surface__54__0__label",
@@ -1578,7 +1620,8 @@
       ],
       "debug": {
         "label_index": 35
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member__24__1__part",
@@ -1616,7 +1659,8 @@
       "debug": {
         "label_index": 39,
         "leader_length_px": 206.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "main_member__24__1__label",
@@ -1653,7 +1697,8 @@
       ],
       "debug": {
         "label_index": 39
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "lower_leg__41__0__part",
@@ -1691,7 +1736,8 @@
       "debug": {
         "label_index": 40,
         "leader_length_px": 82.365041127896
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "lower_leg__41__0__label",
@@ -1728,7 +1774,8 @@
       ],
       "debug": {
         "label_index": 40
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "upper_leg__40__0__part",
@@ -1766,7 +1813,8 @@
       "debug": {
         "label_index": 41,
         "leader_length_px": 170.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "upper_leg__40__0__label",
@@ -1803,7 +1851,8 @@
       ],
       "debug": {
         "label_index": 41
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member_pintle_pin_hole__34__1__part",
@@ -1841,7 +1890,8 @@
       "debug": {
         "label_index": 43,
         "leader_length_px": 67.20863039818622
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "main_member_pintle_pin_hole__34__1__label",
@@ -1878,7 +1928,8 @@
       ],
       "debug": {
         "label_index": 43
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "bight_wall__57__0__part",
@@ -1916,7 +1967,8 @@
       "debug": {
         "label_index": 44,
         "leader_length_px": 41.773197148410844
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "bight_wall__57__0__label",
@@ -1953,7 +2005,8 @@
       ],
       "debug": {
         "label_index": 44
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "u_shaped_link_member__26__1__part",
@@ -1991,7 +2044,8 @@
       "debug": {
         "label_index": 46,
         "leader_length_px": 240.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "u_shaped_link_member__26__1__label",
@@ -2028,7 +2082,8 @@
       ],
       "debug": {
         "label_index": 46
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "leaf_flange_pintle_pin_hole__66__1__part",
@@ -2066,7 +2121,8 @@
       "debug": {
         "label_index": 50,
         "leader_length_px": 282.7083302628347
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "leaf_flange_pintle_pin_hole__66__1__label",
@@ -2103,7 +2159,8 @@
       ],
       "debug": {
         "label_index": 50
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "stop_means__56__0__part",
@@ -2141,7 +2198,8 @@
       "debug": {
         "label_index": 51,
         "leader_length_px": 263.0
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "stop_means__56__0__label",
@@ -2178,7 +2236,8 @@
       ],
       "debug": {
         "label_index": 51
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "upper_extension__28__1__part",
@@ -2216,7 +2275,8 @@
       "debug": {
         "label_index": 53,
         "leader_length_px": 244.90202122481554
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "upper_extension__28__1__label",
@@ -2253,7 +2313,8 @@
       ],
       "debug": {
         "label_index": 53
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "link_member_pintle_pin_holes__44__0__part",
@@ -2291,7 +2352,8 @@
       "debug": {
         "label_index": 56,
         "leader_length_px": 142.59382875847047
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "link_member_pintle_pin_holes__44__0__label",
@@ -2328,7 +2390,8 @@
       ],
       "debug": {
         "label_index": 56
-      }
+      },
+      "confidence_tier": "medium"
     },
     {
       "hotspot_id": "mounting_wall__32__1__part",
@@ -2366,7 +2429,8 @@
       "debug": {
         "label_index": 59,
         "leader_length_px": 209.1219739769114
-      }
+      },
+      "confidence_tier": "high"
     },
     {
       "hotspot_id": "mounting_wall__32__1__label",
@@ -2403,8 +2467,9 @@
       ],
       "debug": {
         "label_index": 59
-      }
+      },
+      "confidence_tier": "medium"
     }
   ],
-  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows."
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
 }

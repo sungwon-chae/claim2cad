@@ -84,6 +84,10 @@ class FigureHotspot:
     label_center_px: tuple[float, float] | None = None
     label_bbox_px: tuple[float, float, float, float] | None = None
     debug: dict[str, Any] = field(default_factory=dict)
+    # V12-F: tiered quality. Computed from source + confidence so the
+    # viewer can hide "low" tier hotspots in demo mode without having
+    # to re-derive thresholds.
+    confidence_tier: str = "medium"  # "high" | "medium" | "low"
 
     def to_dict(self) -> dict[str, Any]:
         d = asdict(self)
@@ -141,6 +145,7 @@ class FigureHotspotSet:
                     label_center_px=tuple(label_center) if label_center else None,  # type: ignore[arg-type]
                     label_bbox_px=tuple(label_bbox) if label_bbox else None,  # type: ignore[arg-type]
                     debug=h.get("debug", {}),
+                    confidence_tier=h.get("confidence_tier", "medium"),
                 )
             )
         return cls(
@@ -369,6 +374,20 @@ def build_hotspots_for_example(
                 )
             )
 
+    # V12-F: assign confidence tier per hotspot. Demo mode shows
+    # high+medium only.
+    for h in hotspots:
+        h.confidence_tier = _tier_for(h.source, h.confidence, h.hotspot_kind)
+
+    # V12-F: apply manual_overrides if present.
+    overrides_path = example_dir / "figure_hotspot_overrides.json"
+    if overrides_path.exists():
+        try:
+            ovr = json.loads(overrides_path.read_text("utf-8"))
+            _apply_manual_overrides(hotspots, ovr, image_width_px=W, image_height_px=H)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("v12-f overrides failed: %s", exc)
+
     return FigureHotspotSet(
         figure_id=fmap.get("primary_figure", "figure_1"),
         figure_path=str(figure_path.relative_to(example_dir)),
@@ -380,9 +399,95 @@ def build_hotspots_for_example(
             "top-left). Each callout instance gets a part hotspot "
             "(leader endpoint when available) AND a label hotspot. "
             "Repeated callouts (e.g. upper/lower hinge) are preserved "
-            "as separate instance_id rows."
+            "as separate instance_id rows. V12-F: confidence_tier per "
+            "hotspot drives demo-mode filtering."
         ),
     )
+
+
+def _tier_for(source: str, confidence: float, kind: str) -> str:
+    """V12-F — confidence tier from source + numeric confidence.
+
+    Tier rules (kind=part):
+      high   — leader_endpoint with confidence >= 0.75
+             OR manual_override
+      medium — leader_endpoint with confidence < 0.75
+             OR projection_anchor
+             OR median_label
+             OR crop_center
+      low    — label_center
+             OR any source with confidence < 0.30
+
+    All label hotspots stay at "medium" because their job is debug
+    overlay; they are never the demo-mode marker.
+    """
+    if kind == "label":
+        return "medium"
+    if source == "manual_override":
+        return "high"
+    if source == "leader_endpoint":
+        return "high" if confidence >= 0.75 else "medium"
+    if source in {"projection_anchor", "median_label", "crop_center"}:
+        return "medium" if confidence >= 0.30 else "low"
+    if source == "label_center":
+        return "low"
+    return "low"
+
+
+def _apply_manual_overrides(
+    hotspots: list[FigureHotspot],
+    overrides: dict[str, Any],
+    *,
+    image_width_px: int,
+    image_height_px: int,
+) -> None:
+    """Override specific hotspot positions / tiers from JSON.
+
+    Schema:
+      {
+        "overrides": [
+          {
+            "match": {"component_id": "...", "instance_id": 0,
+                      "hotspot_kind": "part"},
+            "center_px": [x, y],     // optional
+            "bbox_px": [x0,y0,x1,y1],// optional
+            "confidence_tier": "high",  // optional
+            "source": "manual_override",
+            "note": "why this override"
+          }
+        ]
+      }
+
+    The first hotspot whose match dict is a subset of its fields
+    gets the override applied. Missing fields on either side are
+    left alone.
+    """
+    for ovr in overrides.get("overrides", []) or []:
+        match = ovr.get("match") or {}
+        for h in hotspots:
+            ok = True
+            for k, v in match.items():
+                if getattr(h, k, None) != v:
+                    ok = False
+                    break
+            if not ok:
+                continue
+            if "center_px" in ovr:
+                cx, cy = ovr["center_px"]
+                h.center_px = (float(cx), float(cy))
+                h.bbox_px = _bbox_around_centre(
+                    h.center_px, image_width_px, image_height_px,
+                    radius_frac=0.035,
+                )
+            if "bbox_px" in ovr:
+                h.bbox_px = tuple(float(x) for x in ovr["bbox_px"])  # type: ignore[assignment]
+            if "confidence_tier" in ovr:
+                h.confidence_tier = str(ovr["confidence_tier"])
+            h.source = ovr.get("source", "manual_override")
+            note = ovr.get("note", "")
+            if note:
+                h.debug = {**h.debug, "manual_override_note": note}
+            break
 
 
 def save_hotspots(hs: FigureHotspotSet, path: Path) -> Path:
@@ -461,6 +566,95 @@ def render_hotspot_debug_overlay(
         draw.text((cx + 8, cy - 6),
                   f"{h.component_id} #{h.callout_number}.{h.instance_id}",
                   fill=col, font=font)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out_path)
+    return out_path
+
+
+def render_hotspot_quality_overlay(
+    *,
+    figure_path: Path,
+    hotspots: FigureHotspotSet,
+    out_path: Path,
+    resolution: int = 1280,
+) -> Path:
+    """V12-F — annotate the figure with hotspots colour-coded by
+    confidence tier (high/medium/low). Used for the demo-mode
+    triage overlay so reviewers can see at a glance which markers
+    will appear in the polished demo and which are debug-only.
+    """
+    from PIL import Image, ImageDraw, ImageFont
+
+    img = Image.open(figure_path).convert("RGB").copy()
+    if img.size[0] > resolution:
+        scale = resolution / img.size[0]
+        img = img.resize(
+            (int(img.size[0] * scale), int(img.size[1] * scale)), Image.LANCZOS
+        )
+    W, H = img.size
+    sx = W / max(hotspots.image_width_px, 1)
+    sy = H / max(hotspots.image_height_px, 1)
+    draw = ImageDraw.Draw(img)
+    try:
+        font = ImageFont.truetype("Helvetica", 11)
+        font_b = ImageFont.truetype("Helvetica-Bold", 14)
+    except OSError:
+        font = font_b = ImageFont.load_default()
+
+    tier_color = {
+        "high": (40, 180, 60),       # green
+        "medium": (220, 140, 30),    # orange
+        "low": (220, 60, 60),        # red
+    }
+    counts = {"high": 0, "medium": 0, "low": 0}
+    for h in hotspots.hotspots:
+        if h.hotspot_kind != "part":
+            continue
+        tier = h.confidence_tier
+        counts[tier] = counts.get(tier, 0) + 1
+        cx = h.center_px[0] * sx
+        cy = h.center_px[1] * sy
+        col = tier_color.get(tier, (90, 90, 90))
+        # Larger marker for higher tier so the eye gravitates there.
+        r = {"high": 7, "medium": 5, "low": 4}.get(tier, 5)
+        # Filled disc + ring so high tier reads as solid.
+        if tier == "high":
+            draw.ellipse((cx - r, cy - r, cx + r, cy + r),
+                          fill=col + (255,), outline=(20, 50, 30), width=1)
+        else:
+            draw.ellipse((cx - r, cy - r, cx + r, cy + r),
+                          outline=col, width=2)
+        if h.label_center_px is not None:
+            lx = h.label_center_px[0] * sx
+            ly = h.label_center_px[1] * sy
+            draw.line((lx, ly, cx, cy), fill=col, width=1)
+        draw.text((cx + 9, cy - 6),
+                  f"{h.component_id} #{h.callout_number}",
+                  fill=col, font=font)
+    # Legend in the top-left corner.
+    legend_x = 20
+    legend_y = 20
+    draw.rectangle((legend_x, legend_y, legend_x + 280, legend_y + 96),
+                    fill=(255, 255, 255, 220),
+                    outline=(20, 20, 20), width=1)
+    draw.text((legend_x + 10, legend_y + 8),
+               "Hotspot quality (V12-F)", fill=(20, 20, 20), font=font_b)
+    for i, (tier, label) in enumerate(
+        (("high", "leader-grounded — shown in demo"),
+         ("medium", "projection / fallback — shown in demo"),
+         ("low", "label-only — debug mode only"))
+    ):
+        y = legend_y + 30 + i * 20
+        col = tier_color[tier]
+        if tier == "high":
+            draw.ellipse((legend_x + 14, y, legend_x + 24, y + 10),
+                          fill=col + (255,))
+        else:
+            draw.ellipse((legend_x + 14, y, legend_x + 24, y + 10),
+                          outline=col, width=2)
+        draw.text((legend_x + 32, y - 1),
+                   f"{tier:6} ({counts.get(tier, 0)})  {label}",
+                   fill=(40, 40, 40), font=font)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(out_path)
     return out_path

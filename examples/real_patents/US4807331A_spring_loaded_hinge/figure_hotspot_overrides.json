@@ -1,0 +1,12 @@
+{
+  "patent": "US4807331A_spring_loaded_hinge",
+  "notes": "V12-F manual overrides. The leader-line detector handles 31/32 part hotspots correctly. The remaining cases need hand-tuning.\n\nHinge axis (#18) is an abstract centreline, not a physical part. The auto-leader picks the upper-knuckle pin region, which is reasonable but not great as a 'click here for the axis' affordance. We tier it as 'medium' instead of high so it doesn't dominate demo mode but is still selectable.",
+  "overrides": [
+    {
+      "match": {"component_id": "hinge_axis", "hotspot_kind": "part"},
+      "confidence_tier": "medium",
+      "source": "manual_override",
+      "note": "abstract centreline — not a physical part; demo-mode-eligible but tier downgraded"
+    }
+  ]
+}

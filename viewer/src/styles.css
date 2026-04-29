@@ -328,6 +328,23 @@ body {
   border-color: rgba(220, 80, 60, 0.55);
 }
 
+/* V12-F — confidence tiers. High tier gets a subtle filled tint so
+   the eye gravitates there in demo mode; low tier is reserved for
+   debug mode (the FigurePanel filters it out in demo mode anyway,
+   so this style is only seen in debug mode). */
+.figure-hotspot.tier-high { border-width: 2px; }
+.figure-hotspot.tier-medium { border-width: 1.5px; opacity: 0.85; }
+.figure-hotspot.tier-low {
+  border-width: 1px;
+  border-style: dashed;
+  opacity: 0.55;
+}
+.figure-hotspot.tier-low .figure-hotspot-num {
+  background: #fff3f0;
+  color: #883322;
+  border-color: #cc5544;
+}
+
 /* V11-36 — label hotspots are a debug overlay. Keep them subdued
    so the part hotspots are still the primary affordance. */
 .figure-hotspot.label-hotspot {

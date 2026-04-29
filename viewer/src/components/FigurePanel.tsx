@@ -37,6 +37,8 @@ export type FigureHotspot = {
   instance_id?: number;
   label_center_px?: [number, number];
   label_bbox_px?: [number, number, number, number];
+  /** V12-F: "high" | "medium" | "low" */
+  confidence_tier?: string;
 };
 
 export type FigureHotspotSet = {
@@ -65,6 +67,8 @@ type Hotspot = {
   /** Normalised label-centre coordinates so the label hotspot can be
    *  drawn alongside the part hotspot when the debug toggle is on. */
   labelBbox?: { x: number; y: number; w: number; h: number };
+  /** V12-F: "high" | "medium" | "low" */
+  tier: "high" | "medium" | "low";
 };
 
 function bboxFromVLM(label: VLMLabel): { x: number; y: number; w: number; h: number } | null {
@@ -123,6 +127,7 @@ function buildHotspots(figureMap: FigureMap | null, rows: ClaimMapRow[]): Hotspo
       kind: "part",
       instanceId: 0,
       source: "label_center",
+      tier: "low",
     });
   }
   return hotspots;
@@ -172,6 +177,9 @@ export function FigurePanel(props: Props) {
             h: Math.max((ly1 - ly0) / H, 0.015),
           };
         }
+        const tier = ((h.confidence_tier === "high" || h.confidence_tier === "low")
+          ? h.confidence_tier
+          : "medium") as "high" | "medium" | "low";
         out.push({
           hotspotId: h.hotspot_id,
           componentId: h.component_id,
@@ -183,6 +191,7 @@ export function FigurePanel(props: Props) {
           instanceId: h.instance_id ?? 0,
           source: h.source,
           labelBbox,
+          tier,
         });
       }
       return out;
@@ -190,13 +199,12 @@ export function FigurePanel(props: Props) {
     return buildHotspots(figureMap, rows);
   }, [figureMap, rows, hotspotsCanonical]);
 
-  // V11-36 / V12-E: split for rendering. In demo mode, drop part
-  // hotspots whose source is a low-confidence fallback so the
-  // demo doesn't show markers that are visibly wrong.
+  // V11-36 / V12-E / V12-F: in demo mode, hide low-tier hotspots
+  // (label_center fallbacks). Debug mode keeps everything.
   const partHotspots = useMemo(() => {
     const all = hotspots.filter((h) => h.kind === "part");
     if (isDebug) return all;
-    return all.filter((h) => h.source !== "label_center");
+    return all.filter((h) => h.tier !== "low");
   }, [hotspots, isDebug]);
   const labelHotspots = useMemo(
     () => hotspots.filter((h) => h.kind === "label"),
@@ -205,7 +213,7 @@ export function FigurePanel(props: Props) {
   const droppedLowConf = useMemo(() => {
     if (isDebug) return 0;
     return hotspots.filter(
-      (h) => h.kind === "part" && h.source === "label_center",
+      (h) => h.kind === "part" && h.tier === "low",
     ).length;
   }, [hotspots, isDebug]);
 
@@ -273,6 +281,7 @@ export function FigurePanel(props: Props) {
             isSelected ? "selected" : "",
             isHovered ? "hovered" : "",
             `source-${h.source.replace(/_/g, "-")}`,
+            `tier-${h.tier}`,
           ].filter(Boolean).join(" ");
           return (
             <div

@@ -2,12 +2,12 @@
   "n_examples": 1,
   "examples": [
     {
-      "example_id": "US5180955A_positioning_apparatus_for_arm",
+      "example_id": "US4470181A_self_closing_hinge",
       "status": "ok",
-      "scaffold_id": "positioning_apparatus",
+      "scaffold_id": "self_closing_hinge_mechanism",
       "quality_tier": "good",
-      "n_components": 19,
-      "n_glb_children": 25,
+      "n_components": 14,
+      "n_glb_children": 21,
       "error": "",
       "notes": ""
     }

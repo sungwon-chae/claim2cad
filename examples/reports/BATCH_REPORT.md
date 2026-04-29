@@ -4,4 +4,4 @@
 
 | ID | status | scaffold | quality | components | glb children | notes |
 |---|---|---|---|---:|---:|---|
-| `US5180955A_positioning_apparatus_for_arm` | **ok** | positioning_apparatus | good | 19 | 25 |  |
+| `US4470181A_self_closing_hinge` | **ok** | self_closing_hinge_mechanism | good | 14 | 21 |  |

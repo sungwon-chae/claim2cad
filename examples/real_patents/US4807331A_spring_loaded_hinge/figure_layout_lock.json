@@ -1,0 +1,55 @@
+{
+  "family_id": "US4807331A_spring_loaded_hinge",
+  "notes": "Hand-traced from figures/figure_1.png (front view of the door hinge assembly). UV is normalised image coordinates (origin top-left, u right, v down). depth_mm is the centre depth on the projection's depth_axis (Y for the X-Z front projection). The bboxes are tight to the visible silhouettes in the figure, NOT the median of label callouts.\n\nKey reading of figure 1:\n  * The CURVED DOOR PANEL occupies the LEFT third of the figure (a large quadrilateral with a downward-angled bottom edge).\n  * The FIXED VEHICLE FRAME is the L-shaped body on the right, also large.\n  * The UPPER HINGE cluster is around (u=0.55, v=0.18) — small.\n  * The LOWER HINGE cluster is around (u=0.50, v=0.55) — small.\n  * The PINTLE PIN runs vertically along u≈0.50 from v≈0.10 to v≈0.85.\n  * The POWER MECHANISM (spring + link) is around (u=0.45, v=0.62).\n  * Fasteners scattered.\n\nDepth assignments (Y, mm):\n  door_panel    Y = -45  (in front)\n  fixed_frame   Y = +35  (behind)\n  upper_hinge   Y =   0  (on the pintle plane)\n  lower_hinge   Y =   0\n  pintle_axis   Y =   0\n  power_mech    Y = +18  (behind the pintle plane, between hinge and frame)\n  fasteners     Y =  -8\n",
+  "regions": [
+    {
+      "group_id": "door_panel",
+      "center_uv": [0.16, 0.50],
+      "bbox_uv": [0.02, 0.06, 0.40, 0.94],
+      "depth_mm": -45.0,
+      "note": "left curved door panel — large quadrilateral with angled bottom"
+    },
+    {
+      "group_id": "fixed_frame",
+      "center_uv": [0.85, 0.50],
+      "bbox_uv": [0.65, 0.04, 0.99, 0.96],
+      "depth_mm": 35.0,
+      "note": "right body frame — L-shaped behind the hinge"
+    },
+    {
+      "group_id": "upper_hinge",
+      "center_uv": [0.55, 0.20],
+      "bbox_uv": [0.40, 0.10, 0.72, 0.30],
+      "depth_mm": 0.0,
+      "note": "upper hinge cluster — bracket + knuckle + leaves"
+    },
+    {
+      "group_id": "lower_hinge",
+      "center_uv": [0.50, 0.58],
+      "bbox_uv": [0.36, 0.46, 0.68, 0.72],
+      "depth_mm": 0.0,
+      "note": "lower hinge cluster + power mechanism plate"
+    },
+    {
+      "group_id": "pintle_axis",
+      "center_uv": [0.495, 0.475],
+      "bbox_uv": [0.46, 0.10, 0.53, 0.85],
+      "depth_mm": 0.0,
+      "note": "vertical pintle pin spanning upper and lower hinges"
+    },
+    {
+      "group_id": "power_mechanism",
+      "center_uv": [0.43, 0.62],
+      "bbox_uv": [0.34, 0.52, 0.56, 0.74],
+      "depth_mm": 18.0,
+      "note": "spring + u-shaped link member sitting next to the lower hinge"
+    },
+    {
+      "group_id": "fasteners",
+      "center_uv": [0.78, 0.45],
+      "bbox_uv": [0.66, 0.10, 0.96, 0.85],
+      "depth_mm": -8.0,
+      "note": "scattered along the fixed frame mounting"
+    }
+  ]
+}

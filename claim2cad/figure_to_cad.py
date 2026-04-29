@@ -790,6 +790,31 @@ def run_generator(
                     group_anchors=g_anchors,
                 )
                 save_layout(layout, example_dir / "figure_projection.json")
+                # V12-B — apply patent-family-specific layout lock
+                # if present. The lock overrides the median-derived
+                # group anchors with hand-traced figure regions and
+                # clamps each component to its group bbox so the
+                # assembly cannot collapse to a central pile.
+                lock_path = example_dir / "figure_layout_lock.json"
+                if lock_path.exists():
+                    try:
+                        from claim2cad.figure_layout_lock import (
+                            apply_layout_lock, load_region_map,
+                        )
+                        rmap = load_region_map(lock_path)
+                        layout = apply_layout_lock(
+                            layout=layout,
+                            region_map=rmap,
+                            component_to_group=scaffold.component_to_group,
+                            enforce_bbox=True,
+                        )
+                        save_layout(layout, example_dir / "figure_projection_locked.json")
+                        logger.info(
+                            "v12-b: applied figure_layout_lock with %d regions",
+                            len(rmap.regions),
+                        )
+                    except Exception as exc:  # noqa: BLE001
+                        logger.warning("v12-b layout lock failed: %s", exc)
                 compound, ordered_ids, diagnostics = build_assembly_figure_anchored(
                     inference=inference, scaffold=scaffold, layout=layout,
                 )

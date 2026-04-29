@@ -1,0 +1,14 @@
+{
+  "preset_id": "patent_figure",
+  "preset_name": "Patent figure",
+  "model_target": "model_v1.2_oblique.glb",
+  "matplotlib_render": {
+    "elev_deg": 22,
+    "azim_deg": -60
+  },
+  "threejs_camera": {
+    "azim_rad": 1.0471975500000001,
+    "elev_rad": 0.38397243500000006
+  },
+  "notes": "V12-L grid-search best match: silhouette IoU = 0.029. Computed against figure_1.png mask after both are normalised to a 256x256 canvas. Viewer should default to this preset for demo_quality-tagged examples."
+}

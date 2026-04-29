@@ -35,12 +35,13 @@ export type CameraPreset =
   | "left"
   | "iso"
   | "iso2"
-  | "figure";
+  | "figure"
+  | "patent_figure";
 
 /** World-space camera positions (relative to scene bounds, normalised
  *  to roughly fit the model). The OrbitControls' target stays at the
- *  scene origin. ``figure`` is the V11-27 figure-aligned default,
- *  matching the camera the projection_layout_solver uses. */
+ *  scene origin. ``figure`` is the V11-27 front-aligned default;
+ *  ``patent_figure`` is the V12-L oblique opened-door view. */
 export const CAMERA_PRESETS: Record<CameraPreset, [number, number, number]> = {
   top: [0.001, 1.0, 0.001],
   front: [0.0, 0.0, 1.0],
@@ -48,10 +49,16 @@ export const CAMERA_PRESETS: Record<CameraPreset, [number, number, number]> = {
   left: [-1.0, 0.0, 0.0],
   iso: [0.7, 0.5, 0.7],
   iso2: [-0.7, 0.5, -0.7],
-  // For an X-Z front projection (the v11-23 default for isometric
-  // figures), the figure-aligned camera looks along +Y. Slight tilt
-  // off pure Y so OrbitControls can still rotate freely around target.
+  // V11-27 figure-aligned (front projection).
   figure: [0.001, 0.001, 1.0],
+  // V12-L Patent figure preset — oblique opened-door view that
+  // matches the US4807331A drawing. Equivalent to matplotlib
+  // elev=22, azim=-60 with target at origin. The mpl convention
+  // is azim from +X CCW around +Z, so the world-space dir is
+  // (cos(elev)*sin(-azim), sin(elev), cos(elev)*cos(-azim)) in a
+  // y-up world. Pre-computed: elev=22°, azim=-60° →
+  // x=0.803, y=0.375, z=0.464.
+  patent_figure: [0.80, 0.37, 0.46],
 };
 
 const COLOR_INDEPENDENT = new THREE.Color("#4f8cff");

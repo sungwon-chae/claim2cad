@@ -84,11 +84,16 @@ def _missing(example_dir: Path) -> list[str]:
 def _preferred_glb(example_dir: Path) -> str:
     """Return the GLB filename to ship to the viewer for ``example_dir``.
 
-    Preference order: v1.2 demo scaffold (US4807331A only) > v1.1
-    figure-driven CAD > v1.0 row-of-primitives. The viewer always
-    loads ``model.glb`` from the staged dir, so we just pick which
-    source file to copy under that canonical name.
+    Preference order:
+      v1.2 oblique opened-door scaffold (V12-J) >
+      v1.2 flat front scaffold (V12-C) >
+      v1.1 figure-driven CAD >
+      v1.0 row-of-primitives.
+    The viewer always loads ``model.glb`` from the staged dir, so
+    we just pick which source file to copy under that canonical name.
     """
+    if (example_dir / "model_v1.2_oblique.glb").exists():
+        return "model_v1.2_oblique.glb"
     if (example_dir / "model_v1.2.glb").exists():
         return "model_v1.2.glb"
     if (example_dir / "model_v1.1.glb").exists():
@@ -332,6 +337,7 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             "scene_scaffold.json",
             "assembly_diagnostics.json",
             "render_comparison.png",
+            "camera_v12.json",
         ):
             src_p = src_dir / optional
             if src_p.exists():

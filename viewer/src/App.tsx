@@ -106,20 +106,28 @@ export function App() {
     }
     const figProjUrl = `data/${loaded.example.base}/figure_projection.json`;
     const projReportUrl = `data/${loaded.example.base}/projection_report.json`;
+    const cameraV12Url = `data/${loaded.example.base}/camera_v12.json`;
     Promise.all([
       fetch(figProjUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
       fetch(projReportUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
-    ]).then(([figProj, projReport]) => {
-      const valid = ["top", "front", "right", "left", "iso", "iso2", "figure"];
+      fetch(cameraV12Url).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ]).then(([figProj, projReport, cameraV12]) => {
+      const valid = ["top", "front", "right", "left", "iso", "iso2",
+                     "figure", "patent_figure"];
       let best: CameraPreset | null = null;
       if (projReport && projReport.best_view) {
         const cand = projReport.best_view as CameraPreset;
         if (valid.includes(cand)) best = cand;
       }
-      // If the example has a figure_projection.json, prefer the
-      // "figure" preset as the highlighted best view AND auto-snap
-      // the camera there once when the example loads.
-      if (figProj && figProj.projection) {
+      // V12-L: if the example has camera_v12.json AND the
+      // demo_quality tag, default to the "patent_figure" preset.
+      const isDemoQuality = (loaded.example.tags ?? []).includes(
+        "demo_quality",
+      );
+      if (cameraV12 && isDemoQuality) {
+        best = "patent_figure";
+        setCameraPreset("patent_figure");
+      } else if (figProj && figProj.projection) {
         best = "figure";
         setCameraPreset("figure");
       } else {
@@ -342,7 +350,7 @@ export function App() {
           {/* V11-27 camera preset bar — figure-aligned default */}
           {loaded && (
             <div className="camera-presets">
-              {(["figure", "top", "front", "right", "iso"] as const).map(
+              {(["patent_figure", "figure", "top", "front", "right", "iso"] as const).map(
                 (preset) => {
                   const active = cameraPreset === preset;
                   const isBest = bestView === preset;
@@ -357,14 +365,16 @@ export function App() {
                         setCameraPreset(active ? null : preset)
                       }
                       title={
-                        preset === "figure"
-                          ? "figure-aligned — same projection as patent figure"
+                        preset === "patent_figure"
+                          ? "Patent figure — V12-L oblique opened-door view"
+                          : preset === "figure"
+                          ? "figure-aligned — same projection as patent figure (front)"
                           : isBest
                           ? `${preset} — best aspect-match to figure`
                           : `${preset} view`
                       }
                     >
-                      {preset}
+                      {preset === "patent_figure" ? "patent fig." : preset}
                       {isBest ? " ★" : ""}
                     </button>
                   );

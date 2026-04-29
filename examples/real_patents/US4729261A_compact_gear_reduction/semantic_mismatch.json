@@ -1,0 +1,11 @@
+{
+  "example_id": "US4729261A_compact_gear_reduction",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "planetary_gear"
+  ],
+  "actual_topology": "planetary_gear",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

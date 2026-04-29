@@ -1,0 +1,9 @@
+{
+  "example_id": "US4762016A_robotic_drive_unit",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

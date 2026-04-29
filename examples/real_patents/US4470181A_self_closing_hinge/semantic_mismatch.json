@@ -1,0 +1,11 @@
+{
+  "example_id": "US4470181A_self_closing_hinge",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "self_closing_hinge_mechanism"
+  ],
+  "actual_topology": "self_closing_hinge_mechanism",
+  "actual_scaffold": "self_closing_hinge_mechanism",
+  "reasons": []
+}

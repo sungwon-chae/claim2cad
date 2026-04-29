@@ -1,0 +1,12 @@
+{
+  "example_id": "US4329110A_manipulator_with_remote_control",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "robotic_arm",
+    "positioning_apparatus"
+  ],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

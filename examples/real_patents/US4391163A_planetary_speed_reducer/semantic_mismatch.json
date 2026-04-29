@@ -1,0 +1,9 @@
+{
+  "example_id": "US4391163A_planetary_speed_reducer",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [],
+  "actual_topology": "planetary_gear",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

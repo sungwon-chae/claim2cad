@@ -1,0 +1,11 @@
+{
+  "example_id": "US5239246A_force_reflecting_manipulator",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "robotic_arm"
+  ],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

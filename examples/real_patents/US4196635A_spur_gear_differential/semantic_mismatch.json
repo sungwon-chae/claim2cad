@@ -1,0 +1,9 @@
+{
+  "example_id": "US4196635A_spur_gear_differential",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [],
+  "actual_topology": "housing_panel",
+  "actual_scaffold": "housing_panel",
+  "reasons": []
+}

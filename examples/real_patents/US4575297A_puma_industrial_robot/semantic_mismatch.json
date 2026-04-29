@@ -1,0 +1,11 @@
+{
+  "example_id": "US4575297A_puma_industrial_robot",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "robotic_arm"
+  ],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

@@ -1,0 +1,273 @@
+{
+  "n_examples": 25,
+  "n_with_mismatch": 1,
+  "examples": [
+    {
+      "example_id": "US3279624A_unimate_industrial_robot",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "robotic_arm"
+      ],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US3705522A_planetary_gear_with_idler",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "planetary_gear",
+      "reasons": []
+    },
+    {
+      "example_id": "US3789698A_compact_planetary_drive",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "rotary_shaft"
+      ],
+      "actual_topology": "rotary_shaft",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US3897696A_harmonic_gear_drive",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "harmonic_gear",
+        "rotary_shaft"
+      ],
+      "actual_topology": "harmonic_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4106366A_automotive_planetary_gearbox",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4196635A_spur_gear_differential",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "housing_panel",
+      "actual_scaffold": "housing_panel",
+      "reasons": []
+    },
+    {
+      "example_id": "US4329110A_manipulator_with_remote_control",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "robotic_arm",
+        "positioning_apparatus"
+      ],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4391163A_planetary_speed_reducer",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4392776A_robotic_hand_with_compliance",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "rotary_shaft",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4407625A_multi_arm_robotic_assembly",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4467670A_epicyclic_transmission",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear",
+        "rotary_shaft"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4470181A_self_closing_hinge",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "self_closing_hinge_mechanism"
+      ],
+      "actual_topology": "self_closing_hinge_mechanism",
+      "actual_scaffold": "self_closing_hinge_mechanism",
+      "reasons": []
+    },
+    {
+      "example_id": "US4486142A_kuka_articulated_arm",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "unknown",
+      "actual_scaffold": "fallback_grid",
+      "reasons": []
+    },
+    {
+      "example_id": "US4502185A_concealed_hinge_assembly",
+      "has_mismatch": true,
+      "severity": "advisory",
+      "expected_topologies": [
+        "two_plate_hinge"
+      ],
+      "actual_topology": "door_hinge",
+      "actual_scaffold": "door_hinge",
+      "reasons": [
+        "classifier picked 'door_hinge'; expected near-family 'two_plate_hinge'"
+      ]
+    },
+    {
+      "example_id": "US4575297A_puma_industrial_robot",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "robotic_arm"
+      ],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4655675A_robotic_assembly_apparatus",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4729261A_compact_gear_reduction",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4762016A_robotic_drive_unit",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4807331A_spring_loaded_hinge",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "door_hinge"
+      ],
+      "actual_topology": "door_hinge",
+      "actual_scaffold": "door_hinge",
+      "reasons": []
+    },
+    {
+      "example_id": "US4816730A_autonomous_mobile_robot",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "robotic_arm"
+      ],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    },
+    {
+      "example_id": "US4856377A_planetary_drive_apparatus",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US4955250A_multiple_forearm_robot",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "rotary_shaft"
+      ],
+      "actual_topology": "rotary_shaft",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US5042321A_two_stage_planetary_gear",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "planetary_gear",
+        "rotary_shaft"
+      ],
+      "actual_topology": "planetary_gear",
+      "actual_scaffold": "rotary_shaft",
+      "reasons": []
+    },
+    {
+      "example_id": "US5180955A_positioning_apparatus_for_arm",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "positioning_apparatus"
+      ],
+      "actual_topology": "positioning_apparatus",
+      "actual_scaffold": "positioning_apparatus",
+      "reasons": []
+    },
+    {
+      "example_id": "US5239246A_force_reflecting_manipulator",
+      "has_mismatch": false,
+      "severity": "none",
+      "expected_topologies": [
+        "robotic_arm"
+      ],
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": []
+    }
+  ]
+}

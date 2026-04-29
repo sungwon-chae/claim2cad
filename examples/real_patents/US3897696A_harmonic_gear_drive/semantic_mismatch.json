@@ -1,0 +1,12 @@
+{
+  "example_id": "US3897696A_harmonic_gear_drive",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "harmonic_gear",
+    "rotary_shaft"
+  ],
+  "actual_topology": "harmonic_gear",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

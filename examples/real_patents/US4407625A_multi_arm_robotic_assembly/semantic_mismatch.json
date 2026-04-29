@@ -1,0 +1,9 @@
+{
+  "example_id": "US4407625A_multi_arm_robotic_assembly",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

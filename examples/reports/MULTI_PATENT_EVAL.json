@@ -14,7 +14,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.847,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "robotic_arm"
+      ]
     },
     {
       "example_id": "US3705522A_planetary_gear_with_idler",
@@ -29,7 +34,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "good",
       "overall_score": 0.859,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear"
+      ]
     },
     {
       "example_id": "US3789698A_compact_planetary_drive",
@@ -44,7 +54,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.856,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "rotary_shaft"
+      ]
     },
     {
       "example_id": "US3897696A_harmonic_gear_drive",
@@ -59,7 +74,13 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.71,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "harmonic_gear",
+        "rotary_shaft"
+      ]
     },
     {
       "example_id": "US4106366A_automotive_planetary_gearbox",
@@ -74,7 +95,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "fallback",
       "overall_score": 0.557,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear"
+      ]
     },
     {
       "example_id": "US4196635A_spur_gear_differential",
@@ -89,7 +115,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.809,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4329110A_manipulator_with_remote_control",
@@ -104,7 +133,13 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.802,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "robotic_arm",
+        "positioning_apparatus"
+      ]
     },
     {
       "example_id": "US4391163A_planetary_speed_reducer",
@@ -119,7 +154,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.791,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4392776A_robotic_hand_with_compliance",
@@ -134,7 +172,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.742,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4407625A_multi_arm_robotic_assembly",
@@ -149,7 +190,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.74,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4467670A_epicyclic_transmission",
@@ -164,7 +208,13 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.844,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear",
+        "rotary_shaft"
+      ]
     },
     {
       "example_id": "US4470181A_self_closing_hinge",
@@ -179,7 +229,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "good",
       "overall_score": 0.708,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "self_closing_hinge_mechanism"
+      ]
     },
     {
       "example_id": "US4486142A_kuka_articulated_arm",
@@ -194,7 +249,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "fallback",
       "overall_score": 0.827,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4502185A_concealed_hinge_assembly",
@@ -209,7 +267,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "good",
       "overall_score": 0.89,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "advisory",
+      "mismatch_reason": "classifier picked 'door_hinge'; expected near-family 'two_plate_hinge'",
+      "mismatch_expected": [
+        "two_plate_hinge"
+      ]
     },
     {
       "example_id": "US4575297A_puma_industrial_robot",
@@ -224,7 +287,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.838,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "robotic_arm"
+      ]
     },
     {
       "example_id": "US4655675A_robotic_assembly_apparatus",
@@ -239,7 +307,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.799,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4729261A_compact_gear_reduction",
@@ -254,7 +325,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.732,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear"
+      ]
     },
     {
       "example_id": "US4762016A_robotic_drive_unit",
@@ -269,7 +345,10 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.816,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": []
     },
     {
       "example_id": "US4807331A_spring_loaded_hinge",
@@ -284,7 +363,12 @@
       "projection_alignment_score": 1.0,
       "overall_quality": "flagship",
       "overall_score": 0.997,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "door_hinge"
+      ]
     },
     {
       "example_id": "US4816730A_autonomous_mobile_robot",
@@ -299,7 +383,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.82,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "robotic_arm"
+      ]
     },
     {
       "example_id": "US4856377A_planetary_drive_apparatus",
@@ -314,7 +403,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.866,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear"
+      ]
     },
     {
       "example_id": "US4955250A_multiple_forearm_robot",
@@ -329,7 +423,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.735,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "rotary_shaft"
+      ]
     },
     {
       "example_id": "US5042321A_two_stage_planetary_gear",
@@ -344,7 +443,13 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.834,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "planetary_gear",
+        "rotary_shaft"
+      ]
     },
     {
       "example_id": "US5180955A_positioning_apparatus_for_arm",
@@ -359,7 +464,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "good",
       "overall_score": 0.874,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "positioning_apparatus"
+      ]
     },
     {
       "example_id": "US5239246A_force_reflecting_manipulator",
@@ -374,7 +484,12 @@
       "projection_alignment_score": 0.0,
       "overall_quality": "partial",
       "overall_score": 0.803,
-      "notes": []
+      "notes": [],
+      "mismatch_severity": "none",
+      "mismatch_reason": "",
+      "mismatch_expected": [
+        "robotic_arm"
+      ]
     }
   ]
 }

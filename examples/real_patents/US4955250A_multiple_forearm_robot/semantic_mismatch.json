@@ -1,0 +1,11 @@
+{
+  "example_id": "US4955250A_multiple_forearm_robot",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "rotary_shaft"
+  ],
+  "actual_topology": "rotary_shaft",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

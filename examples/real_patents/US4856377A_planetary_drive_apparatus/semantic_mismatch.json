@@ -1,0 +1,11 @@
+{
+  "example_id": "US4856377A_planetary_drive_apparatus",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "planetary_gear"
+  ],
+  "actual_topology": "planetary_gear",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

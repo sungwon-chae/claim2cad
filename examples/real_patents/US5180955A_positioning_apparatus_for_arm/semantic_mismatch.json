@@ -1,0 +1,11 @@
+{
+  "example_id": "US5180955A_positioning_apparatus_for_arm",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "positioning_apparatus"
+  ],
+  "actual_topology": "positioning_apparatus",
+  "actual_scaffold": "positioning_apparatus",
+  "reasons": []
+}

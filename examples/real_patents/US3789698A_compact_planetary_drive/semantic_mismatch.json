@@ -1,0 +1,11 @@
+{
+  "example_id": "US3789698A_compact_planetary_drive",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "rotary_shaft"
+  ],
+  "actual_topology": "rotary_shaft",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

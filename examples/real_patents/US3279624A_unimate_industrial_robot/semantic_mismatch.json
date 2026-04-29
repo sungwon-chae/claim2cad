@@ -1,0 +1,11 @@
+{
+  "example_id": "US3279624A_unimate_industrial_robot",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "robotic_arm"
+  ],
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": []
+}

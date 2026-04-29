@@ -1,0 +1,11 @@
+{
+  "example_id": "US4807331A_spring_loaded_hinge",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "door_hinge"
+  ],
+  "actual_topology": "door_hinge",
+  "actual_scaffold": "door_hinge",
+  "reasons": []
+}

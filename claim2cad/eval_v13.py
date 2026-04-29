@@ -56,6 +56,11 @@ class V13ExampleEval:
     overall_quality: str = "failed"
     overall_score: float = 0.0
     notes: list[str] = field(default_factory=list)
+    # V13-N: semantic mismatch warning surfaced from
+    # claim2cad.semantic_mismatch.
+    mismatch_severity: str = "none"  # "none" | "advisory" | "warning"
+    mismatch_reason: str = ""
+    mismatch_expected: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -206,6 +211,23 @@ def evaluate_one(example_dir: Path) -> V13ExampleEval:
             rep.projection_alignment_score = min(1.0, n_anchors / 8.0)
         except Exception: pass
 
+    # V13-N: semantic mismatch surfaced from the same example
+    # context. Persist on the eval and as a per-example sidecar
+    # so the viewer can read it.
+    try:
+        from claim2cad.semantic_mismatch import detect_one
+        mr = detect_one(example_dir)
+        rep.mismatch_severity = mr.severity
+        rep.mismatch_reason = mr.reasons[0] if mr.reasons else ""
+        rep.mismatch_expected = list(mr.expected_topologies)
+        # Persist sidecar — the viewer reads it.
+        (example_dir / "semantic_mismatch.json").write_text(
+            json.dumps(mr.to_dict(), indent=2) + "\n",
+            encoding="utf-8",
+        )
+    except Exception as exc:  # noqa: BLE001
+        rep.notes.append(f"mismatch_detect_failed:{exc}"[:80])
+
     # Overall verdict
     if example_dir.name in FLAGSHIP_EXAMPLES:
         rep.overall_quality = "flagship"
@@ -264,9 +286,13 @@ def write_corpus_report(reps: list[V13ExampleEval],
     md.append(f"**{len(reps)} examples** evaluated. ")
     md.append(f"Mean overall_score: **{avg_score:.3f}**.\n")
     md.append(f"Quality distribution: {dict(quality_counts)}\n")
-    md.append("| ID | quality | score | viewer | spans | glb | hotspots | tier rate | non-pile | scaffold | render |")
-    md.append("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|")
+    md.append("| ID | quality | score | viewer | spans | glb | hotspots | tier rate | non-pile | scaffold | render | mismatch |")
+    md.append("|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|")
     for r in reps:
+        mismatch = (
+            "none" if r.mismatch_severity == "none"
+            else f"**{r.mismatch_severity}**"
+        )
         md.append(
             f"| `{r.example_id}` | **{r.overall_quality}** | "
             f"{r.overall_score:.2f} | "
@@ -277,7 +303,8 @@ def write_corpus_report(reps: list[V13ExampleEval],
             f"{r.hotspot_confidence_rate:.2f} | "
             f"{r.non_central_pile_score:.2f} | "
             f"{r.scaffold_coherence_score:.2f} | "
-            f"{r.render_readability_score:.2f} |"
+            f"{r.render_readability_score:.2f} | "
+            f"{mismatch} |"
         )
     md.append("")
     md_p.write_text("\n".join(md), encoding="utf-8")

@@ -1,0 +1,9 @@
+{
+  "example_id": "US4392776A_robotic_hand_with_compliance",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [],
+  "actual_topology": "rotary_shaft",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

@@ -1,0 +1,12 @@
+{
+  "example_id": "US5042321A_two_stage_planetary_gear",
+  "has_mismatch": false,
+  "severity": "none",
+  "expected_topologies": [
+    "planetary_gear",
+    "rotary_shaft"
+  ],
+  "actual_topology": "planetary_gear",
+  "actual_scaffold": "rotary_shaft",
+  "reasons": []
+}

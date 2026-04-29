@@ -2,7 +2,7 @@
   "example_id": "US3279624A_unimate_industrial_robot",
   "status": "ok",
   "scaffold_id": "linkage",
-  "quality_tier": "partial",
+  "quality_tier": "good",
   "n_components": 8,
   "n_glb_children": 8,
   "error": "",

@@ -8,5 +8,6 @@
     "topology:unknown \u2014 no keyword match",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": "no topology keyword matched; using fallback_grid"
+  "notes": "no topology keyword matched; using fallback_grid",
+  "multi_view": []
 }

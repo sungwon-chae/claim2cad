@@ -8,5 +8,6 @@
     "topology:rotary_shaft:keyword:'transmission'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

@@ -1,12 +1,13 @@
 {
   "example_id": "US4407625A_multi_arm_robotic_assembly",
-  "view_type": "sectional",
+  "view_type": "oblique",
   "topology": "robotic_arm",
   "recommended_scaffold": "linkage",
-  "confidence": 0.8,
+  "confidence": 0.55,
   "evidence": [
     "topology:robotic_arm:keyword:'manipulator'",
-    "view:sectional:keyword"
+    "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

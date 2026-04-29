@@ -8,5 +8,6 @@
     "topology:door_hinge:keyword:'spring loaded hinge'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

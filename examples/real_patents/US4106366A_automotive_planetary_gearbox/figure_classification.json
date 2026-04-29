@@ -2,11 +2,15 @@
   "example_id": "US4106366A_automotive_planetary_gearbox",
   "view_type": "oblique",
   "topology": "planetary_gear",
-  "recommended_scaffold": "rotary_shaft",
+  "recommended_scaffold": "planetary_gear",
   "confidence": 0.55,
   "evidence": [
     "topology:planetary_gear:keyword:'planetary gear'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": [
+    "sectional",
+    "plan"
+  ]
 }

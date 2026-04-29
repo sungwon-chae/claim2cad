@@ -8,5 +8,9 @@
     "topology:harmonic_gear:keyword:'harmonic gear'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": [
+    "sectional",
+    "plan"
+  ]
 }

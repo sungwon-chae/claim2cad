@@ -2,7 +2,7 @@
   "example_id": "US4329110A_manipulator_with_remote_control",
   "status": "ok",
   "scaffold_id": "linkage",
-  "quality_tier": "partial",
+  "quality_tier": "good",
   "n_components": 14,
   "n_glb_children": 14,
   "error": "",

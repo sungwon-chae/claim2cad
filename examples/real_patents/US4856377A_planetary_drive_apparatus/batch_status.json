@@ -1,10 +1,10 @@
 {
   "example_id": "US4856377A_planetary_drive_apparatus",
   "status": "ok",
-  "scaffold_id": "rotary_shaft",
-  "quality_tier": "partial",
+  "scaffold_id": "planetary_gear",
+  "quality_tier": "good",
   "n_components": 17,
-  "n_glb_children": 17,
+  "n_glb_children": 21,
   "error": "",
   "notes": ""
 }

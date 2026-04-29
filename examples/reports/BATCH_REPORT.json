@@ -1,6 +1,16 @@
 {
-  "n_examples": 1,
+  "n_examples": 25,
   "examples": [
+    {
+      "example_id": "US3279624A_unimate_industrial_robot",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 8,
+      "n_glb_children": 8,
+      "error": "",
+      "notes": ""
+    },
     {
       "example_id": "US3705522A_planetary_gear_with_idler",
       "status": "ok",
@@ -8,6 +18,236 @@
       "quality_tier": "good",
       "n_components": 11,
       "n_glb_children": 12,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US3789698A_compact_planetary_drive",
+      "status": "ok",
+      "scaffold_id": "rotary_shaft",
+      "quality_tier": "good",
+      "n_components": 14,
+      "n_glb_children": 14,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US3897696A_harmonic_gear_drive",
+      "status": "ok",
+      "scaffold_id": "rotary_shaft",
+      "quality_tier": "good",
+      "n_components": 13,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4106366A_automotive_planetary_gearbox",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 5,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4196635A_spur_gear_differential",
+      "status": "ok",
+      "scaffold_id": "housing_panel",
+      "quality_tier": "good",
+      "n_components": 13,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4329110A_manipulator_with_remote_control",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 14,
+      "n_glb_children": 14,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4391163A_planetary_speed_reducer",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 12,
+      "n_glb_children": 17,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4392776A_robotic_hand_with_compliance",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 13,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4407625A_multi_arm_robotic_assembly",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 8,
+      "n_glb_children": 8,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4467670A_epicyclic_transmission",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 16,
+      "n_glb_children": 23,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4470181A_self_closing_hinge",
+      "status": "ok",
+      "scaffold_id": "self_closing_hinge_mechanism",
+      "quality_tier": "good",
+      "n_components": 14,
+      "n_glb_children": 21,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4486142A_kuka_articulated_arm",
+      "status": "ok",
+      "scaffold_id": "fallback_grid",
+      "quality_tier": "fallback",
+      "n_components": 7,
+      "n_glb_children": 7,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4502185A_concealed_hinge_assembly",
+      "status": "ok",
+      "scaffold_id": "two_plate_hinge",
+      "quality_tier": "good",
+      "n_components": 12,
+      "n_glb_children": 17,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4575297A_puma_industrial_robot",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 31,
+      "n_glb_children": 31,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4655675A_robotic_assembly_apparatus",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 18,
+      "n_glb_children": 18,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4729261A_compact_gear_reduction",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 11,
+      "n_glb_children": 20,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4762016A_robotic_drive_unit",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 13,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4807331A_spring_loaded_hinge",
+      "status": "flagship_preserved",
+      "scaffold_id": "oblique_demo_us4807331a",
+      "quality_tier": "flagship",
+      "n_components": 0,
+      "n_glb_children": 0,
+      "error": "",
+      "notes": "kept model_v1.2_oblique.glb as the demo model"
+    },
+    {
+      "example_id": "US4816730A_autonomous_mobile_robot",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 12,
+      "n_glb_children": 12,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4856377A_planetary_drive_apparatus",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 17,
+      "n_glb_children": 21,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US4955250A_multiple_forearm_robot",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 13,
+      "n_glb_children": 13,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US5042321A_two_stage_planetary_gear",
+      "status": "ok",
+      "scaffold_id": "planetary_gear",
+      "quality_tier": "good",
+      "n_components": 11,
+      "n_glb_children": 19,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US5180955A_positioning_apparatus_for_arm",
+      "status": "ok",
+      "scaffold_id": "positioning_apparatus",
+      "quality_tier": "good",
+      "n_components": 19,
+      "n_glb_children": 25,
+      "error": "",
+      "notes": ""
+    },
+    {
+      "example_id": "US5239246A_force_reflecting_manipulator",
+      "status": "ok",
+      "scaffold_id": "linkage",
+      "quality_tier": "good",
+      "n_components": 19,
+      "n_glb_children": 19,
       "error": "",
       "notes": ""
     }

@@ -2,7 +2,7 @@
   "example_id": "US4762016A_robotic_drive_unit",
   "status": "ok",
   "scaffold_id": "linkage",
-  "quality_tier": "partial",
+  "quality_tier": "good",
   "n_components": 13,
   "n_glb_children": 13,
   "error": "",

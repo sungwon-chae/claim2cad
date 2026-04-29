@@ -1,12 +1,13 @@
 {
   "example_id": "US4502185A_concealed_hinge_assembly",
   "view_type": "oblique",
-  "topology": "door_hinge",
-  "recommended_scaffold": "door_hinge",
+  "topology": "two_plate_hinge",
+  "recommended_scaffold": "two_plate_hinge",
   "confidence": 0.55,
   "evidence": [
-    "topology:door_hinge:keyword:'concealed hinge'",
+    "topology:two_plate_hinge:keyword:'concealed hinge'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

@@ -2,7 +2,7 @@
   "example_id": "US4575297A_puma_industrial_robot",
   "status": "ok",
   "scaffold_id": "linkage",
-  "quality_tier": "partial",
+  "quality_tier": "good",
   "n_components": 31,
   "n_glb_children": 31,
   "error": "",

@@ -8,5 +8,6 @@
     "topology:robotic_arm:keyword:'industrial robot'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

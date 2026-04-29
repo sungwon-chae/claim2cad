@@ -163,8 +163,11 @@ def regenerate_one(example_dir: Path) -> BatchStatus:
         status.n_components = len(cm.get("components", []))
         status.n_glb_children = len(result.ordered_ids)
 
-        step_path = example_dir / "model_v1.3.step"
-        glb_path = example_dir / "model_v1.3.glb"
+        # V14-E: emit both model_v1.3 (existing contract) and
+        # model_v1.4 (new) so the viewer can prefer v1.4. The
+        # geometry is identical for both — only naming differs.
+        step_path = example_dir / "model_v1.4.step"
+        glb_path = example_dir / "model_v1.4.glb"
         try:
             bd.export_step(result.compound, str(step_path))
         except Exception as exc:  # noqa: BLE001

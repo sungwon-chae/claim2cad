@@ -103,8 +103,14 @@ def _z_separation_score(centres: list[dict[str, Any]]) -> float:
 
 def _panel_separation_score(centres: list[dict[str, Any]]) -> float:
     """Score 1 when there's at least one pair of LARGE flat sheets
-    (think door panel + body frame) separated in space by more than
-    one panel-thickness."""
+    (think door panel + body frame) separated in space.
+
+    The pair is allowed to have *different* normals (e.g. door normal
+    is +Y, frame normal is +Z) — the only thing that matters is that
+    they sit on different planes, which we test by looking at the
+    distance between their centres along ANY axis (normalised to the
+    smaller panel's thickness).
+    """
     panels = [
         c
         for c in centres
@@ -112,22 +118,17 @@ def _panel_separation_score(centres: list[dict[str, Any]]) -> float:
     ]
     if len(panels) < 2:
         return 0.0
-    # For each pair of panels, see if their normals (smallest-extent
-    # axes) point in directions that put their centres on different
-    # planes.
     best = 0.0
     for i in range(len(panels)):
         for j in range(i + 1, len(panels)):
             a = panels[i]
             b = panels[j]
-            ai = a["size"].index(min(a["size"]))
-            bi = b["size"].index(min(b["size"]))
-            if ai != bi:
-                continue
-            # Distance along the normal axis.
-            dist = abs(a["center"][ai] - b["center"][ai])
-            min_thick = max(a["size"][ai], b["size"][ai], 1.0)
-            score = min(1.0, dist / (min_thick * 4.0))
+            min_thick = max(min(a["size"]), min(b["size"]), 1.0)
+            # Largest centre-to-centre offset on any axis.
+            offset = max(
+                abs(a["center"][k] - b["center"][k]) for k in range(3)
+            )
+            score = min(1.0, offset / (min_thick * 4.0))
             if score > best:
                 best = score
     return best

@@ -1,14 +1,33 @@
 [
   {
+    "component_id": "_scaffold_door_panel",
+    "shape_family": "panel",
+    "bbox_mm": [
+      180.0,
+      6.0,
+      240.0
+    ],
+    "pose_applied_mm": [
+      -120.0,
+      0.0,
+      0.0
+    ],
+    "constraints_applied": [
+      "scaffold:door_panel"
+    ],
+    "fell_back_to_box": false,
+    "notes": "synthetic scaffold panel for door_panel"
+  },
+  {
     "component_id": "pintle_pin",
     "shape_family": "pin",
     "bbox_mm": [
-      9.599999999999998,
+      9.600000000000001,
       9.600000000000001,
       66.3
     ],
     "pose_applied_mm": [
-      30.0,
+      0.0,
       0.0,
       0.0
     ],
@@ -16,7 +35,8 @@
       "coaxial_with:hinge_axis",
       "passes_through:main_member_pintle_pin_hole",
       "passes_through:link_member_pintle_pin_holes",
-      "coaxial_with:u_shaped_link_member"
+      "coaxial_with:u_shaped_link_member",
+      "scaffold_group:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Vertical pintle pin shown passing through the knuckle/link holes at callout 118/119, oriented along the vertical hinge a"
@@ -30,16 +50,17 @@
       180.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      0.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "coaxial_with:hinge_axis",
       "attached_to:vehicle_body",
       "passes_through:pintle_pin",
       "nested_in:body_half_sub_assembly",
-      "auto_drilled:pin_axis"
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Tall vertical hinge-body half with mounting wall and U-shaped link member receiving a vertical pintle pin."
@@ -48,12 +69,12 @@
     "component_id": "body_half_sub_assembly",
     "shape_family": "housing",
     "bbox_mm": [
-      63.000000000000014,
+      63.0,
       80.0,
       120.0
     ],
     "pose_applied_mm": [
-      30.0,
+      60.0,
       0.0,
       0.0
     ],
@@ -61,7 +82,7 @@
       "attached_to:vehicle_body",
       "coaxial_with:hinge_axis",
       "passes_through:pintle_pin",
-      "auto_drilled:pin_axis"
+      "scaffold_group:fixed_frame"
     ],
     "fell_back_to_box": false,
     "notes": "U-shaped body-half bracket with upper and lower legs straddling a central main member that carries the vertical pintle p"
@@ -75,12 +96,13 @@
       8.0
     ],
     "pose_applied_mm": [
+      60.0,
       0.0,
-      80.0,
       0.0
     ],
     "constraints_applied": [
-      "attached_to:body_half_sub_assembly"
+      "attached_to:body_half_sub_assembly",
+      "scaffold_group:fixed_frame"
     ],
     "fell_back_to_box": true,
     "notes": "Vehicle body shown as a background reference surface (wavy break lines) to which the body-half hinge sub-assembly mounts"
@@ -94,7 +116,7 @@
       90.0
     ],
     "pose_applied_mm": [
-      30.0,
+      -120.0,
       0.0,
       0.0
     ],
@@ -103,7 +125,7 @@
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
       "parallel_to:body_half_sub_assembly",
-      "auto_drilled:pin_axis"
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": false,
     "notes": "C-shaped channel bracket (element 24/38) mounted to door with a pintle pin hole 39 on its mounting wall."
@@ -117,14 +139,15 @@
       80.0
     ],
     "pose_applied_mm": [
-      -40.0,
+      -120.0,
       0.0,
       0.0
     ],
     "constraints_applied": [
       "attached_to:door_half_member",
       "perpendicular_to:base_wall",
-      "parallel_to:hinge_axis"
+      "parallel_to:hinge_axis",
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": false,
     "notes": "Vertical sidewall extending normally from the bight/base wall of the U-shaped door-half member, forming one side of the "
@@ -138,14 +161,15 @@
       1.5
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      0.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "coaxial_with:hinge_axis",
       "passes_through:main_member",
-      "coaxial_with:pintle_pin"
+      "coaxial_with:pintle_pin",
+      "scaffold_group:upper_hinge"
     ],
     "fell_back_to_box": false,
     "notes": "Vertical pintle pin hole through the main member, aligned with the hinge axis."
@@ -159,16 +183,17 @@
       90.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      0.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "attached_to:vehicle_body",
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
       "nested_in:hinge_body_half_assembly",
-      "auto_drilled:pin_axis"
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Channel-shaped bracket with mounting wall carrying pintle pin hole 39 and a base wall edge forming guide surface 36."
@@ -182,15 +207,16 @@
       1.5
     ],
     "pose_applied_mm": [
-      30.0,
+      -120.0,
       0.0,
-      55.0
+      0.0
     ],
     "constraints_applied": [
       "coaxial_with:pintle_pin",
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
-      "attached_to:door_half_member"
+      "attached_to:door_half_member",
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": false,
     "notes": "Small circular hole at the upper flange tab (119) of the door-half leaf receiving the vertical pintle pin."
@@ -204,9 +230,9 @@
       120.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      0.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "coaxial_with:pintle_pin",
@@ -214,7 +240,8 @@
       "parallel_to:hinge_axis",
       "attached_to:main_member",
       "nested_in:hinge_body_half_assembly",
-      "auto_drilled:pin_axis"
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "U-shaped link with upper and lower parallel legs having aligned pintle pin holes (106/108) straddling the main member."
@@ -228,9 +255,9 @@
       25.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      -7.5
+      0.0,
+      102.0
     ],
     "constraints_applied": [
       "attached_to:main_member",
@@ -238,7 +265,8 @@
       "coaxial_with:hinge_axis",
       "parallel_to:lower_extension",
       "above:lower_extension",
-      "auto_drilled:pin_axis"
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Upper horizontal extension arm projecting from the main member, containing a pintle pin hole aligned with the vertical h"
@@ -252,16 +280,16 @@
       25.0
     ],
     "pose_applied_mm": [
-      30.0,
+      -132.0,
       0.0,
-      -7.5
+      0.0
     ],
     "constraints_applied": [
       "attached_to:main_member",
       "passes_through:pintle_pin",
       "perpendicular_to:hinge_axis",
       "above:lower_extension",
-      "auto_drilled:pin_axis"
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": false,
     "notes": "Inwardly extending flange at the upper end of the first sidewall with a pintle pin hole receiving the vertical pintle."
@@ -270,19 +298,20 @@
     "component_id": "base_wall_exterior_guide_surface",
     "shape_family": "other",
     "bbox_mm": [
-      8.000000000000004,
+      8.000000000000007,
       60.0,
       40.0
     ],
     "pose_applied_mm": [
-      -30.0,
-      -20.0,
-      10.0
+      0.0,
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "coplanar_with:base_wall",
       "attached_to:base_wall",
-      "parallel_to:hinge_axis"
+      "parallel_to:hinge_axis",
+      "scaffold_group:upper_hinge"
     ],
     "fell_back_to_box": true,
     "notes": "Planar exterior face of the base wall, oriented vertically (parallel to hinge axis) and facing outward in the Y directio"
@@ -296,15 +325,16 @@
       3.0
     ],
     "pose_applied_mm": [
+      60.0,
       0.0,
-      30.0,
       0.0
     ],
     "constraints_applied": [
       "attached_to:main_member",
       "attached_to:upper_extension",
       "attached_to:lower_extension",
-      "parallel_to:vehicle_body"
+      "parallel_to:vehicle_body",
+      "scaffold_group:fixed_frame"
     ],
     "fell_back_to_box": false,
     "notes": "Flat vertical wall of the main member that abuts the vehicle body and joins the upper and lower parallel extensions."
@@ -318,7 +348,7 @@
       20.0
     ],
     "pose_applied_mm": [
-      30.0,
+      0.0,
       0.0,
       0.0
     ],
@@ -326,7 +356,8 @@
       "attached_to:pintle_pin",
       "coaxial_with:hinge_axis",
       "above:lower_leg",
-      "auto_drilled:pin_axis"
+      "scaffold_group:pintle_axis",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Stop feature (enlarged head/shoulder) on the lower end of the pintle pin bearing against the lower leg of the U-shaped l"
@@ -340,14 +371,15 @@
       40.0
     ],
     "pose_applied_mm": [
-      20.0,
+      -120.0,
       0.0,
       0.0
     ],
     "constraints_applied": [
       "attached_to:door_half_member",
       "perpendicular_to:base_wall",
-      "parallel_to:mounting_wall"
+      "parallel_to:mounting_wall",
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": false,
     "notes": "Vertical sidewall plate extending normally from the bight/base wall of the door-half channel-shaped member."
@@ -362,14 +394,16 @@
     ],
     "pose_applied_mm": [
       0.0,
-      15.0,
-      -20.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "attached_to:u_shaped_link_member",
       "perpendicular_to:upper_leg",
       "perpendicular_to:lower_leg",
-      "parallel_to:hinge_axis"
+      "parallel_to:hinge_axis",
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Flat base wall of the U-shaped link connecting its upper and lower legs, with a planar exterior guide surface facing out"
@@ -383,9 +417,9 @@
       40.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      -40.0
+      0.0,
+      -106.0
     ],
     "constraints_applied": [
       "attached_to:main_member",
@@ -393,7 +427,8 @@
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
       "below:upper_extension",
-      "auto_drilled:pin_axis"
+      "scaffold_group:lower_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Lower horizontal extension of the main member with a pintle pin hole aligned on the vertical hinge axis, parallel to the"
@@ -407,13 +442,14 @@
       8.0
     ],
     "pose_applied_mm": [
-      30.0,
+      0.0,
       0.0,
       0.0
     ],
     "constraints_applied": [
       "coaxial_with:pintle_pin",
-      "parallel_to:mounting_wall"
+      "parallel_to:mounting_wall",
+      "scaffold_group:pintle_axis"
     ],
     "fell_back_to_box": true,
     "notes": "Abstract vertical hinge axis along Z coincident with the pintle pin."
@@ -427,13 +463,14 @@
       40.0
     ],
     "pose_applied_mm": [
-      20.0,
-      10.0,
-      0.0
+      0.0,
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "attached_to:u_shaped_link_member",
-      "perpendicular_to:base_wall_exterior_guide_surface"
+      "perpendicular_to:base_wall_exterior_guide_surface",
+      "scaffold_group:upper_hinge"
     ],
     "fell_back_to_box": true,
     "notes": "Edge guide surface on the U-shaped link member, lying in a vertical plane perpendicular to the base wall exterior guide "
@@ -447,9 +484,9 @@
       60.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      -10.0
+      0.0,
+      -114.0
     ],
     "constraints_applied": [
       "attached_to:u_shaped_link_member",
@@ -457,7 +494,8 @@
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
       "below:upper_leg",
-      "auto_drilled:pin_axis"
+      "scaffold_group:lower_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Lower horizontal leg of U-shaped link projecting from base wall with a pintle pin hole aligned vertically with the upper"
@@ -471,9 +509,9 @@
       30.0
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      25.0
+      0.0,
+      104.0
     ],
     "constraints_applied": [
       "attached_to:u_shaped_link_member",
@@ -481,7 +519,8 @@
       "above:lower_leg",
       "passes_through:pintle_pin",
       "coaxial_with:hinge_axis",
-      "auto_drilled:pin_axis"
+      "scaffold_group:upper_hinge",
+      "auto_drilled:pintle_axis"
     ],
     "fell_back_to_box": false,
     "notes": "Upper horizontal leg projecting from the base wall of the U-shaped link, with a vertical pintle hole aligned with the lo"
@@ -495,14 +534,15 @@
       30.0
     ],
     "pose_applied_mm": [
-      20.0,
+      -120.0,
       0.0,
-      10.0
+      0.0
     ],
     "constraints_applied": [
       "attached_to:door_half_member",
       "perpendicular_to:mounting_wall",
-      "parallel_to:base_wall"
+      "parallel_to:base_wall",
+      "scaffold_group:door_panel"
     ],
     "fell_back_to_box": true,
     "notes": "Bight wall is the connecting wall of the U-shaped door-half bight, running vertically between the mounting wall and base"
@@ -516,13 +556,14 @@
       12.0
     ],
     "pose_applied_mm": [
-      -10.0,
       0.0,
-      55.0
+      34.0,
+      62.99999999999999
     ],
     "constraints_applied": [
       "attached_to:u_shaped_link_member",
-      "perpendicular_to:main_member"
+      "perpendicular_to:main_member",
+      "scaffold_group:power_mechanism"
     ],
     "fell_back_to_box": false,
     "notes": "Small flat tab projecting from the U-shaped link member that abuts the main member to limit pivot travel."
@@ -536,16 +577,17 @@
       1.5
     ],
     "pose_applied_mm": [
-      30.0,
       0.0,
-      40.0
+      0.0,
+      90.0
     ],
     "constraints_applied": [
       "coaxial_with:pintle_pin",
       "passes_through:upper_leg",
       "passes_through:lower_leg",
       "coaxial_with:hinge_axis",
-      "coaxial_with:main_member_pintle_pin_hole"
+      "coaxial_with:main_member_pintle_pin_hole",
+      "scaffold_group:upper_hinge"
     ],
     "fell_back_to_box": false,
     "notes": "Aligned vertical through-holes in the upper and lower legs of the U-shaped link member, sized to receive the pintle pin "

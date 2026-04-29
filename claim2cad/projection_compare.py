@@ -24,6 +24,7 @@ from PIL import Image
 from claim2cad.visual_validator import (
     make_comparison_grid,
     render_step_to_line_drawing,
+    render_step_to_solid,
 )
 
 logger = logging.getLogger(__name__)
@@ -125,9 +126,17 @@ def render_canonical_views(
     figure_path: Path,
     view_names: tuple[str, ...] = ("top", "front", "right", "iso"),
     resolution: int = 1024,
+    style: str = "solid",
 ) -> ProjectionReport:
     """Render the canonical views, score each by silhouette aspect-ratio
-    match against the patent figure, save a side-by-side comparison."""
+    match against the patent figure, save a side-by-side comparison.
+
+    ``style`` selects the renderer used for ``projection_*.png``:
+
+      * ``"solid"`` (default since v11-21): light-gray faces + black
+        silhouette/crease outlines. Best for assembly inspection.
+      * ``"line"``: pure line-art (the V11-10 wireframe).
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
 
     fig_ink, fig_aspect = _silhouette_metrics(figure_path)
@@ -141,13 +150,22 @@ def render_canonical_views(
         elev, azim = _VIEW_PRESETS[name]
         png = out_dir / f"projection_{name}.png"
         try:
-            render_step_to_line_drawing(
-                step_path,
-                png,
-                elev=elev,
-                azim=azim,
-                resolution=resolution,
-            )
+            if style == "solid":
+                render_step_to_solid(
+                    step_path,
+                    png,
+                    elev=elev,
+                    azim=azim,
+                    resolution=resolution,
+                )
+            else:
+                render_step_to_line_drawing(
+                    step_path,
+                    png,
+                    elev=elev,
+                    azim=azim,
+                    resolution=resolution,
+                )
         except Exception as exc:  # noqa: BLE001
             logger.warning("could not render %s: %s", name, exc)
             continue

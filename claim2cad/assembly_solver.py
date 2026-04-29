@@ -583,7 +583,306 @@ def build_assembly(
     return bd.Compound(label="assembly", children=children), ordered, diagnostics
 
 
+# ---------------------------------------------------------------------------
+# V11-21 scaffold-first build path
+# ---------------------------------------------------------------------------
+
+
+def _scaffold_panel_solid(
+    bbox_mm: tuple[float, float, float],
+    *,
+    label: str,
+) -> bd.Part:
+    """Build a thin rectangular panel for the door / frame scaffold."""
+    sx, sy, sz = bbox_mm
+    p = bd.Box(sx, sy, sz)
+    p.label = label
+    return p
+
+
+def _within_group_offset(
+    component_id: str,
+    group_id: str,
+    component_size: tuple[float, float, float],
+) -> tuple[float, float, float]:
+    """Heuristic per-component placement WITHIN a scene group.
+
+    Default: stack components along the group's natural axis. The
+    solver lays component centres on a grid in the group-local YZ
+    plane so they don't all overlap at the group origin. ``upper_leg``,
+    ``lower_leg``, ``upper_extension``, ``lower_extension`` etc. get
+    deterministic offsets along Z. Pin / shaft IDs sit on the axis
+    centre.
+    """
+    cid = component_id.lower()
+    if any(t in cid for t in ("pintle", "shaft", "axis", "pin")):
+        return (0.0, 0.0, 0.0)
+    if "upper" in cid:
+        return (0.0, 0.0, +max(component_size) * 0.4)
+    if "lower" in cid:
+        return (0.0, 0.0, -max(component_size) * 0.4)
+    if "leaf" in cid or "flange" in cid:
+        return (-component_size[0] * 0.3, 0.0, 0.0)
+    if "stop" in cid or "spring" in cid:
+        return (0.0, +component_size[1] * 0.5, 0.0)
+    return (0.0, 0.0, 0.0)
+
+
+def build_assembly_scaffold_first(
+    inference: ShapeInferenceSet,
+    scaffold,  # type: claim2cad.scene_scaffold.SceneScaffold
+    *,
+    add_panel_meshes: bool = True,
+) -> tuple[bd.Compound, list[str], list[SolverDiagnostics]]:
+    """Build a flat assembly using scaffold-first placement.
+
+    Steps:
+      1. For each SceneGroup in the scaffold, optionally emit a low-
+         poly panel mesh (door / frame) at the group origin so the
+         user sees the door + frame masses.
+      2. For each component:
+           a. Build its solid via the existing per-shape-family path.
+           b. Look up its scaffold group; the group's origin becomes
+              the component's PRIMARY pose, with a deterministic
+              within-group offset that prevents pile-up at the group
+              centre.
+           c. Pin/shaft components are forced onto Z and snapped to
+              the pintle_axis group origin.
+           d. Drilled-hole parts auto-drill against the pintle axis
+              defined by the scaffold (instead of the constraint
+              graph) so hole alignment is rock-solid.
+
+    Returns (compound, ordered_ids, diagnostics).
+    """
+    from claim2cad.scene_scaffold import SceneScaffold  # noqa: F401 — type-only
+
+    shapes_by_id = {s.component_id: s for s in inference.shapes}
+    groups = scaffold.by_id()
+    pintle_axis_origin = (
+        groups["pintle_axis"].origin_mm
+        if "pintle_axis" in groups
+        else (0.0, 0.0, 0.0)
+    )
+
+    children: list[bd.Part | bd.Compound] = []
+    ordered: list[str] = []
+    diagnostics: list[SolverDiagnostics] = []
+
+    # Step 1: synthesise scaffold panel meshes for door + frame so the
+    # iso view always shows two large vertical sheets — even when the
+    # claim's components for those groups are small (e.g. a leaf
+    # flange, a sidewall, a mounting wall) and don't aggregate into a
+    # door-sized mass on their own. The synthetic panels carry the
+    # ``_scaffold_<group>`` label so they don't pollute the
+    # claim_map ↔ GLB contract (the viewer can colour them as
+    # neutral context).
+    panel_synth_ids: list[str] = []
+    if add_panel_meshes:
+        for gid in ("door_panel", "fixed_frame"):
+            if gid not in groups:
+                continue
+            g = groups[gid]
+            # Even when the group has components, synthesise the panel
+            # if NO single component is panel-sized (≥ 100 mm in 2
+            # dims and ≤ 15 mm in the third). This is the common case
+            # for the lift-off-hinge claim: door_half_member is a
+            # U-channel, not a flat door, so we still need a backing
+            # door panel to anchor the scene.
+            has_big_panel = False
+            for cid in g.component_ids:
+                shape_info = shapes_by_id.get(cid)
+                if shape_info is None:
+                    continue
+                size = (
+                    shape_info.width_mm,
+                    shape_info.height_mm,
+                    max(shape_info.depth_mm, shape_info.thickness_mm),
+                )
+                tagged = sorted(size)
+                if (
+                    tagged[1] >= 100.0
+                    and tagged[2] >= 100.0
+                    and tagged[0] <= 15.0
+                ):
+                    has_big_panel = True
+                    break
+            if has_big_panel:
+                continue
+            panel = _scaffold_panel_solid(g.nominal_bbox_mm, label=g.id)
+            panel = panel.translate(g.origin_mm)
+            panel.label = f"_scaffold_{g.id}"
+            children.append(panel)
+            ordered.append(panel.label)
+            panel_synth_ids.append(panel.label)
+            diagnostics.append(
+                SolverDiagnostics(
+                    component_id=panel.label,
+                    shape_family="panel",
+                    bbox_mm=g.nominal_bbox_mm,
+                    pose_applied_mm=g.origin_mm,
+                    constraints_applied=["scaffold:" + gid],
+                    fell_back_to_box=False,
+                    notes=f"synthetic scaffold panel for {gid}",
+                )
+            )
+
+    # Step 2: per-component build, scaffold-overridden pose.
+    for cid, s in shapes_by_id.items():
+        builder = _SHAPE_BUILDERS.get(s.shape_family, _build_other)
+        # Same auto-upgrade as build_assembly: brackets that share a
+        # pin axis become HingeBracketC.
+        if s.shape_family in {"bracket", "link", "housing"}:
+            shares_pin = any(
+                c["kind"] in ("passes_through", "coaxial_with")
+                for c in s.constraints
+            )
+            if shares_pin:
+                builder = _build_bracket_c_from_shape
+
+        try:
+            solid = builder(s)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Shape build failed for %s (%s): %s", cid, s.shape_family, exc)
+            solid = _build_other(s)
+        if solid is None:
+            continue
+
+        # Validate non-degenerate.
+        try:
+            bb = solid.bounding_box()
+            sz = (bb.max.X - bb.min.X, bb.max.Y - bb.min.Y, bb.max.Z - bb.min.Z)
+            if min(sz) < 0.5:
+                solid = _build_other(s)
+        except Exception:  # noqa: BLE001
+            solid = _build_other(s)
+
+        # Pin / shaft along Z, anchored at pintle_axis.
+        if s.shape_family in {"pin", "shaft"}:
+            solid = _orient_for_axis(solid, "Z")
+
+        # Apply rotation_deg (still respect VLM hints for orientation).
+        rx, ry, rz = s.rotation_deg
+        if abs(rx) > 1e-6:
+            solid = solid.rotate(bd.Axis.X, rx)
+        if abs(ry) > 1e-6:
+            solid = solid.rotate(bd.Axis.Y, ry)
+        if abs(rz) > 1e-6:
+            solid = solid.rotate(bd.Axis.Z, rz)
+
+        # Determine pose: scaffold group origin + within-group offset.
+        gid = scaffold.component_to_group.get(cid)
+        if gid is None:
+            from claim2cad.scene_scaffold import _default_group_for_id
+
+            gid = _default_group_for_id(cid)
+        group = groups.get(gid)
+
+        if group is not None:
+            ox, oy, oz = group.origin_mm
+            bb = solid.bounding_box()
+            comp_size = (
+                bb.max.X - bb.min.X,
+                bb.max.Y - bb.min.Y,
+                bb.max.Z - bb.min.Z,
+            )
+            dx, dy, dz = _within_group_offset(cid, gid, comp_size)
+            # Pin / shaft snaps directly to the pintle axis origin.
+            if s.shape_family in {"pin", "shaft"}:
+                ox, oy, oz = pintle_axis_origin
+                dx = dy = dz = 0.0
+            pose = (ox + dx, oy + dy, oz + dz)
+        else:
+            pose = tuple(s.pose_xyz_mm)  # type: ignore[assignment]
+
+        # Auto-drill against the pintle axis (scaffold-defined) so
+        # hole alignment is unconditional.
+        drilled = False
+        if s.shape_family in _DRILLABLE_FAMILIES:
+            try:
+                pin_d = max(
+                    (sh.diameter_mm or 0.0)
+                    for sh in shapes_by_id.values()
+                    if sh.shape_family in {"pin", "shaft"}
+                )
+                if pin_d <= 0.0:
+                    pin_d = 6.0
+                solid, drilled = _auto_drill_against_axis(
+                    solid,
+                    pose,
+                    pintle_axis_origin,
+                    pin_d,
+                )
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("scaffold auto-drill on %s: %s", cid, exc)
+                drilled = False
+
+        x, y, z = pose  # type: ignore[misc]
+        solid = solid.translate((x, y, z))
+        solid.label = cid
+        children.append(solid)
+        ordered.append(cid)
+
+        bb = solid.bounding_box()
+        sz = (
+            bb.max.X - bb.min.X,
+            bb.max.Y - bb.min.Y,
+            bb.max.Z - bb.min.Z,
+        )
+        constraints_applied = [f"{c['kind']}:{c['target']}" for c in s.constraints]
+        constraints_applied.append(f"scaffold_group:{gid or '?'}")
+        if drilled:
+            constraints_applied.append("auto_drilled:pintle_axis")
+        diagnostics.append(
+            SolverDiagnostics(
+                component_id=cid,
+                shape_family=s.shape_family,
+                bbox_mm=sz,
+                pose_applied_mm=(x, y, z),
+                constraints_applied=constraints_applied,
+                fell_back_to_box=(s.shape_family == "other"),
+                notes=s.notes[:120],
+            )
+        )
+
+    if not children:
+        raise RuntimeError("Scaffold-first solver produced 0 components")
+    return bd.Compound(label="assembly", children=children), ordered, diagnostics
+
+
+def _auto_drill_against_axis(
+    solid: bd.Part,
+    pose: tuple[float, float, float],
+    axis_origin: tuple[float, float, float],
+    pin_diameter: float,
+) -> tuple[bd.Part, bool]:
+    """Drill a vertical bore through ``solid`` at the local position
+    that corresponds to the world pintle axis. Returns
+    (possibly-drilled solid, drilled-flag)."""
+    px, py, _pz = axis_origin
+    local_x = px - pose[0]
+    local_y = py - pose[1]
+    bb = solid.bounding_box()
+    margin = 1.5
+    if not (
+        bb.min.X - margin <= local_x <= bb.max.X + margin
+        and bb.min.Y - margin <= local_y <= bb.max.Y + margin
+    ):
+        return solid, False
+    z_extent = max(bb.max.Z - bb.min.Z, 5.0)
+    bore_radius = pin_diameter / 2.0 * 1.05
+    if bore_radius * 2 >= min(bb.size.X, bb.size.Y) * 0.9:
+        return solid, False
+    try:
+        bore = bd.Cylinder(bore_radius, z_extent * 1.5).translate(
+            (local_x, local_y, (bb.min.Z + bb.max.Z) / 2.0)
+        )
+        return solid - bore, True
+    except Exception:  # noqa: BLE001
+        return solid, False
+
+
 __all__ = [
     "SolverDiagnostics",
     "build_assembly",
+    "build_assembly_scaffold_first",
 ]

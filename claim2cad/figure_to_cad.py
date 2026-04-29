@@ -34,7 +34,15 @@ from claim2cad.shape_inference import (
     ShapeInferenceSet,
     infer_shapes_for_components,
 )
-from claim2cad.assembly_solver import build_assembly as build_3d_assembly
+from claim2cad.assembly_solver import (
+    build_assembly as build_3d_assembly,
+    build_assembly_scaffold_first,
+)
+from claim2cad.scene_scaffold import (
+    SceneScaffold,
+    lift_off_door_hinge_scaffold_for_us4807331a,
+    save_scaffold,
+)
 from claim2cad.projection_compare import render_canonical_views
 from claim2cad.sketch_to_extrusion import (
     ExtrusionResult,
@@ -713,7 +721,22 @@ def run_generator(
                 patent_title=ir.title or "",
                 cache_path=example_dir / "shape_inference.json",
             )
-            compound, ordered_ids, diagnostics = build_3d_assembly(inference)
+            # V11-21: scaffold-first build path. For known patent
+            # families (currently US4807331A-class lift-off door
+            # hinges) we use a scene scaffold that places door panel,
+            # fixed frame, upper / lower hinge clusters and the
+            # pintle axis at canonical positions, then subordinates
+            # each component to its scaffold group. Visibly coherent;
+            # heuristic. Other examples fall through to V11-14's
+            # build_3d_assembly.
+            scaffold = _maybe_build_scaffold(ir, example_dir)
+            if scaffold is not None:
+                save_scaffold(scaffold, example_dir / "scene_scaffold.json")
+                compound, ordered_ids, diagnostics = build_assembly_scaffold_first(
+                    inference, scaffold
+                )
+            else:
+                compound, ordered_ids, diagnostics = build_3d_assembly(inference)
             step_path = example_dir / out_step
             glb_path = example_dir / out_glb
             bd.export_step(compound, str(step_path))
@@ -1102,6 +1125,34 @@ def _best_of_n_spec(
         len(candidates),
     )
     return best_spec, [c[2] for c in candidates]
+
+
+def _maybe_build_scaffold(ir: ClaimIR, example_dir: Path) -> SceneScaffold | None:
+    """Pick a patent-family scaffold for the given IR. Returns None if
+    no scaffold pattern matches; the caller falls back to the
+    component-level placement.
+
+    For now we only ship one scaffold (US4807331A-class lift-off door
+    hinge). A claim is recognised when its IR contains a critical mass
+    of the known component_ids (pintle_pin AND main_member AND
+    door_half_member, etc.). The check is intentionally lenient —
+    related patents (US4470181A self-closing hinge, US4502185A
+    concealed hinge assembly) reuse much of the same vocabulary.
+    """
+    ir_ids = {c.id for c in ir.components}
+    lift_off_signals = {
+        "pintle_pin",
+        "main_member",
+        "door_half_member",
+        "u_shaped_link_member",
+        "leaf_flange",
+        "vehicle_body",
+    }
+    if len(ir_ids & lift_off_signals) >= 3:
+        return lift_off_door_hinge_scaffold_for_us4807331a(
+            ir_component_ids=ir_ids
+        )
+    return None
 
 
 def _augment_ir_with_enrichment(ir: ClaimIR, spec: FigureSpec) -> ClaimIR:

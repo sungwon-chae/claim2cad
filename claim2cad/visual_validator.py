@@ -333,6 +333,119 @@ def render_step_to_line_drawing(
     return out_path
 
 
+def render_step_to_solid(
+    step_path: Path | str,
+    out_path: Path | str,
+    *,
+    elev: float = 25.0,
+    azim: float = 45.0,
+    resolution: int = 1024,
+    tolerance: float = 0.3,
+    face_color: tuple[float, float, float] = (0.86, 0.88, 0.92),
+    background: str = "white",
+    silhouette_only: bool = True,
+    line_width: float = 0.6,
+) -> Path:
+    """Solid-shaded render with black silhouette + sharp-crease outlines.
+
+    The V11-10 wireframe renderer drew every silhouette + crease edge
+    over a transparent background, which read as overlapping line
+    soup once the assembly had >10 components. This renderer fills
+    each face with a flat light-gray shade and draws ONLY silhouette
+    + sharp-crease edges (the same set the wireframe renderer used
+    for outline strokes), so internal hidden edges no longer
+    contribute.
+
+    The result is a clean engineering-style solid render where the
+    door panel reads as a flat surface, the hinge knuckle reads as a
+    cylinder, and so on — closer to a CAD viewer's ortho output than
+    to a hand-drawn line drawing.
+    """
+    import matplotlib
+
+    matplotlib.use("Agg", force=True)
+    import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d.art3d import Line3DCollection, Poly3DCollection
+
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    shape = bd.import_step(str(step_path))
+    verts, tris = _tessellate_shape(shape, tolerance=tolerance)
+    if len(tris) == 0:
+        raise RuntimeError("Solid renderer: 0 triangles")
+
+    # Per-face normals in world frame.
+    a = verts[tris[:, 0]]
+    b = verts[tris[:, 1]]
+    c = verts[tris[:, 2]]
+    fn_world = np.cross(b - a, c - a)
+    norms = np.linalg.norm(fn_world, axis=1, keepdims=True)
+    norms[norms < 1e-9] = 1.0
+    fn_world = fn_world / norms
+
+    right, up, view = _camera_basis(elev, azim)
+    R = np.stack([right, up, view], axis=0)
+    fn_cam = fn_world @ R.T
+
+    # Light from upper-front; shade per face by Lambert.
+    light_dir = np.array([0.4, 0.6, 0.7], dtype=np.float32)
+    light_dir /= np.linalg.norm(light_dir)
+    lambert = np.clip(np.abs(fn_world @ light_dir), 0.2, 1.0)
+    base = np.array(face_color, dtype=np.float32)
+    facecolors = np.clip(base[None, :] * lambert[:, None], 0.0, 1.0)
+    facecolors = np.concatenate(
+        [facecolors, np.ones((len(facecolors), 1), dtype=np.float32)],
+        axis=1,
+    )
+
+    polys = verts[tris]
+
+    # Compute outline edges (silhouette + sharp crease).
+    edges_idx = _feature_edges(tris, fn_cam)
+    edge_segments = [
+        np.stack([verts[i0], verts[i1]], axis=0).astype(np.float32)
+        for (i0, i1) in edges_idx
+    ]
+
+    fig = plt.figure(figsize=(resolution / 100, resolution / 100), dpi=100)
+    ax = fig.add_subplot(111, projection="3d")
+    pc = Poly3DCollection(
+        polys,
+        facecolors=facecolors,
+        edgecolor="none",
+        linewidth=0,
+        antialiased=True,
+    )
+    pc.set_zsort("min")
+    ax.add_collection3d(pc)
+    if edge_segments:
+        lc = Line3DCollection(
+            [list(map(tuple, s)) for s in edge_segments],
+            colors=(0.0, 0.0, 0.0, 0.85),
+            linewidths=line_width,
+        )
+        ax.add_collection3d(lc)
+    bb_min = verts.min(axis=0)
+    bb_max = verts.max(axis=0)
+    centre = (bb_min + bb_max) / 2.0
+    half = float(np.max(bb_max - bb_min)) * 0.55
+    ax.set_xlim(centre[0] - half, centre[0] + half)
+    ax.set_ylim(centre[1] - half, centre[1] + half)
+    ax.set_zlim(centre[2] - half, centre[2] + half)
+    try:
+        ax.set_box_aspect((1, 1, 1))
+    except Exception:  # noqa: BLE001
+        pass
+    ax.view_init(elev=elev, azim=azim)
+    ax.set_axis_off()
+    ax.set_facecolor(background)
+    fig.patch.set_facecolor(background)
+    fig.savefig(out_path, dpi=100, bbox_inches="tight", pad_inches=0.05, facecolor=background)
+    plt.close(fig)
+    return out_path
+
+
 def render_step_to_pngs(
     step_path: Path | str,
     out_dir: Path | str,
@@ -347,13 +460,29 @@ def render_step_to_pngs(
     """Render multiple views of a STEP file. Returns the list of PNG paths.
 
     ``style`` selects the renderer:
-      * ``"shaded"`` (default) — multi-light Lambertian shading.
+      * ``"solid"`` (V11-21, default for assembly inspection) —
+        light-gray solid faces + black silhouette/crease outlines.
+        Reads as a clean engineering CAD ortho.
       * ``"line"`` — patent-figure-style line drawing (no fills).
+      * ``"shaded"`` — old multi-light Lambertian, kept for back-compat.
     """
     step_path = Path(step_path)
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     out_paths: list[Path] = []
+    if style == "solid":
+        for name, elev, azim in views:
+            png = out_dir / f"{step_path.stem}_{name}.png"
+            render_step_to_solid(
+                step_path,
+                png,
+                elev=elev,
+                azim=azim,
+                resolution=resolution,
+                tolerance=tolerance,
+            )
+            out_paths.append(png)
+        return out_paths
     if style == "line":
         for name, elev, azim in views:
             png = out_dir / f"{step_path.stem}_{name}.png"

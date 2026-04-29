@@ -6,6 +6,6 @@
     "planetary_gear"
   ],
   "actual_topology": "planetary_gear",
-  "actual_scaffold": "rotary_shaft",
+  "actual_scaffold": "planetary_gear",
   "reasons": []
 }

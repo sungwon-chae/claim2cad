@@ -400,6 +400,22 @@ body {
   color: #7a1f17;
 }
 
+/* V14-H — figure view classification info strip. Sits above
+ * the mismatch banner; quieter palette since it's purely
+ * informational. */
+.view-info-strip {
+  padding: 6px 14px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border-1);
+  background: rgba(120, 130, 150, 0.08);
+  color: var(--fg-2, #4b5563);
+}
+.view-info-strip a {
+  color: var(--accent, #2563eb);
+  text-decoration: underline;
+}
+
 .app-header .mode-toggle {
   background: var(--selected, #ffd76a);
   color: #1a1410;

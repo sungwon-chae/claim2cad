@@ -55,7 +55,7 @@
         "planetary_gear"
       ],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {
@@ -85,7 +85,7 @@
       "severity": "none",
       "expected_topologies": [],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {
@@ -93,8 +93,8 @@
       "has_mismatch": false,
       "severity": "none",
       "expected_topologies": [],
-      "actual_topology": "rotary_shaft",
-      "actual_scaffold": "rotary_shaft",
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
       "reasons": []
     },
     {
@@ -115,7 +115,7 @@
         "rotary_shaft"
       ],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {
@@ -140,16 +140,14 @@
     },
     {
       "example_id": "US4502185A_concealed_hinge_assembly",
-      "has_mismatch": true,
-      "severity": "advisory",
+      "has_mismatch": false,
+      "severity": "none",
       "expected_topologies": [
         "two_plate_hinge"
       ],
-      "actual_topology": "door_hinge",
-      "actual_scaffold": "door_hinge",
-      "reasons": [
-        "classifier picked 'door_hinge'; expected near-family 'two_plate_hinge'"
-      ]
+      "actual_topology": "two_plate_hinge",
+      "actual_scaffold": "two_plate_hinge",
+      "reasons": []
     },
     {
       "example_id": "US4575297A_puma_industrial_robot",
@@ -179,7 +177,7 @@
         "planetary_gear"
       ],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {
@@ -221,19 +219,22 @@
         "planetary_gear"
       ],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {
       "example_id": "US4955250A_multiple_forearm_robot",
-      "has_mismatch": false,
-      "severity": "none",
+      "has_mismatch": true,
+      "severity": "advisory",
       "expected_topologies": [
         "rotary_shaft"
       ],
-      "actual_topology": "rotary_shaft",
-      "actual_scaffold": "rotary_shaft",
-      "reasons": []
+      "actual_topology": "robotic_arm",
+      "actual_scaffold": "linkage",
+      "reasons": [
+        "claim labels suggest ['rotary_shaft']; classifier picked 'robotic_arm'",
+        "scaffold 'linkage' does not match topology 'robotic_arm'"
+      ]
     },
     {
       "example_id": "US5042321A_two_stage_planetary_gear",
@@ -244,7 +245,7 @@
         "rotary_shaft"
       ],
       "actual_topology": "planetary_gear",
-      "actual_scaffold": "rotary_shaft",
+      "actual_scaffold": "planetary_gear",
       "reasons": []
     },
     {

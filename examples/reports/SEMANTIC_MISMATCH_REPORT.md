@@ -4,4 +4,4 @@
 
 | ID | severity | actual topology | expected | reason |
 |---|---|---|---|---|
-| `US4502185A_concealed_hinge_assembly` | **advisory** | door_hinge | two_plate_hinge | classifier picked 'door_hinge'; expected near-family 'two_plate_hinge' |
+| `US4955250A_multiple_forearm_robot` | **advisory** | robotic_arm | rotary_shaft | claim labels suggest ['rotary_shaft']; classifier picked 'robotic_arm' |

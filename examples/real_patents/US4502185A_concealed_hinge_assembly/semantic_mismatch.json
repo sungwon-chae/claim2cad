@@ -1,13 +1,11 @@
 {
   "example_id": "US4502185A_concealed_hinge_assembly",
-  "has_mismatch": true,
-  "severity": "advisory",
+  "has_mismatch": false,
+  "severity": "none",
   "expected_topologies": [
     "two_plate_hinge"
   ],
-  "actual_topology": "door_hinge",
-  "actual_scaffold": "door_hinge",
-  "reasons": [
-    "classifier picked 'door_hinge'; expected near-family 'two_plate_hinge'"
-  ]
+  "actual_topology": "two_plate_hinge",
+  "actual_scaffold": "two_plate_hinge",
+  "reasons": []
 }

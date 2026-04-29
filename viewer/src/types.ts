@@ -135,6 +135,12 @@ export type ManifestExample = {
   mismatch_severity?: "none" | "advisory" | "warning";
   mismatch_reason?: string;
   mismatch_expected?: string[];
+  /** V14-H: figure view classification + view-matched render. */
+  figure_view_type?: string;
+  figure_required_camera?: string;
+  figure_matched_render?: string;
+  plan_view_render?: string;
+  section_view_render?: string;
 };
 
 // V1-6 — URDF parsed payload (subset).

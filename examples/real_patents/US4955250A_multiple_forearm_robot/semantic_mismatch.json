@@ -1,11 +1,14 @@
 {
   "example_id": "US4955250A_multiple_forearm_robot",
-  "has_mismatch": false,
-  "severity": "none",
+  "has_mismatch": true,
+  "severity": "advisory",
   "expected_topologies": [
     "rotary_shaft"
   ],
-  "actual_topology": "rotary_shaft",
-  "actual_scaffold": "rotary_shaft",
-  "reasons": []
+  "actual_topology": "robotic_arm",
+  "actual_scaffold": "linkage",
+  "reasons": [
+    "claim labels suggest ['rotary_shaft']; classifier picked 'robotic_arm'",
+    "scaffold 'linkage' does not match topology 'robotic_arm'"
+  ]
 }

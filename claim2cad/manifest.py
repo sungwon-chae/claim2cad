@@ -83,6 +83,14 @@ class ManifestExample:
     mismatch_severity: str = "none"   # "none" | "advisory" | "warning"
     mismatch_reason: str = ""
     mismatch_expected: list[str] = field(default_factory=list)
+    # V14-H additions: view classification + view-matched render
+    # (figure_matched.png) so the viewer can show 'this CAD is
+    # being shown from camera X to match the patent figure'.
+    figure_view_type: str = ""
+    figure_required_camera: str = ""
+    figure_matched_render: str = ""    # rel path to PNG
+    plan_view_render: str = ""
+    section_view_render: str = ""
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -95,15 +103,19 @@ def _missing(example_dir: Path) -> list[str]:
 def _preferred_glb(example_dir: Path) -> str:
     """Return the GLB filename to ship to the viewer for ``example_dir``.
 
-    Preference order:
+    Preference order (V14-H: model_v1.4 takes top spot for
+    non-flagship examples):
       v1.2 oblique opened-door scaffold (V12-J, flagship only) >
-      v1.3 batch-generated scaffold (V13-D, all other examples) >
+      v1.4 view-locked, primitive-rich scaffold (V14-E) >
+      v1.3 batch-generated scaffold (V13-D) >
       v1.2 flat front scaffold (V12-C) >
       v1.1 figure-driven CAD >
       v1.0 row-of-primitives.
     """
     if (example_dir / "model_v1.2_oblique.glb").exists():
         return "model_v1.2_oblique.glb"
+    if (example_dir / "model_v1.4.glb").exists():
+        return "model_v1.4.glb"
     if (example_dir / "model_v1.3.glb").exists():
         return "model_v1.3.glb"
     if (example_dir / "model_v1.2.glb").exists():
@@ -242,6 +254,28 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
     if (example_dir / "model_v1.3.glb").exists():
         tags.append("v1.3_cad")
 
+    # V14-H — figure view classification.
+    figure_view_type = ""
+    figure_required_camera = ""
+    fv_path = example_dir / "figure_views_v14.json"
+    if fv_path.exists():
+        try:
+            fv = json.loads(fv_path.read_text("utf-8"))
+            figure_view_type = fv.get("view_type", "")
+            figure_required_camera = fv.get("required_camera", "")
+        except Exception:  # pragma: no cover
+            pass
+    # Detect rendered view-matched assets.
+    rdir = example_dir / "renders_v1.4"
+    figure_matched_render = ("renders_v1.4/figure_matched.png"
+                              if (rdir / "figure_matched.png").exists()
+                              else "")
+    plan_view_render = ("renders_v1.4/plan_view.png"
+                         if (rdir / "plan_view.png").exists() else "")
+    section_view_render = ("renders_v1.4/section_view.png"
+                            if (rdir / "section_view.png").exists()
+                            else "")
+
     # V13-H — read quality from batch_status.json + eval_v13.
     quality_badge = "unknown"
     quality_score = 0.0
@@ -281,6 +315,11 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         quality_badge=quality_badge,
         quality_score=quality_score,
         scaffold_id=scaffold_id,
+        figure_view_type=figure_view_type,
+        figure_required_camera=figure_required_camera,
+        figure_matched_render=figure_matched_render,
+        plan_view_render=plan_view_render,
+        section_view_render=section_view_render,
     )
 
 
@@ -397,10 +436,22 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             "camera_v12.json",
             # V13-O: per-example mismatch sidecar for the viewer.
             "semantic_mismatch.json",
+            # V14-H: figure view classification + view-matched
+            # renders for the viewer's view tabs.
+            "figure_views_v14.json",
+            "renders_v1.4/figure_matched.png",
+            "renders_v1.4/plan_view.png",
+            "renders_v1.4/section_view.png",
+            "renders_v1.4/comparison.png",
+            "renders_v1.4/view_region_debug.png",
         ):
             src_p = src_dir / optional
             if src_p.exists():
-                shutil.copy2(src_p, target / optional)
+                dst_p = target / optional
+                # V14-H: optional paths may include subdirs
+                # (renders_v1.4/...). Create parents on demand.
+                dst_p.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(src_p, dst_p)
         if ex.figure_map_path:
             shutil.copy2(src_dir / ex.figure_map_path, target / ex.figure_map_path)
         if ex.claim_hierarchy_path:

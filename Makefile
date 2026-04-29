@@ -116,6 +116,25 @@ demo-v13-stage:
 	$(PY) -m claim2cad.manifest
 	cd viewer && npm run dev
 
+# V14: figure-faithful reconstruction.
+# 1. classify figure views,
+# 2. regenerate scaffolds with v14_primitives,
+# 3. render view-matched outputs,
+# 4. eval, mismatch, manifest, viewer.
+demo-v14:
+	$(PY) -m claim2cad.figure_view_v14 --all-real-patents
+	$(PY) -m claim2cad.batch_generate --all-real-patents
+	$(PY) -m claim2cad.projection_lock_v14 --all-real-patents
+	$(PY) -m claim2cad.eval_v14
+	$(PY) -m claim2cad.semantic_mismatch
+	$(PY) -m claim2cad.manifest
+	@echo "===> opening viewer at http://localhost:4179 (Ctrl+C to stop)"
+	cd viewer && npm run dev
+
+demo-v14-stage:
+	$(PY) -m claim2cad.manifest
+	cd viewer && npm run dev
+
 viewer-install:
 	cd viewer && npm install --no-audit --no-fund
 

@@ -308,6 +308,43 @@ export function App() {
           {!error && loaded && (
             <>
               {loaded.example.source === "real_patent"
+                && loaded.example.figure_view_type && (
+                <div className="view-info-strip">
+                  view: <strong>{loaded.example.figure_view_type}</strong>
+                  {" · "}camera: <strong>{loaded.example.figure_required_camera || "iso"}</strong>
+                  {loaded.example.figure_matched_render && (
+                    <>
+                      {" · "}
+                      <a
+                        href={`/data/${loaded.example.base}/${loaded.example.figure_matched_render}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >figure-matched render</a>
+                    </>
+                  )}
+                  {loaded.example.plan_view_render && (
+                    <>
+                      {" · "}
+                      <a
+                        href={`/data/${loaded.example.base}/${loaded.example.plan_view_render}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >plan</a>
+                    </>
+                  )}
+                  {loaded.example.section_view_render && (
+                    <>
+                      {" · "}
+                      <a
+                        href={`/data/${loaded.example.base}/${loaded.example.section_view_render}`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >section</a>
+                    </>
+                  )}
+                </div>
+              )}
+              {loaded.example.source === "real_patent"
                 && loaded.example.mismatch_severity
                 && loaded.example.mismatch_severity !== "none" && (
                 <div className={`mismatch-banner mismatch-${loaded.example.mismatch_severity}`}>

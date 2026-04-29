@@ -61,19 +61,26 @@ class MeshStyle:
 # so they don't hide the hinge mechanism behind them.
 US4807331A_DEMO_STYLES: list[MeshStyle] = [
     # Panels — semi-transparent so the hinge shows through.
-    MeshStyle(pattern="door_panel", rgb=(0.78, 0.82, 0.92),
-              alpha=0.45, layer=4, edges=True,
-              edge_color=(0.10, 0.20, 0.50, 0.80), edge_width=0.8),
-    MeshStyle(pattern="door_half_member", rgb=(0.78, 0.82, 0.92),
-              alpha=0.45, layer=4),
-    MeshStyle(pattern="fixed_frame", rgb=(0.86, 0.78, 0.74),
+    MeshStyle(pattern="door_panel", rgb=(0.62, 0.74, 0.94),
+              alpha=0.42, layer=4, edges=True,
+              edge_color=(0.10, 0.20, 0.50, 0.80), edge_width=1.0),
+    MeshStyle(pattern="door_half_member", rgb=(0.62, 0.74, 0.94),
+              alpha=0.42, layer=4),
+    MeshStyle(pattern="fixed_frame", rgb=(0.86, 0.74, 0.66),
               alpha=0.55, layer=3, edges=True,
-              edge_color=(0.40, 0.20, 0.10, 0.80), edge_width=0.8),
-    MeshStyle(pattern="vehicle_body", rgb=(0.86, 0.78, 0.74),
+              edge_color=(0.40, 0.20, 0.10, 0.80), edge_width=1.0),
+    MeshStyle(pattern="vehicle_body", rgb=(0.86, 0.74, 0.66),
               alpha=0.55, layer=3),
-    # Pintle pin — bright accent so it reads as the axis.
-    MeshStyle(pattern="pintle_pin", rgb=(0.65, 0.40, 0.30),
-              alpha=1.0, layer=2, edge_width=0.7),
+    # V12-M — door-side leaves take a slightly bluer steel tint;
+    # frame-side brackets take a tan-ish warmer steel.
+    MeshStyle(pattern="*door_leaf*", rgb=(0.66, 0.70, 0.78),
+              alpha=1.0, layer=2, edges=True, edge_width=0.7),
+    MeshStyle(pattern="*frame_bracket*", rgb=(0.78, 0.72, 0.66),
+              alpha=1.0, layer=2, edges=True, edge_width=0.7),
+    # Pintle pin — bronze accent so it reads as the axis.
+    MeshStyle(pattern="pintle_pin", rgb=(0.72, 0.46, 0.22),
+              alpha=1.0, layer=2, edge_width=0.8,
+              edge_color=(0.30, 0.15, 0.05, 0.85)),
     MeshStyle(pattern="hinge_axis", rgb=(0.65, 0.40, 0.30),
               alpha=0.9, layer=2),
     # Hinge brackets + knuckles — opaque, slightly darker grey.

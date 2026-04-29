@@ -13,6 +13,9 @@ type Props = {
    *  coordinates). When present, the viewer uses these instead of
    *  recomputing from figure_map.vlm_labels. */
   hotspotsCanonical: FigureHotspotSet | null;
+  /** V12-E: "demo" hides debug clutter; "debug" shows label
+   *  hotspots + low-confidence markers + the show-labels toggle. */
+  viewerMode?: "demo" | "debug";
 };
 
 export type FigureHotspot = {
@@ -128,13 +131,16 @@ function buildHotspots(figureMap: FigureMap | null, rows: ClaimMapRow[]): Hotspo
 export function FigurePanel(props: Props) {
   const {
     imageUrl, figureMap, rows, selectedId, hoveredId, onSelect, onHover,
-    hotspotsCanonical,
+    hotspotsCanonical, viewerMode = "demo",
   } = props;
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [imgSize, setImgSize] = useState<{ w: number; h: number } | null>(null);
   // V11-36: debug toggle — when on, render label hotspots alongside
   // part hotspots so reviewers can visually verify the leader trace.
   const [showLabelHotspots, setShowLabelHotspots] = useState<boolean>(false);
+  // V12-E: in demo mode, hide low-confidence (label_center fallback)
+  // hotspots so the figure panel doesn't show obviously-wrong markers.
+  const isDebug = viewerMode === "debug";
 
   const hotspots = useMemo<Hotspot[]>(() => {
     // V11-35/36: prefer canonical figure_hotspots.json. The canonical
@@ -184,16 +190,24 @@ export function FigurePanel(props: Props) {
     return buildHotspots(figureMap, rows);
   }, [figureMap, rows, hotspotsCanonical]);
 
-  // V11-36: split for rendering — part hotspots are always shown,
-  // label hotspots only show when the debug toggle is on.
-  const partHotspots = useMemo(
-    () => hotspots.filter((h) => h.kind === "part"),
-    [hotspots],
-  );
+  // V11-36 / V12-E: split for rendering. In demo mode, drop part
+  // hotspots whose source is a low-confidence fallback so the
+  // demo doesn't show markers that are visibly wrong.
+  const partHotspots = useMemo(() => {
+    const all = hotspots.filter((h) => h.kind === "part");
+    if (isDebug) return all;
+    return all.filter((h) => h.source !== "label_center");
+  }, [hotspots, isDebug]);
   const labelHotspots = useMemo(
     () => hotspots.filter((h) => h.kind === "label"),
     [hotspots],
   );
+  const droppedLowConf = useMemo(() => {
+    if (isDebug) return 0;
+    return hotspots.filter(
+      (h) => h.kind === "part" && h.source === "label_center",
+    ).length;
+  }, [hotspots, isDebug]);
 
   useEffect(() => {
     setImgSize(null);
@@ -224,9 +238,10 @@ export function FigurePanel(props: Props) {
         </span>
         <span className="figure-panel-meta">
           {partHotspots.length} part{partHotspots.length === 1 ? "" : "s"}
-          {labelHotspots.length > 0 && ` · ${labelHotspots.length} labels`}
+          {isDebug && labelHotspots.length > 0 && ` · ${labelHotspots.length} labels`}
+          {droppedLowConf > 0 && ` · ${droppedLowConf} low-conf hidden`}
         </span>
-        {labelHotspots.length > 0 && (
+        {isDebug && labelHotspots.length > 0 && (
           <label className="figure-panel-toggle">
             <input
               type="checkbox"
@@ -281,7 +296,7 @@ export function FigurePanel(props: Props) {
             </div>
           );
         })}
-        {imgSize && showLabelHotspots && labelHotspots.map((h) => {
+        {imgSize && isDebug && showLabelHotspots && labelHotspots.map((h) => {
           const isSelected = selectedId === h.componentId;
           const cls = [
             "figure-hotspot",

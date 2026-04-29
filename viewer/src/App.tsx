@@ -39,19 +39,46 @@ export function App() {
   // V11-31: canonical figure hotspots (raw image-pixel coordinates).
   const [hotspots, setHotspots] = useState<FigureHotspotSet | null>(null);
 
+  // V1.2-E: demo / debug mode (persisted via URL query).
+  const initialMode = (() => {
+    const q = new URLSearchParams(window.location.search).get("mode");
+    return q === "debug" ? "debug" : "demo";
+  })();
+  const [viewerMode, setViewerMode] = useState<"demo" | "debug">(initialMode);
+
   // Initial manifest load.
   useEffect(() => {
     loadManifest()
       .then((m) => {
         setExamples(m.examples);
         const fromHash = window.location.hash.replace(/^#/, "");
-        const fallback = m.examples[0]?.id ?? null;
+        // V1.2-E: default to the v1.2 demo-quality example so a
+        // first-time visitor sees the polished assembly, not
+        // whichever synthetic happens to sort first.
+        const demoFirst = m.examples.find((e) =>
+          (e.tags ?? []).includes("demo_quality"),
+        );
+        const fallback =
+          demoFirst?.id ?? m.examples[0]?.id ?? null;
         setCurrentId(
           fromHash && m.examples.some((e) => e.id === fromHash) ? fromHash : fallback
         );
       })
       .catch((e) => setError(String(e)));
   }, []);
+
+  // Reflect viewer mode in URL so reloads / shared links keep it.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (viewerMode === "debug") params.set("mode", "debug");
+    else params.delete("mode");
+    const newSearch = params.toString();
+    const newUrl =
+      window.location.pathname +
+      (newSearch ? `?${newSearch}` : "") +
+      window.location.hash;
+    window.history.replaceState(null, "", newUrl);
+  }, [viewerMode]);
 
   // V11-31: load figure_hotspots.json (when present).
   useEffect(() => {
@@ -252,6 +279,15 @@ export function App() {
         >
           {limitationFocus ? "Limitation focus: ON" : "Limitation focus: off"}
         </button>
+        <button
+          className={`mode-toggle ${viewerMode === "debug" ? "active" : ""}`}
+          onClick={() =>
+            setViewerMode((m) => (m === "demo" ? "debug" : "demo"))
+          }
+          title="Demo mode hides debug overlays. Debug mode shows hotspot anchors, label hotspots, and group bboxes."
+        >
+          {viewerMode === "demo" ? "Demo mode" : "Debug mode"}
+        </button>
       </header>
 
       <div className={`split ${showRightPane ? "" : "two-pane"}`}>
@@ -399,6 +435,7 @@ export function App() {
                 onSelect={setSelectedId}
                 onHover={setHoveredId}
                 hotspotsCanonical={hotspots}
+                viewerMode={viewerMode}
               />
             )}
           </div>

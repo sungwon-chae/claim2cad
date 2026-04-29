@@ -339,6 +339,18 @@ body {
   background: rgba(180, 80, 200, 0.10);
 }
 
+.app-header .mode-toggle {
+  background: var(--selected, #ffd76a);
+  color: #1a1410;
+  font-weight: 600;
+  border-color: var(--selected, #ffd76a);
+}
+.app-header .mode-toggle.active {
+  background: #f87a4a;
+  border-color: #c75428;
+  color: #fff;
+}
+
 .figure-panel-toggle {
   display: inline-flex;
   align-items: center;

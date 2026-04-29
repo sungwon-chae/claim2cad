@@ -84,11 +84,13 @@ def _missing(example_dir: Path) -> list[str]:
 def _preferred_glb(example_dir: Path) -> str:
     """Return the GLB filename to ship to the viewer for ``example_dir``.
 
-    v1.1 introduced ``model_v1.1.glb`` as the figure-driven CAD output.
-    When present we prefer it over the v1.0 ``model.glb`` so the viewer at
-    ``localhost:4179`` shows the v1.1 quality where it exists, and the
-    v1.0 row-of-primitives where v1.1 hasn't been run yet.
+    Preference order: v1.2 demo scaffold (US4807331A only) > v1.1
+    figure-driven CAD > v1.0 row-of-primitives. The viewer always
+    loads ``model.glb`` from the staged dir, so we just pick which
+    source file to copy under that canonical name.
     """
+    if (example_dir / "model_v1.2.glb").exists():
+        return "model_v1.2.glb"
     if (example_dir / "model_v1.1.glb").exists():
         return "model_v1.1.glb"
     return "model.glb"
@@ -217,6 +219,9 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
     # next to the older primitive-CAD examples.
     if (example_dir / "model_v1.1.glb").exists():
         tags.append("v1.1_cad")
+    if (example_dir / "model_v1.2.glb").exists():
+        tags.append("v1.2_cad")
+        tags.append("demo_quality")
     return ManifestExample(
         id=example_dir.name,
         title=_title_from_metadata(example_dir, example_dir.name),

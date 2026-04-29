@@ -2082,3 +2082,65 @@ claim text + colour legend. `docs/HOTSPOT_GROUNDING.md` rewritten
 to reflect the V11-34..37 pipeline.
 
 278 tests still passing.
+
+## Phase V13-J → V13-P — Semantic mismatch correction — COMPLETED 2026-04-29
+
+Manual inspection of the v1.3 viewer surfaced three examples that
+classified into the wrong topology family even though the
+pipeline ran cleanly. V13-J recorded the audit
+(`examples/reports/V13_SEMANTIC_MISMATCH_AUDIT.md`); V13-K added
+two new topology labels (`positioning_apparatus`,
+`self_closing_hinge_mechanism`) and reordered the rules so
+specific topologies match before broader ones; V13-L shipped
+three new scaffolds (positioning_apparatus,
+self_closing_hinge_mechanism, planetary_gear); V13-M regenerated
+the three examples with a multi-view plan render for the
+planetary; V13-N introduced a deterministic mismatch detector
+(claim2cad/semantic_mismatch.py) that surfaces a per-example
+warning when the slug/labels disagree with the classifier's
+choice; V13-O wired a ⚠ banner into the viewer; V13-P refreshed
+`docs/V13_MULTI_PATENT_GENERALIZATION.md`.
+
+302 tests passing (was 289 at V11-37; +13 across V13-K and V13-N).
+
+## Phase V13-Q → V13-U — Scaffold polish for the inspected examples — COMPLETED 2026-04-30
+
+V13-J/K/L picked the right topology family but the actual
+geometry still read as 'flat plate with sticks' (positioning) or
+'a stick on a slab' (self-closing hinge) or 'translucent rings
+on a shaft' (planetary). V13-Q/R/S tightened each scaffold to
+make the AFTER renders persuasive at PR/demo level:
+
+* V13-Q PositioningApparatusScaffold rebuild — central spoked
+  pivot HUB with X-cross-bracing, vertical & horizontal arm legs
+  with end housings (rectangular block / block + cylindrical
+  nose), parallelogram CLUSTER on the upper-left (two stacked
+  disc pivots + link bars + triangular pointer), base plate
+  with rails, EM actuator at the rear. Reads as a T-shape
+  articulated apparatus in well under 5 seconds.
+* V13-R SelfClosingHingeMechanismScaffold polish — wider/thicker
+  base with two visible rail channels, fatter post, bigger
+  hinge body cylinder, NEW cam_wheel disc, thicker lever, and
+  most importantly an explicit multi-coil spring (7 thin discs
+  on a thin core) so the spring reads as a spring.
+* V13-S PlanetaryGearScaffold polish — `_toothed_disc` /
+  `_toothed_ring` helpers add small radial teeth (10 on
+  planets, 14 on sun, 24 on each ring gear); housing height
+  halved so the outer ring no longer dominates the oblique
+  view as a translucent tower. Plan view now reads cleanly as
+  'planetary gear'.
+* V13-T improved before/after composite — per-row title bar
+  (example_id + topology change + quality badge + score),
+  subtitle of the visual change, BEFORE in red / AFTER in
+  green, patent figures cropped to the inked region. Two
+  outputs: `V13_SEMANTIC_BEFORE_AFTER.png` (1748x1780, audit
+  body) and `V13_SEMANTIC_BEFORE_AFTER_LARGE.png` (2588x2320,
+  PR/README hero).
+* V13-U refreshed reports (MULTI_PATENT_EVAL,
+  SEMANTIC_MISMATCH_REPORT, BATCH_REPORT) and docs.
+
+Corpus quality unchanged from V13-N's snapshot:
+flagship 1, good 4, partial 18, fallback 2, failed 0;
+mean overall_score 0.804. Mismatch detector: 0 warnings,
+1 advisory (US4502185A close-family hinge), 24 clean.
+Tests: 302 passing.

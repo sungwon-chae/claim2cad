@@ -188,7 +188,26 @@ labels, `multi_view` field), V13-L (three new scaffolds),
 V13-M (regenerate the three examples + plan-view render for
 the planetary gear), V13-N (mismatch detector that compares
 classifier output against example slug + claim labels), V13-O
-(viewer ⚠ banner) and this V13-P documentation pass.
+(viewer ⚠ banner) and V13-P (this docs pass).
+
+**V13-Q/R/S — visual polish.** The K/L/M cycle picked the
+right family, but the rendered geometry still read as 'flat
+plate with sticks' (positioning) or 'a stick on a slab'
+(self-closing hinge) or 'translucent rings on a shaft'
+(planetary). V13-Q rebuilt the positioning_apparatus
+scaffold with a central spoked pivot hub, vertical and
+horizontal arm legs ending in distinct housings, and a
+parallelogram cluster on the upper-left — mirroring fig 2A.
+V13-R bulked the self-closing hinge with a wider base
+(visible rail channels), a cam wheel below the hinge body,
+and an explicit multi-coil spring profile so the spring
+reads as a spring. V13-S added small radial teeth to the
+planetary gear's sun / planets / ring gears via two
+helpers (`_toothed_disc` / `_toothed_ring`) and halved the
+housing height so the oblique view is no longer dominated
+by a translucent tower. V13-T regenerated the before/after
+composite at two sizes (compact for the audit body, large
+for PR / README hero).
 
 Before / after composite:
 `examples/reports/V13_SEMANTIC_BEFORE_AFTER.png`. Per-example

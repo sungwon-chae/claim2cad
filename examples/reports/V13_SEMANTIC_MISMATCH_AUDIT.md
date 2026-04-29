@@ -13,11 +13,16 @@ explicitly as a fallback so the viewer warns the user.
 
 ## Summary
 
-| Example | Current topology | Current scaffold | Verdict | Action in V1.3 |
-|---|---|---|---|---|
-| `US5180955A_positioning_apparatus_for_arm` | `rotary_shaft` | `rotary_shaft` | **WRONG** — figure shows a positioning apparatus with arms, parallelogram, rails, magnets; **not a rotary shaft** | reclassify → `positioning_apparatus` (new), new `positioning_apparatus` scaffold |
-| `US4470181A_self_closing_hinge` | `door_hinge` | `door_hinge` | **MISLEADING** — figure shows a self-closing hinge **mechanism** (base rail, vertical post, hinge body/cam, lever, cylinder/spring), not a generic door hinge | reclassify → `self_closing_hinge_mechanism` (new), new `self_closing_hinge_mechanism` scaffold |
-| `US3705522A_planetary_gear_with_idler` | `planetary_gear` | `rotary_shaft` | **PARTIAL** — topology label is correct, but `rotary_shaft` scaffold lays gears coaxially instead of arranging planets around the sun. Patent has multi-view (sectional + plan) figures that the current pipeline does not honor | reclassify → keep `planetary_gear`, route to new `planetary_gear` scaffold; mark example as `multi_view: ["sectional", "plan"]` |
+| Example | Current topology | Current scaffold | Verdict | Action in V1.3 | Status |
+|---|---|---|---|---|---|
+| `US5180955A_positioning_apparatus_for_arm` | `rotary_shaft` | `rotary_shaft` | **WRONG** — figure shows a positioning apparatus with arms, parallelogram, rails, magnets; **not a rotary shaft** | reclassify → `positioning_apparatus` (new), new `positioning_apparatus` scaffold | **RESOLVED** in V13-K/L; geometry rebuilt in V13-Q (T-shape arm with spoked pivot, parallelogram cluster, EM actuator). |
+| `US4470181A_self_closing_hinge` | `door_hinge` | `door_hinge` | **MISLEADING** — figure shows a self-closing hinge **mechanism** (base rail, vertical post, hinge body/cam, lever, cylinder/spring), not a generic door hinge | reclassify → `self_closing_hinge_mechanism` (new), new `self_closing_hinge_mechanism` scaffold | **RESOLVED** in V13-K/L; spring/cam/lever detail bulked up in V13-R. |
+| `US3705522A_planetary_gear_with_idler` | `planetary_gear` | `rotary_shaft` | **PARTIAL** — topology label is correct, but `rotary_shaft` scaffold lays gears coaxially instead of arranging planets around the sun. Patent has multi-view (sectional + plan) figures that the current pipeline does not honor | reclassify → keep `planetary_gear`, route to new `planetary_gear` scaffold; mark example as `multi_view: ["sectional", "plan"]` | **RESOLVED** in V13-K/L (orbital planets); plan-view render added in V13-M; toothed gear silhouettes in V13-S. |
+
+V13-Q/R/S follow-up improved the rendered geometry beyond the
+minimum-acceptable bar set by V13-J. Before/after composite is
+at `examples/reports/V13_SEMANTIC_BEFORE_AFTER.png` (compact)
+and `V13_SEMANTIC_BEFORE_AFTER_LARGE.png` (PR/README hero).
 
 ---
 

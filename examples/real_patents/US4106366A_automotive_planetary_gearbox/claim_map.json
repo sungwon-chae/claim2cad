@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4106366A_automotive_planetary_gearbox",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 33,
-        "char_end": 41
-      }
+        "char_start": 35,
+        "char_end": 43
+      },
+      "span_verified": true,
+      "span_extracted": "sun gear",
+      "span_match_key": "sun gear"
     },
     {
       "component_id": "internal_gear",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 46,
-        "char_end": 59
-      }
+        "char_start": 48,
+        "char_end": 61
+      },
+      "span_verified": true,
+      "span_extracted": "internal gear",
+      "span_match_key": "internal gear"
     },
     {
       "component_id": "planet_gears",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 75,
-        "char_end": 87
-      }
+        "char_start": 76,
+        "char_end": 88
+      },
+      "span_verified": true,
+      "span_extracted": "planet gears",
+      "span_match_key": "planet gears"
     },
     {
       "component_id": "planet_link",
@@ -53,7 +62,10 @@
         "claim_id": "claim_1",
         "char_start": 263,
         "char_end": 274
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "planet link",
+      "span_match_key": "planet link"
     },
     {
       "component_id": "axial_urging_means",
@@ -64,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 616,
-        "char_end": 640
-      }
+        "char_start": 617,
+        "char_end": 641
+      },
+      "span_verified": true,
+      "span_extracted": "means for axially urging",
+      "span_match_key": "means for axially urging"
     }
   ]
 }

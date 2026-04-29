@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4955250A_multiple_forearm_robot",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 56,
-        "char_end": 107
+        "char_start": 57,
+        "char_end": 65
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "main arm",
+      "span_match_key": "main arm"
     },
     {
       "component_id": "upper_forearm",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 109,
-        "char_end": 122
+        "char_start": 111,
+        "char_end": 124
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "upper forearm",
+      "span_match_key": "upper forearm"
     },
     {
       "component_id": "lower_forearm",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 243,
-        "char_end": 256
+        "char_start": 247,
+        "char_end": 260
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "lower forearm",
+      "span_match_key": "lower forearm"
     },
     {
       "component_id": "first_modular_actuator_assembly",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 480,
-        "char_end": 511
+        "char_start": 485,
+        "char_end": 516
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "first modular actuator assembly",
+      "span_match_key": "first modular actuator assembly"
     },
     {
       "component_id": "second_modular_actuator_assembly",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 571,
-        "char_end": 603
+        "char_start": 584,
+        "char_end": 616
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "second modular actuator assembly",
+      "span_match_key": "second modular actuator assembly"
     },
     {
       "component_id": "actuator_canister",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 787,
-        "char_end": 804
+        "char_start": 817,
+        "char_end": 834
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "actuator canister",
+      "span_match_key": "actuator canister"
     },
     {
       "component_id": "motor_means",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 830,
-        "char_end": 841
+        "char_start": 882,
+        "char_end": 893
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "motor means",
+      "span_match_key": "motor means"
     },
     {
       "component_id": "shaft_means",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 843,
-        "char_end": 854
+        "char_start": 897,
+        "char_end": 908
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "shaft means",
+      "span_match_key": "shaft means"
     },
     {
       "component_id": "gearing_means",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 877,
-        "char_end": 890
+        "char_start": 939,
+        "char_end": 952
       },
-      "figure_number": "26"
+      "span_verified": true,
+      "span_extracted": "gearing means",
+      "span_match_key": "gearing means"
     },
     {
       "component_id": "position_referencing_means",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 931,
-        "char_end": 957
+        "char_start": 1002,
+        "char_end": 1028
       },
-      "figure_number": "28"
+      "span_verified": true,
+      "span_extracted": "position referencing means",
+      "span_match_key": "position referencing means"
     },
     {
       "component_id": "spindle",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1008,
-        "char_end": 1015
+        "char_start": 1103,
+        "char_end": 1110
       },
-      "figure_number": "30"
+      "span_verified": true,
+      "span_extracted": "spindle",
+      "span_match_key": "spindle"
     },
     {
       "component_id": "bearing_means",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1068,
-        "char_end": 1081
+        "char_start": 1195,
+        "char_end": 1208
       },
-      "figure_number": "32"
+      "span_verified": true,
+      "span_extracted": "bearing means",
+      "span_match_key": "bearing means"
     },
     {
       "component_id": "output_hub_means",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1113,
-        "char_end": 1129
+        "char_start": 1271,
+        "char_end": 1287
       },
-      "figure_number": "34"
+      "span_verified": true,
+      "span_extracted": "output hub means",
+      "span_match_key": "output hub means"
     }
   ]
 }

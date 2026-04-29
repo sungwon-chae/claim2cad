@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US3279624A_unimate_industrial_robot",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 172,
+        "char_start": 173,
         "char_end": 197
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "MECHANICAL OUTPUT DEVICE",
+      "span_match_key": "mechanical output device"
     },
     {
       "component_id": "servo_system",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 199,
-        "char_end": 211
+        "char_start": 201,
+        "char_end": 213
       },
-      "figure_number": "102"
+      "span_verified": true,
+      "span_extracted": "SERVO SYSTEM",
+      "span_match_key": "servo system"
     },
     {
       "component_id": "output_portion",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 221,
-        "char_end": 235
+        "char_start": 224,
+        "char_end": 238
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "OUTPUT PORTION",
+      "span_match_key": "output portion"
     },
     {
       "component_id": "sensing_interposer",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 312,
-        "char_end": 330
+        "char_start": 314,
+        "char_end": 332
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "SENSING INTERPOSER",
+      "span_match_key": "sensing interposer"
     },
     {
       "component_id": "servo_input_control_member",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 364,
-        "char_end": 390
+        "char_start": 361,
+        "char_end": 387
       },
-      "figure_number": "76"
+      "span_verified": true,
+      "span_extracted": "SERVO INPUT CONTROL MEMBER",
+      "span_match_key": "servo input control member"
     },
     {
       "component_id": "instruction_presenting_means",
@@ -82,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 432,
-        "char_end": 527
-      }
+        "char_start": 429,
+        "char_end": 524
+      },
+      "span_verified": true,
+      "span_extracted": "MEANS TO PRESENT MECHANICALLY TO THE SENSING INTERPOSER A SUCCESSION OF POSITIONAL INSTRUCTIONS",
+      "span_match_key": "means to present mechanically to the sensing interposer a succession of positional instructions"
     },
     {
       "component_id": "interposer_positioning_means",
@@ -95,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 529,
-        "char_end": 681
-      }
+        "char_start": 526,
+        "char_end": 643
+      },
+      "span_verified": true,
+      "span_extracted": "MEANS TO CAUSE THE INTERPOSER TO ASSUME A POSITION CORRESPONDING TO THE PREVAILING MECHANICALLY PRESENTED INSTRUCTION",
+      "span_match_key": "means to cause the interposer to assume a position corresponding to the prevailing mechanically presented instruction"
     },
     {
       "component_id": "coaction_means",
@@ -108,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 687,
-        "char_end": 775
-      }
+        "char_start": 685,
+        "char_end": 774
+      },
+      "span_verified": true,
+      "span_extracted": "MEANS FOR EFFECTING MUTUAL COACTION OF SAID SERVO INPUT CONTROL MEMBER AND THE INTERPOSER",
+      "span_match_key": "means for effecting mutual coaction of said servo input control member and the interposer"
     }
   ]
 }

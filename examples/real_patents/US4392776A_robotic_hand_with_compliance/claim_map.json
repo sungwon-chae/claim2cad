@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4392776A_robotic_hand_with_compliance",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 48,
-        "char_end": 52
+        "char_start": 49,
+        "char_end": 53
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "base",
+      "span_match_key": "base"
     },
     {
       "component_id": "first_drive_means",
@@ -26,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 63,
-        "char_end": 124
-      }
+        "char_start": 65,
+        "char_end": 126
+      },
+      "span_verified": true,
+      "span_extracted": "first and second independently operable motorized drive means",
+      "span_match_key": "token-set:first motorized drive means"
     },
     {
       "component_id": "second_drive_means",
@@ -39,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 63,
-        "char_end": 124
-      }
+        "char_start": 75,
+        "char_end": 126
+      },
+      "span_verified": true,
+      "span_extracted": "second independently operable motorized drive means",
+      "span_match_key": "token-set:second motorized drive means"
     },
     {
       "component_id": "first_arm",
@@ -52,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 126,
-        "char_end": 164
-      }
+        "char_start": 130,
+        "char_end": 156
+      },
+      "span_verified": true,
+      "span_extracted": "first generally hollow arm",
+      "span_match_key": "first generally hollow arm"
     },
     {
       "component_id": "first_arm_driving_means",
@@ -65,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 196,
-        "char_end": 290
-      }
+        "char_start": 194,
+        "char_end": 199
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "second_arm",
@@ -78,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 292,
-        "char_end": 302
-      }
+        "char_start": 296,
+        "char_end": 306
+      },
+      "span_verified": true,
+      "span_extracted": "second arm",
+      "span_match_key": "second arm"
     },
     {
       "component_id": "coupling_means",
@@ -91,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 503,
-        "char_end": 700
-      }
+        "char_start": 610,
+        "char_end": 624
+      },
+      "span_verified": true,
+      "span_extracted": "coupling means",
+      "span_match_key": "coupling means"
     },
     {
       "component_id": "hollow_shaft",
@@ -104,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 756,
-        "char_end": 769
+        "char_start": 758,
+        "char_end": 770
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "hollow shaft",
+      "span_match_key": "hollow shaft"
     },
     {
       "component_id": "first_driven_means",
@@ -118,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 836,
-        "char_end": 876
-      }
+        "char_start": 879,
+        "char_end": 899
+      },
+      "span_verified": true,
+      "span_extracted": "driven means coupled",
+      "span_match_key": "driven means coupled"
     },
     {
       "component_id": "second_shaft",
@@ -131,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 924,
-        "char_end": 977
-      }
+        "char_start": 1063,
+        "char_end": 1075
+      },
+      "span_verified": true,
+      "span_extracted": "second shaft",
+      "span_match_key": "second shaft"
     },
     {
       "component_id": "toothed_gearing",
@@ -144,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1061,
-        "char_end": 1076
-      }
+        "char_start": 1154,
+        "char_end": 1169
+      },
+      "span_verified": true,
+      "span_extracted": "toothed gearing",
+      "span_match_key": "toothed gearing"
     },
     {
       "component_id": "toothed_linking_means",
@@ -157,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1089,
-        "char_end": 1110
-      }
+        "char_start": 1181,
+        "char_end": 1202
+      },
+      "span_verified": true,
+      "span_extracted": "toothed linking means",
+      "span_match_key": "toothed linking means"
     },
     {
       "component_id": "second_driven_means",
@@ -170,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1137,
-        "char_end": 1179
-      }
+        "char_start": 1294,
+        "char_end": 1314
+      },
+      "span_verified": true,
+      "span_extracted": "driven means coupled",
+      "span_match_key": "driven means coupled"
     }
   ]
 }

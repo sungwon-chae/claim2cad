@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4655675A_robotic_assembly_apparatus",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 37,
-        "char_end": 48
+        "char_start": 38,
+        "char_end": 49
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "fixed stand",
+      "span_match_key": "fixed stand"
     },
     {
       "component_id": "robot_body",
@@ -26,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 65,
-        "char_end": 75
-      }
+        "char_start": 67,
+        "char_end": 77
+      },
+      "span_verified": true,
+      "span_extracted": "robot body",
+      "span_match_key": "robot body"
     },
     {
       "component_id": "swivel_stand",
@@ -39,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 79,
-        "char_end": 91
-      }
+        "char_start": 81,
+        "char_end": 93
+      },
+      "span_verified": true,
+      "span_extracted": "swivel stand",
+      "span_match_key": "swivel stand"
     },
     {
       "component_id": "upper_arm",
@@ -52,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 134,
-        "char_end": 143
+        "char_start": 137,
+        "char_end": 146
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "upper arm",
+      "span_match_key": "upper arm"
     },
     {
       "component_id": "forearm",
@@ -66,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 210,
-        "char_end": 217
+        "char_start": 211,
+        "char_end": 218
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "forearm",
+      "span_match_key": "forearm"
     },
     {
       "component_id": "central_axis",
@@ -80,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 433,
-        "char_end": 456
-      }
+        "char_start": 425,
+        "char_end": 437
+      },
+      "span_verified": true,
+      "span_extracted": "central axis",
+      "span_match_key": "central axis"
     },
     {
       "component_id": "first_wrist",
@@ -93,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 319,
-        "char_end": 330
-      }
+        "char_start": 320,
+        "char_end": 331
+      },
+      "span_verified": true,
+      "span_extracted": "first wrist",
+      "span_match_key": "first wrist"
     },
     {
       "component_id": "second_wrist",
@@ -106,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 334,
-        "char_end": 346
-      }
+        "char_start": 335,
+        "char_end": 347
+      },
+      "span_verified": true,
+      "span_extracted": "second wrist",
+      "span_match_key": "second wrist"
     },
     {
       "component_id": "third_wrist",
@@ -119,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 353,
-        "char_end": 364
-      }
+        "char_start": 354,
+        "char_end": 365
+      },
+      "span_verified": true,
+      "span_extracted": "third wrist",
+      "span_match_key": "third wrist"
     },
     {
       "component_id": "first_pivot_axis",
@@ -132,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 524,
-        "char_end": 540
+        "char_start": 508,
+        "char_end": 524
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "first pivot axis",
+      "span_match_key": "first pivot axis"
     },
     {
       "component_id": "first_common_point",
@@ -146,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 624,
-        "char_end": 642
+        "char_start": 655,
+        "char_end": 673
       },
-      "figure_number": "25"
+      "span_verified": true,
+      "span_extracted": "first common point",
+      "span_match_key": "first common point"
     },
     {
       "component_id": "second_pivot_axis",
@@ -160,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 730,
-        "char_end": 747
-      }
+        "char_start": 753,
+        "char_end": 770
+      },
+      "span_verified": true,
+      "span_extracted": "second pivot axis",
+      "span_match_key": "second pivot axis"
     },
     {
       "component_id": "second_common_point",
@@ -173,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 833,
-        "char_end": 852
-      }
+        "char_start": 901,
+        "char_end": 920
+      },
+      "span_verified": true,
+      "span_extracted": "second common point",
+      "span_match_key": "second common point"
     },
     {
       "component_id": "first_driving_motor",
@@ -186,9 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 883,
-        "char_end": 902
-      }
+        "char_start": 961,
+        "char_end": 980
+      },
+      "span_verified": true,
+      "span_extracted": "first driving motor",
+      "span_match_key": "first driving motor"
     },
     {
       "component_id": "first_reduction_gear",
@@ -199,9 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 941,
-        "char_end": 961
-      }
+        "char_start": 1062,
+        "char_end": 1082
+      },
+      "span_verified": true,
+      "span_extracted": "first reduction gear",
+      "span_match_key": "first reduction gear"
     },
     {
       "component_id": "second_driving_motor",
@@ -212,9 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1022,
-        "char_end": 1042
-      }
+        "char_start": 1183,
+        "char_end": 1203
+      },
+      "span_verified": true,
+      "span_extracted": "second driving motor",
+      "span_match_key": "second driving motor"
     },
     {
       "component_id": "second_reduction_gear",
@@ -225,9 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1088,
-        "char_end": 1109
-      }
+        "char_start": 1286,
+        "char_end": 1307
+      },
+      "span_verified": true,
+      "span_extracted": "second reduction gear",
+      "span_match_key": "second reduction gear"
     },
     {
       "component_id": "operating_part",
@@ -238,10 +284,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1213,
-        "char_end": 1227
+        "char_start": 1504,
+        "char_end": 1518
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "operating part",
+      "span_match_key": "operating part"
     }
   ]
 }

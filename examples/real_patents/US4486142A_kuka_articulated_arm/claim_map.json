@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4486142A_kuka_articulated_arm",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 46,
-        "char_end": 65
-      }
+        "char_start": 47,
+        "char_end": 66
+      },
+      "span_verified": true,
+      "span_extracted": "controlled variable",
+      "span_match_key": "controlled variable"
     },
     {
       "component_id": "multivariable_controlled_object",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 71,
-        "char_end": 102
-      }
+        "char_start": 72,
+        "char_end": 103
+      },
+      "span_verified": true,
+      "span_extracted": "multivariable controlled object",
+      "span_match_key": "multivariable controlled object"
     },
     {
       "component_id": "control_means",
@@ -38,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 111,
-        "char_end": 124
+        "char_start": 113,
+        "char_end": 126
       },
-      "figure_number": "119"
+      "span_verified": true,
+      "span_extracted": "control means",
+      "span_match_key": "control means"
     },
     {
       "component_id": "set_point",
@@ -52,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 132,
-        "char_end": 141
-      }
+        "char_start": 134,
+        "char_end": 143
+      },
+      "span_verified": true,
+      "span_extracted": "set point",
+      "span_match_key": "set point"
     },
     {
       "component_id": "closed_loop",
@@ -65,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 148,
-        "char_end": 159
-      }
+        "char_start": 150,
+        "char_end": 161
+      },
+      "span_verified": true,
+      "span_extracted": "closed loop",
+      "span_match_key": "closed loop"
     },
     {
       "component_id": "limited_level",
@@ -78,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 449,
-        "char_end": 462
-      }
+        "char_start": 454,
+        "char_end": 467
+      },
+      "span_verified": true,
+      "span_extracted": "limited level",
+      "span_match_key": "limited level"
     },
     {
       "component_id": "preestablished_deviation",
@@ -91,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 399,
-        "char_end": 423
-      }
+        "char_start": 391,
+        "char_end": 415
+      },
+      "span_verified": true,
+      "span_extracted": "preestablished deviation",
+      "span_match_key": "preestablished deviation"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US3705522A_planetary_gear_with_idler",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 40,
-        "char_end": 59
+        "char_start": 42,
+        "char_end": 60
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "stationary housing",
+      "span_match_key": "stationary housing"
     },
     {
       "component_id": "input_shaft",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 64,
-        "char_end": 75
+        "char_start": 65,
+        "char_end": 76
       },
-      "figure_number": "26"
+      "span_verified": true,
+      "span_extracted": "input shaft",
+      "span_match_key": "input shaft"
     },
     {
       "component_id": "planet_carrier_means",
@@ -43,7 +47,9 @@
         "char_start": 112,
         "char_end": 132
       },
-      "figure_number": "48"
+      "span_verified": true,
+      "span_extracted": "planet carrier means",
+      "span_match_key": "planet carrier means"
     },
     {
       "component_id": "first_mounting_means",
@@ -54,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 190,
-        "char_end": 210
-      }
+        "char_start": 445,
+        "char_end": 465
+      },
+      "span_verified": true,
+      "span_extracted": "first mounting means",
+      "span_match_key": "first mounting means"
     },
     {
       "component_id": "second_mounting_means",
@@ -67,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 215,
-        "char_end": 236
-      }
+        "char_start": 199,
+        "char_end": 220
+      },
+      "span_verified": true,
+      "span_extracted": "second mounting means",
+      "span_match_key": "second mounting means"
     },
     {
       "component_id": "output_shaft",
@@ -83,7 +95,9 @@
         "char_start": 249,
         "char_end": 261
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "output shaft",
+      "span_match_key": "output shaft"
     },
     {
       "component_id": "first_ring_gear",
@@ -97,7 +111,9 @@
         "char_start": 301,
         "char_end": 316
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "first ring gear",
+      "span_match_key": "first ring gear"
     },
     {
       "component_id": "second_ring_gear",
@@ -108,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 362,
-        "char_end": 378
+        "char_start": 363,
+        "char_end": 379
       },
-      "figure_number": "52"
+      "span_verified": true,
+      "span_extracted": "second ring gear",
+      "span_match_key": "second ring gear"
     },
     {
       "component_id": "first_planet_pinion",
@@ -122,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 406,
-        "char_end": 425
+        "char_start": 407,
+        "char_end": 426
       },
-      "figure_number": "32"
+      "span_verified": true,
+      "span_extracted": "first planet pinion",
+      "span_match_key": "first planet pinion"
     },
     {
       "component_id": "second_planet_pinion",
@@ -136,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 503,
-        "char_end": 523
-      }
+        "char_start": 507,
+        "char_end": 527
+      },
+      "span_verified": true,
+      "span_extracted": "second planet pinion",
+      "span_match_key": "second planet pinion"
     },
     {
       "component_id": "third_planet_pinion",
@@ -149,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 700,
-        "char_end": 719
+        "char_start": 705,
+        "char_end": 724
       },
-      "figure_number": "42"
+      "span_verified": true,
+      "span_extracted": "third planet pinion",
+      "span_match_key": "third planet pinion"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4467670A_epicyclic_transmission",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 79,
-        "char_end": 87
+        "char_start": 81,
+        "char_end": 88
       },
-      "figure_number": "1"
+      "span_verified": true,
+      "span_extracted": "housing",
+      "span_match_key": "housing"
     },
     {
       "component_id": "input_shaft",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 92,
-        "char_end": 103
+        "char_start": 93,
+        "char_end": 104
       },
-      "figure_number": "2"
+      "span_verified": true,
+      "span_extracted": "input shaft",
+      "span_match_key": "input shaft"
     },
     {
       "component_id": "intermediate_shaft",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 108,
-        "char_end": 126
+        "char_start": 109,
+        "char_end": 127
       },
-      "figure_number": "3"
+      "span_verified": true,
+      "span_extracted": "intermediate shaft",
+      "span_match_key": "intermediate shaft"
     },
     {
       "component_id": "first_means",
@@ -55,9 +61,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 197,
-        "char_end": 263
+        "char_end": 208
       },
-      "figure_number": "4"
+      "span_verified": true,
+      "span_extracted": "first means",
+      "span_match_key": "first means"
     },
     {
       "component_id": "second_means",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 265,
-        "char_end": 363
+        "char_start": 266,
+        "char_end": 278
       },
-      "figure_number": "5"
+      "span_verified": true,
+      "span_extracted": "second means",
+      "span_match_key": "second means"
     },
     {
       "component_id": "output_shaft",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 368,
-        "char_end": 380
+        "char_start": 373,
+        "char_end": 385
       },
-      "figure_number": "6"
+      "span_verified": true,
+      "span_extracted": "output shaft",
+      "span_match_key": "output shaft"
     },
     {
       "component_id": "cvt_means",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 470,
-        "char_end": 526
+        "char_start": 477,
+        "char_end": 534
       },
-      "figure_number": "7"
+      "span_verified": true,
+      "span_extracted": "belt drive continuously-variable speed transmission means",
+      "span_match_key": "belt drive continuously-variable speed transmission means"
     },
     {
       "component_id": "primary_pulley",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 537,
-        "char_end": 566
+        "char_start": 547,
+        "char_end": 576
       },
-      "figure_number": "8"
+      "span_verified": true,
+      "span_extracted": "primary variable-pitch pulley",
+      "span_match_key": "primary variable-pitch pulley"
     },
     {
       "component_id": "primary_fixed_flange",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 574,
-        "char_end": 592
+        "char_start": 586,
+        "char_end": 605
       },
-      "figure_number": "71"
+      "span_verified": true,
+      "span_extracted": "fixed pulley flange",
+      "span_match_key": "fixed pulley flange"
     },
     {
       "component_id": "primary_movable_flange",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 636,
-        "char_end": 657
+        "char_start": 668,
+        "char_end": 689
       },
-      "figure_number": "72"
+      "span_verified": true,
+      "span_extracted": "movable pulley flange",
+      "span_match_key": "movable pulley flange"
     },
     {
       "component_id": "secondary_pulley",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 731,
-        "char_end": 762
+        "char_start": 782,
+        "char_end": 813
       },
-      "figure_number": "9"
+      "span_verified": true,
+      "span_extracted": "secondary variable-pitch pulley",
+      "span_match_key": "secondary variable-pitch pulley"
     },
     {
       "component_id": "secondary_fixed_flange",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 770,
-        "char_end": 788
+        "char_start": 759,
+        "char_end": 778
       },
-      "figure_number": "81"
+      "span_verified": true,
+      "span_extracted": "fixed pulley flange",
+      "span_match_key": "fixed pulley flange"
     },
     {
       "component_id": "secondary_movable_flange",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 833,
-        "char_end": 854
+        "char_start": 899,
+        "char_end": 920
       },
-      "figure_number": "82"
+      "span_verified": true,
+      "span_extracted": "movable pulley flange",
+      "span_match_key": "movable pulley flange"
     },
     {
       "component_id": "endless_belt",
@@ -194,10 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 927,
-        "char_end": 939
+        "char_start": 1020,
+        "char_end": 1032
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "endless belt",
+      "span_match_key": "endless belt"
     },
     {
       "component_id": "clutch",
@@ -208,10 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1097,
-        "char_end": 1103
+        "char_start": 1322,
+        "char_end": 1328
       },
-      "figure_number": "11"
+      "span_verified": true,
+      "span_extracted": "clutch",
+      "span_match_key": "clutch"
     },
     {
       "component_id": "change_direction_gear_train",
@@ -222,10 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1174,
-        "char_end": 1201
+        "char_start": 1468,
+        "char_end": 1495
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "change-direction gear train",
+      "span_match_key": "change-direction gear train"
     }
   ]
 }

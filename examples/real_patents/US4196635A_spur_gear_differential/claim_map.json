@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4196635A_spur_gear_differential",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 127,
-        "char_end": 138
-      }
+        "char_start": 128,
+        "char_end": 139
+      },
+      "span_verified": true,
+      "span_extracted": "frame means",
+      "span_match_key": "frame means"
     },
     {
       "component_id": "load_means",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 140,
-        "char_end": 150
-      }
+        "char_start": 141,
+        "char_end": 151
+      },
+      "span_verified": true,
+      "span_extracted": "load means",
+      "span_match_key": "load means"
     },
     {
       "component_id": "torque_means",
@@ -38,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 252,
-        "char_end": 264
+        "char_start": 255,
+        "char_end": 267
       },
-      "figure_number": "5"
+      "span_verified": true,
+      "span_extracted": "torque means",
+      "span_match_key": "torque means"
     },
     {
       "component_id": "first_housing_means",
@@ -52,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 386,
-        "char_end": 405
+        "char_start": 391,
+        "char_end": 410
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "first housing means",
+      "span_match_key": "first housing means"
     },
     {
       "component_id": "piston_means",
@@ -66,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 410,
-        "char_end": 422
+        "char_start": 415,
+        "char_end": 427
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "piston means",
+      "span_match_key": "piston means"
     },
     {
       "component_id": "first_piston_rod",
@@ -80,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 435,
-        "char_end": 451
+        "char_start": 440,
+        "char_end": 456
       },
-      "figure_number": "25"
+      "span_verified": true,
+      "span_extracted": "first piston rod",
+      "span_match_key": "first piston rod"
     },
     {
       "component_id": "second_piston_rod",
@@ -94,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 458,
-        "char_end": 475
+        "char_start": 463,
+        "char_end": 480
       },
-      "figure_number": "4"
+      "span_verified": true,
+      "span_extracted": "second piston rod",
+      "span_match_key": "second piston rod"
     },
     {
       "component_id": "sample",
@@ -108,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 583,
-        "char_end": 594
-      }
+        "char_start": 592,
+        "char_end": 603
+      },
+      "span_verified": true,
+      "span_extracted": "test sample",
+      "span_match_key": "test sample"
     },
     {
       "component_id": "fork_means",
@@ -121,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 617,
-        "char_end": 627
-      }
+        "char_start": 639,
+        "char_end": 649
+      },
+      "span_verified": true,
+      "span_extracted": "fork means",
+      "span_match_key": "fork means"
     },
     {
       "component_id": "fork_ends",
@@ -134,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 647,
-        "char_end": 656
-      }
+        "char_start": 700,
+        "char_end": 709
+      },
+      "span_verified": true,
+      "span_extracted": "fork ends",
+      "span_match_key": "fork ends"
     },
     {
       "component_id": "second_housing_means",
@@ -147,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 710,
-        "char_end": 730
-      }
+        "char_start": 775,
+        "char_end": 795
+      },
+      "span_verified": true,
+      "span_extracted": "second housing means",
+      "span_match_key": "second housing means"
     },
     {
       "component_id": "rotary_piston_means",
@@ -160,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 732,
-        "char_end": 751
-      }
+        "char_start": 797,
+        "char_end": 816
+      },
+      "span_verified": true,
+      "span_extracted": "rotary piston means",
+      "span_match_key": "rotary piston means"
     },
     {
       "component_id": "torque_transmitting_means",
@@ -173,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 794,
-        "char_end": 823
+        "char_start": 790,
+        "char_end": 795
       },
-      "figure_number": "11"
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     }
   ]
 }

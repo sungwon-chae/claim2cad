@@ -22,11 +22,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 42,
+        "char_start": 44,
         "char_end": 54
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_rotating_link",
@@ -40,11 +42,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 56,
-        "char_end": 141
+        "char_start": 58,
+        "char_end": 77
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "coupler_link",
@@ -58,11 +62,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 143,
-        "char_end": 231
+        "char_start": 145,
+        "char_end": 157
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_rotating_link",
@@ -76,11 +82,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 233,
-        "char_end": 370
+        "char_start": 235,
+        "char_end": 255
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_revolute_joint",
@@ -94,11 +102,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 119,
+        "char_start": 121,
         "char_end": 141
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_revolute_joint",
@@ -112,11 +122,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 208,
+        "char_start": 210,
         "char_end": 231
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_revolute_joint",
@@ -130,11 +142,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 299,
+        "char_start": 301,
         "char_end": 321
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fourth_revolute_joint",
@@ -148,11 +162,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 347,
+        "char_start": 349,
         "char_end": 370
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [],

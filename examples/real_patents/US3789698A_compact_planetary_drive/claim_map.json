@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US3789698A_compact_planetary_drive",
   "glb_path": "model.glb",
   "components": [
@@ -15,7 +15,9 @@
         "char_start": 8,
         "char_end": 20
       },
-      "figure_number": "2"
+      "span_verified": true,
+      "span_extracted": "transmission",
+      "span_match_key": "transmission"
     },
     {
       "component_id": "input_element",
@@ -29,7 +31,9 @@
         "char_start": 25,
         "char_end": 38
       },
-      "figure_number": "4"
+      "span_verified": true,
+      "span_extracted": "input element",
+      "span_match_key": "input element"
     },
     {
       "component_id": "output_element",
@@ -43,7 +47,9 @@
         "char_start": 43,
         "char_end": 57
       },
-      "figure_number": "6"
+      "span_verified": true,
+      "span_extracted": "output element",
+      "span_match_key": "output element"
     },
     {
       "component_id": "multi_ratio_drive_gear_unit",
@@ -57,7 +63,9 @@
         "char_start": 61,
         "char_end": 88
       },
-      "figure_number": "7"
+      "span_verified": true,
+      "span_extracted": "multi ratio drive gear unit",
+      "span_match_key": "multi ratio drive gear unit"
     },
     {
       "component_id": "low_friction_device",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 148,
+        "char_start": 151,
         "char_end": 196
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "low and a high fluid actuated friction device",
+      "span_match_key": "token-set:low fluid actuated friction device"
     },
     {
       "component_id": "high_friction_device",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 148,
+        "char_start": 161,
         "char_end": 196
       },
-      "figure_number": "15"
+      "span_verified": true,
+      "span_extracted": "high fluid actuated friction device",
+      "span_match_key": "high fluid actuated friction device"
     },
     {
       "component_id": "fluid_source",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 317,
-        "char_end": 356
+        "char_start": 321,
+        "char_end": 360
       },
-      "figure_number": "17"
+      "span_verified": true,
+      "span_extracted": "source of fluid at a regulated pressure",
+      "span_match_key": "source of fluid at a regulated pressure"
     },
     {
       "component_id": "governor",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 360,
-        "char_end": 368
+        "char_start": 364,
+        "char_end": 372
       },
-      "figure_number": "19"
+      "span_verified": true,
+      "span_extracted": "governor",
+      "span_match_key": "governor"
     },
     {
       "component_id": "governor_pressure",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 379,
-        "char_end": 396
+        "char_start": 385,
+        "char_end": 402
       },
-      "figure_number": "21"
+      "span_verified": true,
+      "span_extracted": "governor pressure",
+      "span_match_key": "governor pressure"
     },
     {
       "component_id": "manual_valve",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 462,
-        "char_end": 474
+        "char_start": 466,
+        "char_end": 478
       },
-      "figure_number": "23"
+      "span_verified": true,
+      "span_extracted": "manual valve",
+      "span_match_key": "manual valve"
     },
     {
       "component_id": "manual_low_signal_line",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 499,
-        "char_end": 521
+        "char_start": 514,
+        "char_end": 536
       },
-      "figure_number": "25"
+      "span_verified": true,
+      "span_extracted": "manual low signal line",
+      "span_match_key": "manual low signal line"
     },
     {
       "component_id": "low_high_signal_line",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 528,
-        "char_end": 548
+        "char_start": 543,
+        "char_end": 563
       },
-      "figure_number": "27"
+      "span_verified": true,
+      "span_extracted": "low-high signal line",
+      "span_match_key": "low-high signal line"
     },
     {
       "component_id": "automatic_control_valve_means",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 822,
-        "char_end": 851
+        "char_start": 830,
+        "char_end": 859
       },
-      "figure_number": "29"
+      "span_verified": true,
+      "span_extracted": "automatic control valve means",
+      "span_match_key": "automatic control valve means"
     },
     {
       "component_id": "inhibitor_means",
@@ -194,10 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1276,
-        "char_end": 1291
+        "char_start": 1452,
+        "char_end": 1467
       },
-      "figure_number": "31"
+      "span_verified": true,
+      "span_extracted": "inhibitor means",
+      "span_match_key": "inhibitor means"
     }
   ]
 }

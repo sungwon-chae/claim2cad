@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US5239246A_force_reflecting_manipulator",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 100,
-        "char_end": 132
-      }
+        "char_start": 102,
+        "char_end": 134
+      },
+      "span_verified": true,
+      "span_extracted": "force-reflecting hand controller",
+      "span_match_key": "force-reflecting hand controller"
     },
     {
       "component_id": "means_transmitting_hc",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 365,
-        "char_end": 463
-      }
+        "char_start": 366,
+        "char_end": 371
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "commanded_position_signal_hc",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 408,
-        "char_end": 447
-      }
+        "char_start": 417,
+        "char_end": 446
+      },
+      "span_verified": true,
+      "span_extracted": "commanded position signal, HC",
+      "span_match_key": "token-set:commanded position signal HC"
     },
     {
       "component_id": "robot_arm",
@@ -51,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 35,
-        "char_end": 44
+        "char_start": 38,
+        "char_end": 47
       },
-      "figure_number": "11"
+      "span_verified": true,
+      "span_extracted": "robot arm",
+      "span_match_key": "robot arm"
     },
     {
       "component_id": "robot_servo_system",
@@ -65,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 466,
+        "char_start": 468,
         "char_end": 486
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "robot servo system",
+      "span_match_key": "robot servo system"
     },
     {
       "component_id": "servo_control_input_signal",
@@ -78,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 524,
-        "char_end": 550
-      }
+        "char_start": 521,
+        "char_end": 547
+      },
+      "span_verified": true,
+      "span_extracted": "servo control input signal",
+      "span_match_key": "servo control input signal"
     },
     {
       "component_id": "actual_position_signal",
@@ -91,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 616,
-        "char_end": 678
-      }
+        "char_start": 624,
+        "char_end": 645
+      },
+      "span_verified": true,
+      "span_extracted": "signal representative",
+      "span_match_key": "signal representative"
     },
     {
       "component_id": "signal_mixer",
@@ -104,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 681,
-        "char_end": 693
+        "char_start": 686,
+        "char_end": 698
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "signal mixer",
+      "span_match_key": "signal mixer"
     },
     {
       "component_id": "actual_servo_control_signal",
@@ -118,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 843,
-        "char_end": 870
-      }
+        "char_start": 923,
+        "char_end": 950
+      },
+      "span_verified": true,
+      "span_extracted": "actual servo control signal",
+      "span_match_key": "actual servo control signal"
     },
     {
       "component_id": "compliance_control_feedback_gain",
@@ -131,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 988,
-        "char_end": 1023
-      }
+        "char_start": 1081,
+        "char_end": 1119
+      },
+      "span_verified": true,
+      "span_extracted": "compliance control feedback gain, G cc",
+      "span_match_key": "token-set:compliance control feedback gain G cc"
     },
     {
       "component_id": "means_sensing_contact_force",
@@ -144,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1064,
-        "char_end": 1094
-      }
+        "char_start": 1164,
+        "char_end": 1195
+      },
+      "span_verified": true,
+      "span_extracted": "means for sensing contact force",
+      "span_match_key": "means for sensing contact force"
     },
     {
       "component_id": "contact_force_signal",
@@ -157,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1136,
-        "char_end": 1156
-      }
+        "char_start": 1055,
+        "char_end": 1075
+      },
+      "span_verified": true,
+      "span_extracted": "contact force signal",
+      "span_match_key": "contact force signal"
     },
     {
       "component_id": "low_pass_filter",
@@ -170,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1253,
-        "char_end": 1268
-      }
+        "char_start": 1395,
+        "char_end": 1410
+      },
+      "span_verified": true,
+      "span_extracted": "low-pass filter",
+      "span_match_key": "low-pass filter"
     },
     {
       "component_id": "low_pass_filtered_contact_force_signal",
@@ -183,9 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 799,
-        "char_end": 837
-      }
+        "char_start": 870,
+        "char_end": 908
+      },
+      "span_verified": true,
+      "span_extracted": "low-pass filtered contact force signal",
+      "span_match_key": "low-pass filtered contact force signal"
     },
     {
       "component_id": "means_producing_force_reflection",
@@ -196,9 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1391,
-        "char_end": 1433
-      }
+        "char_start": 1164,
+        "char_end": 1169
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "force_reflection_signal",
@@ -209,9 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1433,
-        "char_end": 1456
-      }
+        "char_start": 1567,
+        "char_end": 1590
+      },
+      "span_verified": true,
+      "span_extracted": "force reflection signal",
+      "span_match_key": "force reflection signal"
     },
     {
       "component_id": "means_transmitting_force_reflection",
@@ -222,9 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1645,
-        "char_end": 1686
-      }
+        "char_start": 1545,
+        "char_end": 1550
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "gain_gps",
@@ -235,9 +284,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 454,
-        "char_end": 462
-      }
+        "char_start": 1654,
+        "char_end": 1663
+      },
+      "span_verified": true,
+      "span_extracted": "gain G ps",
+      "span_match_key": "gain G ps"
     },
     {
       "component_id": "following_commanded_position_signal",
@@ -248,9 +300,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1748,
-        "char_end": 1783
-      }
+        "char_start": 2087,
+        "char_end": 2122
+      },
+      "span_verified": true,
+      "span_extracted": "following commanded position signal",
+      "span_match_key": "following commanded position signal"
     }
   ]
 }

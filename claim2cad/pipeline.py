@@ -28,10 +28,43 @@ from claim2cad.claim_parser import parse_claim
 from claim2cad.ir_schema import ClaimIR
 from claim2cad.ir_to_cad import export_cad, synthesize_generator
 from claim2cad.mapping import build_claim_map, write_claim_map
+from claim2cad.span_relocator import relocate_components
 
 logger = logging.getLogger("claim2cad.pipeline")
 
 # Directories the pipeline writes to are caller-supplied; nothing global.
+
+
+def _apply_relocated_spans_inplace(ir: ClaimIR) -> None:
+    """V11-13: rewrite ``ir.components[*].source_span`` with verified
+    spans from ``span_relocator``. Components whose label could not be
+    located in the claim text get a zero-length sentinel span at
+    (char_start=0, char_end=0) so the viewer renders no underline for
+    them rather than highlighting a wrong substring.
+    """
+    claims_text_by_id = {c.id: c.text for c in ir.claims}
+    component_dicts = [
+        {
+            "id": comp.id,
+            "label": comp.label,
+            "source_span": comp.source_span.model_dump(),
+        }
+        for comp in ir.components
+    ]
+    relocated = relocate_components(
+        claims_text_by_id=claims_text_by_id,
+        components=component_dicts,
+    )
+    by_id = {r.component_id: r for r in relocated}
+    for comp in ir.components:
+        r = by_id.get(comp.id)
+        if r is not None and r.verified:
+            comp.source_span.char_start = r.char_start
+            comp.source_span.char_end = r.char_end
+        else:
+            # Sentinel — viewer should treat (0, 0) as "no underline".
+            comp.source_span.char_start = 0
+            comp.source_span.char_end = 0
 
 
 def _load_or_parse(
@@ -105,6 +138,12 @@ def run_pipeline(
     name = example_name or out_dir.name
 
     ir_out = out_dir / "claim_ir.json"
+    # V11-13: Re-locate component source_spans BEFORE writing the IR.
+    # The LLM-emitted offsets drift cumulatively; the relocator finds
+    # the actual substring that the label refers to in the claim text.
+    # Unverified components get a zero-length sentinel span so the
+    # viewer doesn't underline a wrong substring.
+    _apply_relocated_spans_inplace(ir)
     ir_out.write_text(ir.model_dump_json(indent=2) + "\n", encoding="utf-8")
     logger.info("Wrote %s", ir_out)
 
@@ -117,7 +156,12 @@ def run_pipeline(
         cad_paths["glb"].stat().st_size,
     )
 
-    claim_map = build_claim_map(ir, example_name=name)
+    span_debug_out = out_dir / "span_debug.md"
+    claim_map = build_claim_map(
+        ir,
+        example_name=name,
+        span_debug_path=span_debug_out,
+    )
     map_out = out_dir / "claim_map.json"
     write_claim_map(claim_map, map_out)
 

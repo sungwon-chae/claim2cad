@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4470181A_self_closing_hinge",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 21,
+        "char_start": 22,
         "char_end": 57
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "wire-activated, inserting mechanism",
+      "span_match_key": "token-set:wire-activated inserting mechanism"
     },
     {
       "component_id": "aligning_means",
@@ -26,8 +29,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 59,
-        "char_end": 201
-      }
+        "char_end": 64
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "electrical_connector_half",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 175,
-        "char_end": 200
-      }
+        "char_start": 176,
+        "char_end": 201
+      },
+      "span_verified": true,
+      "span_extracted": "electrical connector half",
+      "span_match_key": "electrical connector half"
     },
     {
       "component_id": "frame",
@@ -51,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 203,
+        "char_start": 205,
         "char_end": 210
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "frame",
+      "span_match_key": "frame"
     },
     {
       "component_id": "transporting_mechanism",
@@ -64,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 212,
-        "char_end": 334
-      }
+        "char_start": 214,
+        "char_end": 236
+      },
+      "span_verified": true,
+      "span_extracted": "transporting mechanism",
+      "span_match_key": "transporting mechanism"
     },
     {
       "component_id": "wire_array",
@@ -77,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 290,
+        "char_start": 293,
         "char_end": 334
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "random, serial array of color-coded wires",
+      "span_match_key": "token-set:random serial array of color-coded wires"
     },
     {
       "component_id": "drive_mechanism",
@@ -90,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 336,
-        "char_end": 393
-      }
+        "char_start": 338,
+        "char_end": 353
+      },
+      "span_verified": true,
+      "span_extracted": "drive mechanism",
+      "span_match_key": "drive mechanism"
     },
     {
       "component_id": "sensor",
@@ -103,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 395,
-        "char_end": 478
-      }
+        "char_start": 398,
+        "char_end": 404
+      },
+      "span_verified": true,
+      "span_extracted": "sensor",
+      "span_match_key": "sensor"
     },
     {
       "component_id": "control_means",
@@ -117,8 +141,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 480,
-        "char_end": 524
-      }
+        "char_end": 493
+      },
+      "span_verified": true,
+      "span_extracted": "control means",
+      "span_match_key": "control means"
     },
     {
       "component_id": "escapement_mechanism",
@@ -129,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 526,
-        "char_end": 548
-      }
+        "char_start": 530,
+        "char_end": 550
+      },
+      "span_verified": true,
+      "span_extracted": "escapement mechanism",
+      "span_match_key": "escapement mechanism"
     },
     {
       "component_id": "transferring_mechanism",
@@ -142,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 649,
-        "char_end": 779
-      }
+        "char_start": 660,
+        "char_end": 682
+      },
+      "span_verified": true,
+      "span_extracted": "transferring mechanism",
+      "span_match_key": "transferring mechanism"
     },
     {
       "component_id": "color_coded_positions",
@@ -155,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 756,
-        "char_end": 779
-      }
+        "char_start": 775,
+        "char_end": 796
+      },
+      "span_verified": true,
+      "span_extracted": "color-coded positions",
+      "span_match_key": "color-coded positions"
     },
     {
       "component_id": "rows_of_contacts",
@@ -168,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 808,
-        "char_end": 824
-      }
+        "char_start": 849,
+        "char_end": 865
+      },
+      "span_verified": true,
+      "span_extracted": "rows of contacts",
+      "span_match_key": "rows of contacts"
     },
     {
       "component_id": "connector_locating_means",
@@ -181,9 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 861,
-        "char_end": 885
-      }
+        "char_start": 899,
+        "char_end": 923
+      },
+      "span_verified": true,
+      "span_extracted": "connector locating means",
+      "span_match_key": "connector locating means"
     }
   ]
 }

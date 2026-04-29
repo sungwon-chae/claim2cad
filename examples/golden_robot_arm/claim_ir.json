@@ -28,7 +28,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 48,
+        "char_start": 50,
         "char_end": 54
       },
       "is_dependent": false,
@@ -48,7 +48,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 56,
+        "char_start": 58,
         "char_end": 68
       },
       "is_dependent": false,
@@ -70,7 +70,7 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 103,
+        "char_start": 105,
         "char_end": 125
       },
       "is_dependent": false,
@@ -91,7 +91,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 127,
+        "char_start": 129,
         "char_end": 140
       },
       "is_dependent": false,
@@ -113,7 +113,7 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 181,
+        "char_start": 183,
         "char_end": 204
       },
       "is_dependent": false,
@@ -133,7 +133,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 206,
+        "char_start": 209,
         "char_end": 221
       },
       "is_dependent": false,
@@ -153,7 +153,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 457,
+        "char_start": 459,
         "char_end": 466
       },
       "is_dependent": false,
@@ -173,7 +173,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 271,
+        "char_start": 273,
         "char_end": 281
       },
       "is_dependent": false,
@@ -193,7 +193,7 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_2",
-        "char_start": 67,
+        "char_start": 69,
         "char_end": 84
       },
       "is_dependent": true,

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "multi_claim_drone",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 41,
-        "char_end": 48
-      }
+        "char_start": 42,
+        "char_end": 47
+      },
+      "span_verified": true,
+      "span_extracted": "frame",
+      "span_match_key": "frame"
     },
     {
       "component_id": "first_arm",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 75,
-        "char_end": 88
-      }
+        "char_start": 76,
+        "char_end": 85
+      },
+      "span_verified": true,
+      "span_extracted": "first arm",
+      "span_match_key": "first arm"
     },
     {
       "component_id": "second_arm",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 127,
-        "char_end": 141
-      }
+        "char_start": 128,
+        "char_end": 138
+      },
+      "span_verified": true,
+      "span_extracted": "second arm",
+      "span_match_key": "second arm"
     },
     {
       "component_id": "third_arm",
@@ -51,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 178,
-        "char_end": 191
-      }
+        "char_start": 180,
+        "char_end": 189
+      },
+      "span_verified": true,
+      "span_extracted": "third arm",
+      "span_match_key": "third arm"
     },
     {
       "component_id": "fourth_arm",
@@ -64,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 230,
-        "char_end": 244
-      }
+        "char_start": 232,
+        "char_end": 242
+      },
+      "span_verified": true,
+      "span_extracted": "fourth arm",
+      "span_match_key": "fourth arm"
     },
     {
       "component_id": "first_motor",
@@ -78,8 +93,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 51,
-        "char_end": 64
-      }
+        "char_end": 62
+      },
+      "span_verified": true,
+      "span_extracted": "first motor",
+      "span_match_key": "first motor"
     },
     {
       "component_id": "second_motor",
@@ -90,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 103,
-        "char_end": 117
-      }
+        "char_start": 102,
+        "char_end": 114
+      },
+      "span_verified": true,
+      "span_extracted": "second motor",
+      "span_match_key": "second motor"
     },
     {
       "component_id": "third_motor",
@@ -104,8 +125,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 155,
-        "char_end": 167
-      }
+        "char_end": 166
+      },
+      "span_verified": true,
+      "span_extracted": "third motor",
+      "span_match_key": "third motor"
     },
     {
       "component_id": "fourth_motor",
@@ -116,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 207,
-        "char_end": 220
-      }
+        "char_start": 206,
+        "char_end": 218
+      },
+      "span_verified": true,
+      "span_extracted": "fourth motor",
+      "span_match_key": "fourth motor"
     },
     {
       "component_id": "first_propeller",
@@ -129,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 258,
-        "char_end": 275
-      }
+        "char_start": 259,
+        "char_end": 274
+      },
+      "span_verified": true,
+      "span_extracted": "first propeller",
+      "span_match_key": "first propeller"
     },
     {
       "component_id": "second_propeller",
@@ -143,8 +173,11 @@
       "source_span": {
         "claim_id": "claim_1",
         "char_start": 305,
-        "char_end": 323
-      }
+        "char_end": 321
+      },
+      "span_verified": true,
+      "span_extracted": "second propeller",
+      "span_match_key": "second propeller"
     },
     {
       "component_id": "third_propeller",
@@ -155,9 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 352,
-        "char_end": 369
-      }
+        "char_start": 353,
+        "char_end": 368
+      },
+      "span_verified": true,
+      "span_extracted": "third propeller",
+      "span_match_key": "third propeller"
     },
     {
       "component_id": "fourth_propeller",
@@ -168,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 399,
-        "char_end": 417
-      }
+        "char_start": 403,
+        "char_end": 419
+      },
+      "span_verified": true,
+      "span_extracted": "fourth propeller",
+      "span_match_key": "fourth propeller"
     },
     {
       "component_id": "battery",
@@ -181,9 +220,12 @@
       "is_dependent": true,
       "source_span": {
         "claim_id": "claim_2",
-        "char_start": 61,
-        "char_end": 68
-      }
+        "char_start": 62,
+        "char_end": 69
+      },
+      "span_verified": true,
+      "span_extracted": "battery",
+      "span_match_key": "battery"
     },
     {
       "component_id": "flight_controller",
@@ -194,9 +236,12 @@
       "is_dependent": true,
       "source_span": {
         "claim_id": "claim_3",
-        "char_start": 61,
-        "char_end": 78
-      }
+        "char_start": 62,
+        "char_end": 79
+      },
+      "span_verified": true,
+      "span_extracted": "flight controller",
+      "span_match_key": "flight controller"
     },
     {
       "component_id": "position_sensor",
@@ -207,9 +252,12 @@
       "is_dependent": true,
       "source_span": {
         "claim_id": "claim_4",
-        "char_start": 61,
-        "char_end": 76
-      }
+        "char_start": 62,
+        "char_end": 77
+      },
+      "span_verified": true,
+      "span_extracted": "position sensor",
+      "span_match_key": "position sensor"
     },
     {
       "component_id": "camera",
@@ -220,9 +268,12 @@
       "is_dependent": true,
       "source_span": {
         "claim_id": "claim_5",
-        "char_start": 61,
-        "char_end": 67
-      }
+        "char_start": 62,
+        "char_end": 68
+      },
+      "span_verified": true,
+      "span_extracted": "camera",
+      "span_match_key": "camera"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US5180955A_positioning_apparatus_for_arm",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 45,
-        "char_end": 64
+        "char_start": 46,
+        "char_end": 65
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "positioning linkage",
+      "span_match_key": "positioning linkage"
     },
     {
       "component_id": "parallelogram_structure",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 73,
-        "char_end": 97
+        "char_start": 86,
+        "char_end": 109
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "parallelogram structure",
+      "span_match_key": "parallelogram structure"
     },
     {
       "component_id": "base_structure",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 104,
-        "char_end": 118
+        "char_start": 116,
+        "char_end": 130
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "base structure",
+      "span_match_key": "base structure"
     },
     {
       "component_id": "first_arm",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 220,
-        "char_end": 225
+        "char_start": 223,
+        "char_end": 244
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "first and second arms",
+      "span_match_key": "token-set:first arm"
     },
     {
       "component_id": "second_arm",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 230,
-        "char_end": 240
+        "char_start": 233,
+        "char_end": 243
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "second arm",
+      "span_match_key": "second arm"
     },
     {
       "component_id": "center_shaft",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 285,
-        "char_end": 297
+        "char_start": 284,
+        "char_end": 296
       },
-      "figure_number": "30"
+      "span_verified": true,
+      "span_extracted": "center shaft",
+      "span_match_key": "center shaft"
     },
     {
       "component_id": "first_arm_first_section",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 318,
-        "char_end": 333
+        "char_start": 1259,
+        "char_end": 1294
       },
-      "figure_number": "38"
+      "span_verified": true,
+      "span_extracted": "first and second arm first sections",
+      "span_match_key": "token-set:first arm first section"
     },
     {
       "component_id": "first_arm_first_end",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 339,
-        "char_end": 350
+        "char_start": 708,
+        "char_end": 739
       },
-      "figure_number": "39"
+      "span_verified": true,
+      "span_extracted": "first and second arm first ends",
+      "span_match_key": "token-set:first arm first end"
     },
     {
       "component_id": "first_arm_second_section",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 357,
-        "char_end": 373
+        "char_start": 0,
+        "char_end": 0
       },
-      "figure_number": "40"
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "first_arm_second_end",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 379,
-        "char_end": 391
+        "char_start": 590,
+        "char_end": 622
       },
-      "figure_number": "41"
+      "span_verified": true,
+      "span_extracted": "first and second arm second ends",
+      "span_match_key": "token-set:first arm second end"
     },
     {
       "component_id": "second_arm_first_section",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 318,
-        "char_end": 333
+        "char_start": 933,
+        "char_end": 957
       },
-      "figure_number": "44"
+      "span_verified": true,
+      "span_extracted": "second arm first section",
+      "span_match_key": "second arm first section"
     },
     {
       "component_id": "second_arm_second_end",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 379,
-        "char_end": 391
+        "char_start": 600,
+        "char_end": 621
       },
-      "figure_number": "46"
+      "span_verified": true,
+      "span_extracted": "second arm second end",
+      "span_match_key": "second arm second end"
     },
     {
       "component_id": "third_arm",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 457,
-        "char_end": 466
+        "char_start": 455,
+        "char_end": 476
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "third and fourth arms",
+      "span_match_key": "token-set:third arm"
     },
     {
       "component_id": "fourth_arm",
@@ -194,10 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 471,
-        "char_end": 481
+        "char_start": 465,
+        "char_end": 475
       },
-      "figure_number": "28"
+      "span_verified": true,
+      "span_extracted": "fourth arm",
+      "span_match_key": "fourth arm"
     },
     {
       "component_id": "end_effector",
@@ -208,10 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 679,
-        "char_end": 691
+        "char_start": 794,
+        "char_end": 806
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "end-effector",
+      "span_match_key": "end-effector"
     },
     {
       "component_id": "means_for_moving",
@@ -222,10 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 718,
-        "char_end": 746
+        "char_start": 877,
+        "char_end": 906
       },
-      "figure_number": "50"
+      "span_verified": true,
+      "span_extracted": "means for moving said linkage",
+      "span_match_key": "means for moving said linkage"
     },
     {
       "component_id": "electromagnetic_coil",
@@ -236,10 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 802,
-        "char_end": 822
+        "char_start": 974,
+        "char_end": 994
       },
-      "figure_number": "60"
+      "span_verified": true,
+      "span_extracted": "electromagnetic coil",
+      "span_match_key": "electromagnetic coil"
     },
     {
       "component_id": "magnets",
@@ -250,10 +284,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 848,
-        "char_end": 855
+        "char_start": 1026,
+        "char_end": 1033
       },
-      "figure_number": "62"
+      "span_verified": true,
+      "span_extracted": "magnets",
+      "span_match_key": "magnets"
     },
     {
       "component_id": "stationary_iron_structures",
@@ -264,10 +300,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 892,
-        "char_end": 918
+        "char_start": 1078,
+        "char_end": 1104
       },
-      "figure_number": "64"
+      "span_verified": true,
+      "span_extracted": "stationary iron structures",
+      "span_match_key": "stationary iron structures"
     }
   ]
 }

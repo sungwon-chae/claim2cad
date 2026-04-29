@@ -33,12 +33,15 @@ function buildSpansForClaim(
       mapped: false,
     });
   }
-  // Sort and de-overlap: prefer longer spans? For Phase 5 we use the
-  // start order; if two spans overlap, the later one is dropped.
-  spans.sort((a, b) => a.start - b.start || a.end - b.end);
-  const cleaned: typeof spans = [];
+  // V11-13: drop sentinel zero-length spans and ill-formed ranges
+  // before sorting. The pipeline writes (0, 0) for components whose
+  // label could not be relocated in the claim text — we don't want
+  // those rendered as a wrong-substring underline.
+  const filtered = spans.filter((s) => s.end > s.start);
+  filtered.sort((a, b) => a.start - b.start || a.end - b.end);
+  const cleaned: typeof filtered = [];
   let cursor = 0;
-  for (const span of spans) {
+  for (const span of filtered) {
     if (span.start < cursor) continue;
     cleaned.push(span);
     cursor = span.end;

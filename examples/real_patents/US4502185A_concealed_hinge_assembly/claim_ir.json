@@ -124,8 +124,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 111,
-        "char_end": 119
+        "char_start": 106,
+        "char_end": 123
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -156,8 +156,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 124,
-        "char_end": 133
+        "char_start": 114,
+        "char_end": 123
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -189,8 +189,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 168,
-        "char_end": 176
+        "char_start": 180,
+        "char_end": 188
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -222,8 +222,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 316,
-        "char_end": 348
+        "char_start": 325,
+        "char_end": 331
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -287,8 +287,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 558,
-        "char_end": 571
+        "char_start": 566,
+        "char_end": 579
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -319,8 +319,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 638,
-        "char_end": 658
+        "char_start": 648,
+        "char_end": 668
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -353,8 +353,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 742,
-        "char_end": 758
+        "char_start": 754,
+        "char_end": 759
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -385,8 +385,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1043,
-        "char_end": 1058
+        "char_start": 1121,
+        "char_end": 1136
       },
       "is_dependent": false,
       "dependent_on": null,

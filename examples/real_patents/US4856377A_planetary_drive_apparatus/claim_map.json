@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4856377A_planetary_drive_apparatus",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 75,
-        "char_end": 92
+        "char_start": 77,
+        "char_end": 94
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "gear case housing",
+      "span_match_key": "gear case housing"
     },
     {
       "component_id": "engine_housing",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 105,
-        "char_end": 119
+        "char_start": 108,
+        "char_end": 122
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "engine housing",
+      "span_match_key": "engine housing"
     },
     {
       "component_id": "ring_gear_means",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 121,
-        "char_end": 136
+        "char_start": 124,
+        "char_end": 139
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "ring gear means",
+      "span_match_key": "ring gear means"
     },
     {
       "component_id": "first_ring_gear_member",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 147,
-        "char_end": 171
+        "char_start": 471,
+        "char_end": 493
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "first ring gear member",
+      "span_match_key": "first ring gear member"
     },
     {
       "component_id": "second_ring_gear_member",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 173,
-        "char_end": 198
+        "char_start": 160,
+        "char_end": 183
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "second ring gear member",
+      "span_match_key": "second ring gear member"
     },
     {
       "component_id": "first_stage_assembly",
@@ -85,7 +95,9 @@
         "char_start": 209,
         "char_end": 244
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "first stage planetary gear assembly",
+      "span_match_key": "first stage planetary gear assembly"
     },
     {
       "component_id": "first_sun_gear",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 256,
-        "char_end": 270
+        "char_start": 257,
+        "char_end": 271
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "first sun gear",
+      "span_match_key": "first sun gear"
     },
     {
       "component_id": "engine_output_shaft",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 282,
-        "char_end": 301
+        "char_start": 287,
+        "char_end": 306
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "engine output shaft",
+      "span_match_key": "engine output shaft"
     },
     {
       "component_id": "first_planetary_carrier",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 305,
-        "char_end": 328
+        "char_start": 310,
+        "char_end": 333
       },
-      "figure_number": "26"
+      "span_verified": true,
+      "span_extracted": "first planetary carrier",
+      "span_match_key": "first planetary carrier"
     },
     {
       "component_id": "first_planetary_pinion",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 362,
-        "char_end": 384
+        "char_start": 372,
+        "char_end": 394
       },
-      "figure_number": "28"
+      "span_verified": true,
+      "span_extracted": "first planetary pinion",
+      "span_match_key": "first planetary pinion"
     },
     {
       "component_id": "second_stage_assembly",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 489,
-        "char_end": 525
+        "char_start": 497,
+        "char_end": 533
       },
-      "figure_number": "30"
+      "span_verified": true,
+      "span_extracted": "second stage planetary gear assembly",
+      "span_match_key": "second stage planetary gear assembly"
     },
     {
       "component_id": "second_sun_gear",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 537,
-        "char_end": 552
+        "char_start": 547,
+        "char_end": 562
       },
-      "figure_number": "32"
+      "span_verified": true,
+      "span_extracted": "second sun gear",
+      "span_match_key": "second sun gear"
     },
     {
       "component_id": "second_planetary_carrier",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 575,
-        "char_end": 599
+        "char_start": 605,
+        "char_end": 629
       },
-      "figure_number": "34"
+      "span_verified": true,
+      "span_extracted": "second planetary carrier",
+      "span_match_key": "second planetary carrier"
     },
     {
       "component_id": "propeller_shaft",
@@ -194,10 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 611,
-        "char_end": 626
+        "char_start": 643,
+        "char_end": 658
       },
-      "figure_number": "36"
+      "span_verified": true,
+      "span_extracted": "propeller shaft",
+      "span_match_key": "propeller shaft"
     },
     {
       "component_id": "second_planetary_pinion_gears",
@@ -208,10 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 628,
-        "char_end": 657
+        "char_start": 660,
+        "char_end": 689
       },
-      "figure_number": "38"
+      "span_verified": true,
+      "span_extracted": "second planetary pinion gears",
+      "span_match_key": "second planetary pinion gears"
     },
     {
       "component_id": "similar_carrier",
@@ -222,10 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 789,
-        "char_end": 872
+        "char_start": 878,
+        "char_end": 963
       },
-      "figure_number": "40"
+      "span_verified": true,
+      "span_extracted": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "span_match_key": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement"
     },
     {
       "component_id": "supplementary_pinion_gears",
@@ -236,10 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 836,
-        "char_end": 862
+        "char_start": 1089,
+        "char_end": 1115
       },
-      "figure_number": "42"
+      "span_verified": true,
+      "span_extracted": "supplementary pinion gears",
+      "span_match_key": "supplementary pinion gears"
     }
   ]
 }

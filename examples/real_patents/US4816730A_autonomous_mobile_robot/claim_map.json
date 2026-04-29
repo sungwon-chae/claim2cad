@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4816730A_autonomous_mobile_robot",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 101,
-        "char_end": 121
+        "char_start": 103,
+        "char_end": 123
       },
-      "figure_number": "106"
+      "span_verified": true,
+      "span_extracted": "robotic arm assembly",
+      "span_match_key": "robotic arm assembly"
     },
     {
       "component_id": "gripper_mechanism",
@@ -26,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 179,
-        "char_end": 196
-      }
+        "char_start": 184,
+        "char_end": 201
+      },
+      "span_verified": true,
+      "span_extracted": "gripper mechanism",
+      "span_match_key": "gripper mechanism"
     },
     {
       "component_id": "gripper_fingers",
@@ -39,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 268,
-        "char_end": 283
-      }
+        "char_start": 287,
+        "char_end": 302
+      },
+      "span_verified": true,
+      "span_extracted": "gripper fingers",
+      "span_match_key": "gripper fingers"
     },
     {
       "component_id": "cone",
@@ -52,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 330,
-        "char_end": 334
+        "char_start": 334,
+        "char_end": 338
       },
-      "figure_number": "100"
+      "span_verified": true,
+      "span_extracted": "cone",
+      "span_match_key": "cone"
     },
     {
       "component_id": "stepper_motors",
@@ -66,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 342,
-        "char_end": 356
-      }
+        "char_start": 346,
+        "char_end": 360
+      },
+      "span_verified": true,
+      "span_extracted": "stepper motors",
+      "span_match_key": "stepper motors"
     },
     {
       "component_id": "stepper_motor_cone",
@@ -79,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 399,
-        "char_end": 417
-      }
+        "char_start": 407,
+        "char_end": 424
+      },
+      "span_verified": true,
+      "span_extracted": "one stepper motor",
+      "span_match_key": "one stepper motor"
     },
     {
       "component_id": "power_source",
@@ -92,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 524,
-        "char_end": 536
-      }
+        "char_start": 535,
+        "char_end": 547
+      },
+      "span_verified": true,
+      "span_extracted": "power source",
+      "span_match_key": "power source"
     },
     {
       "component_id": "first_sensing_system",
@@ -105,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 619,
-        "char_end": 639
-      }
+        "char_start": 628,
+        "char_end": 648
+      },
+      "span_verified": true,
+      "span_extracted": "first sensing system",
+      "span_match_key": "first sensing system"
     },
     {
       "component_id": "feedback_loop",
@@ -118,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 647,
-        "char_end": 660
-      }
+        "char_start": 656,
+        "char_end": 669
+      },
+      "span_verified": true,
+      "span_extracted": "feedback loop",
+      "span_match_key": "feedback loop"
     },
     {
       "component_id": "second_sensing_system",
@@ -131,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 706,
-        "char_end": 727
-      }
+        "char_start": 723,
+        "char_end": 744
+      },
+      "span_verified": true,
+      "span_extracted": "second sensing system",
+      "span_match_key": "second sensing system"
     },
     {
       "component_id": "computer",
@@ -144,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1020,
-        "char_end": 1028
-      }
+        "char_start": 1037,
+        "char_end": 1045
+      },
+      "span_verified": true,
+      "span_extracted": "computer",
+      "span_match_key": "computer"
     },
     {
       "component_id": "data_input_means",
@@ -157,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1307,
-        "char_end": 1347
+        "char_start": 1507,
+        "char_end": 1547
       },
-      "figure_number": "109"
+      "span_verified": true,
+      "span_extracted": "means for providing operating data input",
+      "span_match_key": "means for providing operating data input"
     }
   ]
 }

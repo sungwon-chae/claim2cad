@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4807331A_spring_loaded_hinge",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 52,
-        "char_end": 74
+        "char_start": 53,
+        "char_end": 75
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "body-half sub-assembly",
+      "span_match_key": "body-half sub-assembly"
     },
     {
       "component_id": "vehicle_body",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 101,
-        "char_end": 113
+        "char_start": 103,
+        "char_end": 115
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "vehicle body",
+      "span_match_key": "vehicle body"
     },
     {
       "component_id": "door_half_member",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 118,
-        "char_end": 134
+        "char_start": 122,
+        "char_end": 138
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "door-half member",
+      "span_match_key": "door-half member"
     },
     {
       "component_id": "pintle_pin",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 163,
-        "char_end": 173
+        "char_start": 164,
+        "char_end": 174
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "pintle pin",
+      "span_match_key": "pintle pin"
     },
     {
       "component_id": "hinge_axis",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 181,
-        "char_end": 200
+        "char_start": 183,
+        "char_end": 202
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "vertical hinge axis",
+      "span_match_key": "vertical hinge axis"
     },
     {
       "component_id": "hinge_body_half_assembly",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 406,
-        "char_end": 430
+        "char_start": 412,
+        "char_end": 436
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "hinge body-half assembly",
+      "span_match_key": "hinge body-half assembly"
     },
     {
       "component_id": "main_member",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 443,
-        "char_end": 454
+        "char_start": 449,
+        "char_end": 460
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "main member",
+      "span_match_key": "main member"
     },
     {
       "component_id": "u_shaped_link_member",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 497,
-        "char_end": 517
+        "char_start": 509,
+        "char_end": 529
       },
-      "figure_number": "26"
+      "span_verified": true,
+      "span_extracted": "U-shaped link member",
+      "span_match_key": "U-shaped link member"
     },
     {
       "component_id": "upper_extension",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 614,
-        "char_end": 620
+        "char_start": 644,
+        "char_end": 679
       },
-      "figure_number": "28"
+      "span_verified": true,
+      "span_extracted": "upper and lower parallel extensions",
+      "span_match_key": "token-set:upper parallel extension"
     },
     {
       "component_id": "lower_extension",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 625,
-        "char_end": 631
+        "char_start": 654,
+        "char_end": 678
       },
-      "figure_number": "30"
+      "span_verified": true,
+      "span_extracted": "lower parallel extension",
+      "span_match_key": "lower parallel extension"
     },
     {
       "component_id": "mounting_wall",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 651,
-        "char_end": 664
+        "char_start": 700,
+        "char_end": 713
       },
-      "figure_number": "32"
+      "span_verified": true,
+      "span_extracted": "mounting wall",
+      "span_match_key": "mounting wall"
     },
     {
       "component_id": "main_member_pintle_pin_hole",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 718,
-        "char_end": 732
+        "char_start": 818,
+        "char_end": 833
       },
-      "figure_number": "34"
+      "span_verified": true,
+      "span_extracted": "pintle pin hole",
+      "span_match_key": "pintle pin hole"
     },
     {
       "component_id": "base_wall",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 782,
-        "char_end": 791
+        "char_start": 902,
+        "char_end": 911
       },
-      "figure_number": "36"
+      "span_verified": true,
+      "span_extracted": "base wall",
+      "span_match_key": "base wall"
     },
     {
       "component_id": "base_wall_exterior_guide_surface",
@@ -194,10 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 800,
-        "char_end": 829
+        "char_start": 1297,
+        "char_end": 1329
       },
-      "figure_number": "38"
+      "span_verified": true,
+      "span_extracted": "base wall exterior guide surface",
+      "span_match_key": "base wall exterior guide surface"
     },
     {
       "component_id": "upper_leg",
@@ -208,10 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 834,
-        "char_end": 845
+        "char_start": 955,
+        "char_end": 984
       },
-      "figure_number": "40"
+      "span_verified": true,
+      "span_extracted": "upper and lower parallel legs",
+      "span_match_key": "token-set:upper parallel leg"
     },
     {
       "component_id": "lower_leg",
@@ -222,10 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 850,
-        "char_end": 861
+        "char_start": 965,
+        "char_end": 983
       },
-      "figure_number": "41"
+      "span_verified": true,
+      "span_extracted": "lower parallel leg",
+      "span_match_key": "lower parallel leg"
     },
     {
       "component_id": "link_member_pintle_pin_holes",
@@ -236,10 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 878,
-        "char_end": 900
+        "char_start": 1040,
+        "char_end": 1064
       },
-      "figure_number": "44"
+      "span_verified": true,
+      "span_extracted": "aligned pintle pin holes",
+      "span_match_key": "aligned pintle pin holes"
     },
     {
       "component_id": "leg_guide_edge_surface",
@@ -250,10 +284,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 968,
-        "char_end": 990
+        "char_start": 1180,
+        "char_end": 1202
       },
-      "figure_number": "54"
+      "span_verified": true,
+      "span_extracted": "leg guide edge surface",
+      "span_match_key": "leg guide edge surface"
     },
     {
       "component_id": "stop_means",
@@ -264,10 +300,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1087,
-        "char_end": 1097
+        "char_start": 2720,
+        "char_end": 2730
       },
-      "figure_number": "56"
+      "span_verified": true,
+      "span_extracted": "stop means",
+      "span_match_key": "stop means"
     },
     {
       "component_id": "bight_wall",
@@ -278,10 +316,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1254,
-        "char_end": 1264
+        "char_start": 1623,
+        "char_end": 1633
       },
-      "figure_number": "57"
+      "span_verified": true,
+      "span_extracted": "bight wall",
+      "span_match_key": "bight wall"
     },
     {
       "component_id": "first_sidewall",
@@ -292,10 +332,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1277,
-        "char_end": 1291
+        "char_start": 1730,
+        "char_end": 1744
       },
-      "figure_number": "58"
+      "span_verified": true,
+      "span_extracted": "first sidewall",
+      "span_match_key": "first sidewall"
     },
     {
       "component_id": "second_sidewall",
@@ -306,10 +348,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1296,
-        "char_end": 1311
+        "char_start": 2067,
+        "char_end": 2082
       },
-      "figure_number": "60"
+      "span_verified": true,
+      "span_extracted": "second sidewall",
+      "span_match_key": "second sidewall"
     },
     {
       "component_id": "leaf_flange",
@@ -320,10 +364,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1389,
-        "char_end": 1400
+        "char_start": 1795,
+        "char_end": 1806
       },
-      "figure_number": "64"
+      "span_verified": true,
+      "span_extracted": "leaf flange",
+      "span_match_key": "leaf flange"
     },
     {
       "component_id": "leaf_flange_pintle_pin_hole",
@@ -334,10 +380,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1401,
-        "char_end": 1415
+        "char_start": 1816,
+        "char_end": 1831
       },
-      "figure_number": "66"
+      "span_verified": true,
+      "span_extracted": "pintle pin hole",
+      "span_match_key": "pintle pin hole"
     },
     {
       "component_id": "pintle_pin_stop_means",
@@ -348,10 +396,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1869,
-        "char_end": 1879
+        "char_start": 1355,
+        "char_end": 1365
       },
-      "figure_number": "68"
+      "span_verified": true,
+      "span_extracted": "stop means",
+      "span_match_key": "stop means"
     }
   ]
 }

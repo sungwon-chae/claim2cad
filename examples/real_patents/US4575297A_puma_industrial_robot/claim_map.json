@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4575297A_puma_industrial_robot",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 521,
-        "char_end": 532
+        "char_start": 529,
+        "char_end": 540
       },
-      "figure_number": "1"
+      "span_verified": true,
+      "span_extracted": "breastplate",
+      "span_match_key": "breastplate"
     },
     {
       "component_id": "upper_arm_member",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 639,
-        "char_end": 655
+        "char_start": 645,
+        "char_end": 661
       },
-      "figure_number": "45"
+      "span_verified": true,
+      "span_extracted": "upper arm member",
+      "span_match_key": "upper arm member"
     },
     {
       "component_id": "shoulder_joint",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 745,
-        "char_end": 750
+        "char_start": 824,
+        "char_end": 829
       },
-      "figure_number": "40"
+      "span_verified": true,
+      "span_extracted": "joint",
+      "span_match_key": "joint"
     },
     {
       "component_id": "first_sensor_means",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1005,
-        "char_end": 1023
+        "char_start": 1113,
+        "char_end": 1131
       },
-      "figure_number": "51"
+      "span_verified": true,
+      "span_extracted": "first sensor means",
+      "span_match_key": "first sensor means"
     },
     {
       "component_id": "first_recording_means",
@@ -68,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1089,
-        "char_end": 1112
-      }
+        "char_start": 1126,
+        "char_end": 1131
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "first_driving_means",
@@ -81,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1160,
-        "char_end": 1179
-      }
+        "char_start": 1324,
+        "char_end": 1343
+      },
+      "span_verified": true,
+      "span_extracted": "first driving means",
+      "span_match_key": "first driving means"
     },
     {
       "component_id": "second_sensor_means",
@@ -94,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1315,
-        "char_end": 1334
-      }
+        "char_start": 1544,
+        "char_end": 1563
+      },
+      "span_verified": true,
+      "span_extracted": "second sensor means",
+      "span_match_key": "second sensor means"
     },
     {
       "component_id": "second_recording_means",
@@ -107,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1401,
-        "char_end": 1424
-      }
+        "char_start": 1450,
+        "char_end": 1455
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "second_driving_means",
@@ -120,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1471,
-        "char_end": 1491
-      }
+        "char_start": 1755,
+        "char_end": 1775
+      },
+      "span_verified": true,
+      "span_extracted": "second driving means",
+      "span_match_key": "second driving means"
     },
     {
       "component_id": "lower_arm_member",
@@ -133,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1629,
-        "char_end": 1645
-      }
+        "char_start": 1977,
+        "char_end": 1993
+      },
+      "span_verified": true,
+      "span_extracted": "lower arm member",
+      "span_match_key": "lower arm member"
     },
     {
       "component_id": "elbow_connecting_means",
@@ -146,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1697,
-        "char_end": 1712
+        "char_start": 0,
+        "char_end": 0
       },
-      "figure_number": "46"
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "third_joint",
@@ -160,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1757,
-        "char_end": 1768
+        "char_start": 2194,
+        "char_end": 2205
       },
-      "figure_number": "47"
+      "span_verified": true,
+      "span_extracted": "third joint",
+      "span_match_key": "third joint"
     },
     {
       "component_id": "third_sensor_means",
@@ -174,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1844,
-        "char_end": 1862
-      }
+        "char_start": 2299,
+        "char_end": 2317
+      },
+      "span_verified": true,
+      "span_extracted": "third sensor means",
+      "span_match_key": "third sensor means"
     },
     {
       "component_id": "third_recording_means",
@@ -187,9 +220,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1940,
-        "char_end": 1963
-      }
+        "char_start": 1883,
+        "char_end": 1888
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "third_driving_means",
@@ -200,9 +236,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2010,
-        "char_end": 2029
-      }
+        "char_start": 2512,
+        "char_end": 2531
+      },
+      "span_verified": true,
+      "span_extracted": "third driving means",
+      "span_match_key": "third driving means"
     },
     {
       "component_id": "hollow_hand_member",
@@ -213,10 +252,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2168,
-        "char_end": 2186
+        "char_start": 2755,
+        "char_end": 2773
       },
-      "figure_number": "4"
+      "span_verified": true,
+      "span_extracted": "hollow hand member",
+      "span_match_key": "hollow hand member"
     },
     {
       "component_id": "knuckle_joint",
@@ -227,9 +268,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2267,
-        "char_end": 2280
-      }
+        "char_start": 2941,
+        "char_end": 2954
+      },
+      "span_verified": true,
+      "span_extracted": "knuckle joint",
+      "span_match_key": "knuckle joint"
     },
     {
       "component_id": "fourth_fifth_sensor_means",
@@ -240,9 +284,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2332,
-        "char_end": 2361
-      }
+        "char_start": 3031,
+        "char_end": 3060
+      },
+      "span_verified": true,
+      "span_extracted": "fourth and fifth sensor means",
+      "span_match_key": "fourth and fifth sensor means"
     },
     {
       "component_id": "fourth_fifth_recording_means",
@@ -253,9 +300,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2448,
-        "char_end": 2471
-      }
+        "char_start": 2424,
+        "char_end": 2429
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "fourth_fifth_driving_means",
@@ -266,9 +316,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2521,
-        "char_end": 2550
-      }
+        "char_start": 3291,
+        "char_end": 3321
+      },
+      "span_verified": true,
+      "span_extracted": "fourth and fifth driving means",
+      "span_match_key": "fourth and fifth driving means"
     },
     {
       "component_id": "central_hand_member",
@@ -279,9 +332,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2686,
-        "char_end": 2712
-      }
+        "char_start": 3587,
+        "char_end": 3613
+      },
+      "span_verified": true,
+      "span_extracted": "hollow central hand member",
+      "span_match_key": "hollow central hand member"
     },
     {
       "component_id": "hollow_thumb_members",
@@ -292,9 +348,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2774,
-        "char_end": 2807
-      }
+        "char_start": 3683,
+        "char_end": 3716
+      },
+      "span_verified": true,
+      "span_extracted": "plurality of hollow thumb members",
+      "span_match_key": "plurality of hollow thumb members"
     },
     {
       "component_id": "pivotal_thumb_joints",
@@ -305,9 +364,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 2841,
-        "char_end": 2874
-      }
+        "char_start": 3797,
+        "char_end": 3830
+      },
+      "span_verified": true,
+      "span_extracted": "plurality of pivotal thumb joints",
+      "span_match_key": "plurality of pivotal thumb joints"
     },
     {
       "component_id": "thumb_sensor_elements",
@@ -318,9 +380,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3062,
-        "char_end": 3103
-      }
+        "char_start": 3797,
+        "char_end": 3806
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     },
     {
       "component_id": "thumb_recording_means",
@@ -331,9 +396,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3157,
-        "char_end": 3180
-      }
+        "char_start": 3191,
+        "char_end": 3196
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "thumb_driving_means",
@@ -344,9 +412,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3230,
-        "char_end": 3269
-      }
+        "char_start": 4225,
+        "char_end": 4234
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     },
     {
       "component_id": "hollow_finger_members",
@@ -357,9 +428,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3418,
-        "char_end": 3452
-      }
+        "char_start": 4366,
+        "char_end": 4375
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     },
     {
       "component_id": "pivoted_finger_joints",
@@ -370,9 +444,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3487,
-        "char_end": 3521
-      }
+        "char_start": 4604,
+        "char_end": 4613
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     },
     {
       "component_id": "finger_sensor_elements",
@@ -383,9 +460,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3680,
-        "char_end": 3722
-      }
+        "char_start": 3683,
+        "char_end": 3692
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     },
     {
       "component_id": "finger_recording_means",
@@ -396,9 +476,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3778,
-        "char_end": 3801
-      }
+        "char_start": 3402,
+        "char_end": 3407
+      },
+      "span_verified": true,
+      "span_extracted": "means",
+      "span_match_key": "means"
     },
     {
       "component_id": "finger_driving_means",
@@ -409,9 +492,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 3851,
-        "char_end": 3891
-      }
+        "char_start": 4128,
+        "char_end": 4137
+      },
+      "span_verified": true,
+      "span_extracted": "plurality",
+      "span_match_key": "plurality"
     }
   ]
 }

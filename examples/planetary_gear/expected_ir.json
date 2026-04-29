@@ -28,11 +28,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 39,
-        "char_end": 86
+        "char_start": 41,
+        "char_end": 49
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "ring_gear",
@@ -46,11 +48,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 88,
-        "char_end": 186
+        "char_start": 90,
+        "char_end": 99
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "carrier",
@@ -64,11 +68,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 188,
-        "char_end": 255
+        "char_start": 190,
+        "char_end": 197
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_planet_gear",
@@ -82,11 +88,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 257,
-        "char_end": 361
+        "char_start": 259,
+        "char_end": 276
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_planet_gear",
@@ -100,11 +108,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 363,
-        "char_end": 468
+        "char_start": 365,
+        "char_end": 383
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "third_planet_gear",
@@ -118,11 +128,13 @@
       "constraints": [],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 470,
-        "char_end": 574
+        "char_start": 472,
+        "char_end": 489
       },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [],

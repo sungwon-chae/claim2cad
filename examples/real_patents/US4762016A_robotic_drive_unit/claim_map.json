@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4762016A_robotic_drive_unit",
   "glb_path": "model.glb",
   "components": [
@@ -12,10 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 38,
-        "char_end": 45
+        "char_start": 39,
+        "char_end": 44
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "frame",
+      "span_match_key": "frame"
     },
     {
       "component_id": "first_input_link",
@@ -26,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 47,
+        "char_start": 48,
         "char_end": 64
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "first input link",
+      "span_match_key": "first input link"
     },
     {
       "component_id": "first_actuator_assembly",
@@ -40,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 67,
+        "char_start": 68,
         "char_end": 91
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "first actuator assembly",
+      "span_match_key": "first actuator assembly"
     },
     {
       "component_id": "first_joint",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 103,
-        "char_end": 114
+        "char_start": 105,
+        "char_end": 116
       },
-      "figure_number": "24"
+      "span_verified": true,
+      "span_extracted": "first joint",
+      "span_match_key": "first joint"
     },
     {
       "component_id": "second_input_link",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 215,
-        "char_end": 233
+        "char_start": 217,
+        "char_end": 234
       },
-      "figure_number": "22"
+      "span_verified": true,
+      "span_extracted": "second input link",
+      "span_match_key": "second input link"
     },
     {
       "component_id": "second_actuator_assembly",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 235,
-        "char_end": 260
+        "char_start": 238,
+        "char_end": 262
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "second actuator assembly",
+      "span_match_key": "second actuator assembly"
     },
     {
       "component_id": "second_joint",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 272,
-        "char_end": 284
+        "char_start": 276,
+        "char_end": 288
       },
-      "figure_number": "26"
+      "span_verified": true,
+      "span_extracted": "second joint",
+      "span_match_key": "second joint"
     },
     {
       "component_id": "mounting_means",
@@ -110,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 381,
-        "char_end": 454
+        "char_start": 382,
+        "char_end": 400
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "means for mounting",
+      "span_match_key": "means for mounting"
     },
     {
       "component_id": "first_output_link",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 456,
-        "char_end": 474
+        "char_start": 460,
+        "char_end": 477
       },
-      "figure_number": "40"
+      "span_verified": true,
+      "span_extracted": "first output link",
+      "span_match_key": "first output link"
     },
     {
       "component_id": "third_joint",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 486,
-        "char_end": 497
+        "char_start": 491,
+        "char_end": 502
       },
-      "figure_number": "28"
+      "span_verified": true,
+      "span_extracted": "third joint",
+      "span_match_key": "third joint"
     },
     {
       "component_id": "second_output_link",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 563,
-        "char_end": 581
+        "char_start": 573,
+        "char_end": 591
       },
-      "figure_number": "50"
+      "span_verified": true,
+      "span_extracted": "second output link",
+      "span_match_key": "second output link"
     },
     {
       "component_id": "fourth_joint",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 593,
-        "char_end": 605
+        "char_start": 605,
+        "char_end": 617
       },
-      "figure_number": "30"
+      "span_verified": true,
+      "span_extracted": "fourth joint",
+      "span_match_key": "fourth joint"
     },
     {
       "component_id": "fifth_joint",
@@ -180,10 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 673,
-        "char_end": 684
+        "char_start": 697,
+        "char_end": 708
       },
-      "figure_number": "32"
+      "span_verified": true,
+      "span_extracted": "fifth joint",
+      "span_match_key": "fifth joint"
     }
   ]
 }

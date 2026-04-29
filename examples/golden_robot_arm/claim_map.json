@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "golden_robot_arm",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 48,
+        "char_start": 50,
         "char_end": 54
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "base",
+      "span_match_key": "base"
     },
     {
       "component_id": "first_link",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 56,
+        "char_start": 58,
         "char_end": 68
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "first link",
+      "span_match_key": "first link"
     },
     {
       "component_id": "first_joint",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 103,
+        "char_start": 105,
         "char_end": 125
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "first revolute joint",
+      "span_match_key": "first revolute joint"
     },
     {
       "component_id": "second_link",
@@ -51,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 127,
+        "char_start": 129,
         "char_end": 140
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "second link",
+      "span_match_key": "second link"
     },
     {
       "component_id": "second_joint",
@@ -64,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 181,
+        "char_start": 183,
         "char_end": 204
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "second revolute joint",
+      "span_match_key": "second revolute joint"
     },
     {
       "component_id": "end_effector",
@@ -77,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 206,
+        "char_start": 209,
         "char_end": 221
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "end effector",
+      "span_match_key": "end effector"
     },
     {
       "component_id": "gripper",
@@ -90,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 457,
+        "char_start": 459,
         "char_end": 466
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "gripper",
+      "span_match_key": "gripper"
     },
     {
       "component_id": "fastener",
@@ -103,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 271,
+        "char_start": 273,
         "char_end": 281
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "fastener",
+      "span_match_key": "fastener"
     },
     {
       "component_id": "position_sensor",
@@ -116,9 +140,12 @@
       "is_dependent": true,
       "source_span": {
         "claim_id": "claim_2",
-        "char_start": 67,
+        "char_start": 69,
         "char_end": 84
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "position sensor",
+      "span_match_key": "position sensor"
     }
   ]
 }

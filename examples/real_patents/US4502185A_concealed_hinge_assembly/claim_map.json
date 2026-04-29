@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US4502185A_concealed_hinge_assembly",
   "glb_path": "model.glb",
   "components": [
@@ -15,7 +15,9 @@
         "char_start": 8,
         "char_end": 19
       },
-      "figure_number": "10"
+      "span_verified": true,
+      "span_extracted": "card screen",
+      "span_match_key": "card screen"
     },
     {
       "component_id": "side_ribs",
@@ -29,7 +31,9 @@
         "char_start": 52,
         "char_end": 61
       },
-      "figure_number": "11"
+      "span_verified": true,
+      "span_extracted": "side ribs",
+      "span_match_key": "side ribs"
     },
     {
       "component_id": "center_rib",
@@ -43,7 +47,9 @@
         "char_start": 68,
         "char_end": 78
       },
-      "figure_number": "12"
+      "span_verified": true,
+      "span_extracted": "center rib",
+      "span_match_key": "center rib"
     },
     {
       "component_id": "end_bars",
@@ -54,10 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 111,
-        "char_end": 119
+        "char_start": 106,
+        "char_end": 123
       },
-      "figure_number": "13"
+      "span_verified": true,
+      "span_extracted": "end and grid bars",
+      "span_match_key": "token-set:end bars"
     },
     {
       "component_id": "grid_bars",
@@ -68,10 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 124,
-        "char_end": 133
+        "char_start": 114,
+        "char_end": 123
       },
-      "figure_number": "14"
+      "span_verified": true,
+      "span_extracted": "grid bars",
+      "span_match_key": "grid bars"
     },
     {
       "component_id": "side_rib_openings",
@@ -82,10 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 168,
-        "char_end": 176
+        "char_start": 180,
+        "char_end": 188
       },
-      "figure_number": "15"
+      "span_verified": true,
+      "span_extracted": "openings",
+      "span_match_key": "openings"
     },
     {
       "component_id": "center_rib_openings",
@@ -96,10 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 316,
-        "char_end": 348
+        "char_start": 325,
+        "char_end": 331
       },
-      "figure_number": "16"
+      "span_verified": true,
+      "span_extracted": "groups",
+      "span_match_key": "groups"
     },
     {
       "component_id": "first_group_bars",
@@ -113,7 +127,9 @@
         "char_start": 463,
         "char_end": 482
       },
-      "figure_number": "17"
+      "span_verified": true,
+      "span_extracted": "first group of bars",
+      "span_match_key": "first group of bars"
     },
     {
       "component_id": "pins",
@@ -124,10 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 558,
-        "char_end": 571
+        "char_start": 566,
+        "char_end": 579
       },
-      "figure_number": "18"
+      "span_verified": true,
+      "span_extracted": "group of pins",
+      "span_match_key": "group of pins"
     },
     {
       "component_id": "second_group_bars",
@@ -138,10 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 638,
-        "char_end": 658
+        "char_start": 648,
+        "char_end": 668
       },
-      "figure_number": "19"
+      "span_verified": true,
+      "span_extracted": "second group of bars",
+      "span_match_key": "second group of bars"
     },
     {
       "component_id": "sockets",
@@ -152,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 742,
-        "char_end": 758
+        "char_start": 754,
+        "char_end": 759
       },
-      "figure_number": "20"
+      "span_verified": true,
+      "span_extracted": "group",
+      "span_match_key": "group"
     },
     {
       "component_id": "fastening_means",
@@ -166,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 1043,
-        "char_end": 1058
+        "char_start": 1121,
+        "char_end": 1136
       },
-      "figure_number": "21"
+      "span_verified": true,
+      "span_extracted": "fastening means",
+      "span_match_key": "fastening means"
     }
   ]
 }

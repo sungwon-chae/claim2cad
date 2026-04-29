@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "korean_robot_arm",
   "glb_path": "model.glb",
   "components": [
@@ -14,7 +14,10 @@
         "claim_id": "claim_1",
         "char_start": 8,
         "char_end": 11
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "\ubca0\uc774\uc2a4",
+      "span_match_key": "\ubca0\uc774\uc2a4"
     },
     {
       "component_id": "first_link",
@@ -25,9 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 12,
-        "char_end": 37
-      }
+        "char_start": 33,
+        "char_end": 38
+      },
+      "span_verified": true,
+      "span_extracted": "\uc81c1 \ub9c1\ud06c",
+      "span_match_key": "\uc81c1 \ub9c1\ud06c"
     },
     {
       "component_id": "second_link",
@@ -38,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 38,
-        "char_end": 63
-      }
+        "char_start": 62,
+        "char_end": 67
+      },
+      "span_verified": true,
+      "span_extracted": "\uc81c2 \ub9c1\ud06c",
+      "span_match_key": "\uc81c2 \ub9c1\ud06c"
     },
     {
       "component_id": "gripper",
@@ -51,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 64,
-        "char_end": 83
-      }
+        "char_start": 87,
+        "char_end": 90
+      },
+      "span_verified": true,
+      "span_extracted": "\uadf8\ub9ac\ud37c",
+      "span_match_key": "\uadf8\ub9ac\ud37c"
     },
     {
       "component_id": "sensor",
@@ -64,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 88,
-        "char_end": 101
-      }
+        "char_start": 106,
+        "char_end": 108
+      },
+      "span_verified": true,
+      "span_extracted": "\uc13c\uc11c",
+      "span_match_key": "\uc13c\uc11c"
     },
     {
       "component_id": "finger_pair",
@@ -78,8 +93,11 @@
       "source_span": {
         "claim_id": "claim_2",
         "char_start": 55,
-        "char_end": 72
-      }
+        "char_end": 62
+      },
+      "span_verified": true,
+      "span_extracted": "\ud55c \uc30d\uc758 \ud551\uac70",
+      "span_match_key": "\ud55c \uc30d\uc758 \ud551\uac70"
     }
   ]
 }

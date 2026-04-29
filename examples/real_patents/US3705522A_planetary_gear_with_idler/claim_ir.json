@@ -24,8 +24,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 40,
-        "char_end": 59
+        "char_start": 42,
+        "char_end": 60
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -65,8 +65,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 64,
-        "char_end": 75
+        "char_start": 65,
+        "char_end": 76
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -138,8 +138,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 190,
-        "char_end": 210
+        "char_start": 445,
+        "char_end": 465
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -160,8 +160,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 215,
-        "char_end": 236
+        "char_start": 199,
+        "char_end": 220
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -264,8 +264,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 362,
-        "char_end": 378
+        "char_start": 363,
+        "char_end": 379
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -297,8 +297,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 406,
-        "char_end": 425
+        "char_start": 407,
+        "char_end": 426
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -331,8 +331,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 503,
-        "char_end": 523
+        "char_start": 507,
+        "char_end": 527
       },
       "is_dependent": false,
       "dependent_on": null,
@@ -355,8 +355,8 @@
       ],
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 700,
-        "char_end": 719
+        "char_start": 705,
+        "char_end": 724
       },
       "is_dependent": false,
       "dependent_on": null,

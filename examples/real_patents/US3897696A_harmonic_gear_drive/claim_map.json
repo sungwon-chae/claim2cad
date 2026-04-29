@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US3897696A_harmonic_gear_drive",
   "glb_path": "model.glb",
   "components": [
@@ -12,9 +12,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 7,
-        "char_end": 21
-      }
+        "char_start": 8,
+        "char_end": 20
+      },
+      "span_verified": true,
+      "span_extracted": "transmission",
+      "span_match_key": "transmission"
     },
     {
       "component_id": "gear_train_1",
@@ -25,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 32,
-        "char_end": 43
+        "char_start": 0,
+        "char_end": 0
       },
-      "figure_number": "21"
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "gear_train_2",
@@ -39,10 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 32,
-        "char_end": 43
+        "char_start": 0,
+        "char_end": 0
       },
-      "figure_number": "20"
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "intermediate_shaft_1",
@@ -53,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 52,
-        "char_end": 71
-      }
+        "char_start": 0,
+        "char_end": 0
+      },
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "intermediate_shaft_2",
@@ -66,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 52,
-        "char_end": 71
-      }
+        "char_start": 0,
+        "char_end": 0
+      },
+      "span_verified": false,
+      "span_extracted": "",
+      "span_match_key": ""
     },
     {
       "component_id": "drive_shaft",
@@ -79,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 88,
-        "char_end": 99
-      }
+        "char_start": 93,
+        "char_end": 104
+      },
+      "span_verified": true,
+      "span_extracted": "drive shaft",
+      "span_match_key": "drive shaft"
     },
     {
       "component_id": "transmission_stage",
@@ -92,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 115,
-        "char_end": 134
-      }
+        "char_start": 137,
+        "char_end": 155
+      },
+      "span_verified": true,
+      "span_extracted": "transmission stage",
+      "span_match_key": "transmission stage"
     },
     {
       "component_id": "pinion",
@@ -105,10 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 181,
-        "char_end": 187
+        "char_start": 182,
+        "char_end": 188
       },
-      "figure_number": "8"
+      "span_verified": true,
+      "span_extracted": "pinion",
+      "span_match_key": "pinion"
     },
     {
       "component_id": "gear",
@@ -119,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 213,
-        "char_end": 217
-      }
+        "char_start": 219,
+        "char_end": 223
+      },
+      "span_verified": true,
+      "span_extracted": "gear",
+      "span_match_key": "gear"
     },
     {
       "component_id": "driven_machine",
@@ -132,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 296,
-        "char_end": 330
-      }
+        "char_start": 313,
+        "char_end": 347
+      },
+      "span_verified": true,
+      "span_extracted": "machine driven by the transmission",
+      "span_match_key": "machine driven by the transmission"
     },
     {
       "component_id": "pair_of_frames",
@@ -145,10 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 444,
-        "char_end": 458
+        "char_start": 446,
+        "char_end": 460
       },
-      "figure_number": "19"
+      "span_verified": true,
+      "span_extracted": "pair of frames",
+      "span_match_key": "pair of frames"
     },
     {
       "component_id": "frame_1",
@@ -159,10 +188,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 502,
-        "char_end": 508
+        "char_start": 454,
+        "char_end": 459
       },
-      "figure_number": "34"
+      "span_verified": true,
+      "span_extracted": "frame",
+      "span_match_key": "frame"
     },
     {
       "component_id": "frame_2",
@@ -173,9 +204,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 502,
-        "char_end": 508
-      }
+        "char_start": 520,
+        "char_end": 525
+      },
+      "span_verified": true,
+      "span_extracted": "frame",
+      "span_match_key": "frame"
     }
   ]
 }

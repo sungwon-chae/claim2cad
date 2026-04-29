@@ -22,11 +22,19 @@
       "category": "structural",
       "kind": "frame",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 48, "char_end": 54 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 50,
+        "char_end": 54
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_link",
@@ -34,11 +42,19 @@
       "category": "structural",
       "kind": "rod",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 56, "char_end": 68 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 58,
+        "char_end": 68
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "first_joint",
@@ -46,11 +62,21 @@
       "category": "connection",
       "kind": "revolute_joint",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
-      "constraints": ["single degree of rotational freedom"],
-      "source_span": { "claim_id": "claim_1", "char_start": 103, "char_end": 125 },
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "single degree of rotational freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 105,
+        "char_end": 125
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_link",
@@ -58,11 +84,20 @@
       "category": "structural",
       "kind": "rod",
       "parent_id": null,
-      "dimension": { "kind": "relative", "description": "comparable in length to the first link" },
+      "dimension": {
+        "kind": "relative",
+        "description": "comparable in length to the first link"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 127, "char_end": 140 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 129,
+        "char_end": 140
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "second_joint",
@@ -70,11 +105,21 @@
       "category": "connection",
       "kind": "revolute_joint",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
-      "constraints": ["single degree of rotational freedom"],
-      "source_span": { "claim_id": "claim_1", "char_start": 181, "char_end": 204 },
+      "dimension": {
+        "kind": "unspecified"
+      },
+      "constraints": [
+        "single degree of rotational freedom"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 183,
+        "char_end": 204
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "end_effector",
@@ -82,11 +127,19 @@
       "category": "functional",
       "kind": "end_effector",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 206, "char_end": 221 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 209,
+        "char_end": 221
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "gripper",
@@ -94,11 +147,19 @@
       "category": "functional",
       "kind": "end_effector",
       "parent_id": "end_effector",
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 457, "char_end": 466 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 459,
+        "char_end": 466
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "fastener",
@@ -106,11 +167,19 @@
       "category": "connection",
       "kind": "fastener",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 271, "char_end": 281 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 273,
+        "char_end": 281
+      },
       "is_dependent": false,
-      "dependent_on": null
+      "dependent_on": null,
+      "figure_number": null,
+      "figure_references": []
     },
     {
       "id": "position_sensor",
@@ -118,11 +187,19 @@
       "category": "functional",
       "kind": "sensor",
       "parent_id": null,
-      "dimension": { "kind": "unspecified" },
+      "dimension": {
+        "kind": "unspecified"
+      },
       "constraints": [],
-      "source_span": { "claim_id": "claim_2", "char_start": 67, "char_end": 84 },
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 69,
+        "char_end": 84
+      },
       "is_dependent": true,
-      "dependent_on": "claim_1"
+      "dependent_on": "claim_1",
+      "figure_number": null,
+      "figure_references": []
     }
   ],
   "relations": [
@@ -133,7 +210,11 @@
       "target": "base",
       "via": "first_joint",
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 69, "char_end": 125 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 69,
+        "char_end": 125
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -144,7 +225,11 @@
       "target": "first_link",
       "via": "second_joint",
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 141, "char_end": 204 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 141,
+        "char_end": 204
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -154,8 +239,14 @@
       "source": "end_effector",
       "target": "second_link",
       "via": null,
-      "constraints": ["at the distal end"],
-      "source_span": { "claim_id": "claim_1", "char_start": 222, "char_end": 265 },
+      "constraints": [
+        "at the distal end"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 222,
+        "char_end": 265
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -165,8 +256,14 @@
       "source": "fastener",
       "target": "base",
       "via": null,
-      "constraints": ["securing to mounting surface"],
-      "source_span": { "claim_id": "claim_1", "char_start": 282, "char_end": 321 },
+      "constraints": [
+        "securing to mounting surface"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 282,
+        "char_end": 321
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -177,7 +274,11 @@
       "target": "first_joint",
       "via": null,
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 105, "char_end": 125 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 105,
+        "char_end": 125
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -188,7 +289,11 @@
       "target": "second_joint",
       "via": null,
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 183, "char_end": 204 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 183,
+        "char_end": 204
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -199,7 +304,11 @@
       "target": "gripper",
       "via": null,
       "constraints": [],
-      "source_span": { "claim_id": "claim_1", "char_start": 431, "char_end": 466 },
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 431,
+        "char_end": 466
+      },
       "is_dependent": false,
       "dependent_on": null
     },
@@ -210,7 +319,11 @@
       "target": "second_link",
       "via": null,
       "constraints": [],
-      "source_span": { "claim_id": "claim_2", "char_start": 85, "char_end": 111 },
+      "source_span": {
+        "claim_id": "claim_2",
+        "char_start": 85,
+        "char_end": 111
+      },
       "is_dependent": true,
       "dependent_on": "claim_1"
     }
@@ -219,16 +332,30 @@
     {
       "id": "wherein_revolute",
       "text": "wherein each of the first and second revolute joints has a single degree of rotational freedom",
-      "targets": ["first_joint", "second_joint"],
-      "source_span": { "claim_id": "claim_1", "char_start": 323, "char_end": 417 },
+      "targets": [
+        "first_joint",
+        "second_joint"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 323,
+        "char_end": 417
+      },
       "is_dependent": false,
       "dependent_on": null
     },
     {
       "id": "wherein_gripper",
       "text": "wherein the end effector includes a gripper",
-      "targets": ["end_effector", "gripper"],
-      "source_span": { "claim_id": "claim_1", "char_start": 423, "char_end": 466 },
+      "targets": [
+        "end_effector",
+        "gripper"
+      ],
+      "source_span": {
+        "claim_id": "claim_1",
+        "char_start": 423,
+        "char_end": 466
+      },
       "is_dependent": false,
       "dependent_on": null
     }

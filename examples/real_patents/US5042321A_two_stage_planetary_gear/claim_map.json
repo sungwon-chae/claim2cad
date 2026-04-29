@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "example": "US5042321A_two_stage_planetary_gear",
   "glb_path": "model.glb",
   "components": [
@@ -14,7 +14,10 @@
         "claim_id": "claim_1",
         "char_start": 77,
         "char_end": 83
-      }
+      },
+      "span_verified": true,
+      "span_extracted": "engine",
+      "span_match_key": "engine"
     },
     {
       "component_id": "first_housing",
@@ -25,10 +28,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 125,
-        "char_end": 138
+        "char_start": 127,
+        "char_end": 140
       },
-      "figure_number": "2"
+      "span_verified": true,
+      "span_extracted": "first housing",
+      "span_match_key": "first housing"
     },
     {
       "component_id": "power_transmitting_device",
@@ -39,9 +44,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 199,
-        "char_end": 223
-      }
+        "char_start": 200,
+        "char_end": 225
+      },
+      "span_verified": true,
+      "span_extracted": "power transmitting device",
+      "span_match_key": "power transmitting device"
     },
     {
       "component_id": "transmission_device",
@@ -52,9 +60,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 272,
-        "char_end": 291
-      }
+        "char_start": 274,
+        "char_end": 293
+      },
+      "span_verified": true,
+      "span_extracted": "transmission device",
+      "span_match_key": "transmission device"
     },
     {
       "component_id": "second_housing",
@@ -65,9 +76,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 293,
-        "char_end": 307
-      }
+        "char_start": 297,
+        "char_end": 311
+      },
+      "span_verified": true,
+      "span_extracted": "second housing",
+      "span_match_key": "second housing"
     },
     {
       "component_id": "differential_housing",
@@ -78,9 +92,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 406,
-        "char_end": 426
-      }
+        "char_start": 414,
+        "char_end": 434
+      },
+      "span_verified": true,
+      "span_extracted": "differential housing",
+      "span_match_key": "differential housing"
     },
     {
       "component_id": "output_shaft",
@@ -91,9 +108,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 510,
-        "char_end": 536
-      }
+        "char_start": 519,
+        "char_end": 545
+      },
+      "span_verified": true,
+      "span_extracted": "output shaft of the engine",
+      "span_match_key": "output shaft of the engine"
     },
     {
       "component_id": "reinforcement_element",
@@ -104,9 +124,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 542,
-        "char_end": 563
-      }
+        "char_start": 553,
+        "char_end": 574
+      },
+      "span_verified": true,
+      "span_extracted": "reinforcement element",
+      "span_match_key": "reinforcement element"
     },
     {
       "component_id": "end_portions",
@@ -117,9 +140,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 571,
-        "char_end": 591
-      }
+        "char_start": 584,
+        "char_end": 604
+      },
+      "span_verified": true,
+      "span_extracted": "pair of end portions",
+      "span_match_key": "pair of end portions"
     },
     {
       "component_id": "one_end_portion",
@@ -130,9 +156,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 593,
-        "char_end": 608
-      }
+        "char_start": 606,
+        "char_end": 621
+      },
+      "span_verified": true,
+      "span_extracted": "one end portion",
+      "span_match_key": "one end portion"
     },
     {
       "component_id": "another_end_portion",
@@ -143,9 +172,12 @@
       "is_dependent": false,
       "source_span": {
         "claim_id": "claim_1",
-        "char_start": 643,
-        "char_end": 662
-      }
+        "char_start": 654,
+        "char_end": 673
+      },
+      "span_verified": true,
+      "span_extracted": "another end portion",
+      "span_match_key": "another end portion"
     }
   ]
 }

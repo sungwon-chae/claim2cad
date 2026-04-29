@@ -322,6 +322,8 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
             "figure_view.json",
             "shape_inference.json",
             "solver_diagnostics.json",
+            "scene_scaffold.json",
+            "assembly_diagnostics.json",
             "render_comparison.png",
         ):
             src_p = src_dir / optional

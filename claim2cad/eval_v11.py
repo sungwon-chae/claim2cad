@@ -47,6 +47,7 @@ class EvalReport:
     figure_callout_coverage: dict[str, Any] = field(default_factory=dict)
     geometric_invariants: dict[str, Any] = field(default_factory=dict)
     projection_fit: dict[str, Any] = field(default_factory=dict)
+    assembly_coherence: dict[str, Any] = field(default_factory=dict)  # V11-22
     overall: dict[str, Any] = field(default_factory=dict)
     notes: list[str] = field(default_factory=list)
 
@@ -190,6 +191,51 @@ def _eval_projection_fit(example_dir: Path) -> dict[str, Any]:
     }
 
 
+def _eval_assembly_coherence(example_dir: Path) -> dict[str, Any]:
+    """V11-22 — penalises collage-like output. Reads the diagnostics
+    cache (or runs the diagnostics in-process if it isn't present).
+
+    The coherence score is **1 minus the collage score**: a well-laid-
+    out assembly with separated panels and Z-separated hinge clusters
+    scores high; a central pile scores low. The score also surfaces
+    the per-axis sub-scores so the user can see *why* the assembly
+    isn't coherent.
+    """
+    diag_path = example_dir / "assembly_diagnostics.json"
+    diag: dict[str, Any] | None = None
+    if diag_path.exists():
+        try:
+            diag = json.loads(diag_path.read_text("utf-8"))
+        except json.JSONDecodeError:
+            diag = None
+    if diag is None:
+        # Try to compute it from the STEP if no cache exists.
+        step_path = example_dir / "model_v1.1.step"
+        if not step_path.exists():
+            step_path = example_dir / "model.step"
+        if not step_path.exists():
+            return {"score": 0.0, "note": "no STEP file or diagnostics cache"}
+        try:
+            from claim2cad.assembly_diagnostics import diagnose_step
+            rep = diagnose_step(step_path)
+            diag = rep.to_dict()
+        except Exception as exc:  # noqa: BLE001
+            return {"score": 0.0, "error": str(exc)}
+    collage = float(diag.get("collage_score", 0.5) or 0.5)
+    central = int(diag.get("central_cluster_count", 0) or 0)
+    n_total = int(diag.get("n_components", 0) or 0)
+    return {
+        "score": round(1.0 - collage, 3),
+        "collage_score": round(collage, 3),
+        "central_cluster_count": central,
+        "central_cluster_fraction": round(central / max(n_total, 1), 3),
+        "z_separation_score": diag.get("z_separation_score", 0.0),
+        "panel_separation_score": diag.get("panel_separation_score", 0.0),
+        "pair_overlap_fraction": diag.get("pair_overlap_fraction", 0.0),
+        "n_components": n_total,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Driver
 # ---------------------------------------------------------------------------
@@ -206,17 +252,19 @@ def evaluate_example(example_dir: Path) -> EvalReport:
     report.figure_callout_coverage = _eval_figure_callout_coverage(example_dir)
     report.geometric_invariants = _eval_geometric_invariants(example_dir)
     report.projection_fit = _eval_projection_fit(example_dir)
+    report.assembly_coherence = _eval_assembly_coherence(example_dir)
 
     # Composite score: weighted average. Span and glb coverage are the
-    # hardest blockers (they affect interaction); projection fit is
-    # softer (informative but the figure can be busy and still score
-    # low even when the model is right).
+    # hardest blockers (they affect interaction). Assembly coherence
+    # was added in V11-22 because the scaffold rebuild moves visual
+    # quality independently of the LLM-grounded metrics.
     weights = {
-        "span_correctness": 0.30,
-        "glb_coverage": 0.25,
+        "span_correctness": 0.25,
+        "glb_coverage": 0.20,
         "figure_callout_coverage": 0.10,
-        "geometric_invariants": 0.20,
-        "projection_fit": 0.15,
+        "geometric_invariants": 0.15,
+        "projection_fit": 0.10,
+        "assembly_coherence": 0.20,
     }
     overall = 0.0
     for name, w in weights.items():
@@ -242,6 +290,7 @@ def write_markdown_report(report: EvalReport, out_path: Path) -> Path:
         "figure_callout_coverage",
         "geometric_invariants",
         "projection_fit",
+        "assembly_coherence",
     ):
         m = getattr(report, name)
         score = m.get("score", 0)

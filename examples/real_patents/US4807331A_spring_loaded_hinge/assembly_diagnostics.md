@@ -1,13 +1,13 @@
 # Assembly diagnostics
 
-**collage_score: 0.060** (lower = more coherent)
+**collage_score: 0.059** (lower = more coherent)
 
 ## Summary
 
 - components: **26**
 - centres within 30 mm of origin: **3/26**
 - centre spread (stdev mm): X=64.4  Y=6.7  Z=60.4
-- pair bbox overlap > 0.10: **13** pairs (4.0%)
+- pair bbox overlap > 0.10: **12** pairs (3.7%)
 - z_separation_score: 0.972  (1.0 = clusters separated, 0.0 = all squeezed together)
 - panel_separation_score: 1.000  (1.0 = door + frame on different planes)
 
@@ -16,9 +16,9 @@
 |---|---|---|
 | `_scaffold_door_panel` | 180×6×240 | (-120.0, 0.0, 0.0) |
 | `vehicle_body` | 200×200×8 | (60.0, 0.0, 0.0) |
+| `pintle_pin` | 10×10×226 | (0.0, 0.0, 3.1) |
 | `hinge_body_half_assembly` | 63×60×180 | (28.5, 0.0, 90.0) |
 | `mounting_wall` | 60×160×3 | (60.0, 0.0, 0.0) |
-| `second_sidewall` | 8×160×40 | (-120.0, 0.0, 0.0) |
 
 ## High-overlap pairs (Jaccard > 0.5)
 - `base_wall_exterior_guide_surface` ↔ `leg_guide_edge_surface` (jaccard=1.00)
@@ -39,7 +39,7 @@
 | id | centre | size |
 |---|---|---|
 | `_scaffold_door_panel` | (-120.0, 0.0, 0.0) | 180×6×240 |
-| `pintle_pin` | (0.0, 0.0, 3.1) | 10×10×66 |
+| `pintle_pin` | (0.0, 0.0, 3.1) | 10×10×226 |
 | `hinge_body_half_assembly` | (28.5, 0.0, 90.0) | 63×60×180 |
 | `body_half_sub_assembly` | (88.5, 0.0, 0.0) | 63×80×120 |
 | `vehicle_body` | (60.0, 0.0, 0.0) | 200×200×8 |

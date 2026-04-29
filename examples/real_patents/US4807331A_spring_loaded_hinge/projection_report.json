@@ -17,7 +17,7 @@
       "elev_deg": 0.0,
       "azim_deg": -90.0,
       "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_front.png",
-      "silhouette_area_ratio": 0.1073093133837099,
+      "silhouette_area_ratio": 0.10811960980144597,
       "aspect_ratio": 1.1515957446808511
     },
     {
@@ -33,7 +33,7 @@
       "elev_deg": 25.0,
       "azim_deg": 45.0,
       "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_iso.png",
-      "silhouette_area_ratio": 0.11430518652521027,
+      "silhouette_area_ratio": 0.1143742815685831,
       "aspect_ratio": 1.0842696629213484
     }
   ]

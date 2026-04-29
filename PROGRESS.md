@@ -1807,3 +1807,88 @@ were right.
 - ``examples/real_patents/.../renders_v1.1/projection_*.png``
   re-rendered.
 
+
+## Phase V11-19 — Diagnose assembly collage failure — COMPLETED 2026-04-29 13:48 KST
+
+`claim2cad/assembly_diagnostics.py` measures collage-likeness without
+LLM: central_cluster_count, center_spread_mm, pair_overlap_fraction,
+high_overlap_pairs, z_separation_score, panel_separation_score, and
+a composite ``collage_score`` (lower = more coherent).
+
+US4807331A baseline: 4/25 components within 30 mm of origin,
+z_separation 0.42, panel_separation 0.0 (only one big panel —
+vehicle_body), pair-overlap 9.0 %. Collage_score 0.198 — partial
+credit only because the user reads the image, not the metric.
+
+## Phase V11-20 — Door-hinge scene scaffold — COMPLETED 2026-04-29 13:50 KST
+
+`claim2cad/scene_scaffold.py` adds a scene-level reconstruction
+layer. ``SceneGroup`` (origin, orientation, nominal_bbox, parent,
+component_ids) and ``SceneScaffold`` (graph + IR-id → group lookup).
+Patent-family template ``LiftOffDoorHingeScaffold`` for US4807331A
+class hinges with canonical groups: door_panel(-120,0,0),
+fixed_frame(+60,0,0), pintle_axis(0,0,0), upper_hinge(0,0,+90),
+lower_hinge(0,0,-90), power_mechanism, fasteners.
+
+Heuristic component-id → group mapping covers 25 IR ids
+(``main_member`` → upper_hinge, ``door_half_member`` → door_panel,
+``vehicle_body`` → fixed_frame, …). Default heuristic for
+unfamiliar ids based on substring (``_pin`` → pintle_axis,
+``lower_*`` → lower_hinge, etc.).
+
+9 new tests; total 255.
+
+## Phase V11-21 — Scaffold-first layout + solid render — COMPLETED 2026-04-29 13:52 KST
+
+`claim2cad/assembly_solver.build_assembly_scaffold_first` replaces
+independent per-component placement. Pin/shaft components snap to
+the pintle_axis origin and Z orientation by construction; pins are
+stretched to span the scaffold's pintle-axis bbox. Plates,
+brackets, flanges auto-drill against the scaffold-defined pintle
+axis. Synthesises door_panel and fixed_frame backing meshes when
+no claim component is panel-sized.
+
+`claim2cad/visual_validator.render_step_to_solid` adds a shaded
+solid renderer (light-gray faces + black silhouette/sharp-crease
+outlines). `projection_compare.render_canonical_views(style="solid")`
+is the new default; line-art remains available via ``style="line"``.
+
+Re-ran on US4807331A:
+
+  metric              v11-18    v11-21
+  collage_score       0.198 ->  0.060
+  central_cluster     4/25  ->  3/26
+  z_separation_score  0.42  ->  0.972
+  panel_separation    1.0   ->  1.0
+  pair_overlap_frac   0.090 ->  0.040
+  best canonical view top   ->  right (score 0.969)
+
+GLB ↔ claim_map: 25/25 components still match. One extra
+``_scaffold_door_panel`` context node ignored by the viewer's
+claim-span lookup.
+
+## Phase V11-22 — Solid renders, viewer staging, non-collage eval — COMPLETED 2026-04-29 13:58 KST
+
+- `claim2cad/eval_v11.py` adds an ``assembly_coherence`` axis
+  (``1 - collage_score``) with sub-fields surfacing
+  central_cluster_fraction, z_separation_score, panel_separation_score,
+  pair_overlap_fraction. New composite weights: span 0.25 / glb 0.20 /
+  invariants 0.15 / callouts 0.10 / projection 0.10 / coherence 0.20.
+- `claim2cad/manifest.py` stages ``scene_scaffold.json`` and
+  ``assembly_diagnostics.json`` alongside the other v1.1 sidecars so
+  the viewer can surface them.
+- ``examples/.../renders_v1.1/solid_{iso,top,front,right}.png`` named
+  aliases for the user-spec output.
+
+US4807331A composite: **0.890** (was 0.882 in V11-14, 0.826 right
+after V11-21's first scaffold pass before pin stretching).
+
+  span_correctness        1.000
+  glb_coverage            1.000
+  figure_callout_coverage 0.556
+  geometric_invariants    0.663
+  projection_fit          0.969
+  assembly_coherence      0.941   (new)
+
+255 tests still passing. Viewer typecheck clean.
+

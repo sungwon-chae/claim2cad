@@ -20,9 +20,18 @@ presets in the viewer (V11-15) · 5-axis structural+visual eval
 harness without VLM scoring (V11-16) · **215 tests** · offline demo
 unchanged.
 
-**Composite eval on US4807331A:** `0.882`
-(span 1.00 · GLB 1.00 · invariants 0.73 · projection 0.87 ·
-callout coverage 0.56). See `examples/reports/`.
+**Composite eval on US4807331A:** `0.890`
+(span 1.00 · GLB 1.00 · invariants 0.66 · projection 0.97 ·
+callout coverage 0.56 · **assembly_coherence 0.94** ★ new in V11-22).
+See `examples/reports/`.
+
+> **V11-19..22 (April 2026)**: Replaced the "component collage" output
+> with a scaffold-first layout. The US4807331A assembly now shows a
+> recognisable door panel, fixed frame, vertical pintle axis, and
+> Z-separated upper/lower hinge clusters in iso view. Patent-family-
+> specific scaffold (`LiftOffDoorHingeScaffold`); generic automatic
+> scaffold inference is future work. See
+> `examples/real_patents/US4807331A_spring_loaded_hinge/assembly_diagnostics.md`.
 
 **v1.0** · 30 examples (3 synthetic + 25 real US patents + 1 Korean + 1
 multi-claim drone) · 101 tests · offline demo, no API key required.

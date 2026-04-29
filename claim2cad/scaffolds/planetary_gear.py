@@ -58,6 +58,36 @@ def _ring(outer_r: float, inner_r: float, h: float) -> bd.Part:
     return o - i
 
 
+def _toothed_disc(radius: float, height: float, *,
+                   n_teeth: int, tooth_depth: float = 1.6) -> bd.Part:
+    """Cylinder with N small radial 'teeth' protruding from its
+    rim. The plan view (top camera) shows them as a clear gear
+    silhouette — important for reading the planetary geometry."""
+    body = bd.Cylinder(radius=radius, height=height)
+    for i in range(n_teeth):
+        ang = (360.0 / n_teeth) * i
+        tooth = bd.Box(tooth_depth * 1.6, 1.4, height * 0.85)
+        tooth = tooth.translate((radius + tooth_depth * 0.5,
+                                   0.0, 0.0))
+        tooth = tooth.rotate(bd.Axis.Z, ang)
+        body = body + tooth
+    return body
+
+
+def _toothed_ring(outer_r: float, inner_r: float, h: float,
+                   *, n_teeth: int, tooth_depth: float = 1.8) -> bd.Part:
+    """Hollow ring with internal-pointing teeth on the inner rim."""
+    body = _ring(outer_r, inner_r, h)
+    for i in range(n_teeth):
+        ang = (360.0 / n_teeth) * i
+        tooth = bd.Box(tooth_depth * 1.6, 1.4, h * 0.8)
+        tooth = tooth.translate((inner_r - tooth_depth * 0.4,
+                                   0.0, 0.0))
+        tooth = tooth.rotate(bd.Axis.Z, ang)
+        body = body + tooth
+    return body
+
+
 _PLANET_KEYWORDS = ("planet pinion", "planet gear", "planet wheel",
                      "idler pinion", "idler gear")
 
@@ -115,19 +145,22 @@ class PlanetaryGearScaffold(Scaffold):
             ))
 
         # ---- Build canonical structural meshes ----
-        housing = _ring(_HOUSING_R, _HOUSING_INNER_R, _HOUSING_H)
-        sun_gear = bd.Cylinder(radius=_SUN_R, height=_SUN_H)
+        # V13-S: housing is a SHORT outer ring (not a tall hollow
+        # cylinder) so the plan view doesn't drown the gears in
+        # translucent walls.
+        housing = _ring(_HOUSING_R, _HOUSING_INNER_R, _HOUSING_H * 0.45)
+        sun_gear = _toothed_disc(_SUN_R, _SUN_H, n_teeth=14)
         carrier = _ring(_CARRIER_R, _CARRIER_INNER_R, _CARRIER_H)
         carrier = carrier.translate((0.0, 0.0, +_HOUSING_H * 0.5 - _CARRIER_H * 0.5 - 2.0))
-        # Ring gears stacked along Z (sectional view of US3705522A
-        # has two ring gears side-by-side).
+        # Ring gears with internal teeth — clear gear silhouette
+        # in plan view. Stacked along Z.
         ring_meshes: list[bd.Part] = []
         ring_zs = [-_RING_H * 0.6, +_RING_H * 0.6]
         for i in range(max(2, len(ring_cids))):
             z = ring_zs[i % 2] if len(ring_cids) <= 2 else (
                 -_RING_H * 0.8 + i * (_RING_H * 1.2))
-            r = _ring(_RING_R, _RING_INNER_R, _RING_H).translate(
-                (0.0, 0.0, z))
+            r = _toothed_ring(_RING_R, _RING_INNER_R, _RING_H,
+                                n_teeth=24).translate((0.0, 0.0, z))
             ring_meshes.append(r)
 
         # Shafts extend along ±Z from the housing ends.
@@ -177,7 +210,8 @@ class PlanetaryGearScaffold(Scaffold):
                     angle = 2.0 * math.pi * idx / max(n_planets, 1)
                     cx = (_ORBIT_R - 6.0) * math.cos(angle)
                     cy = (_ORBIT_R - 6.0) * math.sin(angle)
-                pinion = bd.Cylinder(radius=_PLANET_R, height=_PLANET_H)
+                pinion = _toothed_disc(_PLANET_R, _PLANET_H,
+                                         n_teeth=10)
                 pinion = pinion.translate((cx, cy, 0.0))
                 pinion.label = cid
                 children.append(pinion)
@@ -253,7 +287,7 @@ class PlanetaryGearScaffold(Scaffold):
         # at least 3 so the orbital geometry reads).
         for i in range(used_planet_idx, n_planets):
             cx, cy = planet_positions[i]
-            pinion = bd.Cylinder(radius=_PLANET_R, height=_PLANET_H)
+            pinion = _toothed_disc(_PLANET_R, _PLANET_H, n_teeth=10)
             pinion = pinion.translate((cx, cy, 0.0))
             pinion.label = f"planet_pinion_{i + 1}"
             children.append(pinion)

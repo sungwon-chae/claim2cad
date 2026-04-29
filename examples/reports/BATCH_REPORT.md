@@ -4,4 +4,4 @@
 
 | ID | status | scaffold | quality | components | glb children | notes |
 |---|---|---|---|---:|---:|---|
-| `US4470181A_self_closing_hinge` | **ok** | self_closing_hinge_mechanism | good | 14 | 21 |  |
+| `US3705522A_planetary_gear_with_idler` | **ok** | planetary_gear | good | 11 | 12 |  |

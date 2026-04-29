@@ -2,12 +2,12 @@
   "n_examples": 1,
   "examples": [
     {
-      "example_id": "US4470181A_self_closing_hinge",
+      "example_id": "US3705522A_planetary_gear_with_idler",
       "status": "ok",
-      "scaffold_id": "self_closing_hinge_mechanism",
+      "scaffold_id": "planetary_gear",
       "quality_tier": "good",
-      "n_components": 14,
-      "n_glb_children": 21,
+      "n_components": 11,
+      "n_glb_children": 12,
       "error": "",
       "notes": ""
     }

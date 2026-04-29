@@ -1,0 +1,340 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US4955250A_multiple_forearm_robot/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "10",
+      "label_index": 0,
+      "label_position_uv": [
+        0.39,
+        0.51
+      ],
+      "label_bbox_px": [
+        853.7600000000001,
+        1700.5919999999999,
+        955.84,
+        1775.568
+      ],
+      "line_start_px": [
+        959.0,
+        1761.0
+      ],
+      "line_end_px": [
+        728.0,
+        1757.0
+      ],
+      "length_px": 231.03462943896528,
+      "confidence": 0.912,
+      "method": "hough",
+      "notes": "label_dist=3.2px"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 1,
+      "label_position_uv": [
+        0.43,
+        0.69
+      ],
+      "label_bbox_px": [
+        946.5600000000001,
+        2314.032,
+        1048.64,
+        2389.008
+      ],
+      "line_start_px": [
+        929.0,
+        2383.0
+      ],
+      "line_end_px": [
+        929.0,
+        2111.0
+      ],
+      "length_px": 272.0,
+      "confidence": 0.512,
+      "method": "hough",
+      "notes": "label_dist=17.6px"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 2,
+      "label_position_uv": [
+        0.56,
+        0.69
+      ],
+      "label_bbox_px": [
+        1248.16,
+        2314.032,
+        1350.24,
+        2389.008
+      ],
+      "line_start_px": [
+        1271.0,
+        2320.0
+      ],
+      "line_end_px": [
+        1527.0,
+        2320.0
+      ],
+      "length_px": 256.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 3,
+      "label_position_uv": [
+        0.47,
+        0.7
+      ],
+      "label_bbox_px": [
+        1039.36,
+        2348.112,
+        1141.4399999999998,
+        2423.0879999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "78 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 4,
+      "label_position_uv": [
+        0.34,
+        0.45
+      ],
+      "label_bbox_px": [
+        737.7600000000001,
+        1496.112,
+        839.84,
+        1571.0880000000002
+      ],
+      "line_start_px": [
+        734.0,
+        1538.0
+      ],
+      "line_end_px": [
+        734.0,
+        1757.0
+      ],
+      "length_px": 219.0,
+      "confidence": 0.896,
+      "method": "hough",
+      "notes": "label_dist=3.8px"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 5,
+      "label_position_uv": [
+        0.32,
+        0.22
+      ],
+      "label_bbox_px": [
+        691.36,
+        712.2719999999999,
+        793.4399999999999,
+        787.248
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "43 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "22",
+      "label_index": 6,
+      "label_position_uv": [
+        0.33,
+        0.87
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        2927.472,
+        816.64,
+        3002.448
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "24",
+      "label_index": 7,
+      "label_position_uv": [
+        0.7,
+        0.92
+      ],
+      "label_bbox_px": [
+        1572.96,
+        3097.8720000000003,
+        1675.04,
+        3172.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "26",
+      "label_index": 8,
+      "label_position_uv": [
+        0.55,
+        0.34
+      ],
+      "label_bbox_px": [
+        1224.96,
+        1121.232,
+        1327.04,
+        1196.208
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "15 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "28",
+      "label_index": 9,
+      "label_position_uv": [
+        0.59,
+        0.55
+      ],
+      "label_bbox_px": [
+        1317.76,
+        1836.912,
+        1419.84,
+        1911.8880000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "61 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "30",
+      "label_index": 10,
+      "label_position_uv": [
+        0.72,
+        0.3
+      ],
+      "label_bbox_px": [
+        1619.36,
+        984.912,
+        1721.4399999999998,
+        1059.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "32",
+      "label_index": 11,
+      "label_position_uv": [
+        0.31,
+        0.6
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        2007.312,
+        770.24,
+        2082.288
+      ],
+      "line_start_px": [
+        763.0,
+        2054.0
+      ],
+      "line_end_px": [
+        764.0,
+        2155.0
+      ],
+      "length_px": 101.00495037373169,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "34",
+      "label_index": 12,
+      "label_position_uv": [
+        0.68,
+        0.6
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        2007.312,
+        1628.64,
+        2082.288
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "42 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "62",
+      "label_index": 13,
+      "label_position_uv": [
+        0.19,
+        0.71
+      ],
+      "label_bbox_px": [
+        389.76,
+        2382.192,
+        491.84000000000003,
+        2457.1679999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "62",
+      "label_index": 14,
+      "label_position_uv": [
+        0.22,
+        0.81
+      ],
+      "label_bbox_px": [
+        459.35999999999996,
+        2722.992,
+        561.4399999999999,
+        2797.968
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    }
+  ],
+  "notes": "detected 5/15 leader endpoints (33%)"
+}

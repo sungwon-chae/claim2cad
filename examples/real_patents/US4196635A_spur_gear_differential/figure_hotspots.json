@@ -1,0 +1,472 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "torque_means__5__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "torque_means",
+      "callout_number": "5",
+      "label": "torque means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1481.0,
+        894.0
+      ],
+      "bbox_px": [
+        1399.8,
+        774.72,
+        1562.2,
+        1013.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1022.4
+      ],
+      "label_bbox_px": [
+        1410.56,
+        984.912,
+        1512.6399999999999,
+        1059.888
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 145.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "torque_means__5__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "torque_means",
+      "callout_number": "5",
+      "label": "torque means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        1022.4
+      ],
+      "bbox_px": [
+        1410.56,
+        984.912,
+        1512.6399999999999,
+        1059.888
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1022.4
+      ],
+      "label_bbox_px": [
+        1410.56,
+        984.912,
+        1512.6399999999999,
+        1059.888
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_piston_rod__4__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_piston_rod",
+      "callout_number": "4",
+      "label": "second piston rod",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        1363.2
+      ],
+      "bbox_px": [
+        1264.3999999999999,
+        1243.92,
+        1426.8,
+        1482.48
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1345.6,
+        1363.2
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1288.2240000000002,
+        1396.6399999999999,
+        1438.176
+      ],
+      "debug": {
+        "label_index": 4,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "second_piston_rod__4__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_piston_rod",
+      "callout_number": "4",
+      "label": "second piston rod",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        1363.2
+      ],
+      "bbox_px": [
+        1294.56,
+        1288.2240000000002,
+        1396.6399999999999,
+        1438.176
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1345.6,
+        1363.2
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1288.2240000000002,
+        1396.6399999999999,
+        1438.176
+      ],
+      "debug": {
+        "label_index": 4
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "torque_transmitting_means__11__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "torque_transmitting_means",
+      "callout_number": "11",
+      "label": "means for transmitting torque",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        873.0,
+        1897.0
+      ],
+      "bbox_px": [
+        791.8,
+        1777.72,
+        954.2,
+        2016.28
+      ],
+      "confidence": 0.768,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1874.4
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1836.912,
+        1164.6399999999999,
+        1911.8880000000001
+      ],
+      "debug": {
+        "label_index": 5,
+        "leader_length_px": 300.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "torque_transmitting_means__11__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "torque_transmitting_means",
+      "callout_number": "11",
+      "label": "means for transmitting torque",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        1874.4
+      ],
+      "bbox_px": [
+        1062.56,
+        1836.912,
+        1164.6399999999999,
+        1911.8880000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1874.4
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1836.912,
+        1164.6399999999999,
+        1911.8880000000001
+      ],
+      "debug": {
+        "label_index": 5
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_housing_means__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_housing_means",
+      "callout_number": "10",
+      "label": "first housing means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1434.0,
+        2488.0
+      ],
+      "bbox_px": [
+        1352.8,
+        2368.72,
+        1515.2,
+        2607.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1438.4,
+        2249.28
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        2211.7920000000004,
+        1489.44,
+        2286.768
+      ],
+      "debug": {
+        "label_index": 13,
+        "leader_length_px": 272.04595200076034
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_housing_means__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_housing_means",
+      "callout_number": "10",
+      "label": "first housing means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1438.4,
+        2249.28
+      ],
+      "bbox_px": [
+        1387.3600000000001,
+        2211.7920000000004,
+        1489.44,
+        2286.768
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1438.4,
+        2249.28
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        2211.7920000000004,
+        1489.44,
+        2286.768
+      ],
+      "debug": {
+        "label_index": 13
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "piston_means__20__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "piston_means",
+      "callout_number": "20",
+      "label": "piston means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        2964.96
+      ],
+      "bbox_px": [
+        1032.3999999999999,
+        2845.68,
+        1194.8,
+        3084.2400000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 31,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "piston_means__20__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "piston_means",
+      "callout_number": "20",
+      "label": "piston means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        2964.96
+      ],
+      "bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 31
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_piston_rod__25__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_piston_rod",
+      "callout_number": "25",
+      "label": "first piston rod",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        2999.04
+      ],
+      "bbox_px": [
+        1125.2,
+        2879.7599999999998,
+        1287.6000000000001,
+        3118.32
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2999.04
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2924.064,
+        1257.44,
+        3074.016
+      ],
+      "debug": {
+        "label_index": 33,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "first_piston_rod__25__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_piston_rod",
+      "callout_number": "25",
+      "label": "first piston rod",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        2999.04
+      ],
+      "bbox_px": [
+        1155.3600000000001,
+        2924.064,
+        1257.44,
+        3074.016
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2999.04
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2924.064,
+        1257.44,
+        3074.016
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

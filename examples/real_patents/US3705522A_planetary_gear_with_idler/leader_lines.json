@@ -1,0 +1,1258 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US3705522A_planetary_gear_with_idler/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "14",
+      "label_index": 0,
+      "label_position_uv": [
+        0.31,
+        0.2
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        644.1120000000001,
+        770.24,
+        719.088
+      ],
+      "line_start_px": [
+        761.0,
+        627.0
+      ],
+      "line_end_px": [
+        842.0,
+        638.0
+      ],
+      "length_px": 81.74350127074322,
+      "confidence": 0.525,
+      "method": "hough",
+      "notes": "label_dist=17.1px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 1,
+      "label_position_uv": [
+        0.7,
+        0.2
+      ],
+      "label_bbox_px": [
+        1572.96,
+        644.1120000000001,
+        1675.04,
+        719.088
+      ],
+      "line_start_px": [
+        1573.0,
+        691.0
+      ],
+      "line_end_px": [
+        1430.0,
+        532.0
+      ],
+      "length_px": 213.84573879317773,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 2,
+      "label_position_uv": [
+        0.28,
+        0.24
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        780.432,
+        700.64,
+        855.4079999999999
+      ],
+      "line_start_px": [
+        673.0,
+        872.0
+      ],
+      "line_end_px": [
+        783.0,
+        897.0
+      ],
+      "length_px": 112.80514172678478,
+      "confidence": 0.539,
+      "method": "hough",
+      "notes": "label_dist=16.6px"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 3,
+      "label_position_uv": [
+        0.4,
+        0.25
+      ],
+      "label_bbox_px": [
+        876.96,
+        814.512,
+        979.04,
+        889.488
+      ],
+      "line_start_px": [
+        878.0,
+        884.0
+      ],
+      "line_end_px": [
+        1167.0,
+        889.0
+      ],
+      "length_px": 289.0432493589843,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 4,
+      "label_position_uv": [
+        0.47,
+        0.25
+      ],
+      "label_bbox_px": [
+        1039.36,
+        814.512,
+        1141.4399999999998,
+        889.488
+      ],
+      "line_start_px": [
+        1110.0,
+        876.0
+      ],
+      "line_end_px": [
+        878.0,
+        876.0
+      ],
+      "length_px": 232.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 5,
+      "label_position_uv": [
+        0.57,
+        0.25
+      ],
+      "label_bbox_px": [
+        1271.36,
+        814.512,
+        1373.4399999999998,
+        889.488
+      ],
+      "line_start_px": [
+        1312.0,
+        812.0
+      ],
+      "line_end_px": [
+        1312.0,
+        1091.0
+      ],
+      "length_px": 279.0,
+      "confidence": 0.93,
+      "method": "hough",
+      "notes": "label_dist=2.5px"
+    },
+    {
+      "callout_number": "30",
+      "label_index": 6,
+      "label_position_uv": [
+        0.38,
+        0.3
+      ],
+      "label_bbox_px": [
+        830.5600000000001,
+        984.912,
+        932.64,
+        1059.888
+      ],
+      "line_start_px": [
+        880.0,
+        1027.0
+      ],
+      "line_end_px": [
+        880.0,
+        789.0
+      ],
+      "length_px": 238.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 7,
+      "label_position_uv": [
+        0.42,
+        0.29
+      ],
+      "label_bbox_px": [
+        923.36,
+        950.8319999999999,
+        1025.44,
+        1025.808
+      ],
+      "line_start_px": [
+        958.0,
+        1019.0
+      ],
+      "line_end_px": [
+        1213.0,
+        1019.0
+      ],
+      "length_px": 255.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 8,
+      "label_position_uv": [
+        0.58,
+        0.29
+      ],
+      "label_bbox_px": [
+        1294.56,
+        950.8319999999999,
+        1396.6399999999999,
+        1025.808
+      ],
+      "line_start_px": [
+        1324.0,
+        1020.0
+      ],
+      "line_end_px": [
+        1105.0,
+        1020.0
+      ],
+      "length_px": 219.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "34",
+      "label_index": 9,
+      "label_position_uv": [
+        0.66,
+        0.28
+      ],
+      "label_bbox_px": [
+        1480.16,
+        916.7520000000002,
+        1582.24,
+        991.7280000000001
+      ],
+      "line_start_px": [
+        1586.0,
+        915.0
+      ],
+      "line_end_px": [
+        1586.0,
+        1193.0
+      ],
+      "length_px": 278.0,
+      "confidence": 0.885,
+      "method": "hough",
+      "notes": "label_dist=4.1px"
+    },
+    {
+      "callout_number": "28",
+      "label_index": 10,
+      "label_position_uv": [
+        0.3,
+        0.35
+      ],
+      "label_bbox_px": [
+        644.96,
+        1155.312,
+        747.04,
+        1230.288
+      ],
+      "line_start_px": [
+        763.0,
+        1203.0
+      ],
+      "line_end_px": [
+        858.0,
+        1205.0
+      ],
+      "length_px": 95.02105029939419,
+      "confidence": 0.557,
+      "method": "hough",
+      "notes": "label_dist=16.0px"
+    },
+    {
+      "callout_number": "22",
+      "label_index": 11,
+      "label_position_uv": [
+        0.68,
+        0.35
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        1155.312,
+        1628.64,
+        1230.288
+      ],
+      "line_start_px": [
+        1589.0,
+        1214.0
+      ],
+      "line_end_px": [
+        1589.0,
+        952.0
+      ],
+      "length_px": 262.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "24",
+      "label_index": 12,
+      "label_position_uv": [
+        0.78,
+        0.39
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1291.632,
+        1860.64,
+        1366.6080000000002
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "60 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "26",
+      "label_index": 13,
+      "label_position_uv": [
+        0.28,
+        0.42
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1393.8719999999998,
+        700.64,
+        1468.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "153 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "50",
+      "label_index": 14,
+      "label_position_uv": [
+        0.4,
+        0.41
+      ],
+      "label_bbox_px": [
+        876.96,
+        1359.792,
+        979.04,
+        1434.768
+      ],
+      "line_start_px": [
+        914.0,
+        1414.0
+      ],
+      "line_end_px": [
+        1058.0,
+        1412.0
+      ],
+      "length_px": 144.01388821915754,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 15,
+      "label_position_uv": [
+        0.53,
+        0.4
+      ],
+      "label_bbox_px": [
+        1178.5600000000002,
+        1325.712,
+        1280.64,
+        1400.688
+      ],
+      "line_start_px": [
+        1286.0,
+        1355.0
+      ],
+      "line_end_px": [
+        1286.0,
+        1135.0
+      ],
+      "length_px": 220.0,
+      "confidence": 0.851,
+      "method": "hough",
+      "notes": "label_dist=5.4px"
+    },
+    {
+      "callout_number": "42",
+      "label_index": 16,
+      "label_position_uv": [
+        0.6,
+        0.41
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1359.792,
+        1443.04,
+        1434.768
+      ],
+      "line_start_px": [
+        1423.0,
+        1366.0
+      ],
+      "line_end_px": [
+        1423.0,
+        1157.0
+      ],
+      "length_px": 209.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "38",
+      "label_index": 17,
+      "label_position_uv": [
+        0.64,
+        0.43
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1427.952,
+        1535.84,
+        1502.928
+      ],
+      "line_start_px": [
+        1492.0,
+        1479.0
+      ],
+      "line_end_px": [
+        1492.0,
+        1225.0
+      ],
+      "length_px": 254.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 18,
+      "label_position_uv": [
+        0.54,
+        0.47
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1564.272,
+        1303.8400000000001,
+        1639.248
+      ],
+      "line_start_px": [
+        1242.0,
+        1553.0
+      ],
+      "line_end_px": [
+        1403.0,
+        1555.0
+      ],
+      "length_px": 161.01242188104618,
+      "confidence": 0.687,
+      "method": "hough",
+      "notes": "label_dist=11.3px"
+    },
+    {
+      "callout_number": "36",
+      "label_index": 19,
+      "label_position_uv": [
+        0.6,
+        0.47
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1564.272,
+        1443.04,
+        1639.248
+      ],
+      "line_start_px": [
+        1426.0,
+        1554.0
+      ],
+      "line_end_px": [
+        1152.0,
+        1554.0
+      ],
+      "length_px": 274.0,
+      "confidence": 0.715,
+      "method": "hough",
+      "notes": "label_dist=10.3px"
+    },
+    {
+      "callout_number": "50",
+      "label_index": 20,
+      "label_position_uv": [
+        0.44,
+        0.47
+      ],
+      "label_bbox_px": [
+        969.76,
+        1564.272,
+        1071.84,
+        1639.248
+      ],
+      "line_start_px": [
+        994.0,
+        1573.0
+      ],
+      "line_end_px": [
+        780.0,
+        1573.0
+      ],
+      "length_px": 214.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "32",
+      "label_index": 21,
+      "label_position_uv": [
+        0.31,
+        0.54
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        1802.832,
+        770.24,
+        1877.8080000000002
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "239 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 22,
+      "label_position_uv": [
+        0.4,
+        0.54
+      ],
+      "label_bbox_px": [
+        876.96,
+        1802.832,
+        979.04,
+        1877.8080000000002
+      ],
+      "line_start_px": [
+        905.0,
+        1856.0
+      ],
+      "line_end_px": [
+        1015.0,
+        1966.0
+      ],
+      "length_px": 155.56349186104046,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 23,
+      "label_position_uv": [
+        0.5,
+        0.57
+      ],
+      "label_bbox_px": [
+        1108.96,
+        1905.072,
+        1211.04,
+        1980.048
+      ],
+      "line_start_px": [
+        1127.0,
+        1950.0
+      ],
+      "line_end_px": [
+        1024.0,
+        1840.0
+      ],
+      "length_px": 150.6950563223625,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 24,
+      "label_position_uv": [
+        0.54,
+        0.58
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1939.1519999999998,
+        1303.8400000000001,
+        2014.128
+      ],
+      "line_start_px": [
+        1270.0,
+        1963.0
+      ],
+      "line_end_px": [
+        1380.0,
+        2073.0
+      ],
+      "length_px": 155.56349186104046,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 25,
+      "label_position_uv": [
+        0.6,
+        0.58
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1939.1519999999998,
+        1443.04,
+        2014.128
+      ],
+      "line_start_px": [
+        1374.0,
+        1962.0
+      ],
+      "line_end_px": [
+        1286.0,
+        1990.0
+      ],
+      "length_px": 92.34717104492157,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 26,
+      "label_position_uv": [
+        0.5,
+        0.62
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2075.472,
+        1211.04,
+        2150.448
+      ],
+      "line_start_px": [
+        1162.0,
+        2141.0
+      ],
+      "line_end_px": [
+        1270.0,
+        2025.0
+      ],
+      "length_px": 158.4929020492716,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 27,
+      "label_position_uv": [
+        0.3,
+        0.62
+      ],
+      "label_bbox_px": [
+        644.96,
+        2075.472,
+        747.04,
+        2150.448
+      ],
+      "line_start_px": [
+        744.0,
+        2066.0
+      ],
+      "line_end_px": [
+        582.0,
+        2223.0
+      ],
+      "length_px": 225.59476944291063,
+      "confidence": 0.737,
+      "method": "hough",
+      "notes": "label_dist=9.5px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 28,
+      "label_position_uv": [
+        0.72,
+        0.74
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2484.4320000000002,
+        1721.4399999999998,
+        2559.408
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "60 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 29,
+      "label_position_uv": [
+        0.25,
+        0.82
+      ],
+      "label_bbox_px": [
+        528.96,
+        2757.072,
+        631.04,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "211 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "D",
+      "label_index": 30,
+      "label_position_uv": [
+        0.44,
+        0.77
+      ],
+      "label_bbox_px": [
+        969.76,
+        2586.672,
+        1071.84,
+        2661.6479999999997
+      ],
+      "line_start_px": [
+        1024.0,
+        2644.0
+      ],
+      "line_end_px": [
+        866.0,
+        2808.0
+      ],
+      "length_px": 227.72790781983662,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 31,
+      "label_position_uv": [
+        0.5,
+        0.77
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2586.672,
+        1211.04,
+        2661.6479999999997
+      ],
+      "line_start_px": [
+        1150.0,
+        2626.0
+      ],
+      "line_end_px": [
+        994.0,
+        2782.0
+      ],
+      "length_px": 220.61731573020282,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "44a",
+      "label_index": 32,
+      "label_position_uv": [
+        0.58,
+        0.77
+      ],
+      "label_bbox_px": [
+        1294.56,
+        2586.672,
+        1396.6399999999999,
+        2661.6479999999997
+      ],
+      "line_start_px": [
+        1303.0,
+        2621.0
+      ],
+      "line_end_px": [
+        1208.0,
+        2723.0
+      ],
+      "length_px": 139.38794782907166,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "A",
+      "label_index": 33,
+      "label_position_uv": [
+        0.64,
+        0.79
+      ],
+      "label_bbox_px": [
+        1433.76,
+        2654.8320000000003,
+        1535.84,
+        2729.808
+      ],
+      "line_start_px": [
+        1446.0,
+        2673.0
+      ],
+      "line_end_px": [
+        1397.0,
+        2685.0
+      ],
+      "length_px": 50.44799302251776,
+      "confidence": 0.841,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "B",
+      "label_index": 34,
+      "label_position_uv": [
+        0.4,
+        0.81
+      ],
+      "label_bbox_px": [
+        876.96,
+        2722.992,
+        979.04,
+        2797.968
+      ],
+      "line_start_px": [
+        936.0,
+        2791.0
+      ],
+      "line_end_px": [
+        1081.0,
+        2641.0
+      ],
+      "length_px": 208.62646045025065,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 35,
+      "label_position_uv": [
+        0.5,
+        0.82
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2757.072,
+        1211.04,
+        2832.048
+      ],
+      "line_start_px": [
+        1148.0,
+        2757.0
+      ],
+      "line_end_px": [
+        996.0,
+        2781.0
+      ],
+      "length_px": 153.88307249337075,
+      "confidence": 0.998,
+      "method": "hough",
+      "notes": "label_dist=0.1px"
+    },
+    {
+      "callout_number": "C",
+      "label_index": 36,
+      "label_position_uv": [
+        0.63,
+        0.82
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2757.072,
+        1512.6399999999999,
+        2832.048
+      ],
+      "line_start_px": [
+        1525.0,
+        2841.0
+      ],
+      "line_end_px": [
+        1616.0,
+        2856.0
+      ],
+      "length_px": 92.22797840135064,
+      "confidence": 0.576,
+      "method": "hough",
+      "notes": "label_dist=15.3px"
+    },
+    {
+      "callout_number": "42",
+      "label_index": 37,
+      "label_position_uv": [
+        0.58,
+        0.83
+      ],
+      "label_bbox_px": [
+        1294.56,
+        2791.152,
+        1396.6399999999999,
+        2866.1279999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "257 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 38,
+      "label_position_uv": [
+        0.63,
+        0.84
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2825.232,
+        1512.6399999999999,
+        2900.2079999999996
+      ],
+      "line_start_px": [
+        1509.0,
+        2849.0
+      ],
+      "line_end_px": [
+        1700.0,
+        2852.0
+      ],
+      "length_px": 191.02355875650522,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "48a",
+      "label_index": 39,
+      "label_position_uv": [
+        0.44,
+        0.84
+      ],
+      "label_bbox_px": [
+        969.76,
+        2825.232,
+        1071.84,
+        2900.2079999999996
+      ],
+      "line_start_px": [
+        1044.0,
+        2883.0
+      ],
+      "line_end_px": [
+        882.0,
+        2869.0
+      ],
+      "length_px": 162.60381299342276,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "42",
+      "label_index": 40,
+      "label_position_uv": [
+        0.41,
+        0.86
+      ],
+      "label_bbox_px": [
+        900.16,
+        2893.3920000000003,
+        1002.2399999999999,
+        2968.368
+      ],
+      "line_start_px": [
+        1002.0,
+        2892.0
+      ],
+      "line_end_px": [
+        901.0,
+        2784.0
+      ],
+      "length_px": 147.8681845428556,
+      "confidence": 0.961,
+      "method": "hough",
+      "notes": "label_dist=1.4px"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 41,
+      "label_position_uv": [
+        0.48,
+        0.87
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2927.472,
+        1164.6399999999999,
+        3002.448
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "180 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "36",
+      "label_index": 42,
+      "label_position_uv": [
+        0.52,
+        0.87
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2927.472,
+        1257.44,
+        3002.448
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "165 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "52a",
+      "label_index": 43,
+      "label_position_uv": [
+        0.56,
+        0.88
+      ],
+      "label_bbox_px": [
+        1248.16,
+        2961.552,
+        1350.24,
+        3036.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "98 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 44,
+      "label_position_uv": [
+        0.72,
+        0.86
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2893.3920000000003,
+        1721.4399999999998,
+        2968.368
+      ],
+      "line_start_px": [
+        1706.0,
+        2965.0
+      ],
+      "line_end_px": [
+        1648.0,
+        3034.0
+      ],
+      "length_px": 90.13878188659973,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "F",
+      "label_index": 45,
+      "label_position_uv": [
+        0.65,
+        0.87
+      ],
+      "label_bbox_px": [
+        1456.96,
+        2927.472,
+        1559.04,
+        3002.448
+      ],
+      "line_start_px": [
+        1460.0,
+        2962.0
+      ],
+      "line_end_px": [
+        1415.0,
+        3019.0
+      ],
+      "length_px": 72.62231062146122,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "32",
+      "label_index": 46,
+      "label_position_uv": [
+        0.72,
+        0.9
+      ],
+      "label_bbox_px": [
+        1619.36,
+        3029.7120000000004,
+        1721.4399999999998,
+        3104.688
+      ],
+      "line_start_px": [
+        1620.0,
+        3024.0
+      ],
+      "line_end_px": [
+        1461.0,
+        3027.0
+      ],
+      "length_px": 159.02829936838285,
+      "confidence": 0.841,
+      "method": "hough",
+      "notes": "label_dist=5.7px"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 47,
+      "label_position_uv": [
+        0.58,
+        0.92
+      ],
+      "label_bbox_px": [
+        1294.56,
+        3097.8720000000003,
+        1396.6399999999999,
+        3172.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "48 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 48,
+      "label_position_uv": [
+        0.42,
+        0.92
+      ],
+      "label_bbox_px": [
+        923.36,
+        3097.8720000000003,
+        1025.44,
+        3172.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "8 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 49,
+      "label_position_uv": [
+        0.62,
+        0.93
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        3131.952,
+        1489.44,
+        3206.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "47 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 50,
+      "label_position_uv": [
+        0.52,
+        0.94
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        3166.032,
+        1257.44,
+        3241.008
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "26 segments rejected (label dist or length)"
+    }
+  ],
+  "notes": "detected 38/51 leader endpoints (75%)"
+}

@@ -1,0 +1,241 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "hollow_shaft__12__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "hollow_shaft",
+      "callout_number": "12",
+      "label": "hollow shaft (first arm driving shaft)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1155.0,
+        1020.0
+      ],
+      "bbox_px": [
+        1073.8,
+        900.72,
+        1236.2,
+        1139.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1223.472,
+        1164.6399999999999,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 8,
+        "leader_length_px": 264.030301291348
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "hollow_shaft__12__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "hollow_shaft",
+      "callout_number": "12",
+      "label": "hollow shaft (first arm driving shaft)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        1260.96
+      ],
+      "bbox_px": [
+        1062.56,
+        1223.472,
+        1164.6399999999999,
+        1298.448
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1223.472,
+        1164.6399999999999,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 8
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "base__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "base",
+      "callout_number": "10",
+      "label": "base",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1245.0,
+        1191.0
+      ],
+      "bbox_px": [
+        1163.8,
+        1071.72,
+        1326.2,
+        1310.28
+      ],
+      "confidence": 0.907,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1299.2,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1248.16,
+        1393.8719999999998,
+        1350.24,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 10,
+        "leader_length_px": 279.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "base__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "base",
+      "callout_number": "10",
+      "label": "base",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1299.2,
+        1431.36
+      ],
+      "bbox_px": [
+        1248.16,
+        1393.8719999999998,
+        1350.24,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1299.2,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1248.16,
+        1393.8719999999998,
+        1350.24,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 10
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "hollow_shaft__12__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "hollow_shaft",
+      "callout_number": "12",
+      "label": "hollow shaft (first arm driving shaft)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1995.2,
+        783.84
+      ],
+      "bbox_px": [
+        1914.0,
+        664.5600000000001,
+        2076.4,
+        903.12
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1995.2,
+        783.84
+      ],
+      "label_bbox_px": [
+        1944.16,
+        708.864,
+        2046.24,
+        858.816
+      ],
+      "debug": {
+        "label_index": 35,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "hollow_shaft__12__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "hollow_shaft",
+      "callout_number": "12",
+      "label": "hollow shaft (first arm driving shaft)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1995.2,
+        783.84
+      ],
+      "bbox_px": [
+        1944.16,
+        708.864,
+        2046.24,
+        858.816
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1995.2,
+        783.84
+      ],
+      "label_bbox_px": [
+        1944.16,
+        708.864,
+        2046.24,
+        858.816
+      ],
+      "debug": {
+        "label_index": 35
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

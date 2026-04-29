@@ -1,0 +1,160 @@
+{
+  "leader_results": [
+    {
+      "id": "US3279624A_unimate_industrial_robot",
+      "status": "ok",
+      "n_total": 60,
+      "n_hough": 53
+    },
+    {
+      "id": "US3705522A_planetary_gear_with_idler",
+      "status": "ok",
+      "n_total": 51,
+      "n_hough": 38
+    },
+    {
+      "id": "US3789698A_compact_planetary_drive",
+      "status": "ok",
+      "n_total": 60,
+      "n_hough": 60
+    },
+    {
+      "id": "US3897696A_harmonic_gear_drive",
+      "status": "ok",
+      "n_total": 14,
+      "n_hough": 7
+    },
+    {
+      "id": "US4106366A_automotive_planetary_gearbox",
+      "status": "ok",
+      "n_total": 21,
+      "n_hough": 16
+    },
+    {
+      "id": "US4196635A_spur_gear_differential",
+      "status": "ok",
+      "n_total": 37,
+      "n_hough": 24
+    },
+    {
+      "id": "US4329110A_manipulator_with_remote_control",
+      "status": "ok",
+      "n_total": 50,
+      "n_hough": 31
+    },
+    {
+      "id": "US4391163A_planetary_speed_reducer",
+      "status": "ok",
+      "n_total": 42,
+      "n_hough": 29
+    },
+    {
+      "id": "US4392776A_robotic_hand_with_compliance",
+      "status": "ok",
+      "n_total": 39,
+      "n_hough": 19
+    },
+    {
+      "id": "US4407625A_multi_arm_robotic_assembly",
+      "status": "ok",
+      "n_total": 14,
+      "n_hough": 3
+    },
+    {
+      "id": "US4467670A_epicyclic_transmission",
+      "status": "ok",
+      "n_total": 59,
+      "n_hough": 45
+    },
+    {
+      "id": "US4470181A_self_closing_hinge",
+      "status": "ok",
+      "n_total": 37,
+      "n_hough": 26
+    },
+    {
+      "id": "US4486142A_kuka_articulated_arm",
+      "status": "ok",
+      "n_total": 34,
+      "n_hough": 22
+    },
+    {
+      "id": "US4502185A_concealed_hinge_assembly",
+      "status": "ok",
+      "n_total": 13,
+      "n_hough": 11
+    },
+    {
+      "id": "US4575297A_puma_industrial_robot",
+      "status": "ok",
+      "n_total": 30,
+      "n_hough": 21
+    },
+    {
+      "id": "US4655675A_robotic_assembly_apparatus",
+      "status": "ok",
+      "n_total": 14,
+      "n_hough": 6
+    },
+    {
+      "id": "US4729261A_compact_gear_reduction",
+      "status": "ok",
+      "n_total": 38,
+      "n_hough": 12
+    },
+    {
+      "id": "US4762016A_robotic_drive_unit",
+      "status": "ok",
+      "n_total": 57,
+      "n_hough": 25
+    },
+    {
+      "id": "US4807331A_spring_loaded_hinge",
+      "status": "ok",
+      "n_total": 60,
+      "n_hough": 57
+    },
+    {
+      "id": "US4816730A_autonomous_mobile_robot",
+      "status": "ok",
+      "n_total": 11,
+      "n_hough": 7
+    },
+    {
+      "id": "US4856377A_planetary_drive_apparatus",
+      "status": "ok",
+      "n_total": 60,
+      "n_hough": 57
+    },
+    {
+      "id": "US4955250A_multiple_forearm_robot",
+      "status": "ok",
+      "n_total": 15,
+      "n_hough": 5
+    },
+    {
+      "id": "US5042321A_two_stage_planetary_gear",
+      "status": "ok",
+      "n_total": 9,
+      "n_hough": 9
+    },
+    {
+      "id": "US5180955A_positioning_apparatus_for_arm",
+      "status": "ok",
+      "n_total": 47,
+      "n_hough": 34
+    },
+    {
+      "id": "US5239246A_force_reflecting_manipulator",
+      "status": "ok",
+      "n_total": 2,
+      "n_hough": 1
+    }
+  ],
+  "tier_summary": {
+    "high": 151,
+    "medium": 31,
+    "low": 78
+  },
+  "leader_detection_rate": 0.707
+}

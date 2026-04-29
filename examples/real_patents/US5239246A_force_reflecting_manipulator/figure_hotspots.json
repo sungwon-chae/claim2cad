@@ -1,0 +1,164 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "robot_arm__11__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "robot_arm",
+      "callout_number": "11",
+      "label": "robot arm",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1044.0,
+        1395.0
+      ],
+      "bbox_px": [
+        962.8,
+        1275.72,
+        1125.2,
+        1514.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1020.8,
+        1260.96
+      ],
+      "label_bbox_px": [
+        969.76,
+        1223.472,
+        1071.84,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 0,
+        "leader_length_px": 130.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "robot_arm__11__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "robot_arm",
+      "callout_number": "11",
+      "label": "robot arm",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1020.8,
+        1260.96
+      ],
+      "bbox_px": [
+        969.76,
+        1223.472,
+        1071.84,
+        1298.448
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1020.8,
+        1260.96
+      ],
+      "label_bbox_px": [
+        969.76,
+        1223.472,
+        1071.84,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 0
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "signal_mixer__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "signal_mixer",
+      "callout_number": "10",
+      "label": "signal mixer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        1090.56
+      ],
+      "bbox_px": [
+        1450.0,
+        971.28,
+        1612.4,
+        1209.84
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1531.2,
+        1090.56
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1015.584,
+        1582.24,
+        1165.536
+      ],
+      "debug": {
+        "label_index": 1,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "signal_mixer__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "signal_mixer",
+      "callout_number": "10",
+      "label": "signal mixer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        1090.56
+      ],
+      "bbox_px": [
+        1480.16,
+        1015.584,
+        1582.24,
+        1165.536
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1531.2,
+        1090.56
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1015.584,
+        1582.24,
+        1165.536
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

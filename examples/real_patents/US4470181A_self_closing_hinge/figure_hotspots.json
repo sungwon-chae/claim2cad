@@ -1,0 +1,9 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

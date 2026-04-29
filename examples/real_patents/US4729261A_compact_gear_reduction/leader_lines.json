@@ -1,0 +1,842 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US4729261A_compact_gear_reduction/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "6",
+      "label_index": 0,
+      "label_position_uv": [
+        0.3,
+        0.21
+      ],
+      "label_bbox_px": [
+        644.96,
+        678.192,
+        747.04,
+        753.1679999999999
+      ],
+      "line_start_px": [
+        669.0,
+        687.0
+      ],
+      "line_end_px": [
+        838.0,
+        692.0
+      ],
+      "length_px": 169.07394831847986,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "8",
+      "label_index": 1,
+      "label_position_uv": [
+        0.42,
+        0.22
+      ],
+      "label_bbox_px": [
+        923.36,
+        712.2719999999999,
+        1025.44,
+        787.248
+      ],
+      "line_start_px": [
+        1007.0,
+        770.0
+      ],
+      "line_end_px": [
+        836.0,
+        784.0
+      ],
+      "length_px": 171.572142260916,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "7",
+      "label_index": 2,
+      "label_position_uv": [
+        0.55,
+        0.27
+      ],
+      "label_bbox_px": [
+        1224.96,
+        882.672,
+        1327.04,
+        957.6480000000001
+      ],
+      "line_start_px": [
+        1341.0,
+        931.0
+      ],
+      "line_end_px": [
+        1341.0,
+        1022.0
+      ],
+      "length_px": 91.0,
+      "confidence": 0.612,
+      "method": "hough",
+      "notes": "label_dist=14.0px"
+    },
+    {
+      "callout_number": "1",
+      "label_index": 3,
+      "label_position_uv": [
+        0.43,
+        0.4
+      ],
+      "label_bbox_px": [
+        946.5600000000001,
+        1325.712,
+        1048.64,
+        1400.688
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "61 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "4",
+      "label_index": 4,
+      "label_position_uv": [
+        0.34,
+        0.38
+      ],
+      "label_bbox_px": [
+        737.7600000000001,
+        1257.552,
+        839.84,
+        1332.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "65 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "3",
+      "label_index": 5,
+      "label_position_uv": [
+        0.29,
+        0.41
+      ],
+      "label_bbox_px": [
+        621.76,
+        1359.792,
+        723.8399999999999,
+        1434.768
+      ],
+      "line_start_px": [
+        617.0,
+        1391.0
+      ],
+      "line_end_px": [
+        584.0,
+        1391.0
+      ],
+      "length_px": 33.0,
+      "confidence": 0.477,
+      "method": "hough",
+      "notes": "label_dist=4.8px"
+    },
+    {
+      "callout_number": "5",
+      "label_index": 6,
+      "label_position_uv": [
+        0.24,
+        0.45
+      ],
+      "label_bbox_px": [
+        505.75999999999993,
+        1496.112,
+        607.8399999999999,
+        1571.0880000000002
+      ],
+      "line_start_px": [
+        565.0,
+        1582.0
+      ],
+      "line_end_px": [
+        565.0,
+        1439.0
+      ],
+      "length_px": 143.0,
+      "confidence": 0.697,
+      "method": "hough",
+      "notes": "label_dist=10.9px"
+    },
+    {
+      "callout_number": "2",
+      "label_index": 7,
+      "label_position_uv": [
+        0.32,
+        0.54
+      ],
+      "label_bbox_px": [
+        691.36,
+        1802.832,
+        793.4399999999999,
+        1877.8080000000002
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "62 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "28",
+      "label_index": 8,
+      "label_position_uv": [
+        0.67,
+        0.33
+      ],
+      "label_bbox_px": [
+        1503.3600000000001,
+        1087.152,
+        1605.44,
+        1162.1280000000002
+      ],
+      "line_start_px": [
+        1616.0,
+        1106.0
+      ],
+      "line_end_px": [
+        1619.0,
+        1012.0
+      ],
+      "length_px": 94.04786015641186,
+      "confidence": 0.707,
+      "method": "hough",
+      "notes": "label_dist=10.6px"
+    },
+    {
+      "callout_number": "2A",
+      "label_index": 9,
+      "label_position_uv": [
+        0.78,
+        0.45
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1496.112,
+        1860.64,
+        1571.0880000000002
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "123 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "1",
+      "label_index": 10,
+      "label_position_uv": [
+        0.86,
+        0.46
+      ],
+      "label_bbox_px": [
+        1944.16,
+        1530.192,
+        2046.24,
+        1605.1680000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "25 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "2B",
+      "label_index": 11,
+      "label_position_uv": [
+        0.76,
+        0.54
+      ],
+      "label_bbox_px": [
+        1712.16,
+        1802.832,
+        1814.24,
+        1877.8080000000002
+      ],
+      "line_start_px": [
+        1765.0,
+        1855.0
+      ],
+      "line_end_px": [
+        1760.0,
+        1718.0
+      ],
+      "length_px": 137.09121051329294,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "2",
+      "label_index": 12,
+      "label_position_uv": [
+        0.58,
+        0.55
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1836.912,
+        1396.6399999999999,
+        1911.8880000000001
+      ],
+      "line_start_px": [
+        1294.0,
+        1833.0
+      ],
+      "line_end_px": [
+        1294.0,
+        2029.0
+      ],
+      "length_px": 196.0,
+      "confidence": 0.89,
+      "method": "hough",
+      "notes": "label_dist=4.0px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 13,
+      "label_position_uv": [
+        0.87,
+        0.67
+      ],
+      "label_bbox_px": [
+        1967.3600000000001,
+        2245.8720000000003,
+        2069.44,
+        2320.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "6 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "9",
+      "label_index": 14,
+      "label_position_uv": [
+        0.82,
+        0.67
+      ],
+      "label_bbox_px": [
+        1851.36,
+        2245.8720000000003,
+        1953.4399999999998,
+        2320.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "37 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "15",
+      "label_index": 15,
+      "label_position_uv": [
+        0.74,
+        0.68
+      ],
+      "label_bbox_px": [
+        1665.76,
+        2279.952,
+        1767.84,
+        2354.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "24 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 16,
+      "label_position_uv": [
+        0.68,
+        0.68
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        2279.952,
+        1628.64,
+        2354.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "33 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 17,
+      "label_position_uv": [
+        0.9,
+        0.71
+      ],
+      "label_bbox_px": [
+        2036.96,
+        2382.192,
+        2139.04,
+        2457.1679999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "11",
+      "label_index": 18,
+      "label_position_uv": [
+        0.88,
+        0.73
+      ],
+      "label_bbox_px": [
+        1990.56,
+        2450.3520000000003,
+        2092.64,
+        2525.328
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "1",
+      "label_index": 19,
+      "label_position_uv": [
+        0.63,
+        0.74
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2484.4320000000002,
+        1512.6399999999999,
+        2559.408
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 20,
+      "label_position_uv": [
+        0.82,
+        0.74
+      ],
+      "label_bbox_px": [
+        1851.36,
+        2484.4320000000002,
+        1953.4399999999998,
+        2559.408
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "13",
+      "label_index": 21,
+      "label_position_uv": [
+        0.78,
+        0.76
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        2552.592,
+        1860.64,
+        2627.5679999999998
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 22,
+      "label_position_uv": [
+        0.68,
+        0.77
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        2586.672,
+        1628.64,
+        2661.6479999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "17",
+      "label_index": 23,
+      "label_position_uv": [
+        0.93,
+        0.77
+      ],
+      "label_bbox_px": [
+        2106.56,
+        2586.672,
+        2208.64,
+        2661.6479999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "2",
+      "label_index": 24,
+      "label_position_uv": [
+        0.73,
+        0.8
+      ],
+      "label_bbox_px": [
+        1642.56,
+        2688.9120000000003,
+        1744.6399999999999,
+        2763.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "15",
+      "label_index": 25,
+      "label_position_uv": [
+        0.78,
+        0.82
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        2757.072,
+        1860.64,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "19",
+      "label_index": 26,
+      "label_position_uv": [
+        0.31,
+        0.79
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        2654.8320000000003,
+        770.24,
+        2729.808
+      ],
+      "line_start_px": [
+        677.0,
+        2689.0
+      ],
+      "line_end_px": [
+        794.0,
+        2689.0
+      ],
+      "length_px": 117.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 27,
+      "label_position_uv": [
+        0.35,
+        0.79
+      ],
+      "label_bbox_px": [
+        760.96,
+        2654.8320000000003,
+        863.04,
+        2729.808
+      ],
+      "line_start_px": [
+        835.0,
+        2693.0
+      ],
+      "line_end_px": [
+        835.0,
+        2452.0
+      ],
+      "length_px": 241.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "23",
+      "label_index": 28,
+      "label_position_uv": [
+        0.4,
+        0.79
+      ],
+      "label_bbox_px": [
+        876.96,
+        2654.8320000000003,
+        979.04,
+        2729.808
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "297 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "2",
+      "label_index": 29,
+      "label_position_uv": [
+        0.5,
+        0.8
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2688.9120000000003,
+        1211.04,
+        2763.888
+      ],
+      "line_start_px": [
+        1217.0,
+        2716.0
+      ],
+      "line_end_px": [
+        1211.0,
+        2662.0
+      ],
+      "length_px": 54.3323108288245,
+      "confidence": 0.756,
+      "method": "hough",
+      "notes": "label_dist=6.0px"
+    },
+    {
+      "callout_number": "24",
+      "label_index": 30,
+      "label_position_uv": [
+        0.32,
+        0.82
+      ],
+      "label_bbox_px": [
+        691.36,
+        2757.072,
+        793.4399999999999,
+        2832.048
+      ],
+      "line_start_px": [
+        803.0,
+        2742.0
+      ],
+      "line_end_px": [
+        736.0,
+        2665.0
+      ],
+      "length_px": 102.06860437960343,
+      "confidence": 0.504,
+      "method": "hough",
+      "notes": "label_dist=17.8px"
+    },
+    {
+      "callout_number": "25",
+      "label_index": 31,
+      "label_position_uv": [
+        0.5,
+        0.83
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2791.152,
+        1211.04,
+        2866.1279999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "23 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "22",
+      "label_index": 32,
+      "label_position_uv": [
+        0.48,
+        0.85
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2859.312,
+        1164.6399999999999,
+        2934.2879999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "23 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "21",
+      "label_index": 33,
+      "label_position_uv": [
+        0.29,
+        0.86
+      ],
+      "label_bbox_px": [
+        621.76,
+        2893.3920000000003,
+        723.8399999999999,
+        2968.368
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "10 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "1",
+      "label_index": 34,
+      "label_position_uv": [
+        0.62,
+        0.86
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        2893.3920000000003,
+        1489.44,
+        2968.368
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 35,
+      "label_position_uv": [
+        0.3,
+        0.9
+      ],
+      "label_bbox_px": [
+        644.96,
+        3029.7120000000004,
+        747.04,
+        3104.688
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 36,
+      "label_position_uv": [
+        0.52,
+        0.91
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        3063.7920000000004,
+        1257.44,
+        3138.768
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "23",
+      "label_index": 37,
+      "label_position_uv": [
+        0.42,
+        0.93
+      ],
+      "label_bbox_px": [
+        923.36,
+        3131.952,
+        1025.44,
+        3206.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    }
+  ],
+  "notes": "detected 12/38 leader endpoints (32%)"
+}

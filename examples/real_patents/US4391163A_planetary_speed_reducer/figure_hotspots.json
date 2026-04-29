@@ -1,0 +1,857 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "output_shaft__23__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "23",
+      "label": "output shaft (23)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        998.0,
+        963.0
+      ],
+      "bbox_px": [
+        916.8,
+        843.72,
+        1079.2,
+        1082.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        783.84
+      ],
+      "label_bbox_px": [
+        992.96,
+        746.3520000000001,
+        1095.04,
+        821.328
+      ],
+      "debug": {
+        "label_index": 5,
+        "leader_length_px": 211.0213259365034
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "output_shaft__23__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "23",
+      "label": "output shaft (23)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1044.0,
+        783.84
+      ],
+      "bbox_px": [
+        992.96,
+        746.3520000000001,
+        1095.04,
+        821.328
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        783.84
+      ],
+      "label_bbox_px": [
+        992.96,
+        746.3520000000001,
+        1095.04,
+        821.328
+      ],
+      "debug": {
+        "label_index": 5
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "housing__9__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        842.0,
+        1274.0
+      ],
+      "bbox_px": [
+        760.8,
+        1154.72,
+        923.2,
+        1393.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        603.2,
+        1295.04
+      ],
+      "label_bbox_px": [
+        552.1600000000001,
+        1257.552,
+        654.24,
+        1332.528
+      ],
+      "debug": {
+        "label_index": 6,
+        "leader_length_px": 238.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "housing__9__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        603.2,
+        1295.04
+      ],
+      "bbox_px": [
+        552.1600000000001,
+        1257.552,
+        654.24,
+        1332.528
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        603.2,
+        1295.04
+      ],
+      "label_bbox_px": [
+        552.1600000000001,
+        1257.552,
+        654.24,
+        1332.528
+      ],
+      "debug": {
+        "label_index": 6
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_gear_coupling__4__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_gear_coupling",
+      "callout_number": "4",
+      "label": "second gear coupling (4)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1221.0,
+        2338.0
+      ],
+      "bbox_px": [
+        1139.8,
+        2218.72,
+        1302.2,
+        2457.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        2351.52
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2314.032,
+        1512.6399999999999,
+        2389.008
+      ],
+      "debug": {
+        "label_index": 26,
+        "leader_length_px": 260.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_gear_coupling__4__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_gear_coupling",
+      "callout_number": "4",
+      "label": "second gear coupling (4)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        2351.52
+      ],
+      "bbox_px": [
+        1410.56,
+        2314.032,
+        1512.6399999999999,
+        2389.008
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        2351.52
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2314.032,
+        1512.6399999999999,
+        2389.008
+      ],
+      "debug": {
+        "label_index": 26
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "housing__9__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        580.0,
+        2794.56
+      ],
+      "bbox_px": [
+        498.8,
+        2675.2799999999997,
+        661.2,
+        2913.84
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        580.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 33,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "housing__9__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        580.0,
+        2794.56
+      ],
+      "bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        580.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_gear_coupling__2__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_gear_coupling",
+      "callout_number": "2",
+      "label": "first gear coupling (2)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1067.2,
+        2692.32
+      ],
+      "bbox_px": [
+        986.0,
+        2573.04,
+        1148.4,
+        2811.6000000000004
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1067.2,
+        2692.32
+      ],
+      "label_bbox_px": [
+        1016.1600000000001,
+        2617.344,
+        1118.24,
+        2767.2960000000003
+      ],
+      "debug": {
+        "label_index": 34,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "first_gear_coupling__2__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_gear_coupling",
+      "callout_number": "2",
+      "label": "first gear coupling (2)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1067.2,
+        2692.32
+      ],
+      "bbox_px": [
+        1016.1600000000001,
+        2617.344,
+        1118.24,
+        2767.2960000000003
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1067.2,
+        2692.32
+      ],
+      "label_bbox_px": [
+        1016.1600000000001,
+        2617.344,
+        1118.24,
+        2767.2960000000003
+      ],
+      "debug": {
+        "label_index": 34
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "housing__9__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        765.6,
+        2862.72
+      ],
+      "bbox_px": [
+        684.4,
+        2743.4399999999996,
+        846.8000000000001,
+        2982.0
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        765.6,
+        2862.72
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        2787.7439999999997,
+        816.64,
+        2937.696
+      ],
+      "debug": {
+        "label_index": 35,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "housing__9__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        765.6,
+        2862.72
+      ],
+      "bbox_px": [
+        714.5600000000001,
+        2787.7439999999997,
+        816.64,
+        2937.696
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        765.6,
+        2862.72
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        2787.7439999999997,
+        816.64,
+        2937.696
+      ],
+      "debug": {
+        "label_index": 35
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "input_shaft__1__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "1",
+      "label": "input shaft (1)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        858.4,
+        2930.88
+      ],
+      "bbox_px": [
+        777.1999999999999,
+        2811.6,
+        939.6,
+        3050.1600000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        858.4,
+        2930.88
+      ],
+      "label_bbox_px": [
+        807.36,
+        2855.904,
+        909.4399999999999,
+        3005.856
+      ],
+      "debug": {
+        "label_index": 37,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "input_shaft__1__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "1",
+      "label": "input shaft (1)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        858.4,
+        2930.88
+      ],
+      "bbox_px": [
+        807.36,
+        2855.904,
+        909.4399999999999,
+        3005.856
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        858.4,
+        2930.88
+      ],
+      "label_bbox_px": [
+        807.36,
+        2855.904,
+        909.4399999999999,
+        3005.856
+      ],
+      "debug": {
+        "label_index": 37
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "bearing_means__11__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "bearing_means",
+      "callout_number": "11",
+      "label": "bearing means (11,12)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1044.0,
+        2964.96
+      ],
+      "bbox_px": [
+        962.8,
+        2845.68,
+        1125.2,
+        3084.2400000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        2964.96
+      ],
+      "label_bbox_px": [
+        992.96,
+        2889.984,
+        1095.04,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 38,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "bearing_means__11__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "bearing_means",
+      "callout_number": "11",
+      "label": "bearing means (11,12)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1044.0,
+        2964.96
+      ],
+      "bbox_px": [
+        992.96,
+        2889.984,
+        1095.04,
+        3039.936
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        2964.96
+      ],
+      "label_bbox_px": [
+        992.96,
+        2889.984,
+        1095.04,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "outer_central_internal_gears__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "outer_central_internal_gears",
+      "callout_number": "10",
+      "label": "outer central internal gears (6a,6b)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        2964.96
+      ],
+      "bbox_px": [
+        1102.0,
+        2845.68,
+        1264.4,
+        3084.2400000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1183.2,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 39,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "outer_central_internal_gears__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "outer_central_internal_gears",
+      "callout_number": "10",
+      "label": "outer central internal gears (6a,6b)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        2964.96
+      ],
+      "bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1183.2,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 39
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "inner_central_gear__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "inner_central_gear",
+      "callout_number": "10",
+      "label": "inner central gear (10)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        2964.96
+      ],
+      "bbox_px": [
+        1102.0,
+        2845.68,
+        1264.4,
+        3084.2400000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1183.2,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 39,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "inner_central_gear__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "inner_central_gear",
+      "callout_number": "10",
+      "label": "inner central gear (10)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1183.2,
+        2964.96
+      ],
+      "bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1183.2,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1132.16,
+        2889.984,
+        1234.24,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 39
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "housing__9__3__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1832.8000000000002,
+        2794.56
+      ],
+      "bbox_px": [
+        1751.6000000000001,
+        2675.2799999999997,
+        1914.0000000000002,
+        2913.84
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 3,
+      "label_center_px": [
+        1832.8000000000002,
+        2794.56
+      ],
+      "label_bbox_px": [
+        1781.7600000000002,
+        2719.584,
+        1883.8400000000001,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 41,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "housing__9__3__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "9",
+      "label": "housing (9)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1832.8000000000002,
+        2794.56
+      ],
+      "bbox_px": [
+        1781.7600000000002,
+        2719.584,
+        1883.8400000000001,
+        2869.536
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 3,
+      "label_center_px": [
+        1832.8000000000002,
+        2794.56
+      ],
+      "label_bbox_px": [
+        1781.7600000000002,
+        2719.584,
+        1883.8400000000001,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 41
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

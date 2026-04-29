@@ -1,0 +1,1088 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "inhibitor_means__31__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "inhibitor_means",
+      "callout_number": "31",
+      "label": "inhibitor means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        909.0,
+        1056.0
+      ],
+      "bbox_px": [
+        827.8,
+        936.72,
+        990.2,
+        1175.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        928.0,
+        817.92
+      ],
+      "label_bbox_px": [
+        876.96,
+        780.432,
+        979.04,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 241.03319273494262
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "inhibitor_means__31__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "inhibitor_means",
+      "callout_number": "31",
+      "label": "inhibitor means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        928.0,
+        817.92
+      ],
+      "bbox_px": [
+        876.96,
+        780.432,
+        979.04,
+        855.4079999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        928.0,
+        817.92
+      ],
+      "label_bbox_px": [
+        876.96,
+        780.432,
+        979.04,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "manual_valve__23__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "manual_valve",
+      "callout_number": "23",
+      "label": "manual valve",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1057.0,
+        649.0
+      ],
+      "bbox_px": [
+        975.8,
+        529.72,
+        1138.2,
+        768.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1067.2,
+        817.92
+      ],
+      "label_bbox_px": [
+        1016.1600000000001,
+        780.432,
+        1118.24,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 2,
+        "leader_length_px": 173.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "manual_valve__23__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "manual_valve",
+      "callout_number": "23",
+      "label": "manual valve",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1067.2,
+        817.92
+      ],
+      "bbox_px": [
+        1016.1600000000001,
+        780.432,
+        1118.24,
+        855.4079999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1067.2,
+        817.92
+      ],
+      "label_bbox_px": [
+        1016.1600000000001,
+        780.432,
+        1118.24,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 2
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "governor_pressure__21__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "governor_pressure",
+      "callout_number": "21",
+      "label": "governor pressure",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1355.0,
+        851.0
+      ],
+      "bbox_px": [
+        1273.8,
+        731.72,
+        1436.2,
+        970.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        783.84
+      ],
+      "label_bbox_px": [
+        1340.96,
+        746.3520000000001,
+        1443.04,
+        821.328
+      ],
+      "debug": {
+        "label_index": 3,
+        "leader_length_px": 104.01922899156675
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "governor_pressure__21__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "governor_pressure",
+      "callout_number": "21",
+      "label": "governor pressure",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        783.84
+      ],
+      "bbox_px": [
+        1340.96,
+        746.3520000000001,
+        1443.04,
+        821.328
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        783.84
+      ],
+      "label_bbox_px": [
+        1340.96,
+        746.3520000000001,
+        1443.04,
+        821.328
+      ],
+      "debug": {
+        "label_index": 3
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "governor__19__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "governor",
+      "callout_number": "19",
+      "label": "governor",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1169.0,
+        1116.0
+      ],
+      "bbox_px": [
+        1087.8,
+        996.72,
+        1250.2,
+        1235.28
+      ],
+      "confidence": 0.907,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1160.0,
+        920.1600000000001
+      ],
+      "label_bbox_px": [
+        1108.96,
+        882.672,
+        1211.04,
+        957.6480000000001
+      ],
+      "debug": {
+        "label_index": 6,
+        "leader_length_px": 155.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "governor__19__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "governor",
+      "callout_number": "19",
+      "label": "governor",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1160.0,
+        920.1600000000001
+      ],
+      "bbox_px": [
+        1108.96,
+        882.672,
+        1211.04,
+        957.6480000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1160.0,
+        920.1600000000001
+      ],
+      "label_bbox_px": [
+        1108.96,
+        882.672,
+        1211.04,
+        957.6480000000001
+      ],
+      "debug": {
+        "label_index": 6
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "automatic_control_valve_means__29__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "automatic_control_valve_means",
+      "callout_number": "29",
+      "label": "automatic control valve means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1424.0,
+        918.0
+      ],
+      "bbox_px": [
+        1342.8,
+        798.72,
+        1505.2,
+        1037.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1276.0,
+        954.2400000000001
+      ],
+      "label_bbox_px": [
+        1224.96,
+        916.7520000000002,
+        1327.04,
+        991.7280000000001
+      ],
+      "debug": {
+        "label_index": 7,
+        "leader_length_px": 104.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "automatic_control_valve_means__29__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "automatic_control_valve_means",
+      "callout_number": "29",
+      "label": "automatic control valve means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1276.0,
+        954.2400000000001
+      ],
+      "bbox_px": [
+        1224.96,
+        916.7520000000002,
+        1327.04,
+        991.7280000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1276.0,
+        954.2400000000001
+      ],
+      "label_bbox_px": [
+        1224.96,
+        916.7520000000002,
+        1327.04,
+        991.7280000000001
+      ],
+      "debug": {
+        "label_index": 7
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "manual_low_signal_line__25__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "manual_low_signal_line",
+      "callout_number": "25",
+      "label": "manual low signal line",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1168.0,
+        1001.0
+      ],
+      "bbox_px": [
+        1086.8,
+        881.72,
+        1249.2,
+        1120.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        1090.56
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        1053.072,
+        1257.44,
+        1128.048
+      ],
+      "debug": {
+        "label_index": 13,
+        "leader_length_px": 115.0173899895142
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "manual_low_signal_line__25__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "manual_low_signal_line",
+      "callout_number": "25",
+      "label": "manual low signal line",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        1090.56
+      ],
+      "bbox_px": [
+        1155.3600000000001,
+        1053.072,
+        1257.44,
+        1128.048
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        1090.56
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        1053.072,
+        1257.44,
+        1128.048
+      ],
+      "debug": {
+        "label_index": 13
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "low_friction_device__14__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "low_friction_device",
+      "callout_number": "14",
+      "label": "low fluid actuated friction device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1503.0,
+        884.0
+      ],
+      "bbox_px": [
+        1421.8,
+        764.72,
+        1584.2,
+        1003.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1124.64
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1087.152,
+        1512.6399999999999,
+        1162.1280000000002
+      ],
+      "debug": {
+        "label_index": 15,
+        "leader_length_px": 247.0323865407125
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "low_friction_device__14__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "low_friction_device",
+      "callout_number": "14",
+      "label": "low fluid actuated friction device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        1124.64
+      ],
+      "bbox_px": [
+        1410.56,
+        1087.152,
+        1512.6399999999999,
+        1162.1280000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1124.64
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1087.152,
+        1512.6399999999999,
+        1162.1280000000002
+      ],
+      "debug": {
+        "label_index": 15
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_element__6__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_element",
+      "callout_number": "6",
+      "label": "output element",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        421.0,
+        918.0
+      ],
+      "bbox_px": [
+        339.8,
+        798.72,
+        502.2,
+        1037.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        464.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        412.96,
+        1121.232,
+        515.04,
+        1196.208
+      ],
+      "debug": {
+        "label_index": 17,
+        "leader_length_px": 255.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "output_element__6__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_element",
+      "callout_number": "6",
+      "label": "output element",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        464.0,
+        1158.72
+      ],
+      "bbox_px": [
+        412.96,
+        1121.232,
+        515.04,
+        1196.208
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        464.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        412.96,
+        1121.232,
+        515.04,
+        1196.208
+      ],
+      "debug": {
+        "label_index": 17
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "input_element__4__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "input_element",
+      "callout_number": "4",
+      "label": "input element",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        882.0,
+        1341.0
+      ],
+      "bbox_px": [
+        800.8,
+        1221.72,
+        963.2,
+        1460.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        1363.2
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1325.712,
+        700.64,
+        1400.688
+      ],
+      "debug": {
+        "label_index": 26,
+        "leader_length_px": 242.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "input_element__4__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "input_element",
+      "callout_number": "4",
+      "label": "input element",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        649.6,
+        1363.2
+      ],
+      "bbox_px": [
+        598.5600000000001,
+        1325.712,
+        700.64,
+        1400.688
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        1363.2
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1325.712,
+        700.64,
+        1400.688
+      ],
+      "debug": {
+        "label_index": 26
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "high_friction_device__15__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "high_friction_device",
+      "callout_number": "15",
+      "label": "high fluid actuated friction device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1429.0,
+        1394.0
+      ],
+      "bbox_px": [
+        1347.8,
+        1274.72,
+        1510.2,
+        1513.28
+      ],
+      "confidence": 0.758,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1368.8,
+        1397.28
+      ],
+      "label_bbox_px": [
+        1317.76,
+        1359.792,
+        1419.84,
+        1434.768
+      ],
+      "debug": {
+        "label_index": 30,
+        "leader_length_px": 45.45327270945405
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "high_friction_device__15__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "high_friction_device",
+      "callout_number": "15",
+      "label": "high fluid actuated friction device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1368.8,
+        1397.28
+      ],
+      "bbox_px": [
+        1317.76,
+        1359.792,
+        1419.84,
+        1434.768
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1368.8,
+        1397.28
+      ],
+      "label_bbox_px": [
+        1317.76,
+        1359.792,
+        1419.84,
+        1434.768
+      ],
+      "debug": {
+        "label_index": 30
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "low_high_signal_line__27__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "low_high_signal_line",
+      "callout_number": "27",
+      "label": "low-high signal line",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        873.0,
+        1414.0
+      ],
+      "bbox_px": [
+        791.8,
+        1294.72,
+        954.2,
+        1533.28
+      ],
+      "confidence": 0.724,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1465.44
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1427.952,
+        1164.6399999999999,
+        1502.928
+      ],
+      "debug": {
+        "label_index": 31,
+        "leader_length_px": 197.0406049523803
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "low_high_signal_line__27__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "low_high_signal_line",
+      "callout_number": "27",
+      "label": "low-high signal line",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        1465.44
+      ],
+      "bbox_px": [
+        1062.56,
+        1427.952,
+        1164.6399999999999,
+        1502.928
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1465.44
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1427.952,
+        1164.6399999999999,
+        1502.928
+      ],
+      "debug": {
+        "label_index": 31
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "fluid_source__17__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "fluid_source",
+      "callout_number": "17",
+      "label": "source of fluid at a regulated pressure",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1233.0,
+        1500.0
+      ],
+      "bbox_px": [
+        1151.8,
+        1380.72,
+        1314.2,
+        1619.28
+      ],
+      "confidence": 0.929,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1345.6,
+        1465.44
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1427.952,
+        1396.6399999999999,
+        1502.928
+      ],
+      "debug": {
+        "label_index": 32,
+        "leader_length_px": 68.09552114493287
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "fluid_source__17__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "fluid_source",
+      "callout_number": "17",
+      "label": "source of fluid at a regulated pressure",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        1465.44
+      ],
+      "bbox_px": [
+        1294.56,
+        1427.952,
+        1396.6399999999999,
+        1502.928
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1345.6,
+        1465.44
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1427.952,
+        1396.6399999999999,
+        1502.928
+      ],
+      "debug": {
+        "label_index": 32
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "multi_ratio_drive_gear_unit__7__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "multi_ratio_drive_gear_unit",
+      "callout_number": "7",
+      "label": "multi ratio drive gear unit",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        379.0,
+        1670.0
+      ],
+      "bbox_px": [
+        297.8,
+        1550.72,
+        460.2,
+        1789.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        417.59999999999997,
+        1431.36
+      ],
+      "label_bbox_px": [
+        366.55999999999995,
+        1393.8719999999998,
+        468.64,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 34,
+        "leader_length_px": 256.0488234692751
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "multi_ratio_drive_gear_unit__7__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "multi_ratio_drive_gear_unit",
+      "callout_number": "7",
+      "label": "multi ratio drive gear unit",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        417.59999999999997,
+        1431.36
+      ],
+      "bbox_px": [
+        366.55999999999995,
+        1393.8719999999998,
+        468.64,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        417.59999999999997,
+        1431.36
+      ],
+      "label_bbox_px": [
+        366.55999999999995,
+        1393.8719999999998,
+        468.64,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 34
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "transmission__2__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "transmission",
+      "callout_number": "2",
+      "label": "transmission",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        633.0,
+        1343.0
+      ],
+      "bbox_px": [
+        551.8,
+        1223.72,
+        714.2,
+        1462.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        394.40000000000003,
+        1363.2
+      ],
+      "label_bbox_px": [
+        343.36,
+        1325.712,
+        445.44000000000005,
+        1400.688
+      ],
+      "debug": {
+        "label_index": 35,
+        "leader_length_px": 247.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "transmission__2__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "transmission",
+      "callout_number": "2",
+      "label": "transmission",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        394.40000000000003,
+        1363.2
+      ],
+      "bbox_px": [
+        343.36,
+        1325.712,
+        445.44000000000005,
+        1400.688
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        394.40000000000003,
+        1363.2
+      ],
+      "label_bbox_px": [
+        343.36,
+        1325.712,
+        445.44000000000005,
+        1400.688
+      ],
+      "debug": {
+        "label_index": 35
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

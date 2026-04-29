@@ -1,0 +1,934 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "support__17__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "support",
+      "callout_number": "17",
+      "label": "support",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        924.0,
+        1065.0
+      ],
+      "bbox_px": [
+        842.8,
+        945.72,
+        1005.2,
+        1184.28
+      ],
+      "confidence": 0.521,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        928.0,
+        954.2400000000001
+      ],
+      "label_bbox_px": [
+        876.96,
+        916.7520000000002,
+        979.04,
+        991.7280000000001
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 57.07889277132134
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "support__17__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "support",
+      "callout_number": "17",
+      "label": "support",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        928.0,
+        954.2400000000001
+      ],
+      "bbox_px": [
+        876.96,
+        916.7520000000002,
+        979.04,
+        991.7280000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        928.0,
+        954.2400000000001
+      ],
+      "label_bbox_px": [
+        876.96,
+        916.7520000000002,
+        979.04,
+        991.7280000000001
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "support__17__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "support",
+      "callout_number": "17",
+      "label": "support",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1244.0,
+        1894.0
+      ],
+      "bbox_px": [
+        1162.8,
+        1774.72,
+        1325.2,
+        2013.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1484.8,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1700.5919999999999,
+        1535.84,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 19,
+        "leader_length_px": 290.17236257093816
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "support__17__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "support",
+      "callout_number": "17",
+      "label": "support",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1484.8,
+        1738.08
+      ],
+      "bbox_px": [
+        1433.76,
+        1700.5919999999999,
+        1535.84,
+        1775.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1484.8,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1700.5919999999999,
+        1535.84,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 19
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_drive_unit__63__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_drive_unit",
+      "callout_number": "63",
+      "label": "first drive unit (63)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1468.0,
+        2045.0
+      ],
+      "bbox_px": [
+        1386.8,
+        1925.72,
+        1549.2,
+        2164.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 26,
+        "leader_length_px": 96.83491106000976
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_drive_unit__63__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_drive_unit",
+      "callout_number": "63",
+      "label": "first drive unit (63)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 26
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_drive_unit__63__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_drive_unit",
+      "callout_number": "63",
+      "label": "second drive unit (65)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1468.0,
+        2045.0
+      ],
+      "bbox_px": [
+        1386.8,
+        1925.72,
+        1549.2,
+        2164.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 26,
+        "leader_length_px": 96.83491106000976
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_drive_unit__63__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_drive_unit",
+      "callout_number": "63",
+      "label": "second drive unit (65)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 26
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "pivot_axis__51__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "pivot_axis",
+      "callout_number": "51",
+      "label": "pivot axis (51)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1698.0,
+        2166.0
+      ],
+      "bbox_px": [
+        1616.8,
+        2046.72,
+        1779.2,
+        2285.28
+      ],
+      "confidence": 0.601,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1670.3999999999999,
+        2112.96
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2075.472,
+        1721.4399999999998,
+        2150.448
+      ],
+      "debug": {
+        "label_index": 30,
+        "leader_length_px": 36.05551275463989
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "pivot_axis__51__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "pivot_axis",
+      "callout_number": "51",
+      "label": "pivot axis (51)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        2112.96
+      ],
+      "bbox_px": [
+        1619.36,
+        2075.472,
+        1721.4399999999998,
+        2150.448
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1670.3999999999999,
+        2112.96
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2075.472,
+        1721.4399999999998,
+        2150.448
+      ],
+      "debug": {
+        "label_index": 30
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_lever_parallelogram__31__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_lever_parallelogram",
+      "callout_number": "31",
+      "label": "first lever parallelogram (31)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1295.0,
+        2224.0
+      ],
+      "bbox_px": [
+        1213.8,
+        2104.72,
+        1376.2,
+        2343.28
+      ],
+      "confidence": 0.886,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "debug": {
+        "label_index": 33,
+        "leader_length_px": 53.150729063673246
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_lever_parallelogram__31__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_lever_parallelogram",
+      "callout_number": "31",
+      "label": "first lever parallelogram (31)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_parallel_member__31__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_parallel_member",
+      "callout_number": "31",
+      "label": "second parallel member (37) of first lever parallelogram",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1295.0,
+        2224.0
+      ],
+      "bbox_px": [
+        1213.8,
+        2104.72,
+        1376.2,
+        2343.28
+      ],
+      "confidence": 0.886,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "debug": {
+        "label_index": 33,
+        "leader_length_px": 53.150729063673246
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_parallel_member__31__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_parallel_member",
+      "callout_number": "31",
+      "label": "second parallel member (37) of first lever parallelogram",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1206.4,
+        2215.2000000000003
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_member__35__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_member",
+      "callout_number": "35",
+      "label": "first member (11)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1310.8,
+        2402.64,
+        1473.2,
+        2641.2000000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "first_member__35__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_member",
+      "callout_number": "35",
+      "label": "first member (11)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_member__35__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_member",
+      "callout_number": "35",
+      "label": "second member (13)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1310.8,
+        2402.64,
+        1473.2,
+        2641.2000000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "second_member__35__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_member",
+      "callout_number": "35",
+      "label": "second member (13)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "third_member__35__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "third_member",
+      "callout_number": "35",
+      "label": "third member (15)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1310.8,
+        2402.64,
+        1473.2,
+        2641.2000000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "third_member__35__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "third_member",
+      "callout_number": "35",
+      "label": "third member (15)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "common_member__35__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "common_member",
+      "callout_number": "35",
+      "label": "common member (35)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1310.8,
+        2402.64,
+        1473.2,
+        2641.2000000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "common_member__35__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "common_member",
+      "callout_number": "35",
+      "label": "common member (35)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2521.92
+      ],
+      "bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2446.944,
+        1443.04,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_lever_parallelogram__33__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_lever_parallelogram",
+      "callout_number": "33",
+      "label": "second lever parallelogram (33)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2794.56
+      ],
+      "bbox_px": [
+        1310.8,
+        2675.2799999999997,
+        1473.2,
+        2913.84
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2719.584,
+        1443.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 44,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "second_lever_parallelogram__33__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_lever_parallelogram",
+      "callout_number": "33",
+      "label": "second lever parallelogram (33)",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        2794.56
+      ],
+      "bbox_px": [
+        1340.96,
+        2719.584,
+        1443.04,
+        2869.536
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2719.584,
+        1443.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 44
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

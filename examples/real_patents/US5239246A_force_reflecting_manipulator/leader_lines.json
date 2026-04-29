@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US5239246A_force_reflecting_manipulator/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "11",
+      "label_index": 0,
+      "label_position_uv": [
+        0.44,
+        0.37
+      ],
+      "label_bbox_px": [
+        969.76,
+        1223.472,
+        1071.84,
+        1298.448
+      ],
+      "line_start_px": [
+        1044.0,
+        1265.0
+      ],
+      "line_end_px": [
+        1044.0,
+        1395.0
+      ],
+      "length_px": 130.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 1,
+      "label_position_uv": [
+        0.66,
+        0.32
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1053.072,
+        1582.24,
+        1128.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "9 segments rejected (label dist or length)"
+    }
+  ],
+  "notes": "detected 1/2 leader endpoints (50%)"
+}

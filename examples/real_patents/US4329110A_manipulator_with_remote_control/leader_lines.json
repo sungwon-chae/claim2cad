@@ -1,0 +1,1196 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US4329110A_manipulator_with_remote_control/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "19",
+      "label_index": 0,
+      "label_position_uv": [
+        0.42,
+        0.24
+      ],
+      "label_bbox_px": [
+        923.36,
+        780.432,
+        1025.44,
+        855.4079999999999
+      ],
+      "line_start_px": [
+        935.0,
+        831.0
+      ],
+      "line_end_px": [
+        890.0,
+        839.0
+      ],
+      "length_px": 45.70557952810576,
+      "confidence": 0.762,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "17",
+      "label_index": 1,
+      "label_position_uv": [
+        0.4,
+        0.28
+      ],
+      "label_bbox_px": [
+        876.96,
+        916.7520000000002,
+        979.04,
+        991.7280000000001
+      ],
+      "line_start_px": [
+        921.0,
+        1008.0
+      ],
+      "line_end_px": [
+        924.0,
+        1065.0
+      ],
+      "length_px": 57.07889277132134,
+      "confidence": 0.521,
+      "method": "hough",
+      "notes": "label_dist=16.3px"
+    },
+    {
+      "callout_number": "25",
+      "label_index": 2,
+      "label_position_uv": [
+        0.33,
+        0.3
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        984.912,
+        816.64,
+        1059.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "90 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "23",
+      "label_index": 3,
+      "label_position_uv": [
+        0.4,
+        0.32
+      ],
+      "label_bbox_px": [
+        876.96,
+        1053.072,
+        979.04,
+        1128.048
+      ],
+      "line_start_px": [
+        924.0,
+        1065.0
+      ],
+      "line_end_px": [
+        921.0,
+        1008.0
+      ],
+      "length_px": 57.07889277132134,
+      "confidence": 0.951,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 4,
+      "label_position_uv": [
+        0.25,
+        0.33
+      ],
+      "label_bbox_px": [
+        528.96,
+        1087.152,
+        631.04,
+        1162.1280000000002
+      ],
+      "line_start_px": [
+        540.0,
+        1157.0
+      ],
+      "line_end_px": [
+        605.0,
+        1240.0
+      ],
+      "length_px": 105.4229576515476,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "11",
+      "label_index": 5,
+      "label_position_uv": [
+        0.29,
+        0.34
+      ],
+      "label_bbox_px": [
+        621.76,
+        1121.232,
+        723.8399999999999,
+        1196.208
+      ],
+      "line_start_px": [
+        722.0,
+        1200.0
+      ],
+      "line_end_px": [
+        722.0,
+        1236.0
+      ],
+      "length_px": 36.0,
+      "confidence": 0.537,
+      "method": "hough",
+      "notes": "label_dist=3.8px"
+    },
+    {
+      "callout_number": "27",
+      "label_index": 6,
+      "label_position_uv": [
+        0.33,
+        0.43
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        1427.952,
+        816.64,
+        1502.928
+      ],
+      "line_start_px": [
+        782.0,
+        1470.0
+      ],
+      "line_end_px": [
+        597.0,
+        1225.0
+      ],
+      "length_px": 307.001628660175,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "13",
+      "label_index": 7,
+      "label_position_uv": [
+        0.3,
+        0.49
+      ],
+      "label_bbox_px": [
+        644.96,
+        1632.432,
+        747.04,
+        1707.4080000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "63 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "29",
+      "label_index": 8,
+      "label_position_uv": [
+        0.27,
+        0.58
+      ],
+      "label_bbox_px": [
+        575.3600000000001,
+        1939.1519999999998,
+        677.44,
+        2014.128
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "15",
+      "label_index": 9,
+      "label_position_uv": [
+        0.37,
+        0.59
+      ],
+      "label_bbox_px": [
+        807.36,
+        1973.2319999999997,
+        909.4399999999999,
+        2048.2079999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "13 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "21",
+      "label_index": 10,
+      "label_position_uv": [
+        0.39,
+        0.62
+      ],
+      "label_bbox_px": [
+        853.7600000000001,
+        2075.472,
+        955.84,
+        2150.448
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "10 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "75",
+      "label_index": 11,
+      "label_position_uv": [
+        0.6,
+        0.41
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1359.792,
+        1443.04,
+        1434.768
+      ],
+      "line_start_px": [
+        1356.0,
+        1392.0
+      ],
+      "line_end_px": [
+        1356.0,
+        1157.0
+      ],
+      "length_px": 235.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "76",
+      "label_index": 12,
+      "label_position_uv": [
+        0.55,
+        0.45
+      ],
+      "label_bbox_px": [
+        1224.96,
+        1496.112,
+        1327.04,
+        1571.0880000000002
+      ],
+      "line_start_px": [
+        1334.0,
+        1581.0
+      ],
+      "line_end_px": [
+        1379.0,
+        1536.0
+      ],
+      "length_px": 63.63961030678928,
+      "confidence": 0.664,
+      "method": "hough",
+      "notes": "label_dist=12.1px"
+    },
+    {
+      "callout_number": "77",
+      "label_index": 13,
+      "label_position_uv": [
+        0.68,
+        0.44
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        1462.032,
+        1628.64,
+        1537.008
+      ],
+      "line_start_px": [
+        1548.0,
+        1537.0
+      ],
+      "line_end_px": [
+        1501.0,
+        1585.0
+      ],
+      "length_px": 67.17886572427373,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "19",
+      "label_index": 14,
+      "label_position_uv": [
+        0.6,
+        0.48
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1598.3519999999999,
+        1443.04,
+        1673.328
+      ],
+      "line_start_px": [
+        1332.0,
+        1602.0
+      ],
+      "line_end_px": [
+        1479.0,
+        1602.0
+      ],
+      "length_px": 147.0,
+      "confidence": 0.751,
+      "method": "hough",
+      "notes": "label_dist=9.0px"
+    },
+    {
+      "callout_number": "59",
+      "label_index": 15,
+      "label_position_uv": [
+        0.7,
+        0.47
+      ],
+      "label_bbox_px": [
+        1572.96,
+        1564.272,
+        1675.04,
+        1639.248
+      ],
+      "line_start_px": [
+        1665.0,
+        1616.0
+      ],
+      "line_end_px": [
+        1695.0,
+        1642.0
+      ],
+      "length_px": 39.698866482558415,
+      "confidence": 0.662,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "67",
+      "label_index": 16,
+      "label_position_uv": [
+        0.74,
+        0.48
+      ],
+      "label_bbox_px": [
+        1665.76,
+        1598.3519999999999,
+        1767.84,
+        1673.328
+      ],
+      "line_start_px": [
+        1706.0,
+        1623.0
+      ],
+      "line_end_px": [
+        1640.0,
+        1662.0
+      ],
+      "length_px": 76.66159403508382,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "45",
+      "label_index": 17,
+      "label_position_uv": [
+        0.78,
+        0.49
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1632.432,
+        1860.64,
+        1707.4080000000001
+      ],
+      "line_start_px": [
+        1806.0,
+        1642.0
+      ],
+      "line_end_px": [
+        1721.0,
+        1797.0
+      ],
+      "length_px": 176.7766952966369,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "43",
+      "label_index": 18,
+      "label_position_uv": [
+        0.82,
+        0.49
+      ],
+      "label_bbox_px": [
+        1851.36,
+        1632.432,
+        1953.4399999999998,
+        1707.4080000000001
+      ],
+      "line_start_px": [
+        1858.0,
+        1672.0
+      ],
+      "line_end_px": [
+        1817.0,
+        1664.0
+      ],
+      "length_px": 41.773197148410844,
+      "confidence": 0.696,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "17",
+      "label_index": 19,
+      "label_position_uv": [
+        0.64,
+        0.51
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1700.5919999999999,
+        1535.84,
+        1775.568
+      ],
+      "line_start_px": [
+        1482.0,
+        1728.0
+      ],
+      "line_end_px": [
+        1244.0,
+        1894.0
+      ],
+      "length_px": 290.17236257093816,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "68",
+      "label_index": 20,
+      "label_position_uv": [
+        0.74,
+        0.52
+      ],
+      "label_bbox_px": [
+        1665.76,
+        1734.672,
+        1767.84,
+        1809.6480000000001
+      ],
+      "line_start_px": [
+        1722.0,
+        1797.0
+      ],
+      "line_end_px": [
+        1861.0,
+        1535.0
+      ],
+      "length_px": 296.5889411289639,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "73",
+      "label_index": 21,
+      "label_position_uv": [
+        0.78,
+        0.52
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1734.672,
+        1860.64,
+        1809.6480000000001
+      ],
+      "line_start_px": [
+        1749.0,
+        1746.0
+      ],
+      "line_end_px": [
+        1729.0,
+        1784.0
+      ],
+      "length_px": 42.941821107167776,
+      "confidence": 0.526,
+      "method": "hough",
+      "notes": "label_dist=9.6px"
+    },
+    {
+      "callout_number": "60",
+      "label_index": 22,
+      "label_position_uv": [
+        0.85,
+        0.52
+      ],
+      "label_bbox_px": [
+        1920.96,
+        1734.672,
+        2023.04,
+        1809.6480000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "31 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "71",
+      "label_index": 23,
+      "label_position_uv": [
+        0.73,
+        0.56
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1870.9920000000002,
+        1744.6399999999999,
+        1945.9680000000003
+      ],
+      "line_start_px": [
+        1663.0,
+        1907.0
+      ],
+      "line_end_px": [
+        1606.0,
+        2011.0
+      ],
+      "length_px": 118.59595271340417,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "66",
+      "label_index": 24,
+      "label_position_uv": [
+        0.77,
+        0.56
+      ],
+      "label_bbox_px": [
+        1735.3600000000001,
+        1870.9920000000002,
+        1837.44,
+        1945.9680000000003
+      ],
+      "line_start_px": [
+        1763.0,
+        1907.0
+      ],
+      "line_end_px": [
+        1546.0,
+        2065.0
+      ],
+      "length_px": 268.4268988011447,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "64",
+      "label_index": 25,
+      "label_position_uv": [
+        0.6,
+        0.57
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1905.072,
+        1443.04,
+        1980.048
+      ],
+      "line_start_px": [
+        1379.0,
+        1942.0
+      ],
+      "line_end_px": [
+        1297.0,
+        2181.0
+      ],
+      "length_px": 252.67568145747623,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "63",
+      "label_index": 26,
+      "label_position_uv": [
+        0.63,
+        0.58
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1939.1519999999998,
+        1512.6399999999999,
+        2014.128
+      ],
+      "line_start_px": [
+        1412.0,
+        1966.0
+      ],
+      "line_end_px": [
+        1468.0,
+        2045.0
+      ],
+      "length_px": 96.83491106000976,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "65",
+      "label_index": 27,
+      "label_position_uv": [
+        0.79,
+        0.58
+      ],
+      "label_bbox_px": [
+        1781.7600000000002,
+        1939.1519999999998,
+        1883.8400000000001,
+        2014.128
+      ],
+      "line_start_px": [
+        1844.0,
+        1953.0
+      ],
+      "line_end_px": [
+        1861.0,
+        1922.0
+      ],
+      "length_px": 35.35533905932738,
+      "confidence": 0.589,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "47",
+      "label_index": 28,
+      "label_position_uv": [
+        0.85,
+        0.58
+      ],
+      "label_bbox_px": [
+        1920.96,
+        1939.1519999999998,
+        2023.04,
+        2014.128
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "33 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "69",
+      "label_index": 29,
+      "label_position_uv": [
+        0.66,
+        0.61
+      ],
+      "label_bbox_px": [
+        1480.16,
+        2041.392,
+        1582.24,
+        2116.368
+      ],
+      "line_start_px": [
+        1515.0,
+        2104.0
+      ],
+      "line_end_px": [
+        1673.0,
+        2299.0
+      ],
+      "length_px": 250.9760944791356,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "51",
+      "label_index": 30,
+      "label_position_uv": [
+        0.72,
+        0.62
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2075.472,
+        1721.4399999999998,
+        2150.448
+      ],
+      "line_start_px": [
+        1718.0,
+        2136.0
+      ],
+      "line_end_px": [
+        1698.0,
+        2166.0
+      ],
+      "length_px": 36.05551275463989,
+      "confidence": 0.601,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "37",
+      "label_index": 31,
+      "label_position_uv": [
+        0.8,
+        0.61
+      ],
+      "label_bbox_px": [
+        1804.96,
+        2041.392,
+        1907.04,
+        2116.368
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "56 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "11",
+      "label_index": 32,
+      "label_position_uv": [
+        0.62,
+        0.63
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        2109.552,
+        1489.44,
+        2184.528
+      ],
+      "line_start_px": [
+        1454.0,
+        2118.0
+      ],
+      "line_end_px": [
+        1198.0,
+        2030.0
+      ],
+      "length_px": 270.7027890510181,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "31",
+      "label_index": 33,
+      "label_position_uv": [
+        0.52,
+        0.65
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2177.7120000000004,
+        1257.44,
+        2252.688
+      ],
+      "line_start_px": [
+        1243.0,
+        2235.0
+      ],
+      "line_end_px": [
+        1295.0,
+        2224.0
+      ],
+      "length_px": 53.150729063673246,
+      "confidence": 0.886,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "55",
+      "label_index": 34,
+      "label_position_uv": [
+        0.68,
+        0.67
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        2245.8720000000003,
+        1628.64,
+        2320.848
+      ],
+      "line_start_px": [
+        1626.0,
+        2244.0
+      ],
+      "line_end_px": [
+        1671.0,
+        2300.0
+      ],
+      "length_px": 71.84010022264724,
+      "confidence": 0.948,
+      "method": "hough",
+      "notes": "label_dist=1.9px"
+    },
+    {
+      "callout_number": "54",
+      "label_index": 35,
+      "label_position_uv": [
+        0.86,
+        0.68
+      ],
+      "label_bbox_px": [
+        1944.16,
+        2279.952,
+        2046.24,
+        2354.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "5 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 36,
+      "label_position_uv": [
+        0.55,
+        0.71
+      ],
+      "label_bbox_px": [
+        1224.96,
+        2382.192,
+        1327.04,
+        2457.1679999999997
+      ],
+      "line_start_px": [
+        1250.0,
+        2385.0
+      ],
+      "line_end_px": [
+        1204.0,
+        2384.0
+      ],
+      "length_px": 46.010868281309364,
+      "confidence": 0.767,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "39",
+      "label_index": 37,
+      "label_position_uv": [
+        0.82,
+        0.71
+      ],
+      "label_bbox_px": [
+        1851.36,
+        2382.192,
+        1953.4399999999998,
+        2457.1679999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "16 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "35",
+      "label_index": 38,
+      "label_position_uv": [
+        0.6,
+        0.74
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2484.4320000000002,
+        1443.04,
+        2559.408
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "77 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "53",
+      "label_index": 39,
+      "label_position_uv": [
+        0.68,
+        0.75
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        2518.512,
+        1628.64,
+        2593.488
+      ],
+      "line_start_px": [
+        1564.0,
+        2581.0
+      ],
+      "line_end_px": [
+        1357.0,
+        2316.0
+      ],
+      "length_px": 336.2647766269908,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "41",
+      "label_index": 40,
+      "label_position_uv": [
+        0.79,
+        0.74
+      ],
+      "label_bbox_px": [
+        1781.7600000000002,
+        2484.4320000000002,
+        1883.8400000000001,
+        2559.408
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "27 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "56",
+      "label_index": 41,
+      "label_position_uv": [
+        0.56,
+        0.78
+      ],
+      "label_bbox_px": [
+        1248.16,
+        2620.7520000000004,
+        1350.24,
+        2695.728
+      ],
+      "line_start_px": [
+        1272.0,
+        2634.0
+      ],
+      "line_end_px": [
+        1275.0,
+        2580.0
+      ],
+      "length_px": 54.08326913195984,
+      "confidence": 0.901,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "61",
+      "label_index": 42,
+      "label_position_uv": [
+        0.69,
+        0.79
+      ],
+      "label_bbox_px": [
+        1549.76,
+        2654.8320000000003,
+        1651.84,
+        2729.808
+      ],
+      "line_start_px": [
+        1600.0,
+        2718.0
+      ],
+      "line_end_px": [
+        1667.0,
+        2763.0
+      ],
+      "length_px": 80.7093550959243,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "58",
+      "label_index": 43,
+      "label_position_uv": [
+        0.82,
+        0.78
+      ],
+      "label_bbox_px": [
+        1851.36,
+        2620.7520000000004,
+        1953.4399999999998,
+        2695.728
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "11 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "33",
+      "label_index": 44,
+      "label_position_uv": [
+        0.6,
+        0.82
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2757.072,
+        1443.04,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "42 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "13",
+      "label_index": 45,
+      "label_position_uv": [
+        0.72,
+        0.83
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2791.152,
+        1721.4399999999998,
+        2866.1279999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "34 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "15",
+      "label_index": 46,
+      "label_position_uv": [
+        0.83,
+        0.82
+      ],
+      "label_bbox_px": [
+        1874.56,
+        2757.072,
+        1976.6399999999999,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "57",
+      "label_index": 47,
+      "label_position_uv": [
+        0.82,
+        0.88
+      ],
+      "label_bbox_px": [
+        1851.36,
+        2961.552,
+        1953.4399999999998,
+        3036.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "15",
+      "label_index": 48,
+      "label_position_uv": [
+        0.82,
+        0.9
+      ],
+      "label_bbox_px": [
+        1851.36,
+        3029.7120000000004,
+        1953.4399999999998,
+        3104.688
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "21",
+      "label_index": 49,
+      "label_position_uv": [
+        0.84,
+        0.93
+      ],
+      "label_bbox_px": [
+        1897.76,
+        3131.952,
+        1999.84,
+        3206.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    }
+  ],
+  "notes": "detected 31/50 leader endpoints (62%)"
+}

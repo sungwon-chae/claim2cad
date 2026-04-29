@@ -1,0 +1,780 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "mechanical_output_device__18__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        378.0,
+        546.0
+      ],
+      "bbox_px": [
+        296.8,
+        426.71999999999997,
+        459.2,
+        665.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        394.40000000000003,
+        749.76
+      ],
+      "label_bbox_px": [
+        343.36,
+        712.2719999999999,
+        445.44000000000005,
+        787.248
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 184.0244548966251
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "mechanical_output_device__18__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        394.40000000000003,
+        749.76
+      ],
+      "bbox_px": [
+        343.36,
+        712.2719999999999,
+        445.44000000000005,
+        787.248
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        394.40000000000003,
+        749.76
+      ],
+      "label_bbox_px": [
+        343.36,
+        712.2719999999999,
+        445.44000000000005,
+        787.248
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_portion__12__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_portion",
+      "callout_number": "12",
+      "label": "output portion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        599.0,
+        876.0
+      ],
+      "bbox_px": [
+        517.8,
+        756.72,
+        680.2,
+        995.28
+      ],
+      "confidence": 0.36,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        510.4,
+        886.08
+      ],
+      "label_bbox_px": [
+        459.35999999999996,
+        848.5920000000001,
+        561.4399999999999,
+        923.568
+      ],
+      "debug": {
+        "label_index": 4,
+        "leader_length_px": 38.01315561749642
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_portion__12__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_portion",
+      "callout_number": "12",
+      "label": "output portion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        510.4,
+        886.08
+      ],
+      "bbox_px": [
+        459.35999999999996,
+        848.5920000000001,
+        561.4399999999999,
+        923.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        510.4,
+        886.08
+      ],
+      "label_bbox_px": [
+        459.35999999999996,
+        848.5920000000001,
+        561.4399999999999,
+        923.568
+      ],
+      "debug": {
+        "label_index": 4
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "mechanical_output_device__18__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        736.0,
+        920.0
+      ],
+      "bbox_px": [
+        654.8,
+        800.72,
+        817.2,
+        1039.28
+      ],
+      "confidence": 0.975,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        928.0,
+        681.6
+      ],
+      "label_bbox_px": [
+        876.96,
+        644.1120000000001,
+        979.04,
+        719.088
+      ],
+      "debug": {
+        "label_index": 6,
+        "leader_length_px": 287.8350221915325
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "mechanical_output_device__18__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        928.0,
+        681.6
+      ],
+      "bbox_px": [
+        876.96,
+        644.1120000000001,
+        979.04,
+        719.088
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        928.0,
+        681.6
+      ],
+      "label_bbox_px": [
+        876.96,
+        644.1120000000001,
+        979.04,
+        719.088
+      ],
+      "debug": {
+        "label_index": 6
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "sensing_interposer__24__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "sensing_interposer",
+      "callout_number": "24",
+      "label": "sensing interposer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1106.0,
+        907.0
+      ],
+      "bbox_px": [
+        1024.8,
+        787.72,
+        1187.2,
+        1026.28
+      ],
+      "confidence": 0.803,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        852.0
+      ],
+      "label_bbox_px": [
+        1062.56,
+        814.512,
+        1164.6399999999999,
+        889.488
+      ],
+      "debug": {
+        "label_index": 11,
+        "leader_length_px": 48.16637831516918
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "sensing_interposer__24__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "sensing_interposer",
+      "callout_number": "24",
+      "label": "sensing interposer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        852.0
+      ],
+      "bbox_px": [
+        1062.56,
+        814.512,
+        1164.6399999999999,
+        889.488
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        852.0
+      ],
+      "label_bbox_px": [
+        1062.56,
+        814.512,
+        1164.6399999999999,
+        889.488
+      ],
+      "debug": {
+        "label_index": 11
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_portion__12__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_portion",
+      "callout_number": "12",
+      "label": "output portion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        612.0,
+        1242.0
+      ],
+      "bbox_px": [
+        530.8,
+        1122.72,
+        693.2,
+        1361.28
+      ],
+      "confidence": 0.728,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        626.4000000000001,
+        1192.8
+      ],
+      "label_bbox_px": [
+        575.3600000000001,
+        1155.312,
+        677.44,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 19,
+        "leader_length_px": 43.68065933568311
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_portion__12__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_portion",
+      "callout_number": "12",
+      "label": "output portion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        626.4000000000001,
+        1192.8
+      ],
+      "bbox_px": [
+        575.3600000000001,
+        1155.312,
+        677.44,
+        1230.288
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        626.4000000000001,
+        1192.8
+      ],
+      "label_bbox_px": [
+        575.3600000000001,
+        1155.312,
+        677.44,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 19
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "servo_system__102__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_system",
+      "callout_number": "102",
+      "label": "servo system",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        208.0,
+        1664.0
+      ],
+      "bbox_px": [
+        126.8,
+        1544.72,
+        289.2,
+        1783.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        301.6,
+        1635.84
+      ],
+      "label_bbox_px": [
+        250.56000000000003,
+        1598.3519999999999,
+        352.64000000000004,
+        1673.328
+      ],
+      "debug": {
+        "label_index": 33,
+        "leader_length_px": 125.01599897613104
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "servo_system__102__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_system",
+      "callout_number": "102",
+      "label": "servo system",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        301.6,
+        1635.84
+      ],
+      "bbox_px": [
+        250.56000000000003,
+        1598.3519999999999,
+        352.64000000000004,
+        1673.328
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        301.6,
+        1635.84
+      ],
+      "label_bbox_px": [
+        250.56000000000003,
+        1598.3519999999999,
+        352.64000000000004,
+        1673.328
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "servo_input_control_member__76__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_input_control_member",
+      "callout_number": "76",
+      "label": "servo input control member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        647.0,
+        1807.0
+      ],
+      "bbox_px": [
+        565.8,
+        1687.72,
+        728.2,
+        1926.28
+      ],
+      "confidence": 0.862,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        696.0,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        644.96,
+        1939.1519999999998,
+        747.04,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 41,
+        "leader_length_px": 212.02122535255756
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "servo_input_control_member__76__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_input_control_member",
+      "callout_number": "76",
+      "label": "servo input control member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        696.0,
+        1976.6399999999999
+      ],
+      "bbox_px": [
+        644.96,
+        1939.1519999999998,
+        747.04,
+        2014.128
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        696.0,
+        1976.6399999999999
+      ],
+      "label_bbox_px": [
+        644.96,
+        1939.1519999999998,
+        747.04,
+        2014.128
+      ],
+      "debug": {
+        "label_index": 41
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "servo_system__102__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_system",
+      "callout_number": "102",
+      "label": "servo system",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        706.0,
+        2406.0
+      ],
+      "bbox_px": [
+        624.8,
+        2286.72,
+        787.2,
+        2525.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        603.2,
+        2385.6
+      ],
+      "label_bbox_px": [
+        552.1600000000001,
+        2348.112,
+        654.24,
+        2423.0879999999997
+      ],
+      "debug": {
+        "label_index": 52,
+        "leader_length_px": 142.08800090085018
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "servo_system__102__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "servo_system",
+      "callout_number": "102",
+      "label": "servo system",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        603.2,
+        2385.6
+      ],
+      "bbox_px": [
+        552.1600000000001,
+        2348.112,
+        654.24,
+        2423.0879999999997
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        603.2,
+        2385.6
+      ],
+      "label_bbox_px": [
+        552.1600000000001,
+        2348.112,
+        654.24,
+        2423.0879999999997
+      ],
+      "debug": {
+        "label_index": 52
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "mechanical_output_device__18__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1535.0,
+        1842.0
+      ],
+      "bbox_px": [
+        1453.8,
+        1722.72,
+        1616.2,
+        1961.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        1531.2,
+        2010.7199999999998
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1973.2319999999997,
+        1582.24,
+        2048.2079999999996
+      ],
+      "debug": {
+        "label_index": 56,
+        "leader_length_px": 139.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "mechanical_output_device__18__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "mechanical_output_device",
+      "callout_number": "18",
+      "label": "mechanical output device",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        2010.7199999999998
+      ],
+      "bbox_px": [
+        1480.16,
+        1973.2319999999997,
+        1582.24,
+        2048.2079999999996
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        1531.2,
+        2010.7199999999998
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1973.2319999999997,
+        1582.24,
+        2048.2079999999996
+      ],
+      "debug": {
+        "label_index": 56
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "sensing_interposer__24__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "sensing_interposer",
+      "callout_number": "24",
+      "label": "sensing interposer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1786.4,
+        2010.7199999999998
+      ],
+      "bbox_px": [
+        1705.2,
+        1891.4399999999998,
+        1867.6000000000001,
+        2130.0
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1786.4,
+        2010.7199999999998
+      ],
+      "label_bbox_px": [
+        1735.3600000000001,
+        1935.7439999999997,
+        1837.44,
+        2085.696
+      ],
+      "debug": {
+        "label_index": 58,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "sensing_interposer__24__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "sensing_interposer",
+      "callout_number": "24",
+      "label": "sensing interposer",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1786.4,
+        2010.7199999999998
+      ],
+      "bbox_px": [
+        1735.3600000000001,
+        1935.7439999999997,
+        1837.44,
+        2085.696
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1786.4,
+        2010.7199999999998
+      ],
+      "label_bbox_px": [
+        1735.3600000000001,
+        1935.7439999999997,
+        1837.44,
+        2085.696
+      ],
+      "debug": {
+        "label_index": 58
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

@@ -1,0 +1,1396 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "housing__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "10",
+      "label": "stationary housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1430.0,
+        532.0
+      ],
+      "bbox_px": [
+        1348.8,
+        412.71999999999997,
+        1511.2,
+        651.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        681.6
+      ],
+      "label_bbox_px": [
+        1572.96,
+        644.1120000000001,
+        1675.04,
+        719.088
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 213.84573879317773
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "housing__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "10",
+      "label": "stationary housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1624.0,
+        681.6
+      ],
+      "bbox_px": [
+        1572.96,
+        644.1120000000001,
+        1675.04,
+        719.088
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        681.6
+      ],
+      "label_bbox_px": [
+        1572.96,
+        644.1120000000001,
+        1675.04,
+        719.088
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_ring_gear__18__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear",
+      "callout_number": "18",
+      "label": "first ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1312.0,
+        1091.0
+      ],
+      "bbox_px": [
+        1230.8,
+        971.72,
+        1393.2,
+        1210.28
+      ],
+      "confidence": 0.93,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1322.3999999999999,
+        852.0
+      ],
+      "label_bbox_px": [
+        1271.36,
+        814.512,
+        1373.4399999999998,
+        889.488
+      ],
+      "debug": {
+        "label_index": 5,
+        "leader_length_px": 279.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_ring_gear__18__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear",
+      "callout_number": "18",
+      "label": "first ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1322.3999999999999,
+        852.0
+      ],
+      "bbox_px": [
+        1271.36,
+        814.512,
+        1373.4399999999998,
+        889.488
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1322.3999999999999,
+        852.0
+      ],
+      "label_bbox_px": [
+        1271.36,
+        814.512,
+        1373.4399999999998,
+        889.488
+      ],
+      "debug": {
+        "label_index": 5
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1213.0,
+        1019.0
+      ],
+      "bbox_px": [
+        1131.8,
+        899.72,
+        1294.2,
+        1138.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        974.4,
+        988.3199999999999
+      ],
+      "label_bbox_px": [
+        923.36,
+        950.8319999999999,
+        1025.44,
+        1025.808
+      ],
+      "debug": {
+        "label_index": 7,
+        "leader_length_px": 255.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        974.4,
+        988.3199999999999
+      ],
+      "bbox_px": [
+        923.36,
+        950.8319999999999,
+        1025.44,
+        1025.808
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        974.4,
+        988.3199999999999
+      ],
+      "label_bbox_px": [
+        923.36,
+        950.8319999999999,
+        1025.44,
+        1025.808
+      ],
+      "debug": {
+        "label_index": 7
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_shaft__24__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "24",
+      "label": "output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1809.6000000000001,
+        1329.1200000000001
+      ],
+      "bbox_px": [
+        1728.4,
+        1209.8400000000001,
+        1890.8000000000002,
+        1448.4
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1809.6000000000001,
+        1329.1200000000001
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1254.1440000000002,
+        1860.64,
+        1404.096
+      ],
+      "debug": {
+        "label_index": 12,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "output_shaft__24__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "24",
+      "label": "output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1809.6000000000001,
+        1329.1200000000001
+      ],
+      "bbox_px": [
+        1758.5600000000002,
+        1254.1440000000002,
+        1860.64,
+        1404.096
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1809.6000000000001,
+        1329.1200000000001
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1254.1440000000002,
+        1860.64,
+        1404.096
+      ],
+      "debug": {
+        "label_index": 12
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "input_shaft__26__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "26",
+      "label": "input shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        649.6,
+        1431.36
+      ],
+      "bbox_px": [
+        568.4,
+        1312.08,
+        730.8000000000001,
+        1550.6399999999999
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1356.384,
+        700.64,
+        1506.3359999999998
+      ],
+      "debug": {
+        "label_index": 13,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "input_shaft__26__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "26",
+      "label": "input shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        649.6,
+        1431.36
+      ],
+      "bbox_px": [
+        598.5600000000001,
+        1356.384,
+        700.64,
+        1506.3359999999998
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1356.384,
+        700.64,
+        1506.3359999999998
+      ],
+      "debug": {
+        "label_index": 13
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1423.0,
+        1157.0
+      ],
+      "bbox_px": [
+        1341.8,
+        1037.72,
+        1504.2,
+        1276.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        1397.28
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1359.792,
+        1443.04,
+        1434.768
+      ],
+      "debug": {
+        "label_index": 16,
+        "leader_length_px": 209.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        1397.28
+      ],
+      "bbox_px": [
+        1340.96,
+        1359.792,
+        1443.04,
+        1434.768
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        1397.28
+      ],
+      "label_bbox_px": [
+        1340.96,
+        1359.792,
+        1443.04,
+        1434.768
+      ],
+      "debug": {
+        "label_index": 16
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1403.0,
+        1555.0
+      ],
+      "bbox_px": [
+        1321.8,
+        1435.72,
+        1484.2,
+        1674.28
+      ],
+      "confidence": 0.687,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1601.76
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1564.272,
+        1303.8400000000001,
+        1639.248
+      ],
+      "debug": {
+        "label_index": 18,
+        "leader_length_px": 161.01242188104618
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1252.8000000000002,
+        1601.76
+      ],
+      "bbox_px": [
+        1201.7600000000002,
+        1564.272,
+        1303.8400000000001,
+        1639.248
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1601.76
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1564.272,
+        1303.8400000000001,
+        1639.248
+      ],
+      "debug": {
+        "label_index": 18
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_planet_pinion__32__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planet_pinion",
+      "callout_number": "32",
+      "label": "first planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        719.2,
+        1840.3200000000002
+      ],
+      "bbox_px": [
+        638.0,
+        1721.0400000000002,
+        800.4000000000001,
+        1959.6000000000001
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        719.2,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        1765.344,
+        770.24,
+        1915.2960000000003
+      ],
+      "debug": {
+        "label_index": 21,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "first_planet_pinion__32__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planet_pinion",
+      "callout_number": "32",
+      "label": "first planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        719.2,
+        1840.3200000000002
+      ],
+      "bbox_px": [
+        668.1600000000001,
+        1765.344,
+        770.24,
+        1915.2960000000003
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        719.2,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        1765.344,
+        770.24,
+        1915.2960000000003
+      ],
+      "debug": {
+        "label_index": 21
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1015.0,
+        1966.0
+      ],
+      "bbox_px": [
+        933.8,
+        1846.72,
+        1096.2,
+        2085.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        928.0,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        876.96,
+        1802.832,
+        979.04,
+        1877.8080000000002
+      ],
+      "debug": {
+        "label_index": 22,
+        "leader_length_px": 155.56349186104046
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        928.0,
+        1840.3200000000002
+      ],
+      "bbox_px": [
+        876.96,
+        1802.832,
+        979.04,
+        1877.8080000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        928.0,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        876.96,
+        1802.832,
+        979.04,
+        1877.8080000000002
+      ],
+      "debug": {
+        "label_index": 22
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "housing__10__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "10",
+      "label": "stationary housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        2521.92
+      ],
+      "bbox_px": [
+        1589.1999999999998,
+        2402.64,
+        1751.6,
+        2641.2000000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1670.3999999999999,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2446.944,
+        1721.4399999999998,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 28,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "housing__10__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "10",
+      "label": "stationary housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        2521.92
+      ],
+      "bbox_px": [
+        1619.36,
+        2446.944,
+        1721.4399999999998,
+        2596.896
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1670.3999999999999,
+        2521.92
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2446.944,
+        1721.4399999999998,
+        2596.896
+      ],
+      "debug": {
+        "label_index": 28
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_ring_gear__18__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear",
+      "callout_number": "18",
+      "label": "first ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        580.0,
+        2794.56
+      ],
+      "bbox_px": [
+        498.8,
+        2675.2799999999997,
+        661.2,
+        2913.84
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        580.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 29,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "first_ring_gear__18__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear",
+      "callout_number": "18",
+      "label": "first ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        580.0,
+        2794.56
+      ],
+      "bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        580.0,
+        2794.56
+      ],
+      "label_bbox_px": [
+        528.96,
+        2719.584,
+        631.04,
+        2869.536
+      ],
+      "debug": {
+        "label_index": 29
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        2828.64
+      ],
+      "bbox_px": [
+        1264.3999999999999,
+        2709.3599999999997,
+        1426.8,
+        2947.92
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1345.6,
+        2828.64
+      ],
+      "label_bbox_px": [
+        1294.56,
+        2753.6639999999998,
+        1396.6399999999999,
+        2903.616
+      ],
+      "debug": {
+        "label_index": 37,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        2828.64
+      ],
+      "bbox_px": [
+        1294.56,
+        2753.6639999999998,
+        1396.6399999999999,
+        2903.616
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1345.6,
+        2828.64
+      ],
+      "label_bbox_px": [
+        1294.56,
+        2753.6639999999998,
+        1396.6399999999999,
+        2903.616
+      ],
+      "debug": {
+        "label_index": 37
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1700.0,
+        2852.0
+      ],
+      "bbox_px": [
+        1618.8,
+        2732.72,
+        1781.2,
+        2971.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1461.6,
+        2862.72
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2825.232,
+        1512.6399999999999,
+        2900.2079999999996
+      ],
+      "debug": {
+        "label_index": 38,
+        "leader_length_px": 191.02355875650522
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        2862.72
+      ],
+      "bbox_px": [
+        1410.56,
+        2825.232,
+        1512.6399999999999,
+        2900.2079999999996
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1461.6,
+        2862.72
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2825.232,
+        1512.6399999999999,
+        2900.2079999999996
+      ],
+      "debug": {
+        "label_index": 38
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        901.0,
+        2784.0
+      ],
+      "bbox_px": [
+        819.8,
+        2664.72,
+        982.2,
+        2903.28
+      ],
+      "confidence": 0.961,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        951.1999999999999,
+        2930.88
+      ],
+      "label_bbox_px": [
+        900.16,
+        2893.3920000000003,
+        1002.2399999999999,
+        2968.368
+      ],
+      "debug": {
+        "label_index": 40,
+        "leader_length_px": 147.8681845428556
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "third_planet_pinion__42__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "third_planet_pinion",
+      "callout_number": "42",
+      "label": "third planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        951.1999999999999,
+        2930.88
+      ],
+      "bbox_px": [
+        900.16,
+        2893.3920000000003,
+        1002.2399999999999,
+        2968.368
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        951.1999999999999,
+        2930.88
+      ],
+      "label_bbox_px": [
+        900.16,
+        2893.3920000000003,
+        1002.2399999999999,
+        2968.368
+      ],
+      "debug": {
+        "label_index": 40
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        2964.96
+      ],
+      "bbox_px": [
+        1032.3999999999999,
+        2845.68,
+        1194.8,
+        3084.2400000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        1113.6,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 41,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        2964.96
+      ],
+      "bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        1113.6,
+        2964.96
+      ],
+      "label_bbox_px": [
+        1062.56,
+        2889.984,
+        1164.6399999999999,
+        3039.936
+      ],
+      "debug": {
+        "label_index": 41
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_planet_pinion__32__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planet_pinion",
+      "callout_number": "32",
+      "label": "first planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.0,
+        3027.0
+      ],
+      "bbox_px": [
+        1379.8,
+        2907.72,
+        1542.2,
+        3146.28
+      ],
+      "confidence": 0.841,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1670.3999999999999,
+        3067.2000000000003
+      ],
+      "label_bbox_px": [
+        1619.36,
+        3029.7120000000004,
+        1721.4399999999998,
+        3104.688
+      ],
+      "debug": {
+        "label_index": 46,
+        "leader_length_px": 159.02829936838285
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_planet_pinion__32__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planet_pinion",
+      "callout_number": "32",
+      "label": "first planet pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1670.3999999999999,
+        3067.2000000000003
+      ],
+      "bbox_px": [
+        1619.36,
+        3029.7120000000004,
+        1721.4399999999998,
+        3104.688
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1670.3999999999999,
+        3067.2000000000003
+      ],
+      "label_bbox_px": [
+        1619.36,
+        3029.7120000000004,
+        1721.4399999999998,
+        3104.688
+      ],
+      "debug": {
+        "label_index": 46
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__3__part",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        3135.36
+      ],
+      "bbox_px": [
+        1264.3999999999999,
+        3016.08,
+        1426.8,
+        3254.6400000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 3,
+      "label_center_px": [
+        1345.6,
+        3135.36
+      ],
+      "label_bbox_px": [
+        1294.56,
+        3060.384,
+        1396.6399999999999,
+        3210.3360000000002
+      ],
+      "debug": {
+        "label_index": 47,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "planet_carrier_means__48__3__label",
+      "figure_id": "figure_1.png",
+      "component_id": "planet_carrier_means",
+      "callout_number": "48",
+      "label": "planet carrier means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1345.6,
+        3135.36
+      ],
+      "bbox_px": [
+        1294.56,
+        3060.384,
+        1396.6399999999999,
+        3210.3360000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 3,
+      "label_center_px": [
+        1345.6,
+        3135.36
+      ],
+      "label_bbox_px": [
+        1294.56,
+        3060.384,
+        1396.6399999999999,
+        3210.3360000000002
+      ],
+      "debug": {
+        "label_index": 47
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        974.4,
+        3135.36
+      ],
+      "bbox_px": [
+        893.1999999999999,
+        3016.08,
+        1055.6,
+        3254.6400000000003
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        974.4,
+        3135.36
+      ],
+      "label_bbox_px": [
+        923.36,
+        3060.384,
+        1025.44,
+        3210.3360000000002
+      ],
+      "debug": {
+        "label_index": 48,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "second_ring_gear__52__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear",
+      "callout_number": "52",
+      "label": "second ring gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        974.4,
+        3135.36
+      ],
+      "bbox_px": [
+        923.36,
+        3060.384,
+        1025.44,
+        3210.3360000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        974.4,
+        3135.36
+      ],
+      "label_bbox_px": [
+        923.36,
+        3060.384,
+        1025.44,
+        3210.3360000000002
+      ],
+      "debug": {
+        "label_index": 48
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

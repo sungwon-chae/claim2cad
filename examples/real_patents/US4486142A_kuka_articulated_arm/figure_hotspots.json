@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "control_means__119__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "control_means",
+      "callout_number": "119",
+      "label": "control means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1173.0,
+        1092.0
+      ],
+      "bbox_px": [
+        1091.8,
+        972.72,
+        1254.2,
+        1211.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1276.0,
+        1192.8
+      ],
+      "label_bbox_px": [
+        1224.96,
+        1155.312,
+        1327.04,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 18,
+        "leader_length_px": 136.88316185711082
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "control_means__119__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "control_means",
+      "callout_number": "119",
+      "label": "control means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1276.0,
+        1192.8
+      ],
+      "bbox_px": [
+        1224.96,
+        1155.312,
+        1327.04,
+        1230.288
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1276.0,
+        1192.8
+      ],
+      "label_bbox_px": [
+        1224.96,
+        1155.312,
+        1327.04,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 18
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

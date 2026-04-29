@@ -1,0 +1,1704 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "gear_case_housing__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "gear_case_housing",
+      "callout_number": "10",
+      "label": "gear case housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        982.0,
+        659.0
+      ],
+      "bbox_px": [
+        900.8,
+        539.72,
+        1063.2,
+        778.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        647.52
+      ],
+      "label_bbox_px": [
+        1062.56,
+        610.0319999999999,
+        1164.6399999999999,
+        685.008
+      ],
+      "debug": {
+        "label_index": 0,
+        "leader_length_px": 165.07574019219177
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "gear_case_housing__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "gear_case_housing",
+      "callout_number": "10",
+      "label": "gear case housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        647.52
+      ],
+      "bbox_px": [
+        1062.56,
+        610.0319999999999,
+        1164.6399999999999,
+        685.008
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        647.52
+      ],
+      "label_bbox_px": [
+        1062.56,
+        610.0319999999999,
+        1164.6399999999999,
+        685.008
+      ],
+      "debug": {
+        "label_index": 0
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "engine_housing__12__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "engine_housing",
+      "callout_number": "12",
+      "label": "engine housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        549.0,
+        763.0
+      ],
+      "bbox_px": [
+        467.8,
+        643.72,
+        630.2,
+        882.28
+      ],
+      "confidence": 0.796,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        715.68
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        678.192,
+        700.64,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 177.1016657177453
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "engine_housing__12__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "engine_housing",
+      "callout_number": "12",
+      "label": "engine housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        649.6,
+        715.68
+      ],
+      "bbox_px": [
+        598.5600000000001,
+        678.192,
+        700.64,
+        753.1679999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        649.6,
+        715.68
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        678.192,
+        700.64,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "ring_gear_means__14__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "ring_gear_means",
+      "callout_number": "14",
+      "label": "ring gear means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        721.0,
+        652.0
+      ],
+      "bbox_px": [
+        639.8,
+        532.72,
+        802.2,
+        771.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        556.8,
+        749.76
+      ],
+      "label_bbox_px": [
+        505.75999999999993,
+        712.2719999999999,
+        607.8399999999999,
+        787.248
+      ],
+      "debug": {
+        "label_index": 2,
+        "leader_length_px": 190.2761151589973
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "ring_gear_means__14__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "ring_gear_means",
+      "callout_number": "14",
+      "label": "ring gear means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        556.8,
+        749.76
+      ],
+      "bbox_px": [
+        505.75999999999993,
+        712.2719999999999,
+        607.8399999999999,
+        787.248
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        556.8,
+        749.76
+      ],
+      "label_bbox_px": [
+        505.75999999999993,
+        712.2719999999999,
+        607.8399999999999,
+        787.248
+      ],
+      "debug": {
+        "label_index": 2
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_ring_gear_member__18__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear_member",
+      "callout_number": "18",
+      "label": "second ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1171.0,
+        655.0
+      ],
+      "bbox_px": [
+        1089.8,
+        535.72,
+        1252.2,
+        774.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        951.1999999999999,
+        647.52
+      ],
+      "label_bbox_px": [
+        900.16,
+        610.0319999999999,
+        1002.2399999999999,
+        685.008
+      ],
+      "debug": {
+        "label_index": 4,
+        "leader_length_px": 190.02368273454758
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_ring_gear_member__18__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_ring_gear_member",
+      "callout_number": "18",
+      "label": "second ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        951.1999999999999,
+        647.52
+      ],
+      "bbox_px": [
+        900.16,
+        610.0319999999999,
+        1002.2399999999999,
+        685.008
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        951.1999999999999,
+        647.52
+      ],
+      "label_bbox_px": [
+        900.16,
+        610.0319999999999,
+        1002.2399999999999,
+        685.008
+      ],
+      "debug": {
+        "label_index": 4
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_planetary_carrier__26__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planetary_carrier",
+      "callout_number": "26",
+      "label": "first planetary carrier",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1259.0,
+        603.0
+      ],
+      "bbox_px": [
+        1177.8,
+        483.71999999999997,
+        1340.2,
+        722.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        647.52
+      ],
+      "label_bbox_px": [
+        992.96,
+        610.0319999999999,
+        1095.04,
+        685.008
+      ],
+      "debug": {
+        "label_index": 5,
+        "leader_length_px": 186.81809334215998
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_planetary_carrier__26__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planetary_carrier",
+      "callout_number": "26",
+      "label": "first planetary carrier",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1044.0,
+        647.52
+      ],
+      "bbox_px": [
+        992.96,
+        610.0319999999999,
+        1095.04,
+        685.008
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1044.0,
+        647.52
+      ],
+      "label_bbox_px": [
+        992.96,
+        610.0319999999999,
+        1095.04,
+        685.008
+      ],
+      "debug": {
+        "label_index": 5
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_stage_assembly__20__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_stage_assembly",
+      "callout_number": "20",
+      "label": "first stage planetary gear assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        981.0,
+        658.0
+      ],
+      "bbox_px": [
+        899.8,
+        538.72,
+        1062.2,
+        777.28
+      ],
+      "confidence": 0.823,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        681.6
+      ],
+      "label_bbox_px": [
+        1062.56,
+        644.1120000000001,
+        1164.6399999999999,
+        719.088
+      ],
+      "debug": {
+        "label_index": 6,
+        "leader_length_px": 190.02368273454758
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_stage_assembly__20__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_stage_assembly",
+      "callout_number": "20",
+      "label": "first stage planetary gear assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        681.6
+      ],
+      "bbox_px": [
+        1062.56,
+        644.1120000000001,
+        1164.6399999999999,
+        719.088
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        681.6
+      ],
+      "label_bbox_px": [
+        1062.56,
+        644.1120000000001,
+        1164.6399999999999,
+        719.088
+      ],
+      "debug": {
+        "label_index": 6
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_sun_gear__22__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_sun_gear",
+      "callout_number": "22",
+      "label": "first sun gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1213.0,
+        676.0
+      ],
+      "bbox_px": [
+        1131.8,
+        556.72,
+        1294.2,
+        795.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        974.4,
+        681.6
+      ],
+      "label_bbox_px": [
+        923.36,
+        644.1120000000001,
+        1025.44,
+        719.088
+      ],
+      "debug": {
+        "label_index": 7,
+        "leader_length_px": 198.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_sun_gear__22__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_sun_gear",
+      "callout_number": "22",
+      "label": "first sun gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        974.4,
+        681.6
+      ],
+      "bbox_px": [
+        923.36,
+        644.1120000000001,
+        1025.44,
+        719.088
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        974.4,
+        681.6
+      ],
+      "label_bbox_px": [
+        923.36,
+        644.1120000000001,
+        1025.44,
+        719.088
+      ],
+      "debug": {
+        "label_index": 7
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_stage_assembly__30__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_stage_assembly",
+      "callout_number": "30",
+      "label": "second stage planetary gear assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        653.0,
+        827.0
+      ],
+      "bbox_px": [
+        571.8,
+        707.72,
+        734.2,
+        946.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        812.0,
+        817.92
+      ],
+      "label_bbox_px": [
+        760.96,
+        780.432,
+        863.04,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 10,
+        "leader_length_px": 210.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_stage_assembly__30__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_stage_assembly",
+      "callout_number": "30",
+      "label": "second stage planetary gear assembly",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        812.0,
+        817.92
+      ],
+      "bbox_px": [
+        760.96,
+        780.432,
+        863.04,
+        855.4079999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        812.0,
+        817.92
+      ],
+      "label_bbox_px": [
+        760.96,
+        780.432,
+        863.04,
+        855.4079999999999
+      ],
+      "debug": {
+        "label_index": 10
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_planetary_pinion__28__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planetary_pinion",
+      "callout_number": "28",
+      "label": "first planetary pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1098.0,
+        743.0
+      ],
+      "bbox_px": [
+        1016.8,
+        623.72,
+        1179.2,
+        862.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        715.68
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        678.192,
+        1303.8400000000001,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 11,
+        "leader_length_px": 185.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_planetary_pinion__28__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_planetary_pinion",
+      "callout_number": "28",
+      "label": "first planetary pinion",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1252.8000000000002,
+        715.68
+      ],
+      "bbox_px": [
+        1201.7600000000002,
+        678.192,
+        1303.8400000000001,
+        753.1679999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        715.68
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        678.192,
+        1303.8400000000001,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 11
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_ring_gear_member__16__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear_member",
+      "callout_number": "16",
+      "label": "first ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1572.0,
+        800.0
+      ],
+      "bbox_px": [
+        1490.8,
+        680.72,
+        1653.2,
+        919.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        715.68
+      ],
+      "label_bbox_px": [
+        1340.96,
+        678.192,
+        1443.04,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 13,
+        "leader_length_px": 161.05899540230592
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_ring_gear_member__16__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear_member",
+      "callout_number": "16",
+      "label": "first ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1392.0,
+        715.68
+      ],
+      "bbox_px": [
+        1340.96,
+        678.192,
+        1443.04,
+        753.1679999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1392.0,
+        715.68
+      ],
+      "label_bbox_px": [
+        1340.96,
+        678.192,
+        1443.04,
+        753.1679999999999
+      ],
+      "debug": {
+        "label_index": 13
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "engine_output_shaft__24__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "engine_output_shaft",
+      "callout_number": "24",
+      "label": "engine output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1338.0,
+        912.0
+      ],
+      "bbox_px": [
+        1256.8,
+        792.72,
+        1419.2,
+        1031.28
+      ],
+      "confidence": 0.84,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        886.08
+      ],
+      "label_bbox_px": [
+        1085.76,
+        848.5920000000001,
+        1187.84,
+        923.568
+      ],
+      "debug": {
+        "label_index": 23,
+        "leader_length_px": 258.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "engine_output_shaft__24__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "engine_output_shaft",
+      "callout_number": "24",
+      "label": "engine output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1136.8,
+        886.08
+      ],
+      "bbox_px": [
+        1085.76,
+        848.5920000000001,
+        1187.84,
+        923.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        886.08
+      ],
+      "label_bbox_px": [
+        1085.76,
+        848.5920000000001,
+        1187.84,
+        923.568
+      ],
+      "debug": {
+        "label_index": 23
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_ring_gear_member__16__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear_member",
+      "callout_number": "16",
+      "label": "first ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1810.0,
+        1160.0
+      ],
+      "bbox_px": [
+        1728.8,
+        1040.72,
+        1891.2,
+        1279.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1856.0,
+        1022.4
+      ],
+      "label_bbox_px": [
+        1804.96,
+        984.912,
+        1907.04,
+        1059.888
+      ],
+      "debug": {
+        "label_index": 28,
+        "leader_length_px": 113.01769772916099
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_ring_gear_member__16__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_ring_gear_member",
+      "callout_number": "16",
+      "label": "first ring gear member",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1856.0,
+        1022.4
+      ],
+      "bbox_px": [
+        1804.96,
+        984.912,
+        1907.04,
+        1059.888
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1856.0,
+        1022.4
+      ],
+      "label_bbox_px": [
+        1804.96,
+        984.912,
+        1907.04,
+        1059.888
+      ],
+      "debug": {
+        "label_index": 28
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_sun_gear__32__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_sun_gear",
+      "callout_number": "32",
+      "label": "second sun gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1972.0,
+        1158.72
+      ],
+      "bbox_px": [
+        1890.8,
+        1039.44,
+        2053.2,
+        1278.0
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1972.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        1920.96,
+        1083.7440000000001,
+        2023.04,
+        1233.696
+      ],
+      "debug": {
+        "label_index": 30,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "second_sun_gear__32__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_sun_gear",
+      "callout_number": "32",
+      "label": "second sun gear",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1972.0,
+        1158.72
+      ],
+      "bbox_px": [
+        1920.96,
+        1083.7440000000001,
+        2023.04,
+        1233.696
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1972.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        1920.96,
+        1083.7440000000001,
+        2023.04,
+        1233.696
+      ],
+      "debug": {
+        "label_index": 30
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "similar_carrier__40__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "similar_carrier",
+      "callout_number": "40",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1468.0,
+        1237.0
+      ],
+      "bbox_px": [
+        1386.8,
+        1117.72,
+        1549.2,
+        1356.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1229.6000000000001,
+        1226.8799999999999
+      ],
+      "label_bbox_px": [
+        1178.5600000000002,
+        1189.3919999999998,
+        1280.64,
+        1264.368
+      ],
+      "debug": {
+        "label_index": 34,
+        "leader_length_px": 206.0218435020908
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "similar_carrier__40__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "similar_carrier",
+      "callout_number": "40",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1229.6000000000001,
+        1226.8799999999999
+      ],
+      "bbox_px": [
+        1178.5600000000002,
+        1189.3919999999998,
+        1280.64,
+        1264.368
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1229.6000000000001,
+        1226.8799999999999
+      ],
+      "label_bbox_px": [
+        1178.5600000000002,
+        1189.3919999999998,
+        1280.64,
+        1264.368
+      ],
+      "debug": {
+        "label_index": 34
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "propeller_shaft__36__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "propeller_shaft",
+      "callout_number": "36",
+      "label": "propeller shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1067.0,
+        1191.0
+      ],
+      "bbox_px": [
+        985.8,
+        1071.72,
+        1148.2,
+        1310.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1393.8719999999998,
+        1164.6399999999999,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 43,
+        "leader_length_px": 230.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "propeller_shaft__36__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "propeller_shaft",
+      "callout_number": "36",
+      "label": "propeller shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1113.6,
+        1431.36
+      ],
+      "bbox_px": [
+        1062.56,
+        1393.8719999999998,
+        1164.6399999999999,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1113.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1062.56,
+        1393.8719999999998,
+        1164.6399999999999,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 43
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "similar_carrier__40__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "similar_carrier",
+      "callout_number": "40",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1430.0,
+        1580.0
+      ],
+      "bbox_px": [
+        1348.8,
+        1460.72,
+        1511.2,
+        1699.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1531.2,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1393.8719999999998,
+        1582.24,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 45,
+        "leader_length_px": 214.96046148071045
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "similar_carrier__40__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "similar_carrier",
+      "callout_number": "40",
+      "label": "similar carrier with planetary pinion gears and supplementary pinion gear arrangement",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1531.2,
+        1431.36
+      ],
+      "bbox_px": [
+        1480.16,
+        1393.8719999999998,
+        1582.24,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1531.2,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1393.8719999999998,
+        1582.24,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 45
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1402.0,
+        1666.0
+      ],
+      "bbox_px": [
+        1320.8,
+        1546.72,
+        1483.2,
+        1785.28
+      ],
+      "confidence": 0.912,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1572.96,
+        1393.8719999999998,
+        1675.04,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 46,
+        "leader_length_px": 269.45314991664134
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1624.0,
+        1431.36
+      ],
+      "bbox_px": [
+        1572.96,
+        1393.8719999999998,
+        1675.04,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1572.96,
+        1393.8719999999998,
+        1675.04,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 46
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1410.0,
+        1685.0
+      ],
+      "bbox_px": [
+        1328.8,
+        1565.72,
+        1491.2,
+        1804.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1577.6000000000001,
+        1533.6000000000001
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        1496.112,
+        1628.64,
+        1571.0880000000002
+      ],
+      "debug": {
+        "label_index": 48,
+        "leader_length_px": 220.61731573020282
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1577.6000000000001,
+        1533.6000000000001
+      ],
+      "bbox_px": [
+        1526.5600000000002,
+        1496.112,
+        1628.64,
+        1571.0880000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1577.6000000000001,
+        1533.6000000000001
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        1496.112,
+        1628.64,
+        1571.0880000000002
+      ],
+      "debug": {
+        "label_index": 48
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_planetary_pinion_gears__38__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_pinion_gears",
+      "callout_number": "38",
+      "label": "second planetary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1703.0,
+        1427.0
+      ],
+      "bbox_px": [
+        1621.8,
+        1307.72,
+        1784.2,
+        1546.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1716.8,
+        1533.6000000000001
+      ],
+      "label_bbox_px": [
+        1665.76,
+        1496.112,
+        1767.84,
+        1571.0880000000002
+      ],
+      "debug": {
+        "label_index": 49,
+        "leader_length_px": 102.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_planetary_pinion_gears__38__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_pinion_gears",
+      "callout_number": "38",
+      "label": "second planetary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1716.8,
+        1533.6000000000001
+      ],
+      "bbox_px": [
+        1665.76,
+        1496.112,
+        1767.84,
+        1571.0880000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1716.8,
+        1533.6000000000001
+      ],
+      "label_bbox_px": [
+        1665.76,
+        1496.112,
+        1767.84,
+        1571.0880000000002
+      ],
+      "debug": {
+        "label_index": 49
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_planetary_carrier__34__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_carrier",
+      "callout_number": "34",
+      "label": "second planetary carrier",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        652.0,
+        1546.0
+      ],
+      "bbox_px": [
+        570.8,
+        1426.72,
+        733.2,
+        1665.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        556.8,
+        1567.68
+      ],
+      "label_bbox_px": [
+        505.75999999999993,
+        1530.192,
+        607.8399999999999,
+        1605.1680000000001
+      ],
+      "debug": {
+        "label_index": 50,
+        "leader_length_px": 126.01587201618692
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_planetary_carrier__34__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_carrier",
+      "callout_number": "34",
+      "label": "second planetary carrier",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        556.8,
+        1567.68
+      ],
+      "bbox_px": [
+        505.75999999999993,
+        1530.192,
+        607.8399999999999,
+        1605.1680000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        556.8,
+        1567.68
+      ],
+      "label_bbox_px": [
+        505.75999999999993,
+        1530.192,
+        607.8399999999999,
+        1605.1680000000001
+      ],
+      "debug": {
+        "label_index": 50
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_planetary_pinion_gears__38__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_pinion_gears",
+      "callout_number": "38",
+      "label": "second planetary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1184.0,
+        1501.0
+      ],
+      "bbox_px": [
+        1102.8,
+        1381.72,
+        1265.2,
+        1620.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1160.0,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1108.96,
+        1700.5919999999999,
+        1211.04,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 56,
+        "leader_length_px": 211.0213259365034
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_planetary_pinion_gears__38__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_planetary_pinion_gears",
+      "callout_number": "38",
+      "label": "second planetary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1160.0,
+        1738.08
+      ],
+      "bbox_px": [
+        1108.96,
+        1700.5919999999999,
+        1211.04,
+        1775.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1160.0,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1108.96,
+        1700.5919999999999,
+        1211.04,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 56
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__2__part",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1902.3999999999999,
+        1772.16
+      ],
+      "bbox_px": [
+        1821.1999999999998,
+        1652.88,
+        1983.6,
+        1891.44
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 2,
+      "label_center_px": [
+        1902.3999999999999,
+        1772.16
+      ],
+      "label_bbox_px": [
+        1851.36,
+        1697.1840000000002,
+        1953.4399999999998,
+        1847.136
+      ],
+      "debug": {
+        "label_index": 59,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "supplementary_pinion_gears__42__2__label",
+      "figure_id": "figure_1.png",
+      "component_id": "supplementary_pinion_gears",
+      "callout_number": "42",
+      "label": "supplementary pinion gears",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1902.3999999999999,
+        1772.16
+      ],
+      "bbox_px": [
+        1851.36,
+        1697.1840000000002,
+        1953.4399999999998,
+        1847.136
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 2,
+      "label_center_px": [
+        1902.3999999999999,
+        1772.16
+      ],
+      "label_bbox_px": [
+        1851.36,
+        1697.1840000000002,
+        1953.4399999999998,
+        1847.136
+      ],
+      "debug": {
+        "label_index": 59
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

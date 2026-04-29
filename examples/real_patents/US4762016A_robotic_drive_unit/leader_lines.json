@@ -1,0 +1,1300 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "examples/real_patents/US4762016A_robotic_drive_unit/figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "leaders": [
+    {
+      "callout_number": "60",
+      "label_index": 0,
+      "label_position_uv": [
+        0.85,
+        0.15
+      ],
+      "label_bbox_px": [
+        1920.96,
+        473.712,
+        2023.04,
+        548.688
+      ],
+      "line_start_px": [
+        1916.0,
+        522.0
+      ],
+      "line_end_px": [
+        1867.0,
+        529.0
+      ],
+      "length_px": 49.49747468305833,
+      "confidence": 0.711,
+      "method": "hough",
+      "notes": "label_dist=5.0px"
+    },
+    {
+      "callout_number": "10",
+      "label_index": 1,
+      "label_position_uv": [
+        0.35,
+        0.28
+      ],
+      "label_bbox_px": [
+        760.96,
+        916.7520000000002,
+        863.04,
+        991.7280000000001
+      ],
+      "line_start_px": [
+        823.0,
+        989.0
+      ],
+      "line_end_px": [
+        996.0,
+        912.0
+      ],
+      "length_px": 189.3620870184948,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "54",
+      "label_index": 2,
+      "label_position_uv": [
+        0.45,
+        0.28
+      ],
+      "label_bbox_px": [
+        992.96,
+        916.7520000000002,
+        1095.04,
+        991.7280000000001
+      ],
+      "line_start_px": [
+        1059.0,
+        948.0
+      ],
+      "line_end_px": [
+        1283.0,
+        843.0
+      ],
+      "length_px": 247.38835865901208,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "26",
+      "label_index": 3,
+      "label_position_uv": [
+        0.57,
+        0.25
+      ],
+      "label_bbox_px": [
+        1271.36,
+        814.512,
+        1373.4399999999998,
+        889.488
+      ],
+      "line_start_px": [
+        1295.0,
+        835.0
+      ],
+      "line_end_px": [
+        1561.0,
+        711.0
+      ],
+      "length_px": 293.48253781102545,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "58",
+      "label_index": 4,
+      "label_position_uv": [
+        0.8,
+        0.27
+      ],
+      "label_bbox_px": [
+        1804.96,
+        882.672,
+        1907.04,
+        957.6480000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "56 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "56",
+      "label_index": 5,
+      "label_position_uv": [
+        0.36,
+        0.32
+      ],
+      "label_bbox_px": [
+        784.16,
+        1053.072,
+        886.2399999999999,
+        1128.048
+      ],
+      "line_start_px": [
+        798.0,
+        1070.0
+      ],
+      "line_end_px": [
+        597.0,
+        1124.0
+      ],
+      "length_px": 208.12736485142938,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 6,
+      "label_position_uv": [
+        0.61,
+        0.31
+      ],
+      "label_bbox_px": [
+        1364.16,
+        1018.992,
+        1466.24,
+        1093.968
+      ],
+      "line_start_px": [
+        1393.0,
+        1070.0
+      ],
+      "line_end_px": [
+        1393.0,
+        941.0
+      ],
+      "length_px": 129.0,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 7,
+      "label_position_uv": [
+        0.66,
+        0.34
+      ],
+      "label_bbox_px": [
+        1480.16,
+        1121.232,
+        1582.24,
+        1196.208
+      ],
+      "line_start_px": [
+        1488.0,
+        1155.0
+      ],
+      "line_end_px": [
+        1601.0,
+        974.0
+      ],
+      "length_px": 213.37759957408838,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "50",
+      "label_index": 8,
+      "label_position_uv": [
+        0.28,
+        0.35
+      ],
+      "label_bbox_px": [
+        598.5600000000001,
+        1155.312,
+        700.64,
+        1230.288
+      ],
+      "line_start_px": [
+        595.0,
+        1229.0
+      ],
+      "line_end_px": [
+        424.0,
+        1176.0
+      ],
+      "length_px": 179.02513789968157,
+      "confidence": 0.901,
+      "method": "hough",
+      "notes": "label_dist=3.6px"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 9,
+      "label_position_uv": [
+        0.58,
+        0.37
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1223.472,
+        1396.6399999999999,
+        1298.448
+      ],
+      "line_start_px": [
+        1354.0,
+        1265.0
+      ],
+      "line_end_px": [
+        1363.0,
+        1137.0
+      ],
+      "length_px": 128.3160161476345,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 10,
+      "label_position_uv": [
+        0.2,
+        0.38
+      ],
+      "label_bbox_px": [
+        412.96,
+        1257.552,
+        515.04,
+        1332.528
+      ],
+      "line_start_px": [
+        496.0,
+        1268.0
+      ],
+      "line_end_px": [
+        334.0,
+        1218.0
+      ],
+      "length_px": 169.54055562018192,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "38",
+      "label_index": 11,
+      "label_position_uv": [
+        0.73,
+        0.38
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1257.552,
+        1744.6399999999999,
+        1332.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "38 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "30",
+      "label_index": 12,
+      "label_position_uv": [
+        0.59,
+        0.4
+      ],
+      "label_bbox_px": [
+        1317.76,
+        1325.712,
+        1419.84,
+        1400.688
+      ],
+      "line_start_px": [
+        1395.0,
+        1389.0
+      ],
+      "line_end_px": [
+        1398.0,
+        1278.0
+      ],
+      "length_px": 111.04053313993049,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "24",
+      "label_index": 13,
+      "label_position_uv": [
+        0.65,
+        0.4
+      ],
+      "label_bbox_px": [
+        1456.96,
+        1325.712,
+        1559.04,
+        1400.688
+      ],
+      "line_start_px": [
+        1446.0,
+        1384.0
+      ],
+      "line_end_px": [
+        1441.0,
+        1419.0
+      ],
+      "length_px": 35.35533905932738,
+      "confidence": 0.41,
+      "method": "hough",
+      "notes": "label_dist=11.0px"
+    },
+    {
+      "callout_number": "37",
+      "label_index": 14,
+      "label_position_uv": [
+        0.58,
+        0.43
+      ],
+      "label_bbox_px": [
+        1294.56,
+        1427.952,
+        1396.6399999999999,
+        1502.928
+      ],
+      "line_start_px": [
+        1356.0,
+        1475.0
+      ],
+      "line_end_px": [
+        1250.0,
+        1472.0
+      ],
+      "length_px": 106.04244433244644,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "39",
+      "label_index": 15,
+      "label_position_uv": [
+        0.71,
+        0.42
+      ],
+      "label_bbox_px": [
+        1596.1599999999999,
+        1393.8719999999998,
+        1698.2399999999998,
+        1468.848
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "62 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "28",
+      "label_index": 16,
+      "label_position_uv": [
+        0.59,
+        0.45
+      ],
+      "label_bbox_px": [
+        1317.76,
+        1496.112,
+        1419.84,
+        1571.0880000000002
+      ],
+      "line_start_px": [
+        1321.0,
+        1482.0
+      ],
+      "line_end_px": [
+        1395.0,
+        1461.0
+      ],
+      "length_px": 76.92203845452875,
+      "confidence": 0.608,
+      "method": "hough",
+      "notes": "label_dist=14.1px"
+    },
+    {
+      "callout_number": "32",
+      "label_index": 17,
+      "label_position_uv": [
+        0.68,
+        0.45
+      ],
+      "label_bbox_px": [
+        1526.5600000000002,
+        1496.112,
+        1628.64,
+        1571.0880000000002
+      ],
+      "line_start_px": [
+        1632.0,
+        1531.0
+      ],
+      "line_end_px": [
+        1634.0,
+        1591.0
+      ],
+      "length_px": 60.03332407921454,
+      "confidence": 0.907,
+      "method": "hough",
+      "notes": "label_dist=3.4px"
+    },
+    {
+      "callout_number": "34",
+      "label_index": 18,
+      "label_position_uv": [
+        0.73,
+        0.44
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1462.032,
+        1744.6399999999999,
+        1537.008
+      ],
+      "line_start_px": [
+        1637.0,
+        1534.0
+      ],
+      "line_end_px": [
+        1632.0,
+        1590.0
+      ],
+      "length_px": 56.22277118748239,
+      "confidence": 0.792,
+      "method": "hough",
+      "notes": "label_dist=5.6px"
+    },
+    {
+      "callout_number": "46",
+      "label_index": 19,
+      "label_position_uv": [
+        0.42,
+        0.46
+      ],
+      "label_bbox_px": [
+        923.36,
+        1530.192,
+        1025.44,
+        1605.1680000000001
+      ],
+      "line_start_px": [
+        931.0,
+        1517.0
+      ],
+      "line_end_px": [
+        876.0,
+        1560.0
+      ],
+      "length_px": 69.81403870282824,
+      "confidence": 0.634,
+      "method": "hough",
+      "notes": "label_dist=13.2px"
+    },
+    {
+      "callout_number": "41",
+      "label_index": 20,
+      "label_position_uv": [
+        0.4,
+        0.48
+      ],
+      "label_bbox_px": [
+        876.96,
+        1598.3519999999999,
+        979.04,
+        1673.328
+      ],
+      "line_start_px": [
+        871.0,
+        1598.0
+      ],
+      "line_end_px": [
+        821.0,
+        1599.0
+      ],
+      "length_px": 50.00999900019995,
+      "confidence": 0.695,
+      "method": "hough",
+      "notes": "label_dist=6.0px"
+    },
+    {
+      "callout_number": "22",
+      "label_index": 21,
+      "label_position_uv": [
+        0.63,
+        0.48
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1598.3519999999999,
+        1512.6399999999999,
+        1673.328
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "48 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 22,
+      "label_position_uv": [
+        0.23,
+        0.5
+      ],
+      "label_bbox_px": [
+        482.56,
+        1666.512,
+        584.64,
+        1741.488
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "46 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 23,
+      "label_position_uv": [
+        0.5,
+        0.51
+      ],
+      "label_bbox_px": [
+        1108.96,
+        1700.5919999999999,
+        1211.04,
+        1775.568
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "2 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 24,
+      "label_position_uv": [
+        0.56,
+        0.52
+      ],
+      "label_bbox_px": [
+        1248.16,
+        1734.672,
+        1350.24,
+        1809.6480000000001
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "11 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 25,
+      "label_position_uv": [
+        0.41,
+        0.53
+      ],
+      "label_bbox_px": [
+        900.16,
+        1768.752,
+        1002.2399999999999,
+        1843.728
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "29 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "42",
+      "label_index": 26,
+      "label_position_uv": [
+        0.44,
+        0.57
+      ],
+      "label_bbox_px": [
+        969.76,
+        1905.072,
+        1071.84,
+        1980.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "112 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 27,
+      "label_position_uv": [
+        0.65,
+        0.56
+      ],
+      "label_bbox_px": [
+        1456.96,
+        1870.9920000000002,
+        1559.04,
+        1945.9680000000003
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "9 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 28,
+      "label_position_uv": [
+        0.26,
+        0.59
+      ],
+      "label_bbox_px": [
+        552.1600000000001,
+        1973.2319999999997,
+        654.24,
+        2048.2079999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "72 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 29,
+      "label_position_uv": [
+        0.47,
+        0.6
+      ],
+      "label_bbox_px": [
+        1039.36,
+        2007.312,
+        1141.4399999999998,
+        2082.288
+      ],
+      "line_start_px": [
+        1120.0,
+        2080.0
+      ],
+      "line_end_px": [
+        1172.0,
+        2110.0
+      ],
+      "length_px": 60.03332407921454,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "56",
+      "label_index": 30,
+      "label_position_uv": [
+        0.37,
+        0.72
+      ],
+      "label_bbox_px": [
+        807.36,
+        2416.272,
+        909.4399999999999,
+        2491.2479999999996
+      ],
+      "line_start_px": [
+        790.0,
+        2488.0
+      ],
+      "line_end_px": [
+        751.0,
+        2486.0
+      ],
+      "length_px": 39.05124837953327,
+      "confidence": 0.337,
+      "method": "hough",
+      "notes": "label_dist=17.4px"
+    },
+    {
+      "callout_number": "26",
+      "label_index": 31,
+      "label_position_uv": [
+        0.55,
+        0.72
+      ],
+      "label_bbox_px": [
+        1224.96,
+        2416.272,
+        1327.04,
+        2491.2479999999996
+      ],
+      "line_start_px": [
+        1222.0,
+        2432.0
+      ],
+      "line_end_px": [
+        1514.0,
+        2401.0
+      ],
+      "length_px": 293.64093720052045,
+      "confidence": 0.918,
+      "method": "hough",
+      "notes": "label_dist=3.0px"
+    },
+    {
+      "callout_number": "52",
+      "label_index": 32,
+      "label_position_uv": [
+        0.16,
+        0.76
+      ],
+      "label_bbox_px": [
+        320.15999999999997,
+        2552.592,
+        422.24,
+        2627.5679999999998
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "66 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "20",
+      "label_index": 33,
+      "label_position_uv": [
+        0.58,
+        0.76
+      ],
+      "label_bbox_px": [
+        1294.56,
+        2552.592,
+        1396.6399999999999,
+        2627.5679999999998
+      ],
+      "line_start_px": [
+        1318.0,
+        2609.0
+      ],
+      "line_end_px": [
+        1262.0,
+        2644.0
+      ],
+      "length_px": 66.03786792439622,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "54",
+      "label_index": 34,
+      "label_position_uv": [
+        0.7,
+        0.75
+      ],
+      "label_bbox_px": [
+        1572.96,
+        2518.512,
+        1675.04,
+        2593.488
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "91 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "24",
+      "label_index": 35,
+      "label_position_uv": [
+        0.52,
+        0.8
+      ],
+      "label_bbox_px": [
+        1155.3600000000001,
+        2688.9120000000003,
+        1257.44,
+        2763.888
+      ],
+      "line_start_px": [
+        1194.0,
+        2686.0
+      ],
+      "line_end_px": [
+        1224.0,
+        2644.0
+      ],
+      "length_px": 51.61395160225576,
+      "confidence": 0.791,
+      "method": "hough",
+      "notes": "label_dist=2.9px"
+    },
+    {
+      "callout_number": "50",
+      "label_index": 36,
+      "label_position_uv": [
+        0.27,
+        0.8
+      ],
+      "label_bbox_px": [
+        575.3600000000001,
+        2688.9120000000003,
+        677.44,
+        2763.888
+      ],
+      "line_start_px": [
+        580.0,
+        2709.0
+      ],
+      "line_end_px": [
+        575.0,
+        2569.0
+      ],
+      "length_px": 140.089257261219,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "30",
+      "label_index": 37,
+      "label_position_uv": [
+        0.56,
+        0.8
+      ],
+      "label_bbox_px": [
+        1248.16,
+        2688.9120000000003,
+        1350.24,
+        2763.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "80 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "40",
+      "label_index": 38,
+      "label_position_uv": [
+        0.63,
+        0.8
+      ],
+      "label_bbox_px": [
+        1410.56,
+        2688.9120000000003,
+        1512.6399999999999,
+        2763.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "76 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "60",
+      "label_index": 39,
+      "label_position_uv": [
+        0.88,
+        0.8
+      ],
+      "label_bbox_px": [
+        1990.56,
+        2688.9120000000003,
+        2092.64,
+        2763.888
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "37",
+      "label_index": 40,
+      "label_position_uv": [
+        0.5,
+        0.82
+      ],
+      "label_bbox_px": [
+        1108.96,
+        2757.072,
+        1211.04,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "53 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "32",
+      "label_index": 41,
+      "label_position_uv": [
+        0.6,
+        0.82
+      ],
+      "label_bbox_px": [
+        1340.96,
+        2757.072,
+        1443.04,
+        2832.048
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "41 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "48",
+      "label_index": 42,
+      "label_position_uv": [
+        0.27,
+        0.83
+      ],
+      "label_bbox_px": [
+        575.3600000000001,
+        2791.152,
+        677.44,
+        2866.1279999999997
+      ],
+      "line_start_px": [
+        621.0,
+        2798.0
+      ],
+      "line_end_px": [
+        535.0,
+        2775.0
+      ],
+      "length_px": 89.02246907382428,
+      "confidence": 1.0,
+      "method": "hough",
+      "notes": "label_dist=0.0px"
+    },
+    {
+      "callout_number": "39",
+      "label_index": 43,
+      "label_position_uv": [
+        0.53,
+        0.84
+      ],
+      "label_bbox_px": [
+        1178.5600000000002,
+        2825.232,
+        1280.64,
+        2900.2079999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "25 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "38",
+      "label_index": 44,
+      "label_position_uv": [
+        0.72,
+        0.84
+      ],
+      "label_bbox_px": [
+        1619.36,
+        2825.232,
+        1721.4399999999998,
+        2900.2079999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "32 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "58",
+      "label_index": 45,
+      "label_position_uv": [
+        0.8,
+        0.84
+      ],
+      "label_bbox_px": [
+        1804.96,
+        2825.232,
+        1907.04,
+        2900.2079999999996
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "24 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "22",
+      "label_index": 46,
+      "label_position_uv": [
+        0.54,
+        0.86
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        2893.3920000000003,
+        1303.8400000000001,
+        2968.368
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "46",
+      "label_index": 47,
+      "label_position_uv": [
+        0.33,
+        0.86
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        2893.3920000000003,
+        816.64,
+        2968.368
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "53 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "41",
+      "label_index": 48,
+      "label_position_uv": [
+        0.32,
+        0.88
+      ],
+      "label_bbox_px": [
+        691.36,
+        2961.552,
+        793.4399999999999,
+        3036.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "20 segments rejected (label dist or length)"
+    },
+    {
+      "callout_number": "34",
+      "label_index": 49,
+      "label_position_uv": [
+        0.62,
+        0.88
+      ],
+      "label_bbox_px": [
+        1387.3600000000001,
+        2961.552,
+        1489.44,
+        3036.528
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "44",
+      "label_index": 50,
+      "label_position_uv": [
+        0.3,
+        0.9
+      ],
+      "label_bbox_px": [
+        644.96,
+        3029.7120000000004,
+        747.04,
+        3104.688
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "18",
+      "label_index": 51,
+      "label_position_uv": [
+        0.59,
+        0.9
+      ],
+      "label_bbox_px": [
+        1317.76,
+        3029.7120000000004,
+        1419.84,
+        3104.688
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "14",
+      "label_index": 52,
+      "label_position_uv": [
+        0.47,
+        0.91
+      ],
+      "label_bbox_px": [
+        1039.36,
+        3063.7920000000004,
+        1141.4399999999998,
+        3138.768
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "42",
+      "label_index": 53,
+      "label_position_uv": [
+        0.33,
+        0.93
+      ],
+      "label_bbox_px": [
+        714.5600000000001,
+        3131.952,
+        816.64,
+        3206.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 54,
+      "label_position_uv": [
+        0.57,
+        0.93
+      ],
+      "label_bbox_px": [
+        1271.36,
+        3131.952,
+        1373.4399999999998,
+        3206.928
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "16",
+      "label_index": 55,
+      "label_position_uv": [
+        0.22,
+        0.95
+      ],
+      "label_bbox_px": [
+        459.35999999999996,
+        3200.112,
+        561.4399999999999,
+        3275.0879999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    },
+    {
+      "callout_number": "12",
+      "label_index": 56,
+      "label_position_uv": [
+        0.35,
+        0.96
+      ],
+      "label_bbox_px": [
+        760.96,
+        3234.192,
+        863.04,
+        3309.1679999999997
+      ],
+      "line_start_px": null,
+      "line_end_px": null,
+      "length_px": 0.0,
+      "confidence": 0.0,
+      "method": "none",
+      "notes": "no Hough segments in ROI"
+    }
+  ],
+  "notes": "detected 25/57 leader endpoints (44%)"
+}

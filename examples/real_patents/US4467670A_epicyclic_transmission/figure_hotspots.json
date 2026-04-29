@@ -1,0 +1,1319 @@
+{
+  "schema_version": "0.1.0",
+  "figure_id": "figure_1.png",
+  "figure_path": "figures/figure_1.png",
+  "image_width_px": 2320,
+  "image_height_px": 3408,
+  "hotspots": [
+    {
+      "hotspot_id": "housing__1__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "1",
+      "label": "housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1809.6000000000001,
+        1601.76
+      ],
+      "bbox_px": [
+        1728.4,
+        1482.48,
+        1890.8000000000002,
+        1721.04
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1809.6000000000001,
+        1601.76
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1526.784,
+        1860.64,
+        1676.7359999999999
+      ],
+      "debug": {
+        "label_index": 0,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "housing__1__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "housing",
+      "callout_number": "1",
+      "label": "housing",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1809.6000000000001,
+        1601.76
+      ],
+      "bbox_px": [
+        1758.5600000000002,
+        1526.784,
+        1860.64,
+        1676.7359999999999
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1809.6000000000001,
+        1601.76
+      ],
+      "label_bbox_px": [
+        1758.5600000000002,
+        1526.784,
+        1860.64,
+        1676.7359999999999
+      ],
+      "debug": {
+        "label_index": 0
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "input_shaft__2__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "2",
+      "label": "input shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1651.0,
+        1397.0
+      ],
+      "bbox_px": [
+        1569.8,
+        1277.72,
+        1732.2,
+        1516.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        1572.96,
+        1121.232,
+        1675.04,
+        1196.208
+      ],
+      "debug": {
+        "label_index": 1,
+        "leader_length_px": 262.03053257206494
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "input_shaft__2__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "input_shaft",
+      "callout_number": "2",
+      "label": "input shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1624.0,
+        1158.72
+      ],
+      "bbox_px": [
+        1572.96,
+        1121.232,
+        1675.04,
+        1196.208
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1624.0,
+        1158.72
+      ],
+      "label_bbox_px": [
+        1572.96,
+        1121.232,
+        1675.04,
+        1196.208
+      ],
+      "debug": {
+        "label_index": 1
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "intermediate_shaft__3__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "intermediate_shaft",
+      "callout_number": "3",
+      "label": "intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1585.0,
+        1210.0
+      ],
+      "bbox_px": [
+        1503.8,
+        1090.72,
+        1666.2,
+        1329.28
+      ],
+      "confidence": 0.681,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1223.472,
+        1512.6399999999999,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 2,
+        "leader_length_px": 166.01204775557707
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "intermediate_shaft__3__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "intermediate_shaft",
+      "callout_number": "3",
+      "label": "intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1461.6,
+        1260.96
+      ],
+      "bbox_px": [
+        1410.56,
+        1223.472,
+        1512.6399999999999,
+        1298.448
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1461.6,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1410.56,
+        1223.472,
+        1512.6399999999999,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 2
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "first_means__4__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "first_means",
+      "callout_number": "4",
+      "label": "first means to rotatably support one end of intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1648.0,
+        1020.0
+      ],
+      "bbox_px": [
+        1566.8,
+        900.72,
+        1729.2,
+        1139.28
+      ],
+      "confidence": 0.957,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1600.8,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1549.76,
+        1223.472,
+        1651.84,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 3,
+        "leader_length_px": 280.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "first_means__4__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "first_means",
+      "callout_number": "4",
+      "label": "first means to rotatably support one end of intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1600.8,
+        1260.96
+      ],
+      "bbox_px": [
+        1549.76,
+        1223.472,
+        1651.84,
+        1298.448
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1600.8,
+        1260.96
+      ],
+      "label_bbox_px": [
+        1549.76,
+        1223.472,
+        1651.84,
+        1298.448
+      ],
+      "debug": {
+        "label_index": 3
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "second_means__5__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "second_means",
+      "callout_number": "5",
+      "label": "second means to rotatably support other end of intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1650.0,
+        1191.0
+      ],
+      "bbox_px": [
+        1568.8,
+        1071.72,
+        1731.2,
+        1310.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1693.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1393.8719999999998,
+        1744.6399999999999,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 4,
+        "leader_length_px": 239.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "second_means__5__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "second_means",
+      "callout_number": "5",
+      "label": "second means to rotatably support other end of intermediate shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1693.6,
+        1431.36
+      ],
+      "bbox_px": [
+        1642.56,
+        1393.8719999999998,
+        1744.6399999999999,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1693.6,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1393.8719999999998,
+        1744.6399999999999,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 4
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "output_shaft__6__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "6",
+      "label": "output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1696.0,
+        1515.0
+      ],
+      "bbox_px": [
+        1614.8,
+        1395.72,
+        1777.2,
+        1634.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1693.6,
+        1329.1200000000001
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1291.632,
+        1744.6399999999999,
+        1366.6080000000002
+      ],
+      "debug": {
+        "label_index": 5,
+        "leader_length_px": 222.03603311174518
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "output_shaft__6__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "output_shaft",
+      "callout_number": "6",
+      "label": "output shaft",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1693.6,
+        1329.1200000000001
+      ],
+      "bbox_px": [
+        1642.56,
+        1291.632,
+        1744.6399999999999,
+        1366.6080000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1693.6,
+        1329.1200000000001
+      ],
+      "label_bbox_px": [
+        1642.56,
+        1291.632,
+        1744.6399999999999,
+        1366.6080000000002
+      ],
+      "debug": {
+        "label_index": 5
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "cvt_means__7__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "cvt_means",
+      "callout_number": "7",
+      "label": "belt drive continuously-variable speed transmission means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1681.0,
+        1519.0
+      ],
+      "bbox_px": [
+        1599.8,
+        1399.72,
+        1762.2,
+        1638.28
+      ],
+      "confidence": 0.606,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1484.8,
+        1567.68
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1530.192,
+        1535.84,
+        1605.1680000000001
+      ],
+      "debug": {
+        "label_index": 6,
+        "leader_length_px": 145.03103116229988
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "cvt_means__7__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "cvt_means",
+      "callout_number": "7",
+      "label": "belt drive continuously-variable speed transmission means",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1484.8,
+        1567.68
+      ],
+      "bbox_px": [
+        1433.76,
+        1530.192,
+        1535.84,
+        1605.1680000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1484.8,
+        1567.68
+      ],
+      "label_bbox_px": [
+        1433.76,
+        1530.192,
+        1535.84,
+        1605.1680000000001
+      ],
+      "debug": {
+        "label_index": 6
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "primary_pulley__8__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_pulley",
+      "callout_number": "8",
+      "label": "primary variable-pitch pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1012.0,
+        1213.0
+      ],
+      "bbox_px": [
+        930.8,
+        1093.72,
+        1093.2,
+        1332.28
+      ],
+      "confidence": 0.829,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1192.8
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1155.312,
+        1303.8400000000001,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 7,
+        "leader_length_px": 298.04194335697116
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "primary_pulley__8__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_pulley",
+      "callout_number": "8",
+      "label": "primary variable-pitch pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1252.8000000000002,
+        1192.8
+      ],
+      "bbox_px": [
+        1201.7600000000002,
+        1155.312,
+        1303.8400000000001,
+        1230.288
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1192.8
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1155.312,
+        1303.8400000000001,
+        1230.288
+      ],
+      "debug": {
+        "label_index": 7
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "secondary_pulley__9__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_pulley",
+      "callout_number": "9",
+      "label": "secondary variable-pitch pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        696.0,
+        1874.4
+      ],
+      "bbox_px": [
+        614.8,
+        1755.1200000000001,
+        777.2,
+        1993.68
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        696.0,
+        1874.4
+      ],
+      "label_bbox_px": [
+        644.96,
+        1799.424,
+        747.04,
+        1949.3760000000002
+      ],
+      "debug": {
+        "label_index": 8,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "secondary_pulley__9__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_pulley",
+      "callout_number": "9",
+      "label": "secondary variable-pitch pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        696.0,
+        1874.4
+      ],
+      "bbox_px": [
+        644.96,
+        1799.424,
+        747.04,
+        1949.3760000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        696.0,
+        1874.4
+      ],
+      "label_bbox_px": [
+        644.96,
+        1799.424,
+        747.04,
+        1949.3760000000002
+      ],
+      "debug": {
+        "label_index": 8
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "endless_belt__10__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "endless_belt",
+      "callout_number": "10",
+      "label": "endless belt",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        981.0,
+        1775.0
+      ],
+      "bbox_px": [
+        899.8,
+        1655.72,
+        1062.2,
+        1894.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        742.4,
+        1806.24
+      ],
+      "label_bbox_px": [
+        691.36,
+        1768.752,
+        793.4399999999999,
+        1843.728
+      ],
+      "debug": {
+        "label_index": 9,
+        "leader_length_px": 198.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "endless_belt__10__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "endless_belt",
+      "callout_number": "10",
+      "label": "endless belt",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        742.4,
+        1806.24
+      ],
+      "bbox_px": [
+        691.36,
+        1768.752,
+        793.4399999999999,
+        1843.728
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        742.4,
+        1806.24
+      ],
+      "label_bbox_px": [
+        691.36,
+        1768.752,
+        793.4399999999999,
+        1843.728
+      ],
+      "debug": {
+        "label_index": 9
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "clutch__11__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "clutch",
+      "callout_number": "11",
+      "label": "clutch",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        719.2,
+        1908.4800000000002
+      ],
+      "bbox_px": [
+        638.0,
+        1789.2000000000003,
+        800.4000000000001,
+        2027.7600000000002
+      ],
+      "confidence": 0.4,
+      "source": "label_center",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        719.2,
+        1908.4800000000002
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        1833.5040000000004,
+        770.24,
+        1983.4560000000001
+      ],
+      "debug": {
+        "label_index": 10,
+        "origin": "fallback to label centre"
+      },
+      "confidence_tier": "low"
+    },
+    {
+      "hotspot_id": "clutch__11__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "clutch",
+      "callout_number": "11",
+      "label": "clutch",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        719.2,
+        1908.4800000000002
+      ],
+      "bbox_px": [
+        668.1600000000001,
+        1833.5040000000004,
+        770.24,
+        1983.4560000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        719.2,
+        1908.4800000000002
+      ],
+      "label_bbox_px": [
+        668.1600000000001,
+        1833.5040000000004,
+        770.24,
+        1983.4560000000001
+      ],
+      "debug": {
+        "label_index": 10
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "change_direction_gear_train__12__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "change_direction_gear_train",
+      "callout_number": "12",
+      "label": "change-direction gear train",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        833.0,
+        1978.0
+      ],
+      "bbox_px": [
+        751.8,
+        1858.72,
+        914.2,
+        2097.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        858.4,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        807.36,
+        1802.832,
+        909.4399999999999,
+        1877.8080000000002
+      ],
+      "debug": {
+        "label_index": 11,
+        "leader_length_px": 171.68575945604806
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "change_direction_gear_train__12__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "change_direction_gear_train",
+      "callout_number": "12",
+      "label": "change-direction gear train",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        858.4,
+        1840.3200000000002
+      ],
+      "bbox_px": [
+        807.36,
+        1802.832,
+        909.4399999999999,
+        1877.8080000000002
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        858.4,
+        1840.3200000000002
+      ],
+      "label_bbox_px": [
+        807.36,
+        1802.832,
+        909.4399999999999,
+        1877.8080000000002
+      ],
+      "debug": {
+        "label_index": 11
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "primary_fixed_flange__71__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_fixed_flange",
+      "callout_number": "71",
+      "label": "fixed pulley flange of primary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        896.0,
+        1775.0
+      ],
+      "bbox_px": [
+        814.8,
+        1655.72,
+        977.2,
+        1894.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1085.76,
+        1700.5919999999999,
+        1187.84,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 33,
+        "leader_length_px": 270.0
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "primary_fixed_flange__71__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_fixed_flange",
+      "callout_number": "71",
+      "label": "fixed pulley flange of primary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1136.8,
+        1738.08
+      ],
+      "bbox_px": [
+        1085.76,
+        1700.5919999999999,
+        1187.84,
+        1775.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1085.76,
+        1700.5919999999999,
+        1187.84,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 33
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "primary_movable_flange__72__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_movable_flange",
+      "callout_number": "72",
+      "label": "movable pulley flange of primary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1165.0,
+        1731.0
+      ],
+      "bbox_px": [
+        1083.8,
+        1611.72,
+        1246.2,
+        1850.28
+      ],
+      "confidence": 0.854,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        997.6,
+        1601.76
+      ],
+      "label_bbox_px": [
+        946.5600000000001,
+        1564.272,
+        1048.64,
+        1639.248
+      ],
+      "debug": {
+        "label_index": 34,
+        "leader_length_px": 228.21919288263203
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "primary_movable_flange__72__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "primary_movable_flange",
+      "callout_number": "72",
+      "label": "movable pulley flange of primary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        997.6,
+        1601.76
+      ],
+      "bbox_px": [
+        946.5600000000001,
+        1564.272,
+        1048.64,
+        1639.248
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        997.6,
+        1601.76
+      ],
+      "label_bbox_px": [
+        946.5600000000001,
+        1564.272,
+        1048.64,
+        1639.248
+      ],
+      "debug": {
+        "label_index": 34
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "secondary_fixed_flange__81__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_fixed_flange",
+      "callout_number": "81",
+      "label": "fixed pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1125.0,
+        1608.0
+      ],
+      "bbox_px": [
+        1043.8,
+        1488.72,
+        1206.2,
+        1727.28
+      ],
+      "confidence": 0.59,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1669.92
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1632.432,
+        1303.8400000000001,
+        1707.4080000000001
+      ],
+      "debug": {
+        "label_index": 35,
+        "leader_length_px": 68.87670143089025
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "secondary_fixed_flange__81__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_fixed_flange",
+      "callout_number": "81",
+      "label": "fixed pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1252.8000000000002,
+        1669.92
+      ],
+      "bbox_px": [
+        1201.7600000000002,
+        1632.432,
+        1303.8400000000001,
+        1707.4080000000001
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1252.8000000000002,
+        1669.92
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1632.432,
+        1303.8400000000001,
+        1707.4080000000001
+      ],
+      "debug": {
+        "label_index": 35
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "secondary_movable_flange__82__0__part",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_movable_flange",
+      "callout_number": "82",
+      "label": "movable pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        939.0,
+        1424.0
+      ],
+      "bbox_px": [
+        857.8,
+        1304.72,
+        1020.2,
+        1543.28
+      ],
+      "confidence": 0.812,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1085.76,
+        1393.8719999999998,
+        1187.84,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 36,
+        "leader_length_px": 140.089257261219
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "secondary_movable_flange__82__0__label",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_movable_flange",
+      "callout_number": "82",
+      "label": "movable pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1136.8,
+        1431.36
+      ],
+      "bbox_px": [
+        1085.76,
+        1393.8719999999998,
+        1187.84,
+        1468.848
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 0,
+      "label_center_px": [
+        1136.8,
+        1431.36
+      ],
+      "label_bbox_px": [
+        1085.76,
+        1393.8719999999998,
+        1187.84,
+        1468.848
+      ],
+      "debug": {
+        "label_index": 36
+      },
+      "confidence_tier": "medium"
+    },
+    {
+      "hotspot_id": "secondary_movable_flange__82__1__part",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_movable_flange",
+      "callout_number": "82",
+      "label": "movable pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1012.0,
+        1773.0
+      ],
+      "bbox_px": [
+        930.8,
+        1653.72,
+        1093.2,
+        1892.28
+      ],
+      "confidence": 1.0,
+      "source": "leader_endpoint",
+      "hotspot_kind": "part",
+      "instance_id": 1,
+      "label_center_px": [
+        1252.8000000000002,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1700.5919999999999,
+        1303.8400000000001,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 37,
+        "leader_length_px": 262.03053257206494
+      },
+      "confidence_tier": "high"
+    },
+    {
+      "hotspot_id": "secondary_movable_flange__82__1__label",
+      "figure_id": "figure_1.png",
+      "component_id": "secondary_movable_flange",
+      "callout_number": "82",
+      "label": "movable pulley flange of secondary pulley",
+      "coord_space": "image_pixel",
+      "image_width_px": 2320,
+      "image_height_px": 3408,
+      "center_px": [
+        1252.8000000000002,
+        1738.08
+      ],
+      "bbox_px": [
+        1201.7600000000002,
+        1700.5919999999999,
+        1303.8400000000001,
+        1775.568
+      ],
+      "confidence": 0.6,
+      "source": "label_center",
+      "hotspot_kind": "label",
+      "instance_id": 1,
+      "label_center_px": [
+        1252.8000000000002,
+        1738.08
+      ],
+      "label_bbox_px": [
+        1201.7600000000002,
+        1700.5919999999999,
+        1303.8400000000001,
+        1775.568
+      ],
+      "debug": {
+        "label_index": 37
+      },
+      "confidence_tier": "medium"
+    }
+  ],
+  "notes": "Hotspots are in raw image-pixel coordinates (origin top-left). Each callout instance gets a part hotspot (leader endpoint when available) AND a label hotspot. Repeated callouts (e.g. upper/lower hinge) are preserved as separate instance_id rows. V12-F: confidence_tier per hotspot drives demo-mode filtering."
+}

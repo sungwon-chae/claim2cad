@@ -1973,3 +1973,54 @@ axes are stricter).
 `claim2cad/manifest.py` stages ``figure_projection.json`` alongside
 the other v1.1 sidecars.
 
+
+## Phase V11-29 — Figure hotspot diagnosis + canonical schema — COMPLETED 2026-04-29 15:25 KST
+
+`hotspot_diagnosis.md` identified two real bugs (claim_map rows
+missing `figure_number`, duplicate callouts rendered twice) and one
+structural limitation (label position vs part position). v11-29b
+ships ``claim2cad/figure_hotspots.py`` with a canonical schema:
+raw image-pixel ``center_px`` and ``bbox_px`` per hotspot, with
+``coord_space="image_pixel"``, ``image_width_px`` /
+``image_height_px``, ``confidence`` and ``source`` tag
+("figure_projection" / "median_label" / "label").
+
+## Phase V11-30..32 — Figure-grounded hotspots end-to-end
+
+`build_hotspots_for_example` prefers ``figure_projection.json``
+component_anchors (median over duplicate callouts), falls back to
+the median of label occurrences, then to single label position.
+Validates within image bounds + every component_id present in
+claim_map.
+
+`render_hotspot_debug_overlay` writes
+``renders_v1.1/figure_hotspot_debug.png`` with one coloured dot per
+hotspot, colour-coded by source.
+
+`viewer/src/components/FigurePanel.tsx` accepts a
+``hotspotsCanonical`` prop. When present, it renders hotspots from
+the canonical raw-image-pixel coordinates (converted to CSS
+percentages at render time, using the canonical
+image_width_px / image_height_px as denominator).
+
+`viewer/src/App.tsx` fetches ``data/<example>/figure_hotspots.json``
+on example switch.
+
+`claim2cad/manifest.py` stages ``figure_hotspots.json`` alongside
+the other v1.1 sidecars.
+
+For US4807331A_spring_loaded_hinge: 25 hotspots, all sourced from
+figure_projection. Hotspot UV spread > 0.20 on both axes
+(regression check against the v1.0 collapse-to-one-region failure).
+
+9 new tests (`tests/test_figure_hotspots.py`); 269 → 278 tests
+passing.
+
+## Phase V11-33 — Hotspot grounding docs
+
+`docs/HOTSPOT_GROUNDING.md` documents the coordinate convention,
+the triplet mapping (claim_text ↔ figure ↔ CAD), and the four
+known limitations: no leader-line tracing, heuristic per-instance
+disambiguation, no manual_overrides block today, no per-part
+image segmentation.
+

@@ -320,6 +320,7 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
         for optional in (
             "projection_report.json",
             "figure_view.json",
+            "figure_projection.json",
             "shape_inference.json",
             "solver_diagnostics.json",
             "scene_scaffold.json",

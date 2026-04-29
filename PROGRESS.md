@@ -1892,3 +1892,84 @@ after V11-21's first scaffold pass before pin stretching).
 
 255 tests still passing. Viewer typecheck clean.
 
+
+## Phase V11-23 — Figure projection coordinate model — COMPLETED 2026-04-29 14:35 KST
+
+`claim2cad/figure_projection.py` introduces a real projection
+constraint. ``FigureProjection`` knows view_type, projection_plane
+(which CAD axes correspond to (u, v)), scale, origin, and depth
+axis. ``uv_to_world`` maps a figure (u, v) anchor to CAD (x, y, z)
+and back. Helpers:
+
+  * ``build_projection(view_kind, ...)``
+  * ``figure_anchors_for_components(figure_map, projection)``
+  * ``group_anchors_from_components(...)`` (median (u, v) of members)
+
+`figure_projection_diagnosis.md` first identified the problem: the
+v11-19..22 scaffold places groups at canonical origins; components
+collapse to the group origin + small jitter; figure_map's per-callout
+anchors are never read. v11-23 fixes this by reading them.
+
+For US4807331A: 25/25 anchors mapped, 7 group anchors, projection
+plane = (X, Z), figure-aligned at 204×300 mm.
+
+## Phase V11-24..25 — Figure-anchored solver + figure-aligned render
+
+`claim2cad/projection_layout_solver.build_assembly_figure_anchored`
+places each component at its figure_anchor.cad_anchor_mm + a per-
+shape-family depth offset. Pin/shaft snaps to the pintle_axis anchor
+and is stretched to span the upper/lower hinge V-extent. Synthetic
+context panels are sized from the figure-projected bbox of their
+members.
+
+`claim2cad/figure_aligned_render.render_figure_aligned` uses the
+projection's matching camera (front for the X-Z isometric figure).
+Outputs:
+
+  renders_v1.1/figure_aligned_view.png
+  renders_v1.1/figure_aligned_solid.png
+  renders_v1.1/figure_anchor_debug.png   (anchors drawn on figure)
+  renders_v1.1/figure_aligned_comparison.png   (figure | CAD)
+  render_comparison.png  (← promoted to figure-aligned)
+
+US4807331A change vs V11-22:
+
+  metric              v11-22           v11-25
+  pair_overlap_frac   0.040            0.006   ✓
+  X spread (mm)       limited          27 stdev (range -4..+90)  ✓
+  best canonical view right (template) front (X-Z plane match)   ✓
+  collage_score       0.060            0.142   (worse — but components are now spread per figure, not piled at group origins)
+
+## Phase V11-26 — Projection-fit + anti-collage metrics
+
+`claim2cad/eval_v11.py` adds three figure-grounded axes:
+
+  projection_anchor_match  in-plane Euclidean distance from CAD
+                          centre to figure_anchor.cad_anchor_mm.
+                          Mean error 7.87 mm, max 55.74 mm. Score
+                          0.843.
+  central_density          ink density in central 30 % vs outer ring
+                          in figure_aligned_view.png. Catches
+                          render-level central pile-ups. Score 0.0
+                          on US4807331A — assembly fills central
+                          third of the frame just like the figure
+                          does.
+  view_match               does view_kind classifier match the
+                          best canonical view's plane? Score 1.0
+                          (isometric → front).
+
+Composite weights rebalanced to 0.20/0.15/0.05/0.10/0.05/0.15/0.15/
+0.10/0.05. US4807331A composite: **0.769** (was 0.890 — the new
+axes are stricter).
+
+## Phase V11-27 — Viewer figure-aligned default + stage figure_projection.json
+
+`viewer/src/components/Scene.tsx` adds a ``figure`` camera preset.
+`App.tsx` loads ``figure_projection.json`` on example load and:
+  - auto-snaps the camera to the figure preset for examples that
+    have a figure projection layout,
+  - highlights ``figure ★`` as the best preset.
+
+`claim2cad/manifest.py` stages ``figure_projection.json`` alongside
+the other v1.1 sidecars.
+

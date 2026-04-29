@@ -49,26 +49,40 @@ export function App() {
       .catch((e) => setError(String(e)));
   }, []);
 
-  // V11-15: load projection_report.json (when present) to learn the
-  // best-match canonical camera preset.
+  // V11-15 / V11-27: load projection_report.json + figure_projection.json
+  // (when present). The V11-27 default for figure-grounded examples
+  // is the "figure" preset — the camera matches the
+  // figure_projection.view_type. Otherwise we fall back to V11-15's
+  // best_view canonical match.
   useEffect(() => {
     if (!loaded) {
       setBestView(null);
+      setCameraPreset(null);
       return;
     }
-    const url = `data/${loaded.example.base}/projection_report.json`;
-    fetch(url)
-      .then((r) => (r.ok ? r.json() : null))
-      .then((j: { best_view?: string } | null) => {
-        if (!j || !j.best_view) {
-          setBestView(null);
-          return;
-        }
-        const candidate = j.best_view as CameraPreset;
-        const valid = ["top", "front", "right", "left", "iso", "iso2"];
-        setBestView(valid.includes(candidate) ? candidate : null);
-      })
-      .catch(() => setBestView(null));
+    const figProjUrl = `data/${loaded.example.base}/figure_projection.json`;
+    const projReportUrl = `data/${loaded.example.base}/projection_report.json`;
+    Promise.all([
+      fetch(figProjUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+      fetch(projReportUrl).then((r) => (r.ok ? r.json() : null)).catch(() => null),
+    ]).then(([figProj, projReport]) => {
+      const valid = ["top", "front", "right", "left", "iso", "iso2", "figure"];
+      let best: CameraPreset | null = null;
+      if (projReport && projReport.best_view) {
+        const cand = projReport.best_view as CameraPreset;
+        if (valid.includes(cand)) best = cand;
+      }
+      // If the example has a figure_projection.json, prefer the
+      // "figure" preset as the highlighted best view AND auto-snap
+      // the camera there once when the example loads.
+      if (figProj && figProj.projection) {
+        best = "figure";
+        setCameraPreset("figure");
+      } else {
+        setCameraPreset(null);
+      }
+      setBestView(best);
+    });
   }, [loaded]);
 
   // Whenever currentId changes, fetch the example bundle.
@@ -272,30 +286,37 @@ export function App() {
               cameraPreset={cameraPreset}
             />
           )}
-          {/* V11-15 camera preset bar — shown only when a model is loaded */}
+          {/* V11-27 camera preset bar — figure-aligned default */}
           {loaded && (
             <div className="camera-presets">
-              {(["top", "front", "right", "iso"] as const).map((preset) => {
-                const active = cameraPreset === preset;
-                const isBest = bestView === preset;
-                const cls = `camera-preset${active ? " active" : ""}${isBest ? " best" : ""}`;
-                return (
-                  <button
-                    key={preset}
-                    className={cls}
-                    onClick={() =>
-                      setCameraPreset(active ? null : preset)
-                    }
-                    title={
-                      isBest
-                        ? `${preset} — best aspect-match to figure`
-                        : `${preset} view`
-                    }
-                  >
-                    {preset}{isBest ? " ★" : ""}
-                  </button>
-                );
-              })}
+              {(["figure", "top", "front", "right", "iso"] as const).map(
+                (preset) => {
+                  const active = cameraPreset === preset;
+                  const isBest = bestView === preset;
+                  const cls = `camera-preset${active ? " active" : ""}${
+                    isBest ? " best" : ""
+                  }`;
+                  return (
+                    <button
+                      key={preset}
+                      className={cls}
+                      onClick={() =>
+                        setCameraPreset(active ? null : preset)
+                      }
+                      title={
+                        preset === "figure"
+                          ? "figure-aligned — same projection as patent figure"
+                          : isBest
+                          ? `${preset} — best aspect-match to figure`
+                          : `${preset} view`
+                      }
+                    >
+                      {preset}
+                      {isBest ? " ★" : ""}
+                    </button>
+                  );
+                }
+              )}
               <button
                 className="camera-preset reset"
                 onClick={() => setCameraPreset(null)}

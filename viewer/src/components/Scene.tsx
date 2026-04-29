@@ -28,11 +28,19 @@ type Props = {
   cameraPreset?: CameraPreset | null;
 };
 
-export type CameraPreset = "top" | "front" | "right" | "left" | "iso" | "iso2";
+export type CameraPreset =
+  | "top"
+  | "front"
+  | "right"
+  | "left"
+  | "iso"
+  | "iso2"
+  | "figure";
 
 /** World-space camera positions (relative to scene bounds, normalised
  *  to roughly fit the model). The OrbitControls' target stays at the
- *  scene origin. */
+ *  scene origin. ``figure`` is the V11-27 figure-aligned default,
+ *  matching the camera the projection_layout_solver uses. */
 export const CAMERA_PRESETS: Record<CameraPreset, [number, number, number]> = {
   top: [0.001, 1.0, 0.001],
   front: [0.0, 0.0, 1.0],
@@ -40,6 +48,10 @@ export const CAMERA_PRESETS: Record<CameraPreset, [number, number, number]> = {
   left: [-1.0, 0.0, 0.0],
   iso: [0.7, 0.5, 0.7],
   iso2: [-0.7, 0.5, -0.7],
+  // For an X-Z front projection (the v11-23 default for isometric
+  // figures), the figure-aligned camera looks along +Y. Slight tilt
+  // off pure Y so OrbitControls can still rotate freely around target.
+  figure: [0.001, 0.001, 1.0],
 };
 
 const COLOR_INDEPENDENT = new THREE.Color("#4f8cff");

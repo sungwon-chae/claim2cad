@@ -1,0 +1,439 @@
+{
+  "projection": {
+    "figure_id": "figure_1",
+    "view_type": "isometric",
+    "projection_plane": [
+      "X",
+      "Z"
+    ],
+    "figure_width_px": 2320,
+    "figure_height_px": 3408,
+    "scale_uv_to_mm": 300.0,
+    "origin_uv": [
+      0.5,
+      0.5
+    ],
+    "depth_axis": "Y",
+    "depth_value_mm": 0.0
+  },
+  "component_anchors": [
+    {
+      "id": "vehicle_body",
+      "figure_uv": [
+        0.72,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        44.92957746478873,
+        30.0,
+        84.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "door_half_member",
+      "figure_uv": [
+        0.8,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        61.26760563380283,
+        -30.0,
+        84.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "body_half_sub_assembly",
+      "figure_uv": [
+        0.62,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        24.507042253521128,
+        30.0,
+        84.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "hinge_body_half_assembly",
+      "figure_uv": [
+        0.5,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        0.0,
+        0.0,
+        84.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "hinge_axis",
+      "figure_uv": [
+        0.49,
+        0.51
+      ],
+      "cad_anchor_mm": [
+        -2.0422535211267623,
+        0.0,
+        -3.0000000000000027
+      ],
+      "note": ""
+    },
+    {
+      "id": "pintle_pin",
+      "figure_uv": [
+        0.35,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        -30.633802816901415,
+        0.0,
+        84.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "main_member",
+      "figure_uv": [
+        0.66,
+        0.55
+      ],
+      "cad_anchor_mm": [
+        32.676056338028175,
+        0.0,
+        -15.000000000000014
+      ],
+      "note": ""
+    },
+    {
+      "id": "u_shaped_link_member",
+      "figure_uv": [
+        0.43,
+        0.58
+      ],
+      "cad_anchor_mm": [
+        -14.295774647887326,
+        0.0,
+        -23.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "upper_extension",
+      "figure_uv": [
+        0.55,
+        0.61
+      ],
+      "cad_anchor_mm": [
+        10.211267605633813,
+        0.0,
+        -32.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "lower_extension",
+      "figure_uv": [
+        0.73,
+        0.4
+      ],
+      "cad_anchor_mm": [
+        46.97183098591549,
+        0.0,
+        29.999999999999993
+      ],
+      "note": ""
+    },
+    {
+      "id": "mounting_wall",
+      "figure_uv": [
+        0.49,
+        0.62
+      ],
+      "cad_anchor_mm": [
+        -2.0422535211267623,
+        30.0,
+        -36.0
+      ],
+      "note": ""
+    },
+    {
+      "id": "main_member_pintle_pin_hole",
+      "figure_uv": [
+        0.66,
+        0.57
+      ],
+      "cad_anchor_mm": [
+        32.676056338028175,
+        0.0,
+        -20.999999999999986
+      ],
+      "note": ""
+    },
+    {
+      "id": "base_wall",
+      "figure_uv": [
+        0.68,
+        0.39
+      ],
+      "cad_anchor_mm": [
+        36.7605633802817,
+        0.0,
+        32.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "base_wall_exterior_guide_surface",
+      "figure_uv": [
+        0.77,
+        0.33
+      ],
+      "cad_anchor_mm": [
+        55.14084507042254,
+        0.0,
+        50.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "upper_leg",
+      "figure_uv": [
+        0.8,
+        0.56
+      ],
+      "cad_anchor_mm": [
+        61.26760563380283,
+        0.0,
+        -18.000000000000014
+      ],
+      "note": ""
+    },
+    {
+      "id": "lower_leg",
+      "figure_uv": [
+        0.8,
+        0.54
+      ],
+      "cad_anchor_mm": [
+        61.26760563380283,
+        0.0,
+        -12.00000000000001
+      ],
+      "note": ""
+    },
+    {
+      "id": "link_member_pintle_pin_holes",
+      "figure_uv": [
+        0.71,
+        0.61
+      ],
+      "cad_anchor_mm": [
+        42.88732394366197,
+        0.0,
+        -32.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "leg_guide_edge_surface",
+      "figure_uv": [
+        0.71,
+        0.53
+      ],
+      "cad_anchor_mm": [
+        42.88732394366197,
+        0.0,
+        -9.000000000000007
+      ],
+      "note": ""
+    },
+    {
+      "id": "stop_means",
+      "figure_uv": [
+        0.78,
+        0.59
+      ],
+      "cad_anchor_mm": [
+        57.1830985915493,
+        10.0,
+        -26.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "bight_wall",
+      "figure_uv": [
+        0.72,
+        0.57
+      ],
+      "cad_anchor_mm": [
+        44.92957746478873,
+        -30.0,
+        -20.999999999999986
+      ],
+      "note": ""
+    },
+    {
+      "id": "first_sidewall",
+      "figure_uv": [
+        0.52,
+        0.53
+      ],
+      "cad_anchor_mm": [
+        4.084507042253525,
+        -30.0,
+        -9.000000000000007
+      ],
+      "note": ""
+    },
+    {
+      "id": "second_sidewall",
+      "figure_uv": [
+        0.6,
+        0.38
+      ],
+      "cad_anchor_mm": [
+        20.4225352112676,
+        -30.0,
+        36.0
+      ],
+      "note": ""
+    },
+    {
+      "id": "leaf_flange",
+      "figure_uv": [
+        0.48,
+        0.32
+      ],
+      "cad_anchor_mm": [
+        -4.084507042253525,
+        -30.0,
+        54.0
+      ],
+      "note": ""
+    },
+    {
+      "id": "leaf_flange_pintle_pin_hole",
+      "figure_uv": [
+        0.51,
+        0.59
+      ],
+      "cad_anchor_mm": [
+        2.0422535211267623,
+        -30.0,
+        -26.99999999999999
+      ],
+      "note": ""
+    },
+    {
+      "id": "pintle_pin_stop_means",
+      "figure_uv": [
+        0.51,
+        0.39
+      ],
+      "cad_anchor_mm": [
+        2.0422535211267623,
+        0.0,
+        32.99999999999999
+      ],
+      "note": ""
+    }
+  ],
+  "group_anchors": [
+    {
+      "id": "fixed_frame",
+      "figure_uv": [
+        0.62,
+        0.22
+      ],
+      "cad_anchor_mm": [
+        24.507042253521128,
+        30.0,
+        84.00000000000001
+      ],
+      "note": "median of 3 members"
+    },
+    {
+      "id": "door_panel",
+      "figure_uv": [
+        0.56,
+        0.455
+      ],
+      "cad_anchor_mm": [
+        12.253521126760575,
+        -30.0,
+        13.499999999999995
+      ],
+      "note": "median of 6 members"
+    },
+    {
+      "id": "upper_hinge",
+      "figure_uv": [
+        0.67,
+        0.555
+      ],
+      "cad_anchor_mm": [
+        34.71830985915494,
+        0.0,
+        -16.500000000000014
+      ],
+      "note": "median of 10 members"
+    },
+    {
+      "id": "pintle_axis",
+      "figure_uv": [
+        0.49,
+        0.39
+      ],
+      "cad_anchor_mm": [
+        -2.0422535211267623,
+        0.0,
+        32.99999999999999
+      ],
+      "note": "median of 3 members"
+    },
+    {
+      "id": "lower_hinge",
+      "figure_uv": [
+        0.765,
+        0.47000000000000003
+      ],
+      "cad_anchor_mm": [
+        54.11971830985916,
+        0.0,
+        8.999999999999991
+      ],
+      "note": "median of 2 members"
+    },
+    {
+      "id": "power_mechanism",
+      "figure_uv": [
+        0.78,
+        0.59
+      ],
+      "cad_anchor_mm": [
+        57.1830985915493,
+        10.0,
+        -26.99999999999999
+      ],
+      "note": "median of 1 members"
+    },
+    {
+      "id": "fasteners",
+      "figure_uv": [
+        0.5,
+        0.5
+      ],
+      "cad_anchor_mm": [
+        0.0,
+        5.0,
+        0.0
+      ],
+      "note": "default \u2014 no figure members"
+    }
+  ]
+}

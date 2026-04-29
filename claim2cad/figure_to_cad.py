@@ -29,6 +29,13 @@ from claim2cad.figure_to_sketch import (
     OutlineSet,
     extract_outlines_for_components,
 )
+from claim2cad.figure_view_classifier import classify_figure, FigureViewReport
+from claim2cad.shape_inference import (
+    ShapeInferenceSet,
+    infer_shapes_for_components,
+)
+from claim2cad.assembly_solver import build_assembly as build_3d_assembly
+from claim2cad.projection_compare import render_canonical_views
 from claim2cad.sketch_to_extrusion import (
     ExtrusionResult,
     build_assembly_from_outlines,
@@ -571,6 +578,7 @@ def run_generator(
     n_candidates: int = 1,
     outline_first: bool = True,
     figure_scale_mm: float = 200.0,
+    mode: str = "3d",
 ) -> dict[str, Path]:
     """Main entry: run the figure-to-CAD pipeline on a single example."""
     example_dir = Path(example_dir)
@@ -664,6 +672,121 @@ def run_generator(
 
     components_dir = example_dir / "components"
     code_cache_dir = example_dir / "codegen_cache"
+
+    # ----------------------------------------------------------------------
+    # 3D figure-grounded reconstruction path (V11-14)
+    # ----------------------------------------------------------------------
+    # When mode="3d" we run figure_view_classifier + shape_inference +
+    # assembly_solver and render canonical projections. The outline path
+    # below is left as a fallback for environments without VLM access.
+    if mode == "3d" and figure_map and figure_path.exists():
+        try:
+            crops_dir = example_dir / "crops"
+            crops = crop_all_components(
+                figure_path,
+                figure_map,
+                out_dir=crops_dir,
+                crop_radius=crop_radius,
+            )
+            crops_by_id = crops_by_component_id(crops)
+            view_report = classify_figure(
+                figure_path=figure_path,
+                patent_title=ir.title or "",
+                figure_id=figure_path.stem,
+                cache_path=example_dir / "figure_view.json",
+            )
+            ir_components_by_id = {
+                c.id: {
+                    "label": c.label,
+                    "kind": c.kind,
+                    "category": c.category,
+                    "parent_id": c.parent_id,
+                    "constraints": list(c.constraints or []),
+                }
+                for c in ir.components
+            }
+            inference = infer_shapes_for_components(
+                crops_by_id=crops_by_id,
+                ir_components=ir_components_by_id,
+                view_report=view_report,
+                figure_scale_mm=figure_scale_mm,
+                patent_title=ir.title or "",
+                cache_path=example_dir / "shape_inference.json",
+            )
+            compound, ordered_ids, diagnostics = build_3d_assembly(inference)
+            step_path = example_dir / out_step
+            glb_path = example_dir / out_glb
+            bd.export_step(compound, str(step_path))
+            bd.export_gltf(compound, str(glb_path), binary=True)
+            try:
+                rename_glb_root_children(glb_path, ordered_ids)
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("GLB rename failed: %s", exc)
+
+            # Per-component STEP files for the components/ dir.
+            components_dir = example_dir / "components"
+            components_dir.mkdir(parents=True, exist_ok=True)
+            for child in compound.children:
+                if not getattr(child, "label", None):
+                    continue
+                try:
+                    bd.export_step(
+                        child, str(components_dir / f"{child.label}.step")
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("per-component STEP for %s: %s", child.label, exc)
+
+            (example_dir / "solver_diagnostics.json").write_text(
+                json.dumps([d.__dict__ for d in diagnostics], indent=2),
+                encoding="utf-8",
+            )
+            (example_dir / "component_sources.json").write_text(
+                json.dumps(
+                    {d.component_id: f"3d:{d.shape_family}" for d in diagnostics},
+                    indent=2,
+                ),
+                encoding="utf-8",
+            )
+
+            # Render canonical views and a side-by-side comparison.
+            try:
+                proj = render_canonical_views(
+                    step_path=step_path,
+                    out_dir=example_dir / "renders_v1.1",
+                    figure_path=figure_path,
+                    view_names=("top", "front", "right", "iso"),
+                )
+                (example_dir / "projection_report.json").write_text(
+                    json.dumps(proj.to_dict(), indent=2),
+                    encoding="utf-8",
+                )
+                if proj.comparison_path is not None:
+                    # Promote it as the canonical render_comparison.
+                    (example_dir / "render_comparison.png").write_bytes(
+                        proj.comparison_path.read_bytes()
+                    )
+            except Exception as exc:  # noqa: BLE001
+                logger.warning("projection comparison failed: %s", exc)
+
+            logger.info(
+                "3D mode wrote %s and %s with %d components (best view=%s)",
+                step_path,
+                glb_path,
+                len(ordered_ids),
+                getattr(proj, "best_view", "?") if "proj" in dir() else "?",
+            )
+            return {
+                "spec": example_dir / "shape_inference.json",
+                "step": step_path,
+                "glb": glb_path,
+                "components_dir": components_dir,
+                "sources": example_dir / "component_sources.json",
+                "view_report": example_dir / "figure_view.json",
+            }
+        except Exception as exc:  # noqa: BLE001
+            logger.warning(
+                "3D path failed (%s) — falling back to outline-first", exc
+            )
 
     # Per-component figure crops (if figure_map.json is present).
     crops_dir = example_dir / "crops"
@@ -1124,6 +1247,16 @@ def _build_argparser() -> argparse.ArgumentParser:
         default=200.0,
         help="How many mm the longest figure axis represents (default 200).",
     )
+    p.add_argument(
+        "--mode",
+        choices=("3d", "outline", "library"),
+        default="3d",
+        help=(
+            "3d: figure_view + shape_inference + assembly_solver (default). "
+            "outline: 2.5D outline-extrusion. "
+            "library: legacy library/codegen path."
+        ),
+    )
     return p
 
 
@@ -1151,6 +1284,7 @@ def main(argv: list[str] | None = None) -> int:
         n_candidates=args.n_candidates,
         outline_first=not args.no_outline_first,
         figure_scale_mm=args.figure_scale_mm,
+        mode=args.mode,
     )
     print(json.dumps({k: str(v) for k, v in out.items()}, indent=2))
     return 0

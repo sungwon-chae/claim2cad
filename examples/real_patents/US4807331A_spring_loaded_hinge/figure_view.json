@@ -1,0 +1,21 @@
+{
+  "figure_id": "figure_1",
+  "view_kind": "isometric",
+  "main_axis": "Z",
+  "states_shown": [
+    "upper hinge",
+    "lower hinge"
+  ],
+  "confidence": 0.85,
+  "notes": "3D perspective view of a cabinet corner showing two hinge assemblies (upper and lower) mounted on the frame.",
+  "raw": {
+    "view_kind": "isometric",
+    "main_axis": "Z",
+    "states_shown": [
+      "upper hinge",
+      "lower hinge"
+    ],
+    "confidence": 0.85,
+    "notes": "3D perspective view of a cabinet corner showing two hinge assemblies (upper and lower) mounted on the frame."
+  }
+}

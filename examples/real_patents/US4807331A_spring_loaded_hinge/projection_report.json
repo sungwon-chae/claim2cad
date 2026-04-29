@@ -1,0 +1,40 @@
+{
+  "figure_id": "figure_1",
+  "best_view": "top",
+  "best_aspect_score": 0.8694866214970766,
+  "comparison_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_comparison.png",
+  "views": [
+    {
+      "name": "top",
+      "elev_deg": 89.9,
+      "azim_deg": -90.0,
+      "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_top.png",
+      "silhouette_area_ratio": 0.0288047813770014,
+      "aspect_ratio": 0.7651162790697674
+    },
+    {
+      "name": "front",
+      "elev_deg": 0.0,
+      "azim_deg": -90.0,
+      "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_front.png",
+      "silhouette_area_ratio": 0.03930408728588388,
+      "aspect_ratio": 1.107843137254902
+    },
+    {
+      "name": "right",
+      "elev_deg": 0.0,
+      "azim_deg": 0.0,
+      "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_right.png",
+      "silhouette_area_ratio": 0.034607194678425386,
+      "aspect_ratio": 1.444078947368421
+    },
+    {
+      "name": "iso",
+      "elev_deg": 25.0,
+      "azim_deg": 45.0,
+      "render_path": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.1/projection_iso.png",
+      "silhouette_area_ratio": 0.04616648136632308,
+      "aspect_ratio": 1.4386503067484662
+    }
+  ]
+}

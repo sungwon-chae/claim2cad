@@ -17,7 +17,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry \u2014 covered by lift_off_hinge"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "vehicle_body",
@@ -34,7 +34,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (context body)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "door_half_member",
@@ -95,31 +95,31 @@
         "pin_length": 95,
         "pin_head_style": "round",
         "main_thickness": 3,
-        "main_mounting_wall_width": 40,
+        "main_mounting_wall_width": 30,
         "main_mounting_wall_height": 70,
-        "main_extension_length": 45,
-        "main_extension_width": 30,
-        "main_extension_gap": 55,
-        "main_hole_offset_x": 15,
+        "main_extension_length": 40,
+        "main_extension_width": 25,
+        "main_extension_gap": 45,
+        "main_hole_offset_x": 20,
         "link_base_length": 18,
         "link_thickness": 3,
         "link_base_width": 30,
         "link_leg_length": 35,
-        "link_leg_width": 22,
-        "link_leg_gap": 45,
-        "door_offset_x": 32,
+        "link_leg_width": 20,
+        "link_leg_gap": 35,
+        "door_offset_x": 35,
         "door_bight_width": 40,
-        "door_bight_height": 75,
+        "door_bight_height": 80,
         "door_thickness": 2.5,
         "door_sidewall_depth": 25,
         "leaf_flange_length": 20,
-        "leaf_flange_width": 28,
+        "leaf_flange_width": 25,
         "leaf_flange_thickness": 2.5,
-        "leaf_flange_z": 30,
+        "leaf_flange_z": 22,
         "include_stop": true,
         "stop_diameter": 6,
         "stop_height": 4,
-        "stop_y_offset": 0
+        "stop_y_offset": 10
       },
       "position_mm": [
         0.0,
@@ -132,9 +132,9 @@
         0.0
       ],
       "features": [
-        "complete lift-off pintle hinge assembly"
+        "complete lift-off hinge body half including main, link, pin, door channel, leaf flange"
       ],
-      "notes": "single part covering main member, U-link, pintle pin, leaf flange and door half"
+      "notes": "one assembly part covers main_member, u_shaped_link_member, pintle_pin, leaf_flange, stops, and door-half bight/sidewalls"
     },
     {
       "component_id": "main_member",
@@ -236,7 +236,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (hole feature)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "base_wall",
@@ -270,7 +270,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (surface feature)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "upper_leg",
@@ -321,7 +321,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (hole feature)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "leg_guide_edge_surface",
@@ -338,7 +338,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (surface feature)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "stop_means",
@@ -355,7 +355,7 @@
         0.0
       ],
       "features": [],
-      "notes": "covered by lift_off_hinge (include_stop=true)"
+      "notes": "covered by lift_off_hinge"
     },
     {
       "component_id": "bight_wall",
@@ -440,7 +440,7 @@
         0.0
       ],
       "features": [],
-      "notes": "abstract; no standalone geometry (hole feature)"
+      "notes": "abstract; no standalone geometry"
     },
     {
       "component_id": "pintle_pin_stop_means",
@@ -458,6 +458,174 @@
       ],
       "features": [],
       "notes": "covered by lift_off_hinge"
+    },
+    {
+      "component_id": "keeper_plate",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "flat rectangular plate 25x20x2 with rolled ends",
+        "figure_number=100",
+        "kind=sub-feature"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 25x20x2 with rolled ends"
+    },
+    {
+      "component_id": "keeper_tongue",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "rectangular tab 8x6x2 protruding from keeper plate",
+        "figure_number=102",
+        "kind=sub-feature"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tab 8x6x2 protruding from keeper plate"
+    },
+    {
+      "component_id": "keeper_ear_upper",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "rolled cylindrical ear 5mm dia 4mm long with hole",
+        "figure_number=106",
+        "kind=hole"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rolled cylindrical ear 5mm dia 4mm long with hole"
+    },
+    {
+      "component_id": "keeper_ear_lower",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "rolled cylindrical ear 5mm dia 4mm long with hole",
+        "figure_number=108",
+        "kind=hole"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rolled cylindrical ear 5mm dia 4mm long with hole"
+    },
+    {
+      "component_id": "rod_top_head",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "cylindrical head 6mm dia 3mm tall",
+        "figure_number=120",
+        "kind=fastener"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: cylindrical head 6mm dia 3mm tall"
+    },
+    {
+      "component_id": "cam_post",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "small cylindrical pin 3mm dia 5mm tall",
+        "figure_number=78",
+        "kind=sub-feature"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: small cylindrical pin 3mm dia 5mm tall"
+    },
+    {
+      "component_id": "rod_collar",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "flat washer 8mm OD 4mm ID 1.5mm thick",
+        "figure_number=92",
+        "kind=sub-feature"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 92: flat washer 8mm OD 4mm ID 1.5mm thick"
+    },
+    {
+      "component_id": "rod_bottom_washer",
+      "library_part": null,
+      "params": {},
+      "position_mm": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "features": [
+        "flat washer 8mm OD 4mm ID 1.5mm thick",
+        "figure_number=98",
+        "kind=sub-feature"
+      ],
+      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 8mm OD 4mm ID 1.5mm thick"
     }
   ],
   "raw": {
@@ -477,7 +645,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry \u2014 covered by lift_off_hinge"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "vehicle_body",
@@ -494,7 +662,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (context body)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "door_half_member",
@@ -555,31 +723,31 @@
           "pin_length": 95,
           "pin_head_style": "round",
           "main_thickness": 3,
-          "main_mounting_wall_width": 40,
+          "main_mounting_wall_width": 30,
           "main_mounting_wall_height": 70,
-          "main_extension_length": 45,
-          "main_extension_width": 30,
-          "main_extension_gap": 55,
-          "main_hole_offset_x": 15,
+          "main_extension_length": 40,
+          "main_extension_width": 25,
+          "main_extension_gap": 45,
+          "main_hole_offset_x": 20,
           "link_base_length": 18,
           "link_thickness": 3,
           "link_base_width": 30,
           "link_leg_length": 35,
-          "link_leg_width": 22,
-          "link_leg_gap": 45,
-          "door_offset_x": 32,
+          "link_leg_width": 20,
+          "link_leg_gap": 35,
+          "door_offset_x": 35,
           "door_bight_width": 40,
-          "door_bight_height": 75,
+          "door_bight_height": 80,
           "door_thickness": 2.5,
           "door_sidewall_depth": 25,
           "leaf_flange_length": 20,
-          "leaf_flange_width": 28,
+          "leaf_flange_width": 25,
           "leaf_flange_thickness": 2.5,
-          "leaf_flange_z": 30,
+          "leaf_flange_z": 22,
           "include_stop": true,
           "stop_diameter": 6,
           "stop_height": 4,
-          "stop_y_offset": 0
+          "stop_y_offset": 10
         },
         "position_mm": [
           0,
@@ -592,9 +760,9 @@
           0
         ],
         "features": [
-          "complete lift-off pintle hinge assembly"
+          "complete lift-off hinge body half including main, link, pin, door channel, leaf flange"
         ],
-        "notes": "single part covering main member, U-link, pintle pin, leaf flange and door half"
+        "notes": "one assembly part covers main_member, u_shaped_link_member, pintle_pin, leaf_flange, stops, and door-half bight/sidewalls"
       },
       {
         "component_id": "main_member",
@@ -696,7 +864,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (hole feature)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "base_wall",
@@ -730,7 +898,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (surface feature)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "upper_leg",
@@ -781,7 +949,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (hole feature)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "leg_guide_edge_surface",
@@ -798,7 +966,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (surface feature)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "stop_means",
@@ -815,7 +983,7 @@
           0
         ],
         "features": [],
-        "notes": "covered by lift_off_hinge (include_stop=true)"
+        "notes": "covered by lift_off_hinge"
       },
       {
         "component_id": "bight_wall",
@@ -900,7 +1068,7 @@
           0
         ],
         "features": [],
-        "notes": "abstract; no standalone geometry (hole feature)"
+        "notes": "abstract; no standalone geometry"
       },
       {
         "component_id": "pintle_pin_stop_means",
@@ -920,7 +1088,7 @@
         "notes": "covered by lift_off_hinge"
       }
     ],
-    "scale_anchor_mm": 120,
-    "assembly_notes": "The lift_off_hinge part models the complete hinge body-half assembly: a main member (mounting wall plus upper and lower parallel extensions) is secured to the vehicle body, and a U-shaped link member is pivotally connected to it by the vertical pintle pin passing through coaxial holes in the extensions and the legs of the U-link. The door-half member (bight wall with two sidewalls) carries an inwardly-extending leaf flange whose pintle-pin hole drops over the pintle pin for lift-off engagement, while a stop cylinder limits rotation to the predetermined lift-off position."
+    "scale_anchor_mm": 100,
+    "assembly_notes": "The lift_off_hinge library part models the whole body-half hinge assembly: the main member (mounting wall with upper and lower parallel extensions), the U-shaped link member pivotally connected to it by a vertical pintle pin aligned on the hinge axis, a stop on the link, and the door-half bight/sidewalls with inward leaf flange whose pintle-pin hole drops onto the pin. The vehicle body and abstract features (axis, holes, surfaces) carry no standalone geometry."
   }
 }

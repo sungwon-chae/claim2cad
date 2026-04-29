@@ -1,126 +1,130 @@
 {
   "additions": [
     {
-      "component_id": "door_mounting_bracket",
-      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 40x25x2mm with two mounting ear tabs",
+      "component_id": "keeper_plate",
+      "notes": "codegen \u2014 IR-enrichment from figure number 100: flat rectangular plate 25x20x2 with rolled ends",
       "features": [
-        "flat rectangular plate 40x25x2mm with two mounting ear tabs",
+        "flat rectangular plate 25x20x2 with rolled ends",
         "figure_number=100",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "bracket_tongue",
-      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tongue tab 10x8x2mm extending from bracket",
+      "component_id": "keeper_tongue",
+      "notes": "codegen \u2014 IR-enrichment from figure number 102: rectangular tab 8x6x2 protruding from keeper plate",
       "features": [
-        "rectangular tongue tab 10x8x2mm extending from bracket",
+        "rectangular tab 8x6x2 protruding from keeper plate",
         "figure_number=102",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "bracket_upper_ear",
-      "notes": "codegen \u2014 IR-enrichment from figure number 106: rounded ear tab 10x8x2mm with 4mm thru hole",
+      "component_id": "keeper_ear_upper",
+      "notes": "codegen \u2014 IR-enrichment from figure number 106: rolled cylindrical ear 5mm dia 4mm long with hole",
       "features": [
-        "rounded ear tab 10x8x2mm with 4mm thru hole",
+        "rolled cylindrical ear 5mm dia 4mm long with hole",
         "figure_number=106",
         "kind=hole"
       ]
     },
     {
-      "component_id": "bracket_lower_ear",
-      "notes": "codegen \u2014 IR-enrichment from figure number 108: rounded ear tab 10x8x2mm with 4mm thru hole",
+      "component_id": "keeper_ear_lower",
+      "notes": "codegen \u2014 IR-enrichment from figure number 108: rolled cylindrical ear 5mm dia 4mm long with hole",
       "features": [
-        "rounded ear tab 10x8x2mm with 4mm thru hole",
+        "rolled cylindrical ear 5mm dia 4mm long with hole",
         "figure_number=108",
         "kind=hole"
       ]
     },
     {
-      "component_id": "pintle_head",
-      "notes": "codegen \u2014 IR-enrichment from figure number 120: small cylindrical head 8mm dia 3mm tall",
+      "component_id": "rod_top_head",
+      "notes": "codegen \u2014 IR-enrichment from figure number 120: cylindrical head 6mm dia 3mm tall",
       "features": [
-        "small cylindrical head 8mm dia 3mm tall",
+        "cylindrical head 6mm dia 3mm tall",
         "figure_number=120",
         "kind=fastener"
       ]
     },
     {
-      "component_id": "detent_spring_post",
-      "notes": "codegen \u2014 IR-enrichment from figure number 78: cylindrical post 4mm dia 6mm tall",
+      "component_id": "cam_post",
+      "notes": "codegen \u2014 IR-enrichment from figure number 78: small cylindrical pin 3mm dia 5mm tall",
       "features": [
-        "cylindrical post 4mm dia 6mm tall",
+        "small cylindrical pin 3mm dia 5mm tall",
         "figure_number=78",
-        "kind=stop"
-      ]
-    },
-    {
-      "component_id": "thrust_washer",
-      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 10mm OD 5mm ID 1.5mm thick",
-      "features": [
-        "flat washer 10mm OD 5mm ID 1.5mm thick",
-        "figure_number=98",
         "kind=sub-feature"
       ]
     },
     {
-      "component_id": "leaf_mount_slot",
-      "notes": "codegen \u2014 IR-enrichment from figure number 39: oblong slot 12x5 thru 2mm plate",
+      "component_id": "rod_collar",
+      "notes": "codegen \u2014 IR-enrichment from figure number 92: flat washer 8mm OD 4mm ID 1.5mm thick",
       "features": [
-        "oblong slot 12x5 thru 2mm plate",
-        "figure_number=39",
-        "kind=hole"
+        "flat washer 8mm OD 4mm ID 1.5mm thick",
+        "figure_number=92",
+        "kind=sub-feature"
+      ]
+    },
+    {
+      "component_id": "rod_bottom_washer",
+      "notes": "codegen \u2014 IR-enrichment from figure number 98: flat washer 8mm OD 4mm ID 1.5mm thick",
+      "features": [
+        "flat washer 8mm OD 4mm ID 1.5mm thick",
+        "figure_number=98",
+        "kind=sub-feature"
       ]
     }
   ],
   "skipped": [
     {
       "figure_number": "110",
-      "reason": "hole in bracket ear, covered by 106/108"
+      "reason": "hole in keeper ear, covered by 106/108"
+    },
+    {
+      "figure_number": "112",
+      "reason": "label/feature duplication"
     },
     {
       "figure_number": "116",
-      "reason": "label pointing to door panel 22"
+      "reason": "edge of door label only"
     },
     {
       "figure_number": "118",
-      "reason": "label/arrow to bracket edge"
+      "reason": "label near keeper region, duplicate"
     },
     {
       "figure_number": "119",
-      "reason": "label/arrow to bracket feature"
+      "reason": "label/leader only"
     },
     {
       "figure_number": "122",
-      "reason": "label to bracket tongue feature"
+      "reason": "leader to tongue edge, duplicate of 102"
     },
     {
       "figure_number": "130",
-      "reason": "label to pintle area, covered by hinge"
+      "reason": "leader on rod collar area, duplicate"
     },
     {
       "figure_number": "132",
-      "reason": "label to hinge lower region"
+      "reason": "leader on rod bottom, duplicate"
     },
     {
       "figure_number": "134",
-      "reason": "label line only"
+      "reason": "leader label only"
     },
     {
       "figure_number": "154",
-      "reason": "label to hinge body feature covered by library part"
+      "reason": "leader label only"
+    },
+    {
+      "figure_number": "39",
+      "reason": "mounting hole in bracket 38, slot already implied"
     },
     {
       "figure_number": "39'",
-      "reason": "duplicate slot callout, covered by 39"
-    },
-    {
-      "figure_number": "92",
-      "reason": "label to pintle/pin, covered by library part"
+      "reason": "mounting hole callout, part of bracket"
     },
     {
       "figure_number": "96",
-      "reason": "label to pintle shaft, covered by library part"
+      "reason": "leader label only on rod"
     }
   ]
 }

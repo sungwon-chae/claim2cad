@@ -125,6 +125,11 @@ export type ManifestExample = {
   diffs_available?: DiffSummary[];
   urdf_path?: string | null;
   movable_joints?: string[];
+  /** V13-H: per-example quality verdict from eval_v13.
+   *  flagship | good | partial | fallback | failed | unknown */
+  quality_badge?: string;
+  quality_score?: number;
+  scaffold_id?: string;
 };
 
 // V1-6 — URDF parsed payload (subset).

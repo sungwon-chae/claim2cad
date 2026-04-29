@@ -241,7 +241,7 @@ export function App() {
             <optgroup label="Real patents">
               {visibleExamples.filter((e) => e.source === "real_patent").map((e) => (
                 <option key={e.id} value={e.id}>
-                  {coverageBadge(e.figure_coverage ?? 0)} {e.title}
+                  {qualityBadge(e.quality_badge)} {e.title}
                 </option>
               ))}
             </optgroup>
@@ -305,6 +305,18 @@ export function App() {
           {!error && !loaded && <div className="error-overlay">Loading…</div>}
           {!error && loaded && (
             <>
+              {loaded.example.source === "real_patent"
+                && loaded.example.quality_badge
+                && loaded.example.quality_badge !== "flagship" && (
+                <div className={`quality-banner quality-${loaded.example.quality_badge}`}>
+                  {qualityBadge(loaded.example.quality_badge)} —
+                  {loaded.example.quality_badge === "fallback" || loaded.example.quality_badge === "failed"
+                    ? " this example uses a fallback grid layout; the rendered geometry is a baseline, not a faithful figure reconstruction."
+                    : loaded.example.quality_badge === "partial"
+                    ? " this example uses a topology-matched scaffold but is not flagship-polished. Selection + claim/figure interaction work; geometry is approximate."
+                    : " this example uses a topology-matched scaffold."}
+                </div>
+              )}
               <ClaimPanel
                 ir={loaded.ir}
                 claimMapRows={loaded.claimMap.components}
@@ -460,9 +472,13 @@ function labelOf(loaded: LoadedExamplePlus, id: string): string {
   return row ? row.label : id;
 }
 
-function coverageBadge(coverage: number): string {
-  if (coverage >= 0.999) return "★";
-  if (coverage >= 0.5) return "◐";
-  if (coverage > 0) return "◷";
-  return "○";
+function qualityBadge(quality?: string): string {
+  switch (quality) {
+    case "flagship": return "★ flagship";
+    case "good": return "● good";
+    case "partial": return "◐ partial";
+    case "fallback": return "○ fallback";
+    case "failed": return "× failed";
+    default: return "·";
+  }
 }

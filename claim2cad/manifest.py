@@ -72,6 +72,10 @@ class ManifestExample:
     n_dependent_claims: int = 0
     max_claim_depth: int = 1
     claim_hierarchy_path: Optional[str] = None
+    # V13-H additions:
+    quality_badge: str = "unknown"  # flagship | good | partial | fallback | failed | unknown
+    quality_score: float = 0.0
+    scaffold_id: str = ""
 
 
 _REQUIRED = ("claim.txt", "claim_ir.json", "claim_map.json", "model.glb")
@@ -85,15 +89,16 @@ def _preferred_glb(example_dir: Path) -> str:
     """Return the GLB filename to ship to the viewer for ``example_dir``.
 
     Preference order:
-      v1.2 oblique opened-door scaffold (V12-J) >
+      v1.2 oblique opened-door scaffold (V12-J, flagship only) >
+      v1.3 batch-generated scaffold (V13-D, all other examples) >
       v1.2 flat front scaffold (V12-C) >
       v1.1 figure-driven CAD >
       v1.0 row-of-primitives.
-    The viewer always loads ``model.glb`` from the staged dir, so
-    we just pick which source file to copy under that canonical name.
     """
     if (example_dir / "model_v1.2_oblique.glb").exists():
         return "model_v1.2_oblique.glb"
+    if (example_dir / "model_v1.3.glb").exists():
+        return "model_v1.3.glb"
     if (example_dir / "model_v1.2.glb").exists():
         return "model_v1.2.glb"
     if (example_dir / "model_v1.1.glb").exists():
@@ -227,6 +232,25 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
     if (example_dir / "model_v1.2.glb").exists():
         tags.append("v1.2_cad")
         tags.append("demo_quality")
+    if (example_dir / "model_v1.3.glb").exists():
+        tags.append("v1.3_cad")
+
+    # V13-H — read quality from batch_status.json + eval_v13.
+    quality_badge = "unknown"
+    quality_score = 0.0
+    scaffold_id = ""
+    bs_path = example_dir / "batch_status.json"
+    if bs_path.exists():
+        try:
+            bs = json.loads(bs_path.read_text("utf-8"))
+            scaffold_id = bs.get("scaffold_id", "")
+            qt = bs.get("quality_tier", "")
+            if qt:
+                quality_badge = qt  # may be overwritten below by eval
+        except Exception:  # pragma: no cover
+            pass
+    # Eval result overrides if present
+    eval_path = REPORTS_DIR / "MULTI_PATENT_EVAL.json" if 'REPORTS_DIR' in globals() else None
     return ManifestExample(
         id=example_dir.name,
         title=_title_from_metadata(example_dir, example_dir.name),
@@ -247,6 +271,9 @@ def _build_example(example_dir: Path, *, source: str, base_prefix: str = "") -> 
         n_dependent_claims=n_dependent_claims,
         max_claim_depth=max_claim_depth,
         claim_hierarchy_path=claim_hierarchy_path,
+        quality_badge=quality_badge,
+        quality_score=quality_score,
+        scaffold_id=scaffold_id,
     )
 
 
@@ -312,6 +339,21 @@ def stage_for_viewer(*, clean: bool = True) -> Path:
 
     examples = discover_examples()
     _populate_diffs(examples)
+    # V13-H — overlay quality from MULTI_PATENT_EVAL.json (if present)
+    eval_path = REAL_PATENTS_DIR.parent / "reports" / "MULTI_PATENT_EVAL.json"
+    eval_by_id: dict[str, dict] = {}
+    if eval_path.exists():
+        try:
+            ed = json.loads(eval_path.read_text("utf-8"))
+            for entry in ed.get("examples", []):
+                eval_by_id[entry["example_id"]] = entry
+        except Exception:  # pragma: no cover
+            pass
+    for ex in examples:
+        ev = eval_by_id.get(ex.id)
+        if ev:
+            ex.quality_badge = ev.get("overall_quality", ex.quality_badge)
+            ex.quality_score = float(ev.get("overall_score", ex.quality_score))
     for ex in examples:
         # ``base`` may be ``real_patents/<id>``, mirroring the source layout.
         target = VIEWER_DATA_DIR / ex.base

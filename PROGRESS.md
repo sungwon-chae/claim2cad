@@ -1638,3 +1638,101 @@ cylinders/spheres/boxes"). The trade-offs:
   extruded model still apply (pin axis through holes is now
   determined per-figure rather than by composer).
 
+
+## Phase V11-13 — Fix claim span mapping and viewer highlights — COMPLETED 2026-04-29 11:25 KST
+
+### What was broken
+The viewer's claim-text underlines were bracketing the wrong substrings.
+For US4807331A, all 25 source_spans were drifted (off by 1+i chars on
+the i-th component). Corpus-wide, every example had broken offsets.
+Root cause: LLM-emitted character offsets cumulatively drift even when
+the schema prompts for "Python string character offsets".
+
+### What shipped
+- `claim2cad/span_relocator.py` — searches each component's label in the
+  claim text directly. Three-tier matching: exact, paren/prep-stripped,
+  token-set fallback for coordinated patent forms (e.g. "upper parallel
+  extension" matched inside "upper and lower parallel extensions").
+- Conflict resolution: longest label wins; coordinated singular forms
+  share overlapping ranges.
+- `claim2cad/mapping.py` schema 0.2.0: ``span_verified`` /
+  ``span_extracted`` / ``span_match_key`` per row.
+- `claim2cad/pipeline.py` re-writes ``ir.components[*].source_span``
+  with verified offsets before saving claim_ir.json. Unverified
+  components get a (0, 0) sentinel.
+- `viewer/src/components/ClaimPanel.tsx` filters ``end > start`` so
+  sentinel zero-length spans render nothing rather than wrong
+  underlines.
+- `span_debug.md` per example: human-readable audit table.
+- 10 new tests in `tests/test_span_relocator.py`.
+
+### Re-applied to all 30 examples
+**0/395 → 386/395 verified (97.7%).** US4807331A: 0/25 → 25/25.
+
+## Phase V11-14 — True 3D figure-grounded reconstruction — COMPLETED 2026-04-29 11:36 KST
+
+### What shipped
+- `claim2cad/figure_view_classifier.py` — one VLM call per figure;
+  returns view_kind, main_axis, states_shown. Cached to figure_view.json.
+- `claim2cad/shape_inference.py` — one VLM call per component crop.
+  Returns shape_family (16 mechanical types), dims, pose, and
+  constraints (coaxial_with, passes_through, nested_in, above, below,
+  attached_to, parallel_to, perpendicular_to, coplanar_with). Cached.
+- `claim2cad/assembly_solver.py` — three-pass solver. Picks build123d
+  primitive per shape_family. Snaps pin/shaft to Z axis when coaxial.
+  Snaps dependents to pin XY. Stacks via above/below. Flat ``Compound``,
+  every component_id labelled.
+- `claim2cad/projection_compare.py` — renders top/front/right/iso via
+  the V11-10 engineering-drawing renderer; silhouette aspect-match
+  scoring picks the best canonical view. Saves projection_report.json.
+- `figure_to_cad.run_generator(mode="3d")` wires everything; new CLI
+  flag `--mode {3d,outline,library}` with 3d as default.
+
+### Re-run on US4807331A
+- View: isometric, main_axis=Z, 2 states.
+- 25/25 components classified into 9 shape families
+  (1 pin, 2 housings, 3 brackets, 1 link, 6 plates, 3 flanges,
+   3 holes, 1 tab, 5 other).
+- Constraints: pintle_pin coaxial_with hinge_axis, passes_through
+  main_member_pintle_pin_hole + link_member_pintle_pin_holes +
+  leaf_flange_pintle_pin_hole. leaf_flange perpendicular_to hinge_axis.
+  upper_leg above lower_leg.
+- 4 canonical projections rendered + side-by-side composite.
+- 25/25 GLB root children match claim_map.
+
+## Phase V11-15 — Viewer figure-aligned inspection mode — COMPLETED 2026-04-29 11:42 KST
+
+### What shipped
+- `viewer/src/components/Scene.tsx`: new ``CameraPreset`` type +
+  ``CAMERA_PRESETS`` table + ``CameraSnap`` component (useFrame hook
+  that snaps OrbitControls camera to the chosen preset once the
+  scene fits).
+- `viewer/src/App.tsx`: camera preset bar above the 3D scene with
+  [top, front, right, iso, free]. Reads ``projection_report.json`` on
+  example load and highlights the best-aspect-match preset (green
+  border + ★).
+- `claim2cad/manifest.py`: stages projection_report.json,
+  figure_view.json, shape_inference.json, solver_diagnostics.json,
+  render_comparison.png into viewer/public/data/<example>/.
+- CSS for the preset bar.
+
+## Phase V11-16 — Structural and visual eval harness — COMPLETED 2026-04-29 11:48 KST
+
+### What shipped
+`claim2cad/eval_v11.py` — replaces V1-11's single-VLM-score harness
+with a 5-axis deterministic report. No LLM calls. Output:
+``examples/reports/<id>_eval.md`` (human) and
+``<id>_eval.json`` (machine).
+
+Axes: span_correctness (V11-13 regression check), glb_coverage
+(V11-14 contract check), figure_callout_coverage (IR-density),
+geometric_invariants (V11-10 deterministic), projection_fit
+(V11-14 silhouette aspect match).
+
+### US4807331A composite: 0.882
+- span_correctness        1.000
+- glb_coverage            1.000
+- figure_callout_coverage 0.556
+- geometric_invariants    0.730
+- projection_fit          0.869
+

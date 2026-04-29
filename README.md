@@ -11,12 +11,18 @@
 [![build123d](https://img.shields.io/badge/CAD-build123d-00A676)](https://github.com/gumyr/build123d)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-**v1.1-dev** · figure-aware CAD generation · 12-part component library
-+ 1 patent-family compound (`LiftOffHingeAssembly`) · CADFusion-style
-best-of-N sampling · deterministic geometric invariants ·
-engineering-drawing renderer · honest hard-case benchmark documented in
-[`docs/V11_HARD_CASE_ANALYSIS.md`](docs/V11_HARD_CASE_ANALYSIS.md) ·
-**192 tests** · offline demo unchanged.
+**v1.1-dev** · figure-grounded 3D CAD generation · per-component
+**shape inference + constraint solver** so pins actually thread
+through hole-bearing parts and links nest inside main brackets ·
+verified claim-text spans (97.7% corpus-wide, V11-13) · GLB nodes
+match every claim component_id (V11-14) · canonical-view camera
+presets in the viewer (V11-15) · 5-axis structural+visual eval
+harness without VLM scoring (V11-16) · **215 tests** · offline demo
+unchanged.
+
+**Composite eval on US4807331A:** `0.882`
+(span 1.00 · GLB 1.00 · invariants 0.73 · projection 0.87 ·
+callout coverage 0.56). See `examples/reports/`.
 
 **v1.0** · 30 examples (3 synthetic + 25 real US patents + 1 Korean + 1
 multi-claim drone) · 101 tests · offline demo, no API key required.
@@ -119,6 +125,11 @@ upgrades the *visual fidelity* path while preserving the v1.0 contract.
 | V11-9 | `claim2cad/components/joints/lift_off_hinge.py` | Patent-family compound primitive: body-half bracket + nested U-link + door-half channel + pintle pin, all coaxial *by construction* |
 | V11-10 | `claim2cad/geometric_invariants.py` + best-of-N + feature-edge renderer | CADFusion-style sampling, deterministic CAD-validity reward, engineering-drawing line strokes (silhouette + 32° creases) |
 | V11-11 | `docs/V11_HARD_CASE_ANALYSIS.md` | Hard-case write-up with score history table |
+| V11-12 | `claim2cad/figure_to_sketch.py` + `sketch_to_extrusion.py` | Outline-first 2.5D extrusion (flat) |
+| **V11-13** | `claim2cad/span_relocator.py` | **Fix broken claim-text underlines: re-locate `source_span` by searching the label in the claim text. 0% → 97.7% verified across 30 examples.** |
+| **V11-14** | `claim2cad/figure_view_classifier.py` + `shape_inference.py` + `assembly_solver.py` + `projection_compare.py` | **True 3D reconstruction: classify figure → infer shape_family + dims + pose + constraints per component → solver applies coaxial / passes_through / above / below to nest parts properly → render canonical views.** |
+| V11-15 | `viewer/src/components/Scene.tsx` | Camera preset bar (top/front/right/iso) — best-match preset highlighted from `projection_report.json`. |
+| V11-16 | `claim2cad/eval_v11.py` | 5-axis deterministic eval (span, GLB, callout coverage, geometric invariants, projection fit) — no VLM judge. |
 
 ### v1.1 architecture (figure-aware path)
 
@@ -334,39 +345,53 @@ prioritised follow-ups.
 
 ---
 
-## v1.1 demo (figure-aware path)
+## v1.1 demo (figure-grounded 3D path)
 
 ```bash
-# Figure-aware CAD on a real patent example
+# Figure-grounded 3D reconstruction (V11-14, default mode):
 python -m claim2cad.figure_to_cad \
     examples/real_patents/US4807331A_spring_loaded_hinge \
-    --n-candidates 3 \
-    --patent-context "Lift-off vehicle door hinge"
+    --mode 3d --figure-scale-mm 200
 
-# Generated artefacts:
-#   examples/.../model_v1.1.step     — full assembly
-#   examples/.../model_v1.1.glb      — viewer-ready
-#   examples/.../figure_spec.json    — per-component params from VLM
-#   examples/.../crops/              — per-callout figure crops
-#   examples/.../codegen_cache/      — VLM-written build123d snippets
-#   examples/.../best_of_n_scores.json — invariant score per candidate
-#   examples/.../render_comparison.png — patent figure | v1.1 CAD
+# After the run, evaluate (no LLM calls):
+python -m claim2cad.eval_v11 \
+    examples/real_patents/US4807331A_spring_loaded_hinge
+# Writes examples/reports/<id>_eval.{md,json}
 
-# Inspect the geometric invariants on the built model
-python -c "
-import build123d as bd
-from claim2cad.geometric_invariants import evaluate_invariants
-shape = bd.import_step(
-    'examples/real_patents/US4807331A_spring_loaded_hinge/model_v1.1.step'
-)
-print(evaluate_invariants(shape).as_dict())
-"
+# Stage to viewer + open:
+make viewer-dev   # http://localhost:4179, switch to US4807331A,
+                  # use the camera-preset bar to compare views.
+
+# Older paths still work:
+python -m claim2cad.figure_to_cad <ex> --mode outline   # 2.5D extrusion (V11-12)
+python -m claim2cad.figure_to_cad <ex> --mode library   # legacy primitives
 ```
 
-The VLM-judge score on US4807331A is **3.0/10 stable** (with engineering
--drawing renders, best-of-N sampling, and a patent-family primitive
-that's coaxial by construction). The deterministic invariants score
-**0.92 / 1.00** on the same model. See
+Generated artefacts (V11-14 / V11-15 / V11-16):
+
+```
+examples/<id>/
+├── model_v1.1.{step,glb}            # 3D assembly
+├── figure_view.json                 # view classification
+├── shape_inference.json             # per-component shape+constraints
+├── solver_diagnostics.json          # pose + bbox per part
+├── projection_report.json           # canonical-view scores + best
+├── render_comparison.png            # figure | CAD side-by-side
+├── span_debug.md                    # span audit
+├── renders_v1.1/projection_*.png    # top/front/right/iso
+└── crops/                           # per-callout figure crops
+
+examples/reports/<id>_eval.{md,json}  # 5-axis structural+visual report
+```
+
+### Why the eval no longer uses a VLM judge
+
+The V11-1..11 attempts to break a "3.0/10 VLM-judge ceiling" on
+US4807331A informed v1.1's design but didn't change the underlying
+CAD enough. The honest move: stop chasing a noisy VLM-as-judge metric
+and start measuring **structural** properties that match what a
+patent-figure user actually cares about. V11-16's `eval_v11` does
+this with five deterministic axes; see `docs/ARCHITECTURE.md` and
 `docs/V11_HARD_CASE_ANALYSIS.md`.
 
 ## Roadmap (post-v1.0)

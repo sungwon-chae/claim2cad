@@ -1,10 +1,10 @@
 {
   "example_id": "US5180955A_positioning_apparatus_for_arm",
   "status": "ok",
-  "scaffold_id": "rotary_shaft",
-  "quality_tier": "partial",
+  "scaffold_id": "positioning_apparatus",
+  "quality_tier": "good",
   "n_components": 19,
-  "n_glb_children": 19,
+  "n_glb_children": 21,
   "error": "",
   "notes": ""
 }

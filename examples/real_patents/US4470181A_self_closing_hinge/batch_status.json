@@ -1,10 +1,10 @@
 {
   "example_id": "US4470181A_self_closing_hinge",
   "status": "ok",
-  "scaffold_id": "door_hinge",
+  "scaffold_id": "self_closing_hinge_mechanism",
   "quality_tier": "good",
   "n_components": 14,
-  "n_glb_children": 22,
+  "n_glb_children": 20,
   "error": "",
   "notes": ""
 }

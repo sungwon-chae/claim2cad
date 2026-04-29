@@ -1,12 +1,13 @@
 {
   "example_id": "US5180955A_positioning_apparatus_for_arm",
-  "view_type": "sectional",
-  "topology": "rotary_shaft",
-  "recommended_scaffold": "rotary_shaft",
-  "confidence": 0.8,
+  "view_type": "oblique",
+  "topology": "positioning_apparatus",
+  "recommended_scaffold": "positioning_apparatus",
+  "confidence": 0.55,
   "evidence": [
-    "topology:rotary_shaft:keyword:'shaft'",
-    "view:sectional:keyword"
+    "topology:positioning_apparatus:keyword:'positioning apparatus'",
+    "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

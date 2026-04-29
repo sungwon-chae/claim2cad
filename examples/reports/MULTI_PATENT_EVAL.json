@@ -24,11 +24,11 @@
       "hotspot_bounds_validity": 1.0,
       "hotspot_confidence_rate": 0.5,
       "non_central_pile_score": 1.0,
-      "scaffold_coherence_score": 0.5,
-      "render_readability_score": 0.8147705078125,
+      "scaffold_coherence_score": 0.8,
+      "render_readability_score": 0.773212890625,
       "projection_alignment_score": 0.0,
-      "overall_quality": "partial",
-      "overall_score": 0.816,
+      "overall_quality": "good",
+      "overall_score": 0.859,
       "notes": []
     },
     {
@@ -175,10 +175,10 @@
       "hotspot_confidence_rate": 0.0,
       "non_central_pile_score": 1.0,
       "scaffold_coherence_score": 0.8,
-      "render_readability_score": 0.69958984375,
+      "render_readability_score": 0.7578906249999999,
       "projection_alignment_score": 0.0,
       "overall_quality": "good",
-      "overall_score": 0.705,
+      "overall_score": 0.708,
       "notes": []
     },
     {
@@ -353,12 +353,12 @@
       "glb_node_coverage": 1.0,
       "hotspot_bounds_validity": 1.0,
       "hotspot_confidence_rate": 0.7272727272727273,
-      "non_central_pile_score": 0.55,
-      "scaffold_coherence_score": 0.5,
-      "render_readability_score": 0.61876953125,
+      "non_central_pile_score": 1.0,
+      "scaffold_coherence_score": 0.8,
+      "render_readability_score": 0.7210791015625,
       "projection_alignment_score": 0.0,
-      "overall_quality": "partial",
-      "overall_score": 0.733,
+      "overall_quality": "good",
+      "overall_score": 0.874,
       "notes": []
     },
     {

@@ -1,12 +1,13 @@
 {
   "example_id": "US4470181A_self_closing_hinge",
   "view_type": "oblique",
-  "topology": "door_hinge",
-  "recommended_scaffold": "door_hinge",
+  "topology": "self_closing_hinge_mechanism",
+  "recommended_scaffold": "self_closing_hinge_mechanism",
   "confidence": 0.55,
   "evidence": [
-    "topology:door_hinge:keyword:'self closing hinge'",
+    "topology:self_closing_hinge_mechanism:keyword:'self closing hinge'",
     "view:oblique:default_for_mechanical_patent"
   ],
-  "notes": ""
+  "notes": "",
+  "multi_view": []
 }

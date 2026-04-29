@@ -129,13 +129,19 @@ _MULTI_VIEW_HINTS: dict[str, list[str]] = {
     "differential_gear": ["sectional", "plan"],
 }
 
+# V13-K: phrases must be specific. "section" alone matches
+# arm-section-style component labels and incorrectly classified
+# US5180955A as sectional, so we require the explicit "view" /
+# "cross-section" anchors.
 _VIEW_KEYWORDS = {
-    "exploded": ["exploded", "exploded view"],
-    "sectional": ["section", "cross-section", "sectional"],
-    "top": ["plan view", "top view"],
-    "side": ["side view", "elevation"],
-    "oblique": ["isometric", "perspective", "oblique"],
-    "schematic": ["schematic", "diagram"],
+    "exploded": ["exploded view", "exploded perspective"],
+    "sectional": ["sectional view", "cross-section", "cross section",
+                   "in section", "sectioned view"],
+    "top": ["plan view", "top view", "top plan view"],
+    "side": ["side view", "side elevation", "elevation view"],
+    "oblique": ["isometric view", "perspective view",
+                 "oblique view", "perspective drawing"],
+    "schematic": ["schematic view", "schematic diagram"],
 }
 
 

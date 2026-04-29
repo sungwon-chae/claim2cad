@@ -1,0 +1,280 @@
+{
+  "n": 25,
+  "examples": [
+    {
+      "example_id": "US3279624A_unimate_industrial_robot",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US3279624A_unimate_industrial_robot/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US3279624A_unimate_industrial_robot/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US3279624A_unimate_industrial_robot/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US3279624A_unimate_industrial_robot/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US3705522A_planetary_gear_with_idler",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US3705522A_planetary_gear_with_idler/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US3705522A_planetary_gear_with_idler/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US3705522A_planetary_gear_with_idler/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US3705522A_planetary_gear_with_idler/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US3789698A_compact_planetary_drive",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US3789698A_compact_planetary_drive/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US3789698A_compact_planetary_drive/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US3897696A_harmonic_gear_drive",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US3897696A_harmonic_gear_drive/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US3897696A_harmonic_gear_drive/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4106366A_automotive_planetary_gearbox",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4106366A_automotive_planetary_gearbox/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4106366A_automotive_planetary_gearbox/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4196635A_spur_gear_differential",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4196635A_spur_gear_differential/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4196635A_spur_gear_differential/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4329110A_manipulator_with_remote_control",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4329110A_manipulator_with_remote_control/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4329110A_manipulator_with_remote_control/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4329110A_manipulator_with_remote_control/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4329110A_manipulator_with_remote_control/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4391163A_planetary_speed_reducer",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4391163A_planetary_speed_reducer/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4391163A_planetary_speed_reducer/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4392776A_robotic_hand_with_compliance",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4392776A_robotic_hand_with_compliance/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4392776A_robotic_hand_with_compliance/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4407625A_multi_arm_robotic_assembly",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4407625A_multi_arm_robotic_assembly/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4407625A_multi_arm_robotic_assembly/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4467670A_epicyclic_transmission",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4467670A_epicyclic_transmission/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4467670A_epicyclic_transmission/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4470181A_self_closing_hinge",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4470181A_self_closing_hinge/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4470181A_self_closing_hinge/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4486142A_kuka_articulated_arm",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4486142A_kuka_articulated_arm/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4486142A_kuka_articulated_arm/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4502185A_concealed_hinge_assembly",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4502185A_concealed_hinge_assembly/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4502185A_concealed_hinge_assembly/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4502185A_concealed_hinge_assembly/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4502185A_concealed_hinge_assembly/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4575297A_puma_industrial_robot",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4575297A_puma_industrial_robot/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4575297A_puma_industrial_robot/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4575297A_puma_industrial_robot/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4575297A_puma_industrial_robot/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4655675A_robotic_assembly_apparatus",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4655675A_robotic_assembly_apparatus/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4655675A_robotic_assembly_apparatus/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4655675A_robotic_assembly_apparatus/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4655675A_robotic_assembly_apparatus/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4729261A_compact_gear_reduction",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4729261A_compact_gear_reduction/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4729261A_compact_gear_reduction/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4729261A_compact_gear_reduction/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4729261A_compact_gear_reduction/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4762016A_robotic_drive_unit",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4762016A_robotic_drive_unit/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4762016A_robotic_drive_unit/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4762016A_robotic_drive_unit/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4762016A_robotic_drive_unit/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4807331A_spring_loaded_hinge",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4807331A_spring_loaded_hinge/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4816730A_autonomous_mobile_robot",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4816730A_autonomous_mobile_robot/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4816730A_autonomous_mobile_robot/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4856377A_planetary_drive_apparatus",
+      "view_type": "multi_view_sheet",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4856377A_planetary_drive_apparatus/renders_v1.4/figure_matched.png",
+      "plan_render": "examples/real_patents/US4856377A_planetary_drive_apparatus/renders_v1.4/plan_view.png",
+      "section_render": "examples/real_patents/US4856377A_planetary_drive_apparatus/renders_v1.4/section_view.png",
+      "comparison_render": "examples/real_patents/US4856377A_planetary_drive_apparatus/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US4955250A_multiple_forearm_robot",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US4955250A_multiple_forearm_robot/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US4955250A_multiple_forearm_robot/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US5042321A_two_stage_planetary_gear",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US5042321A_two_stage_planetary_gear/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US5042321A_two_stage_planetary_gear/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US5180955A_positioning_apparatus_for_arm",
+      "view_type": "oblique",
+      "camera_used": "patent_oblique",
+      "primary_render": "examples/real_patents/US5180955A_positioning_apparatus_for_arm/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US5180955A_positioning_apparatus_for_arm/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    },
+    {
+      "example_id": "US5239246A_force_reflecting_manipulator",
+      "view_type": "front",
+      "camera_used": "front",
+      "primary_render": "examples/real_patents/US5239246A_force_reflecting_manipulator/renders_v1.4/figure_matched.png",
+      "plan_render": "",
+      "section_render": "",
+      "comparison_render": "examples/real_patents/US5239246A_force_reflecting_manipulator/renders_v1.4/comparison.png",
+      "error": "",
+      "notes": []
+    }
+  ]
+}

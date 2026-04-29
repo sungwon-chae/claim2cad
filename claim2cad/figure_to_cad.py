@@ -43,6 +43,19 @@ from claim2cad.scene_scaffold import (
     lift_off_door_hinge_scaffold_for_us4807331a,
     save_scaffold,
 )
+from claim2cad.figure_projection import (
+    FigureProjectionLayout,
+    build_projection,
+    figure_anchors_for_components,
+    group_anchors_from_components,
+    save_layout,
+)
+from claim2cad.projection_layout_solver import build_assembly_figure_anchored
+from claim2cad.figure_aligned_render import (
+    render_figure_aligned,
+    render_anchor_debug_overlay,
+    make_figure_aligned_comparison,
+)
 from claim2cad.projection_compare import render_canonical_views
 from claim2cad.sketch_to_extrusion import (
     ExtrusionResult,
@@ -721,16 +734,66 @@ def run_generator(
                 patent_title=ir.title or "",
                 cache_path=example_dir / "shape_inference.json",
             )
-            # V11-21: scaffold-first build path. For known patent
-            # families (currently US4807331A-class lift-off door
-            # hinges) we use a scene scaffold that places door panel,
-            # fixed frame, upper / lower hinge clusters and the
-            # pintle axis at canonical positions, then subordinates
-            # each component to its scaffold group. Visibly coherent;
-            # heuristic. Other examples fall through to V11-14's
-            # build_3d_assembly.
+            # V11-23+: figure-projection-grounded build path. Patent
+            # family scaffold (v11-20) gives us scene groups; the
+            # figure_projection layout (v11-23b) gives us per-callout
+            # (u, v) anchors mapped to CAD coords. The new solver
+            # places each component at its figure-projected anchor —
+            # the chosen camera projection of the CAD literally
+            # tracks the patent figure. Falls back to scaffold-only
+            # placement when no figure_map is available, and to the
+            # V11-14 component-level path otherwise.
             scaffold = _maybe_build_scaffold(ir, example_dir)
-            if scaffold is not None:
+            if scaffold is not None and figure_map and figure_path.exists():
+                save_scaffold(scaffold, example_dir / "scene_scaffold.json")
+                # Build the figure-projection layout once and persist it.
+                from PIL import Image
+                img = Image.open(figure_path)
+                proj = build_projection(
+                    figure_id=view_report.figure_id,
+                    view_kind=view_report.view_kind,
+                    figure_width_px=img.size[0],
+                    figure_height_px=img.size[1],
+                    scale_uv_to_mm=figure_scale_mm * 1.5,
+                )
+                # Per-group depth hints push door / frame / hinge to
+                # different Y depths so the front-view projection
+                # spreads them visibly.
+                group_depth_hints = {
+                    "door_panel": -30.0,
+                    "fixed_frame": +30.0,
+                    "upper_hinge": 0.0,
+                    "lower_hinge": 0.0,
+                    "pintle_axis": 0.0,
+                    "power_mechanism": 10.0,
+                    "fasteners": 5.0,
+                }
+                component_depth_hints = {
+                    cid: group_depth_hints.get(gid, 0.0)
+                    for cid, gid in scaffold.component_to_group.items()
+                }
+                anchors = figure_anchors_for_components(
+                    figure_map=figure_map,
+                    projection=proj,
+                    component_depth_hints_mm=component_depth_hints,
+                )
+                g_anchors = group_anchors_from_components(
+                    component_anchors=anchors,
+                    component_to_group=scaffold.component_to_group,
+                    projection=proj,
+                    group_depth_hints_mm=group_depth_hints,
+                    extra_groups=tuple(g.id for g in scaffold.groups),
+                )
+                layout = FigureProjectionLayout(
+                    projection=proj,
+                    component_anchors=anchors,
+                    group_anchors=g_anchors,
+                )
+                save_layout(layout, example_dir / "figure_projection.json")
+                compound, ordered_ids, diagnostics = build_assembly_figure_anchored(
+                    inference=inference, scaffold=scaffold, layout=layout,
+                )
+            elif scaffold is not None:
                 save_scaffold(scaffold, example_dir / "scene_scaffold.json")
                 compound, ordered_ids, diagnostics = build_assembly_scaffold_first(
                     inference, scaffold
@@ -773,23 +836,69 @@ def run_generator(
 
             # Render canonical views and a side-by-side comparison.
             try:
-                proj = render_canonical_views(
+                proj_report = render_canonical_views(
                     step_path=step_path,
                     out_dir=example_dir / "renders_v1.1",
                     figure_path=figure_path,
                     view_names=("top", "front", "right", "iso"),
                 )
                 (example_dir / "projection_report.json").write_text(
-                    json.dumps(proj.to_dict(), indent=2),
+                    json.dumps(proj_report.to_dict(), indent=2),
                     encoding="utf-8",
                 )
-                if proj.comparison_path is not None:
-                    # Promote it as the canonical render_comparison.
+                if proj_report.comparison_path is not None:
                     (example_dir / "render_comparison.png").write_bytes(
-                        proj.comparison_path.read_bytes()
+                        proj_report.comparison_path.read_bytes()
                     )
+                # solid_*.png aliases.
+                import shutil
+                for view in ("iso", "top", "front", "right"):
+                    src = example_dir / "renders_v1.1" / f"projection_{view}.png"
+                    if src.exists():
+                        shutil.copy(
+                            src,
+                            example_dir / "renders_v1.1" / f"solid_{view}.png",
+                        )
             except Exception as exc:  # noqa: BLE001
                 logger.warning("projection comparison failed: %s", exc)
+
+            # V11-25 figure-aligned render (when a layout is available).
+            fp_path = example_dir / "figure_projection.json"
+            if fp_path.exists():
+                try:
+                    from claim2cad.figure_projection import load_layout
+                    layout = load_layout(fp_path)
+                    aligned = render_figure_aligned(
+                        step_path=step_path,
+                        out_path=example_dir / "renders_v1.1" / "figure_aligned_view.png",
+                        projection=layout.projection,
+                        resolution=1280,
+                    )
+                    import shutil
+                    shutil.copy(
+                        aligned,
+                        example_dir / "renders_v1.1" / "figure_aligned_solid.png",
+                    )
+                    render_anchor_debug_overlay(
+                        figure_path=figure_path,
+                        layout=layout,
+                        out_path=example_dir / "renders_v1.1" / "figure_anchor_debug.png",
+                    )
+                    comp = make_figure_aligned_comparison(
+                        figure_path=figure_path,
+                        figure_aligned_render=aligned,
+                        out_path=example_dir / "renders_v1.1" / "figure_aligned_comparison.png",
+                    )
+                    # Promote the figure-aligned comparison as the canonical
+                    # render_comparison so the viewer / portfolio shows it.
+                    (example_dir / "render_comparison.png").write_bytes(
+                        comp.read_bytes()
+                    )
+                    (example_dir / "renders_v1.1" / "solid_comparison.png").write_bytes(
+                        comp.read_bytes()
+                    )
+                except Exception as exc:  # noqa: BLE001
+                    logger.warning("figure-aligned render failed: %s", exc)
 
             logger.info(
                 "3D mode wrote %s and %s with %d components (best view=%s)",
